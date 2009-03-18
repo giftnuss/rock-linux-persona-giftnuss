@@ -1,0 +1,10 @@
+--- ./src/dom/io/uristream.cpp.orig	2008-06-13 06:22:09.000000000 +0200
++++ ./src/dom/io/uristream.cpp	2008-06-13 06:22:21.000000000 +0200
+@@ -41,6 +41,7 @@
+ 
+ 
+ #include "uristream.h"
++#include <string.h>
+ 
+ 
+ 

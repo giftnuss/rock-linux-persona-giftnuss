@@ -1,0 +1,6 @@
+
+case "$pkg" in
+	bdb33|bdb4[0124])
+		pkg=bdb ;;
+esac
+

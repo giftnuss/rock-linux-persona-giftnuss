@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Digikam
+Comment=Digital Photo Management Application
+Exec=digikam
+Terminal=false
+Type=Application
+Categories=Graphics;Photography
+X-ROCK-Name=digikam

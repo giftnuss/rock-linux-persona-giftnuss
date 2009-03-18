@@ -1,0 +1,117 @@
+
+[TIMESTAMP] 1181120618 Wed Jun  6 11:03:38 2007 (5) ERROR
+[TIMESTAMP] 1181597227 Mon Jun 11 23:27:07 2007 (9) ERROR
+[TIMESTAMP] 1181827168 Thu Jun 14 15:19:28 2007 (5) ERROR
+[TIMESTAMP] 1181909654 Fri Jun 15 14:14:14 2007 (9) ERROR
+[TIMESTAMP] 1181951673 Sat Jun 16 01:54:33 2007 (5) ERROR
+[TIMESTAMP] 1181973207 Sat Jun 16 07:53:27 2007 (9) ERROR
+
+[CONFIG-ID] TRUNK-x86-reference
+[ROCKVER] TRUNK
+
+[LOGS] 5-scilab.err 9-scilab.err
+
+[BUILDTIME] 2421 (5) ERROR
+[BUILDTIME] 2357 (9) ERROR
+[BUILDTIME] 2350 (5) ERROR
+[BUILDTIME] 2385 (9) ERROR
+[BUILDTIME] 2274 (5) ERROR
+[BUILDTIME] 2301 (9) ERROR
+
+
+[5-ERROR] Command Wrapper Debug: running 'gcc-42 --version' ..
+[5-ERROR] gcc-42 is /ROCK/build/ref0603-TRUNK-x86-reference/ROCK/tools.chroot/wrapper/gcc-42
+[5-ERROR] Old Command: gcc-42 --version
+[5-ERROR] ENVPREFIX = 'CMD'
+[5-ERROR] APPEND_PO = ''
+[5-ERROR] OTHERS = ''
+[5-ERROR] INSERT = '-O1 -pipe -O1 -march=i486'
+[5-ERROR] REMOVE = '-march=* -mcpu=* -O -O[0-9s] -g* -I/usr/local/include -I/usr/include'
+[5-ERROR] APPEND = '-s'
+[5-ERROR] FILTER = ''
+[5-ERROR] Old PATH: /ROCK/src.scilab.1181951645.23936.4161569442/wrappers:/ROCK/build/ref0603-TRUNK-x86-reference/ROCK/tools.chroot/wrapper:/ROCK/build/ref0603-TRUNK-x86-reference/ROCK/tools.chroot/bin:/usr/lib/teTeX/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/usr/X11/bin:/usr/X11/sbin:/usr/games:/opt/Croquet-SDK/bin:/opt/MailScanner/bin:/opt/Maxima/bin:/opt/anomy-mailtools/bin:/opt/apache/bin:/opt/apache/sbin:/opt/bincimap/bin:/opt/cbrowser/bin:/opt/clanlib06/bin:/opt/clanlib06/sbin:/opt/clanlib07/bin:/opt/clanlib07/sbin:/opt/clip/bin:/opt/clip/sbin:/opt/coda/bin:/opt/coda/sbin:/opt/dcc/bin:/opt/e16/bin:/opt/e16/sbin:/opt/e17/bin:/opt/e17/sbin:/opt/gnome/bin:/opt/gnome/sbin:/opt/gnome2/bin:/opt/gnome2/sbin:/opt/mono/bin:/opt/mono/sbin:/opt/mysql41/bin:/opt/mysql50/bin:/opt/mythtv/bin:/opt/mythtv/sbin:/opt/nagios/bin:/opt/nagios/sbin:/opt/nx/bin:/opt/pegasus/bin:/opt/postgresql/bin:/opt/qcad/bin:/opt/qt33/bin:/opt/qt42/bin:/opt/root/bin:/opt/root/sbin:/opt/samba/bin:/opt/samba/sbin:/opt/schily/bin:/opt/snort/bin:/opt/squid/bin:/opt/squid/sbin:/opt/thunderbird/bin:/opt/tomcat/bin:/opt/tomcat/sbin:/opt/unrealircd/bin:/opt/validator/bin:/opt/wwwoffle/bin:/opt/wwwoffle/sbin:/opt/xfce4/bin:/opt/xfce4/sbin:/opt/xjdic/bin:/usr/bin
+[5-ERROR] New PATH: /ROCK/src.scilab.1181951645.23936.4161569442/wrappers:/ROCK/build/ref0603-TRUNK-x86-reference/ROCK/tools.chroot/bin:/usr/lib/teTeX/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/usr/X11/bin:/usr/X11/sbin:/usr/games:/opt/Croquet-SDK/bin:/opt/MailScanner/bin:/opt/Maxima/bin:/opt/anomy-mailtools/bin:/opt/apache/bin:/opt/apache/sbin:/opt/bincimap/bin:/opt/cbrowser/bin:/opt/clanlib06/bin:/opt/clanlib06/sbin:/opt/clanlib07/bin:/opt/clanlib07/sbin:/opt/clip/bin:/opt/clip/sbin:/opt/coda/bin:/opt/coda/sbin:/opt/dcc/bin:/opt/e16/bin:/opt/e16/sbin:/opt/e17/bin:/opt/e17/sbin:/opt/gnome/bin:/opt/gnome/sbin:/opt/gnome2/bin:/opt/gnome2/sbin:/opt/mono/bin:/opt/mono/sbin:/opt/mysql41/bin:/opt/mysql50/bin:/opt/mythtv/bin:/opt/mythtv/sbin:/opt/nagios/bin:/opt/nagios/sbin:/opt/nx/bin:/opt/pegasus/bin:/opt/postgresql/bin:/opt/qcad/bin:/opt/qt33/bin:/opt/qt42/bin:/opt/root/bin:/opt/root/sbin:/opt/samba/bin:/opt/samba/sbin:/opt/schily/bin:/opt/snort/bin:/opt/squid/bin:/opt/squid/sbin:/opt/thunderbird/bin:/opt/tomcat/bin:/opt/tomcat/sbin:/opt/unrealircd/bin:/opt/validator/bin:/opt/wwwoffle/bin:/opt/wwwoffle/sbin:/opt/xfce4/bin:/opt/xfce4/sbin:/opt/xjdic/bin:/usr/bin
+[5-ERROR] Insert: -O1
+[5-ERROR] Insert: -pipe
+[5-ERROR] Insert: -O1
+[5-ERROR] Insert: -march=i486
+[5-ERROR] Copy:   --version
+[5-ERROR] Append: -s
+[5-ERROR] New Command: gcc-42 -O1 -pipe -O1 -march=i486 --version -s
+[5-ERROR] gcc-42 (GCC) 4.2.0
+[5-ERROR] Copyright (C) 2007 Free Software Foundation, Inc.
+[5-ERROR] This is free software; see the source for copying conditions.  There is NO
+[5-ERROR] warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+[5-ERROR] 
+[5-ERROR] [ writing debug log to /ROCK/src.scilab.1181951645.23936.4161569442/cmd_wrapper.log ]
+[5-ERROR] Running main build function 'build_this_package' ...
+[5-ERROR] Extracting scilab-3.1.1-src.tar.bz2 (tar -v --use-compress-program=bzip2 -xf) ... 
+[5-ERROR] Fixing ownership and permissions ...
+[5-ERROR] Removing CVS and .svn directories ...
+[5-ERROR] Changeing into /ROCK/src.scilab.1181951645.23936.4161569442/scilab-3.1.1 ...
+[5-ERROR] Creating /usr/<..> if required ...
+[5-ERROR] Removing unsupported '--with-mysql-lib=/opt/mysql41/lib/mysql' from configure option string.
+[5-ERROR] Removing unsupported '--with-mysql-include=/opt/mysql41/include/mysql' from configure option string.
+[5-ERROR] Removing unsupported '--with-mysql-lib=/opt/mysql50/lib/mysql' from configure option string.
+[5-ERROR] Removing unsupported '--with-mysql-include=/opt/mysql50/include/mysql' from configure option string.
+[5-ERROR] Removing unsupported '--with-libpam' from configure option string.
+[5-ERROR] Removing unsupported '--with-pam' from configure option string.
+[5-ERROR] Autodetection for option impossible:  --enable-libpam passed thru.
+[5-ERROR] Autodetection for option impossible:  --enable-pam passed thru.
+[5-ERROR] Running  bash ./configure --prefix=/usr --bindir=/usr/bin --sbindir=/usr/sbin --libdir=/usr/lib --datadir=/usr/share --includedir=/usr/include --infodir=/usr/share/info --mandir=/usr/share/man --sysconfdir=/etc --localstatedir=/var --disable-debug --enable-libpam --enable-pam --with-gnu --build=i386-unknown-linux-gnu --host=i386-unknown-linux-gnu
+[5-ERROR] checking build system type... i386-unknown-linux-gnu
+[5-ERROR] checking host system type... i386-unknown-linux-gnu
+[5-ERROR] creating Path.incl
+[5-ERROR] checking for gcc... yes
+[5-ERROR] checking for g77... no
+[5-ERROR] configure: error: Unable to configure: g77 compiler not found
+[5-ERROR] --- BUILD ERROR ---
+
+[9-ERROR] Command Wrapper Debug: running 'gcc-42 --version' ..
+[9-ERROR] gcc-42 is /ROCK/build/ref0603-TRUNK-x86-reference/ROCK/tools.chroot/wrapper/gcc-42
+[9-ERROR] Old Command: gcc-42 --version
+[9-ERROR] ENVPREFIX = 'CMD'
+[9-ERROR] APPEND_PO = ''
+[9-ERROR] OTHERS = ''
+[9-ERROR] INSERT = '-O1 -pipe -O1 -march=i486'
+[9-ERROR] REMOVE = '-march=* -mcpu=* -O -O[0-9s] -g* -I/usr/local/include -I/usr/include'
+[9-ERROR] APPEND = '-s'
+[9-ERROR] FILTER = ''
+[9-ERROR] Old PATH: /ROCK/src.scilab.1181973184.27251.2938899655/wrappers:/ROCK/build/ref0603-TRUNK-x86-reference/ROCK/tools.chroot/wrapper:/ROCK/build/ref0603-TRUNK-x86-reference/ROCK/tools.chroot/bin:/usr/lib/teTeX/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/usr/X11/bin:/usr/X11/sbin:/usr/games:/opt/Croquet-SDK/bin:/opt/MailScanner/bin:/opt/Maxima/bin:/opt/anomy-mailtools/bin:/opt/apache/bin:/opt/apache/sbin:/opt/bincimap/bin:/opt/cbrowser/bin:/opt/clanlib06/bin:/opt/clanlib06/sbin:/opt/clanlib07/bin:/opt/clanlib07/sbin:/opt/clip/bin:/opt/clip/sbin:/opt/coda/bin:/opt/coda/sbin:/opt/dcc/bin:/opt/e16/bin:/opt/e16/sbin:/opt/e17/bin:/opt/e17/sbin:/opt/gnome/bin:/opt/gnome/sbin:/opt/gnome2/bin:/opt/gnome2/sbin:/opt/mono/bin:/opt/mono/sbin:/opt/mysql41/bin:/opt/mysql50/bin:/opt/mythtv/bin:/opt/mythtv/sbin:/opt/nagios/bin:/opt/nagios/sbin:/opt/nx/bin:/opt/pegasus/bin:/opt/postgresql/bin:/opt/qcad/bin:/opt/qt33/bin:/opt/qt42/bin:/opt/root/bin:/opt/root/sbin:/opt/samba/bin:/opt/samba/sbin:/opt/schily/bin:/opt/snort/bin:/opt/squid/bin:/opt/squid/sbin:/opt/thunderbird/bin:/opt/tomcat/bin:/opt/tomcat/sbin:/opt/unrealircd/bin:/opt/validator/bin:/opt/wwwoffle/bin:/opt/wwwoffle/sbin:/opt/xfce4/bin:/opt/xfce4/sbin:/opt/xjdic/bin:/usr/bin
+[9-ERROR] New PATH: /ROCK/src.scilab.1181973184.27251.2938899655/wrappers:/ROCK/build/ref0603-TRUNK-x86-reference/ROCK/tools.chroot/bin:/usr/lib/teTeX/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/usr/X11/bin:/usr/X11/sbin:/usr/games:/opt/Croquet-SDK/bin:/opt/MailScanner/bin:/opt/Maxima/bin:/opt/anomy-mailtools/bin:/opt/apache/bin:/opt/apache/sbin:/opt/bincimap/bin:/opt/cbrowser/bin:/opt/clanlib06/bin:/opt/clanlib06/sbin:/opt/clanlib07/bin:/opt/clanlib07/sbin:/opt/clip/bin:/opt/clip/sbin:/opt/coda/bin:/opt/coda/sbin:/opt/dcc/bin:/opt/e16/bin:/opt/e16/sbin:/opt/e17/bin:/opt/e17/sbin:/opt/gnome/bin:/opt/gnome/sbin:/opt/gnome2/bin:/opt/gnome2/sbin:/opt/mono/bin:/opt/mono/sbin:/opt/mysql41/bin:/opt/mysql50/bin:/opt/mythtv/bin:/opt/mythtv/sbin:/opt/nagios/bin:/opt/nagios/sbin:/opt/nx/bin:/opt/pegasus/bin:/opt/postgresql/bin:/opt/qcad/bin:/opt/qt33/bin:/opt/qt42/bin:/opt/root/bin:/opt/root/sbin:/opt/samba/bin:/opt/samba/sbin:/opt/schily/bin:/opt/snort/bin:/opt/squid/bin:/opt/squid/sbin:/opt/thunderbird/bin:/opt/tomcat/bin:/opt/tomcat/sbin:/opt/unrealircd/bin:/opt/validator/bin:/opt/wwwoffle/bin:/opt/wwwoffle/sbin:/opt/xfce4/bin:/opt/xfce4/sbin:/opt/xjdic/bin:/usr/bin
+[9-ERROR] Insert: -O1
+[9-ERROR] Insert: -pipe
+[9-ERROR] Insert: -O1
+[9-ERROR] Insert: -march=i486
+[9-ERROR] Copy:   --version
+[9-ERROR] Append: -s
+[9-ERROR] New Command: gcc-42 -O1 -pipe -O1 -march=i486 --version -s
+[9-ERROR] gcc-42 (GCC) 4.2.0
+[9-ERROR] Copyright (C) 2007 Free Software Foundation, Inc.
+[9-ERROR] This is free software; see the source for copying conditions.  There is NO
+[9-ERROR] warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+[9-ERROR] 
+[9-ERROR] [ writing debug log to /ROCK/src.scilab.1181973184.27251.2938899655/cmd_wrapper.log ]
+[9-ERROR] Running main build function 'build_this_package' ...
+[9-ERROR] Extracting scilab-3.1.1-src.tar.bz2 (tar -v --use-compress-program=bzip2 -xf) ... 
+[9-ERROR] Fixing ownership and permissions ...
+[9-ERROR] Removing CVS and .svn directories ...
+[9-ERROR] Changeing into /ROCK/src.scilab.1181973184.27251.2938899655/scilab-3.1.1 ...
+[9-ERROR] Creating /usr/<..> if required ...
+[9-ERROR] Removing unsupported '--with-mysql-lib=/opt/mysql41/lib/mysql' from configure option string.
+[9-ERROR] Removing unsupported '--with-mysql-include=/opt/mysql41/include/mysql' from configure option string.
+[9-ERROR] Removing unsupported '--with-mysql-lib=/opt/mysql50/lib/mysql' from configure option string.
+[9-ERROR] Removing unsupported '--with-mysql-include=/opt/mysql50/include/mysql' from configure option string.
+[9-ERROR] Removing unsupported '--with-libpam' from configure option string.
+[9-ERROR] Removing unsupported '--with-pam' from configure option string.
+[9-ERROR] Autodetection for option impossible:  --enable-libpam passed thru.
+[9-ERROR] Autodetection for option impossible:  --enable-pam passed thru.
+[9-ERROR] Running  bash ./configure --prefix=/usr --bindir=/usr/bin --sbindir=/usr/sbin --libdir=/usr/lib --datadir=/usr/share --includedir=/usr/include --infodir=/usr/share/info --mandir=/usr/share/man --sysconfdir=/etc --localstatedir=/var --disable-debug --enable-libpam --enable-pam --with-gnu --build=i386-unknown-linux-gnu --host=i386-unknown-linux-gnu
+[9-ERROR] checking build system type... i386-unknown-linux-gnu
+[9-ERROR] checking host system type... i386-unknown-linux-gnu
+[9-ERROR] creating Path.incl
+[9-ERROR] checking for gcc... yes
+[9-ERROR] checking for g77... no
+[9-ERROR] configure: error: Unable to configure: g77 compiler not found
+[9-ERROR] --- BUILD ERROR ---
+

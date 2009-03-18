@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Anjuta
+Comment=Integrated Debugging Environment
+Exec=anjuta
+Terminal=false
+Type=Application
+Categories=Development;IDE
+X-ROCK-Name=anjuta
+Icon=D_datadir/pixmaps/anjuta/anjuta_icon.png

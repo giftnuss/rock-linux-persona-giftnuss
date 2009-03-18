@@ -1,0 +1,10 @@
+--- ./kdirstat/kdirtreecache.cpp.orig	2008-06-12 15:29:58.000000000 +0200
++++ ./kdirstat/kdirtreecache.cpp	2008-06-12 15:30:05.000000000 +0200
+@@ -10,6 +10,7 @@
+ 
+ #include <ctype.h>
+ #include <errno.h>
++#include <stdlib.h>
+ #include <kdebug.h>
+ #include "kdirtreecache.h"
+ #include "kdirtree.h"

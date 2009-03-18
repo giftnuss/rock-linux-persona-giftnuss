@@ -1,0 +1,16 @@
+--- ./src/mouse.c~	2002-05-07 10:41:38.000000000 +0200
++++ ./src/mouse.c	2006-03-29 22:35:28.000000000 +0200
+@@ -75,11 +75,9 @@
+ 	conn.maxMod = 0;
+ 	conn.minMod = 0;
+ 	/* don't check for < 0, gpm-xterm returns -2 */
+-	if (Gpm_Open(&conn, 0) != -1) {
++	if (Gpm_Open(&conn, 0) != -1)
+ 		gpm_handler = MouseHandler;
+-		Wgetch = Gpm_Wgetch;
+-	} else
+-		Wgetch = wgetch;
++	Wgetch = wgetch;
+ #if HAVE_GETMOUSE
+ 	/* enable ncurses mouse reporting */
+ #define MMASK	(BUTTON1_PRESSED | BUTTON1_CLICKED | \

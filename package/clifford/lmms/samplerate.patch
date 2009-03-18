@@ -1,0 +1,44 @@
+--- ./src/3rdparty/samplerate/samplerate.c.orig	2007-11-09 08:44:58.000000000 +0000
++++ ./src/3rdparty/samplerate/samplerate.c	2007-11-09 08:46:09.000000000 +0000
+@@ -42,7 +42,7 @@
+ 		return NULL ;
+ 		} ;
+ 
+-	if ((psrc = calloc (1, sizeof (*psrc))) == NULL)
++	if ((psrc = (SRC_PRIVATE*)calloc (1, sizeof (*psrc))) == NULL)
+ 	{	if (error)
+ 			*error = SRC_ERR_MALLOC_FAILED ;
+ 		return NULL ;
+--- ./src/3rdparty/samplerate/src_linear.c.orig	2007-11-09 08:47:36.000000000 +0000
++++ ./src/3rdparty/samplerate/src_linear.c	2007-11-09 08:47:42.000000000 +0000
+@@ -166,7 +166,7 @@
+ 		} ;
+ 
+ 	if (psrc->private_data == NULL)
+-	{	linear = calloc (1, sizeof (*linear) + psrc->channels * sizeof (float)) ;
++	{	linear = (LINEAR_DATA*)calloc (1, sizeof (*linear) + psrc->channels * sizeof (float)) ;
+ 		if (linear == NULL)
+ 			return SRC_ERR_MALLOC_FAILED ;
+ 		psrc->private_data = linear ;
+--- ./src/3rdparty/samplerate/src_sinc.c.orig	2007-11-09 08:46:30.000000000 +0000
++++ ./src/3rdparty/samplerate/src_sinc.c	2007-11-09 08:46:52.000000000 +0000
+@@ -207,7 +207,7 @@
+ 	temp_filter.b_len = 1000 + 2 * lrint (0.5 + temp_filter.coeff_len / (temp_filter.index_inc * 1.0) * SRC_MAX_RATIO) ;
+ 	temp_filter.b_len *= temp_filter.channels ;
+ 
+-	if ((filter = calloc (1, sizeof (SINC_FILTER) + sizeof (filter->buffer [0]) * (temp_filter.b_len + temp_filter.channels))) == NULL)
++	if ((filter = (SINC_FILTER*)calloc (1, sizeof (SINC_FILTER) + sizeof (filter->buffer [0]) * (temp_filter.b_len + temp_filter.channels))) == NULL)
+ 		return SRC_ERR_MALLOC_FAILED ;
+ 
+ 	*filter = temp_filter ;
+--- ./src/3rdparty/samplerate/src_zoh.c.orig	2007-11-09 08:47:07.000000000 +0000
++++ ./src/3rdparty/samplerate/src_zoh.c	2007-11-09 08:47:20.000000000 +0000
+@@ -157,7 +157,7 @@
+ 		} ;
+ 
+ 	if (psrc->private_data == NULL)
+-	{	zoh = calloc (1, sizeof (*zoh) + psrc->channels * sizeof (float)) ;
++	{	zoh = (ZOH_DATA*)calloc (1, sizeof (*zoh) + psrc->channels * sizeof (float)) ;
+ 		if (zoh == NULL)
+ 			return SRC_ERR_MALLOC_FAILED ;
+ 		psrc->private_data = zoh ;

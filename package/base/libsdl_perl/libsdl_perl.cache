@@ -1,0 +1,24 @@
+
+[TIMESTAMP] 1181151318 Wed Jun  6 19:35:18 2007 (5)
+[TIMESTAMP] 1181604550 Tue Jun 12 01:29:10 2007 (9)
+
+[CONFIG-ID] TRUNK-x86-reference
+[ROCKVER] TRUNK
+
+[LOGS] 5-libsdl_perl.log 9-libsdl_perl.log
+
+[BUILDTIME] 4437 (5)
+[BUILDTIME] 4523 (9)
+[SIZE] 0.64 MB, 42 files
+
+[DEP] 00-dirtree applewmproto bash2 binutils bzip2 coreutils cvm
+[DEP] findutils gawk gcc42 gcc42:dev glibc26 glibc26:dev grep libice
+[DEP] libjpeg libpng:dev libsdl libsdl:dev libsdl_gfx libsdl_gfx:dev
+[DEP] libsdl_image libsdl_image:dev libsdl_mixer libsdl_mixer:dev
+[DEP] libsdl_net libsdl_net:dev libsdl_ttf libsdl_ttf:dev libsm libx11
+[DEP] libxau libxcb libxdmcp libxext libxt linux26-headers:dev ltrace
+[DEP] make mesalib mesalib:dev mktemp nas patch perl5 sed ssleay-perlmod
+[DEP] sysfiles tar xmame
+
+[PROVIDES] SDL_perl.so
+

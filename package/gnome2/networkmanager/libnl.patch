@@ -1,0 +1,24 @@
+From https://bugs.launchpad.net/ubuntu/+source/network-manager/+bug/194546, fixes:
+
+gcc-43 -Os -march=pentiumpro -o .libs/NetworkManager -rdynamic NetworkManager-nm-device.o NetworkManager-nm-device-802-3-ethernet.o NetworkManager-nm-device-802-11-wireless.o NetworkManager-NetworkManagerAP.o NetworkManager-NetworkManagerAPList.o NetworkManager-NetworkManagerDbus.o NetworkManager-NetworkManagerDbusUtils.o NetworkManager-nm-dbus-nm.o NetworkManager-nm-dbus-device.o NetworkManager-nm-dbus-net.o NetworkManager-nm-dbus-nmi.o NetworkManager-nm-ip4-config.o NetworkManager-NetworkManager.o NetworkManager-NetworkManagerPolicy.o NetworkManager-NetworkManagerUtils.o NetworkManager-NetworkManagerSystem.o NetworkManager-nm-logging.o NetworkManager-nm-netlink-monitor.o NetworkManager-nm-activation-request.o NetworkManager-autoip.o NetworkManager-nm-ap-security.o NetworkManager-nm-ap-security-wep.o NetworkManager-nm-ap-security-wpa-eap.o NetworkManager-nm-ap-security-wpa-psk.o NetworkManager-nm-ap-security-leap.o NetworkManager-nm-marshal-main.o NetworkManager-wpa.o NetworkManager-wpa_ctrl.o  /usr/lib/libhal.so -liw -lnl ../utils/.libs/libnmutils.a ./named-manager/.libs/libnamed-manager.a ./vpn-manager/.libs/libvpn-manager.a ./dhcp-manager/.libs/libdhcp-manager.a ./backends/.libs/libnmbackend.a /usr/lib/libgthread-2.0.so -lpthread -lrt ../libnm-util/.libs/libnm-util.so /usr/lib/libdbus-glib-1.so /usr/lib/libdbus-1.so /usr/lib/libgobject-2.0.so /usr/lib/libglib-2.0.so /usr/lib/libgcrypt.so -lnsl /usr/lib/libgpg-error.so 
+NetworkManager-NetworkManagerSystem.o: In function `new_nl_handle':
+NetworkManagerSystem.c:(.text+0xb): undefined reference to `nl_handle_alloc_nondefault'
+NetworkManagerSystem.c:(.text+0x27): undefined reference to `nl_handle_set_pid'
+
+--- network-manager-0.6.5/src/NetworkManagerSystem.c	2007-04-18 14:13:06.000000000 -0400
++++ network-manager-0.6.5/src/NetworkManagerSystem.c	2008-03-04 18:25:44.000000000 -0500
+@@ -224,10 +224,12 @@
+ 
+ static struct nl_handle * new_nl_handle (void)
+ {
++	struct nl_cb *cb;
+ 	struct nl_handle *	nlh = NULL;
+ 
+-	nlh = nl_handle_alloc_nondefault(NL_CB_VERBOSE);
+-	nl_handle_set_pid (nlh, (pthread_self() << 16 | getpid()));
++	cb = nl_cb_alloc(NL_CB_VERBOSE);
++	nlh = nl_handle_alloc_cb (cb);
++
+ 	if (nl_connect(nlh, NETLINK_ROUTE) < 0)
+ 	{
+ 		nm_warning ("%s: couldn't connecto to netlink: %s", __func__, nl_geterror());

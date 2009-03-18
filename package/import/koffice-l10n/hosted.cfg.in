@@ -1,0 +1,7 @@
+# hard-coded pkgfork options
+koffice-l10n-de flag CORE
+koffice-l10n-es flag CORE
+koffice-l10n-fr flag CORE
+koffice-l10n-it flag CORE
+koffice-l10n-ru flag CORE
+

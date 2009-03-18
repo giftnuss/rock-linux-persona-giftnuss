@@ -1,0 +1,21 @@
+
+[TIMESTAMP] 1181163405 Wed Jun  6 22:56:45 2007 (5)
+[TIMESTAMP] 1181611053 Tue Jun 12 03:17:33 2007 (9)
+
+[CONFIG-ID] TRUNK-x86-reference
+[ROCKVER] TRUNK
+
+[LOGS] 5-mahjong.log 9-mahjong.log
+
+[BUILDTIME] 3517 (5)
+[BUILDTIME] 3651 (9)
+[SIZE] 0.62 MB, 13 files
+
+[DEP] 00-dirtree alsa applewmproto applewmproto:dev bash2 binutils bzip2
+[DEP] coreutils cvm findutils gawk gcc42 gcc42:dev glib12 glib12:dev
+[DEP] glibc26 glibc26:dev gnome14-dirtree grep gtk+12 gtk+12:dev libx11
+[DEP] libx11:dev libxau libxcb libxdmcp libxext libxi linux26-headers:dev
+[DEP] ltrace make mktemp perl5 sed sysfiles tar twoftpd ucspi-unix xmame
+[DEP] xproto:dev
+
+

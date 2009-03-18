@@ -1,0 +1,30 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=CBlocks
+Comment=Console Game
+Exec=cblocks
+Terminal=true
+Type=Application
+Categories=Game;ArcadeGame
+X-ROCK-Name=cgames
+
+[Desktop Entry]
+Encoding=UTF-8
+Name=CMines
+Comment=Console Game
+Exec=cblocks
+Terminal=true
+Type=Application
+Categories=Game;ArcadeGame
+X-ROCK-Name=cgames
+
+[Desktop Entry]
+Encoding=UTF-8
+Name=CSokoban
+Comment=Console Game
+Exec=cblocks
+Terminal=true
+Type=Application
+Categories=Game;LogicGame
+X-ROCK-Name=cgames
+

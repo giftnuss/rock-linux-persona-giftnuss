@@ -1,0 +1,56 @@
+--- ./configure.orig	2008-07-06 05:55:25.000000000 +0000
++++ ./configure	2008-07-06 05:55:47.000000000 +0000
+@@ -28881,7 +28881,7 @@
+    if test x$USENASM = xtrue; then
+ 	echo "$as_me:$LINENO: checking nasm version..." >&5
+ echo $ECHO_N "checking nasm version...... $ECHO_C" >&6
+-	BILLSNASM_arg=`nasm -r | tr '.' ' '`
++	BILLSNASM_arg=`nasm -v | tr '.' ' '`
+         BILLSNASM_ret=`util/testnasm.sh $BILLSNASM_arg`
+ 	if test x$BILLSNASM_ret = x"yes"; then
+ 	   USENASM=true
+--- ./util/testnasm.sh.orig	2008-07-06 05:51:54.000000000 +0000
++++ ./util/testnasm.sh	2008-07-06 05:54:20.000000000 +0000
+@@ -5,36 +5,36 @@
+ # This shell looks for version, then sees if we're 0.98.19 or greater
+ #
+ VER=`echo $1 | tr '[a-z]' '[A-Z]'`
+-until test $VER = "VERSION"; 
++until test "$VER" = "VERSION" -o $# -le 0;
+   do
+    shift
+    VER=`echo $1 | tr '[a-z]' '[A-Z]'`
+   done
+ 
+ # check for version tag
+-if test $VER != "VERSION"; then
++if test "$VER" != "VERSION"; then
+   echo "no"
+   exit 0
+ fi
+ 
+ shift
+-if test $1 -gt 0; then 
++if test "$1" -gt 0; then 
+    echo "yes"
+    exit 0
+ fi
+ 
+ shift
+-if test $1 -gt 98; then
++if test "$1" -gt 98; then
+    echo "yes"
+    exit 0
+ fi
+ 
+ shift
+-if test -z $1; then
++if test -z "$1"; then
+    echo "no"
+    exit 0
+ fi
+-if test $1 -ge 19; then 
++if test "$1" -ge 19; then 
+   echo "yes"
+   exit 0
+ fi

@@ -1,0 +1,4 @@
+case $pkg in
+    nvidia|nvidia-legacy)
+        pkg=nvidia ;;
+esac

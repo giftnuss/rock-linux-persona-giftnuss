@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=mixmagic
+Comment=Turntable program
+Exec=mixmagic
+Terminal=false
+Type=Application
+Categories=Audio;Music
+X-ROCK-Name=mixmagic

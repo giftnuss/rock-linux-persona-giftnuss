@@ -1,0 +1,12 @@
+Benjamin Schieder:
+	hotfix to compile scalefilter
+--- compiz-fusion-plugins-extra-0.6.0/src/scalefilter/scalefilter.c	2007-10-15 19:56:44.000000000 +0200
++++ src.compiz-fusion-plugins-extra.1202659315.27992.523776150/compiz-fusion-plugins-extra-0.6.0/src/scalefilter/scalefilter.c	2008-02-10 17:11:54.000000000 +0100
+@@ -34,6 +34,7 @@
+ #include <locale.h>
+ 
+ #include <X11/Xlib.h>
++#define XK_MISCELLANY
+ #include <X11/keysymdef.h>
+ 
+ #include <compiz.h>

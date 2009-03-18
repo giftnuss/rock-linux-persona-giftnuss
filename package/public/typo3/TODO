@@ -1,0 +1,5 @@
+-remove die() in typo3/install/index.php
+-replace the default passwords (typo3conf/localconf.php)
+ with random ones
+-admin password: admin/password (probably in database.sql)
+ should also be replaced

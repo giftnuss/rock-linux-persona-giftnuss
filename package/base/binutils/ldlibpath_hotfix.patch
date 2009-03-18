@@ -1,0 +1,15 @@
+--- binutils-2.18.50.0.2/Makefile.in.orig	2007-11-22 11:48:18.000000000 +0000
++++ binutils-2.18.50.0.2/Makefile.in	2007-11-22 11:49:54.000000000 +0000
+@@ -175,11 +175,7 @@
+ 	RANLIB_FOR_TARGET="$(RANLIB_FOR_TARGET)"; export RANLIB_FOR_TARGET; \
+ 	TOPLEVEL_CONFIGURE_ARGUMENTS="$(TOPLEVEL_CONFIGURE_ARGUMENTS)"; export TOPLEVEL_CONFIGURE_ARGUMENTS; \
+ 	GMPLIBS="$(HOST_GMPLIBS)"; export GMPLIBS; \
+-	GMPINC="$(HOST_GMPINC)"; export GMPINC; \
+-@if gcc-bootstrap
+-	$(RPATH_ENVVAR)=`echo "$(TARGET_LIB_PATH)$$$(RPATH_ENVVAR)" | sed 's,::*,:,g;s,^:*,,;s,:*$$,,'`; export $(RPATH_ENVVAR); \
+-@endif gcc-bootstrap
+-	$(RPATH_ENVVAR)=`echo "$(HOST_LIB_PATH)$$$(RPATH_ENVVAR)" | sed 's,::*,:,g;s,^:*,,;s,:*$$,,'`; export $(RPATH_ENVVAR);
++	GMPINC="$(HOST_GMPINC)"; export GMPINC;
+ 
+ # Similar, for later GCC stages.
+ POSTSTAGE1_HOST_EXPORTS = \

@@ -1,0 +1,10 @@
+--- ./src/input/vcd/libcdio/_cdio_linux.c.orig	2007-11-05 22:26:45.000000000 +0000
++++ ./src/input/vcd/libcdio/_cdio_linux.c	2007-11-05 22:26:53.000000000 +0000
+@@ -29,6 +29,7 @@
+ 
+ static const char _rcsid[] = "$Id: _cdio_linux.c,v 1.4 2006/09/26 22:18:44 dgp85 Exp $";
+ 
++#include <limits.h>
+ #include <string.h>
+ 
+ #include <cdio/sector.h>

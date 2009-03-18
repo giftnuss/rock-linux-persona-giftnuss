@@ -1,0 +1,15 @@
+--- db-4.4.20-orig/dist/Makefile.in	2006-07-27 21:19:38.000000000 +0200
++++ db-4.4.20/dist/Makefile.in	2006-07-27 21:19:20.000000000 +0200
+@@ -879,11 +879,7 @@
+ 	    ($(mkdir) -p $(DESTDIR)$(bindir) && \
+ 	    $(chmod) $(dmode) $(DESTDIR)$(bindir))
+ 	@for i in $(UTIL_PROGS); do \
+-		$(rm) -f $(DESTDIR)$(bindir)/$$i $(DESTDIR)$(bindir)/$$i.exe; \
+-		test -f $$i.exe && i=$$i.exe || true; \
+-		$(INSTALLER) $$i $(DESTDIR)$(bindir)/$$i; \
+-		test -f $(strip) && $(strip) $(DESTDIR)$(bindir)/$$i || true; \
+-		$(chmod) $(emode) $(DESTDIR)$(bindir)/$$i; \
++		cp $$i $(DESTDIR)$(bindir)/`basename $$i | sed $(transform)`; \
+ 	done
+ 
+ uninstall_utilities:

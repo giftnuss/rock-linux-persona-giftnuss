@@ -1,0 +1,40 @@
+
+MODTMP="$TMPDIR/modules-$k_ver"
+
+# mount.aufs is a shell script and requires external programs
+BINLIST="
+sbin/aulchown
+sbin/auplink
+sbin/mount.aufs
+sbin/umount.aufs
+bin/cat
+bin/dd
+bin/egrep
+bin/fgrep
+bin/ln
+bin/mount
+bin/mv
+bin/rm
+bin/sed
+usr/bin/awk
+usr/bin/basename
+usr/bin/comm
+usr/bin/diff
+usr/bin/paste
+usr/bin/tac
+usr/bin/tee
+usr/bin/tail
+usr/bin/touch
+usr/bin/rev
+"
+
+for x in $BINLIST
+do
+	add_with_deps $rootdir/$x /$x
+done
+
+echo "dir /branch 0755 0 0"
+echo "file /bin/extract-cpio $filesdir/bin/extract-cpio.sh 0755 0 0"
+
+mkdir -p $MODTMP/lib/modules/$k_ver/misc
+cp -a {$rootdir,$MODTMP}/lib/modules/$k_ver/misc/aufs.ko

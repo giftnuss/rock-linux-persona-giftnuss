@@ -1,0 +1,11 @@
+--- ./src/gnome--/app-helper.h.vanilla	2005-12-22 15:03:05.000000000 +0100
++++ ./src/gnome--/app-helper.h	2005-12-22 15:10:34.000000000 +0100
+@@ -40,6 +40,8 @@
+ template<class T_Info>
+ class Array;
+ 
++class Info_;
++
+ class Info : protected GnomeUIInfo
+ {
+   /* Note when deriving this, you must not add any fields nor may you

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Alleyoop
+Comment=Frontend for valgrind
+Exec=alleyoop
+Terminal=false
+Type=Application
+Categories=Development;Debugger
+X-ROCK-Name=alleyoop

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Minicom
+Comment=Serial Terminal Emulator
+Exec=minico
+Terminal=true
+Type=Application
+Categories=TerminalEmulator
+X-ROCK-Name=minicom

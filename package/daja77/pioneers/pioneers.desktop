@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Pioneers
+Comment=A Settlers of Catan clone
+Exec=pioneers
+Terminal=false
+Type=Application
+Categories=Game;StategyGame
+X-ROCK-Name=pioneers

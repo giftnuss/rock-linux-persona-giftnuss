@@ -1,0 +1,22 @@
+--- ./client/Makefile.in.orig	2008-08-30 22:53:04.260000000 +0200
++++ ./client/Makefile.in	2008-08-30 22:53:28.840000000 +0200
+@@ -162,7 +162,7 @@
+ target_alias = @target_alias@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-dist_sysconf_DATA = dhclient.conf
++dist_sysconf_DATA = 
+ dhclient_SOURCES = clparse.c dhclient.c dhc6.c \
+ 		   scripts/bsdos scripts/freebsd scripts/linux scripts/netbsd \
+ 		   scripts/nextstep scripts/openbsd scripts/solaris
+--- ./server/Makefile.in.orig	2008-08-30 22:52:19.170000000 +0200
++++ ./server/Makefile.in	2008-08-30 22:52:47.230000000 +0200
+@@ -167,7 +167,7 @@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ AM_CPPFLAGS = -I.. -DLOCALSTATEDIR='"@localstatedir@"'
+-dist_sysconf_DATA = dhcpd.conf
++dist_sysconf_DATA = 
+ dhcpd_SOURCES = dhcpd.c dhcp.c bootp.c confpars.c db.c class.c failover.c \
+ 		omapi.c mdb.c stables.c salloc.c ddns.c dhcpleasequery.c \
+ 		dhcpv6.c mdb6.c

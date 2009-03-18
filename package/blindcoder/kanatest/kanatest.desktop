@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Kanatest
+Comment=Japenese learning tool
+Comment[de]=Lernprogramm fuer Japanisch
+Exec=kanatest
+Terminal=false
+Type=Application
+Icon=D_datadir/pixmaps/kanatest.png

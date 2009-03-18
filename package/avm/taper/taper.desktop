@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Taper
+Comment=Backup and Restore program
+Exec=taper
+Terminal=true
+Type=Application
+Categories=Archiving
+X-ROCK-Name=taper

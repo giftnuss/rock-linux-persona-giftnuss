@@ -1,0 +1,16 @@
+Benjamin Schieder:
+	fix shared files conflict with 00-dirtree
+diff -pruN netpbm-10.33/buildtools/installnetpbm.pl netpbm-10.33.orig/buildtools/installnetpbm.pl
+--- netpbm-10.33/buildtools/installnetpbm.pl	2003-11-05 23:35:37.000000000 +0100
++++ netpbm-10.33.orig/buildtools/installnetpbm.pl	2007-03-20 08:39:10.000000000 +0100
+@@ -745,7 +745,9 @@ sub installManPage($$$) {
+ 
+     print("Installing man pages...\n");
+ 
+-    my $rc = system("$cpCommand $pkgdir/man/* $manDir/");
++    my $rc = system("$cpCommand $pkgdir/man/man1/* $manDir/man1/");
++    my $rc = system("$cpCommand $pkgdir/man/man3/* $manDir/man3/");
++    my $rc = system("$cpCommand $pkgdir/man/man5/* $manDir/man5/");
+ 
+     if ($rc != 0) {
+         print("copy of man pages from $pkgdir/man to $manDir failed.\n");

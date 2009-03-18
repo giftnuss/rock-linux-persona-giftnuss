@@ -1,0 +1,14 @@
+Tobias Hintze <th@rocklinux.org>:
+	this patch stops gpm from bitching in konsole/xterm
+	
+diff -Naur gpm-1.20.1-orig/src/lib/liblow.c gpm-1.20.1/src/lib/liblow.c
+--- gpm-1.20.1-orig/src/lib/liblow.c	2002-12-24 23:57:16.000000000 +0100
++++ gpm-1.20.1/src/lib/liblow.c	2006-03-25 01:10:45.491690168 +0100
+@@ -260,7 +260,6 @@
+          /* do we really need this check ? */
+          if(strncmp(tty,option.consolename,strlen(option.consolename)-1)
+             || !isdigit(tty[strlen(option.consolename)-1])) {
+-            gpm_report(GPM_PR_ERR,"strncmp/isdigit/option.consolename failed");
+             goto err;
+          }
+           

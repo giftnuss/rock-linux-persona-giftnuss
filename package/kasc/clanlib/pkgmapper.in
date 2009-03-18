@@ -1,0 +1,3 @@
+case "$pkg" in
+	clanlib0[6,7]) pkg=clanlib ;;
+esac

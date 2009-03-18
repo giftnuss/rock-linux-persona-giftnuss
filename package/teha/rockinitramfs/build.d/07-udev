@@ -1,0 +1,46 @@
+
+
+BINLIST="
+sbin/udevd
+sbin/udevadm
+"
+
+for x in $BINLIST
+do
+	add_with_deps $rootdir/$x /$x
+done
+
+cat <<EOF
+dir /etc/udev 0755 0 0
+dir /etc/udev/rules.d 0755 0 0
+file /etc/udev/udev.conf $rootdir/etc/udev/udev.conf 644 0 0
+
+dir /lib/udev 0755 0 0
+dir /lib/udev/rules.d 0755 0 0
+dir /lib/udev/devices 0755 0 0
+dir /lib/udev/devices/bus 0755 0 0
+dir /lib/udev/devices/bus/usb 0755 0 0
+dir /lib/udev/devices/pts 0755 0 0
+dir /lib/udev/devices/shm 0755 0 0
+nod /lib/udev/devices/console 0600 0 0 c 5 1
+nod /lib/udev/devices/null 0666 0 0 c 1 3
+pipe /lib/udev/devices/initctl 600 0 0
+slink /lib/udev/devices/fd /proc/self/fd 755 0 0
+slink /lib/udev/devices/core /proc/kcore 755 0 0
+slink /lib/udev/devices/stdin /proc/self/fd/0 755 0 0
+slink /lib/udev/devices/stdout /proc/self/fd/1 755 0 0
+slink /lib/udev/devices/stderr /proc/self/fd/2 755 0 0
+EOF
+
+(
+	cd ${rootdir}/
+	find {etc,lib}/udev/rules.d -maxdepth 1 -type f | while read x
+	do
+		echo "file $x $rootdir/$x 644 0 0"
+	done
+
+	find lib/udev -maxdepth 1 -type f | while read x
+	do
+		add_with_deps $rootdir/$x /$x
+	done
+)

@@ -1,0 +1,36 @@
+fixes errors like:
+
+../sysdeps/unix/sysv/linux/listen.S: Assembler messages:
+../sysdeps/unix/sysv/linux/listen.S:5: Error: symbol `__listen' is already defined
+make[2]: *** [/usr/src/ROCK-TRUNK/src.glibc23.1139165527.2121.4182052479/glibc-2.3.6/objdir/socket/listen.o] Error 1
+make[2]: Leaving directory `/usr/src/ROCK-TRUNK/src.glibc23.1139165527.2121.4182052479/glibc-2.3.6/socket'
+make[1]: *** [socket/subdir_lib] Error 2
+
+--- glibc-2.3.6/sysdeps/unix/sysv/linux/bind.S~	2002-05-15 02:17:25.000000000 +0200
++++ glibc-2.3.6/sysdeps/unix/sysv/linux/bind.S	2006-02-05 21:15:36.000000000 +0100
+@@ -2,4 +2,3 @@
+ #define	NARGS	3
+ #define NO_WEAK_ALIAS	1
+ #include <socket.S>
+-weak_alias (bind, __bind)
+--- glibc-2.3.6/sysdeps/unix/sysv/linux/getsockname.S~	2002-05-15 02:17:58.000000000 +0200
++++ glibc-2.3.6/sysdeps/unix/sysv/linux/getsockname.S	2006-02-05 21:21:31.000000000 +0100
+@@ -2,4 +2,3 @@
+ #define	NARGS	3
+ #define NO_WEAK_ALIAS	1
+ #include <socket.S>
+-weak_alias (getsockname, __getsockname)
+--- glibc-2.3.6/sysdeps/unix/sysv/linux/listen.S~	2002-05-15 02:18:37.000000000 +0200
++++ glibc-2.3.6/sysdeps/unix/sysv/linux/listen.S	2006-02-05 21:27:54.000000000 +0100
+@@ -2,4 +2,3 @@
+ #define	NARGS	2
+ #define NO_WEAK_ALIAS	1
+ #include <socket.S>
+-weak_alias (listen, __listen)
+--- glibc-2.3.6/sysdeps/unix/sysv/linux/setsockopt.S~	2002-05-15 02:19:09.000000000 +0200
++++ glibc-2.3.6/sysdeps/unix/sysv/linux/setsockopt.S	2006-02-05 21:31:42.000000000 +0100
+@@ -2,4 +2,3 @@
+ #define	NARGS	5
+ #define NO_WEAK_ALIAS	1
+ #include <socket.S>
+-weak_alias (setsockopt, __setsockopt)

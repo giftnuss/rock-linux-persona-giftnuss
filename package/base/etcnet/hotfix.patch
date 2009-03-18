@@ -1,0 +1,20 @@
+diff -pruN etcnet-0.8.5/contrib/50-RockLinux-3 etcnet-0.8.5-new/contrib/50-RockLinux-3
+--- etcnet-0.8.5/contrib/50-RockLinux-3	2006-09-26 20:17:55.000000000 +0200
++++ etcnet-0.8.5-new/contrib/50-RockLinux-3	2006-10-28 12:41:42.000000000 +0200
+@@ -8,4 +8,4 @@ DHCP_HOSTNAME=
+ DHCP_TIMEOUT=
+ 
+ # Temp hack
+-IFRENAME=/usr/sbin/ifrename
++IFRENAME=/sbin/ifrename
+--- etcnet-0.8.5/contrib/50-RockLinux-3~	2006-09-26 20:17:55.000000000 +0200
++++ etcnet-0.8.5/contrib/50-RockLinux-3	2007-08-05 16:28:15.000000000 +0200
+@@ -3,7 +3,7 @@
+ 
+ # Rock3 contains the same dhclient as Fedora 5 does, so we
+ # use the same workaround here.
+-DHCP_CLIENT=/sbin/dhclient
++DHCP_CLIENT=/usr/sbin/dhclient
+ DHCP_HOSTNAME=
+ DHCP_TIMEOUT=
+ 

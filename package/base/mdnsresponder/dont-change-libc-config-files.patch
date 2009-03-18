@@ -1,0 +1,22 @@
+--- mDNSResponder-107/mDNSPosix/Makefile~	2005-04-20 22:12:17.000000000 +0200
++++ mDNSResponder-107/mDNSPosix/Makefile	2007-01-25 14:20:30.000000000 +0100
+@@ -468,7 +468,7 @@
+ 
+ $(NSSINSTPATH)/$(NSSLINKNAME): $(NSSINSTPATH)/$(NSSLIBFILE)
+ 	$(LN) $< $@
+-	ldconfig
++#	ldconfig
+ 
+ $(NSSINSTPATH)/$(NSSLIBFILE): $(BUILDDIR)/$(NSSLIBFILE)
+ 	$(CP) $< $@
+@@ -479,8 +479,8 @@
+ 	chmod 444 $@
+ 	# Check the nsswitch.conf file.
+ 	# If 'mdns' does not already appear on the "hosts:" line, then add it right before 'dns'
+-	cp -f /etc/nsswitch.conf /etc/nsswitch.conf.pre-mdns
+-	sed -e '/mdns/!s/^\(hosts:.*\)dns\(.*\)/\1mdns dns\2/' /etc/nsswitch.conf.pre-mdns > /etc/nsswitch.conf
++#	cp -f /etc/nsswitch.conf /etc/nsswitch.conf.pre-mdns
++#	sed -e '/mdns/!s/^\(hosts:.*\)dns\(.*\)/\1mdns dns\2/' /etc/nsswitch.conf.pre-mdns > /etc/nsswitch.conf
+ 
+ $(MANPATH)/man5/%.5: %.5
+ 	cp $< $@

@@ -1,0 +1,95 @@
+--- ./configure.orig	2007-12-20 14:09:33.000000000 +0000
++++ ./configure	2008-11-01 12:41:56.000000000 +0000
+@@ -20854,8 +20854,8 @@
+     { echo "$as_me:$LINENO: checking for DocBook XML DTD V4.1.2 in XML catalog" >&5
+ echo $ECHO_N "checking for DocBook XML DTD V4.1.2 in XML catalog... $ECHO_C" >&6; }
+   if $jh_found_xmlcatalog && \
+-     { (echo "$as_me:$LINENO: \$XMLCATALOG --noout \"\$XML_CATALOG_FILE\" \"-//OASIS//DTD DocBook XML V4.1.2//EN\" >&2") >&5
+-  ($XMLCATALOG --noout "$XML_CATALOG_FILE" "-//OASIS//DTD DocBook XML V4.1.2//EN" >&2) 2>&5
++     { (echo "$as_me:$LINENO: \$XMLCATALOG --noout \"\$XML_CATALOG_FILE\" \"-//OASIS//DTD DocBook XML V4.2//EN\" >&2") >&5
++  ($XMLCATALOG --noout "$XML_CATALOG_FILE" "-//OASIS//DTD DocBook XML V4.2//EN" >&2) 2>&5
+   ac_status=$?
+   echo "$as_me:$LINENO: \$? = $ac_status" >&5
+   (exit $ac_status); }; then
+--- ./configure.in.orig	2007-12-20 14:09:16.000000000 +0000
++++ ./configure.in	2008-11-01 12:41:56.000000000 +0000
+@@ -72,7 +72,7 @@
+ fi
+ 
+ dnl check for DocBook DTD and stylesheets in the local catalog.
+-JH_CHECK_XML_CATALOG([-//OASIS//DTD DocBook XML V4.1.2//EN],
++JH_CHECK_XML_CATALOG([-//OASIS//DTD DocBook XML V4.2//EN],
+    [DocBook XML DTD V4.1.2])
+ JH_CHECK_XML_CATALOG([http://docbook.sourceforge.net/release/xsl/current/html/chunk.xsl],
+    [DocBook XSL Stylesheets])
+--- ./gtkdoc-mkdb.in.orig	2008-03-10 19:07:52.000000000 +0000
++++ ./gtkdoc-mkdb.in	2008-11-01 12:41:56.000000000 +0000
+@@ -136,7 +136,7 @@
+     } else {
+         $doctype_header =
+ "<?xml version=\"1.0\"?>\n" .
+-"<!DOCTYPE book PUBLIC \"-//OASIS//DTD DocBook XML V4.1.2//EN\"\n" .
++"<!DOCTYPE book PUBLIC \"-//OASIS//DTD DocBook XML V4.2//EN\"\n" .
+ "               \"http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd\">\n";
+     }
+     $doctype_header =~ s/<!DOCTYPE \w+/<!DOCTYPE refentry/;
+@@ -1771,7 +1771,7 @@
+       if (lc($OUTPUT_FORMAT) eq "xml") {
+ 	  print OUTPUT <<EOF;
+ <?xml version="1.0"?>
+-<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
++<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
+                "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+ <book id="index" xmlns:xi="http://www.w3.org/2003/XInclude">
+ EOF
+--- ./help/manual/C/gtk-doc-manual-C.omf.orig	2007-12-20 14:09:49.000000000 +0000
++++ ./help/manual/C/gtk-doc-manual-C.omf	2008-11-01 12:41:56.000000000 +0000
+@@ -23,7 +23,7 @@
+     <type>
+       user's guide
+     </type>
+-    <format mime="text/xml" dtd="-//OASIS//DTD DocBook XML V4.1.2//EN"/>
++    <format mime="text/xml" dtd="-//OASIS//DTD DocBook XML V4.2//EN"/>
+     <identifier url="gtk-doc-manual.xml"/>
+     <language code="C"/>
+     <!-- generated via scrollkeeper-gen-seriesid -->
+--- ./help/manual/C/gtk-doc-manual-C.omf.in.orig	2007-02-05 16:51:22.000000000 +0000
++++ ./help/manual/C/gtk-doc-manual-C.omf.in	2008-11-01 12:41:56.000000000 +0000
+@@ -23,7 +23,7 @@
+     <type>
+       user's guide
+     </type>
+-    <format mime="text/xml" dtd="-//OASIS//DTD DocBook XML V4.1.2//EN"/>
++    <format mime="text/xml" dtd="-//OASIS//DTD DocBook XML V4.2//EN"/>
+     <identifier url="gtk-doc-manual.xml"/>
+     <language code="C"/>
+     <!-- generated via scrollkeeper-gen-seriesid -->
+--- ./help/manual/C/gtk-doc-manual.xml.orig	2007-12-10 21:23:59.000000000 +0000
++++ ./help/manual/C/gtk-doc-manual.xml	2008-11-01 12:41:56.000000000 +0000
+@@ -1,7 +1,7 @@
+ <?xml version="1.0" standalone="no"?>
+ <?xml-stylesheet type="text/xml" href="params.xsl"?>
+ <!-- vim: set ai tw=80 ts=3 sw=3: -->
+-<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "
++<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN" "
+               http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+ 
+ <!ENTITY FDL SYSTEM "fdl-appendix.xml">
+--- ./tests/bugs/docs/tester-docs.xml.orig	2007-12-20 14:09:15.000000000 +0000
++++ ./tests/bugs/docs/tester-docs.xml	2008-11-01 12:41:56.000000000 +0000
+@@ -1,5 +1,5 @@
+ <?xml version="1.0"?>
+-<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
++<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
+                "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+ <book id="index" xmlns:xi="http://www.w3.org/2003/XInclude">
+   <bookinfo>
+--- ./tests/gobject/docs/tester-docs.xml.orig	2007-12-20 14:09:15.000000000 +0000
++++ ./tests/gobject/docs/tester-docs.xml	2008-11-01 12:41:56.000000000 +0000
+@@ -1,5 +1,5 @@
+ <?xml version="1.0"?>
+-<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
++<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
+                "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+ <book id="index" xmlns:xi="http://www.w3.org/2003/XInclude">
+   <bookinfo>

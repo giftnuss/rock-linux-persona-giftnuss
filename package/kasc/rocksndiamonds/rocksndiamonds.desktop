@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Rocks'n'Diamonds
+Comment=a Boulderdash clone
+Exec=rocksndiamonds
+Terminal=false
+Type=Application
+Categories=Game;ArcadeGame
+X-ROCK-Name=rocksndiamonds
+Icon=D_datadir/rocksndiamonds/graphics/gfx_classic/rocks_icon.xbm

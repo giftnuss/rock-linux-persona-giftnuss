@@ -1,0 +1,21 @@
+
+[TIMESTAMP] 1181005765 Tue Jun  5 03:09:25 2007 (5)
+[TIMESTAMP] 1181470689 Sun Jun 10 12:18:09 2007 (9)
+
+[CONFIG-ID] TRUNK-x86-reference
+[ROCKVER] TRUNK
+
+[LOGS] 5-swig.log 9-swig.log
+
+[BUILDTIME] 8902 (5)
+[BUILDTIME] 9862 (9)
+[SIZE] 2.47 MB, 307 files
+
+[DEP] 00-dirtree applewmproto bash2 binutils bzip2 coreutils cvm
+[DEP] diffutils findutils gawk gcc42 gcc42:dev glibc26 glibc26:dev grep
+[DEP] guile guile:dev imake libx11 libxt linux26-headers:dev ltrace make
+[DEP] mktemp mono net-tools ocaml perl5 php5 pike pike:dev python ruby
+[DEP] sed sysfiles tar tcl util-linux xmame xorg-cf-files
+
+[PROVIDES] swig
+

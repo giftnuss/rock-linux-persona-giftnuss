@@ -1,0 +1,17 @@
+# Desc: D-Bus Message Bus Daemon
+# Runlevel: 61 rcX rc2 rc3 rc4 rc5
+
+main_begin
+
+    block_begin(start, `Setting up D-Bus.')
+	check(`mkdir -p /var/run/dbus')
+	check(`D_prefix/bin/dbus-uuidgen --ensure')
+	check(`D_prefix/bin/dbus-daemon --system')
+    block_end
+
+    block_begin(stop, `Shutting down D-Bus.')
+	check(`D_prefix/bin/killall D_prefix/bin/dbus-daemon')
+	check(`rm -f /var/run/dbus/{pid,system-socket}')
+    block_end
+
+main_end

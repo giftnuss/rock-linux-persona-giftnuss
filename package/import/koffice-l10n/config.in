@@ -1,0 +1,11 @@
+
+if pkgcheck koffice X ; then
+	if [ "$ROCKCFG_LINGUAS" == "all" ] ; then
+		# note this only works if using ./scripts/Config -nobashmod
+		pkgenable koffice-l10n=.*
+	else
+		for lang in $ROCKCFG_LINGUAS ; do
+			pkgenable koffice-l10n=koffice-l10n-$lang
+		done
+	fi
+fi

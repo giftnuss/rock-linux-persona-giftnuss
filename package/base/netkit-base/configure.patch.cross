@@ -1,0 +1,29 @@
+--- netkit-base-0.17/configure	2000-07-29 18:00:28.000000000 +0000
++++ src.netkit-base.1190967273.11997.4073649454/netkit-base-0.17/configure	2007-09-29 05:52:51.000000000 +0000
+@@ -107,7 +107,7 @@
+     echo -n 'Checking if C compiler works... '
+     if (
+           $CC __conftest.c -o __conftest || exit 1
+-          ./__conftest || exit 1
++#           ./__conftest || exit 1
+        ) >/dev/null 2>&1; then
+          echo 'yes'
+      else
+@@ -187,7 +187,7 @@
+ EOF
+ if (
+       $CC $CFLAGS  __conftest.c  -o __conftest || exit 1
+-      ./__conftest || exit 1
++#       ./__conftest || exit 1
+    ) >/dev/null 2>&1; then
+     echo 'yes'
+ else
+@@ -297,7 +297,7 @@
+ EOF
+ if (
+       $CC $CFLAGS  __conftest.c $LIBBSD -o __conftest || exit 1
+-      ./__conftest || exit 1
++#       ./__conftest || exit 1
+    ) >/dev/null 2>&1; then
+     echo 'ok'
+ else

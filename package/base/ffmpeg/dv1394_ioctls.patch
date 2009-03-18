@@ -1,0 +1,49 @@
+diff --git a/libavdevice/dv1394.h b/libavdevice/dv1394.h
+index 9a4ee2a..590b5d8 100644
+--- a/libavdevice/dv1394.h
++++ b/libavdevice/dv1394.h
+@@ -219,37 +219,37 @@ enum {
+         /* get the driver ready to transmit video.
+            pass a struct dv1394_init* as the parameter (see below),
+            or NULL to get default parameters */
+-        DV1394_INIT,
++        DV1394_INIT = 0x401c2306,
+ 
+ 
+         /* stop transmitting video and free the ringbuffer */
+-        DV1394_SHUTDOWN,
++        DV1394_SHUTDOWN = 0x00002307,
+ 
+ 
+         /* submit N new frames to be transmitted, where
+            the index of the first new frame is first_clear_buffer,
+            and the index of the last new frame is
+            (first_clear_buffer + N) % n_frames */
+-        DV1394_SUBMIT_FRAMES,
++        DV1394_SUBMIT_FRAMES = 0x00002308,
+ 
+ 
+         /* block until N buffers are clear (pass N as the parameter)
+            Because we re-transmit the last frame on underrun, there
+            will at most be n_frames - 1 clear frames at any time */
+-        DV1394_WAIT_FRAMES,
++        DV1394_WAIT_FRAMES = 0x00002309,
+ 
+         /* capture new frames that have been received, where
+            the index of the first new frame is first_clear_buffer,
+            and the index of the last new frame is
+            (first_clear_buffer + N) % n_frames */
+-        DV1394_RECEIVE_FRAMES,
++        DV1394_RECEIVE_FRAMES = 0x0000230a,
+ 
+ 
+-        DV1394_START_RECEIVE,
++        DV1394_START_RECEIVE = 0x0000230b,
+ 
+ 
+         /* pass a struct dv1394_status* as the parameter (see below) */
+-        DV1394_GET_STATUS,
++        DV1394_GET_STATUS = 0x802c230c,
+ };
+ 
+ 

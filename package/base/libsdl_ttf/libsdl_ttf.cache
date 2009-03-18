@@ -1,0 +1,23 @@
+
+[TIMESTAMP] 1180971714 Mon Jun  4 17:41:54 2007 (5)
+[TIMESTAMP] 1181427852 Sun Jun 10 00:24:12 2007 (9)
+
+[CONFIG-ID] TRUNK-x86-reference
+[ROCKVER] TRUNK
+
+[LOGS] 5-libsdl_ttf.log 9-libsdl_ttf.log
+
+[BUILDTIME] 3635 (5)
+[BUILDTIME] 4346 (9)
+[SIZE] 0.03 MB, 9 files
+
+[DEP] 00-dirtree applewmproto bash2 binutils bzip2 coreutils cvm diffutils
+[DEP] findutils freetype freetype:dev gawk gcc42 gcc42:dev glibc26
+[DEP] glibc26:dev grep imake libice libice:dev libsdl libsdl:dev libsm
+[DEP] libsm:dev libx11 libx11:dev libxau libxau:dev libxcb libxcb:dev
+[DEP] libxdmcp libxdmcp:dev libxext libxt libxt:dev linux26-headers:dev
+[DEP] ltrace make mesalib mesalib:dev mktemp nas net-tools patch sed
+[DEP] sysfiles tar util-linux xmame xorg-cf-files zlib
+
+[PROVIDES] libSDL_ttf.a libSDL_ttf.so
+

@@ -1,0 +1,33 @@
+--- ./drbd/Makefile.orig	2007-05-15 19:54:41.000000000 +0200
++++ ./drbd/Makefile	2007-05-15 19:55:36.000000000 +0200
+@@ -176,14 +176,14 @@
+ # install -d $(PREFIX)/var/lib/drbd
+ 	install -d $(PREFIX)/lib/modules/$(KERNELRELEASE)/$(MODSUBDIR)
+ 	install -m 644 $(MODOBJ) $(PREFIX)/lib/modules/$(KERNELRELEASE)/$(MODSUBDIR)
+-    ifeq ($(PREFIX),/)
+-      ifeq ($(shell uname -r),$(KERNELRELEASE))
+-	/sbin/depmod -a || /sbin/depmod -e $(MODOBJ) 2>&1 >/dev/null || true
+-      else
+-	[ -e $(LINUX)/System.map ] && \
+-	   /sbin/depmod -F $(LINUX)/System.map -e ./$(MODOBJ) 2>&1 >/dev/null || true
+-      endif
+-    endif
++#    ifeq ($(PREFIX),/)
++#      ifeq ($(shell uname -r),$(KERNELRELEASE))
++#	/sbin/depmod -a || /sbin/depmod -e $(MODOBJ) 2>&1 >/dev/null || true
++#      else
++#	[ -e $(LINUX)/System.map ] && \
++#	   /sbin/depmod -F $(LINUX)/System.map -e ./$(MODOBJ) 2>&1 >/dev/null || true
++#      endif
++#    endif
+   else
+     install:
+ 	@echo "No .drbd_kernelrelease found. Do you need to 'make' the module first?"
+@@ -191,6 +191,6 @@
+   endif
+ 
+   depmod:
+-	[ -e $(KDIR)/System.map ] && [ -e ./$(MODOBJ) ] && \
++#	[ -e $(KDIR)/System.map ] && [ -e ./$(MODOBJ) ] && \
+ 	   /sbin/depmod -F $(KDIR)/System.map -n -e ./$(MODOBJ) # 2>&1 >/dev/null
+ endif

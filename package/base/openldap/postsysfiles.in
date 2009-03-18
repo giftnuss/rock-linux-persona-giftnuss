@@ -1,0 +1,2 @@
+safe_groupadd openldap 439
+safe_useradd  openldap 439 439 "openldap" /opt/openldap /bin/false "*"

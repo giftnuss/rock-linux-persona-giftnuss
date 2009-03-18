@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=PrBoom
+Comment=A sophisticated port of the original Doom and Doom II games
+Exec=prboom
+Terminal=false
+Type=Application
+Categories=Game;ArcadeGame
+X-ROCK-Name=prboom

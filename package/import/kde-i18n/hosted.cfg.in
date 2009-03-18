@@ -1,0 +1,7 @@
+# hard-coded pkgfork options
+kde-i18n-de flag CORE
+kde-i18n-es flag CORE
+kde-i18n-fr flag CORE
+kde-i18n-it flag CORE
+kde-i18n-ru flag CORE
+

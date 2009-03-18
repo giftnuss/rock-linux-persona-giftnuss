@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=KTerm
+Comment=Terminal with support for kanji characters
+Exec=kterm
+Terminal=false
+Type=Application
+Categories=TerminalEmulator
+X-ROCK-Name=kterm

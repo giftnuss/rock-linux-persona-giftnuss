@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=ALSA Mixer
+Comment=Mixer application for ALSA
+Exec=alsamixer
+Terminal=true
+Type=Application
+Categories=Audio;Mixer
+X-ROCK-Name=alsa

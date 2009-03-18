@@ -1,0 +1,32 @@
+Fixes cross build errors for arm and sparc, resp.:
+
+arm-unknown-linux-gnu-gcc -D_GNU_SOURCE -O2 -Wstrict-prototypes -Wall -I../include -DRESOLVE_HOSTNAMES -I/usr/include  -o arpd arpd.c ../lib/libnetlink.a ../lib/libutil.a -ldb -lpthread
+arpd.c: In function 'send_probe':
+arpd.c:209: error: invalid 'asm': invalid operand for code 'w'
+{standard input}: Assembler messages:
+{standard input}:544: Error: bad instruction `rorw $8,'
+make[1]: *** [arpd] Error 1
+make[1]: Leaving directory `/usr/src/rock-trunk/src.iproute2.1223458472.18222.948386484/iproute2-2.6.23/misc'
+
+sparc-unknown-linux-gnu-gcc -D_GNU_SOURCE -O2 -Wstrict-prototypes -Wall -I../include -DRESOLVE_HOSTNAMES -I/usr/include  -o arpd arpd.c ../lib/libnetlink.a ../lib/libutil.a -ldb -lpthread
+arpd.c: In function 'send_probe':
+arpd.c:209: error: invalid 'asm': invalid operand output code
+{standard input}: Assembler messages:
+{standard input}:490: Error: Unknown opcode: `rorw'
+make[1]: *** [arpd] Error 1
+make[1]: Leaving directory `/usr/src/rock-trunk/src.iproute2.1223421540.8088.1192425373/iproute2-2.6.23/misc'
+
+Note that control flow reaches the changed line only if ifr.ifr_hwaddr.sa_family is
+equal to ARPHRD_ETHER, so this should not affect the functionality of the program.
+
+--- ./misc/arpd.c	2008-10-08 14:21:56.000000000 +0000
++++ ./misc/arpd.c~	2008-10-08 14:21:07.000000000 +0000
+@@ -206,7 +206,7 @@
+ 	if (getsockname(udp_sock, (struct sockaddr*)&dst, &len) < 0)
+ 		return -1;
+ 
+-	ah->ar_hrd = htons(ifr.ifr_hwaddr.sa_family);
++	ah->ar_hrd = htons(ARPHRD_ETHER);
+ 	ah->ar_pro = htons(ETH_P_IP);
+ 	ah->ar_hln = 6;
+ 	ah->ar_pln = 4;

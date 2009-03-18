@@ -1,0 +1,4 @@
+
+if [ "$ROCKCFG_PKG_LINUX_DEFAULT" = linux26 ] ; then
+	pkgremove lvm
+fi

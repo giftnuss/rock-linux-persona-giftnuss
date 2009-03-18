@@ -1,0 +1,11 @@
+--- ./src/ccexample.cc.orig	2008-11-01 12:30:37.000000000 +0000
++++ ./src/ccexample.cc	2008-11-01 12:30:44.000000000 +0000
+@@ -2,7 +2,7 @@
+ #include <stdlib.h>
+ #include <string.h>
+ 
+-#include <iostream.h>
++#include <iostream>
+ using namespace std;
+ 
+ #include <unistd.h>

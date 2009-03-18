@@ -1,0 +1,19 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=MLDonkey GUI
+Comment=the mldonkey GUI
+Exec=mldonkey_gui
+Terminal=false
+Type=Application
+Categories=Network;P2P
+X-ROCK-Name=mldonkey
+
+[Desktop Entry]
+Encoding=UTF-8
+Name=MLDonkey
+Comment=the mldonkey client
+Exec=mkdir -p ~/mldonkey ; cd ~/mldonkey; mlnet -daemon
+Terminal=true
+Type=Application
+Categories=Network;P2P
+X-ROCK-Name=mldonkey

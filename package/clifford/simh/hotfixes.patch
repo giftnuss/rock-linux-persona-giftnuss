@@ -1,0 +1,46 @@
+--- ./VAX/vax780_defs.h.orig	2008-10-26 10:21:43.000000000 +0000
++++ ./VAX/vax780_defs.h	2008-10-26 10:21:49.000000000 +0000
+@@ -411,13 +411,13 @@
+ 
+ /* Function prototypes for physical memory interface (inlined) */
+ 
+-SIM_INLINE int32 ReadB (uint32 pa);
+-SIM_INLINE int32 ReadW (uint32 pa);
+-SIM_INLINE int32 ReadL (uint32 pa);
+-SIM_INLINE int32 ReadLP (uint32 pa);
+-SIM_INLINE void WriteB (uint32 pa, int32 val);
+-SIM_INLINE void WriteW (uint32 pa, int32 val);
+-SIM_INLINE void WriteL (uint32 pa, int32 val);
++int32 ReadB (uint32 pa);
++int32 ReadW (uint32 pa);
++int32 ReadL (uint32 pa);
++int32 ReadLP (uint32 pa);
++void WriteB (uint32 pa, int32 val);
++void WriteW (uint32 pa, int32 val);
++void WriteL (uint32 pa, int32 val);
+ void WriteLP (uint32 pa, int32 val);
+ 
+ /* Function prototypes for I/O */
+--- ./VAX/vaxmod_defs.h.orig	2008-10-26 10:20:55.000000000 +0000
++++ ./VAX/vaxmod_defs.h	2008-10-26 10:21:05.000000000 +0000
+@@ -448,13 +448,13 @@
+ 
+ /* Function prototypes for physical memory interface (inlined) */
+ 
+-SIM_INLINE int32 ReadB (uint32 pa);
+-SIM_INLINE int32 ReadW (uint32 pa);
+-SIM_INLINE int32 ReadL (uint32 pa);
+-SIM_INLINE int32 ReadLP (uint32 pa);
+-SIM_INLINE void WriteB (uint32 pa, int32 val);
+-SIM_INLINE void WriteW (uint32 pa, int32 val);
+-SIM_INLINE void WriteL (uint32 pa, int32 val);
++int32 ReadB (uint32 pa);
++int32 ReadW (uint32 pa);
++int32 ReadL (uint32 pa);
++int32 ReadLP (uint32 pa);
++void WriteB (uint32 pa, int32 val);
++void WriteW (uint32 pa, int32 val);
++void WriteL (uint32 pa, int32 val);
+ void WriteLP (uint32 pa, int32 val);
+ 
+ /* Function prototypes for I/O */

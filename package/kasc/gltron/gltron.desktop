@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=GL Tron
+Comment=the classic Tron game implemented in OpenGL
+Exec=gltron
+Terminal=false
+Type=Application
+Categories=Game;ArcadeGame
+X-ROCK-Name=gltron

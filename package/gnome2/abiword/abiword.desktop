@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=AbiWord
+Comment=Word Processing
+Exec=abiword
+Terminal=false
+Type=Application
+Categories=Office;WordProcessor
+X-ROCK-Name=abiword

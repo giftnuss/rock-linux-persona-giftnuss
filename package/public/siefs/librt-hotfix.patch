@@ -1,0 +1,22 @@
+--- ./siefs/Makefile.am.orig	2007-11-12 22:35:59.000000000 +0000
++++ ./siefs/Makefile.am	2007-11-12 22:36:04.000000000 +0000
+@@ -9,7 +9,7 @@
+ slink_SOURCES = slink.c obex.c obex.h transport.c transport.h comm.c comm.h \
+ 	crcmodel.c crcmodel.h
+ 
+-LDADD = $(fuseinst)/lib/libfuse.a -lpthread
++LDADD = $(fuseinst)/lib/libfuse.a -lpthread -lrt
+ 
+ install-exec-hook:
+ 	-rm -f /sbin/mount.siefs
+--- ./siefs/Makefile.in.orig	2007-11-12 22:36:08.000000000 +0000
++++ ./siefs/Makefile.in	2007-11-12 22:36:14.000000000 +0000
+@@ -90,7 +90,7 @@
+ 	crcmodel.c crcmodel.h
+ 
+ 
+-LDADD = $(fuseinst)/lib/libfuse.a -lpthread
++LDADD = $(fuseinst)/lib/libfuse.a -lpthread -lrt
+ subdir = siefs
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = $(top_builddir)/config.h

@@ -1,0 +1,19 @@
+Fixes this error for sparc:
+../nptl/sysdeps/unix/sysv/linux/sparc/sparc32/sem_wait.c: In function
+'__old_sem_wait':
+../nptl/sysdeps/unix/sysv/linux/sparc/sparc32/sem_wait.c:158: error:
+'futex' undeclared (first use in this function)
+
+See http://lists.cross-lfs.org/pipermail/clfs-support-cross-lfs.org/2008-January/000093.html
+
+--- glibc-2.7/nptl/sysdeps/unix/sysv/linux/sparc/sparc32/sem_wait.c	2007-08-15 22:47:42.000000000 +0200
++++ glibc-2.7/nptl/sysdeps/unix/sysv/linux/sparc/sparc32/sem_wait.c.new	2008-10-05 17:17:12.000000000 +0200
+@@ -155,7 +155,7 @@
+       /* Enable asynchronous cancellation.  Required by the standard.  */
+       int oldtype = __pthread_enable_asynccancel ();
+ 
+-      err = lll_futex_wait (futex, 0,
++      err = lll_futex_wait (&isem->value, 0,
+ 			    isem->private ^ FUTEX_PRIVATE_FLAG);
+ 
+       /* Disable asynchronous cancellation.  */

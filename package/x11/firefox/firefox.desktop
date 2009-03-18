@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=FireFox
+Comment=Mozillas Standalone Webbrowser
+Exec=firefox
+Terminal=false
+Type=Application
+Categories=Network;WebBrowser
+X-ROCK-Name=firefox
+Icon=D_prefix/lib/firefox-D_ver/icons/mozicon16.xpm

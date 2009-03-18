@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Space Aryarya
+Comment=a shooting game
+Exec=spacearyarya
+Terminal=false
+Type=Application
+Categories=Game;ArcadeGame
+X-ROCK-Name=spacearyarya

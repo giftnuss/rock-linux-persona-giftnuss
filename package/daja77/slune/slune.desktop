@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Slune
+Comment=A Scifi racing game
+Exec=slune
+Terminal=false
+Type=Application
+Categories=Game;ActionGame
+X-ROCK-Name=slune

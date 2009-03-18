@@ -1,0 +1,97 @@
+#!/bin/sh
+#
+# This boot-script boots a system found in a given LVM
+# logical volume.
+# In case of trouble it passes control to the original init
+# thus giving gettys and running /etc/boot.d/*
+# It is included in system.tar.bz2. For usage information
+# see below.
+#
+# Plan:
+# -read kernel append line by /proc/1/environ and evaluate
+#  ROOTLV (should point to /dev/vg00/lvroot00 or kind of)
+# -mount ROOTLV to /mnt/root (ro)
+# -pivot_root to /mnt/root
+# -chroot into /mnt/root and exec init
+#
+# mini-howto of usage:
+#
+# -build your rescue target (you get system.tar.bz2 and initrd.img)
+# -put system.tar.bz2 in /rescue onto your boot-device-fs
+# -optional: put overlay.tar.bz2 in /rescue onto your boot-device-fs
+# -get a kernel and arm your favorite boot-loader
+# -pass stage2init=/sbin/init-lvm-cycle to the kernel
+# -pass ROOTLV=/dev/vgXX/lvYYY to the kernel
+# -don't forget to pass initrd.img to your boot loader
+# -and boot
+#
+# you can omit ROOTLV parameter to get the rescue system
+#
+# see contrib/menu.lst-example
+#
+# Tobias Hintze <th@rocklinux.org> (c) 2004
+#
+
+shopt -s execfail
+
+fail() {
+	echo "$1"
+	echo
+	echo "continuing inside rescue-stage2..."
+	exec /sbin/init
+	echo "failed to execute /sbin/init."
+	echo "all that i can give to you is that shell."
+	echo
+	exec sh
+}
+
+fail_shell() {
+	echo "$1"
+	echo
+	echo "try to fix the problem and terminate this shell."
+	echo
+	sh
+}
+
+# some init
+export PATH=/sbin:/bin:/usr/sbin:/usr/bin
+mount -t proc proc /proc
+mkdir /mnt/boot /mnt/root
+mount --move /old_root/mnt_boot /mnt/boot
+umount -n /old_root
+
+# read ROOTLV and additional arguments (e.g. runlevel)
+ROOTLV=`cat /proc/1/environ | tr '\0' '\n' | grep -i ^rootlv | cut -d= -f2`
+[ -z "$ROOTLV" ] && fail "no ROOTLV specified."
+
+INITARGS=""
+RUNLEVEL=`cat /proc/1/environ | tr '\0' '\n' | grep -i ^runlevel | cut -d= -f2`
+if [ ! -z "$RUNLEVEL" ] ; then
+	echo "runlevel specified. passing $RUNLEVEL to init."
+	INITARGS="$RUNLEVEL"
+fi
+
+# scan for and activate volume groups
+[ -f /etc/conf/lvm2wrap ] && . /etc/conf/lvm2wrap
+vgscan && vgchange -ay
+[ -e "$ROOTLV" ] || fail "specified ROOTLV does not exist."
+
+# mount new root
+mount -o ro $ROOTLV /mnt/root
+cd /mnt/root
+
+# move mounts inside new root
+[ -d dev ] || fail_shell "dev/ mountpoint does not exist."
+mount --move /dev dev
+[ -d mnt/boot ] || fail_shell "mnt/boot/ mountpoint does not exist."
+mount --move /mnt/boot mnt/boot
+
+[ -d mnt/oldroot ] || fail_shell "mnt/oldroot/ mountpoint does not exist."
+umount /proc
+
+# switch to new root and exec init
+mknod dev/initctl p
+pivot_root . mnt/oldroot
+exec chroot . sh -c "umount /mnt/oldroot ; exec /sbin/init $INITARGS" \
+	<dev/console >dev/console 2>&1
+fail "pivot_root failed..."

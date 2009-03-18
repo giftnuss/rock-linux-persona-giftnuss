@@ -1,0 +1,11 @@
+--- ./configure.vanilla	2005-11-29 12:17:22.000000000 +0100
++++ ./configure	2005-11-29 12:17:54.000000000 +0100
+@@ -33805,7 +33805,7 @@
+          # skip cygwin -pthread or -pthreads test
+          ;;
+       *)
+-        for flag in pthread pthreads mt; do
++        for flag in ; do
+           glib_save_CFLAGS="$CFLAGS"
+           CFLAGS="$CFLAGS -$flag"
+           if test "$cross_compiling" = yes; then

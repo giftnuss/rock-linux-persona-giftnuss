@@ -1,0 +1,64 @@
+#!/bin/sh
+
+# root_env="/real-root"
+# init="/init"
+# 
+# mkdir -pv "$root_env"
+# if mount -v -t aufs aufs "$root_env" -o br:/=rw ; then
+# 
+# 	# having a world writeable top directory in an aufs branch
+# 	# may be a security issue
+# 	chmod 0700 "$root_env"
+# 
+# 	mount --move /proc "$root_env"/proc
+# 	mount --move /sys "$root_env"/sys
+# 	# remove left-over lines from /etc/mtab
+# 	# umount /proc /sys 2>/dev/null
+# 
+# 	cd "$root_env"
+# 	# /etc/mtab and "$root_env"/etc/mtab are the same file
+# 	sed -i -e "s,/*$root_env/*,/,g" etc/mtab
+# 
+# 	exec chroot . sh -c "exec $init" <dev/console >dev/console 2>&1
+# fi
+
+mkdir -p /mnt/{media,image,overlay}
+
+# Find the drive with the disc containing 2nd stage images, in case there is
+# more than one drive installed.
+foundcdrom=0
+aufsopt="br:/real-root=rw"
+for cdromdev in /dev/cdroms/* ; do
+	[ -e $cdromdev ] || continue
+
+	if mount $cdromdev /mnt/media -o ro ; then
+		if [ ! -f /mnt/media/*/2nd_stage-livecd.img ] ; then
+			umount /mnt/media
+			continue
+		fi
+		if [ -f /mnt/media/*/2nd_stage-overlay.img ] ; then
+			mount /mnt/media/*/2nd_stage-overlay.img /mnt/overlay -o loop
+			aufsopt="$aufsopt:/mnt/overlay=ro"
+		fi
+		mount /mnt/media/*/2nd_stage-livecd.img /mnt/image -o loop
+		aufsopt="$aufsopt:/mnt/image=ro"
+
+		foundcdrom=1
+		break
+	fi
+done
+
+if [ $foundcdrom = 1 ] ; then
+	mount -t tmpfs tmpfs /real-root
+	
+	# Files from branches listed first in the mount option hide files with the same
+	# name in later branches. The first branch listed must be writeable or the whole
+	# directory that aufs is mounted on becomes read-only.
+	mount -t aufs aufs /real-root -o $aufsopt
+	
+	mkdir -p /real-root/mnt/{media,image,overlay}
+	
+	for x in media image overlay ; do
+		mount --move /mnt/$x /real-root/mnt/$x
+	done
+fi

@@ -1,0 +1,10 @@
+
+# no reasons to be customizable
+
+gnupascal_gcc_postpatch() {
+	tar $taropt $archdir/gpc-20060325.tar.bz2
+        echo $xsrcdir
+	ln -sv $builddir/gpc-20060325/p $builddir/$xsrcdir/gcc/p
+}
+
+hook_add postpatch 5 gnupascal_gcc_postpatch

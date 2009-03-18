@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=EKG
+Comment=Gadugadu client
+Exec=ekg
+Terminal=true
+Type=Application
+Categories=Network;InstantMessaging
+X-ROCK-Name=ekg

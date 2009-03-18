@@ -1,0 +1,22 @@
+
+[TIMESTAMP] 1181153239 Wed Jun  6 20:07:19 2007 (5)
+[TIMESTAMP] 1181605553 Tue Jun 12 01:45:53 2007 (9)
+
+[CONFIG-ID] TRUNK-x86-reference
+[ROCKVER] TRUNK
+
+[LOGS] 5-foobillard.log 9-foobillard.log
+
+[BUILDTIME] 4401 (5)
+[BUILDTIME] 4272 (9)
+[SIZE] 1.30 MB, 41 files
+
+[DEP] 00-dirtree alsa applewmproto applewmproto:dev bash2 binutils bzip2
+[DEP] coreutils cvm diffutils findutils freetype freetype:dev gawk gcc42
+[DEP] gcc42:dev glibc26 glibc26:dev grep imake libice libpng:dev libsdl
+[DEP] libsdl:dev libsm libx11 libx11:dev libxau libxaw libxcb libxdmcp
+[DEP] libxext libxi libxmu libxp libxpm libxt linux26-headers:dev ltrace
+[DEP] make mesalib mesalib:dev mktemp nas net-tools sed sysfiles tar
+[DEP] util-linux xmame xorg-cf-files xproto:dev zlib zlib:dev
+
+

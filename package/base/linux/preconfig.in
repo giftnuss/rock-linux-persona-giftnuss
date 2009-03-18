@@ -1,0 +1,7 @@
+pkgfork linux linux24 unflag CORE
+pkgfork linux linux24-source unflag CORE
+pkgfork linux linux26 stages --X--5---9
+pkgfork linux linux26-source stages --X--5---9
+pkgfork linux linux26-headers stages 0--3-----9 priority 100.100
+
+CFGTEMP_LINUX_HEADERS="$CFGTEMP_LINUX_HEADERS linux26-headers Use_Linux_2.6_as_Linux_headers"

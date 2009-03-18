@@ -1,0 +1,123 @@
+
+[TIMESTAMP] 1181151584 Wed Jun  6 19:39:44 2007 (5) ERROR
+[TIMESTAMP] 1181604740 Tue Jun 12 01:32:20 2007 (9) ERROR
+[TIMESTAMP] 1181828832 Thu Jun 14 15:47:12 2007 (5) ERROR
+[TIMESTAMP] 1181912058 Fri Jun 15 14:54:18 2007 (9) ERROR
+[TIMESTAMP] 1181952493 Sat Jun 16 02:08:13 2007 (5) ERROR
+[TIMESTAMP] 1181974246 Sat Jun 16 08:10:46 2007 (9) ERROR
+
+[CONFIG-ID] TRUNK-x86-reference
+[ROCKVER] TRUNK
+
+[LOGS] 5-simgear.err 9-simgear.err
+
+[BUILDTIME] 2214 (5) ERROR
+[BUILDTIME] 2197 (9) ERROR
+[BUILDTIME] 2199 (5) ERROR
+[BUILDTIME] 2233 (9) ERROR
+[BUILDTIME] 2140 (5) ERROR
+[BUILDTIME] 2140 (9) ERROR
+
+
+[5-ERROR] checking for gethostbyname... yes
+[5-ERROR] checking for connect... yes
+[5-ERROR] checking for remove... yes
+[5-ERROR] checking for shmat... yes
+[5-ERROR] checking for IceConnectionNumber in -lICE... yes
+[5-ERROR] checking for egrep... grep -E
+[5-ERROR] checking for ANSI C header files... yes
+[5-ERROR] checking for sys/types.h... yes
+[5-ERROR] checking for sys/stat.h... yes
+[5-ERROR] checking for stdlib.h... yes
+[5-ERROR] checking for string.h... yes
+[5-ERROR] checking for memory.h... yes
+[5-ERROR] checking for strings.h... yes
+[5-ERROR] checking for inttypes.h... yes
+[5-ERROR] checking for stdint.h... yes
+[5-ERROR] checking for unistd.h... yes
+[5-ERROR] checking pthread.h usability... yes
+[5-ERROR] checking pthread.h presence... yes
+[5-ERROR] checking for pthread.h... yes
+[5-ERROR] checking for library containing pthread_exit... none required
+[5-ERROR] checking for library containing inet_addr... none required
+[5-ERROR] checking for library containing socket... none required
+[5-ERROR] checking for library containing cos... -lm
+[5-ERROR] checking for library containing XCreateWindow... -lX11
+[5-ERROR] checking for library containing XShmCreateImage... -lXext
+[5-ERROR] checking for library containing XGetExtensionVersion... -lXi
+[5-ERROR] checking for library containing IceOpenConnection... -lICE
+[5-ERROR] checking for library containing SmcOpenConnection... -lSM
+[5-ERROR] checking for library containing XtMalloc... -lXt
+[5-ERROR] checking for library containing XmuLookupStandardColormap... -lXmu
+[5-ERROR] checking for library containing glNewList... -lGL
+[5-ERROR] checking for library containing gluLookAt... -lGLU
+[5-ERROR] checking for library containing alGenBuffers... -lopenal
+[5-ERROR] checking for library containing alutInit... -lalut
+[5-ERROR] checking windows.h usability... no
+[5-ERROR] checking windows.h presence... no
+[5-ERROR] checking for windows.h... no
+[5-ERROR] checking how to run the C++ preprocessor... g++-42 -E
+[5-ERROR] checking plib/ul.h usability... no
+[5-ERROR] checking plib/ul.h presence... no
+[5-ERROR] checking for plib/ul.h... no
+[5-ERROR] 
+[5-ERROR] You *must* have the plib library installed on your system to build
+[5-ERROR] SimGear!
+[5-ERROR] 
+[5-ERROR] Please see README.plib for more details.
+[5-ERROR] 
+[5-ERROR] configure aborted.
+[5-ERROR] make: *** No targets specified and no makefile found.  Stop.
+[5-ERROR] --- BUILD ERROR ---
+
+[9-ERROR] checking for gethostbyname... yes
+[9-ERROR] checking for connect... yes
+[9-ERROR] checking for remove... yes
+[9-ERROR] checking for shmat... yes
+[9-ERROR] checking for IceConnectionNumber in -lICE... yes
+[9-ERROR] checking for egrep... grep -E
+[9-ERROR] checking for ANSI C header files... yes
+[9-ERROR] checking for sys/types.h... yes
+[9-ERROR] checking for sys/stat.h... yes
+[9-ERROR] checking for stdlib.h... yes
+[9-ERROR] checking for string.h... yes
+[9-ERROR] checking for memory.h... yes
+[9-ERROR] checking for strings.h... yes
+[9-ERROR] checking for inttypes.h... yes
+[9-ERROR] checking for stdint.h... yes
+[9-ERROR] checking for unistd.h... yes
+[9-ERROR] checking pthread.h usability... yes
+[9-ERROR] checking pthread.h presence... yes
+[9-ERROR] checking for pthread.h... yes
+[9-ERROR] checking for library containing pthread_exit... none required
+[9-ERROR] checking for library containing inet_addr... none required
+[9-ERROR] checking for library containing socket... none required
+[9-ERROR] checking for library containing cos... -lm
+[9-ERROR] checking for library containing XCreateWindow... -lX11
+[9-ERROR] checking for library containing XShmCreateImage... -lXext
+[9-ERROR] checking for library containing XGetExtensionVersion... -lXi
+[9-ERROR] checking for library containing IceOpenConnection... -lICE
+[9-ERROR] checking for library containing SmcOpenConnection... -lSM
+[9-ERROR] checking for library containing XtMalloc... -lXt
+[9-ERROR] checking for library containing XmuLookupStandardColormap... -lXmu
+[9-ERROR] checking for library containing glNewList... -lGL
+[9-ERROR] checking for library containing gluLookAt... -lGLU
+[9-ERROR] checking for library containing alGenBuffers... -lopenal
+[9-ERROR] checking for library containing alutInit... -lalut
+[9-ERROR] checking windows.h usability... no
+[9-ERROR] checking windows.h presence... no
+[9-ERROR] checking for windows.h... no
+[9-ERROR] checking how to run the C++ preprocessor... g++-42 -E
+[9-ERROR] checking plib/ul.h usability... no
+[9-ERROR] checking plib/ul.h presence... no
+[9-ERROR] checking for plib/ul.h... no
+[9-ERROR] 
+[9-ERROR] You *must* have the plib library installed on your system to build
+[9-ERROR] SimGear!
+[9-ERROR] 
+[9-ERROR] Please see README.plib for more details.
+[9-ERROR] 
+[9-ERROR] configure aborted.
+[9-ERROR] make: *** No targets specified and no makefile found.  Stop.
+[9-ERROR] --- BUILD ERROR ---
+

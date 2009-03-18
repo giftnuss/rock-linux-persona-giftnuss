@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Powermanga
+Comment=2D shooting game
+Exec=powermanga
+Terminal=false
+Type=Application
+Categories=Game;ArcadeGame
+X-ROCK-Name=powermanga

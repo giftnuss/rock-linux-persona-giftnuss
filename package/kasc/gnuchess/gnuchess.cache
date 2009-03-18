@@ -1,0 +1,123 @@
+
+[TIMESTAMP] 1181160777 Wed Jun  6 22:12:57 2007 (5) ERROR
+[TIMESTAMP] 1181610424 Tue Jun 12 03:07:04 2007 (9) ERROR
+[TIMESTAMP] 1181829362 Thu Jun 14 15:56:02 2007 (5) ERROR
+[TIMESTAMP] 1181913172 Fri Jun 15 15:12:52 2007 (9) ERROR
+[TIMESTAMP] 1181953012 Sat Jun 16 02:16:52 2007 (5) ERROR
+[TIMESTAMP] 1181974859 Sat Jun 16 08:20:59 2007 (9) ERROR
+
+[CONFIG-ID] TRUNK-x86-reference
+[ROCKVER] TRUNK
+
+[LOGS] 5-gnuchess.err 9-gnuchess.err
+
+[BUILDTIME] 2489 (5) ERROR
+[BUILDTIME] 2522 (9) ERROR
+[BUILDTIME] 2517 (5) ERROR
+[BUILDTIME] 2536 (9) ERROR
+[BUILDTIME] 2468 (5) ERROR
+[BUILDTIME] 2472 (9) ERROR
+
+
+[5-ERROR] 	else rm -f ".deps/epd.Tpo"; exit 1; \
+[5-ERROR] 	fi
+[5-ERROR] if gcc-42 -DHAVE_CONFIG_H -I. -I. -I.    -pthread -g -O2 -MT eval.o -MD -MP -MF ".deps/eval.Tpo" \
+[5-ERROR] 	  -c -o eval.o `test -f 'eval.c' || echo './'`eval.c; \
+[5-ERROR] 	then mv -f ".deps/eval.Tpo" ".deps/eval.Po"; \
+[5-ERROR] 	else rm -f ".deps/eval.Tpo"; exit 1; \
+[5-ERROR] 	fi
+[5-ERROR] if gcc-42 -DHAVE_CONFIG_H -I. -I. -I.    -pthread -g -O2 -MT genmove.o -MD -MP -MF ".deps/genmove.Tpo" \
+[5-ERROR] 	  -c -o genmove.o `test -f 'genmove.c' || echo './'`genmove.c; \
+[5-ERROR] 	then mv -f ".deps/genmove.Tpo" ".deps/genmove.Po"; \
+[5-ERROR] 	else rm -f ".deps/genmove.Tpo"; exit 1; \
+[5-ERROR] 	fi
+[5-ERROR] if gcc-42 -DHAVE_CONFIG_H -I. -I. -I.    -pthread -g -O2 -MT getopt.o -MD -MP -MF ".deps/getopt.Tpo" \
+[5-ERROR] 	  -c -o getopt.o `test -f 'getopt.c' || echo './'`getopt.c; \
+[5-ERROR] 	then mv -f ".deps/getopt.Tpo" ".deps/getopt.Po"; \
+[5-ERROR] 	else rm -f ".deps/getopt.Tpo"; exit 1; \
+[5-ERROR] 	fi
+[5-ERROR] if gcc-42 -DHAVE_CONFIG_H -I. -I. -I.    -pthread -g -O2 -MT getopt1.o -MD -MP -MF ".deps/getopt1.Tpo" \
+[5-ERROR] 	  -c -o getopt1.o `test -f 'getopt1.c' || echo './'`getopt1.c; \
+[5-ERROR] 	then mv -f ".deps/getopt1.Tpo" ".deps/getopt1.Po"; \
+[5-ERROR] 	else rm -f ".deps/getopt1.Tpo"; exit 1; \
+[5-ERROR] 	fi
+[5-ERROR] if gcc-42 -DHAVE_CONFIG_H -I. -I. -I.    -pthread -g -O2 -MT hash.o -MD -MP -MF ".deps/hash.Tpo" \
+[5-ERROR] 	  -c -o hash.o `test -f 'hash.c' || echo './'`hash.c; \
+[5-ERROR] 	then mv -f ".deps/hash.Tpo" ".deps/hash.Po"; \
+[5-ERROR] 	else rm -f ".deps/hash.Tpo"; exit 1; \
+[5-ERROR] 	fi
+[5-ERROR] if gcc-42 -DHAVE_CONFIG_H -I. -I. -I.    -pthread -g -O2 -MT hung.o -MD -MP -MF ".deps/hung.Tpo" \
+[5-ERROR] 	  -c -o hung.o `test -f 'hung.c' || echo './'`hung.c; \
+[5-ERROR] 	then mv -f ".deps/hung.Tpo" ".deps/hung.Po"; \
+[5-ERROR] 	else rm -f ".deps/hung.Tpo"; exit 1; \
+[5-ERROR] 	fi
+[5-ERROR] if gcc-42 -DHAVE_CONFIG_H -I. -I. -I.    -pthread -g -O2 -MT init.o -MD -MP -MF ".deps/init.Tpo" \
+[5-ERROR] 	  -c -o init.o `test -f 'init.c' || echo './'`init.c; \
+[5-ERROR] 	then mv -f ".deps/init.Tpo" ".deps/init.Po"; \
+[5-ERROR] 	else rm -f ".deps/init.Tpo"; exit 1; \
+[5-ERROR] 	fi
+[5-ERROR] if gcc-42 -DHAVE_CONFIG_H -I. -I. -I.    -pthread -g -O2 -MT input.o -MD -MP -MF ".deps/input.Tpo" \
+[5-ERROR] 	  -c -o input.o `test -f 'input.c' || echo './'`input.c; \
+[5-ERROR] 	then mv -f ".deps/input.Tpo" ".deps/input.Po"; \
+[5-ERROR] 	else rm -f ".deps/input.Tpo"; exit 1; \
+[5-ERROR] 	fi
+[5-ERROR] input.c:95: error: static declaration of 'input_thread' follows non-static declaration
+[5-ERROR] common.h:719: error: previous declaration of 'input_thread' was here
+[5-ERROR] make[2]: *** [input.o] Error 1
+[5-ERROR] make[2]: Leaving directory `/ROCK/loop/src.gnuchess.1181952987.29297.1627887995/gnuchess-5.07/src'
+[5-ERROR] make[1]: *** [all] Error 2
+[5-ERROR] make[1]: Leaving directory `/ROCK/loop/src.gnuchess.1181952987.29297.1627887995/gnuchess-5.07/src'
+[5-ERROR] make: *** [all-recursive] Error 1
+[5-ERROR] --- BUILD ERROR ---
+
+[9-ERROR] 	else rm -f ".deps/epd.Tpo"; exit 1; \
+[9-ERROR] 	fi
+[9-ERROR] if gcc-42 -DHAVE_CONFIG_H -I. -I. -I.    -pthread -g -O2 -MT eval.o -MD -MP -MF ".deps/eval.Tpo" \
+[9-ERROR] 	  -c -o eval.o `test -f 'eval.c' || echo './'`eval.c; \
+[9-ERROR] 	then mv -f ".deps/eval.Tpo" ".deps/eval.Po"; \
+[9-ERROR] 	else rm -f ".deps/eval.Tpo"; exit 1; \
+[9-ERROR] 	fi
+[9-ERROR] if gcc-42 -DHAVE_CONFIG_H -I. -I. -I.    -pthread -g -O2 -MT genmove.o -MD -MP -MF ".deps/genmove.Tpo" \
+[9-ERROR] 	  -c -o genmove.o `test -f 'genmove.c' || echo './'`genmove.c; \
+[9-ERROR] 	then mv -f ".deps/genmove.Tpo" ".deps/genmove.Po"; \
+[9-ERROR] 	else rm -f ".deps/genmove.Tpo"; exit 1; \
+[9-ERROR] 	fi
+[9-ERROR] if gcc-42 -DHAVE_CONFIG_H -I. -I. -I.    -pthread -g -O2 -MT getopt.o -MD -MP -MF ".deps/getopt.Tpo" \
+[9-ERROR] 	  -c -o getopt.o `test -f 'getopt.c' || echo './'`getopt.c; \
+[9-ERROR] 	then mv -f ".deps/getopt.Tpo" ".deps/getopt.Po"; \
+[9-ERROR] 	else rm -f ".deps/getopt.Tpo"; exit 1; \
+[9-ERROR] 	fi
+[9-ERROR] if gcc-42 -DHAVE_CONFIG_H -I. -I. -I.    -pthread -g -O2 -MT getopt1.o -MD -MP -MF ".deps/getopt1.Tpo" \
+[9-ERROR] 	  -c -o getopt1.o `test -f 'getopt1.c' || echo './'`getopt1.c; \
+[9-ERROR] 	then mv -f ".deps/getopt1.Tpo" ".deps/getopt1.Po"; \
+[9-ERROR] 	else rm -f ".deps/getopt1.Tpo"; exit 1; \
+[9-ERROR] 	fi
+[9-ERROR] if gcc-42 -DHAVE_CONFIG_H -I. -I. -I.    -pthread -g -O2 -MT hash.o -MD -MP -MF ".deps/hash.Tpo" \
+[9-ERROR] 	  -c -o hash.o `test -f 'hash.c' || echo './'`hash.c; \
+[9-ERROR] 	then mv -f ".deps/hash.Tpo" ".deps/hash.Po"; \
+[9-ERROR] 	else rm -f ".deps/hash.Tpo"; exit 1; \
+[9-ERROR] 	fi
+[9-ERROR] if gcc-42 -DHAVE_CONFIG_H -I. -I. -I.    -pthread -g -O2 -MT hung.o -MD -MP -MF ".deps/hung.Tpo" \
+[9-ERROR] 	  -c -o hung.o `test -f 'hung.c' || echo './'`hung.c; \
+[9-ERROR] 	then mv -f ".deps/hung.Tpo" ".deps/hung.Po"; \
+[9-ERROR] 	else rm -f ".deps/hung.Tpo"; exit 1; \
+[9-ERROR] 	fi
+[9-ERROR] if gcc-42 -DHAVE_CONFIG_H -I. -I. -I.    -pthread -g -O2 -MT init.o -MD -MP -MF ".deps/init.Tpo" \
+[9-ERROR] 	  -c -o init.o `test -f 'init.c' || echo './'`init.c; \
+[9-ERROR] 	then mv -f ".deps/init.Tpo" ".deps/init.Po"; \
+[9-ERROR] 	else rm -f ".deps/init.Tpo"; exit 1; \
+[9-ERROR] 	fi
+[9-ERROR] if gcc-42 -DHAVE_CONFIG_H -I. -I. -I.    -pthread -g -O2 -MT input.o -MD -MP -MF ".deps/input.Tpo" \
+[9-ERROR] 	  -c -o input.o `test -f 'input.c' || echo './'`input.c; \
+[9-ERROR] 	then mv -f ".deps/input.Tpo" ".deps/input.Po"; \
+[9-ERROR] 	else rm -f ".deps/input.Tpo"; exit 1; \
+[9-ERROR] 	fi
+[9-ERROR] input.c:95: error: static declaration of 'input_thread' follows non-static declaration
+[9-ERROR] common.h:719: error: previous declaration of 'input_thread' was here
+[9-ERROR] make[2]: *** [input.o] Error 1
+[9-ERROR] make[2]: Leaving directory `/ROCK/loop/src.gnuchess.1181974834.3973.4149625545/gnuchess-5.07/src'
+[9-ERROR] make[1]: *** [all] Error 2
+[9-ERROR] make[1]: Leaving directory `/ROCK/loop/src.gnuchess.1181974834.3973.4149625545/gnuchess-5.07/src'
+[9-ERROR] make: *** [all-recursive] Error 1
+[9-ERROR] --- BUILD ERROR ---
+

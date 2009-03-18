@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="98"
+   name=""
+   committed-date="2006-04-16T21:38:46.966575Z"
+   url="file:///srv/svn/useeit"
+   last-author="root"
+   kind="dir"
+   uuid="3e2b141b-f80a-0410-accf-a426023c0ba2"
+   revision="98"/>
+<entry
+   committed-rev="98"
+   name="preconfig.in"
+   text-time="2006-04-16T21:39:31.000000Z"
+   committed-date="2006-04-16T21:38:46.966575Z"
+   checksum="3595bb018940fffa1cc9633ac161f93e"
+   last-author="root"
+   kind="file"
+   prop-time="2006-04-16T21:39:31.000000Z"/>
+<entry
+   name="config.in"
+   kind="file"
+   schedule="add"
+   revision="0"/>
+</wc-entries>

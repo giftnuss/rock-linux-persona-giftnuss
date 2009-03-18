@@ -1,0 +1,24 @@
+
+[TIMESTAMP] 1181059054 Tue Jun  5 17:57:34 2007 (5)
+[TIMESTAMP] 1181525942 Mon Jun 11 03:39:02 2007 (9)
+
+[CONFIG-ID] TRUNK-x86-reference
+[ROCKVER] TRUNK
+
+[LOGS] 5-pwlib.log 9-pwlib.log
+
+[BUILDTIME] 27305 (5)
+[BUILDTIME] 26326 (9)
+[SIZE] 3.58 MB, 36 files
+
+[DEP] 00-dirtree alsa alsa:dev applewmproto bash2 binutils bison bzip2
+[DEP] coreutils cvm cyrus-sasl2 cyrus-sasl2:dev diffutils expat expat:dev
+[DEP] findutils gawk gcc42 gcc42:dev glibc26 glibc26:dev grep libavc1394
+[DEP] libavc1394:dev libdv libdv:dev libice libraw1394 libraw1394:dev
+[DEP] libsdl libsdl:dev libsm libx11 libxau libxcb libxdmcp libxext libxt
+[DEP] linux26-headers:dev ltrace m4 make mktemp nas net-tools openldap
+[DEP] openldap:dev openssl openssl:dev sed sysfiles tar util-linux xmame
+
+[PROVIDES] alsa_pwplugin.so avc_pwplugin.so libpt.so libpt_linux_x86_r.so
+[PROVIDES] oss_pwplugin.so ptlib-config v4l_pwplugin.so
+

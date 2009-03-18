@@ -1,0 +1,11 @@
+--- ./ext/IPC/SysV/SysV.xs.orig	2008-05-04 20:38:31.000000000 +0200
++++ ./ext/IPC/SysV/SysV.xs	2008-05-04 20:38:39.000000000 +0200
+@@ -4,7 +4,7 @@
+ 
+ #include <sys/types.h>
+ #ifdef __linux__
+-#   include <asm/page.h>
++// #   include <asm/page.h>
+ #endif
+ #if defined(HAS_MSG) || defined(HAS_SEM) || defined(HAS_SHM)
+ #ifndef HAS_SEM

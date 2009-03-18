@@ -1,0 +1,52 @@
+diff -Naur minit-0.10-orig/Makefile minit-0.10/Makefile
+--- minit-0.10-orig/Makefile	2005-04-08 19:24:04.000000000 +0200
++++ minit-0.10/Makefile	2007-07-14 01:43:48.000000000 +0200
+@@ -34,19 +34,24 @@
+ 
+ LDLIBS=-lowfat
+ 
+-libowfat_path = $(strip $(foreach dir,../libowfat*,$(wildcard $(dir)/textcode.h)))
+-ifneq ($(libowfat_path),)
+-CFLAGS+=$(foreach fnord,$(libowfat_path),-I$(dir $(fnord)))
+-LDFLAGS+=$(foreach fnord,$(libowfat_path),-L$(dir $(fnord)))
++ifneq ($(libowfat_inc),)
++CFLAGS+=-I$(libowfat_inc)
++endif
++ifneq ($(libowfat_lib),)
++LDFLAGS+=-L$(libowfat_lib)
+ endif
+ 
+ minit: minit.o split.o openreadclose.o opendevconsole.o
+ msvc: msvc.o
+ minit-update: minit-update.o split.o openreadclose.o
+ serdo: serdo.o
++hard-reboot: hard-reboot.o
++write_proc: write_proc.o
++killall5: killall5.o
++pidfilehack: pidfilehack.o
+ 
+ shutdown: shutdown.o split.o openreadclose.o opendevconsole.o
+-	$(DIET) $(CROSS)$(CC) $(LDFLAGS) -o shutdown $^
++	$(DIET) $(CROSS)$(CC) $(LDFLAGS) -o shutdown $^ $(LDLIBS)
+ 
+ %.o: %.c
+ 	$(DIET) $(CROSS)$(CC) $(CFLAGS) -c $<
+@@ -61,18 +66,6 @@
+ test: test.c
+ 	gcc -nostdlib -o $@ $^ -I../dietlibc/include ../dietlibc/start.o ../dietlibc/dietlibc.a
+ 
+-pidfilehack: pidfilehack.c
+-	$(DIET) $(CROSS)$(CC) $(CFLAGS) -o $@ $^
+-
+-hard-reboot: hard-reboot.c
+-	$(DIET) $(CROSS)$(CC) $(CFLAGS) -o $@ $^
+-
+-write_proc: write_proc.c
+-	$(DIET) $(CROSS)$(CC) $(CFLAGS) -o $@ $^
+-
+-killall5: killall5.c
+-	$(DIET) $(CROSS)$(CC) $(CFLAGS) -o $@ $^
+-
+ install-files:
+ 	install -d $(DESTDIR)/etc/minit $(DESTDIR)/sbin $(DESTDIR)/bin $(DESTDIR)$(MANDIR)/man8
+ 	install minit pidfilehack $(DESTDIR)/sbin

@@ -1,0 +1,51 @@
+Tobias Hintze:
+	on machines with more than 4GB RAM
+	there is an issue resulting in:
+	Error 28: "selected item cannot fit into memory"
+
+	the bug is in grubs bugtracker (including this patch) since 2004
+	but still not in 0.97:
+	http://savannah.gnu.org/bugs/?func=detailitem&item_id=9954
+
+diff -Naur grub-0.97~/stage2/char_io.c grub-0.97/stage2/char_io.c
+--- grub-0.97~/stage2/char_io.c	2005-02-01 21:51:23.000000000 +0100
++++ grub-0.97/stage2/char_io.c	2007-08-06 19:35:37.711924190 +0200
+@@ -1175,13 +1175,13 @@
+ #endif /* ! STAGE1_5 */
+ 
+ int
+-memcheck (int addr, int len)
++memcheck (unsigned long addr, unsigned long len)
+ {
+ #ifdef GRUB_UTIL
+-  auto int start_addr (void);
+-  auto int end_addr (void);
++  auto unsigned long start_addr (void);
++  auto unsigned long end_addr (void);
+   
+-  auto int start_addr (void)
++  auto unsigned long start_addr (void)
+     {
+       int ret;
+ # if defined(HAVE_START_SYMBOL)
+@@ -1192,7 +1192,7 @@
+       return ret;
+     }
+ 
+-  auto int end_addr (void)
++  auto unsigned long end_addr (void)
+     {
+       int ret;
+ # if defined(HAVE_END_SYMBOL)
+diff -Naur grub-0.97~/stage2/shared.h grub-0.97/stage2/shared.h
+--- grub-0.97~/stage2/shared.h	2004-06-19 18:40:09.000000000 +0200
++++ grub-0.97/stage2/shared.h	2007-08-06 19:35:43.856274336 +0200
+@@ -911,7 +911,7 @@
+ int nul_terminate (char *str);
+ int get_based_digit (int c, int base);
+ int safe_parse_maxint (char **str_ptr, int *myint_ptr);
+-int memcheck (int start, int len);
++int memcheck (unsigned long start, unsigned long len);
+ void grub_putstr (const char *str);
+ 
+ #ifndef NO_DECOMPRESSION

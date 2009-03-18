@@ -1,0 +1,10 @@
+--- ./Makefile	2007-05-25 21:24:24.000000000 +0200
++++ ./Makefile	2007-05-25 21:24:27.000000000 +0200
+@@ -94,6 +94,7 @@
+ 
+ install: all
+ 	install mine $(sysprefix)/bin/mine
++	install mine.static $(sysprefix)/bin/mine.static
+ 	install tarbz2gem.sh $(prefix)/sbin/tarbz2gem
+ 	install rocket.sh $(prefix)/sbin/rocket
+ ifeq ($(USE_GAS), 1)

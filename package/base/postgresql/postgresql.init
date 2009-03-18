@@ -1,0 +1,21 @@
+#!/bin/sh
+#
+# Desc: The PostgreSQL server
+# Runlevel: 30 rcX
+#
+
+main_begin
+
+   block_begin(start, `Starting PostgreSQL Server.')
+       check(`(su postgres -c "D_prefix/bin/postgres -i&")')
+   block_end
+
+   block_begin(stop, `Stopping PostgreSQL Server.')
+       check(`killall postgres')
+   block_end
+
+   block_begin(restart, `Restarting PostgreSQL Server.')
+       check(`killall -1 postgres')
+   block_end
+
+main_end

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Gaia
+Comment=A free Google Earth Clien
+Exec=gaia
+Terminal=false
+Type=Application
+Categories=Network
+X-ROCK-Name=gaia

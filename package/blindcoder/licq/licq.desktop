@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Licq
+Comment=ICQ Client
+Exec=licq
+Terminal=false
+Type=Application
+Categories=Network;InstantMessaging
+X-ROCK-Name=licq
+Icon=D_datadir/licq/qt-gui/icons.icq2/online.xpm

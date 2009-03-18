@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Foo Billard
+Comment=Play the game of Pool
+Exec=foobillard
+Terminal=false
+Type=Application
+Categories=Game;SportsGame
+X-ROCK-Name=foobillard
+Icon=D_prefix/foobillard/fullhalf_symbol.png

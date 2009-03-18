@@ -1,0 +1,47 @@
+#
+# This script (which must be sourced and not executed)
+# checks kernel version and modifies PATH to use lvm2
+# when linux-2.6 is detected.
+#
+# It creates a directory containing symlinks to /sbin/lvm2
+# and inserts it in $PATH as first element.
+#
+# Thus calling vgscan, vgchange, vgdisplay and so on
+# calls the lvm2 binary - when kernel version is 2.6.
+#
+# Tobias Hintze (c) 2004
+#
+# $Revision: 1.4 $
+#
+
+LVMBINS="
+  dumpconfig      lvchange        lvcreate        lvdisplay       lvextend        
+  lvmchange       lvmdiskscan     lvmsadc         lvmsar          lvreduce        
+  lvremove        lvrename        lvresize        lvs             lvscan          
+  pvchange        pvcreate        pvdata          pvdisplay       pvmove          
+  pvremove        pvresize        pvs             pvscan          vgcfgbackup     
+  vgcfgrestore    vgchange        vgck            vgconvert       vgcreate        
+  vgdisplay       vgexport        vgextend        vgimport        vgmerge         
+  vgmknodes       vgreduce        vgremove        vgrename        vgs             
+  vgscan          vgsplit         lvm
+"
+
+LVM2WRAPDIR=/sbin/lvm2-wrapper-dir
+
+if [[ `uname -r` == 2.6.* ]]
+then
+	# create symlink-dir
+	( 
+	mkdir -p $LVM2WRAPDIR
+	cd $LVM2WRAPDIR
+	for x in $LVMBINS
+	do
+		rm -f $x
+		ln /sbin/lvm2 $x
+	done
+	)
+	# check kernel/lvm version
+	PATH=$LVM2WRAPDIR:$PATH
+fi
+export PATH
+

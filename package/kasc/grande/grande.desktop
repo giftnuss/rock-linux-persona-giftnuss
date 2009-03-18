@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Grande
+Comment=action shooter
+Exec=grande
+Terminal=false
+Type=Application
+Categories=Game;ArcadeGame
+X-ROCK-Name=grande

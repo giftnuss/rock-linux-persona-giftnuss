@@ -1,0 +1,337 @@
+--- ./ksirtet/ksirtet/Makefile.am.orig	2005-09-10 10:18:08.000000000 +0200
++++ ./ksirtet/ksirtet/Makefile.am	2006-04-10 15:35:10.000000000 +0200
+@@ -49,28 +49,28 @@
+ 
+ install-exec-hook:
+ 	@(test x$(HIGHSCORE_DIRECTORY) != x \
+-        && ((chown $(highscore_user):$(highscore_group) $(DESTBIN)) \
+-	|| echo "Error: Could not install the game with correct permissions !!" \
++        && ((chown $(highscore_user):$(highscore_group) $(DESTBIN)) || \
++	echo "Error: Could not install the game with correct permissions !!" \
+ 	)) || true
+ 
+ 	@(test x$(HIGHSCORE_DIRECTORY) != x \
+ 		&& ((mkdir -p $(DESTHIGHSCORES) && chown $(highscore_user):$(highscore_group) $(DESTHIGHSCORES) \
+-		&& chmod 750 $(DESTHIGHSCORES)) \
+-	|| echo "Error: Could not create the highscore directory with correct permissions !!" \
++		&& chmod 750 $(DESTHIGHSCORES)) || \
++	echo "Error: Could not create the highscore directory with correct permissions !!" \
+ 	)) || true
+ 
+ 	@(test x$(HIGHSCORE_DIRECTORY) != x \
+-        && ((chown $(highscore_user):$(highscore_group) $(DESTBIN)) \
+-	|| echo "Error: Could not install the game with correct permissions !!" \
++        && ((chown $(highscore_user):$(highscore_group) $(DESTBIN)) || \
++	echo "Error: Could not install the game with correct permissions !!" \
+ 	)) || true
+ 
+ 	@(test ${setgid} = true \
+-        && ((chmod 2755  $(DESTBIN)) \
+-	|| echo "Error: Could not install the game with correct permissions !!" \
++        && ((chmod 2755  $(DESTBIN)) || \
++	echo "Error: Could not install the game with correct permissions !!" \
+ 	)) || true
+ 
+ 	@(test x$(HIGHSCORE_DIRECTORY) != x \
+         && ((touch $(DESTSCORES) && chown $(highscore_user):$(highscore_group) $(DESTSCORES) \
+-	&& chmod 0660 $(DESTSCORES)) \
+-	|| echo "Error: Could not create system-wide highscore file with correct permissions !!" \
++	&& chmod 0660 $(DESTSCORES)) || \
++	echo "Error: Could not create system-wide highscore file with correct permissions !!" \
+ 	)) || true
+--- ./ksirtet/ksirtet/Makefile.in.orig	2006-03-18 12:29:20.000000000 +0100
++++ ./ksirtet/ksirtet/Makefile.in	2006-04-10 15:35:10.000000000 +0200
+@@ -871,30 +871,30 @@
+ 
+ install-exec-hook:
+ 	@(test x$(HIGHSCORE_DIRECTORY) != x \
+-        && ((chown $(highscore_user):$(highscore_group) $(DESTBIN)) \
+-	|| echo "Error: Could not install the game with correct permissions !!" \
++        && ((chown $(highscore_user):$(highscore_group) $(DESTBIN)) || \
++	echo "Error: Could not install the game with correct permissions !!" \
+ 	)) || true
+ 
+ 	@(test x$(HIGHSCORE_DIRECTORY) != x \
+ 		&& ((mkdir -p $(DESTHIGHSCORES) && chown $(highscore_user):$(highscore_group) $(DESTHIGHSCORES) \
+-		&& chmod 750 $(DESTHIGHSCORES)) \
+-	|| echo "Error: Could not create the highscore directory with correct permissions !!" \
++		&& chmod 750 $(DESTHIGHSCORES)) || \
++	echo "Error: Could not create the highscore directory with correct permissions !!" \
+ 	)) || true
+ 
+ 	@(test x$(HIGHSCORE_DIRECTORY) != x \
+-        && ((chown $(highscore_user):$(highscore_group) $(DESTBIN)) \
+-	|| echo "Error: Could not install the game with correct permissions !!" \
++        && ((chown $(highscore_user):$(highscore_group) $(DESTBIN)) || \
++	echo "Error: Could not install the game with correct permissions !!" \
+ 	)) || true
+ 
+ 	@(test ${setgid} = true \
+-        && ((chmod 2755  $(DESTBIN)) \
+-	|| echo "Error: Could not install the game with correct permissions !!" \
++        && ((chmod 2755  $(DESTBIN)) || \
++	echo "Error: Could not install the game with correct permissions !!" \
+ 	)) || true
+ 
+ 	@(test x$(HIGHSCORE_DIRECTORY) != x \
+         && ((touch $(DESTSCORES) && chown $(highscore_user):$(highscore_group) $(DESTSCORES) \
+-	&& chmod 0660 $(DESTSCORES)) \
+-	|| echo "Error: Could not create system-wide highscore file with correct permissions !!" \
++	&& chmod 0660 $(DESTSCORES)) || \
++	echo "Error: Could not create system-wide highscore file with correct permissions !!" \
+ 	)) || true
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+--- ./kmines/Makefile.am.orig	2005-09-10 10:18:28.000000000 +0200
++++ ./kmines/Makefile.am	2006-04-10 15:10:06.000000000 +0200
+@@ -38,29 +38,29 @@
+ 
+ install-exec-hook:
+ 	@(test x$(HIGHSCORE_DIRECTORY) != x \
+-        && ((chown $(highscore_user):$(highscore_group) $(DESTBIN)) \
+-	|| echo "Error: Could not install the game with correct permissions !!" \
++        && ((chown $(highscore_user):$(highscore_group) $(DESTBIN)) || \
++	echo "Error: Could not install the game with correct permissions !!" \
+ 	)) || true
+ 
+ 	@(test x$(HIGHSCORE_DIRECTORY) != x \
+ 		&& ((mkdir -p $(DESTHIGHSCORES) && chown $(highscore_user):$(highscore_group) $(DESTHIGHSCORES) \
+-		&& chmod 750 $(DESTHIGHSCORES)) \
+-	|| echo "Error: Could not create the highscore directory with correct permissions !!" \
++		&& chmod 750 $(DESTHIGHSCORES)) || \
++	echo "Error: Could not create the highscore directory with correct permissions !!" \
+ 	)) || true
+ 
+ 	@(test x$(HIGHSCORE_DIRECTORY) != x \
+-        && ((chown $(highscore_user):$(highscore_group) $(DESTBIN)) \
+-	|| echo "Error: Could not install the game with correct permissions !!" \
++        && ((chown $(highscore_user):$(highscore_group) $(DESTBIN)) || \
++	echo "Error: Could not install the game with correct permissions !!" \
+ 	)) || true
+ 
+ 	@(test ${setgid} = true \
+-        && ((chmod 2755  $(DESTBIN)) \
+-	|| echo "Error: Could not install the game with correct permissions !!" \
++        && ((chmod 2755  $(DESTBIN)) || \
++	echo "Error: Could not install the game with correct permissions !!" \
+ 	)) || true
+ 
+ 	@(test x$(HIGHSCORE_DIRECTORY) != x \
+         && ((touch $(DESTSCORES) && chown $(highscore_user):$(highscore_group) $(DESTSCORES) \
+-	&& chmod 0660 $(DESTSCORES)) \
+-	|| echo "Error: Could not create system-wide highscore file with correct permissions !!" \
++	&& chmod 0660 $(DESTSCORES)) || \
++	echo "Error: Could not create system-wide highscore file with correct permissions !!" \
+ 	)) || true
+ 
+--- ./kmines/Makefile.in.orig	2006-03-18 12:29:20.000000000 +0100
++++ ./kmines/Makefile.in	2006-04-10 15:10:06.000000000 +0200
+@@ -902,30 +902,30 @@
+ 
+ install-exec-hook:
+ 	@(test x$(HIGHSCORE_DIRECTORY) != x \
+-        && ((chown $(highscore_user):$(highscore_group) $(DESTBIN)) \
+-	|| echo "Error: Could not install the game with correct permissions !!" \
++        && ((chown $(highscore_user):$(highscore_group) $(DESTBIN)) || \
++	echo "Error: Could not install the game with correct permissions !!" \
+ 	)) || true
+ 
+ 	@(test x$(HIGHSCORE_DIRECTORY) != x \
+ 		&& ((mkdir -p $(DESTHIGHSCORES) && chown $(highscore_user):$(highscore_group) $(DESTHIGHSCORES) \
+-		&& chmod 750 $(DESTHIGHSCORES)) \
+-	|| echo "Error: Could not create the highscore directory with correct permissions !!" \
++		&& chmod 750 $(DESTHIGHSCORES)) || \
++	echo "Error: Could not create the highscore directory with correct permissions !!" \
+ 	)) || true
+ 
+ 	@(test x$(HIGHSCORE_DIRECTORY) != x \
+-        && ((chown $(highscore_user):$(highscore_group) $(DESTBIN)) \
+-	|| echo "Error: Could not install the game with correct permissions !!" \
++        && ((chown $(highscore_user):$(highscore_group) $(DESTBIN)) || \
++	echo "Error: Could not install the game with correct permissions !!" \
+ 	)) || true
+ 
+ 	@(test ${setgid} = true \
+-        && ((chmod 2755  $(DESTBIN)) \
+-	|| echo "Error: Could not install the game with correct permissions !!" \
++        && ((chmod 2755  $(DESTBIN)) || \
++	echo "Error: Could not install the game with correct permissions !!" \
+ 	)) || true
+ 
+ 	@(test x$(HIGHSCORE_DIRECTORY) != x \
+         && ((touch $(DESTSCORES) && chown $(highscore_user):$(highscore_group) $(DESTSCORES) \
+-	&& chmod 0660 $(DESTSCORES)) \
+-	|| echo "Error: Could not create system-wide highscore file with correct permissions !!" \
++	&& chmod 0660 $(DESTSCORES)) || \
++	echo "Error: Could not create system-wide highscore file with correct permissions !!" \
+ 	)) || true
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+--- ./kfouleggs/Makefile.am.orig	2005-09-10 10:18:28.000000000 +0200
++++ ./kfouleggs/Makefile.am	2006-04-10 15:33:19.000000000 +0200
+@@ -43,28 +43,28 @@
+ 
+ install-exec-hook:
+ 	@(test x$(HIGHSCORE_DIRECTORY) != x \
+-        && ((chown $(highscore_user):$(highscore_group) $(DESTBIN)) \
+-	|| echo "Error: Could not install the game with correct permissions !!" \
++        && ((chown $(highscore_user):$(highscore_group) $(DESTBIN)) || \
++	echo "Error: Could not install the game with correct permissions !!" \
+ 	)) || true
+ 
+ 	@(test x$(HIGHSCORE_DIRECTORY) != x \
+ 		&& ((mkdir -p $(DESTHIGHSCORES) && chown $(highscore_user):$(highscore_group) $(DESTHIGHSCORES) \
+-		&& chmod 750 $(DESTHIGHSCORES)) \
+-	|| echo "Error: Could not create the highscore directory with correct permissions !!" \
++		&& chmod 750 $(DESTHIGHSCORES)) || \
++	echo "Error: Could not create the highscore directory with correct permissions !!" \
+ 	)) || true
+ 
+ 	@(test x$(HIGHSCORE_DIRECTORY) != x \
+-        && ((chown $(highscore_user):$(highscore_group) $(DESTBIN)) \
+-	|| echo "Error: Could not install the game with correct permissions !!" \
++        && ((chown $(highscore_user):$(highscore_group) $(DESTBIN)) || \
++	echo "Error: Could not install the game with correct permissions !!" \
+ 	)) || true
+ 
+ 	@(test ${setgid} = true \
+-        && ((chmod 2755  $(DESTBIN)) \
+-	|| echo "Error: Could not install the game with correct permissions !!" \
++        && ((chmod 2755  $(DESTBIN)) || \
++	echo "Error: Could not install the game with correct permissions !!" \
+ 	)) || true
+ 
+ 	@(test x$(HIGHSCORE_DIRECTORY) != x \
+         && ((touch $(DESTSCORES) && chown $(highscore_user):$(highscore_group) $(DESTSCORES) \
+-	&& chmod 0660 $(DESTSCORES)) \
+-	|| echo "Error: Could not create system-wide highscore file with correct permissions !!" \
++	&& chmod 0660 $(DESTSCORES)) || \
++	echo "Error: Could not create system-wide highscore file with correct permissions !!" \
+ 	)) || true
+--- ./kfouleggs/Makefile.in.orig	2006-03-18 12:29:19.000000000 +0100
++++ ./kfouleggs/Makefile.in	2006-04-10 15:33:19.000000000 +0200
+@@ -959,30 +959,30 @@
+ 
+ install-exec-hook:
+ 	@(test x$(HIGHSCORE_DIRECTORY) != x \
+-        && ((chown $(highscore_user):$(highscore_group) $(DESTBIN)) \
+-	|| echo "Error: Could not install the game with correct permissions !!" \
++        && ((chown $(highscore_user):$(highscore_group) $(DESTBIN)) || \
++	echo "Error: Could not install the game with correct permissions !!" \
+ 	)) || true
+ 
+ 	@(test x$(HIGHSCORE_DIRECTORY) != x \
+ 		&& ((mkdir -p $(DESTHIGHSCORES) && chown $(highscore_user):$(highscore_group) $(DESTHIGHSCORES) \
+-		&& chmod 750 $(DESTHIGHSCORES)) \
+-	|| echo "Error: Could not create the highscore directory with correct permissions !!" \
++		&& chmod 750 $(DESTHIGHSCORES)) || \
++	echo "Error: Could not create the highscore directory with correct permissions !!" \
+ 	)) || true
+ 
+ 	@(test x$(HIGHSCORE_DIRECTORY) != x \
+-        && ((chown $(highscore_user):$(highscore_group) $(DESTBIN)) \
+-	|| echo "Error: Could not install the game with correct permissions !!" \
++        && ((chown $(highscore_user):$(highscore_group) $(DESTBIN)) || \
++	echo "Error: Could not install the game with correct permissions !!" \
+ 	)) || true
+ 
+ 	@(test ${setgid} = true \
+-        && ((chmod 2755  $(DESTBIN)) \
+-	|| echo "Error: Could not install the game with correct permissions !!" \
++        && ((chmod 2755  $(DESTBIN)) || \
++	echo "Error: Could not install the game with correct permissions !!" \
+ 	)) || true
+ 
+ 	@(test x$(HIGHSCORE_DIRECTORY) != x \
+         && ((touch $(DESTSCORES) && chown $(highscore_user):$(highscore_group) $(DESTSCORES) \
+-	&& chmod 0660 $(DESTSCORES)) \
+-	|| echo "Error: Could not create system-wide highscore file with correct permissions !!" \
++	&& chmod 0660 $(DESTSCORES)) || \
++	echo "Error: Could not create system-wide highscore file with correct permissions !!" \
+ 	)) || true
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+--- ./klickety/Makefile.am.orig	2005-09-10 10:18:05.000000000 +0200
++++ ./klickety/Makefile.am	2006-04-10 15:31:54.000000000 +0200
+@@ -43,28 +43,28 @@
+ 
+ install-exec-hook:
+ 	@(test x$(HIGHSCORE_DIRECTORY) != x \
+-        && ((chown $(highscore_user):$(highscore_group) $(DESTBIN)) \
+-	|| echo "Error: Could not install the game with correct permissions !!" \
++        && ((chown $(highscore_user):$(highscore_group) $(DESTBIN)) || \
++	echo "Error: Could not install the game with correct permissions !!" \
+ 	)) || true
+ 
+ 	@(test x$(HIGHSCORE_DIRECTORY) != x \
+ 		&& ((mkdir -p $(DESTHIGHSCORES) && chown $(highscore_user):$(highscore_group) $(DESTHIGHSCORES) \
+-		&& chmod 750 $(DESTHIGHSCORES)) \
+-	|| echo "Error: Could not create the highscore directory with correct permissions !!" \
++		&& chmod 750 $(DESTHIGHSCORES)) || \
++	echo "Error: Could not create the highscore directory with correct permissions !!" \
+ 	)) || true
+ 
+ 	@(test x$(HIGHSCORE_DIRECTORY) != x \
+-        && ((chown $(highscore_user):$(highscore_group) $(DESTBIN)) \
+-	|| echo "Error: Could not install the game with correct permissions !!" \
++        && ((chown $(highscore_user):$(highscore_group) $(DESTBIN)) || \
++	echo "Error: Could not install the game with correct permissions !!" \
+ 	)) || true
+ 
+ 	@(test ${setgid} = true \
+-        && ((chmod 2755  $(DESTBIN)) \
+-	|| echo "Error: Could not install the game with correct permissions !!" \
++        && ((chmod 2755  $(DESTBIN)) || \
++	echo "Error: Could not install the game with correct permissions !!" \
+ 	)) || true
+ 
+ 	@(test x$(HIGHSCORE_DIRECTORY) != x \
+         && ((touch $(DESTSCORES) && chown $(highscore_user):$(highscore_group) $(DESTSCORES) \
+-	&& chmod 0660 $(DESTSCORES)) \
+-	|| echo "Error: Could not create system-wide highscore file with correct permissions !!" \
++	&& chmod 0660 $(DESTSCORES)) || \
++	echo "Error: Could not create system-wide highscore file with correct permissions !!" \
+ 	)) || true
+--- ./klickety/Makefile.in.orig	2006-03-18 12:29:20.000000000 +0100
++++ ./klickety/Makefile.in	2006-04-10 15:31:54.000000000 +0200
+@@ -935,30 +935,30 @@
+ 
+ install-exec-hook:
+ 	@(test x$(HIGHSCORE_DIRECTORY) != x \
+-        && ((chown $(highscore_user):$(highscore_group) $(DESTBIN)) \
+-	|| echo "Error: Could not install the game with correct permissions !!" \
++        && ((chown $(highscore_user):$(highscore_group) $(DESTBIN)) || \
++	echo "Error: Could not install the game with correct permissions !!" \
+ 	)) || true
+ 
+ 	@(test x$(HIGHSCORE_DIRECTORY) != x \
+ 		&& ((mkdir -p $(DESTHIGHSCORES) && chown $(highscore_user):$(highscore_group) $(DESTHIGHSCORES) \
+-		&& chmod 750 $(DESTHIGHSCORES)) \
+-	|| echo "Error: Could not create the highscore directory with correct permissions !!" \
++		&& chmod 750 $(DESTHIGHSCORES)) || \
++	echo "Error: Could not create the highscore directory with correct permissions !!" \
+ 	)) || true
+ 
+ 	@(test x$(HIGHSCORE_DIRECTORY) != x \
+-        && ((chown $(highscore_user):$(highscore_group) $(DESTBIN)) \
+-	|| echo "Error: Could not install the game with correct permissions !!" \
++        && ((chown $(highscore_user):$(highscore_group) $(DESTBIN)) || \
++	echo "Error: Could not install the game with correct permissions !!" \
+ 	)) || true
+ 
+ 	@(test ${setgid} = true \
+-        && ((chmod 2755  $(DESTBIN)) \
+-	|| echo "Error: Could not install the game with correct permissions !!" \
++        && ((chmod 2755  $(DESTBIN)) || \
++	echo "Error: Could not install the game with correct permissions !!" \
+ 	)) || true
+ 
+ 	@(test x$(HIGHSCORE_DIRECTORY) != x \
+         && ((touch $(DESTSCORES) && chown $(highscore_user):$(highscore_group) $(DESTSCORES) \
+-	&& chmod 0660 $(DESTSCORES)) \
+-	|| echo "Error: Could not create system-wide highscore file with correct permissions !!" \
++	&& chmod 0660 $(DESTSCORES)) || \
++	echo "Error: Could not create system-wide highscore file with correct permissions !!" \
+ 	)) || true
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

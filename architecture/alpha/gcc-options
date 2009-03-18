@@ -1,0 +1,6 @@
+
+if [ $ROCKCFG_ALPHA_OPT != generic ] ; then
+	# Append options so the gcc -V option always comes first.
+	var_append GCC3_WRAPPER_APPEND " " \
+		"-mtune=$ROCKCFG_ALPHA_OPT"
+fi

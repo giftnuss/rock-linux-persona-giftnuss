@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=CGoBan
+Comment=Go-Client for NNGS and others
+Exec=cgoban
+Terminal=false
+Type=Application
+Categories=Game;BoardGame
+X-ROCK-Name=cgoban

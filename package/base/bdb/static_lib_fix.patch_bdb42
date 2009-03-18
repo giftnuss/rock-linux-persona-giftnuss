@@ -1,0 +1,20 @@
+--- ./dist/Makefile.in.orig	2004-12-07 17:01:23.000000000 +0100
++++ ./dist/Makefile.in	2004-12-07 17:02:23.000000000 +0100
+@@ -623,7 +623,7 @@
+ 
+ # Real static C library.
+ $(libdb_version): $(C_OBJS)
+-	$(ar) cr $@ $(C_OBJS)
++	$(ar) cr $@ $(patsubst %.lo,%.o,$(C_OBJS))
+ 	test ! -f $(ranlib) || $(ranlib) $@
+ 
+ # Shared C library.
+@@ -640,7 +640,7 @@
+ 
+ # Real static C++ library.
+ $(libcxx_version): $(CXX_OBJS) $(C_OBJS)
+-	$(ar) cr $@ $(CXX_OBJS) $(C_OBJS)
++	$(ar) cr $@ $(patsubst %.lo,%.o,$(CXX_OBJS)) $(patsubst %.lo,%.o,$(C_OBJS))
+ 	test ! -f $(ranlib) || $(ranlib) $@
+ 
+ # Shared C++ library.

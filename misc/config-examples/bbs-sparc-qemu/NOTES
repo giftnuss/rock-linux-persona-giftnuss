@@ -1,0 +1,91 @@
+Introduction
+------------
+
+This configuration offers a cross-build of (a subset of) the build-bootstrap
+package selection for the sparc architecture as emulated by qemu-system-sparc.
+It includes support for most of the hardware emulated by qemu, a working udev,
+kernel and userland support for TCP/IP networking, and more.
+
+With qemu and the resulting build you can at least:
+- boot the kernel and first stage initrd,
+- execute a shell from the initrd,
+- mount NFS file systems,
+- load the second stage from a CD-ROM or HTTP server,
+- and install packages from the CD on a hard disc.
+
+The packages included should be sufficient for native builds on the targeted
+platform.
+
+Quick Start
+-----------
+
+- Boot from CD with framebuffer (PROM console):
+    qemu-system-sparc -cdrom bbs-sparc-qemu_cd1.iso -hda /srv/qemu.hda \
+	-boot d
+
+- Boot from CD with serial console:
+   qemu-system-sparc -cdrom bbs-sparc-qemu_cd1.iso -hda /srv/qemu.hda \
+	-boot d -append "console=ttyS0 video=tcxfb:off" -nographic
+
+
+Hints And Known Bugs
+--------------------
+
+- To use the CD image in qemu, create it after the build has finished:
+    ./scripts/Create-ISO bbs-sparc-qemu bbs-sparc-qemu
+
+- To use a hard disk in qemu, create it with e.g.:
+    qemu-img create /srv/qemu.hda 2048M
+
+- When using a console on the serial port, be sure to enter 'ttyS0' as the
+  terminal device in boot stage 2, or you won't get to see the command line.
+
+- glibc26 does not build for sparc with -Os because extern inline functions are
+  not used when optimizing for size, resulting in a missing __ieee754_sqrtl
+  function for libm_pic.a; glibc-2.6/sysdeps/sparc/sparc32/fpu/e_sqrtl.c
+  is compiled but glibc-2.6/sysdeps/sparc/sparc32/soft-fp/q_sqrt.c contains
+  the actual __ieee754_sqrtl function.
+
+- the SCSI support in kernel is not compiled as a module because udev can't
+  load it automatically, and loading it and creating the /dev entries manually,
+  the SCSI devices don't work. Furthermore, if partitioning a previously empty
+  hard disk, the new partitions won't show up until after a reboot.
+
+- the size of the uncompressed kernel image (/boot/image) is limited to 2,5 MB
+  when booting with silo. Because of this limit the framebuffer driver is not
+  compiled into the kernel (and cannot be compiled as a module).
+
+- strace does not (cross-)build for sparc yet.
+
+- To access HTTP or NFS servers in qemu, add the following options:
+    -net nic -net tap
+
+   You need root privileges for this, or have your system administrator set it
+   up for you. When qemu starts it will create a network interface (tap0) on the
+   host system and add an IP address/netmask (172.20.0.1/16) to it:
+
+   host:/# ip addr show dev tap0
+	19: tap0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UNKNOWN qlen 500
+	    link/ether 00:ff:e1:75:9a:a0 brd ff:ff:ff:ff:ff:ff
+	    inet 172.20.0.1/16 brd 172.20.255.255 scope global tap0
+	    inet6 fe80::2ff:e1ff:fe75:9aa0/64 scope link
+	       valid_lft forever preferred_lft forever
+
+   In the first boot stage of the emulated system, execute a shell, set up the
+   network link and add an IP address on the same network:
+
+   sh-3.2# ip link set up dev eth0
+	[   41.026595] eth0: link up
+   sh-3.2# ip addr add 172.20.0.20/16 dev eth0
+
+   You should now be able to reach the host system:
+
+   sh-3.2# ping -c3 172.20.0.1
+	PING 172.20.0.1 (172.20.0.1): 56 octets data
+	64 octets from 172.20.0.1: icmp_seq=0 ttl=64 time=16.7 ms
+	64 octets from 172.20.0.1: icmp_seq=1 ttl=64 time=1.6 ms
+	64 octets from 172.20.0.1: icmp_seq=2 ttl=64 time=1.1 ms
+	
+	--- 172.20.0.1 ping statistics ---
+	3 packets transmitted, 3 packets received, 0% packet loss
+	round-trip min/avg/max = 1.1/6.4/16.7 ms

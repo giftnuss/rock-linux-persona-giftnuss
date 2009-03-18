@@ -1,0 +1,2 @@
+CFGTEMP_DEFAULT_CC="icc Use_icc_as_default_C_compiler $CFGTEMP_DEFAULT_CC"
+CFGTEMP_DEFAULT_CXX="icc Use_icc_as_default_C++_compiler $CFGTEMP_DEFAULT_CXX"

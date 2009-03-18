@@ -1,0 +1,22 @@
+
+[TIMESTAMP] 1181168586 Thu Jun  7 00:23:06 2007 (5)
+[TIMESTAMP] 1181614727 Tue Jun 12 04:18:47 2007 (9)
+
+[CONFIG-ID] TRUNK-x86-reference
+[ROCKVER] TRUNK
+
+[LOGS] 5-xconq.log 9-xconq.log
+
+[BUILDTIME] 8097 (5)
+[BUILDTIME] 8228 (9)
+[SIZE] 3.98 MB, 212 files
+
+[DEP] 00-dirtree alsa applewmproto applewmproto:dev bash2 binutils bzip2
+[DEP] coreutils cvm diffutils findutils gawk gcc42 gcc42:dev glibc26
+[DEP] glibc26:dev grep imake libice libsm libx11 libx11:dev libxau
+[DEP] libxaw libxcb libxdmcp libxext libxmu libxmu:dev libxp libxpm libxt
+[DEP] libxt:dev linux26-headers:dev ltrace make mktemp net-tools patch
+[DEP] sed sysfiles tar tcl tcl:dev tk tk:dev xmame xorg-cf-files xproto:dev
+
+[PROVIDES] imf2x x2imf xconq ximfapp
+

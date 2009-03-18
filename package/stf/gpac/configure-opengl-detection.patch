@@ -1,0 +1,11 @@
+--- ./configure.orig	2006-03-30 23:21:37.000000000 +0200
++++ ./configure	2006-03-30 23:22:52.000000000 +0200
+@@ -369,7 +369,7 @@
+ if test "$win32" = "yes" ; then
+ LINK3D="-lopengl32 -lglu32"
+ else
+-LINK3D="-lGL -lGLU"
++LINK3D="-L/usr/X11/lib -lGL -lGLU"
+ fi
+ 
+ if $cc -o $TMPO $TMPC $LINK3D 2> /dev/null  ; then

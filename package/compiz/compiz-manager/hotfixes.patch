@@ -1,0 +1,26 @@
+--- ./compiz-manager	2007-10-15 21:10:06.000000000 +0200
++++ ./compiz-manager	2007-11-19 09:56:08.000000000 +0100
+@@ -27,9 +27,9 @@
+ # 
+ 
+ 
+-COMPIZ_BIN_PATH="/usr/local/bin/" # For window decorators and compiz
+-PLUGIN_PATH="/usr/local/lib/compiz/" 
+-GLXINFO="/usr/bin/glxinfo"
++COMPIZ_BIN_PATH="/usr/bin/" # For window decorators and compiz
++PLUGIN_PATH="/usr/lib/compiz/" 
++GLXINFO="/usr/X11/bin/glxinfo"
+ KWIN="/usr/bin/kwin"
+ METACITY="/usr/bin/metacity"
+ COMPIZ_NAME="compiz" # Final name for compiz (compiz.real) 
+@@ -249,8 +249,8 @@
+ 	return 0
+ 	fi
+ 	for DRV in ${WHITELIST}; do
+-		if egrep -q "Loading ${XORG_DRIVER_PATH}${DRV}_drv\.so" $LOG &&
+-		   ! egrep -q "Unloading ${XORG_DRIVER_PATH}${DRV}_drv\.so" $LOG; 
++		if egrep -q "Loading .*/${DRV}_drv\.so" $LOG &&
++		   ! egrep -q "Unloading .*/${DRV}_drv\.so" $LOG; 
+ 		then
+ 			return 0
+ 		fi

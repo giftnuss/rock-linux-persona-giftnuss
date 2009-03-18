@@ -1,0 +1,20 @@
+--- ./mDNSPosix/Makefile.orig	2008-10-25 11:48:46.000000000 +0200
++++ ./mDNSPosix/Makefile	2008-10-25 12:00:04.000000000 +0200
+@@ -437,7 +437,7 @@
+ 
+ all: setup Daemon libdns_sd Clients SAClient SAResponder SAProxyResponder Identify NetMonitor dnsextd $(OPTIONALTARG)
+ 
+-install: setup InstalledDaemon InstalledStartup InstalledLib InstalledManPages InstalledClients $(OPTINSTALL)
++install: setup InstalledDaemon InstalledLib InstalledManPages InstalledClients $(OPTINSTALL)
+ 
+ # 'setup' sets up the build directory structure the way we want
+ setup:
+@@ -513,7 +513,7 @@
+ 
+ # Note: If daemon already installed, we make sure it's stopped before overwriting it
+ $(INSTBASE)/sbin/mdnsd: $(BUILDDIR)/mdnsd
+-	@if test -x $@; then $(STARTUPSCRIPTDIR)/$(STARTUPSCRIPTNAME) stop; fi
++#	@if test -x $@; then $(STARTUPSCRIPTDIR)/$(STARTUPSCRIPTNAME) stop; fi
+ 	$(CP) $< $@
+ 
+ $(INSTBASE)/lib/libdns_sd.$(LDSUFFIX).$(LIBVERS): $(BUILDDIR)/libdns_sd.$(LDSUFFIX)

@@ -1,0 +1,56 @@
+diff -dur /usr/src/qcake-0.5.8.3/qcakeplayer/qcakeplayer.pro qcake-0.5.8.3/qcakeplayer/qcakeplayer.pro
+--- /usr/src/qcake-0.5.8.3/qcakeplayer/qcakeplayer.pro	2006-10-13 13:14:32.000000000 +0200
++++ qcake-0.5.8.3/qcakeplayer/qcakeplayer.pro	2006-12-07 21:34:00.000000000 +0100
+@@ -83,9 +83,11 @@
+ #	   -lssl \
+            -ldl \
+            -lpcre \
+-           /usr/local/lib/libode.a \
++           /usr/lib/libode.a \
+            -lplibnet \
+            -lopenal \
+-#	   -lalut \
++	   -lalut \
+ 	   -lGL \
+-           -lGLU
++           -lGLU \
++           -lreadline \
++           -lncurses
+diff -dur /usr/src/qcake-0.5.8.3/src/audioenv.cpp qcake-0.5.8.3/src/audioenv.cpp
+--- /usr/src/qcake-0.5.8.3/src/audioenv.cpp	2006-09-12 10:57:09.000000000 +0200
++++ qcake-0.5.8.3/src/audioenv.cpp	2006-12-07 20:59:53.000000000 +0100
+@@ -261,7 +261,7 @@
+ 
+ #ifdef LINUX
+     // debian sarge 
+-	   alutLoadVorbisp = (vorbisLoader *) alGetProcAddress((ALubyte *) VORBIS_FUNC);
++	   alutLoadVorbisp = (vorbisLoader *) alGetProcAddress( VORBIS_FUNC);
+     // debian etch  
+ //	   alutLoadVorbisp = (vorbisLoader *) alGetProcAddress( VORBIS_FUNC);
+ #endif
+diff -dur /usr/src/qcake-0.5.8.3/src/src.pro qcake-0.5.8.3/src/src.pro
+--- /usr/src/qcake-0.5.8.3/src/src.pro	2006-10-13 13:14:17.000000000 +0200
++++ qcake-0.5.8.3/src/src.pro	2006-12-07 21:34:58.000000000 +0100
+@@ -157,12 +157,12 @@
+ #	   -lssl \
+            -ldl \
+            -lpcre \
+-           /usr/local/lib/libode.a \
++           /usr/lib/libode.a \
+ #           -lplibsl \
+            -lplibnet \
+ #           -lplibsm \
+            -lopenal \
+-#	   -lalut \
++	   -lalut \
+ 	   -lGL \
+ # test
+ #	   -lICE \
+@@ -172,4 +172,6 @@
+ #	   -lX11 \
+ #	   -lm \
+ # /test
+-           -lGLU
++           -lGLU \
++           -lreadline \
++           -lncurses

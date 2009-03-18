@@ -1,0 +1,14 @@
+# Desc: Intelligent Volume Manager
+# Runlevel: 61 rcX
+
+main_begin
+
+    block_begin(start, `Setting up Intelligent Volume Manager.')
+	check(`D_prefix/bin/ivman')
+    block_end
+
+    block_begin(stop, `Shutting down Intelligent Volume Manager.')
+	check(`D_prefix/bin/killall D_prefix/bin/ivman')
+    block_end
+
+main_end

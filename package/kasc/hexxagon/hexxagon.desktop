@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Hexxagon
+Comment=Hexxagon
+Exec=hexxagon
+Terminal=false
+Type=Application
+Categories=Game;BoardGame
+X-ROCK-Name=hexxagon

@@ -1,0 +1,11 @@
+--- xf86-video-sis-X11R7.2-0.9.3/src/sis_dri.c	2007-01-09 00:48:48.000000000 +0100
++++ xf86-video-sis-X11R7.2-0.9.3-patched/src/sis_dri.c	2007-06-06 11:16:41.000000000 +0200
+@@ -125,6 +125,8 @@
+ static void SISDRIMoveBuffers(WindowPtr pParent, DDXPointRec ptOldOrg,
+                    RegionPtr prgnSrc, CARD32 index);
+ 
++void SISDRICloseScreen(ScreenPtr pScreen);
++
+ static Bool
+ SISInitVisualConfigs(ScreenPtr pScreen)
+ {

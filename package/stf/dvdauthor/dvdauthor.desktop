@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=DVD Author
+Comment=DVD Mastering Tools
+Exec=dvdauthor
+Terminal=false
+Type=Application
+Categories=AudioVideo
+# note that we're walking outside the freedesktop.org spec here
+# but dvdauthor does not write DVDs itself but only creates a
+# DVD filesystem which can then be written to a DVD
+X-ROCK-Name=dvdauthor

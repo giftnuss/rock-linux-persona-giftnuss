@@ -1,0 +1,11 @@
+
+if pkgcheck kdelibs4 X ; then
+	if [ "$ROCKCFG_LINGUAS" == "all" ] ; then
+		# note this only works if using ./scripts/Config -nobashmod
+		pkgenable kde-i18n=.*
+	else
+		for lang in $ROCKCFG_LINGUAS ; do
+			pkgenable kde4-i18n=kde4-i18n-$lang
+		done
+	fi
+fi

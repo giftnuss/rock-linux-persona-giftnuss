@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=umix
+Comment=Mixer
+Exec=umix
+Terminal=false
+Type=Application
+Categories=Audio;Mixer
+X-ROCK-Name=umix

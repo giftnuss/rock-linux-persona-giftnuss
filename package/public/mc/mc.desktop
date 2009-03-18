@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Midnight Commander
+Comment=Filesystem Browser
+Exec=mc
+Terminal=true
+Type=Application
+Categories=FileManager
+X-ROCK-Name=mc

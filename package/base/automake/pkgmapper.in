@@ -1,0 +1,6 @@
+
+case "$pkg" in
+	automake[0-9]*)
+		pkg=automake ;;
+esac
+

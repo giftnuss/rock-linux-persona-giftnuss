@@ -1,0 +1,26 @@
+diff -ruN p3nfs-5.19/Makefile.in p3nfs-5.19-new/Makefile.in
+--- p3nfs-5.19/Makefile.in	2005-11-24 15:30:55.000000000 +0100
++++ p3nfs-5.19-new/Makefile.in	2006-02-22 10:45:56.000000000 +0100
+@@ -14,7 +14,6 @@
+ 
+ all clean distclean::
+ 	cd server; $(MAKE) $@
+-	cd client/epoc32/nfsapp; $(MAKE) $@
+ 
+ install::
+ 	mkdir -p $(BINDIR)
+@@ -23,7 +22,6 @@
+ 	cp doc/p3nfsd.1 $(MANDIR)
+ 	mkdir -p $(DOCDIR)
+ 	cp doc/* $(DOCDIR)
+-	cp bin/*.sis client/*/opl/*.opl client/epoc16/nfsc/nfsc.app $(DOCDIR)
+ 
+ 
+ uninstall::
+@@ -42,6 +40,5 @@
+ distclean::
+ 	rm -f p3nfs-$(VERSION).tar.gz
+ 	rm -f Makefile server/Makefile utils/Makefile
+-	rm -f client/epoc32/nfsapp/Makefile
+ 	rm -f config.cache config.status config.log *.orig
+ 	rm -f utils/p3nfs.spec doc/p3nfsd.1

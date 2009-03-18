@@ -1,0 +1,13 @@
+diff -pruN findutils-4.2.24-orig/gnulib/lib/regex.h findutils-4.2.24/gnulib/lib/regex.h
+--- findutils-4.2.24-orig/gnulib/lib/regex.h	2006-01-31 09:34:31.000000000 +0100
++++ findutils-4.2.24/gnulib/lib/regex.h	2006-01-31 09:34:54.000000000 +0100
+@@ -21,6 +21,9 @@
+ #ifndef _REGEX_H
+ #define _REGEX_H 1
+ 
++#define __re_error_msgid __findutils__re_error_msgid
++#define __re_error_msgid_idx __findutils__re_error_msgid_idx
++
+ #include <sys/types.h>
+ 
+ /* Allow the use in C++ code.  */

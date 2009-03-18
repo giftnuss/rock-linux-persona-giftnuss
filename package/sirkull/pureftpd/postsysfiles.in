@@ -1,0 +1,3 @@
+safe_groupadd ftp 13
+safe_useradd ftp 13 13 "system user for proftp" /var/ftp /bin/flase "*"
+

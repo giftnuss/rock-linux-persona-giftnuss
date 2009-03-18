@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=BibleTime
+Comment=An analyser for the christian Bible
+Exec=bibletime
+Terminal=false
+Type=Application
+Categories=Utility
+X-ROCK-Name=bibletime
+Icon=D_datadir/icons/hicolor/16x16/apps/bibletime.png

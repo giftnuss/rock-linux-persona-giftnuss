@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>  
+
+<deviceinfo version="0.2"> 
+  
+  <device> 
+    <merge key="storage.policy.default.mount_option.users" type="bool">true</merge> 
+  </device> 
+
+</deviceinfo>

@@ -1,0 +1,40 @@
+#!/bin/bash
+
+help() {
+	echo "Usage: $0 <pkg-name> <priority>"
+	echo "       $0 <pkg-name> -before <pkg-name>"
+	echo "       $0 <pkg-name> -after <pkg-name>"
+	exit 1
+}
+
+setpkg="$1"
+shift
+
+case "$1" in
+	-before)
+		read dummy1 dummy2 dummy3 masterpri < <( grep '^\[P\]' package/*/$2/$2.desc; )
+		setpri=`perl -e "printf('%07.3f', $masterpri - 0.001)"`
+		shift; shift
+		;;
+	-after)
+		read dummy1 dummy2 dummy3 masterpri < <( grep '^\[P\]' package/*/$2/$2.desc; )
+		setpri=`perl -e "printf('%07.3f', $masterpri + 0.001)"`
+		shift; shift
+		;;
+	*)
+		masterpri="$1"
+		setpri="$1"
+		shift
+		;;
+esac
+
+if [ -z "$setpkg" -o -z "$setpri" -o -z "$masterpri" -o ! -f package/*/$setpkg/$setpkg.desc ]; then
+	help
+fi
+
+tempfile=`mktemp`
+cp package/*/$setpkg/$setpkg.desc $tempfile
+sed -i "s,^\(\[P\].*\) [0-9.]*,\1 $setpri," $tempfile
+diff -u ./package/*/$setpkg/$setpkg.desc $tempfile
+rm -f $tempfile
+

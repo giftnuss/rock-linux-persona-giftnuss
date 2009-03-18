@@ -1,0 +1,28 @@
+--- ./support/shlib-install.orig	2008-07-04 13:07:38.000000000 +0200
++++ ./support/shlib-install	2008-07-04 13:11:15.000000000 +0200
+@@ -47,17 +47,18 @@
+ 
+ # pre-install
+ 
+-if [ -z "$uninstall" ]; then
+-	${echo} $RM ${INSTALLDIR}/${LIBNAME}.${OLDSUFF}
+-	if [ -f "$INSTALLDIR/$LIBNAME" ]; then
+-		${echo} $MV $INSTALLDIR/$LIBNAME ${INSTALLDIR}/${LIBNAME}.${OLDSUFF}
+-	fi
+-fi
++# if [ -z "$uninstall" ]; then
++# 	${echo} $RM ${INSTALLDIR}/${LIBNAME}.${OLDSUFF}
++# 	if [ -f "$INSTALLDIR/$LIBNAME" ]; then
++# 		${echo} $MV $INSTALLDIR/$LIBNAME ${INSTALLDIR}/${LIBNAME}.${OLDSUFF}
++# 	fi
++# fi
+ 
+ # install/uninstall
+ 
+ if [ -z "$uninstall" ] ; then
+-	${echo} eval ${INSTALLPROG} $LIBNAME ${INSTALLDIR}/${LIBNAME}
++	${echo} eval ${INSTALLPROG} $LIBNAME ${INSTALLDIR}/${LIBNAME}.new
++	${echo} $MV ${INSTALLDIR}/${LIBNAME}.new ${INSTALLDIR}/${LIBNAME}
+ else
+ 	${echo} ${RM} ${INSTALLDIR}/${LIBNAME}
+ fi

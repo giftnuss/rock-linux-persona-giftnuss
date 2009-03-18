@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=TerminalServer Client
+Comment=A Remote Desktop Protocol (RDP) client
+Exec=tsclient
+Terminal=false
+Type=Application
+Categories=Network;RemoteAccess
+X-ROCK-Name=tsclient
+Icon=D_datadir/pixmaps/tsclient.png

@@ -1,0 +1,4 @@
+case "$pkg" in
+	ati-x86|ati-x86-64) pkg=ati ;;
+	ati-legacy-x86|ati-legacy-x86_64) pkg=ati ;;
+esac

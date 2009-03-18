@@ -1,0 +1,2 @@
+safe_groupadd netdev 81
+safe_useradd avahi 81 81 "avahi" / /bin/false "*"

@@ -1,0 +1,14 @@
+# Desc: Apple Darwin Multicast DNS / DNS Service Discovery daemon
+# Runlevel: 20 rcX
+
+main_begin
+
+    block_begin(start, `Starting Apple Darwin Multicast DNS / DNS Service Discovery daemon.')
+	check(`D_prefix/sbin/mdnsd')
+    block_end
+
+    block_begin(stop, `Stopping Apple Darwin Multicast DNS / DNS Service Discovery daemon.')
+	check(`killall D_prefix/sbin/mdnsd')
+    block_end
+
+main_end

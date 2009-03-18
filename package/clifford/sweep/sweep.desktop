@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Sweep
+Comment=Music Sampler
+Exec=sweep
+Terminal=false
+Type=Application
+Categories=Audio;Music
+X-ROCK-Name=sweep
+Icon=D_datadir/sweep/sweep_logo.ppm

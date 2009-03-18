@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=jed
+Comment=Text editor
+Exec=jed
+Terminal=false
+Type=Application
+Categories=Utility;TextEditor
+X-ROCK-Name=jed

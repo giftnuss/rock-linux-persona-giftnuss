@@ -1,0 +1,23 @@
+diff -Naur minit-0.10-orig/serdo.c minit-0.10/serdo.c
+--- minit-0.10-orig/serdo.c	2005-02-26 18:00:22.000000000 +0100
++++ minit-0.10/serdo.c	2007-07-12 03:58:30.292420270 +0200
+@@ -7,6 +7,8 @@
+ #include <str.h>
+ #include <byte.h>
+ 
++extern char **environ;
++
+ #define MAXENV 256
+ char* envp[MAXENV+2];
+ int envc;
+diff -Naur minit-0.10-orig/shutdown.c minit-0.10/shutdown.c
+--- minit-0.10-orig/shutdown.c	2004-01-29 15:40:45.000000000 +0100
++++ minit-0.10/shutdown.c	2007-07-12 03:57:10.051209844 +0200
+@@ -26,6 +26,7 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <sys/wait.h>
++#include <string.h>
+ 
+ #include "str.h"
+ 

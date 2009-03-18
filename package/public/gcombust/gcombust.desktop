@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=GCombust
+Comment=CD Recording
+Exec=gcombust
+Terminal=false
+Type=Application
+Categories=CDWriting
+# note that I'm walking outside of the freedesktop spec here but I think
+# that AudioVideo;DiscBurning or Utility just doesn't fit here
+X-ROCK-Name=gcombust
+Icon=D_datadir/pixmaps/gcombust.xpm

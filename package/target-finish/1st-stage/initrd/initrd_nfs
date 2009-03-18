@@ -1,0 +1,5 @@
+/sbin/mount.nfs /sbin/mount.nfs
+/sbin/umount.nfs /sbin/umount.nfs
+/usr/sbin/rpc.statd /usr/sbin/rpc.statd
+/usr/sbin/sm-notify /usr/sbin/sm-notify
+/var/lib/nfs /var/lib/nfs

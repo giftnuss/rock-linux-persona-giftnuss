@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Dvorak NG
+Comment=Dvorak keyboard learning tool
+Exec=dvorakng
+Terminal=true
+Type=Application
+Categories=Game;Education
+X-ROCK-Name=dvorakng

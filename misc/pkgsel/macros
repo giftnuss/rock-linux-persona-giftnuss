@@ -1,0 +1,39 @@
+#!/bin/bash
+
+INCLUDE() {
+	if echo "$1" | grep -q '.*\.set$'
+	then
+		cat ./misc/pkgsel/sets/$1 | sed 's/#.*//'
+	else
+		cat $1 | sed 's/#.*//'
+	fi
+}
+
+ADD() {
+	echo "/[ =]$1 / { s/^O /X / ; p ; d } ;"
+}
+
+ADD_WITH_DEPS() {
+	if [ ! -d package/*/${1} ] ; then
+		echo "No package by the name of '${1}'"
+		continue
+	fi
+	if [ ! -f package/*/${1}/${1}.cache ] ; then
+		echo "Package ${1} has no cache file!"
+		continue
+	fi
+	ADD "${1}"
+	grep '^\[DEP\] ' package/*/${1}/${1}.cache | cut -d' ' -f 2- | \
+		tr ' ' '\n' | while read pkg ; do
+		ADD "${pkg}"
+	done
+	shift
+}
+
+REMOVE() {
+	echo "/[ =]$1 /	{ s/^X /O / ; p ; d } ;"
+}
+
+DISABLE_REST() {
+	echo 's/^X /O / ;'
+}

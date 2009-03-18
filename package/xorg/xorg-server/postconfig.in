@@ -1,0 +1,5 @@
+if [ "$ROCKCFG_DEFAULT_X11" != xorg ] ; then
+	pkgremove xorg
+	pkgremove libdrm
+	pkgremove fontconfig
+fi

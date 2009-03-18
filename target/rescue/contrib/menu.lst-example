@@ -1,0 +1,41 @@
+#
+# LVM boot cycle:
+# Boot device is a small partition with dos-like filesystem.
+# Some PC manufacturers always create such partitions for their
+# utilities. It can be used to get a rescue stage2 running and thus
+# getting up your whole system. There is no need for another partition
+# except the LVM physical volume that holds your volume groups.
+#
+title ROCK Linux productive LVM boot cycle
+kernel (hd0,0)/vmlinuz-2.6.7 root=/dev/ram0 overlay_failure=ignore boot=vfat:/dev/discs/disc0/part1 stage2init=/sbin/init-lvm-cycle rootlv=/dev/vg00/lvroot0 panic=10
+initrd (hd0,0)/rescue/initrd.img
+
+#
+# rescue from hdd:
+# System location defaults to "/mnt_boot/rescue/system.tar.bz2" here.
+# Default boot device is /dev/discs/disc0/part1.
+# No rootlv param is given so we will reach stage2 with gettys here.
+#
+title ROCK Linux advanced rescue system from HDD
+kernel (hd0,0)/vmlinuz-2.6.7 root=/dev/ram0 overlay_failure=ignore
+initrd (hd0,0)/rescue/initrd.img
+
+#
+# rescue from CDROM (fdemu):
+# We pass the boot param to give correct filesystem type and block
+# device.
+#
+title ROCK Linux advanced rescue system from CDROM
+kernel (hd0)/vmlinuz root=/dev/ram0 boot=iso9660:/dev/cdroms/cdrom0 panic=30
+initrd (fd0)/initrd.gz
+
+#
+# LVM boot cycle from CDROM:
+# We even load or stage2 from CDROM so we need no partition except some
+# physical volume to hold our volume groups.
+#
+title ROCK Linux productive - LVM boot cycle (from CDROM)
+kernel (fd0)/vmlinuz root=/dev/ram0 boot=iso9660:/dev/cdroms/cdrom0 stage2init=/sbin/init-lvm-cycle rootlv=/dev/vg00/lvroot0 panic=30
+initrd (fd0)/initrd.gz
+
+

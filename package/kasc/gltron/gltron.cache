@@ -1,0 +1,123 @@
+
+[TIMESTAMP] 1181170779 Thu Jun  7 00:59:39 2007 (5) ERROR
+[TIMESTAMP] 1181616603 Tue Jun 12 04:50:03 2007 (9) ERROR
+[TIMESTAMP] 1181831898 Thu Jun 14 16:38:18 2007 (5) ERROR
+[TIMESTAMP] 1181916021 Fri Jun 15 16:00:21 2007 (9) ERROR
+[TIMESTAMP] 1181955288 Sat Jun 16 02:54:48 2007 (5) ERROR
+[TIMESTAMP] 1181977162 Sat Jun 16 08:59:22 2007 (9) ERROR
+
+[CONFIG-ID] TRUNK-x86-reference
+[ROCKVER] TRUNK
+
+[LOGS] 5-gltron.err 9-gltron.err
+
+[BUILDTIME] 3565 (5) ERROR
+[BUILDTIME] 3450 (9) ERROR
+[BUILDTIME] 3548 (5) ERROR
+[BUILDTIME] 3527 (9) ERROR
+[BUILDTIME] 3396 (5) ERROR
+[BUILDTIME] 3410 (9) ERROR
+
+
+[5-ERROR] rm -f libconfiguration.a
+[5-ERROR] ar cru libconfiguration.a settings.o 
+[5-ERROR] ranlib libconfiguration.a
+[5-ERROR] make[2]: Leaving directory `/ROCK/loop/src.gltron.1181955254.17432.1627887995/gltron-0.70/src/configuration'
+[5-ERROR] Making all in audio
+[5-ERROR] make[2]: Entering directory `/ROCK/loop/src.gltron.1181955254.17432.1627887995/gltron-0.70/src/audio'
+[5-ERROR] source='sound.c' object='sound.o' libtool=no \
+[5-ERROR] 	depfile='.deps/sound.Po' tmpdepfile='.deps/sound.TPo' \
+[5-ERROR] 	depmode=gcc3 /bin/sh ../../depcomp \
+[5-ERROR] 	gcc-42 -DPACKAGE=\"gltron\" -DVERSION=\"0.70\" -DHAVE_LIBGL=1 -DHAVE_LIBZ=1 -DHAVE_LIBPNG=1 -DHAVE_LIBOGG=1 -DHAVE_LIBVORBIS=1 -DHAVE_LIBVORBISFILE=1 -DHAVE_LIBMIKMOD=1 -DHAVE_UNISTD_H=1 -DHAVE_GL_GL_H=1 -Dconst= -DHAVE_MKSTEMP=1  -I. -I.   -DDATA_DIR=\"/usr/share/gltron\" -DSNAP_DIR=\"~\" -DPREF_DIR=\"~\" -I../../lua/include -I../../nebu/include -I../../src/include -DSEPARATOR="'/'" -Wall -Werror -Os -I/usr/include/SDL -D_GNU_SOURCE=1 -D_REENTRANT -c `test -f sound.c || echo './'`sound.c
+[5-ERROR] source='sound_glue.cpp' object='sound_glue.o' libtool=no \
+[5-ERROR] 	depfile='.deps/sound_glue.Po' tmpdepfile='.deps/sound_glue.TPo' \
+[5-ERROR] 	depmode=gcc3 /bin/sh ../../depcomp \
+[5-ERROR] 	g++-42 -DPACKAGE=\"gltron\" -DVERSION=\"0.70\" -DHAVE_LIBGL=1 -DHAVE_LIBZ=1 -DHAVE_LIBPNG=1 -DHAVE_LIBOGG=1 -DHAVE_LIBVORBIS=1 -DHAVE_LIBVORBISFILE=1 -DHAVE_LIBMIKMOD=1 -DHAVE_UNISTD_H=1 -DHAVE_GL_GL_H=1 -Dconst= -DHAVE_MKSTEMP=1  -I. -I.   -DDATA_DIR=\"/usr/share/gltron\" -DSNAP_DIR=\"~\" -DPREF_DIR=\"~\" -I../../lua/include -I../../nebu/include -I../../src/include -g -O2 -Os -I/usr/include/SDL -D_GNU_SOURCE=1 -D_REENTRANT -c -o sound_glue.o `test -f sound_glue.cpp || echo './'`sound_glue.cpp
+[5-ERROR] sound_glue.cpp: In function 'void Audio_Idle()':
+[5-ERROR] sound_glue.cpp:100: warning: deprecated conversion from string constant to 'char*'
+[5-ERROR] rm -f libaudio.a
+[5-ERROR] ar cru libaudio.a sound.o sound_glue.o 
+[5-ERROR] ranlib libaudio.a
+[5-ERROR] make[2]: Leaving directory `/ROCK/loop/src.gltron.1181955254.17432.1627887995/gltron-0.70/src/audio'
+[5-ERROR] Making all in video
+[5-ERROR] make[2]: Entering directory `/ROCK/loop/src.gltron.1181955254.17432.1627887995/gltron-0.70/src/video'
+[5-ERROR] source='artpack.c' object='artpack.o' libtool=no \
+[5-ERROR] 	depfile='.deps/artpack.Po' tmpdepfile='.deps/artpack.TPo' \
+[5-ERROR] 	depmode=gcc3 /bin/sh ../../depcomp \
+[5-ERROR] 	gcc-42 -DPACKAGE=\"gltron\" -DVERSION=\"0.70\" -DHAVE_LIBGL=1 -DHAVE_LIBZ=1 -DHAVE_LIBPNG=1 -DHAVE_LIBOGG=1 -DHAVE_LIBVORBIS=1 -DHAVE_LIBVORBISFILE=1 -DHAVE_LIBMIKMOD=1 -DHAVE_UNISTD_H=1 -DHAVE_GL_GL_H=1 -Dconst= -DHAVE_MKSTEMP=1  -I. -I.   -DDATA_DIR=\"/usr/share/gltron\" -DSNAP_DIR=\"~\" -DPREF_DIR=\"~\" -I../../lua/include -I../../nebu/include -I../../src/include -DSEPARATOR="'/'" -Wall -Werror -Os -I/usr/include/SDL -D_GNU_SOURCE=1 -D_REENTRANT -c `test -f artpack.c || echo './'`artpack.c
+[5-ERROR] source='explosion.c' object='explosion.o' libtool=no \
+[5-ERROR] 	depfile='.deps/explosion.Po' tmpdepfile='.deps/explosion.TPo' \
+[5-ERROR] 	depmode=gcc3 /bin/sh ../../depcomp \
+[5-ERROR] 	gcc-42 -DPACKAGE=\"gltron\" -DVERSION=\"0.70\" -DHAVE_LIBGL=1 -DHAVE_LIBZ=1 -DHAVE_LIBPNG=1 -DHAVE_LIBOGG=1 -DHAVE_LIBVORBIS=1 -DHAVE_LIBVORBISFILE=1 -DHAVE_LIBMIKMOD=1 -DHAVE_UNISTD_H=1 -DHAVE_GL_GL_H=1 -Dconst= -DHAVE_MKSTEMP=1  -I. -I.   -DDATA_DIR=\"/usr/share/gltron\" -DSNAP_DIR=\"~\" -DPREF_DIR=\"~\" -I../../lua/include -I../../nebu/include -I../../src/include -DSEPARATOR="'/'" -Wall -Werror -Os -I/usr/include/SDL -D_GNU_SOURCE=1 -D_REENTRANT -c `test -f explosion.c || echo './'`explosion.c
+[5-ERROR] source='fonts.c' object='fonts.o' libtool=no \
+[5-ERROR] 	depfile='.deps/fonts.Po' tmpdepfile='.deps/fonts.TPo' \
+[5-ERROR] 	depmode=gcc3 /bin/sh ../../depcomp \
+[5-ERROR] 	gcc-42 -DPACKAGE=\"gltron\" -DVERSION=\"0.70\" -DHAVE_LIBGL=1 -DHAVE_LIBZ=1 -DHAVE_LIBPNG=1 -DHAVE_LIBOGG=1 -DHAVE_LIBVORBIS=1 -DHAVE_LIBVORBISFILE=1 -DHAVE_LIBMIKMOD=1 -DHAVE_UNISTD_H=1 -DHAVE_GL_GL_H=1 -Dconst= -DHAVE_MKSTEMP=1  -I. -I.   -DDATA_DIR=\"/usr/share/gltron\" -DSNAP_DIR=\"~\" -DPREF_DIR=\"~\" -I../../lua/include -I../../nebu/include -I../../src/include -DSEPARATOR="'/'" -Wall -Werror -Os -I/usr/include/SDL -D_GNU_SOURCE=1 -D_REENTRANT -c `test -f fonts.c || echo './'`fonts.c
+[5-ERROR] source='fonttex.c' object='fonttex.o' libtool=no \
+[5-ERROR] 	depfile='.deps/fonttex.Po' tmpdepfile='.deps/fonttex.TPo' \
+[5-ERROR] 	depmode=gcc3 /bin/sh ../../depcomp \
+[5-ERROR] 	gcc-42 -DPACKAGE=\"gltron\" -DVERSION=\"0.70\" -DHAVE_LIBGL=1 -DHAVE_LIBZ=1 -DHAVE_LIBPNG=1 -DHAVE_LIBOGG=1 -DHAVE_LIBVORBIS=1 -DHAVE_LIBVORBISFILE=1 -DHAVE_LIBMIKMOD=1 -DHAVE_UNISTD_H=1 -DHAVE_GL_GL_H=1 -Dconst= -DHAVE_MKSTEMP=1  -I. -I.   -DDATA_DIR=\"/usr/share/gltron\" -DSNAP_DIR=\"~\" -DPREF_DIR=\"~\" -I../../lua/include -I../../nebu/include -I../../src/include -DSEPARATOR="'/'" -Wall -Werror -Os -I/usr/include/SDL -D_GNU_SOURCE=1 -D_REENTRANT -c `test -f fonttex.c || echo './'`fonttex.c
+[5-ERROR] cc1: warnings being treated as errors
+[5-ERROR] fonttex.c: In function 'ftxLoadFont':
+[5-ERROR] fonttex.c:54: warning: pointer targets in assignment differ in signedness
+[5-ERROR] fonttex.c:55: warning: pointer targets in passing argument 2 of 'glGenTextures' differ in signedness
+[5-ERROR] fonttex.c: In function 'ftxUnloadFont':
+[5-ERROR] fonttex.c:82: warning: pointer targets in passing argument 2 of 'glDeleteTextures' differ in signedness
+[5-ERROR] make[2]: *** [fonttex.o] Error 1
+[5-ERROR] make[2]: Leaving directory `/ROCK/loop/src.gltron.1181955254.17432.1627887995/gltron-0.70/src/video'
+[5-ERROR] make[1]: *** [all-recursive] Error 1
+[5-ERROR] make[1]: Leaving directory `/ROCK/loop/src.gltron.1181955254.17432.1627887995/gltron-0.70/src'
+[5-ERROR] make: *** [all-recursive] Error 1
+[5-ERROR] --- BUILD ERROR ---
+
+[9-ERROR] rm -f libconfiguration.a
+[9-ERROR] ar cru libconfiguration.a settings.o 
+[9-ERROR] ranlib libconfiguration.a
+[9-ERROR] make[2]: Leaving directory `/ROCK/loop/src.gltron.1181977128.24570.3474453109/gltron-0.70/src/configuration'
+[9-ERROR] Making all in audio
+[9-ERROR] make[2]: Entering directory `/ROCK/loop/src.gltron.1181977128.24570.3474453109/gltron-0.70/src/audio'
+[9-ERROR] source='sound.c' object='sound.o' libtool=no \
+[9-ERROR] 	depfile='.deps/sound.Po' tmpdepfile='.deps/sound.TPo' \
+[9-ERROR] 	depmode=gcc3 /bin/sh ../../depcomp \
+[9-ERROR] 	gcc-42 -DPACKAGE=\"gltron\" -DVERSION=\"0.70\" -DHAVE_LIBGL=1 -DHAVE_LIBZ=1 -DHAVE_LIBPNG=1 -DHAVE_LIBOGG=1 -DHAVE_LIBVORBIS=1 -DHAVE_LIBVORBISFILE=1 -DHAVE_LIBMIKMOD=1 -DHAVE_UNISTD_H=1 -DHAVE_GL_GL_H=1 -Dconst= -DHAVE_MKSTEMP=1  -I. -I.   -DDATA_DIR=\"/usr/share/gltron\" -DSNAP_DIR=\"~\" -DPREF_DIR=\"~\" -I../../lua/include -I../../nebu/include -I../../src/include -DSEPARATOR="'/'" -Wall -Werror -Os -I/usr/include/SDL -D_GNU_SOURCE=1 -D_REENTRANT -c `test -f sound.c || echo './'`sound.c
+[9-ERROR] source='sound_glue.cpp' object='sound_glue.o' libtool=no \
+[9-ERROR] 	depfile='.deps/sound_glue.Po' tmpdepfile='.deps/sound_glue.TPo' \
+[9-ERROR] 	depmode=gcc3 /bin/sh ../../depcomp \
+[9-ERROR] 	g++-42 -DPACKAGE=\"gltron\" -DVERSION=\"0.70\" -DHAVE_LIBGL=1 -DHAVE_LIBZ=1 -DHAVE_LIBPNG=1 -DHAVE_LIBOGG=1 -DHAVE_LIBVORBIS=1 -DHAVE_LIBVORBISFILE=1 -DHAVE_LIBMIKMOD=1 -DHAVE_UNISTD_H=1 -DHAVE_GL_GL_H=1 -Dconst= -DHAVE_MKSTEMP=1  -I. -I.   -DDATA_DIR=\"/usr/share/gltron\" -DSNAP_DIR=\"~\" -DPREF_DIR=\"~\" -I../../lua/include -I../../nebu/include -I../../src/include -g -O2 -Os -I/usr/include/SDL -D_GNU_SOURCE=1 -D_REENTRANT -c -o sound_glue.o `test -f sound_glue.cpp || echo './'`sound_glue.cpp
+[9-ERROR] sound_glue.cpp: In function 'void Audio_Idle()':
+[9-ERROR] sound_glue.cpp:100: warning: deprecated conversion from string constant to 'char*'
+[9-ERROR] rm -f libaudio.a
+[9-ERROR] ar cru libaudio.a sound.o sound_glue.o 
+[9-ERROR] ranlib libaudio.a
+[9-ERROR] make[2]: Leaving directory `/ROCK/loop/src.gltron.1181977128.24570.3474453109/gltron-0.70/src/audio'
+[9-ERROR] Making all in video
+[9-ERROR] make[2]: Entering directory `/ROCK/loop/src.gltron.1181977128.24570.3474453109/gltron-0.70/src/video'
+[9-ERROR] source='artpack.c' object='artpack.o' libtool=no \
+[9-ERROR] 	depfile='.deps/artpack.Po' tmpdepfile='.deps/artpack.TPo' \
+[9-ERROR] 	depmode=gcc3 /bin/sh ../../depcomp \
+[9-ERROR] 	gcc-42 -DPACKAGE=\"gltron\" -DVERSION=\"0.70\" -DHAVE_LIBGL=1 -DHAVE_LIBZ=1 -DHAVE_LIBPNG=1 -DHAVE_LIBOGG=1 -DHAVE_LIBVORBIS=1 -DHAVE_LIBVORBISFILE=1 -DHAVE_LIBMIKMOD=1 -DHAVE_UNISTD_H=1 -DHAVE_GL_GL_H=1 -Dconst= -DHAVE_MKSTEMP=1  -I. -I.   -DDATA_DIR=\"/usr/share/gltron\" -DSNAP_DIR=\"~\" -DPREF_DIR=\"~\" -I../../lua/include -I../../nebu/include -I../../src/include -DSEPARATOR="'/'" -Wall -Werror -Os -I/usr/include/SDL -D_GNU_SOURCE=1 -D_REENTRANT -c `test -f artpack.c || echo './'`artpack.c
+[9-ERROR] source='explosion.c' object='explosion.o' libtool=no \
+[9-ERROR] 	depfile='.deps/explosion.Po' tmpdepfile='.deps/explosion.TPo' \
+[9-ERROR] 	depmode=gcc3 /bin/sh ../../depcomp \
+[9-ERROR] 	gcc-42 -DPACKAGE=\"gltron\" -DVERSION=\"0.70\" -DHAVE_LIBGL=1 -DHAVE_LIBZ=1 -DHAVE_LIBPNG=1 -DHAVE_LIBOGG=1 -DHAVE_LIBVORBIS=1 -DHAVE_LIBVORBISFILE=1 -DHAVE_LIBMIKMOD=1 -DHAVE_UNISTD_H=1 -DHAVE_GL_GL_H=1 -Dconst= -DHAVE_MKSTEMP=1  -I. -I.   -DDATA_DIR=\"/usr/share/gltron\" -DSNAP_DIR=\"~\" -DPREF_DIR=\"~\" -I../../lua/include -I../../nebu/include -I../../src/include -DSEPARATOR="'/'" -Wall -Werror -Os -I/usr/include/SDL -D_GNU_SOURCE=1 -D_REENTRANT -c `test -f explosion.c || echo './'`explosion.c
+[9-ERROR] source='fonts.c' object='fonts.o' libtool=no \
+[9-ERROR] 	depfile='.deps/fonts.Po' tmpdepfile='.deps/fonts.TPo' \
+[9-ERROR] 	depmode=gcc3 /bin/sh ../../depcomp \
+[9-ERROR] 	gcc-42 -DPACKAGE=\"gltron\" -DVERSION=\"0.70\" -DHAVE_LIBGL=1 -DHAVE_LIBZ=1 -DHAVE_LIBPNG=1 -DHAVE_LIBOGG=1 -DHAVE_LIBVORBIS=1 -DHAVE_LIBVORBISFILE=1 -DHAVE_LIBMIKMOD=1 -DHAVE_UNISTD_H=1 -DHAVE_GL_GL_H=1 -Dconst= -DHAVE_MKSTEMP=1  -I. -I.   -DDATA_DIR=\"/usr/share/gltron\" -DSNAP_DIR=\"~\" -DPREF_DIR=\"~\" -I../../lua/include -I../../nebu/include -I../../src/include -DSEPARATOR="'/'" -Wall -Werror -Os -I/usr/include/SDL -D_GNU_SOURCE=1 -D_REENTRANT -c `test -f fonts.c || echo './'`fonts.c
+[9-ERROR] source='fonttex.c' object='fonttex.o' libtool=no \
+[9-ERROR] 	depfile='.deps/fonttex.Po' tmpdepfile='.deps/fonttex.TPo' \
+[9-ERROR] 	depmode=gcc3 /bin/sh ../../depcomp \
+[9-ERROR] 	gcc-42 -DPACKAGE=\"gltron\" -DVERSION=\"0.70\" -DHAVE_LIBGL=1 -DHAVE_LIBZ=1 -DHAVE_LIBPNG=1 -DHAVE_LIBOGG=1 -DHAVE_LIBVORBIS=1 -DHAVE_LIBVORBISFILE=1 -DHAVE_LIBMIKMOD=1 -DHAVE_UNISTD_H=1 -DHAVE_GL_GL_H=1 -Dconst= -DHAVE_MKSTEMP=1  -I. -I.   -DDATA_DIR=\"/usr/share/gltron\" -DSNAP_DIR=\"~\" -DPREF_DIR=\"~\" -I../../lua/include -I../../nebu/include -I../../src/include -DSEPARATOR="'/'" -Wall -Werror -Os -I/usr/include/SDL -D_GNU_SOURCE=1 -D_REENTRANT -c `test -f fonttex.c || echo './'`fonttex.c
+[9-ERROR] cc1: warnings being treated as errors
+[9-ERROR] fonttex.c: In function 'ftxLoadFont':
+[9-ERROR] fonttex.c:54: warning: pointer targets in assignment differ in signedness
+[9-ERROR] fonttex.c:55: warning: pointer targets in passing argument 2 of 'glGenTextures' differ in signedness
+[9-ERROR] fonttex.c: In function 'ftxUnloadFont':
+[9-ERROR] fonttex.c:82: warning: pointer targets in passing argument 2 of 'glDeleteTextures' differ in signedness
+[9-ERROR] make[2]: *** [fonttex.o] Error 1
+[9-ERROR] make[2]: Leaving directory `/ROCK/loop/src.gltron.1181977128.24570.3474453109/gltron-0.70/src/video'
+[9-ERROR] make[1]: *** [all-recursive] Error 1
+[9-ERROR] make[1]: Leaving directory `/ROCK/loop/src.gltron.1181977128.24570.3474453109/gltron-0.70/src'
+[9-ERROR] make: *** [all-recursive] Error 1
+[9-ERROR] --- BUILD ERROR ---
+

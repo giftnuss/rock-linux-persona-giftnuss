@@ -1,0 +1,30 @@
+--- ./etc/pam.d/login.orig	2006-01-20 22:05:12.000000000 +0100
++++ ./etc/pam.d/login	2006-01-20 22:14:56.000000000 +0100
+@@ -1,11 +1,11 @@
+ #%PAM-1.0
+-auth		required	pam_securetty.so
++#auth		required	pam_securetty.so
+ auth		include		system-auth
+ account		required	pam_nologin.so
+ account		include		system-auth
+ password	include		system-auth
+-session		required	pam_selinux.so close
++#session		required	pam_selinux.so close
+ session		include		system-auth
+ session		required	pam_loginuid.so
+-session		optional	pam_console.so
+-session		required	pam_selinux.so open
++#session		optional	pam_console.so
++#session		required	pam_selinux.so open
+--- ./etc/pam.d/su.orig	2006-01-20 22:17:37.000000000 +0100
++++ ./etc/pam.d/su	2006-01-20 22:17:46.000000000 +0100
+@@ -7,7 +7,7 @@
+ auth		include		system-auth
+ account		include		system-auth
+ password	include		system-auth
+-session		required	pam_selinux.so close
++#session		required	pam_selinux.so close
+ session		include		system-auth
+-session		required	pam_selinux.so open multiple
++#session		required	pam_selinux.so open multiple
+ session		optional	pam_xauth.so

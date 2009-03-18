@@ -1,0 +1,12 @@
+--- ./nptl/sysdeps/unix/sysv/linux/i386/lowlevellock.h.orig	2007-08-27 01:14:28.000000000 +0200
++++ ./nptl/sysdeps/unix/sysv/linux/i386/lowlevellock.h	2007-08-27 01:14:38.000000000 +0200
+@@ -444,8 +444,7 @@
+ #define LLL_LOCK_INITIALIZER_LOCKED	(1)
+ 
+ 
+-extern int __lll_lock_wait (int val, int *__futex)
+-     __attribute ((regparm (2))) attribute_hidden;
++extern void __lll_lock_wait (int *__futex);
+ extern int __lll_unlock_wake (int *__futex)
+      __attribute ((regparm (1))) attribute_hidden;
+ extern int lll_unlock_wake_cb (int *__futex) attribute_hidden;

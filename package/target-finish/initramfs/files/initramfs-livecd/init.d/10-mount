@@ -1,0 +1,5 @@
+
+if [ ! -e /proc/mounts ] ; then
+	mount -v -t proc proc /proc
+	mount -v -t sysfs sysfs /sys
+fi

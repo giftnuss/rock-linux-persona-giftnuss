@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=SecPanel
+Comment=Manage ssh sessions
+Exec=secpanel
+Terminal=false
+Type=Application
+Categories=Network;RemoteAccess
+X-ROCK-Name=secpanel

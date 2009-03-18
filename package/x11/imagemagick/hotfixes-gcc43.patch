@@ -1,0 +1,10 @@
+--- ./Magick++/lib/Image.cpp.orig	2008-06-10 19:46:09.000000000 +0200
++++ ./Magick++/lib/Image.cpp	2008-06-10 19:46:15.000000000 +0200
+@@ -10,6 +10,7 @@
+ #include "Magick++/Include.h"
+ #include <string>
+ #include <string.h>
++#include <stdlib.h>
+ #include <errno.h>
+ #include <math.h>
+ 

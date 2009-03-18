@@ -1,0 +1,22 @@
+/etc /etc
+/bin /bin
+# /boot/grub /boot/grub
+/sbin /sbin
+/lib/udev /lib/udev
+/lib/modules /lib/modules
+/usr/bin /usr/bin
+/usr/sbin /usr/sbin
+/usr/share/pci.ids /usr/share/pci.ids
+# /usr/share/terminfo /usr/share/terminfo
+# /usr/share/zoneinfo /usr/share/zoneinfo
+# /var/adm/cksums /var/adm/cksums
+# /var/adm/conflicts /var/adm/conflicts
+# /var/adm/dependencies /var/adm/dependencies
+# /var/adm/descs /var/adm/descs
+# /var/adm/flists /var/adm/flists
+# /var/adm/md5sums /var/adm/md5sums
+# /var/adm/packages /var/adm/packages
+# /var/adm/parse-config /var/adm/parse-config
+# /var/adm/postinstall /var/adm/postinstall
+# /var/adm/provides /var/adm/provides
+# /var/adm/requires /var/adm/requires

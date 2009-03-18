@@ -1,0 +1,40 @@
+--- ./python/Makefile.am.orig	2008-10-08 17:26:58.000000000 +0200
++++ ./python/Makefile.am	2008-10-08 17:29:11.000000000 +0200
+@@ -40,7 +40,7 @@
+ 	export PYTHONPATH=$$builddir/pyqt:$$PYTHONPATH ; \
+ 	cd $(srcdir)/pyqt ; \
+ 	export QTDIR=${qt_dir} ; \
+-	echo "yes" | @PYTHON@ configure.py -i -b @bindir@ -d ${site_packages} -v ${sip_dir} 
++	echo "yes" | @PYTHON@ configure.py -y qt -j 100 -i -b @bindir@ -d ${site_packages} -v ${sip_dir} 
+ 	echo "" > prepqt
+ 
+ prepkde: prepqt
+@@ -54,7 +54,7 @@
+ 	export PYTHONPATH=$$builddir/pykde:$$PYTHONPATH ; \
+ 	cd $(srcdir)/pykde ; \
+ 	export QTDIR=${qt_dir} ; \
+-	@PYTHON@ configure.py -i -k @prefix@ -d ${site_packages} -v ${sip_dir}
++	@PYTHON@ configure.py -j 100 -i -k @prefix@ -d ${site_packages} -v ${sip_dir}
+ 	echo "" > prepkde
+ 
+ install:
+--- ./python/Makefile.in.orig	2008-10-08 17:28:09.000000000 +0200
++++ ./python/Makefile.in	2008-10-08 17:29:23.000000000 +0200
+@@ -561,7 +561,7 @@
+ 	export PYTHONPATH=$$builddir/pyqt:$$PYTHONPATH ; \
+ 	cd $(srcdir)/pyqt ; \
+ 	export QTDIR=${qt_dir} ; \
+-	echo "yes" | @PYTHON@ configure.py -i -b @bindir@ -d ${site_packages} -v ${sip_dir} 
++	echo "yes" | @PYTHON@ configure.py -y qt-mt -j 100 -i -b @bindir@ -d ${site_packages} -v ${sip_dir} 
+ 	echo "" > prepqt
+ 
+ prepkde: prepqt
+@@ -575,7 +575,7 @@
+ 	export PYTHONPATH=$$builddir/pykde:$$PYTHONPATH ; \
+ 	cd $(srcdir)/pykde ; \
+ 	export QTDIR=${qt_dir} ; \
+-	@PYTHON@ configure.py -i -k @prefix@ -d ${site_packages} -v ${sip_dir}
++	@PYTHON@ configure.py -j 100 -i -k @prefix@ -d ${site_packages} -v ${sip_dir}
+ 	echo "" > prepkde
+ 
+ install:

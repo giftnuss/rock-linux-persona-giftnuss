@@ -1,0 +1,123 @@
+
+[TIMESTAMP] 1181153072 Wed Jun  6 20:04:32 2007 (5) ERROR
+[TIMESTAMP] 1181605505 Tue Jun 12 01:45:05 2007 (9) ERROR
+[TIMESTAMP] 1181829039 Thu Jun 14 15:50:39 2007 (5) ERROR
+[TIMESTAMP] 1181912488 Fri Jun 15 15:01:28 2007 (9) ERROR
+[TIMESTAMP] 1181952695 Sat Jun 16 02:11:35 2007 (5) ERROR
+[TIMESTAMP] 1181974456 Sat Jun 16 08:14:16 2007 (9) ERROR
+
+[CONFIG-ID] TRUNK-x86-reference
+[ROCKVER] TRUNK
+
+[LOGS] 5-flightgear.err 9-flightgear.err
+
+[BUILDTIME] 2575 (5) ERROR
+[BUILDTIME] 2447 (9) ERROR
+[BUILDTIME] 2442 (5) ERROR
+[BUILDTIME] 2470 (9) ERROR
+[BUILDTIME] 2399 (5) ERROR
+[BUILDTIME] 2388 (9) ERROR
+
+
+[5-ERROR] checking windows.h usability... no
+[5-ERROR] checking windows.h presence... no
+[5-ERROR] checking for windows.h... no
+[5-ERROR] checking for extra include and lib directories...
+[5-ERROR]    + found /usr/X11R6/include
+[5-ERROR]    + found /usr/X11R6/lib
+[5-ERROR]    + found /usr/X11R6/bin
+[5-ERROR]    + found /usr/local/include
+[5-ERROR]    + found /usr/local/lib
+[5-ERROR] checking int daylight variable... yes
+[5-ERROR] checking long timezone variable... yes
+[5-ERROR] checking for library containing hid_init... no
+[5-ERROR] checking for X... libraries /usr/X11R7/lib, headers /usr/X11R7/include
+[5-ERROR] checking for gethostbyname... yes
+[5-ERROR] checking for connect... yes
+[5-ERROR] checking for remove... yes
+[5-ERROR] checking for shmat... yes
+[5-ERROR] checking for IceConnectionNumber in -lICE... yes
+[5-ERROR] checking for library containing pthread_cancel... -lpthread
+[5-ERROR] checking for library containing inet_addr... none required
+[5-ERROR] checking for library containing socket... none required
+[5-ERROR] checking for library containing main... none required
+[5-ERROR] checking for library containing sqrt... -lm
+[5-ERROR] checking for library containing ceil... none required
+[5-ERROR] checking for library containing dlclose... -ldl
+[5-ERROR] checking for library containing XCreateWindow... -lX11
+[5-ERROR] checking for library containing XShmCreateImage... -lXext
+[5-ERROR] checking for library containing XGetExtensionVersion... -lXi
+[5-ERROR] checking for library containing IceOpenConnection... -lICE
+[5-ERROR] checking for library containing SmcOpenConnection... -lSM
+[5-ERROR] checking for library containing XtMalloc... -lXt
+[5-ERROR] checking for library containing XmuLookupStandardColormap... -lXmu
+[5-ERROR] checking for library containing glNewList... -lGL
+[5-ERROR] checking for library containing gluLookAt... -lGLU
+[5-ERROR] checking for library containing glutGetModifiers... -lglut
+[5-ERROR] checking for library containing alGenBuffers... -lopenal
+[5-ERROR] checking for library containing alutInit... -lalut
+[5-ERROR] checking how to run the C++ preprocessor... g++-42 -E
+[5-ERROR] checking plib/ul.h usability... no
+[5-ERROR] checking plib/ul.h presence... no
+[5-ERROR] checking for plib/ul.h... no
+[5-ERROR] 
+[5-ERROR] You *must* have the plib library installed on your system to build
+[5-ERROR] the FGFS simulator!
+[5-ERROR] 
+[5-ERROR] Please see README.plib for more details.
+[5-ERROR] 
+[5-ERROR] configure aborted.
+[5-ERROR] make: *** No targets specified and no makefile found.  Stop.
+[5-ERROR] --- BUILD ERROR ---
+
+[9-ERROR] checking windows.h usability... no
+[9-ERROR] checking windows.h presence... no
+[9-ERROR] checking for windows.h... no
+[9-ERROR] checking for extra include and lib directories...
+[9-ERROR]    + found /usr/X11R6/include
+[9-ERROR]    + found /usr/X11R6/lib
+[9-ERROR]    + found /usr/X11R6/bin
+[9-ERROR]    + found /usr/local/include
+[9-ERROR]    + found /usr/local/lib
+[9-ERROR] checking int daylight variable... yes
+[9-ERROR] checking long timezone variable... yes
+[9-ERROR] checking for library containing hid_init... no
+[9-ERROR] checking for X... libraries /usr/X11R7/lib, headers /usr/X11R7/include
+[9-ERROR] checking for gethostbyname... yes
+[9-ERROR] checking for connect... yes
+[9-ERROR] checking for remove... yes
+[9-ERROR] checking for shmat... yes
+[9-ERROR] checking for IceConnectionNumber in -lICE... yes
+[9-ERROR] checking for library containing pthread_cancel... -lpthread
+[9-ERROR] checking for library containing inet_addr... none required
+[9-ERROR] checking for library containing socket... none required
+[9-ERROR] checking for library containing main... none required
+[9-ERROR] checking for library containing sqrt... -lm
+[9-ERROR] checking for library containing ceil... none required
+[9-ERROR] checking for library containing dlclose... -ldl
+[9-ERROR] checking for library containing XCreateWindow... -lX11
+[9-ERROR] checking for library containing XShmCreateImage... -lXext
+[9-ERROR] checking for library containing XGetExtensionVersion... -lXi
+[9-ERROR] checking for library containing IceOpenConnection... -lICE
+[9-ERROR] checking for library containing SmcOpenConnection... -lSM
+[9-ERROR] checking for library containing XtMalloc... -lXt
+[9-ERROR] checking for library containing XmuLookupStandardColormap... -lXmu
+[9-ERROR] checking for library containing glNewList... -lGL
+[9-ERROR] checking for library containing gluLookAt... -lGLU
+[9-ERROR] checking for library containing glutGetModifiers... -lglut
+[9-ERROR] checking for library containing alGenBuffers... -lopenal
+[9-ERROR] checking for library containing alutInit... -lalut
+[9-ERROR] checking how to run the C++ preprocessor... g++-42 -E
+[9-ERROR] checking plib/ul.h usability... no
+[9-ERROR] checking plib/ul.h presence... no
+[9-ERROR] checking for plib/ul.h... no
+[9-ERROR] 
+[9-ERROR] You *must* have the plib library installed on your system to build
+[9-ERROR] the FGFS simulator!
+[9-ERROR] 
+[9-ERROR] Please see README.plib for more details.
+[9-ERROR] 
+[9-ERROR] configure aborted.
+[9-ERROR] make: *** No targets specified and no makefile found.  Stop.
+[9-ERROR] --- BUILD ERROR ---
+

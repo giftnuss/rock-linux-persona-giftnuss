@@ -1,0 +1,4 @@
+case "$pkg" in
+	bash[23])
+		pkg=bash ;;
+esac

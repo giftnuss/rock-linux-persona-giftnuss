@@ -1,0 +1,4 @@
+prog Networksetup xterm xterm -bg black -fg grey -e su root /usr/sbin/stone -x11 rockate
+prog xterm xterm xterm -bg black -fg grey
+separator
+menufile Programs folder /usr/share/icewm/ROCK

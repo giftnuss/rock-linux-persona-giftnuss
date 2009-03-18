@@ -1,0 +1,2 @@
+ROCKCFG_PKG_LINUX_MISDN
+  If enabled, patch the Linux kernel to include the mISDN driver.

@@ -1,0 +1,123 @@
+
+[TIMESTAMP] 1181169013 Thu Jun  7 00:30:13 2007 (5) ERROR
+[TIMESTAMP] 1181615259 Tue Jun 12 04:27:39 2007 (9) ERROR
+[TIMESTAMP] 1181831369 Thu Jun 14 16:29:29 2007 (5) ERROR
+[TIMESTAMP] 1181915399 Fri Jun 15 15:49:59 2007 (9) ERROR
+[TIMESTAMP] 1181954891 Sat Jun 16 02:48:11 2007 (5) ERROR
+[TIMESTAMP] 1181976753 Sat Jun 16 08:52:33 2007 (9) ERROR
+
+[CONFIG-ID] TRUNK-x86-reference
+[ROCKVER] TRUNK
+
+[LOGS] 5-dfbsee.err 9-dfbsee.err
+
+[BUILDTIME] 1287 (5) ERROR
+[BUILDTIME] 1388 (9) ERROR
+[BUILDTIME] 1400 (5) ERROR
+[BUILDTIME] 1389 (9) ERROR
+[BUILDTIME] 1367 (5) ERROR
+[BUILDTIME] 1367 (9) ERROR
+
+
+[5-ERROR] checking whether to enable maintainer-specific portions of Makefiles... no
+[5-ERROR] checking host system type... i386-unknown-linux-gnu
+[5-ERROR] checking for gcc... gcc-42
+[5-ERROR] checking whether the C compiler (gcc-42  ) works... yes
+[5-ERROR] checking whether the C compiler (gcc-42  ) is a cross-compiler... no
+[5-ERROR] checking whether we are using GNU C... yes
+[5-ERROR] checking whether gcc-42 accepts -g... yes
+[5-ERROR] checking for gcc-42 option to accept ANSI C... none needed
+[5-ERROR] checking for pkg-config... /usr/bin/pkg-config
+[5-ERROR] checking for directfb >= 0.9.15... yes
+[5-ERROR] checking DIRECTFB_CFLAGS... -D_REENTRANT -I/usr/include/directfb  
+[5-ERROR] checking DIRECTFB_LIBS... -ldirectfb -lz -lfusion -ldirect -lpthread -ldl  
+[5-ERROR] checking for directfb-csource... /usr/bin/directfb-csource
+[5-ERROR] updating cache ./config.cache
+[5-ERROR] creating ./config.status
+[5-ERROR] creating Makefile
+[5-ERROR] creating dfbsee.1
+[5-ERROR] creating data/Makefile
+[5-ERROR] creating src/Makefile
+[5-ERROR] creating src/gfx/Makefile
+[5-ERROR] Making all in src
+[5-ERROR] make[1]: Entering directory `/ROCK/loop/src.dfbsee.1181954877.26086.1627887995/DFBSee-0.7.4/src'
+[5-ERROR] Making all in gfx
+[5-ERROR] make[2]: Entering directory `/ROCK/loop/src.dfbsee.1181954877.26086.1627887995/DFBSee-0.7.4/src/gfx'
+[5-ERROR] /usr/bin/directfb-csource --name=bottom_left --format=a8 \
+[5-ERROR] 		./bottom_left.png >  gfx.h || ( rm -f gfx.h && false )
+[5-ERROR] /usr/bin/directfb-csource --name=top_left    --format=a8 \
+[5-ERROR] 		./top_left.png    >> gfx.h || ( rm -f gfx.h && false )
+[5-ERROR] /usr/bin/directfb-csource --name=top_right   --format=a8 \
+[5-ERROR] 		./top_right.png   >> gfx.h || ( rm -f gfx.h && false )
+[5-ERROR] make[2]: Leaving directory `/ROCK/loop/src.dfbsee.1181954877.26086.1627887995/DFBSee-0.7.4/src/gfx'
+[5-ERROR] make[2]: Entering directory `/ROCK/loop/src.dfbsee.1181954877.26086.1627887995/DFBSee-0.7.4/src'
+[5-ERROR] gcc-42 -DPACKAGE=\"DFBSee\" -DVERSION=\"0.7.4\"  -I. -I.  -D_REENTRANT -I/usr/include/directfb   -DDATADIR=\"/usr/share/DFBSee/\"   -g -O2 -Wall -c image-load.c
+[5-ERROR] gcc-42 -DPACKAGE=\"DFBSee\" -DVERSION=\"0.7.4\"  -I. -I.  -D_REENTRANT -I/usr/include/directfb   -DDATADIR=\"/usr/share/DFBSee/\"   -g -O2 -Wall -c interface.c
+[5-ERROR] gcc-42 -DPACKAGE=\"DFBSee\" -DVERSION=\"0.7.4\"  -I. -I.  -D_REENTRANT -I/usr/include/directfb   -DDATADIR=\"/usr/share/DFBSee/\"   -g -O2 -Wall -c interface-draw.c
+[5-ERROR] gcc-42 -DPACKAGE=\"DFBSee\" -DVERSION=\"0.7.4\"  -I. -I.  -D_REENTRANT -I/usr/include/directfb   -DDATADIR=\"/usr/share/DFBSee/\"   -g -O2 -Wall -c options.c
+[5-ERROR] gcc-42 -DPACKAGE=\"DFBSee\" -DVERSION=\"0.7.4\"  -I. -I.  -D_REENTRANT -I/usr/include/directfb   -DDATADIR=\"/usr/share/DFBSee/\"   -g -O2 -Wall -c main.c
+[5-ERROR] main.c: In function 'main':
+[5-ERROR] main.c:56: error: 'DFBCardCapabilities' undeclared (first use in this function)
+[5-ERROR] main.c:56: error: (Each undeclared identifier is reported only once
+[5-ERROR] main.c:56: error: for each function it appears in.)
+[5-ERROR] main.c:56: error: expected ';' before 'caps'
+[5-ERROR] main.c:81: error: 'IDirectFB' has no member named 'GetCardCapabilities'
+[5-ERROR] main.c:81: error: 'caps' undeclared (first use in this function)
+[5-ERROR] make[2]: *** [main.o] Error 1
+[5-ERROR] make[2]: Leaving directory `/ROCK/loop/src.dfbsee.1181954877.26086.1627887995/DFBSee-0.7.4/src'
+[5-ERROR] make[1]: *** [all-recursive] Error 1
+[5-ERROR] make[1]: Leaving directory `/ROCK/loop/src.dfbsee.1181954877.26086.1627887995/DFBSee-0.7.4/src'
+[5-ERROR] make: *** [all-recursive] Error 1
+[5-ERROR] --- BUILD ERROR ---
+
+[9-ERROR] checking whether to enable maintainer-specific portions of Makefiles... no
+[9-ERROR] checking host system type... i386-unknown-linux-gnu
+[9-ERROR] checking for gcc... gcc-42
+[9-ERROR] checking whether the C compiler (gcc-42  ) works... yes
+[9-ERROR] checking whether the C compiler (gcc-42  ) is a cross-compiler... no
+[9-ERROR] checking whether we are using GNU C... yes
+[9-ERROR] checking whether gcc-42 accepts -g... yes
+[9-ERROR] checking for gcc-42 option to accept ANSI C... none needed
+[9-ERROR] checking for pkg-config... /usr/bin/pkg-config
+[9-ERROR] checking for directfb >= 0.9.15... yes
+[9-ERROR] checking DIRECTFB_CFLAGS... -D_REENTRANT -I/usr/include/directfb  
+[9-ERROR] checking DIRECTFB_LIBS... -ldirectfb -lz -lfusion -ldirect -lpthread -ldl  
+[9-ERROR] checking for directfb-csource... /usr/bin/directfb-csource
+[9-ERROR] updating cache ./config.cache
+[9-ERROR] creating ./config.status
+[9-ERROR] creating Makefile
+[9-ERROR] creating dfbsee.1
+[9-ERROR] creating data/Makefile
+[9-ERROR] creating src/Makefile
+[9-ERROR] creating src/gfx/Makefile
+[9-ERROR] Making all in src
+[9-ERROR] make[1]: Entering directory `/ROCK/loop/src.dfbsee.1181976739.737.3474453109/DFBSee-0.7.4/src'
+[9-ERROR] Making all in gfx
+[9-ERROR] make[2]: Entering directory `/ROCK/loop/src.dfbsee.1181976739.737.3474453109/DFBSee-0.7.4/src/gfx'
+[9-ERROR] /usr/bin/directfb-csource --name=bottom_left --format=a8 \
+[9-ERROR] 		./bottom_left.png >  gfx.h || ( rm -f gfx.h && false )
+[9-ERROR] /usr/bin/directfb-csource --name=top_left    --format=a8 \
+[9-ERROR] 		./top_left.png    >> gfx.h || ( rm -f gfx.h && false )
+[9-ERROR] /usr/bin/directfb-csource --name=top_right   --format=a8 \
+[9-ERROR] 		./top_right.png   >> gfx.h || ( rm -f gfx.h && false )
+[9-ERROR] make[2]: Leaving directory `/ROCK/loop/src.dfbsee.1181976739.737.3474453109/DFBSee-0.7.4/src/gfx'
+[9-ERROR] make[2]: Entering directory `/ROCK/loop/src.dfbsee.1181976739.737.3474453109/DFBSee-0.7.4/src'
+[9-ERROR] gcc-42 -DPACKAGE=\"DFBSee\" -DVERSION=\"0.7.4\"  -I. -I.  -D_REENTRANT -I/usr/include/directfb   -DDATADIR=\"/usr/share/DFBSee/\"   -g -O2 -Wall -c image-load.c
+[9-ERROR] gcc-42 -DPACKAGE=\"DFBSee\" -DVERSION=\"0.7.4\"  -I. -I.  -D_REENTRANT -I/usr/include/directfb   -DDATADIR=\"/usr/share/DFBSee/\"   -g -O2 -Wall -c interface.c
+[9-ERROR] gcc-42 -DPACKAGE=\"DFBSee\" -DVERSION=\"0.7.4\"  -I. -I.  -D_REENTRANT -I/usr/include/directfb   -DDATADIR=\"/usr/share/DFBSee/\"   -g -O2 -Wall -c interface-draw.c
+[9-ERROR] gcc-42 -DPACKAGE=\"DFBSee\" -DVERSION=\"0.7.4\"  -I. -I.  -D_REENTRANT -I/usr/include/directfb   -DDATADIR=\"/usr/share/DFBSee/\"   -g -O2 -Wall -c options.c
+[9-ERROR] gcc-42 -DPACKAGE=\"DFBSee\" -DVERSION=\"0.7.4\"  -I. -I.  -D_REENTRANT -I/usr/include/directfb   -DDATADIR=\"/usr/share/DFBSee/\"   -g -O2 -Wall -c main.c
+[9-ERROR] main.c: In function 'main':
+[9-ERROR] main.c:56: error: 'DFBCardCapabilities' undeclared (first use in this function)
+[9-ERROR] main.c:56: error: (Each undeclared identifier is reported only once
+[9-ERROR] main.c:56: error: for each function it appears in.)
+[9-ERROR] main.c:56: error: expected ';' before 'caps'
+[9-ERROR] main.c:81: error: 'IDirectFB' has no member named 'GetCardCapabilities'
+[9-ERROR] main.c:81: error: 'caps' undeclared (first use in this function)
+[9-ERROR] make[2]: *** [main.o] Error 1
+[9-ERROR] make[2]: Leaving directory `/ROCK/loop/src.dfbsee.1181976739.737.3474453109/DFBSee-0.7.4/src'
+[9-ERROR] make[1]: *** [all-recursive] Error 1
+[9-ERROR] make[1]: Leaving directory `/ROCK/loop/src.dfbsee.1181976739.737.3474453109/DFBSee-0.7.4/src'
+[9-ERROR] make: *** [all-recursive] Error 1
+[9-ERROR] --- BUILD ERROR ---
+

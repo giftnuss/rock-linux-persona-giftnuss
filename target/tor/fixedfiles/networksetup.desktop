@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Network Setup
+Comment=ROCKate Network Setup
+Exec=su root /usr/sbin/stone -x11 rockate
+Terminal=true
+Type=Application
+Categories=System;Setup
+X-ROCK-Name=rockate

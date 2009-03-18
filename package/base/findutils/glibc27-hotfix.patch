@@ -1,0 +1,10 @@
+--- ./gnulib/lib/mbuiter.h.orig	2007-11-04 11:35:42.000000000 +0000
++++ ./gnulib/lib/mbuiter.h	2007-11-04 11:37:06.000000000 +0000
+@@ -94,6 +94,7 @@
+ #include <stdbool.h>
+ #include <stdlib.h>
+ #include <string.h>
++#include <malloc.h>
+ 
+ /* Tru64 with Desktop Toolkit C has a bug: <stdio.h> must be included before
+    <wchar.h>.

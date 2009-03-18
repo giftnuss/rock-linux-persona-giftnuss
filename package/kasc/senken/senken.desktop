@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Senken
+Comment=a city simulation
+Exec=senken
+Terminal=false
+Type=Application
+Categories=Game;Simulation
+X-ROCK-Name=senken
+Icon=D_datadir/senken/img/house2.png

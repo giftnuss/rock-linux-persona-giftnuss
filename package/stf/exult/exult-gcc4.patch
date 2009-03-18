@@ -1,0 +1,57 @@
+diff -dur exult-1.2/audio/midi_drivers/fmopldrv.h exult-1.2-p/audio/midi_drivers/fmopldrv.h
+--- exult-1.2/audio/midi_drivers/fmopldrv.h	2002-08-06 20:10:31.000000000 +0200
++++ exult-1.2-p/audio/midi_drivers/fmopldrv.h	2007-06-03 17:34:32.000000000 +0200
+@@ -76,7 +76,7 @@
+ 	/* output a packed midi command to the midi stream
+ 	 * valid only if mode is MO_SIMPLE
+ 	 */
+-	void OplDriver::send(uint32 b);
++	void send(uint32 b);
+ 
+ 	/* retrieve a string representation of an error code */
+ 	static const char *get_error_name(int error_code);
+diff -dur exult-1.2/hash_utils.h exult-1.2-p/hash_utils.h
+--- exult-1.2/hash_utils.h	2003-08-31 19:32:24.000000000 +0200
++++ exult-1.2-p/hash_utils.h	2007-06-03 17:22:29.000000000 +0200
+@@ -26,7 +26,7 @@
+ #else
+ #if HAVE_EXT_HASH_MAP
+ #  include <ext/hash_map>
+-#  if (defined(__GNUC__) && (__GNUC__ == 3) && ( __GNUC_MINOR__ > 0))
++#  if ( defined(__GNUC__) && ( ((__GNUC__ == 3) && ( __GNUC_MINOR__ > 0)) || (__GNUC__ > 3) ) )
+ using __gnu_cxx::hash_map;
+ #  else
+ using std::hash_map;
+@@ -44,7 +44,7 @@
+ #else
+ #if HAVE_EXT_HASH_SET
+ #  include <ext/hash_set>
+-#  if (defined(__GNUC__) && (__GNUC__ == 3) && ( __GNUC_MINOR__ > 0))
++#  if ( defined(__GNUC__) && ( ((__GNUC__ == 3) && ( __GNUC_MINOR__ > 0)) || (__GNUC__ > 3) ) )
+ using __gnu_cxx::hash_set;
+ #  else
+ using std::hash_set;
+diff -dur exult-1.2/mouse.h exult-1.2-p/mouse.h
+--- exult-1.2/mouse.h	2003-08-31 19:32:24.000000000 +0200
++++ exult-1.2-p/mouse.h	2007-06-03 17:33:53.000000000 +0200
+@@ -27,6 +27,8 @@
+ #include "vgafile.h"
+ #include "glshape.h"
+ 
++class Game_window;
++
+ /*
+  *	Handle custom mouse pointers.
+  */
+diff -dur exult-1.2/usecode/ucxt/include/ucfunc.h exult-1.2-p/usecode/ucxt/include/ucfunc.h
+--- exult-1.2/usecode/ucxt/include/ucfunc.h	2003-08-31 19:32:28.000000000 +0200
++++ exult-1.2-p/usecode/ucxt/include/ucfunc.h	2007-06-03 17:37:05.000000000 +0200
+@@ -206,7 +206,7 @@
+ 		bool output_list(std::ostream &o, unsigned int funcno, const UCOptions &options);
+ 		
+ 		bool output_ucs(std::ostream &o, const FuncMap &funcmap, const std::map<unsigned int, std::string> &intrinsics, const UCOptions &options);
+-		std::ostream &UCFunc::output_ucs_funcname(std::ostream &o, const FuncMap &funcmap);
++		std::ostream &output_ucs_funcname(std::ostream &o, const FuncMap &funcmap);
+ 		std::ostream &output_ucs_funcname(std::ostream &o, const FuncMap &funcmap,
+                                     unsigned int funcid,
+                                     unsigned int numargs, bool return_var);

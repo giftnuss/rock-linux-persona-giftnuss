@@ -1,0 +1,21 @@
+
+[TIMESTAMP] 1181152278 Wed Jun  6 19:51:18 2007 (5)
+[TIMESTAMP] 1181605177 Tue Jun 12 01:39:37 2007 (9)
+
+[CONFIG-ID] TRUNK-x86-reference
+[ROCKVER] TRUNK
+
+[LOGS] 5-crimson.log 9-crimson.log
+
+[BUILDTIME] 13760 (5)
+[BUILDTIME] 13143 (9)
+[SIZE] 1.81 MB, 57 files
+
+[DEP] 00-dirtree alsa applewmproto bash2 binutils bzip2 coreutils cvm
+[DEP] diffutils findutils freetype gawk gcc42 gcc42:dev glibc26 glibc26:dev
+[DEP] grep libice libsdl libsdl:dev libsdl_mixer libsdl_mixer:dev
+[DEP] libsdl_ttf libsdl_ttf:dev libsm libx11 libxau libxcb libxdmcp libxt
+[DEP] linux26-headers:dev ltrace make mktemp nas net-tools openbox sed
+[DEP] sysfiles tar util-linux xmame zlib zlib:dev
+
+

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Crimson Fields
+Comment=Tactical War Game
+Exec=crimson
+Terminal=false
+Type=Application
+Categories=Game;StrategyGame
+X-ROCK-Name=crimson

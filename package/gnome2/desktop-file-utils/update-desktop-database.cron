@@ -1,0 +1,5 @@
+#!/bin/sh
+
+PREFIX="D_prefix"
+echo "Updating desktop database(s)"
+/$PREFIX/bin/update-desktop-database -q /{opt/*,usr}/share/applications

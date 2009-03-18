@@ -1,0 +1,85 @@
+diff -dur uae-0.8.25/src/autoconf.c uae-0.8.25-p/src/autoconf.c
+--- uae-0.8.25/src/autoconf.c	2004-10-10 17:53:32.000000000 +0200
++++ uae-0.8.25-p/src/autoconf.c	2006-11-05 04:00:15.000000000 +0100
+@@ -218,7 +218,7 @@
+ 
+ /* ROM tag area memory access */
+ 
+-static uae_u8 *rtarea;
++uae_u8 *rtarea;
+ 
+ static uae_u32 rtarea_lget (uaecptr) REGPARAM;
+ static uae_u32 rtarea_wget (uaecptr) REGPARAM;
+diff -dur uae-0.8.25/src/cia.c uae-0.8.25-p/src/cia.c
+--- uae-0.8.25/src/cia.c	2005-07-02 18:24:06.000000000 +0200
++++ uae-0.8.25-p/src/cia.c	2006-11-05 03:59:42.000000000 +0100
+@@ -46,18 +46,18 @@
+ static unsigned int clock_control_e = 0;
+ static unsigned int clock_control_f = RTC_F_24_12;
+ 
+-static unsigned int ciaaicr, ciaaimask, ciabicr, ciabimask;
+-static unsigned int ciaacra, ciaacrb, ciabcra, ciabcrb;
++unsigned int ciaaicr, ciaaimask, ciabicr, ciabimask;
++unsigned int ciaacra, ciaacrb, ciabcra, ciabcrb;
+ 
+ /* Values of the CIA timers.  */
+-static unsigned long ciaata, ciaatb, ciabta, ciabtb;
++unsigned long ciaata, ciaatb, ciabta, ciabtb;
+ /* Computed by compute_passed_time.  */
+ static unsigned long ciaata_passed, ciaatb_passed, ciabta_passed, ciabtb_passed;
+ 
+-static unsigned long ciaatod, ciabtod, ciaatol, ciabtol, ciaaalarm, ciabalarm;
+-static int ciaatlatch, ciabtlatch;
++unsigned long ciaatod, ciabtod, ciaatol, ciabtol, ciaaalarm, ciabalarm;
++int ciaatlatch, ciabtlatch;
+ 
+-static unsigned int ciabpra;
++unsigned int ciabpra;
+ 
+ unsigned int gui_ledstate;
+ 
+diff -dur uae-0.8.25/src/custom.c uae-0.8.25-p/src/custom.c
+--- uae-0.8.25/src/custom.c	2005-07-02 18:24:06.000000000 +0200
++++ uae-0.8.25-p/src/custom.c	2006-11-05 03:57:17.000000000 +0100
+@@ -111,7 +111,8 @@
+ static uae_u16 sprdata[MAX_SPRITES][4], sprdatb[MAX_SPRITES][4];
+ static int sprite_last_drawn_at[MAX_SPRITES];
+ static int last_sprite_point, nr_armed;
+-static int sprite_width, sprres, sprite_buffer_res;
++int sprite_width;
++static int sprres, sprite_buffer_res;
+ 
+ static uae_u32 bpl1dat, bpl2dat, bpl3dat, bpl4dat, bpl5dat, bpl6dat, bpl7dat, bpl8dat;
+ static uae_s16 bpl1mod, bpl2mod;
+@@ -234,7 +235,7 @@
+ struct draw_info line_drawinfo[2][2 * (MAXVPOS + 1) + 1];
+ struct color_entry color_tables[2][(MAXVPOS + 1) * 2];
+ 
+-static int next_sprite_entry = 0;
++int next_sprite_entry = 0;
+ static int prev_next_sprite_entry;
+ static int next_sprite_forced = 1;
+ 
+diff -dur uae-0.8.25/src/inputdevice.c uae-0.8.25-p/src/inputdevice.c
+--- uae-0.8.25/src/inputdevice.c	2005-07-02 18:23:50.000000000 +0200
++++ uae-0.8.25-p/src/inputdevice.c	2006-11-05 04:01:30.000000000 +0100
+@@ -511,8 +511,8 @@
+ 
+ /* Mousehack stuff */
+ 
+-static int ievent_alive = 0;
+-static int lastmx, lastmy;
++int ievent_alive = 0;
++int lastmx, lastmy;
+ 
+ int mousehack_alive (void)
+ {
+@@ -1739,7 +1739,7 @@
+     return 0;
+ }
+ 
+-static struct inputdevice_functions idev[3];
++struct inputdevice_functions idev[3];
+ 
+ void inputdevice_init (void)
+ {

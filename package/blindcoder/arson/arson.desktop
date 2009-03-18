@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Arson
+Comment=CD Ripping and Burning tool
+Exec=D_prefix/arson
+Terminal=false
+Type=Application
+Categories=Utility;DiscBurning
+X-ROCK-Name=arson
+Icon=/usr/share/icons/locolor/16x16/apps/arson.png

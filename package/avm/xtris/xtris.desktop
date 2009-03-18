@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=XTris
+Comment=Multiplayer variant of Tetris
+Exec=xtris
+Terminal=false
+Type=Application
+Categories=Game;BlocksGame
+X-ROCK-Name=xtris

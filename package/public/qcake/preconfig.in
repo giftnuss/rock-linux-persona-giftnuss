@@ -1,0 +1,6 @@
+pkgfork qcake qcake-cat
+pkgfork qcake qcake-soundcat
+pkgfork qcake qcake-3dcat
+pkgfork qcake qcake-splcat
+pkgfork qcake qcake-shadercat
+pkgfork qcake qcake-demos

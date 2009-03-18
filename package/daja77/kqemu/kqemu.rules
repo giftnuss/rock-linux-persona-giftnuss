@@ -1,0 +1,3 @@
+# kqemu does not create the appropriate device file itself.
+ACTION=="add",		DEVPATH=="/module/kqemu",	RUN+="/bin/mknod /dev/kqemu c 250 3"
+ACTION=="remove",	DEVPATH=="/module/kqemu",	RUN+="/bin/rm -f /dev/kqemu"

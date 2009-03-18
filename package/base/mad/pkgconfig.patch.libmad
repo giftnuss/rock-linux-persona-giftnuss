@@ -1,0 +1,41 @@
+diff -urN libmad-0.15.0b.orig/configure.ac libmad-0.15.0b/configure.ac
+--- libmad-0.15.0b.orig/configure.ac	2003-06-05 06:27:07 +0400
++++ libmad-0.15.0b/configure.ac	2003-11-03 19:43:10 +0300
+@@ -429,4 +429,5 @@
+ 
+ AC_CONFIG_FILES([Makefile msvc++/Makefile  \
+ 	libmad.list])
+-AC_OUTPUT
++AC_OUTPUT(libmad.pc)
++
+diff -urN libmad-0.15.0b.orig/libmad.pc.in libmad-0.15.0b/libmad.pc.in
+--- libmad-0.15.0b.orig/libmad.pc.in	1970-01-01 03:00:00 +0300
++++ libmad-0.15.0b/libmad.pc.in	2003-11-03 19:44:02 +0300
+@@ -0,0 +1,12 @@
++prefix=@prefix@
++exec_prefix=@exec_prefix@
++libdir=@libdir@
++includedir=@includedir@
++
++Name: libmad
++Description: MPEG Audio Decoder Library
++Requires:
++Version: @VERSION@
++Libs: -L${libdir} -lmad -lm
++Cflags: -I${includedir}
++
+diff -urN libmad-0.15.0b.orig/Makefile.am libmad-0.15.0b/Makefile.am
+--- libmad-0.15.0b.orig/Makefile.am	2003-06-04 11:36:57 +0400
++++ libmad-0.15.0b/Makefile.am	2003-11-03 19:44:54 +0300
+@@ -33,7 +33,10 @@
+ minimad_INCLUDES =	
+ minimad_LDADD =		libmad.la
+ 
+-EXTRA_DIST =		mad.h.sed  \
++pkgconfigdir = $(libdir)/pkgconfig
++pkgconfig_DATA = libmad.pc
++
++EXTRA_DIST =		mad.h.sed $(pkgconfig_DATA) \
+ 			CHANGES COPYRIGHT CREDITS README TODO VERSION
+ 
+ exported_headers =	version.h fixed.h bit.h timer.h stream.h frame.h  \

@@ -1,0 +1,19 @@
+
+[TIMESTAMP] 1181165728 Wed Jun  6 23:35:28 2007 (5)
+[TIMESTAMP] 1181612939 Tue Jun 12 03:48:59 2007 (9)
+
+[CONFIG-ID] TRUNK-x86-reference
+[ROCKVER] TRUNK
+
+[LOGS] 5-rubiclox.log 9-rubiclox.log
+
+[BUILDTIME] 2090 (5)
+[BUILDTIME] 2200 (9)
+[SIZE] 0.03 MB, 8 files
+
+[DEP] 00-dirtree alsa applewmproto applewmproto:dev bash2 binutils bzip2
+[DEP] coreutils cvm findutils gawk gcc42 gcc42:dev glibc26 glibc26:dev
+[DEP] grep libx11 libx11:dev libxau libxcb libxdmcp ltrace make mktemp
+[DEP] sed sysfiles tar xmame xproto:dev
+
+

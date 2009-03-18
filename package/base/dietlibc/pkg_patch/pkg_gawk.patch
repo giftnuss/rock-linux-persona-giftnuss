@@ -1,0 +1,103 @@
+diff -dur gawk-3.1.5/builtin.c gawk-3.1.5-p/builtin.c
+--- gawk-3.1.5/builtin.c	2005-07-26 20:07:43.000000000 +0200
++++ gawk-3.1.5-p/builtin.c	2006-05-30 21:53:45.000000000 +0200
+@@ -161,7 +161,7 @@
+ 	d = force_number(tmp);
+ 	free_temp(tmp);
+ 	errno = 0;
+-	res = exp(d);
++	res = 0.0i; /* exp(d); */
+ 	if (errno == ERANGE)
+ 		warning(_("exp: argument %g is out of range"), d);
+ 	return tmp_number((AWKNUM) res);
+@@ -430,9 +430,9 @@
+ double_to_int(double d)
+ {
+ 	if (d >= 0)
+-		d = Floor(d);
++		d = /*Floor(*/d/*)*/;
+ 	else
+-		d = Ceil(d);
++		d = /*Ceil(*/d/*)*/;
+ 	return d;
+ }
+ 
+@@ -507,7 +507,7 @@
+ 	arg = (double) force_number(tmp);
+ 	if (arg < 0.0)
+ 		warning(_("log: received negative argument %g"), arg);
+-	d = log(arg);
++	d = 0.0; /* log(arg); */
+ 	free_temp(tmp);
+ 	return tmp_number((AWKNUM) d);
+ }
+@@ -1303,7 +1303,7 @@
+ 	free_temp(tmp);
+ 	if (arg < 0.0)
+ 		warning(_("sqrt: called with negative argument %g"), arg);
+-	return tmp_number((AWKNUM) sqrt(arg));
++	return tmp_number((AWKNUM) 0.0 /* sqrt(arg) */ );
+ }
+ 
+ /* do_substr --- do the substr function */
+@@ -1895,7 +1895,7 @@
+ 	d2 = force_number(t2);
+ 	free_temp(t1);
+ 	free_temp(t2);
+-	return tmp_number((AWKNUM) atan2(d1, d2));
++	return tmp_number((AWKNUM) 0.0 /* atan2(d1, d2) */ );
+ }
+ 
+ /* do_sin --- do the sin function */
+@@ -1909,7 +1909,7 @@
+ 	tmp = tree_eval(tree->lnode);
+ 	if (do_lint && (tmp->flags & (NUMCUR|NUMBER)) == 0)
+ 		lintwarn(_("sin: received non-numeric argument"));
+-	d = sin((double) force_number(tmp));
++	d = 0.0; /* sin((double) force_number(tmp)); */
+ 	free_temp(tmp);
+ 	return tmp_number((AWKNUM) d);
+ }
+@@ -1925,7 +1925,7 @@
+ 	tmp = tree_eval(tree->lnode);
+ 	if (do_lint && (tmp->flags & (NUMCUR|NUMBER)) == 0)
+ 		lintwarn(_("cos: received non-numeric argument"));
+-	d = cos((double) force_number(tmp));
++	d = 0.0; /* cos((double) force_number(tmp)); */
+ 	free_temp(tmp);
+ 	return tmp_number((AWKNUM) d);
+ }
+diff -dur gawk-3.1.5/eval.c gawk-3.1.5-p/eval.c
+--- gawk-3.1.5/eval.c	2005-07-26 20:07:43.000000000 +0200
++++ gawk-3.1.5-p/eval.c	2006-05-30 22:11:27.000000000 +0200
+@@ -914,7 +914,7 @@
+ 		return (lx > 0) ? calc_exp_posint(x1, lx)
+ 				: 1.0 / calc_exp_posint(x1, -lx);
+ 	}
+-	return (AWKNUM) pow((double) x1, (double) x2);
++	return (AWKNUM) 0.0; /* pow((double) x1, (double) x2); */
+ }
+ 
+ /* r_tree_eval --- evaluate a subtree */
+@@ -1294,8 +1294,8 @@
+ #ifdef HAVE_FMOD
+ 		return tmp_number(fmod(x1, x2));
+ #else	/* ! HAVE_FMOD */
+-		(void) modf(x1 / x2, &x);
+-		return tmp_number(x1 - x * x2);
++		/* (void) modf(x1 / x2, &x); */
++		return tmp_number( 0.0 /* x1 - x * x2 */ );
+ #endif	/* ! HAVE_FMOD */
+ 
+ 	case Node_plus:
+@@ -1497,8 +1497,8 @@
+ 	{
+ 		AWKNUM t1, t2;
+ 
+-		(void) modf(lval / rval, &t1);
+-		t2 = lval - rval * t1;
++		/* (void) modf(lval / rval, &t1); */
++		t2 = 0.0 /* lval - rval * t1; */
+ 		*lhs = make_number(t2);
+ 	}
+ #endif	/* ! HAVE_FMOD */

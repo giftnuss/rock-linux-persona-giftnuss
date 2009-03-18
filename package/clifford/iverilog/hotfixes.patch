@@ -1,0 +1,196 @@
+--- ./elab_expr.cc.orig	2008-06-04 21:30:25.000000000 +0000
++++ ./elab_expr.cc	2008-06-04 21:30:35.000000000 +0000
+@@ -23,6 +23,8 @@
+ # include "config.h"
+ # include "compiler.h"
+ 
++# include <string.h>
++
+ # include  "pform.h"
+ # include  "netlist.h"
+ # include  "netmisc.h"
+--- ./elab_net.cc.orig	2008-06-04 21:30:51.000000000 +0000
++++ ./elab_net.cc	2008-06-04 21:31:00.000000000 +0000
+@@ -28,6 +28,7 @@
+ # include  "compiler.h"
+ 
+ # include  <iostream>
++# include  <string.h>
+ 
+ /*
+  * This is a state flag that determines whether an elaborate_net must
+--- ./elab_scope.cc.orig	2008-06-04 21:31:31.000000000 +0000
++++ ./elab_scope.cc	2008-06-04 21:31:37.000000000 +0000
+@@ -24,6 +24,7 @@
+ # include  "compiler.h"
+ # include  <iostream>
+ # include  <stdio.h>
++# include  <string.h>
+ 
+ /*
+  * Elaboration happens in two passes, generally. The first scans the
+--- ./elab_sig.cc.orig	2008-06-04 21:32:02.000000000 +0000
++++ ./elab_sig.cc	2008-06-04 21:32:08.000000000 +0000
+@@ -23,6 +23,7 @@
+ # include "config.h"
+ 
+ # include  <iostream>
++# include  <stdlib.h>
+ 
+ # include  "Module.h"
+ # include  "PExpr.h"
+--- ./emit.cc.orig	2008-06-04 21:35:33.000000000 +0000
++++ ./emit.cc	2008-06-04 21:32:29.000000000 +0000
+@@ -23,6 +23,7 @@
+ # include "config.h"
+ 
+ # include  <iostream>
++# include  <string.h>
+ 
+ /*
+  * The emit function is called to generate the output required of the
+--- ./load_module.cc.orig	2008-06-04 21:35:55.000000000 +0000
++++ ./load_module.cc	2008-06-04 21:36:10.000000000 +0000
+@@ -31,6 +31,8 @@
+ # include  <dirent.h>
+ # include  <ctype.h>
+ # include  <assert.h>
++# include  <string.h>
++# include  <stdlib.h>
+ 
+ /*
+  * The module library items are maps of key names to file name within
+--- ./main.cc.orig	2008-06-04 21:28:29.000000000 +0000
++++ ./main.cc	2008-06-04 21:28:44.000000000 +0000
+@@ -48,6 +48,7 @@
+ # include  <map>
+ # include  <unistd.h>
+ # include  <stdlib.h>
++# include  <string.h>
+ #if defined(HAVE_TIMES)
+ # include  <sys/times.h>
+ #endif
+--- ./net_design.cc.orig	2008-06-04 21:41:26.000000000 +0000
++++ ./net_design.cc	2008-06-04 21:41:33.000000000 +0000
+@@ -23,6 +23,7 @@
+ # include "config.h"
+ 
+ # include  <iostream>
++# include  <string.h>
+ 
+ /*
+  * This source file contains all the implementations of the Design
+--- ./net_link.cc.orig	2008-06-04 21:42:34.000000000 +0000
++++ ./net_link.cc	2008-06-04 21:42:42.000000000 +0000
+@@ -23,6 +23,7 @@
+ # include "config.h"
+ 
+ # include  <iostream>
++# include  <string.h>
+ 
+ # include  "netlist.h"
+ # include  <sstream>
+--- ./net_scope.cc.orig	2008-06-04 21:45:28.000000000 +0000
++++ ./net_scope.cc	2008-06-04 21:45:35.000000000 +0000
+@@ -25,6 +25,7 @@
+ 
+ # include  "netlist.h"
+ # include  <sstream>
++# include  <string.h>
+ 
+ /*
+  * The NetScope class keeps a scope tree organized. Each node of the
+--- ./parse.y.orig	2008-06-04 21:48:30.000000000 +0000
++++ ./parse.y	2008-06-04 21:48:38.000000000 +0000
+@@ -28,6 +28,7 @@
+ # include  "compiler.h"
+ # include  "pform.h"
+ # include  <sstream>
++# include  <string.h>
+ 
+ extern void lex_start_table();
+ extern void lex_end_table();
+--- ./pform.cc.orig	2008-06-04 21:50:52.000000000 +0000
++++ ./pform.cc	2008-06-04 21:51:04.000000000 +0000
+@@ -34,6 +34,8 @@
+ # include  <assert.h>
+ # include  <typeinfo>
+ # include  <sstream>
++# include  <string.h>
++# include  <stdlib.h>
+ 
+ map<perm_string,Module*> pform_modules;
+ map<perm_string,PUdp*> pform_primitives;
+--- ./synth2.cc.orig	2008-06-04 21:55:20.000000000 +0000
++++ ./synth2.cc	2008-06-04 21:55:27.000000000 +0000
+@@ -28,6 +28,7 @@
+ #include <cassert>
+ #include "NetLatch.h"
+ #include <climits>
++#include <stdlib.h>
+ 
+ #include <new> // standard operator new
+ using std::bad_alloc;
+--- ./sys_funcs.cc.orig	2008-06-04 21:51:40.000000000 +0000
++++ ./sys_funcs.cc	2008-06-04 21:52:34.000000000 +0000
+@@ -22,6 +22,8 @@
+ 
+ # include  "config.h"
+ # include  "compiler.h"
++# include  <string.h>
++# include <stdlib.h>
+ # include  <stdio.h>
+ 
+ /*
+--- ./t-dll-expr.cc.orig	2008-06-04 22:01:22.000000000 +0000
++++ ./t-dll-expr.cc	2008-06-04 22:01:29.000000000 +0000
+@@ -31,6 +31,7 @@
+ # include  <malloc.h>
+ #endif
+ # include  <stdlib.h>
++# include  <string.h>
+ 
+ /*
+  * This is a little convenience function for converting a NetExpr
+--- ./t-dll-proc.cc.orig	2008-06-04 22:01:42.000000000 +0000
++++ ./t-dll-proc.cc	2008-06-04 22:01:50.000000000 +0000
+@@ -33,6 +33,7 @@
+ # include  <malloc.h>
+ #endif
+ # include  <stdlib.h>
++# include  <string.h>
+ 
+ 
+ bool dll_target::process(const NetProcTop*net)
+--- ./t-dll.cc.orig	2008-06-04 22:01:01.000000000 +0000
++++ ./t-dll.cc	2008-06-04 22:01:07.000000000 +0000
+@@ -32,6 +32,7 @@
+ # include  <malloc.h>
+ #endif
+ # include  <stdlib.h>
++# include  <string.h>
+ 
+ #include <new> // standard operator new
+ using std::bad_alloc;
+--- ./verireal.cc.orig	2008-06-04 21:53:30.000000000 +0000
++++ ./verireal.cc	2008-06-04 21:53:39.000000000 +0000
+@@ -25,6 +25,7 @@
+ # include  "verireal.h"
+ # include  "verinum.h"
+ # include  <stdlib.h>
++# include  <string.h>
+ # include  <ctype.h>
+ # include  <iostream>
+ # include  <math.h>
+--- ./vvp/main.cc.orig	2008-06-04 22:04:50.000000000 +0000
++++ ./vvp/main.cc	2008-06-04 22:04:59.000000000 +0000
+@@ -34,9 +34,6 @@
+ #if defined(HAVE_SYS_RESOURCE_H)
+ # include  <sys/time.h>
+ # include  <sys/resource.h>
+-# if defined(LINUX)
+-#  include <asm/page.h>
+-# endif
+ #endif // defined(HAVE_SYS_RESOURCE_H)
+ 
+ #if defined(HAVE_GETOPT_H)

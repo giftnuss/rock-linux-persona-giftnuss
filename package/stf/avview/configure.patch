@@ -1,0 +1,160 @@
+Adds check for faac library, on which ffmpeg-0.4.9-pre1 may depend;
+recreating configure with autoconf fails because 
+S2C_{PATH,LOAD}_{TCL,TK}CONFIG are not defined.
+allows libavcodec versions greater than 0.4.8, and tcl/tk versions 
+greater than 8.4 (e.g. 8.4.9).
+
+diff -dur avview-0.80.7/configure src.avview.1137267026.31409.4073770048/avview-0.80.7/configure
+--- avview-0.80.7/configure	2005-11-12 14:26:14.000000000 +0100
++++ src.avview.1137267026.31409.4073770048/avview-0.80.7/configure	2006-01-14 21:19:51.000000000 +0100
+@@ -6989,7 +6989,7 @@
+ fi
+ 
+ 
+-echo "The libraries mp3lame, ogg, vorbis and vorbisenc might be required by ffmpeg"
++echo "The libraries faac, mp3lame, ogg, vorbis and vorbisenc might be required by ffmpeg"
+ 
+ echo "$as_me:$LINENO: checking for lame_encode_buffer in -lmp3lame" >&5
+ echo $ECHO_N "checking for lame_encode_buffer in -lmp3lame... $ECHO_C" >&6
+@@ -7283,6 +7283,80 @@
+ fi
+ 
+ 
++echo "$as_me:$LINENO: checking for faacEncOpen in -lfaac" >&5
++echo $ECHO_N "checking for faacEncOpen in -lfaac... $ECHO_C" >&6
++if test "${ac_cv_lib_faac_faacEncOpen+set}" = set; then
++  echo $ECHO_N "(cached) $ECHO_C" >&6
++else
++  ac_check_lib_save_LIBS=$LIBS
++LIBS="-lfaac  $LIBS"
++cat >conftest.$ac_ext <<_ACEOF
++/* confdefs.h.  */
++_ACEOF
++cat confdefs.h >>conftest.$ac_ext
++cat >>conftest.$ac_ext <<_ACEOF
++/* end confdefs.h.  */
++
++/* Override any gcc2 internal prototype to avoid an error.  */
++#ifdef __cplusplus
++extern "C"
++#endif
++/* We use char because int might match the return type of a gcc2
++   builtin and then its argument prototype would still apply.  */
++char faacEncOpen ();
++int
++main ()
++{
++faacEncOpen ();
++  ;
++  return 0;
++}
++_ACEOF
++rm -f conftest.$ac_objext conftest$ac_exeext
++if { (eval echo "$as_me:$LINENO: \"$ac_link\"") >&5
++  (eval $ac_link) 2>conftest.er1
++  ac_status=$?
++  grep -v '^ *+' conftest.er1 >conftest.err
++  rm -f conftest.er1
++  cat conftest.err >&5
++  echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); } &&
++	 { ac_try='test -z "$ac_c_werror_flag"
++			 || test ! -s conftest.err'
++  { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
++  (eval $ac_try) 2>&5
++  ac_status=$?
++  echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); }; } &&
++	 { ac_try='test -s conftest$ac_exeext'
++  { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
++  (eval $ac_try) 2>&5
++  ac_status=$?
++  echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); }; }; then
++  ac_cv_lib_faac_faacEncOpen=yes
++else
++  echo "$as_me: failed program was:" >&5
++sed 's/^/| /' conftest.$ac_ext >&5
++
++ac_cv_lib_faac_faacEncOpen=no
++fi
++rm -f conftest.err conftest.$ac_objext \
++      conftest$ac_exeext conftest.$ac_ext
++LIBS=$ac_check_lib_save_LIBS
++fi
++echo "$as_me:$LINENO: result: $ac_cv_lib_faac_faacEncOpen" >&5
++echo "${ECHO_T}$ac_cv_lib_faac_faacEncOpen" >&6
++if test $ac_cv_lib_faac_faacEncOpen = yes; then
++  cat >>confdefs.h <<_ACEOF
++#define HAVE_LIBFAAC 1
++_ACEOF
++
++  LIBS="-lfaac $LIBS"
++
++fi
++
++
+ #
+ #
+ # Default values
+@@ -8310,11 +8384,7 @@
+ 	#include "avcodec.h"
+ 	#include "avformat.h"
+ 
+-	#if LIBAVCODEC_VERSION_INT != LIBAVFORMAT_VERSION_INT
+-		#error "FFMPEG libraries mismatch"
+-	#endif
+-
+-	#if LIBAVCODEC_VERSION_INT != 0x000408
++	#if LIBAVCODEC_VERSION_INT < 0x000408
+ 		#error "AVview now requires ffmpeg 0.4.8"
+ 	#endif
+ 
+@@ -10393,7 +10463,7 @@
+    { (exit 1); exit 1; }; }
+ fi
+ 
+-if ! test "$TCL_VERSION $TK_VERSION" = "8.4 8.4" ; then
++if ! test "${TCL_VERSION:0:3} ${TK_VERSION:0:3}" = "8.4 8.4" ; then
+ 	{ { echo "$as_me:$LINENO: error: AVview requires Tcl/Tk 8.4.x" >&5
+ echo "$as_me: error: AVview requires Tcl/Tk 8.4.x" >&2;}
+    { (exit 1); exit 1; }; }
+diff -dur avview-0.80.7/configure.in src.avview.1137267026.31409.4073770048/avview-0.80.7/configure.in
+--- avview-0.80.7/configure.in	2005-11-12 14:25:56.000000000 +0100
++++ src.avview.1137267026.31409.4073770048/avview-0.80.7/configure.in	2006-01-14 21:04:03.000000000 +0100
+@@ -48,11 +48,12 @@
+ AC_CHECK_LIB([asound], [snd_card_get_name])
+ AC_CHECK_LIB([lirc_client], [lirc_init])
+ 
+-echo "The libraries mp3lame, ogg, vorbis and vorbisenc might be required by ffmpeg"
++echo "The libraries faac, mp3lame, ogg, vorbis and vorbisenc might be required by ffmpeg"
+ AC_CHECK_LIB([mp3lame], [lame_encode_buffer])
+ AC_CHECK_LIB([ogg], [oggpack_write])
+ AC_CHECK_LIB([vorbis], [vorbis_book_init_encode])
+ AC_CHECK_LIB([vorbisenc], [vorbis_encode_init])
++AC_CHECK_LIB([faac], [faacEncOpen])
+ 
+ #
+ #
+@@ -165,11 +166,7 @@
+ 	#include "avcodec.h"
+ 	#include "avformat.h"
+ 	
+-	#if LIBAVCODEC_VERSION_INT != LIBAVFORMAT_VERSION_INT
+-		#error "FFMPEG libraries mismatch"
+-	#endif
+-	
+-	#if LIBAVCODEC_VERSION_INT != 0x000408
++	#if LIBAVCODEC_VERSION_INT < 0x000408
+ 		#error "AVview now requires ffmpeg 0.4.8"
+ 	#endif
+ 	
+@@ -220,7 +217,7 @@
+ 	AC_MSG_ERROR([can not find X11])
+ fi
+ 
+-if ! test "$TCL_VERSION $TK_VERSION" = "8.4 8.4" ; then
++if ! test "${TCL_VERSION:0:3} ${TK_VERSION:0:3}" = "8.4 8.4" ; then
+ 	AC_MSG_ERROR([AVview requires Tcl/Tk 8.4.x])
+ fi
+ 

@@ -1,0 +1,90 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=dsniff
+Comment=Network Auditing
+Exec=dsniff
+Terminal=true
+Type=Application
+Categories=Security
+X-ROCK-Name=dsniff
+
+[Desktop Entry]
+Encoding=UTF-8
+Name=filesnarf
+Comment=Network Auditing
+Exec=filesnarf
+Terminal=true
+Type=Application
+Categories=Security
+X-ROCK-Name=dsniff
+
+[Desktop Entry]
+Encoding=UTF-8
+Name=mailsnarf
+Comment=Network Auditing
+Exec=mailsnarf
+Terminal=true
+Type=Application
+Categories=Security
+X-ROCK-Name=dsniff
+
+[Desktop Entry]
+Encoding=UTF-8
+Name=msgsnarf
+Comment=Network Auditing
+Exec=msgsnarf
+Terminal=true
+Type=Application
+Categories=Security
+X-ROCK-Name=dsniff
+
+[Desktop Entry]
+Encoding=UTF-8
+Name=sshmitm
+Comment=Network Auditing
+Exec=sshmitm
+Terminal=true
+Type=Application
+Categories=Security
+X-ROCK-Name=dsniff
+
+[Desktop Entry]
+Encoding=UTF-8
+Name=sshow
+Comment=Network Auditing
+Exec=sshow
+Terminal=true
+Type=Application
+Categories=Security
+X-ROCK-Name=dsniff
+
+[Desktop Entry]
+Encoding=UTF-8
+Name=urlsnarf
+Comment=Network Auditing
+Exec=urlsnarf
+Terminal=true
+Type=Application
+Categories=Security
+X-ROCK-Name=dsniff
+
+[Desktop Entry]
+Encoding=UTF-8
+Name=webmitm
+Comment=Network Auditing
+Exec=webmitm
+Terminal=true
+Type=Application
+Categories=Security
+X-ROCK-Name=dsniff
+
+[Desktop Entry]
+Encoding=UTF-8
+Name=webspy
+Comment=Network Auditing
+Exec=webspy
+Terminal=true
+Type=Application
+Categories=Security
+X-ROCK-Name=dsniff
+

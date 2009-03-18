@@ -1,0 +1,11 @@
+
+if [ "$ROCKCFG_HPPA_BITS" == "32" ] ; then
+	# Append options so the gcc -V option always comes first.
+	var_append GCC_WRAPPER_APPEND " " "-march=1.1"
+fi
+
+if [ "$ROCKCFG_HPPA_BITS" == "64" ] ; then
+	var_append GCC_WRAPPER_APPEND " " "-march=2.0"
+fi
+
+var_append GCC_WRAPPER_APPEND " " "-fno-unit-at-a-time"

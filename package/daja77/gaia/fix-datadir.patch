@@ -1,0 +1,13 @@
+--- ./programs/gaia/SConscript.orig	2007-03-11 23:53:16.000000000 +0100
++++ ./programs/gaia/SConscript	2007-03-11 23:54:28.000000000 +0100
+@@ -17,8 +17,8 @@
+ if int(env['gpsd']):
+ 	env.Append( LIBS = [ 'gps' ], CCFLAGS = [ '-DWITH_GPSD' ], CXXFLAGS = [ '-DWITH_GPSD' ] )
+ 
+-env.Append(CCFLAGS = [ '-DDATADIR="\\"' + env['prefix'] + "/" + env['datadir'] + '\\""' ] );
+-env.Append(CXXFLAGS = [ '-DDATADIR="\\"' + env['prefix'] + "/" + env['datadir'] + '\\""' ] );
++env.Append(CCFLAGS = [ '-DDATADIR="\\"/usr/share/gaia/' + env['datadir'] + '\\""' ] );
++env.Append(CXXFLAGS = [ '-DDATADIR="\\"/usr/share/gaia/' + env['datadir'] + '\\""' ] );
+ 
+ #######################################
+ # CHECKS

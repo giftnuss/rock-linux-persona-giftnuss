@@ -1,0 +1,12 @@
+--- ./common.c.orig	2008-05-05 13:52:40.000000000 +0200
++++ ./common.c	2008-05-05 13:52:46.000000000 +0200
+@@ -35,7 +35,8 @@
+  * PAGE_SHIFT no longer necessarily exists in <asm/page.h>. So
+  * we use PAGE_SIZE to compute PAGE_SHIFT...
+  */
+-#include <asm/page.h>
++#define PAGE_SIZE getpagesize()
++// #include <asm/page.h>
+ 
+ #include "version.h"
+ #include "common.h"

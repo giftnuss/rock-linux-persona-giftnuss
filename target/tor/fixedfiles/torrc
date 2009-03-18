@@ -1,0 +1,26 @@
+SocksPort 9050 # what port to open for local application connections
+SocksListenAddress 127.0.0.1 # accept connections only from localhost
+
+## Send all messages of level 'notice' or higher to /var/log/tor/notices.log
+#Log notice file /var/log/tor/notices.log
+## Send every possible message to /var/log/tor/debug.log
+#Log debug file /var/log/tor/debug.log
+## Use the system log instead of Tor's logfiles
+#Log notice syslog
+## To send all messages to stderr:
+#Log debug stderr
+
+## The port on which Tor will listen for local connections from Tor
+## controller applications, as documented in control-spec.txt.
+ControlPort 9051
+
+## The Transparent Router Port
+TransPort 9040
+
+## The user tor will run as
+User tor
+
+# Map some addresses
+##Freenode
+mapaddress 10.254.254.1 mejokbp2brhw4omd.onion	# Freenode
+mapaddress 10.254.254.2 5t7o4shdbhotfuzp.onion	# Freenode-GPG

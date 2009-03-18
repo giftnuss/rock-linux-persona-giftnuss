@@ -1,0 +1,23 @@
+
+[TIMESTAMP] 1181165564 Wed Jun  6 23:32:44 2007 (5)
+[TIMESTAMP] 1181612828 Tue Jun 12 03:47:08 2007 (9)
+
+[CONFIG-ID] TRUNK-x86-reference
+[ROCKVER] TRUNK
+
+[LOGS] 5-zsnes.log 9-zsnes.log
+
+[BUILDTIME] 9733 (5)
+[BUILDTIME] 9811 (9)
+[SIZE] 3.14 MB, 8 files
+
+[DEP] 00-dirtree applewmproto autoconf automake19 bash2 binutils bzip2
+[DEP] coreutils cvm diffutils findutils gawk gcc42 gcc42:dev glibc26
+[DEP] glibc26:dev grep imake libice libpng:dev libsdl libsdl:dev libsm
+[DEP] libx11 libxau libxcb libxdmcp libxext libxt linux26-headers:dev
+[DEP] ltrace m4 make mesalib mesalib:dev mktemp nas nasm ncurses
+[DEP] ncurses:dev net-tools perl5 sed sysfiles tar twoftpd ucspi-unix
+[DEP] util-linux xmame xorg-cf-files zlib zlib:dev
+
+[PROVIDES] zsnes
+

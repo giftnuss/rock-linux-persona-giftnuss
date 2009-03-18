@@ -1,0 +1,16 @@
+--- metatheme-0.9.7/plugins/background/bg-ext-handler.c~	2002-04-18 21:42:44.000000000 +0200
++++ metatheme-0.9.7/plugins/background/bg-ext-handler.c	2007-11-08 11:55:35.000000000 +0100
+@@ -200,7 +200,12 @@
+ 	int i = 0;
+ 	gchar *key, *val;
+ 	static gchar* args[] = {"Color1", "Color2", "ColorGradient", "GradientType", "WallpaperLayout", NULL};
+-	static gchar* descs[] = {_("Primary Color"), _("Secondary Color"), _("Use Gradient"), _("Gradient Type"), _("Wallpaper Layout Type"), NULL};
++	static gchar* descs[] = { NULL, NULL, NULL, NULL, NULL, NULL };
++	if (descs[0] == NULL) descs[0] = _("Primary Color");
++	if (descs[1] == NULL) descs[1] = _("Secondary Color");
++	if (descs[2] == NULL) descs[2] = _("Use Gradient");
++	if (descs[3] == NULL) descs[3] = _("Gradient Type");
++	if (descs[4] == NULL) descs[4] = _("Wallpaper Layout Type");
+ 
+ 	MTM_EXT_HANDLER (handler)->describe_arg = bg_ext_handler_describe_arg;
+ 

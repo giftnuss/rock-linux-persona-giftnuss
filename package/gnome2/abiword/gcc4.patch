@@ -1,0 +1,11 @@
+--- ./abi/src/wp/impexp/xp/ie_mailmerge.h.orig	2006-07-23 19:50:50.000000000 +0100
++++ ./abi/src/wp/impexp/xp/ie_mailmerge.h	2006-07-23 19:56:30.000000000 +0200
+@@ -28,6 +28,8 @@
+ typedef UT_sint32 IEMergeType;
+ #define IEMT_Unknown ((IEMergeType)-1)
+ 
++class IE_MailMerge;
++
+ class ABI_EXPORT IE_MergeSniffer : public UT_AbiObject
+ {
+   friend class IE_MailMerge;

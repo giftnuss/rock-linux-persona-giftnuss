@@ -1,0 +1,61 @@
+#!/bin/bash
+expert_begin
+    comment ' '
+    comment '- Additional Package Selection'
+    block_begin 3
+      choice ROCKCFG_PKGSEL_TPL none none 'No package preselection template' \
+		$( cd misc/pkgsel ; grep -H "^# TITLE: " *.in | \
+			tr ' ' '_' | sed 's,\.in:#_TITLE:_, ,' )
+	if [ "$ROCKCFG_EXPERT" == 1 ] ; then
+		if [ -f misc/pkgsel/${ROCKCFG_PKGSEL_TPL}.in ]; then
+			pkgfilter sed -e "$( . ./misc/pkgsel/macros 
+			. ./misc/pkgsel/${ROCKCFG_PKGSEL_TPL}.in)"
+		fi
+	fi
+
+      bool 'Custom package selection' ROCKCFG_PKGSEL 0
+      if [ "$ROCKCFG_PKGSEL" = 1 ] ; then
+	menu_begin MENU_PKGSEL_RULES 'Edit package selection rules'
+		editfile ROCKCFG_PKGSEL_FILE config/$config.$swpid/pkgsel \
+		         'Package selection rules'
+	menu_end
+
+# Syntax for package selection rules is:
+# <action> <patternlist>
+# <action> is a single character: x or X enables the packages matching 
+# <patternlist>, o or O disables them, - omits them in the packages list.
+# <patternlist> consists of one or more white-space separated sed patterns.
+# <action> is performed on every line in the list matching all patterns of a rule.
+# If the first <pattern> of a rule is a !, <action> is performed on every line 
+# _not_ matching _any_ <pattern> of a rule.
+
+	if [ "$ROCKCFG_EXPERT" == 1 ] ; then
+		filterscript=""
+		while read action not patternlist ; do
+			[ "$not" != "!" ] && { patternlist="$not" ; not="" ; }
+			case "$action" in
+			    [xX])	action='s,^O ,X ,' ;;
+			    [oO])	action='s,^X ,O ,' ;;
+			    -)		action='d' ;;
+			    *)		continue ;;
+			esac
+			while read pattern ; do
+				filterscript="$filterscript /[ =]$pattern / $not $action ;"
+			done < <( echo "$patternlist" | tr '\t ' '\n\n' )
+		done < config/$config.$swpid/pkgsel
+		pkgfilter sed -e "$filterscript"
+	fi
+      fi
+
+      startprog ROCKCFG_SHOW_PKGLIST 'Show the current package list' \
+		"sort -k1,1r -k3,3n \
+			< config/$config.$swpid/packages \
+		| cut -f1,2,4,5,8- -d' ' | sed 's, [^ ]*$,,' \
+		| tr ' ' '\t' | expand -t2,13,30, \
+			> config/$config.$swpid/packages.txt ; \
+		./src/rockdialog.bin --title 'ROCK Linux Config - Package List' \
+			--backtitle 'ROCK Linux $rockver Configuration' \
+			--textbox config/$config.$swpid/packages.txt \
+			$(( $lines - 4 )) $(( $columns - 5 ))"
+    block_end
+expert_end

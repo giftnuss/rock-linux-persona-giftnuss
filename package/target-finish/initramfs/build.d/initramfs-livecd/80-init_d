@@ -1,0 +1,9 @@
+
+echo "file /etc/fstab $filesdir/empty 644 0 0"
+echo "file /etc/mtab $filesdir/empty 644 0 0"
+
+echo "dir /init.d 0755 0 0"
+for x in $filesdir/init.d/[0-9]*
+do
+	echo "file /init.d/`basename $x` $x 755 0 0"
+done

@@ -1,0 +1,21 @@
+
+[TIMESTAMP] 1180989272 Mon Jun  4 22:34:32 2007 (5)
+[TIMESTAMP] 1181450639 Sun Jun 10 06:43:59 2007 (9)
+
+[CONFIG-ID] TRUNK-x86-reference
+[ROCKVER] TRUNK
+
+[LOGS] 5-libsdl_gfx.log 9-libsdl_gfx.log
+
+[BUILDTIME] 3024 (5)
+[BUILDTIME] 3528 (9)
+[SIZE] 0.07 MB, 9 files
+
+[DEP] 00-dirtree applewmproto autoconf bash2 binutils bzip2 coreutils cvm
+[DEP] diffutils findutils gawk gcc42 gcc42:dev glibc26 glibc26:dev grep
+[DEP] imake libice libsdl libsdl:dev libsm libx11 libxau libxcb libxdmcp
+[DEP] libxt linux26-headers:dev ltrace make mktemp nas net-tools patch
+[DEP] perl5 sed sysfiles tar texinfo util-linux xmame xorg-cf-files
+
+[PROVIDES] libSDL_gfx.a libSDL_gfx.so
+

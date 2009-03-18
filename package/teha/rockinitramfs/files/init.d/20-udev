@@ -1,0 +1,10 @@
+mount -t tmpfs none /dev
+udevd --daemon
+udevadm trigger
+sleep 2
+udevadm settle
+echo "sleeping another 3 seconds after udevadm settle ran..."
+sleep 3
+mkdir -p /dev/pts
+mkdir -p /dev/shm
+mkdir -p /dev/bus/usb

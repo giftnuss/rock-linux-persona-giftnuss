@@ -1,0 +1,29 @@
+
+[TIMESTAMP] 1181159764 Wed Jun  6 21:56:04 2007 (5)
+[TIMESTAMP] 1181610218 Tue Jun 12 03:03:38 2007 (9)
+
+[CONFIG-ID] TRUNK-x86-reference
+[ROCKVER] TRUNK
+
+[LOGS] 5-allegro.log 9-allegro.log
+
+[BUILDTIME] 15313 (5)
+[BUILDTIME] 14912 (9)
+[SIZE] 2.33 MB, 30 files
+
+[DEP] 00-dirtree alsa alsa:dev applewmproto applewmproto:dev arts arts:dev
+[DEP] audiofile audiofile:dev bash2 binutils bzip2 coreutils cvm diffutils
+[DEP] esound esound:dev findutils gawk gcc42 gcc42:dev glib glibc26
+[DEP] glibc26:dev gnome-libs14 gnome14-dirtree gnome2-dirtree grep imake
+[DEP] libx11 libx11:dev libxau libxcb libxcursor libxcursor:dev libxdmcp
+[DEP] libxext libxfixes libxpm libxpm:dev libxrender libxt libxxf86dga
+[DEP] libxxf86vm linux26-headers:dev ltrace make mktemp net-tools pkgconfig
+[DEP] sed sysfiles tar texinfo util-linux xextproto:dev xf86dgaproto:dev
+[DEP] xf86vidmodeproto:dev xmame xorg-cf-files xproto:dev
+
+[PROVIDES] alleg-alsadigi.so alleg-alsamidi.so alleg-artsdigi.so
+[PROVIDES] alleg-dga2.so alleg-esddigi.so alleg-fbcon.so alleg-svgalib.so
+[PROVIDES] alleg-vga.so allegro-config colormap dat dat2c dat2s exedat
+[PROVIDES] grabber liballeg-4.2.0.so liballeg_unsharable.a pack pat2dat
+[PROVIDES] rgbmap textconv
+

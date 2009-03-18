@@ -1,0 +1,21 @@
+
+[TIMESTAMP] 1181153946 Wed Jun  6 20:19:06 2007 (5)
+[TIMESTAMP] 1181605872 Tue Jun 12 01:51:12 2007 (9)
+
+[CONFIG-ID] TRUNK-x86-reference
+[ROCKVER] TRUNK
+
+[LOGS] 5-geki2.log 9-geki2.log
+
+[BUILDTIME] 2658 (5)
+[BUILDTIME] 2846 (9)
+[SIZE] 1.84 MB, 79 files
+
+[DEP] 00-dirtree alsa applewmproto applewmproto:dev autoconf automake19
+[DEP] bash2 binutils bzip2 coreutils cvm diffutils findutils gawk gcc42
+[DEP] gcc42:dev glibc26 glibc26:dev grep imake libice libkxl libkxl:dev
+[DEP] libx11 libx11:dev libxau libxcb libxdmcp libxt linux26-headers:dev
+[DEP] ltrace make mktemp net-tools perl5 sed sysfiles tar texinfo xmame
+[DEP] xorg-cf-files xproto:dev
+
+

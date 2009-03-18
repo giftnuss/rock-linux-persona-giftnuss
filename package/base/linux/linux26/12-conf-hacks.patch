@@ -1,0 +1,97 @@
+--- ./scripts/kconfig/conf.c
++++ ./scripts/kconfig/conf.c
+@@ -22,6 +22,7 @@
+ 	ask_all,
+ 	ask_new,
+ 	ask_silent,
++	ask_no2mod,
+ 	set_default,
+ 	set_yes,
+ 	set_mod,
+@@ -92,6 +93,14 @@
+ 	}
+ 
+ 	switch (input_mode) {
++	case ask_no2mod:
++		if (type == S_TRISTATE && sym_get_tristate_value(sym) == no) {
++			fprintf(stderr, "Setting %s to 'm'.\n", sym->name);
++			line[0] = 'm';
++			line[1] = '\n';
++			line[2] = 0;
++			break;
++		}
+ 	case ask_new:
+ 	case ask_silent:
+ 		if (sym_has_value(sym)) {
+@@ -301,6 +310,7 @@
+ 				break;
+ 			}
+ 			check_stdin();
++		case ask_no2mod:
+ 		case ask_all:
+ 			fflush(stdout);
+ 			fgets(line, 128, stdin);
+@@ -438,7 +448,7 @@
+ 	bindtextdomain(PACKAGE, LOCALEDIR);
+ 	textdomain(PACKAGE);
+ 
+-	while ((opt = getopt(ac, av, "osdD:nmyrh")) != -1) {
++	while ((opt = getopt(ac, av, "osdD:nmMyrh")) != -1) {
+ 		switch (opt) {
+ 		case 'o':
+ 			input_mode = ask_silent;
+@@ -460,6 +470,9 @@
+ 		case 'm':
+ 			input_mode = set_mod;
+ 			break;
++		case 'M':
++			input_mode = ask_no2mod;
++			break;
+ 		case 'y':
+ 			input_mode = set_yes;
+ 			break;
+@@ -510,6 +523,7 @@
+ 	case ask_silent:
+ 	case ask_all:
+ 	case ask_new:
++	case ask_no2mod:
+ 		conf_read(NULL);
+ 		break;
+ 	case set_no:
+@@ -572,6 +586,7 @@
+ 		input_mode = ask_silent;
+ 		/* fall through */
+ 	case ask_silent:
++	case ask_no2mod:
+ 		/* Update until a loop caused no more changes */
+ 		do {
+ 			conf_cnt = 0;
+--- ./scripts/kconfig/Makefile
++++ ./scripts/kconfig/Makefile
+@@ -42,7 +42,7 @@
+ 	$(Q)rm -f arch/um/Kconfig_arch
+ 	$(Q)rm -f scripts/kconfig/linux_*.pot scripts/kconfig/config.pot
+ 
+-PHONY += randconfig allyesconfig allnoconfig allmodconfig defconfig
++PHONY += randconfig allyesconfig allnoconfig allmodconfig no2modconfig defconfig
+ 
+ randconfig: $(obj)/conf
+ 	$< -r $(Kconfig)
+@@ -56,6 +56,9 @@
+ allmodconfig: $(obj)/conf
+ 	$< -m $(Kconfig)
+ 
++no2modconfig: scripts/kconfig/conf
++	$< -M $(Kconfig)
++
+ defconfig: $(obj)/conf
+ ifeq ($(KBUILD_DEFCONFIG),)
+ 	$< -d $(Kconfig)
+@@ -77,6 +80,7 @@
+ 	@echo  '  randconfig	  - New config with random answer to all options'
+ 	@echo  '  defconfig	  - New config with default answer to all options'
+ 	@echo  '  allmodconfig	  - New config selecting modules when possible'
++	@echo  '  no2modconfig    - New config selecting modules for disabled options'
+ 	@echo  '  allyesconfig	  - New config where all options are accepted with yes'
+ 	@echo  '  allnoconfig	  - New config where all options are answered with no'
+ 

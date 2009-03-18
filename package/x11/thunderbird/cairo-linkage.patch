@@ -1,0 +1,97 @@
+--- mozilla/configure.in.bak	2007-04-27 12:06:53.000000000 -0700
++++ mozilla/configure.in	2007-04-27 13:51:40.000000000 -0700
+@@ -6731,12 +6731,29 @@ if test "$MOZ_SVG_RENDERER_CAIRO" -o "$M
+       PKG_CHECK_MODULES(CAIRO, cairo >= $CAIRO_VERSION)
+       MOZ_CAIRO_CFLAGS=$CAIRO_CFLAGS
+       MOZ_CAIRO_LIBS=$CAIRO_LIBS
++
++      if test "$MOZ_X11"; then
++          if test "$MOZ_SVG_RENDERER_CAIRO"; then
++              PKG_CHECK_MODULES(CAIRO_XLIB, cairo-xlib >= $CAIRO_VERSION,,:)
++              MOZ_CAIRO_XLIB_CFLAGS=$CAIRO_XLIB_CFLAGS
++              MOZ_CAIRO_XLIB_LIBS="$XLDFLAGS $CAIRO_XLIB_LIBS"
++          fi
++          if test "$MOZ_ENABLE_CANVAS"; then
++              PKG_CHECK_MODULES(CAIRO_XRENDER, cairo-xlib-xrender >= $CAIRO_VERSION,,:)
++              MOZ_CAIRO_XRENDER_CFLAGS=$CAIRO_XRENDER_CFLAGS
++              MOZ_CAIRO_XRENDER_LIBS="$XLDFLAGS $CAIRO_XRENDER_LIBS"
++          fi
++      fi
+    fi
+ fi
+ 
+ AC_SUBST(MOZ_TREE_CAIRO)
+ AC_SUBST(MOZ_CAIRO_CFLAGS)
+ AC_SUBST(MOZ_CAIRO_LIBS)
++AC_SUBST(MOZ_CAIRO_XLIB_CFLAGS)
++AC_SUBST(MOZ_CAIRO_XLIB_LIBS)
++AC_SUBST(MOZ_CAIRO_XRENDER_CFLAGS)
++AC_SUBST(MOZ_CAIRO_XRENDER_LIBS)
+ 
+ dnl ========================================================
+ dnl disable xul
+--- mozilla/layout/build/Makefile.in.bak	2007-04-27 12:13:22.000000000 -0700
++++ mozilla/layout/build/Makefile.in	2007-04-27 13:53:00.000000000 -0700
+@@ -234,6 +234,17 @@ EXTRA_DSO_LDOPTS += $(MOZ_CAIRO_LIBS) \
+ 		    $(NULL)
+ endif
+ 
++ifdef MOZ_X11
++ifdef MOZ_SVG_RENDERER_CAIRO
++EXTRA_DSO_LDOPTS += $(MOZ_CAIRO_XLIB_LIBS) \
++		    $(NULL)
++endif
++ifdef MOZ_ENABLE_CANVAS
++EXTRA_DSO_LDOPTS += $(MOZ_CAIRO_XRENDER_LIBS) \
++		    $(NULL)
++endif
++endif
++
+ ifneq (,$(filter mac cocoa gtk,$(MOZ_WIDGET_TOOLKIT)))
+ EXTRA_DSO_LDOPTS += \
+ 	$(TK_LIBS) \
+--- mozilla/layout/svg/renderer/src/cairo/Makefile.in.bak	2007-04-27 13:55:51.000000000 -0700
++++ mozilla/layout/svg/renderer/src/cairo/Makefile.in	2007-04-27 13:49:51.000000000 -0700
+@@ -93,6 +93,11 @@ LOCAL_INCLUDES  = \
+                 -I$(topsrcdir)/gfx/src \
+                 $(NULL)
+ 
++ifdef MOZ_X11
++CFLAGS		+= $(MOZ_CAIRO_XLIB_CFLAGS)
++CXXFLAGS	+= $(MOZ_CAIRO_XLIB_CFLAGS)
++endif
++
+ ifdef MOZ_ENABLE_GTK
+ LOCAL_INCLUDES +=  -I$(topsrcdir)/gfx/src/gtk
+ CFLAGS         += $(MOZ_GTK_CFLAGS) $(MOZ_GTK2_CFLAGS)
+--- mozilla/config/autoconf.mk.in.bak	2007-04-27 12:12:12.000000000 -0700
++++ mozilla/config/autoconf.mk.in	2007-04-27 13:47:28.000000000 -0700
+@@ -207,6 +207,8 @@ MOZ_SVG_RENDERER_CAIRO = @MOZ_SVG_RENDER
+ MOZ_LIBART_CFLAGS = @MOZ_LIBART_CFLAGS@
+ MOZ_ENABLE_CANVAS = @MOZ_ENABLE_CANVAS@
+ MOZ_CAIRO_CFLAGS = @MOZ_CAIRO_CFLAGS@
++MOZ_CAIRO_XLIB_CFLAGS = @MOZ_CAIRO_XLIB_CFLAGS@
++MOZ_CAIRO_XRENDER_CFLAGS = @MOZ_CAIRO_XRENDER_CFLAGS@
+ TX_EXE = @TX_EXE@
+ 
+ # Mac's don't like / in a #include, so we include the libart
+@@ -218,6 +220,8 @@ endif
+ endif
+ MOZ_LIBART_LIBS = @MOZ_LIBART_LIBS@
+ MOZ_CAIRO_LIBS = @MOZ_CAIRO_LIBS@
++MOZ_CAIRO_XLIB_LIBS = @MOZ_CAIRO_XLIB_LIBS@
++MOZ_CAIRO_XRENDER_LIBS = @MOZ_CAIRO_XRENDER_LIBS@
+ 
+ MOZ_ENABLE_GNOMEUI = @MOZ_ENABLE_GNOMEUI@
+ MOZ_GNOMEUI_CFLAGS = @MOZ_GNOMEUI_CFLAGS@
+--- mozilla/content/canvas/src/Makefile.in.bak	2007-04-27 12:25:38.000000000 -0700
++++ mozilla/content/canvas/src/Makefile.in	2007-04-27 12:25:00.000000000 -0700
+@@ -94,7 +94,7 @@ FORCE_STATIC_LIB = 1
+ 
+ include $(topsrcdir)/config/rules.mk
+ 
+-CXXFLAGS	+= $(MOZ_CAIRO_CFLAGS) $(TK_CFLAGS)
++CXXFLAGS	+= $(MOZ_CAIRO_CFLAGS) $(MOZ_CAIRO_XRENDER_CFLAGS) $(TK_CFLAGS)
+ 
+ ifneq (,$(filter mac cocoa,$(MOZ_GFX_TOOLKIT)))
+ # needed for nsDrawingSurfaceMac.h

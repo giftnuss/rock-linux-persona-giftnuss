@@ -1,0 +1,4 @@
+case "$pkg" in
+        mesademos)
+                pkg=mesalib ;;
+esac

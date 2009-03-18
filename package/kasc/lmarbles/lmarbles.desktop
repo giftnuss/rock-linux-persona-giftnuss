@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=LMarbles
+Comment=an Atomix clone
+Exec=lmarbles
+Terminal=false
+Type=Application
+Categories=Game;LogicGame
+X-ROCK-Name=lmarbles

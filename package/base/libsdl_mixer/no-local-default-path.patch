@@ -1,0 +1,11 @@
+--- ./timidity/config.h-orig	2006-05-01 09:25:52.000000000 +0200
++++ ./timidity/config.h	2007-06-04 23:14:13.000000000 +0200
+@@ -176,7 +176,7 @@
+ #if defined(__WIN32__) || defined(__OS2__)
+ #define DEFAULT_PATH	"\\TIMIDITY"
+ #else
+-#define DEFAULT_PATH	"/usr/local/lib/timidity"
++#define DEFAULT_PATH	"/usr/share/timidity"
+ #endif
+ 
+ /* These affect general volume */

@@ -1,0 +1,16 @@
+--- km/km.c	2005-06-19 09:18:43.000000000 +0200
++++ build/generic-distro-TRUNK-x86-athlon-xp-32-generic-expert/ROCK/src.gatos-km.1143534885.6208.2882753788/km/km.c	2006-03-29 03:07:39.000000000 +0200
+@@ -871,6 +871,13 @@
+ #define PCI_DEVICE_ID_ATI_RADEON_RD    0x5147
+ #endif
+ 
++#ifndef PCI_DEVICE_ID_ATI_RADEON_LE
++#define PCI_DEVICE_ID_ATI_RADEON_LE 0x4d45
++#endif
++
++#ifndef PCI_DEVICE_ID_ATI_RADEON_LF
++#define PCI_DEVICE_ID_ATI_RADEON_LF 0x4d46
++#endif
+ 
+ /*-------------------------------------------------------------------------*/
+ 

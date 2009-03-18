@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=GNU Backgammon
+Comment=Backgammon
+Exec=gnubg
+Terminal=false
+Type=Application
+Categories=Game;BoardGame
+X-ROCK-Name=gnubg

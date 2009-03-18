@@ -1,0 +1,112 @@
+diff -pruN xc/extras/ogl-sample/main/gfx/lib/glu/libnurbs/internals/mymath.h xc-patch/extras/ogl-sample/main/gfx/lib/glu/libnurbs/internals/mymath.h
+--- xc/extras/ogl-sample/main/gfx/lib/glu/libnurbs/internals/mymath.h	2004-04-23 20:42:55.000000000 +0200
++++ xc-patch/extras/ogl-sample/main/gfx/lib/glu/libnurbs/internals/mymath.h	2006-03-29 12:56:15.000000000 +0200
+@@ -66,8 +66,8 @@ extern "C" float	floorf(float);
+ #define NEEDCEILF
+ #endif
+ #elif defined(NEEDCEILF)
+-extern "C" float	ceilf(float);
+-extern "C" float	floorf(float);
++//extern "C" float	ceilf(float);
++//extern "C" float	floorf(float);
+ #endif
+ 
+ #ifdef LIBRARYBUILD
+diff -pruN xc/fonts/util/ucs2any.c xc-patch/fonts/util/ucs2any.c
+--- xc/fonts/util/ucs2any.c	2004-11-28 20:06:20.000000000 +0100
++++ xc-patch/fonts/util/ucs2any.c	2006-03-29 12:56:15.000000000 +0200
+@@ -61,7 +61,7 @@
+ /* global variable for argv[0] */
+ const char *my_name = NULL;
+ 
+-#ifdef NEED_BASENAME
++#if 0
+ static char *
+ basename(char *pathname)
+ {
+diff -pruN xc/programs/fc-list/Imakefile xc-patch/programs/fc-list/Imakefile
+--- xc/programs/fc-list/Imakefile	2005-06-29 23:51:13.000000000 +0200
++++ xc-patch/programs/fc-list/Imakefile	2006-03-29 12:56:15.000000000 +0200
+@@ -13,8 +13,8 @@ FONTCONFIGDIR = $(TOP)/extras/fontconfig
+ 
+ INCLUDES=$(FREETYPE2INCLUDES) -I$(FONTCONFIGDIR)
+ 
+-LOCAL_LIBRARIES=FontconfigClientLibs
+-        DEPLIBS=FontconfigClientDepLibs
++LOCAL_LIBRARIES=FontconfigClientLibs -lz
++        DEPLIBS=FontconfigClientDepLibs -lz
+ 
+ SRCS=fc-list.c
+ OBJS=fc-list.o
+diff -pruN xc/programs/glxgears/Imakefile xc-patch/programs/glxgears/Imakefile
+--- xc/programs/glxgears/Imakefile	2004-11-01 02:54:21.000000000 +0100
++++ xc-patch/programs/glxgears/Imakefile	2006-03-29 12:56:15.000000000 +0200
+@@ -12,7 +12,7 @@ XCOMM $XFree86: xc/programs/glxinfo/Imak
+ #endif
+ 
+         DEPLIBS = $(DEPGLXLIB) $(DEPXPLIB) $(DEPXLIB)
+-LOCAL_LIBRARIES = $(GLXLIB) $(XPRINTLIBS) $(XLIB)
++LOCAL_LIBRARIES = $(GLXLIB) $(XPRINTLIBS) $(XLIB) -ldl -lXxf86vm
+         DEFINES = $(XPRINTDEFINES)
+   SYS_LIBRARIES = MathLibrary $(RTLIB)
+ 
+diff -pruN xc/programs/glxinfo/Imakefile xc-patch/programs/glxinfo/Imakefile
+--- xc/programs/glxinfo/Imakefile	2004-12-02 12:09:30.000000000 +0100
++++ xc-patch/programs/glxinfo/Imakefile	2006-03-29 12:56:15.000000000 +0200
+@@ -5,7 +5,7 @@ XCOMM $XFree86: xc/programs/glxinfo/Imak
+ #if BuildGLULibrary
+ 
+         DEPLIBS = $(DEPGLULIB) $(DEPGLXLIB) $(DEPXLIB)
+-LOCAL_LIBRARIES = $(GLULIB) $(GLXLIB) $(XLIB) 
++LOCAL_LIBRARIES = $(GLULIB) $(GLXLIB) $(XLIB) -ldl -lXxf86vm
+         DEFINES = -DDO_GLU
+ 
+ #else
+diff -pruN xc/programs/x11perf/Imakefile xc-patch/programs/x11perf/Imakefile
+--- xc/programs/x11perf/Imakefile	2004-08-11 10:05:31.000000000 +0200
++++ xc-patch/programs/x11perf/Imakefile	2006-03-29 12:56:15.000000000 +0200
+@@ -40,7 +40,7 @@ XCOMM $XFree86: xc/programs/x11perf/Imak
+ 		  do_dots.o do_windows.o do_movewin.o do_text.o \
+ 		  do_blt.o do_arcs.o \
+ 		  do_tris.o do_complex.o do_traps.o
+-LOCAL_LIBRARIES = $(XFTLIBS) $(XRENDERLIBS) $(XMUULIB) $(XLIB)
++LOCAL_LIBRARIES = $(XFTLIBS) $(XRENDERLIBS) $(XMUULIB) $(XLIB) -lz
+         DEPLIBS = $(XFTDEPS) $(XRENDERDEPS) $(DEPXMUULIB) $(DEPXLIB)
+   SYS_LIBRARIES = MathLibrary
+ 
+diff -pruN xc/programs/xclock/Imakefile xc-patch/programs/xclock/Imakefile
+--- xc/programs/xclock/Imakefile	2004-10-30 22:33:44.000000000 +0200
++++ xc-patch/programs/xclock/Imakefile	2006-03-29 12:56:39.000000000 +0200
+@@ -18,7 +18,7 @@ XCOMM $XFree86: xc/programs/xclock/Imake
+      STRLCATDEF = -DHAS_STRLCAT
+ #endif
+         DEPLIBS = $(XRENDERDEPS) XkbClientDepLibs XawClientDepLibs
+-LOCAL_LIBRARIES = $(XRENDERLIBS) XkbClientLibs XawClientLibs $(XPMLIB)
++LOCAL_LIBRARIES = $(XRENDERLIBS) XkbClientLibs XawClientLibs $(XPMLIB) -lz
+            SRCS = xclock.c Clock.c
+            OBJS = xclock.o Clock.o
+         HEADERS = ClockP.h Clock.h
+diff -pruN xc/programs/xdriinfo/Imakefile xc-patch/programs/xdriinfo/Imakefile
+--- xc/programs/xdriinfo/Imakefile	2004-08-27 21:27:12.000000000 +0200
++++ xc-patch/programs/xdriinfo/Imakefile	2006-03-29 12:56:15.000000000 +0200
+@@ -4,7 +4,7 @@ XCOMM $XFree86$
+ 
+             SRCS = xdriinfo.c
+             OBJS = xdriinfo.o
+- LOCAL_LIBRARIES = $(GLXLIB) $(XLIB) 
++ LOCAL_LIBRARIES = $(GLXLIB) $(XLIB)  -ldl -lXxf86vm
+          DEPLIBS =
+ 
+ AllTarget(ProgramTargetName(xdriinfo))
+diff -pruN xc/programs/xfd/Imakefile xc-patch/programs/xfd/Imakefile
+--- xc/programs/xfd/Imakefile	2004-04-23 21:54:47.000000000 +0200
++++ xc-patch/programs/xfd/Imakefile	2006-03-29 12:56:15.000000000 +0200
+@@ -15,7 +15,7 @@ XCOMM $XFree86: xc/programs/xfd/Imakefil
+     XRENDERINCS = $(XFTINCLUDES) $(XRENDERINCLUDES) -I$(XBUILDINCDIR)
+ #endif
+         DEPLIBS = $(XRENDERDEPS) XawClientDepLibs XkbClientDepLibs
+-LOCAL_LIBRARIES = $(XRENDERLIBS) XawClientLibs XkbClientLibs
++LOCAL_LIBRARIES = $(XRENDERLIBS) XawClientLibs XkbClientLibs -lz
+            SRCS = xfd.c grid.c
+            OBJS = xfd.o grid.o
+        INCLUDES = $(XRENDERINCS)

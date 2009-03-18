@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1"?> <!-- -*- SGML -*- -->
+
+<deviceinfo version="0.2">
+
+  <!-- Default policies merged onto computer root object  -->
+  <device>
+    <match key="info.udi" string="/org/freedesktop/Hal/devices/computer">
+      <merge key="storage.policy.default.managed_keyword.primary" type="string">user</merge>
+      <merge key="storage.policy.default.mount_option.pamconsole" type="bool">false</merge>
+    </match>
+  </device>
+
+</deviceinfo>

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=LTris
+Comment=Tetris Clone
+Exec=D_prefix/ltris
+Terminal=false
+Type=Application
+Categories=Game;ArcadeGame
+X-ROCK-Name=ltris
+Icon=D_datadir/ltris/icons/ltris16.xpm

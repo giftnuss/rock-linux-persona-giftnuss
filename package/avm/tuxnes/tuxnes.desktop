@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=TuxNES
+Comment=NES Emulator
+Exec=tuxnes
+Terminal=false
+Type=Application
+Categories=Emulator
+X-ROCK-Name=tuxnes

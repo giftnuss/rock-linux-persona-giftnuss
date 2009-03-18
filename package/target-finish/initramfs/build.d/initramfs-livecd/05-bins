@@ -1,0 +1,18 @@
+
+BINLIST="
+bin/bash usr/bin/awk usr/bin/basename bin/cat bin/cp bin/cut usr/bin/find
+bin/ls bin/grep bin/ln usr/bin/readlink bin/rm bin/sed bin/sleep usr/bin/tr
+sbin/insmod bin/mount bin/umount sbin/modprobe
+usr/bin/killall
+
+bin/ps bin/df bin/mkdir bin/more
+bin/chmod
+usr/bin/chroot
+"
+
+for x in $BINLIST
+do
+	add_with_deps $rootdir/$x /$x
+done
+
+echo slink /bin/sh /bin/bash 755 0 0

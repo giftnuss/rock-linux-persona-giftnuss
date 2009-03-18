@@ -1,0 +1,15 @@
+if ! test -e /dev/.udev ; then
+	mount -t tmpfs tmpfs /dev
+	cp -a /lib/udev/devices/* /dev
+fi
+
+udevd --daemon
+udevadm trigger
+udevadm settle
+
+mkdir -p /dev/pts
+mkdir -p /dev/shm
+mkdir -p /dev/bus/usb
+[ -z "$( grep " /dev/pts " /proc/mounts )" ] && mount -t devpts devpts /dev/pts
+[ -z "$( grep " /dev/shm " /proc/mounts )" ] && mount -t tmpfs tmpfs /dev/shm
+[ -z "$( grep " /dev/bus/usb " /proc/mounts )" ] && mount -t usbfs usbfs /dev/bus/usb

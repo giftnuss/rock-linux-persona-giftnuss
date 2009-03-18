@@ -1,0 +1,8 @@
+#!/bin/sh -e
+# this is required for kernels older than 2.6.13
+
+[ "$SERIO_TYPE" -a "$SERIO_PROTO" -a "$SERIO_ID" -a "$SERIO_EXTRA" ] || exit 1
+
+printf "MODALIAS='serio:ty%02Xpr%02Xid%02Xex%02X'\n" \
+	$((0x$SERIO_TYPE)) $((0x$SERIO_PROTO)) $((0x$SERIO_ID)) \
+	$((0x$SERIO_EXTRA))

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=rox-filer
+Comment=Filesystem browser
+Exec=rox
+Terminal=false
+Type=Application
+Categories=FileManager
+X-ROCK-Name=rox-filer

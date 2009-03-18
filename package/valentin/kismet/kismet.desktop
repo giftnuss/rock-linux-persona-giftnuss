@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Kismet
+Comment=Wireless Network Analyser
+Exec=kismet
+Terminal=true
+Type=Application
+Categories=System;Monitor
+X-ROCK-Name=kismet

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=worker
+Comment=X11 Filesystem Browser
+Exec=worker
+Terminal=false
+Type=Application
+Categories=FileManager
+X-ROCK-Name=worker

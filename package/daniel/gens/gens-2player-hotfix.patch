@@ -1,0 +1,16 @@
+--- ./gens/linux/g_main.cpp	2006-08-15 13:35:30.000000000 +0200
++++ ./gens/linux/g_main.cpp	2006-08-15 13:35:33.000000000 +0200
+@@ -788,11 +788,11 @@
+ 			
+ 			if (event.jaxis.value < -500)
+ 			{
+-				joystate[0x100 * event.jaxis.which + (event.jaxis.axis == 0) ? 0x3:0x1] = 1;
++				joystate[0x100 * event.jaxis.which + (event.jaxis.axis == 0 ? 0x3 : 0x1)] = 1;
+ 			}
+ 			if (event.jaxis.value > 500)
+ 			{
+-				joystate[0x100 * event.jaxis.which + (event.jaxis.axis == 0) ? 0x4:0x2] = 1;
++				joystate[0x100 * event.jaxis.which + (event.jaxis.axis == 0 ? 0x4 : 0x2)] = 1;
+ 			}
+ 			if (event.jaxis.value == 0)
+ 			{

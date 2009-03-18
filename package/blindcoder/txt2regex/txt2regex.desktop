@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=txt2regex
+Comment=Create regular expressions
+Exec=txt2regex
+Terminal=true
+Type=Application
+Categories=Utility
+X-ROCK-Name=txt2regex

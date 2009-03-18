@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=irrsi
+Comment=IRC Client
+Exec=irssi
+Terminal=true
+Type=Application
+Categories=Network;IRCClient
+X-ROCK-Name=irssi

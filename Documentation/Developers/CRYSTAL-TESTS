@@ -1,0 +1,65 @@
+
+                  Standard Prerelease Tests for Crystal ROCK
+                  ==========================================
+
+This is a proposed test procedure for the Crystal ROCK distribution. It must be
+passed for before a release may be done. Any additional test are fine too, but
+not part of a standard procedure.
+
+
+1. Install Tests
+================
+
+Various install scenarios should be tested. 1.a and 1.b can be done in qemu.
+
+1.a The simple install
+----------------------
+
+A full install with one big 2GB (or greater) root disk and a 500 MB swap
+partition. Installation is done using the "next, next, next" approach. The only
+dialogs where a different behavior than simply pressing enter are for setting
+the root password and doing the partitioning.
+
+The system should boot up with a fully-functional X server and kde.
+
+Konqueror, kontact, konsole, gimp and mozilla should start up fine and pass a
+simply functionality test. Gimp should be able to access all the fonts
+installed without any additional hacking. The KDE menus should list all the
+programs installed.
+
+1.b The heavy partitioning test
+-------------------------------
+
+A "base" install with the following partitioning scheme should go fine,
+boot, allow logins, and shut down cleanly:
+
+	part1	/       XFS         500 MB
+	part2	/usr    ReiserFS  1.500 MB
+	part3	<extended>        2.000 MB
+	part5	/home   JFS         500 MB
+	part6	/var    ext3        500 MB
+	part7	/boot   ext2        500 MB
+	part8	----    swap        500 MB
+
+1.c The hardware autodetection test
+-----------------------------------
+
+A setup such as 1.a on a machine with SCSI disk and CD-ROM and a common
+3d-accelerated graphics card with Linux/x.org support.
+
+The SCSI devices should be autodetected without any troubles and x11 should be
+auto-configured with full support for the graphics card.
+
+
+2. The heavy testcase run
+=========================
+
+Every package can ship it's own testcase. There will be a simple way to run
+them all. This should be done on a system with a full installation.
+
+
+3. The end-user test
+====================
+
+A end user should install the system and give feedback.
+

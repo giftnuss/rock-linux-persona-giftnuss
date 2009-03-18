@@ -1,0 +1,123 @@
+
+[TIMESTAMP] 1181163019 Wed Jun  6 22:50:19 2007 (5) ERROR
+[TIMESTAMP] 1181610925 Tue Jun 12 03:15:25 2007 (9) ERROR
+[TIMESTAMP] 1181829452 Thu Jun 14 15:57:32 2007 (5) ERROR
+[TIMESTAMP] 1181913326 Fri Jun 15 15:15:26 2007 (9) ERROR
+[TIMESTAMP] 1181953099 Sat Jun 16 02:18:19 2007 (5) ERROR
+[TIMESTAMP] 1181974947 Sat Jun 16 08:22:27 2007 (9) ERROR
+
+[CONFIG-ID] TRUNK-x86-reference
+[ROCKVER] TRUNK
+
+[LOGS] 5-lgeneral.err 9-lgeneral.err
+
+[BUILDTIME] 2876 (5) ERROR
+[BUILDTIME] 2908 (9) ERROR
+[BUILDTIME] 2898 (5) ERROR
+[BUILDTIME] 2968 (9) ERROR
+[BUILDTIME] 2843 (5) ERROR
+[BUILDTIME] 2858 (9) ERROR
+
+
+[5-ERROR] make[3]: Nothing to be done for `install-exec-am'.
+[5-ERROR] /bin/sh ../../mkinstalldirs /usr/share/games/lgeneral/music
+[5-ERROR] make[3]: Leaving directory `/ROCK/loop/src.lgeneral.1181953070.21835.1627887995/lgeneral-1.2beta-2/src/music'
+[5-ERROR] make[2]: Leaving directory `/ROCK/loop/src.lgeneral.1181953070.21835.1627887995/lgeneral-1.2beta-2/src/music'
+[5-ERROR] Making install in units
+[5-ERROR] make[2]: Entering directory `/ROCK/loop/src.lgeneral.1181953070.21835.1627887995/lgeneral-1.2beta-2/src/units'
+[5-ERROR] make[3]: Entering directory `/ROCK/loop/src.lgeneral.1181953070.21835.1627887995/lgeneral-1.2beta-2/src/units'
+[5-ERROR] make[3]: Nothing to be done for `install-exec-am'.
+[5-ERROR] /bin/sh ../../mkinstalldirs /usr/share/games/lgeneral/units
+[5-ERROR] make[3]: Leaving directory `/ROCK/loop/src.lgeneral.1181953070.21835.1627887995/lgeneral-1.2beta-2/src/units'
+[5-ERROR] make[2]: Leaving directory `/ROCK/loop/src.lgeneral.1181953070.21835.1627887995/lgeneral-1.2beta-2/src/units'
+[5-ERROR] Making install in scenarios
+[5-ERROR] make[2]: Entering directory `/ROCK/loop/src.lgeneral.1181953070.21835.1627887995/lgeneral-1.2beta-2/src/scenarios'
+[5-ERROR] make[3]: Entering directory `/ROCK/loop/src.lgeneral.1181953070.21835.1627887995/lgeneral-1.2beta-2/src/scenarios'
+[5-ERROR] make[3]: Nothing to be done for `install-exec-am'.
+[5-ERROR] /bin/sh ../../mkinstalldirs /usr/share/games/lgeneral/scenarios
+[5-ERROR] make[3]: Leaving directory `/ROCK/loop/src.lgeneral.1181953070.21835.1627887995/lgeneral-1.2beta-2/src/scenarios'
+[5-ERROR] make[2]: Leaving directory `/ROCK/loop/src.lgeneral.1181953070.21835.1627887995/lgeneral-1.2beta-2/src/scenarios'
+[5-ERROR] Making install in ai_modules
+[5-ERROR] make[2]: Entering directory `/ROCK/loop/src.lgeneral.1181953070.21835.1627887995/lgeneral-1.2beta-2/src/ai_modules'
+[5-ERROR] make[3]: Entering directory `/ROCK/loop/src.lgeneral.1181953070.21835.1627887995/lgeneral-1.2beta-2/src/ai_modules'
+[5-ERROR] make[3]: Nothing to be done for `install-exec-am'.
+[5-ERROR] /bin/sh ../../mkinstalldirs /usr/share/games/lgeneral/ai_modules
+[5-ERROR] make[3]: Leaving directory `/ROCK/loop/src.lgeneral.1181953070.21835.1627887995/lgeneral-1.2beta-2/src/ai_modules'
+[5-ERROR] make[2]: Leaving directory `/ROCK/loop/src.lgeneral.1181953070.21835.1627887995/lgeneral-1.2beta-2/src/ai_modules'
+[5-ERROR] make[2]: Entering directory `/ROCK/loop/src.lgeneral.1181953070.21835.1627887995/lgeneral-1.2beta-2/src'
+[5-ERROR] make[3]: Entering directory `/ROCK/loop/src.lgeneral.1181953070.21835.1627887995/lgeneral-1.2beta-2/src'
+[5-ERROR] /bin/sh ../mkinstalldirs /usr/games
+[5-ERROR]   /ROCK/build/ref0603-TRUNK-x86-reference/ROCK/tools.chroot/wrapper/install -c  lgeneral /usr/games/lgeneral
+[5-ERROR] make  install-man6
+[5-ERROR] make[4]: Entering directory `/ROCK/loop/src.lgeneral.1181953070.21835.1627887995/lgeneral-1.2beta-2/src'
+[5-ERROR] /bin/sh ../mkinstalldirs /usr/share/man/man6
+[5-ERROR]  /ROCK/build/ref0603-TRUNK-x86-reference/ROCK/tools.chroot/wrapper/install -c -m 644 ./lgeneral.6 /usr/share/man/man6/lgeneral.6
+[5-ERROR] make[4]: Leaving directory `/ROCK/loop/src.lgeneral.1181953070.21835.1627887995/lgeneral-1.2beta-2/src'
+[5-ERROR] /bin/sh ../mkinstalldirs /usr/share/games/lgeneral
+[5-ERROR] make[3]: Leaving directory `/ROCK/loop/src.lgeneral.1181953070.21835.1627887995/lgeneral-1.2beta-2/src'
+[5-ERROR] make[2]: Leaving directory `/ROCK/loop/src.lgeneral.1181953070.21835.1627887995/lgeneral-1.2beta-2/src'
+[5-ERROR] make[1]: Leaving directory `/ROCK/loop/src.lgeneral.1181953070.21835.1627887995/lgeneral-1.2beta-2/src'
+[5-ERROR] make[1]: Entering directory `/ROCK/loop/src.lgeneral.1181953070.21835.1627887995/lgeneral-1.2beta-2'
+[5-ERROR] make[2]: Entering directory `/ROCK/loop/src.lgeneral.1181953070.21835.1627887995/lgeneral-1.2beta-2'
+[5-ERROR] make[2]: Nothing to be done for `install-exec-am'.
+[5-ERROR] make[2]: Nothing to be done for `install-data-am'.
+[5-ERROR] make[2]: Leaving directory `/ROCK/loop/src.lgeneral.1181953070.21835.1627887995/lgeneral-1.2beta-2'
+[5-ERROR] make[1]: Leaving directory `/ROCK/loop/src.lgeneral.1181953070.21835.1627887995/lgeneral-1.2beta-2'
+[5-ERROR] Starting Xvfb server ..
+[5-ERROR] svgalib: Cannot open /dev/svga
+[5-ERROR] Is svgalib_helper module loaded?
+[5-ERROR] Killing Xvfb server ..
+[5-ERROR] Got error from '/usr/games/lgc-pg -s pg-data -d /usr/share/lgeneral' !!
+[5-ERROR] --- BUILD ERROR ---
+
+[9-ERROR] make[3]: Nothing to be done for `install-exec-am'.
+[9-ERROR] /bin/sh ../../mkinstalldirs /usr/share/games/lgeneral/music
+[9-ERROR] make[3]: Leaving directory `/ROCK/loop/src.lgeneral.1181974918.28925.4149625545/lgeneral-1.2beta-2/src/music'
+[9-ERROR] make[2]: Leaving directory `/ROCK/loop/src.lgeneral.1181974918.28925.4149625545/lgeneral-1.2beta-2/src/music'
+[9-ERROR] Making install in units
+[9-ERROR] make[2]: Entering directory `/ROCK/loop/src.lgeneral.1181974918.28925.4149625545/lgeneral-1.2beta-2/src/units'
+[9-ERROR] make[3]: Entering directory `/ROCK/loop/src.lgeneral.1181974918.28925.4149625545/lgeneral-1.2beta-2/src/units'
+[9-ERROR] make[3]: Nothing to be done for `install-exec-am'.
+[9-ERROR] /bin/sh ../../mkinstalldirs /usr/share/games/lgeneral/units
+[9-ERROR] make[3]: Leaving directory `/ROCK/loop/src.lgeneral.1181974918.28925.4149625545/lgeneral-1.2beta-2/src/units'
+[9-ERROR] make[2]: Leaving directory `/ROCK/loop/src.lgeneral.1181974918.28925.4149625545/lgeneral-1.2beta-2/src/units'
+[9-ERROR] Making install in scenarios
+[9-ERROR] make[2]: Entering directory `/ROCK/loop/src.lgeneral.1181974918.28925.4149625545/lgeneral-1.2beta-2/src/scenarios'
+[9-ERROR] make[3]: Entering directory `/ROCK/loop/src.lgeneral.1181974918.28925.4149625545/lgeneral-1.2beta-2/src/scenarios'
+[9-ERROR] make[3]: Nothing to be done for `install-exec-am'.
+[9-ERROR] /bin/sh ../../mkinstalldirs /usr/share/games/lgeneral/scenarios
+[9-ERROR] make[3]: Leaving directory `/ROCK/loop/src.lgeneral.1181974918.28925.4149625545/lgeneral-1.2beta-2/src/scenarios'
+[9-ERROR] make[2]: Leaving directory `/ROCK/loop/src.lgeneral.1181974918.28925.4149625545/lgeneral-1.2beta-2/src/scenarios'
+[9-ERROR] Making install in ai_modules
+[9-ERROR] make[2]: Entering directory `/ROCK/loop/src.lgeneral.1181974918.28925.4149625545/lgeneral-1.2beta-2/src/ai_modules'
+[9-ERROR] make[3]: Entering directory `/ROCK/loop/src.lgeneral.1181974918.28925.4149625545/lgeneral-1.2beta-2/src/ai_modules'
+[9-ERROR] make[3]: Nothing to be done for `install-exec-am'.
+[9-ERROR] /bin/sh ../../mkinstalldirs /usr/share/games/lgeneral/ai_modules
+[9-ERROR] make[3]: Leaving directory `/ROCK/loop/src.lgeneral.1181974918.28925.4149625545/lgeneral-1.2beta-2/src/ai_modules'
+[9-ERROR] make[2]: Leaving directory `/ROCK/loop/src.lgeneral.1181974918.28925.4149625545/lgeneral-1.2beta-2/src/ai_modules'
+[9-ERROR] make[2]: Entering directory `/ROCK/loop/src.lgeneral.1181974918.28925.4149625545/lgeneral-1.2beta-2/src'
+[9-ERROR] make[3]: Entering directory `/ROCK/loop/src.lgeneral.1181974918.28925.4149625545/lgeneral-1.2beta-2/src'
+[9-ERROR] /bin/sh ../mkinstalldirs /usr/games
+[9-ERROR]   /ROCK/build/ref0603-TRUNK-x86-reference/ROCK/tools.chroot/wrapper/install -c  lgeneral /usr/games/lgeneral
+[9-ERROR] make  install-man6
+[9-ERROR] make[4]: Entering directory `/ROCK/loop/src.lgeneral.1181974918.28925.4149625545/lgeneral-1.2beta-2/src'
+[9-ERROR] /bin/sh ../mkinstalldirs /usr/share/man/man6
+[9-ERROR]  /ROCK/build/ref0603-TRUNK-x86-reference/ROCK/tools.chroot/wrapper/install -c -m 644 ./lgeneral.6 /usr/share/man/man6/lgeneral.6
+[9-ERROR] make[4]: Leaving directory `/ROCK/loop/src.lgeneral.1181974918.28925.4149625545/lgeneral-1.2beta-2/src'
+[9-ERROR] /bin/sh ../mkinstalldirs /usr/share/games/lgeneral
+[9-ERROR] make[3]: Leaving directory `/ROCK/loop/src.lgeneral.1181974918.28925.4149625545/lgeneral-1.2beta-2/src'
+[9-ERROR] make[2]: Leaving directory `/ROCK/loop/src.lgeneral.1181974918.28925.4149625545/lgeneral-1.2beta-2/src'
+[9-ERROR] make[1]: Leaving directory `/ROCK/loop/src.lgeneral.1181974918.28925.4149625545/lgeneral-1.2beta-2/src'
+[9-ERROR] make[1]: Entering directory `/ROCK/loop/src.lgeneral.1181974918.28925.4149625545/lgeneral-1.2beta-2'
+[9-ERROR] make[2]: Entering directory `/ROCK/loop/src.lgeneral.1181974918.28925.4149625545/lgeneral-1.2beta-2'
+[9-ERROR] make[2]: Nothing to be done for `install-exec-am'.
+[9-ERROR] make[2]: Nothing to be done for `install-data-am'.
+[9-ERROR] make[2]: Leaving directory `/ROCK/loop/src.lgeneral.1181974918.28925.4149625545/lgeneral-1.2beta-2'
+[9-ERROR] make[1]: Leaving directory `/ROCK/loop/src.lgeneral.1181974918.28925.4149625545/lgeneral-1.2beta-2'
+[9-ERROR] Starting Xvfb server ..
+[9-ERROR] svgalib: Cannot open /dev/svga
+[9-ERROR] Is svgalib_helper module loaded?
+[9-ERROR] Killing Xvfb server ..
+[9-ERROR] Got error from '/usr/games/lgc-pg -s pg-data -d /usr/share/lgeneral' !!
+[9-ERROR] --- BUILD ERROR ---
+

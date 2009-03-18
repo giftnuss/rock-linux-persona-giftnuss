@@ -1,0 +1,17 @@
+These defines are not used anywhere in iproute2 (and the header is not
+exported), but cause errors in include/linux/types.h.
+
+--- iproute2/include/iptables_common.h~	2007-03-13 22:50:56.000000000 +0100
++++ iproute2/include/iptables_common.h	2007-07-17 20:00:14.000000000 +0200
+@@ -43,9 +43,11 @@
+   extern void init_extensions(void);
+ #endif
+ 
++/*
+ #define __be32	u_int32_t
+ #define __le32	u_int32_t
+ #define __be16	u_int16_t
+ #define __le16	u_int16_t
++*/
+ 
+ #endif /*_IPTABLES_COMMON_H*/

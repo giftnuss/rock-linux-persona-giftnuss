@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=GKrellM
+Comment=GNU Krell Monitors
+Exec=gkrellm
+Terminal=false
+Type=Application
+Categories=System;Monitor
+X-ROCK-Name=gkrellm

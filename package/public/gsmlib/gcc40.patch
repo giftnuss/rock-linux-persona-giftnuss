@@ -1,0 +1,26 @@
+This fixes errors like:
+
+../gsmlib/gsm_map_key.h:78: error: explicit qualification in declaration of `bool gsmlib::operator<(const gsmlib::MapKey<SortedStore>&, const gsmlib::MapKey<SortedStore>&)'
+../gsmlib/gsm_map_key.h:103: error: explicit qualification in declaration of `bool gsmlib::operator==(const gsmlib::MapKey<SortedStore>&, const gsmlib::MapKey<SortedStore>&)'
+
+diff -dur gsmlib-1.10/gsmlib/gsm_map_key.h src.gsmlib.1134789323.26631.3587511328/gsmlib-1.10/gsmlib/gsm_map_key.h
+--- gsmlib-1.10/gsmlib/gsm_map_key.h	2005-12-17 06:07:15.000000000 +0100
++++ src.gsmlib.1134789323.26631.3587511328/gsmlib-1.10/gsmlib/gsm_map_key.h	2005-12-17 06:03:02.000000000 +0100
+@@ -74,7 +74,7 @@
+   // MapKey members
+   
+   template <class SortedStore>
+-    bool gsmlib::operator<(const MapKey<SortedStore> &x,
++    bool operator<(const MapKey<SortedStore> &x,
+                            const MapKey<SortedStore> &y)
+     {
+       assert(&x._myStore == &y._myStore);
+@@ -99,7 +99,7 @@
+     }
+ 
+   template <class SortedStore>
+-    bool gsmlib::operator==(const MapKey<SortedStore> &x,
++    bool operator==(const MapKey<SortedStore> &x,
+                             const MapKey<SortedStore> &y)
+     {
+       assert(&x._myStore == &y._myStore);

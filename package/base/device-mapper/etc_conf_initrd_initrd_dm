@@ -1,0 +1,11 @@
+/etc/conf/dm/initrd_dm /etc/conf/dm
+/etc/conf/dm/mounts	/etc/dm/mounts
+/bin/dd	/bin/dd
+/sbin/swapon	/sbin/swapon
+/sbin/mkswap	/sbin/mkswap
+/bin/grep	/bin/grep
+/bin/sed	/bin/sed
+/bin/cat	/bin/cat
+/usr/bin/md5sum	/bin/md5sum
+/sbin/blockdev	/sbin/blockdev
+/sbin/dmsetup	/sbin/dmsetup

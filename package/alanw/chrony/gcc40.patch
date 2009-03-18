@@ -1,0 +1,11 @@
+--- chrony-1.21/addrfilt.c~	2005-08-11 22:32:54.000000000 +0200
++++ chrony-1.21/addrfilt.c	2005-12-14 22:52:17.000000000 +0100
+@@ -45,7 +45,7 @@
+ 
+ struct _TableNode;
+ 
+-typedef struct _TableNode ExtendedTable[TABLE_SIZE];
++typedef struct _TableNode *ExtendedTable;
+ 
+ typedef enum {DENY, ALLOW, AS_PARENT} State;
+ 

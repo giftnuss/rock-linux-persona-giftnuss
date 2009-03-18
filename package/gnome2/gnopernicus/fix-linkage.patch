@@ -1,0 +1,135 @@
+diff -dur gnopernicus-1.1.2/braille/test/Makefile.in src.gnopernicus.1163116634.11593.2597860910/gnopernicus-1.1.2/braille/test/Makefile.in
+--- gnopernicus-1.1.2/braille/test/Makefile.in	2006-08-21 15:10:30.000000000 +0200
++++ src.gnopernicus.1163116634.11593.2597860910/gnopernicus-1.1.2/braille/test/Makefile.in	2006-11-10 01:18:31.000000000 +0100
+@@ -364,10 +364,10 @@
+ 	done
+ remote$(EXEEXT): $(remote_OBJECTS) $(remote_DEPENDENCIES) 
+ 	@rm -f remote$(EXEEXT)
+-	$(LINK) $(remote_LDFLAGS) $(remote_OBJECTS) $(remote_LDADD) $(LIBS)
++	$(LINK) $(remote_LDFLAGS) $(remote_OBJECTS) $(remote_LDADD) $(LIBS) -lcspi -lspi
+ tester$(EXEEXT): $(tester_OBJECTS) $(tester_DEPENDENCIES) 
+ 	@rm -f tester$(EXEEXT)
+-	$(LINK) $(tester_LDFLAGS) $(tester_OBJECTS) $(tester_LDADD) $(LIBS)
++	$(LINK) $(tester_LDFLAGS) $(tester_OBJECTS) $(tester_LDADD) $(LIBS) -lcspi -lspi
+ 
+ mostlyclean-compile:
+ 	-rm -f *.$(OBJEXT)
+diff -dur gnopernicus-1.1.2/brlmon/Makefile.in src.gnopernicus.1163116634.11593.2597860910/gnopernicus-1.1.2/brlmon/Makefile.in
+--- gnopernicus-1.1.2/brlmon/Makefile.in	2006-08-21 15:10:30.000000000 +0200
++++ src.gnopernicus.1163116634.11593.2597860910/gnopernicus-1.1.2/brlmon/Makefile.in	2006-11-10 01:44:11.000000000 +0100
+@@ -398,10 +398,12 @@
+ 	done
+ brlmonitor$(EXEEXT): $(brlmonitor_OBJECTS) $(brlmonitor_DEPENDENCIES) 
+ 	@rm -f brlmonitor$(EXEEXT)
+-	$(LINK) $(brlmonitor_LDFLAGS) $(brlmonitor_OBJECTS) $(brlmonitor_LDADD) $(LIBS)
++	$(LINK) $(brlmonitor_LDFLAGS) $(brlmonitor_OBJECTS) $(brlmonitor_LDADD) $(LIBS) \
++	-lcspi -lspi
+ tester$(EXEEXT): $(tester_OBJECTS) $(tester_DEPENDENCIES) 
+ 	@rm -f tester$(EXEEXT)
+-	$(LINK) $(tester_LDFLAGS) $(tester_OBJECTS) $(tester_LDADD) $(LIBS)
++	$(LINK) $(tester_LDFLAGS) $(tester_OBJECTS) $(tester_LDADD) $(LIBS) \
++	-lcspi -lspi
+ 
+ mostlyclean-compile:
+ 	-rm -f *.$(OBJEXT)
+diff -dur gnopernicus-1.1.2/gnopi/Makefile.in src.gnopernicus.1163116634.11593.2597860910/gnopernicus-1.1.2/gnopi/Makefile.in
+--- gnopernicus-1.1.2/gnopi/Makefile.in	2006-08-21 15:10:30.000000000 +0200
++++ src.gnopernicus.1163116634.11593.2597860910/gnopernicus-1.1.2/gnopi/Makefile.in	2006-11-10 01:41:35.000000000 +0100
+@@ -475,7 +475,8 @@
+ 	done
+ gnopernicus$(EXEEXT): $(gnopernicus_OBJECTS) $(gnopernicus_DEPENDENCIES) 
+ 	@rm -f gnopernicus$(EXEEXT)
+-	$(LINK) $(gnopernicus_LDFLAGS) $(gnopernicus_OBJECTS) $(gnopernicus_LDADD) $(LIBS)
++	$(LINK) $(gnopernicus_LDFLAGS) $(gnopernicus_OBJECTS) $(gnopernicus_LDADD) $(LIBS) \
++	-lcspi -lspi
+ install-gnopernicusSCRIPTS: $(gnopernicus_SCRIPTS)
+ 	@$(NORMAL_INSTALL)
+ 	test -z "$(gnopernicusdir)" || $(mkdir_p) "$(DESTDIR)$(gnopernicusdir)"
+diff -dur gnopernicus-1.1.2/kbd_mouse/test/Makefile.in src.gnopernicus.1163116634.11593.2597860910/gnopernicus-1.1.2/kbd_mouse/test/Makefile.in
+--- gnopernicus-1.1.2/kbd_mouse/test/Makefile.in	2006-08-21 15:10:34.000000000 +0200
++++ src.gnopernicus.1163116634.11593.2597860910/gnopernicus-1.1.2/kbd_mouse/test/Makefile.in	2006-11-10 01:35:31.000000000 +0100
+@@ -335,7 +335,12 @@
+ 	done
+ test$(EXEEXT): $(test_OBJECTS) $(test_DEPENDENCIES) 
+ 	@rm -f test$(EXEEXT)
+-	$(LINK) $(test_LDFLAGS) $(test_OBJECTS) $(test_LDADD) $(LIBS)
++	$(LINK) $(test_LDFLAGS) $(test_OBJECTS) $(test_LDADD) $(LIBS) \
++	-lgtk-x11-2.0 -lgdk-x11-2.0 -lgdk_pixbuf-2.0 -lpangocairo-1.0 -lpangoft2-1.0 \
++	-lcairo -lpango-1.0 -lcspi -lspi -lbonobo-2 -latk-1.0 -lORBitCosNaming-2 \
++	-lbonobo-activation -lORBit-2 -lgthread-2.0 -lgobject-2.0 -lgmodule-2.0 \
++	-lglib-2.0 -lgnomeui-2 -lbonoboui-2 -lgnome-keyring -lgnomecanvas-2 -lgnome-2 \
++	-lgnomevfs-2 -lgconf-2
+ 
+ mostlyclean-compile:
+ 	-rm -f *.$(OBJEXT)
+diff -dur gnopernicus-1.1.2/magnifier/test/Makefile.in src.gnopernicus.1163116634.11593.2597860910/gnopernicus-1.1.2/magnifier/test/Makefile.in
+--- gnopernicus-1.1.2/magnifier/test/Makefile.in	2006-08-21 15:10:35.000000000 +0200
++++ src.gnopernicus.1163116634.11593.2597860910/gnopernicus-1.1.2/magnifier/test/Makefile.in	2006-11-10 01:37:17.000000000 +0100
+@@ -337,7 +337,12 @@
+ 	done
+ tester$(EXEEXT): $(tester_OBJECTS) $(tester_DEPENDENCIES) 
+ 	@rm -f tester$(EXEEXT)
+-	$(LINK) $(tester_LDFLAGS) $(tester_OBJECTS) $(tester_LDADD) $(LIBS)
++	$(LINK) $(tester_LDFLAGS) $(tester_OBJECTS) $(tester_LDADD) $(LIBS) \
++	-lgtk-x11-2.0 -lgdk-x11-2.0 -lgdk_pixbuf-2.0 -lpangocairo-1.0 -lpangoft2-1.0 \
++	-lcairo -lpango-1.0 -lcspi -lspi -lbonobo-2 -latk-1.0 -lORBitCosNaming-2 \
++	-lbonobo-activation -lORBit-2 -lgthread-2.0 -lgobject-2.0 -lgmodule-2.0 \
++	-lglib-2.0 -lgnomeui-2 -lbonoboui-2 -lgnome-keyring -lgnomecanvas-2 -lgnome-2 \
++	-lgnomevfs-2 -lgconf-2 -lgnome-mag -lgailutil
+ 
+ mostlyclean-compile:
+ 	-rm -f *.$(OBJEXT)
+diff -dur gnopernicus-1.1.2/speech/test/Makefile.in src.gnopernicus.1163116634.11593.2597860910/gnopernicus-1.1.2/speech/test/Makefile.in
+--- gnopernicus-1.1.2/speech/test/Makefile.in	2006-08-21 15:10:36.000000000 +0200
++++ src.gnopernicus.1163116634.11593.2597860910/gnopernicus-1.1.2/speech/test/Makefile.in	2006-11-10 01:25:34.000000000 +0100
+@@ -338,7 +338,10 @@
+ 	done
+ tester$(EXEEXT): $(tester_OBJECTS) $(tester_DEPENDENCIES) 
+ 	@rm -f tester$(EXEEXT)
+-	$(LINK) $(tester_LDFLAGS) $(tester_OBJECTS) $(tester_LDADD) $(LIBS)
++	$(LINK) $(tester_LDFLAGS) $(tester_OBJECTS) $(tester_LDADD) $(LIBS) \
++	-lcspi -lspi -latk-1.0 -lgnomeui-2 -lbonoboui-2 -lgnome-keyring \
++	-lgnomecanvas-2 -lgtk-x11-2.0 -lgdk-x11-2.0 -lgdk_pixbuf-2.0 \
++	-lpangocairo-1.0 -lpangoft2-1.0 -lcairo -lpango-1.0 -lgailutil
+ 
+ mostlyclean-compile:
+ 	-rm -f *.$(OBJEXT)
+diff -dur gnopernicus-1.1.2/srcore/Makefile.in src.gnopernicus.1163116634.11593.2597860910/gnopernicus-1.1.2/srcore/Makefile.in
+--- gnopernicus-1.1.2/srcore/Makefile.in	2006-08-21 15:10:37.000000000 +0200
++++ src.gnopernicus.1163116634.11593.2597860910/gnopernicus-1.1.2/srcore/Makefile.in	2006-11-10 01:39:31.000000000 +0100
+@@ -428,7 +428,8 @@
+ 	done
+ srcore$(EXEEXT): $(srcore_OBJECTS) $(srcore_DEPENDENCIES) 
+ 	@rm -f srcore$(EXEEXT)
+-	$(LINK) $(srcore_LDFLAGS) $(srcore_OBJECTS) $(srcore_LDADD) $(LIBS)
++	$(LINK) $(srcore_LDFLAGS) $(srcore_OBJECTS) $(srcore_LDADD) $(LIBS) \
++	-lgnomespeech -lcspi -lspi -lgnome-mag
+ 
+ mostlyclean-compile:
+ 	-rm -f *.$(OBJEXT)
+diff -dur gnopernicus-1.1.2/srlow/test/Makefile.in src.gnopernicus.1163116634.11593.2597860910/gnopernicus-1.1.2/srlow/test/Makefile.in
+--- gnopernicus-1.1.2/srlow/test/Makefile.in	2006-08-21 15:10:37.000000000 +0200
++++ src.gnopernicus.1163116634.11593.2597860910/gnopernicus-1.1.2/srlow/test/Makefile.in	2006-11-10 01:34:23.000000000 +0100
+@@ -344,10 +344,20 @@
+ 	done
+ gtk_srlow_test$(EXEEXT): $(gtk_srlow_test_OBJECTS) $(gtk_srlow_test_DEPENDENCIES) 
+ 	@rm -f gtk_srlow_test$(EXEEXT)
+-	$(LINK) $(gtk_srlow_test_LDFLAGS) $(gtk_srlow_test_OBJECTS) $(gtk_srlow_test_LDADD) $(LIBS)
++	$(LINK) $(gtk_srlow_test_LDFLAGS) $(gtk_srlow_test_OBJECTS) $(gtk_srlow_test_LDADD) $(LIBS) \
++	-lgtk-x11-2.0 -lgdk-x11-2.0 -lgdk_pixbuf-2.0 -lpangocairo-1.0 -lpangoft2-1.0 \
++	-lcairo -lpango-1.0 -lcspi -lspi -lbonobo-2 -latk-1.0 -lORBitCosNaming-2 \
++	-lbonobo-activation -lORBit-2 -lgthread-2.0 -lgobject-2.0 -lgmodule-2.0 \
++	-lglib-2.0 -lgnomeui-2 -lbonoboui-2 -lgnome-keyring -lgnomecanvas-2 -lgnome-2 \
++	-lgnomevfs-2 -lgconf-2
+ srlow_test$(EXEEXT): $(srlow_test_OBJECTS) $(srlow_test_DEPENDENCIES) 
+ 	@rm -f srlow_test$(EXEEXT)
+-	$(LINK) $(srlow_test_LDFLAGS) $(srlow_test_OBJECTS) $(srlow_test_LDADD) $(LIBS)
++	$(LINK) $(srlow_test_LDFLAGS) $(srlow_test_OBJECTS) $(srlow_test_LDADD) $(LIBS) \
++	-lgtk-x11-2.0 -lgdk-x11-2.0 -lgdk_pixbuf-2.0 -lpangocairo-1.0 -lpangoft2-1.0 \
++	-lcairo -lpango-1.0 -lcspi -lspi -lbonobo-2 -latk-1.0 -lORBitCosNaming-2 \
++	-lbonobo-activation -lORBit-2 -lgthread-2.0 -lgobject-2.0 -lgmodule-2.0 \
++	-lglib-2.0 -lgnomeui-2 -lbonoboui-2 -lgnome-keyring -lgnomecanvas-2 -lgnome-2 \
++	-lgnomevfs-2 -lgconf-2
+ 
+ mostlyclean-compile:
+ 	-rm -f *.$(OBJEXT)

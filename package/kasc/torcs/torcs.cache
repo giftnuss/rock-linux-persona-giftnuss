@@ -1,0 +1,123 @@
+
+[TIMESTAMP] 1181168213 Thu Jun  7 00:16:53 2007 (5) ERROR
+[TIMESTAMP] 1181614473 Tue Jun 12 04:14:33 2007 (9) ERROR
+[TIMESTAMP] 1181831300 Thu Jun 14 16:28:20 2007 (5) ERROR
+[TIMESTAMP] 1181915343 Fri Jun 15 15:49:03 2007 (9) ERROR
+[TIMESTAMP] 1181954839 Sat Jun 16 02:47:19 2007 (5) ERROR
+[TIMESTAMP] 1181976699 Sat Jun 16 08:51:39 2007 (9) ERROR
+
+[CONFIG-ID] TRUNK-x86-reference
+[ROCKVER] TRUNK
+
+[LOGS] 5-torcs.err 9-torcs.err
+
+[BUILDTIME] 1855 (5) ERROR
+[BUILDTIME] 1903 (9) ERROR
+[BUILDTIME] 1911 (5) ERROR
+[BUILDTIME] 1902 (9) ERROR
+[BUILDTIME] 1853 (5) ERROR
+[BUILDTIME] 1873 (9) ERROR
+
+
+[5-ERROR] Extracting TORCS-1.2.2-src-robots-base.tbz2 (--use-compress-program=bzip2 -xf)...
+[5-ERROR] Extracting TORCS-1.2.2-src-robots-berniw.tbz2 (--use-compress-program=bzip2 -xf)...
+[5-ERROR] Removing unsupported '--with-mysql-lib=/opt/mysql41/lib/mysql' from configure option string.
+[5-ERROR] Removing unsupported '--with-mysql-include=/opt/mysql41/include/mysql' from configure option string.
+[5-ERROR] Removing unsupported '--with-mysql-lib=/opt/mysql50/lib/mysql' from configure option string.
+[5-ERROR] Removing unsupported '--with-mysql-include=/opt/mysql50/include/mysql' from configure option string.
+[5-ERROR] Removing unsupported '--with-libpam' from configure option string.
+[5-ERROR] Removing unsupported '--with-pam' from configure option string.
+[5-ERROR] Autodetection for option impossible:  --enable-libpam passed thru.
+[5-ERROR] Autodetection for option impossible:  --enable-pam passed thru.
+[5-ERROR] Running  bash ./configure --prefix=/usr --bindir=/usr/games --sbindir=/usr/sbin --libdir=/usr/lib --datadir=/usr/share --includedir=/usr/include --infodir=/usr/share/info --mandir=/usr/share/man --sysconfdir=/etc --localstatedir=/var --disable-debug --enable-libpam --enable-pam --build=i386-unknown-linux-gnu --host=i386-unknown-linux-gnu
+[5-ERROR] creating cache ./config.cache
+[5-ERROR] checking for a BSD compatible install... /ROCK/build/ref0603-TRUNK-x86-reference/ROCK/tools.chroot/wrapper/install -c
+[5-ERROR] checking whether build environment is sane... yes
+[5-ERROR] checking whether make sets ${MAKE}... yes
+[5-ERROR] checking for working aclocal... found
+[5-ERROR] checking for working autoconf... found
+[5-ERROR] checking for working automake... found
+[5-ERROR] checking for working autoheader... found
+[5-ERROR] checking for working makeinfo... found
+[5-ERROR] checking for gcc... gcc-42
+[5-ERROR] checking whether the C compiler (gcc-42  ) works... yes
+[5-ERROR] checking whether the C compiler (gcc-42  ) is a cross-compiler... no
+[5-ERROR] checking whether we are using GNU C... yes
+[5-ERROR] checking whether gcc-42 accepts -g... yes
+[5-ERROR] checking how to run the C preprocessor... gcc-42 -E
+[5-ERROR] checking for c++... g++-42
+[5-ERROR] checking whether the C++ compiler (g++-42  ) works... yes
+[5-ERROR] checking whether the C++ compiler (g++-42  ) is a cross-compiler... no
+[5-ERROR] checking whether we are using GNU C++... yes
+[5-ERROR] checking whether g++-42 accepts -g... yes
+[5-ERROR] checking for ranlib... ranlib
+[5-ERROR] checking for a BSD compatible install... /ROCK/build/ref0603-TRUNK-x86-reference/ROCK/tools.chroot/wrapper/install -c
+[5-ERROR] checking how to run the C++ preprocessor... g++-42 -E
+[5-ERROR] checking for ANSI C header files... yes
+[5-ERROR] checking for working const... no
+[5-ERROR] checking for inline... no
+[5-ERROR] checking whether time.h and sys/time.h may both be included... yes
+[5-ERROR] checking for ar... ar
+[5-ERROR] checking for ld... ld
+[5-ERROR] checking whether byte ordering is bigendian... no
+[5-ERROR] checking for X... libraries /usr/X11R7/lib, headers /usr/X11R7/include
+[5-ERROR] checking for GL/glut.h... yes
+[5-ERROR] checking for GL/glx.h... yes
+[5-ERROR] checking for X11/Xlib.h... yes
+[5-ERROR] checking for X11/Xatom.h... yes
+[5-ERROR] checking for X11/keysym.h... yes
+[5-ERROR] checking for plib/ssg.h... no
+[5-ERROR] configure: error: Can't find plib/ssg.h. Please check config.log and if you can't solve the problem send the file to eric.espie@free.fr with the subject "torcs compilation problem"
+[5-ERROR] --- BUILD ERROR ---
+
+[9-ERROR] Extracting TORCS-1.2.2-src-robots-base.tbz2 (--use-compress-program=bzip2 -xf)...
+[9-ERROR] Extracting TORCS-1.2.2-src-robots-berniw.tbz2 (--use-compress-program=bzip2 -xf)...
+[9-ERROR] Removing unsupported '--with-mysql-lib=/opt/mysql41/lib/mysql' from configure option string.
+[9-ERROR] Removing unsupported '--with-mysql-include=/opt/mysql41/include/mysql' from configure option string.
+[9-ERROR] Removing unsupported '--with-mysql-lib=/opt/mysql50/lib/mysql' from configure option string.
+[9-ERROR] Removing unsupported '--with-mysql-include=/opt/mysql50/include/mysql' from configure option string.
+[9-ERROR] Removing unsupported '--with-libpam' from configure option string.
+[9-ERROR] Removing unsupported '--with-pam' from configure option string.
+[9-ERROR] Autodetection for option impossible:  --enable-libpam passed thru.
+[9-ERROR] Autodetection for option impossible:  --enable-pam passed thru.
+[9-ERROR] Running  bash ./configure --prefix=/usr --bindir=/usr/games --sbindir=/usr/sbin --libdir=/usr/lib --datadir=/usr/share --includedir=/usr/include --infodir=/usr/share/info --mandir=/usr/share/man --sysconfdir=/etc --localstatedir=/var --disable-debug --enable-libpam --enable-pam --build=i386-unknown-linux-gnu --host=i386-unknown-linux-gnu
+[9-ERROR] creating cache ./config.cache
+[9-ERROR] checking for a BSD compatible install... /ROCK/build/ref0603-TRUNK-x86-reference/ROCK/tools.chroot/wrapper/install -c
+[9-ERROR] checking whether build environment is sane... yes
+[9-ERROR] checking whether make sets ${MAKE}... yes
+[9-ERROR] checking for working aclocal... found
+[9-ERROR] checking for working autoconf... found
+[9-ERROR] checking for working automake... found
+[9-ERROR] checking for working autoheader... found
+[9-ERROR] checking for working makeinfo... found
+[9-ERROR] checking for gcc... gcc-42
+[9-ERROR] checking whether the C compiler (gcc-42  ) works... yes
+[9-ERROR] checking whether the C compiler (gcc-42  ) is a cross-compiler... no
+[9-ERROR] checking whether we are using GNU C... yes
+[9-ERROR] checking whether gcc-42 accepts -g... yes
+[9-ERROR] checking how to run the C preprocessor... gcc-42 -E
+[9-ERROR] checking for c++... g++-42
+[9-ERROR] checking whether the C++ compiler (g++-42  ) works... yes
+[9-ERROR] checking whether the C++ compiler (g++-42  ) is a cross-compiler... no
+[9-ERROR] checking whether we are using GNU C++... yes
+[9-ERROR] checking whether g++-42 accepts -g... yes
+[9-ERROR] checking for ranlib... ranlib
+[9-ERROR] checking for a BSD compatible install... /ROCK/build/ref0603-TRUNK-x86-reference/ROCK/tools.chroot/wrapper/install -c
+[9-ERROR] checking how to run the C++ preprocessor... g++-42 -E
+[9-ERROR] checking for ANSI C header files... yes
+[9-ERROR] checking for working const... no
+[9-ERROR] checking for inline... no
+[9-ERROR] checking whether time.h and sys/time.h may both be included... yes
+[9-ERROR] checking for ar... ar
+[9-ERROR] checking for ld... ld
+[9-ERROR] checking whether byte ordering is bigendian... no
+[9-ERROR] checking for X... libraries /usr/X11R7/lib, headers /usr/X11R7/include
+[9-ERROR] checking for GL/glut.h... yes
+[9-ERROR] checking for GL/glx.h... yes
+[9-ERROR] checking for X11/Xlib.h... yes
+[9-ERROR] checking for X11/Xatom.h... yes
+[9-ERROR] checking for X11/keysym.h... yes
+[9-ERROR] checking for plib/ssg.h... no
+[9-ERROR] configure: error: Can't find plib/ssg.h. Please check config.log and if you can't solve the problem send the file to eric.espie@free.fr with the subject "torcs compilation problem"
+[9-ERROR] --- BUILD ERROR ---
+

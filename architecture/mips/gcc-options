@@ -1,0 +1,6 @@
+
+# Append options so the gcc -V option always comes first.
+var_append GCC3_WRAPPER_APPEND " " \
+	"-march=$ROCKCFG_MIPS_OPT -mabi=$ROCKCFG_MIPS_ABI"
+var_append GCC4_WRAPPER_APPEND " " \
+	"-march=$ROCKCFG_MIPS_OPT -mabi=$ROCKCFG_MIPS_ABI"

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Balsa
+Comment=Gnome MUA
+Exec=balsa
+Terminal=false
+Type=Application
+Categories=Office;Email
+X-ROCK-Name=balsa
+Icon=D_datadir/balsa/pixmaps/balsa_icon.png

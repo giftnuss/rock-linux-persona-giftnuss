@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=FreeCiv
+Comment=a clone of Civilization
+Exec=civclient
+Terminal=false
+Type=Application
+Categories=Game;StrategyGame
+X-ROCK-Name=freeciv

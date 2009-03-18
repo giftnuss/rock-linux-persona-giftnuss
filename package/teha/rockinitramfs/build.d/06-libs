@@ -1,0 +1,6 @@
+for x in $rootdir/lib/libnss_{dns,files}*.so.*
+do
+	[ -e "$x" ] || continue
+	echo "file /lib/`readlink $x` $rootdir/lib/`readlink $x` 0755 0 0"
+	echo "slink /lib/`basename $x` `readlink $x` 755 0 0"
+done

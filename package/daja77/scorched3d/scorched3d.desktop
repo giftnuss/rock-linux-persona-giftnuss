@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=scorched3d
+Comment=A 3D tank battle game
+Exec=scorched3d
+Terminal=false
+Type=Application
+Categories=Game;ActionGame
+X-ROCK-Name=scorched3d

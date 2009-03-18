@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Avidemux 2
+Comment=A Simple Visual Video Editor
+Exec=avidemux2
+Terminal=false
+Type=Application
+Categories=Audio;Video;AudioVideoEditing
+X-ROCK-Name=avidemux

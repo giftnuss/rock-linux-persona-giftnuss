@@ -1,0 +1,36 @@
+--- ./gzip.c.orig	2007-05-31 01:30:19.000000000 +0200
++++ ./gzip.c	2007-05-31 01:43:30.000000000 +0200
+@@ -1650,7 +1650,7 @@
+ 	}
+       }
+ 
+-    if (futimens (ofd, ofname, timespec) != 0)
++    if (futimens_local (ofd, ofname, timespec) != 0)
+       {
+ 	int e = errno;
+ 	WARN ((stderr, "%s: ", program_name));
+--- ./lib/utimens.c.orig	2007-05-31 01:42:36.000000000 +0200
++++ ./lib/utimens.c	2007-05-31 01:42:47.000000000 +0200
+@@ -75,7 +75,7 @@
+    Return 0 on success, -1 (setting errno) on failure.  */
+ 
+ int
+-futimens (int fd ATTRIBUTE_UNUSED,
++futimens_local (int fd ATTRIBUTE_UNUSED,
+ 	  char const *file, struct timespec const timespec[2])
+ {
+   /* Some Linux-based NFS clients are buggy, and mishandle time stamps
+@@ -185,5 +185,5 @@
+ int
+ utimens (char const *file, struct timespec const timespec[2])
+ {
+-  return futimens (-1, file, timespec);
++  return futimens_local (-1, file, timespec);
+ }
+--- ./lib/utimens.h.orig	2007-05-31 01:42:50.000000000 +0200
++++ ./lib/utimens.h	2007-05-31 01:42:55.000000000 +0200
+@@ -1,3 +1,3 @@
+ #include "timespec.h"
+-int futimens (int, char const *, struct timespec const [2]);
++int futimens_local (int, char const *, struct timespec const [2]);
+ int utimens (char const *, struct timespec const [2]);

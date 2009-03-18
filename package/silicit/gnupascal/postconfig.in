@@ -1,0 +1,5 @@
+
+if pkgcheck gcc34 X ; then true
+else
+   pkgdisable gnupascal
+fi

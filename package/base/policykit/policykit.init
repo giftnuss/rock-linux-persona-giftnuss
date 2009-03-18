@@ -1,0 +1,14 @@
+# Desc: PolicyKit Daemon 
+# Runlevel: 60 rcX rc2 rc3 rc4 rc5
+
+main_begin
+
+    block_begin(start, `Starting PolicyKit daemon.')
+	check(`D_prefix/sbin/polkitd')
+    block_end
+
+    block_begin(stop, `Stopping PolicyKit daemon.')
+	check(`D_prefix/bin/killall D_prefix/sbin/polkitd')
+    block_end
+
+main_end

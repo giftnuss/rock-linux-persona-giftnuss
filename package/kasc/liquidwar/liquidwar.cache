@@ -1,0 +1,21 @@
+
+[TIMESTAMP] 1181161252 Wed Jun  6 22:20:52 2007 (5)
+[TIMESTAMP] 1181610522 Tue Jun 12 03:08:42 2007 (9)
+
+[CONFIG-ID] TRUNK-x86-reference
+[ROCKVER] TRUNK
+
+[LOGS] 5-liquidwar.log 9-liquidwar.log
+
+[BUILDTIME] 6825 (5)
+[BUILDTIME] 7039 (9)
+[SIZE] 5.22 MB, 33 files
+
+[DEP] 00-dirtree allegro allegro:dev alsa applewmproto bash2 binutils
+[DEP] bzip2 coreutils cvm diffutils findutils gawk gcc42 gcc42:dev glibc26
+[DEP] glibc26:dev grep gzip libx11 libxau libxcb libxcursor libxdmcp
+[DEP] libxext libxfixes libxpm libxrender libxxf86vm linux26-headers:dev
+[DEP] ltrace make mktemp net-tools openbox python sed sysfiles tar tetex
+[DEP] texinfo util-linux xmame
+
+

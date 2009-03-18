@@ -1,0 +1,21 @@
+
+[TIMESTAMP] 1181163117 Wed Jun  6 22:51:57 2007 (5)
+[TIMESTAMP] 1181610956 Tue Jun 12 03:15:56 2007 (9)
+
+[CONFIG-ID] TRUNK-x86-reference
+[ROCKVER] TRUNK
+
+[LOGS] 5-lmarbles.log 9-lmarbles.log
+
+[BUILDTIME] 2792 (5)
+[BUILDTIME] 3004 (9)
+[SIZE] 1.55 MB, 82 files
+
+[DEP] 00-dirtree alsa applewmproto autoconf automake19 bash2 binutils
+[DEP] bzip2 coreutils cvm diffutils findutils gawk gcc42 gcc42:dev
+[DEP] glibc26 glibc26:dev grep libice libsdl libsdl:dev libsdl_mixer
+[DEP] libsdl_mixer:dev libsm libx11 libxau libxcb libxdmcp libxt
+[DEP] linux26-headers:dev ltrace make mktemp nas net-tools perl5 sed
+[DEP] sysfiles tar texinfo xmame
+
+

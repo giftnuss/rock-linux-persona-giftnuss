@@ -1,0 +1,123 @@
+
+[TIMESTAMP] 1181069369 Tue Jun  5 20:49:29 2007 (5) ERROR
+[TIMESTAMP] 1181537737 Mon Jun 11 06:55:37 2007 (9) ERROR
+[TIMESTAMP] 1181823594 Thu Jun 14 14:19:54 2007 (5) ERROR
+[TIMESTAMP] 1181903923 Fri Jun 15 12:38:43 2007 (9) ERROR
+[TIMESTAMP] 1181950316 Sat Jun 16 01:31:56 2007 (5) ERROR
+[TIMESTAMP] 1181971783 Sat Jun 16 07:29:43 2007 (9) ERROR
+
+[CONFIG-ID] TRUNK-x86-reference
+[ROCKVER] TRUNK
+
+[LOGS] 5-ekiga.err 9-ekiga.err
+
+[BUILDTIME] 2741 (5) ERROR
+[BUILDTIME] 2714 (9) ERROR
+[BUILDTIME] 2721 (5) ERROR
+[BUILDTIME] 2673 (9) ERROR
+[BUILDTIME] 2659 (5) ERROR
+[BUILDTIME] 2654 (9) ERROR
+
+
+[5-ERROR] checking if g++-42 PIC flag -fPIC works... yes
+[5-ERROR] checking if g++-42 static flag -static works... yes
+[5-ERROR] checking if g++-42 supports -c -o file.o... yes
+[5-ERROR] checking whether the g++-42 linker (ld) supports shared libraries... yes
+[5-ERROR] checking dynamic linker characteristics... GNU/Linux ld.so
+[5-ERROR] checking how to hardcode library paths into programs... immediate
+[5-ERROR] appending configuration tag "F77" to libtool
+[5-ERROR] checking if libtool supports shared libraries... yes
+[5-ERROR] checking whether to build shared libraries... yes
+[5-ERROR] checking whether to build static libraries... yes
+[5-ERROR] checking for f77 option to produce PIC... -fPIC
+[5-ERROR] checking if f77 PIC flag -fPIC works... no
+[5-ERROR] checking if f77 static flag -static works... no
+[5-ERROR] checking if f77 supports -c -o file.o... no
+[5-ERROR] checking whether the f77 linker (ld) supports shared libraries... yes
+[5-ERROR] checking dynamic linker characteristics... ./configure: line 1: f77: command not found
+[5-ERROR] GNU/Linux ld.so
+[5-ERROR] checking how to hardcode library paths into programs... immediate
+[5-ERROR] checking for i386-unknown-linux-gnu-gcc... (cached) gcc-42
+[5-ERROR] checking whether we are using the GNU C compiler... (cached) yes
+[5-ERROR] checking whether gcc-42 accepts -g... (cached) yes
+[5-ERROR] checking for gcc-42 option to accept ANSI C... (cached) none needed
+[5-ERROR] checking dependency style of gcc-42... (cached) none
+[5-ERROR] checking for i386-unknown-linux-gnu-g++... (cached) g++-42
+[5-ERROR] checking whether we are using the GNU C++ compiler... (cached) yes
+[5-ERROR] checking whether g++-42 accepts -g... (cached) yes
+[5-ERROR] checking dependency style of g++-42... (cached) none
+[5-ERROR] checking for library containing strerror... none required
+[5-ERROR] checking for ANSI C header files... (cached) yes
+[5-ERROR] checking whether strcasecmp is declared... yes
+[5-ERROR] Using config source xml:merged:/etc/opt/gnome2/gconf/gconf.xml.defaults for schema installation
+[5-ERROR] Using $(sysconfdir)/gconf/schemas as install directory for schema files
+[5-ERROR] checking for i386-unknown-linux-gnu-pkg-config... /usr/bin/pkg-config
+[5-ERROR] checking pkg-config is at least version 0.9.0... yes
+[5-ERROR] checking for EKIGA... yes
+[5-ERROR] checking for EDS... yes
+[5-ERROR] checking for scrollkeeper-config... /opt/gnome2/bin/scrollkeeper-config
+[5-ERROR] checking whether OS type is supported... yes
+[5-ERROR] checking for PWLib includes in /usr/include/... 
+[5-ERROR] checking for /usr/include/ptlib/pprocess.h... yes
+[5-ERROR] checking for read in -lpt... yes
+[5-ERROR] checking for PWLib version... 1.10.2
+[5-ERROR] checking for OpenLDAP support in PWLIB... yes
+[5-ERROR] checking for /usr/bin/ptlib-config... yes
+[5-ERROR] checking for ptlib-config... /usr/bin//ptlib-config
+[5-ERROR] checking for Opal includes in /usr/include/... 
+[5-ERROR] checking for /usr/include/opal/opal/call.h... no
+[5-ERROR] checking for /usr/include/opal/call.h... no
+[5-ERROR] configure: error: You need the Opal headers to compile Ekiga
+[5-ERROR] --- BUILD ERROR ---
+
+[9-ERROR] checking if g++-42 PIC flag -fPIC works... yes
+[9-ERROR] checking if g++-42 static flag -static works... yes
+[9-ERROR] checking if g++-42 supports -c -o file.o... yes
+[9-ERROR] checking whether the g++-42 linker (ld) supports shared libraries... yes
+[9-ERROR] checking dynamic linker characteristics... GNU/Linux ld.so
+[9-ERROR] checking how to hardcode library paths into programs... immediate
+[9-ERROR] appending configuration tag "F77" to libtool
+[9-ERROR] checking if libtool supports shared libraries... yes
+[9-ERROR] checking whether to build shared libraries... yes
+[9-ERROR] checking whether to build static libraries... yes
+[9-ERROR] checking for f77 option to produce PIC... -fPIC
+[9-ERROR] checking if f77 PIC flag -fPIC works... no
+[9-ERROR] checking if f77 static flag -static works... no
+[9-ERROR] checking if f77 supports -c -o file.o... no
+[9-ERROR] checking whether the f77 linker (ld) supports shared libraries... yes
+[9-ERROR] checking dynamic linker characteristics... ./configure: line 1: f77: command not found
+[9-ERROR] GNU/Linux ld.so
+[9-ERROR] checking how to hardcode library paths into programs... immediate
+[9-ERROR] checking for i386-unknown-linux-gnu-gcc... (cached) gcc-42
+[9-ERROR] checking whether we are using the GNU C compiler... (cached) yes
+[9-ERROR] checking whether gcc-42 accepts -g... (cached) yes
+[9-ERROR] checking for gcc-42 option to accept ANSI C... (cached) none needed
+[9-ERROR] checking dependency style of gcc-42... (cached) none
+[9-ERROR] checking for i386-unknown-linux-gnu-g++... (cached) g++-42
+[9-ERROR] checking whether we are using the GNU C++ compiler... (cached) yes
+[9-ERROR] checking whether g++-42 accepts -g... (cached) yes
+[9-ERROR] checking dependency style of g++-42... (cached) none
+[9-ERROR] checking for library containing strerror... none required
+[9-ERROR] checking for ANSI C header files... (cached) yes
+[9-ERROR] checking whether strcasecmp is declared... yes
+[9-ERROR] Using config source xml:merged:/etc/opt/gnome2/gconf/gconf.xml.defaults for schema installation
+[9-ERROR] Using $(sysconfdir)/gconf/schemas as install directory for schema files
+[9-ERROR] checking for i386-unknown-linux-gnu-pkg-config... /usr/bin/pkg-config
+[9-ERROR] checking pkg-config is at least version 0.9.0... yes
+[9-ERROR] checking for EKIGA... yes
+[9-ERROR] checking for EDS... yes
+[9-ERROR] checking for scrollkeeper-config... /opt/gnome2/bin/scrollkeeper-config
+[9-ERROR] checking whether OS type is supported... yes
+[9-ERROR] checking for PWLib includes in /usr/include/... 
+[9-ERROR] checking for /usr/include/ptlib/pprocess.h... yes
+[9-ERROR] checking for read in -lpt... yes
+[9-ERROR] checking for PWLib version... 1.10.2
+[9-ERROR] checking for OpenLDAP support in PWLIB... yes
+[9-ERROR] checking for /usr/bin/ptlib-config... yes
+[9-ERROR] checking for ptlib-config... /usr/bin//ptlib-config
+[9-ERROR] checking for Opal includes in /usr/include/... 
+[9-ERROR] checking for /usr/include/opal/opal/call.h... no
+[9-ERROR] checking for /usr/include/opal/call.h... no
+[9-ERROR] configure: error: You need the Opal headers to compile Ekiga
+[9-ERROR] --- BUILD ERROR ---
+

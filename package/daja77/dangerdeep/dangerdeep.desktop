@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Danger of the deep
+Comment=An Aces of the deep clone
+Exec=dangerdeep
+Terminal=false
+Type=Application
+Categories=Game;ActionGame
+X-ROCK-Name=dangerdeep

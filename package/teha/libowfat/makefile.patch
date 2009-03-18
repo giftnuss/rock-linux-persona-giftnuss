@@ -1,0 +1,33 @@
+diff -Naur libowfat-0.25-orig/GNUmakefile libowfat-0.25/GNUmakefile
+--- libowfat-0.25-orig/GNUmakefile	2006-07-16 01:17:01.000000000 +0200
++++ libowfat-0.25/GNUmakefile	2007-07-12 03:16:41.764579693 +0200
+@@ -4,7 +4,6 @@
+ # in /opt/diet, where they are in the default search path for my diet libc
+ # work but don't conflict with anything there.  YMMV.
+ 
+-prefix=/opt/diet
+ LIBDIR=${prefix}/lib
+ INCLUDEDIR=${prefix}/include
+ MAN3DIR=${prefix}/man/man3
+@@ -132,8 +131,8 @@
+ $(IO_OBJS) $(CDB_OBJS)
+ 
+ libowfat.a: $(ALL_OBJS)
+-	$(CROSS)ar cr $@ $(ALL_OBJS)
+-	-$(CROSS)ranlib $@
++	$(AR) cr $@ $(ALL_OBJS)
++	-$(RANLIB) $@
+ 
+ CFLAGS+=-I.
+ 
+@@ -141,8 +140,8 @@
+ 	$(DIET) $(CC) -c $< $(CFLAGS)
+ 
+ %.a:
+-	ar cr $@ $^
+-	-ranlib $@
++	$(AR) cr $@ $^
++	-$(RANLIB) $@
+ 
+ t.o: iopause.h
+ 

@@ -1,0 +1,47 @@
+ACTION!="add", GOTO="hotplug_not_add_event"
+
+# workarounds for kernels which lack $MODALIAS support
+SUBSYSTEM=="ieee1394",	ENV{MODALIAS}!="?*", IMPORT{program}="modalias_ieee1394"
+SUBSYSTEM=="serio",	ENV{MODALIAS}!="?*", IMPORT{program}="modalias_serio"
+
+# load the drivers
+ENV{MODALIAS}=="?*",	RUN+="/sbin/modprobe $env{MODALIAS}"
+
+# the following two agents do not exist.
+# SUBSYSTEM=="ide",	ENV{MODALIAS}!="?*",	RUN+="ide.agent"
+# SUBSYSTEM=="vio",	ENV{MODALIAS}!="?*",	RUN+="vio.agent"
+
+SUBSYSTEM=="pnp",	ENV{MODALIAS}!="?*",	RUN+="/bin/sh -c 'while read id; do /sbin/modprobe pnp:d$$id; done < /sys$devpath/id'"
+
+SUBSYSTEM=="pcmcia_socket",			RUN+="/sbin/modprobe pcmcia"
+
+# rules for subsystems which lack proper hotplug support
+#SUBSYSTEM=="i2o",				RUN+="/sbin/modprobe i2o-block"
+#SUBSYSTEM=="mmc",				RUN+="/sbin/modprobe mmc-block"
+
+SUBSYSTEM=="scsi", ATTR{type}=="0|7|14",	RUN+="/sbin/modprobe sd_mod"
+SUBSYSTEM=="scsi", ATTR{type}=="1",		RUN+="/sbin/modprobe osst", \
+	ATTR{vendor}=="On[sS]tream", ATTR{model}!="ADR*"
+SUBSYSTEM=="scsi", ATTR{type}=="1",		RUN+="/sbin/modprobe st", \
+	ATTR{vendor}=="On[sS]tream", ATTR{model}=="ADR*"
+SUBSYSTEM=="scsi", ATTR{type}=="1",		RUN+="/sbin/modprobe st", \
+	ATTR{vendor}!="On[sS]tream"
+SUBSYSTEM=="scsi", ATTR{type}=="[45]",		RUN+="/sbin/modprobe sr_mod"
+SUBSYSTEM=="scsi", ATTR{type}=="[235689]",	RUN+="/sbin/modprobe sg"
+
+# From here on follows the hotplug agents which do not load modules
+LABEL="hotplug_driver_loaded"
+
+# FIXME: does a sane default exist?
+#SUBSYSTEM=="scsi_device", ATTR{idVendor}=="...", \
+#	RUN+="scsi-re-add"
+
+SUBSYSTEM=="firmware",	RUN+="/bin/sh -c '/etc/hotplug/firmware.agent &'"
+
+LABEL="hotplug_not_add_event"
+
+SUBSYSTEM=="net",	RUN+="/bin/sh -c '/etc/hotplug/net.agent &'"
+
+# Log every event to /dev/hotplug.log (for debugging).
+#RUN+="logger.agent"
+

@@ -1,0 +1,25 @@
+
+[TIMESTAMP] 1181165886 Wed Jun  6 23:38:06 2007 (5)
+[TIMESTAMP] 1181612999 Tue Jun 12 03:49:59 2007 (9)
+
+[CONFIG-ID] TRUNK-x86-reference
+[ROCKVER] TRUNK
+
+[LOGS] 5-senken.log 9-senken.log
+
+[BUILDTIME] 5491 (5)
+[BUILDTIME] 5375 (9)
+[SIZE] 1.29 MB, 173 files
+
+[DEP] 00-dirtree alsa applewmproto applewmproto:dev atk atk:dev bash2
+[DEP] binutils bison bzip2 cairo cairo:dev coreutils cvm diffutils expat
+[DEP] findutils fontconfig freetype gawk gcc42 gcc42:dev gettext glib
+[DEP] glib:dev glibc26 glibc26:dev gnome2-dirtree grep gtk+ gtk+:dev libice
+[DEP] libpng libsdl libsdl:dev libsdl_image libsdl_image:dev libsm libx11
+[DEP] libx11:dev libxau libxcb libxcursor libxdmcp libxext libxfixes libxi
+[DEP] libxinerama libxrandr libxrender libxt linux26-headers:dev ltrace
+[DEP] make mktemp nas net-tools pango pango:dev pkgconfig sed sysfiles
+[DEP] tar util-linux xmame xproto:dev zlib
+
+[PROVIDES] senken senkenserver
+

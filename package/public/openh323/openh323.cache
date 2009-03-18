@@ -1,0 +1,23 @@
+
+[TIMESTAMP] 1181059640 Tue Jun  5 18:07:20 2007 (5)
+[TIMESTAMP] 1181526443 Mon Jun 11 03:47:23 2007 (9)
+
+[CONFIG-ID] TRUNK-x86-reference
+[ROCKVER] TRUNK
+
+[LOGS] 5-openh323.log 9-openh323.log
+
+[BUILDTIME] 46516 (5)
+[BUILDTIME] 43911 (9)
+[SIZE] 7.35 MB, 21 files
+
+[DEP] 00-dirtree bash2 binutils bzip2 coreutils cvm cyrus-sasl2 diffutils
+[DEP] expat findutils gawk gcc42 gcc42:dev glibc26 glibc26:dev grep libsdl
+[DEP] linux26-headers:dev ltrace make mktemp net-tools openldap openssl
+[DEP] openssl:dev pwlib pwlib:dev sed speex sysfiles tar util-linux xmame
+
+[PROVIDES] g726_audio_pwplugin.so gsm0610_audio_pwplugin.so
+[PROVIDES] ilbc_audio_pwplugin.so ima_adpcm_audio_pwplugin.so
+[PROVIDES] libh323_linux_x86_r.so lpc10_audio_pwplugin.so
+[PROVIDES] speex_audio_pwplugin.so
+

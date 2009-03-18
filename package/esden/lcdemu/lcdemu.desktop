@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=LCD Emulator
+Comment=Liquid Crystal Display emulator
+Exec=lcdemu
+Terminal=false
+Type=Application
+Categories=Emulator
+X-ROCK-Name=lcdemu

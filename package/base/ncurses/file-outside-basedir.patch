@@ -1,0 +1,13 @@
+This prevents the creation of a temporary file outside the root directory
+
+--- ./configure~	2007-08-27 18:53:31.000000000 +0200
++++ ./configure	2007-08-27 18:54:52.000000000 +0200
+@@ -3557,6 +3557,8 @@
+     ac_cv_sys_long_file_names=no
+     rm -rf $ac_xdir 2>/dev/null
+     break
++  else
++    break
+   fi
+   rm -rf $ac_xdir 2>/dev/null
+ done

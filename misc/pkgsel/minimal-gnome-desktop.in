@@ -1,0 +1,8 @@
+# TITLE: Minimalistic GNOME Desktop
+
+INCLUDE basic.set
+INCLUDE common.set
+INCLUDE xorg.set
+INCLUDE gnome-desktop.set
+
+DISABLE_REST

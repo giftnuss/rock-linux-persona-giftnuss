@@ -1,0 +1,20 @@
+--- ./trackdb/FormatConverter.cc.orig	2008-06-10 20:04:58.000000000 +0200
++++ ./trackdb/FormatConverter.cc	2008-06-10 20:05:05.000000000 +0200
+@@ -17,6 +17,7 @@
+  *  Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+  */
+ 
++#include <string.h>
+ #include <stdlib.h>
+ #ifdef HAVE_AO
+ #include <ao/ao.h>
+--- ./trackdb/TempFileManager.cc.orig	2008-06-10 20:04:36.000000000 +0200
++++ ./trackdb/TempFileManager.cc	2008-06-10 20:04:42.000000000 +0200
+@@ -22,6 +22,7 @@
+ 
+ #include <sys/types.h>
+ #include <sys/stat.h>
++#include <string.h>
+ #include <unistd.h>
+ #include <fcntl.h>
+ 

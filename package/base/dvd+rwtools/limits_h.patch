@@ -1,0 +1,67 @@
+--- ./dvd+rw-booktype.cpp.orig	2007-11-05 22:16:24.000000000 +0000
++++ ./dvd+rw-booktype.cpp	2007-11-05 22:16:31.000000000 +0000
+@@ -28,6 +28,7 @@
+ exit
+ #endif
+ 
++#include <limits.h>
+ #include <stdio.h>
+ #include <stddef.h>
+ #include <stdlib.h>
+--- ./dvd+rw-format.cpp.orig	2007-11-05 22:16:06.000000000 +0000
++++ ./dvd+rw-format.cpp	2007-11-05 22:16:14.000000000 +0000
+@@ -67,6 +67,7 @@
+  * - Blu-ray Disc support;
+  * - Mac OS X 10>=2 support;
+  */
++#include <limits.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
+--- ./dvd+rw-mediainfo.cpp.orig	2007-11-05 22:16:41.000000000 +0000
++++ ./dvd+rw-mediainfo.cpp	2007-11-05 22:16:46.000000000 +0000
+@@ -4,6 +4,7 @@
+  * This code is in public domain.
+  */
+ 
++#include <limits.h>
+ #include <stdio.h>
+ #include <stddef.h>
+ #include <stdlib.h>
+--- ./dvd-ram-control.cpp.orig	2007-11-05 22:16:56.000000000 +0000
++++ ./dvd-ram-control.cpp	2007-11-05 22:17:03.000000000 +0000
+@@ -1,3 +1,4 @@
++#include <limits.h>
+ #include "transport.hxx"
+ 
+ int main (int argc,char *argv[])
+--- ./growisofs.c.orig	2007-11-05 22:13:39.000000000 +0000
++++ ./growisofs.c	2007-11-05 22:14:00.000000000 +0000
+@@ -410,6 +410,7 @@
+ # define perror		_mask_perror
+ #endif
+ 
++#include <limits.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <time.h>
+--- ./growisofs_mmc.cpp.orig	2007-11-05 22:14:17.000000000 +0000
++++ ./growisofs_mmc.cpp	2007-11-05 22:17:27.000000000 +0000
+@@ -14,6 +14,7 @@
+ #endif
+ #endif
+ 
++#include <limits.h>
+ #include "transport.hxx"
+ 
+ #include <time.h>
+--- ./transport.hxx.orig	2007-11-05 22:43:39.000000000 +0000
++++ ./transport.hxx	2007-11-05 22:43:49.000000000 +0000
+@@ -7,6 +7,7 @@
+ //
+ 
+ #if defined(__unix) || defined(__unix__)
++#include <limits.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <unistd.h>

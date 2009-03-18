@@ -1,0 +1,12 @@
+--- util-linux-2.12r/mount/umount.c~	2007-07-04 23:57:17.000000000 +0200
++++ util-linux-2.12r/mount/umount.c	2007-07-04 23:57:31.000000000 +0200
+@@ -42,7 +42,9 @@
+ 
+ int umount2(const char *path, int flags);
+ 
++#ifdef _syscall2
+ _syscall2(int, umount2, const char *, path, int, flags);
++#endif
+ 
+ #else /* __NR_umount2 */
+ 

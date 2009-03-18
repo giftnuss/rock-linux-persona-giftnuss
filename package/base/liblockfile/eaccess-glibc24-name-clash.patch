@@ -1,0 +1,57 @@
+--- ./lockfile.c.orig	2006-03-26 00:31:19.000000000 +0100
++++ ./lockfile.c	2006-03-26 00:32:04.000000000 +0100
+@@ -54,7 +54,7 @@
+ #ifdef LIB
+ static
+ #endif
+-int eaccess(char *fn, gid_t gid, struct stat *st)
++int lockfile_eaccess(char *fn, gid_t gid, struct stat *st)
+ {
+ 	struct stat	tmp;
+ 	uid_t		uid = geteuid();
+@@ -96,7 +96,7 @@
+ 		*p = 0;
+ 	else
+ 		strcpy(dir, ".");
+-	if (eaccess(dir, egid, NULL) >= 0) {
++	if (lockfile_eaccess(dir, egid, NULL) >= 0) {
+ 		free(dir);
+ 		return 0;
+ 	}
+@@ -111,7 +111,7 @@
+ 			return 0;
+ 		mailgid = st.st_gid;
+ 	}
+-	ret = eaccess(dir, mailgid, NULL) >= 0;
++	ret = lockfile_eaccess(dir, mailgid, NULL) >= 0;
+ 	free (dir);
+ 	return ret;
+ }
+--- ./dotlockfile.c.orig	2006-03-26 00:25:28.000000000 +0100
++++ ./dotlockfile.c	2006-03-26 00:32:47.000000000 +0100
+@@ -42,7 +42,7 @@
+ extern int optind;
+ #endif
+ 
+-extern int eaccess(char *, gid_t, struct stat *);
++extern int lockfile_eaccess(char *, gid_t, struct stat *);
+ 
+ /*
+  *	Sleep for an amout of time while regulary checking if
+@@ -252,14 +252,14 @@
+ 		return L_ERROR;
+ 	}
+ 	gid = getgid();
+-	if (eaccess(dir, gid, &st) < 0) {
++	if (lockfile_eaccess(dir, gid, &st) < 0) {
+ 		if (errno == ENOENT) {
+ enoent:
+ 			if (!quiet) fprintf(stderr,
+ 				"dotlockfile: %s: no such directory\n", dir);
+ 			return L_TMPLOCK;
+ 		}
+-		if ((r = eaccess(dir, getegid(), &st) < 0) && errno == ENOENT)
++		if ((r = lockfile_eaccess(dir, getegid(), &st) < 0) && errno == ENOENT)
+ 			goto enoent;
+ 		if (r < 0 || !ismaillock(lockfile, pwd->pw_name)) {
+ 			if (!quiet) fprintf(stderr,

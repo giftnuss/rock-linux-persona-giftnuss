@@ -1,0 +1,2 @@
+safe_groupadd polkituser 45
+safe_useradd polkituser 45 45 "PolicyKit User" / /bin/false "*"

@@ -1,0 +1,41 @@
+This patch exists to avoid an infinite recursion in the fl_wrapper.
+fl_wrapper catches the _exit() call in the redefined malloc() and 
+indirectly calls malloc() again... not ideal.
+
+--- ./scsilib/conf/configure	2006-09-09 10:24:32.000000000 +0200
++++ ./scsilib/conf/configure	2006-09-09 09:33:07.000000000 +0200
+@@ -9362,27 +9362,24 @@
+ #include "confdefs.h"
+ 
+ static int mcalled;
+-char *
++void *
+ malloc(s)
+-	int	s;
++	size_t	s;
+ {
+-	extern	char *sbrk();
+-
+ 	mcalled++;
+-	_exit(0);
+-	return (sbrk(s));
++	return calloc(1, s);
+ }
+ 
+-free(p) char *p;{}
+-	
+ main()
+ {
+ #ifdef	HAVE_STRDUP
+-	strdup("aaa");
++	char * pc = strdup("aaa");
++	if (pc) free(pc);
+ #else
+ 	exit(0);
+ #endif
+-	exit(1);}
++	exit(mcalled == 0);
++}
+ EOF
+ if { (eval echo configure:9388: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext} && (./conftest; exit) 2>/dev/null
+ then

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=XMMS
+Comment=the X MultiMedia System
+Exec=xmms
+Terminal=false
+Type=Application
+Categories=Audio;Player
+X-ROCK-Name=xmms
+Icon=D_datadir/xmms/wmxmms.xpm

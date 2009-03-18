@@ -1,0 +1,24 @@
+--- ./config/Xsetup_0.orig	2006-08-04 00:16:51.000000000 +0200
++++ ./config/Xsetup_0	2006-08-04 00:17:03.000000000 +0200
+@@ -1,3 +1,4 @@
+ #!/bin/sh
+ # $Xorg: Xsetup_0,v 1.3 2000/08/17 19:54:17 cpqbld Exp $
+ xconsole -geometry 480x130-0-0 -daemon -notify -verbose -fn fixed -exitOnFail
++xsetroot -solid black
+--- ./config/Xsession.cpp.orig	2006-08-04 00:17:18.000000000 +0200
++++ ./config/Xsession.cpp	2006-08-04 00:18:13.000000000 +0200
+@@ -83,5 +83,14 @@
+                 exec `eval $XDESKTOP`
+         }
+ #endif
++
++XCOMM we need at least the PATH /opt/.../bin expansion ...
++	[ -f /etc/profile ] && . /etc/profile
++
++	WINDOWMANAGER="${WINDOWMANAGER:-startkde}"
++	[ "$WINDOWMANAGER" =  "gnome" ] && WINDOWMANAGER="gnome-session"
++	[ "$WINDOWMANAGER" =  "kde"   ] && WINDOWMANAGER="startkde"
++	[ "$WINDOWMANAGER" != "twm" -a -n "$(type -p ${WINDOWMANAGER%% *})" ] && exec $WINDOWMANAGER
++	xsetroot -solid darkcyan ; exec twm ; exec xterm
+ 	exec BINDIR/xsm
+ fi

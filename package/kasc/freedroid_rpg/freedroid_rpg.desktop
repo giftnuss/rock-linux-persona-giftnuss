@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Freedroid RPG
+Comment=Roleplaying Game starring Tux
+Exec=freedroid_rpg
+Terminal=false
+Type=Application
+Categories=Game;RolePlaying
+X-ROCK-Name=freedroid_rpg

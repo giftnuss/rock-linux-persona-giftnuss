@@ -1,0 +1,10 @@
+--- ./y4mdenoise/Region2D.hh.orig	2007-12-23 15:44:07.000000000 +0000
++++ ./y4mdenoise/Region2D.hh	2007-12-23 15:44:16.000000000 +0000
+@@ -17,6 +17,7 @@
+ #include "Status_t.h"
+ #include <iostream>
+ 
++#include <assert.h>
+ 
+ 
+ // The 2-dimensional region class.  Parameterized by the numeric type

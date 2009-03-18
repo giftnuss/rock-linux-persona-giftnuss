@@ -1,0 +1,4 @@
+
+safe_groupadd messagebus 50
+safe_useradd messagebus 50 50 "D-Bus Message Daemon User" / /bin/false "*"
+

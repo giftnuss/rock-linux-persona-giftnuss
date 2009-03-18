@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Wakkabox
+Comment=a puzzle game
+Exec=wakkabox
+Terminal=false
+Type=Application
+Categories=Game;LogicGame
+X-ROCK-Name=wakkabox

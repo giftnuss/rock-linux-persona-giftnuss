@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=xjdic
+Comment=Englist-Japanese dictionary
+Exec=xjdic
+Terminal=true
+Type=Application
+Categories=Office;Dictionary
+X-ROCK-Name=xjdic

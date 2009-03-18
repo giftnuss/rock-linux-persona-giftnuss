@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=WaveMON
+Comment=wireless monitor
+Exec=wavemon
+Terminal=true
+Type=Application
+Categories=System;Monitor
+X-ROCK-Name=wavemon

@@ -1,0 +1,19 @@
+MENU_PKG_BDB
+  Berkley DB Options/Defaults.
+
+ROCKCFG_PKG_BDB33
+  Build BerkleyDB v3.3
+
+ROCKCFG_PKG_BDB40
+  Build BerkleyDB v4.0
+
+ROCKCFG_PKG_BDB41
+  Build BerkleyDB v4.1
+
+ROCKCFG_PKG_BDB42
+  Build BerkleyDB v4.2
+
+ROCKCFG_PKG_BDB_DEFAULT
+  Set the BerkleyDB default version. Currently the only tested
+  one is v4.1, so don't be suprised if chosing a different one
+  results in strange side effects...

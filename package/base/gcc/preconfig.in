@@ -1,0 +1,17 @@
+#!/bin/bash
+for x in gcc2 gcc32 gcc33 gcc34 gcc40 gcc41 gcc42 gcc43; do
+	pkgfork gcc $x
+	# GCC 2.x and 3.2.x cannot be used as the default C/C++ compilers because they
+	# don't support the --with-sysroot configure option.
+	case $x in
+	gcc2|gcc32) ;;
+	*)
+		CFGTEMP_DEFAULT_CC="$x Use_${x}_as_default_C_compiler $CFGTEMP_DEFAULT_CC"
+		CFGTEMP_DEFAULT_CXX="$x Use_${x}_as_default_C++_compiler $CFGTEMP_DEFAULT_CXX"
+		;;
+	esac
+	CFGTEMP_DEFAULT_KCC="$x Use_${x}_as_default_kernel_compiler $CFGTEMP_DEFAULT_KCC"
+	CFGTEMP_DEFAULT_F77="$x Use_${x}_as_default_Fortran_77_compiler $CFGTEMP_DEFAULT_F77"
+	[[ "$x" == gcc4* ]] && CFGTEMP_DEFAULT_F95="$x Use_${x}_as_default_Fortran_95_compiler $CFGTEMP_DEFAULT_F95"
+done
+

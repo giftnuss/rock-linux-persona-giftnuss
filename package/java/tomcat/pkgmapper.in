@@ -1,0 +1,6 @@
+
+case "$pkg" in
+	tomcat-*)
+		pkg=tomcat ;;
+esac
+

@@ -1,0 +1,26 @@
+diff -dur pan-0.14.2.91/pan/base/msort.c src.pan.1135212550.26493.3069070791/pan-0.14.2.91/pan/base/msort.c
+--- pan-0.14.2.91/pan/base/msort.c	2001-06-18 20:33:38.000000000 +0200
++++ src.pan.1135212550.26493.3069070791/pan-0.14.2.91/pan/base/msort.c	2005-12-23 22:28:43.000000000 +0100
+@@ -62,18 +62,18 @@
+ 		/* operating on aligned words.  Use direct word stores. */
+ 		while (n1 > 0 && n2 > 0)
+ 		{
++			unsigned long int **tmpptr = &tmp, **bptr;
+ 			if ((*cmp) (b1, b2) <= 0)
+ 			{
+ 				--n1;
+-				*((unsigned long int *) tmp)++ =
+-					*((unsigned long int *) b1)++;
++				bptr = &b1;
+ 			}
+ 			else
+ 			{
+ 				--n2;
+-				*((unsigned long int *) tmp)++ =
+-					*((unsigned long int *) b2)++;
++				bptr = &b2;
+ 			}
++			**tmpptr = *bptr; (*tmpptr)++; (*bptr)++;
+ 		}
+ 	else
+ 		while (n1 > 0 && n2 > 0)

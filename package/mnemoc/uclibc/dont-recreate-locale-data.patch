@@ -1,0 +1,32 @@
+diff -dur uClibc-0.9.30-rc2/extra/locale/Makefile.in src.uclibc.1224267281.11455.380150425/uClibc-0.9.30-rc2/extra/locale/Makefile.in
+--- uClibc-0.9.30-rc2/extra/locale/Makefile.in	2008-10-14 17:16:20.000000000 +0200
++++ src.uclibc.1224267281.11455.380150425/uClibc-0.9.30-rc2/extra/locale/Makefile.in	2008-10-17 20:42:00.000000000 +0200
+@@ -144,19 +144,19 @@
+ # code needs to be modified to support top_builddir in almost all apps that write directly to a file
+ # grep fopen *.c
+ $(locale_OUT)/c8tables.h: $(locale_OUT)/gen_wc8bit $(locale_OUT)/codesets.txt
+-	@$(disp_gen)
+-	$(Q)(cd $(<D) && ./$(<F) `cat $(word 2,$(^F))`)
++#	@$(disp_gen)
++#	$(Q)(cd $(<D) && ./$(<F) `cat $(word 2,$(^F))`)
+ 
+ # Warning! Beware tr_TR toupper/tolower exceptions!
+ $(locale_OUT)/wctables.h: $(locale_OUT)/gen_wctype
+ 	@$(disp_gen)
+-	$(Q)(cd $(<D) || exit 1 ; \
+-		./$(<F) $(FLAG-locale-verbose) en_US || \
+-		./$(<F) $(FLAG-locale-verbose) en_US.UTF-8 || \
+-		./$(<F) $(FLAG-locale-verbose) en_US.iso8859-1 || \
+-		./$(<F) $(FLAG-locale-verbose) en_GB || \
+-		./$(<F) $(FLAG-locale-verbose) en_GB.UTF-8 \
+-	)
++#	$(Q)(cd $(<D) || exit 1 ; \
++#		./$(<F) $(FLAG-locale-verbose) en_US || \
++#		./$(<F) $(FLAG-locale-verbose) en_US.UTF-8 || \
++#		./$(<F) $(FLAG-locale-verbose) en_US.iso8859-1 || \
++#		./$(<F) $(FLAG-locale-verbose) en_GB || \
++#		./$(<F) $(FLAG-locale-verbose) en_GB.UTF-8 \
++#	)
+ 
+ $(locale_OUT)/locale_tables.h: $(locale_OUT)/gen_locale $(locale_OUT)/locales.txt
+ 	@$(disp_gen)

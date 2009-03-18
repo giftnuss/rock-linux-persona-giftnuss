@@ -1,0 +1,21 @@
+
+[TIMESTAMP] 1181151961 Wed Jun  6 19:46:01 2007 (5)
+[TIMESTAMP] 1181604973 Tue Jun 12 01:36:13 2007 (9)
+
+[CONFIG-ID] TRUNK-x86-reference
+[ROCKVER] TRUNK
+
+[LOGS] 5-libkxl.log 9-libkxl.log
+
+[BUILDTIME] 2927 (5)
+[BUILDTIME] 3126 (9)
+[SIZE] 0.04 MB, 9 files
+
+[DEP] 00-dirtree applewmproto applewmproto:dev autoconf automake19
+[DEP] bash2 binutils bzip2 coreutils cvm diffutils findutils gawk gcc42
+[DEP] gcc42:dev glibc26 glibc26:dev grep imake libice libx11 libx11:dev
+[DEP] libxt linux26-headers:dev ltrace make mktemp net-tools perl5 sed
+[DEP] sysfiles tar texinfo xmame xorg-cf-files xproto:dev
+
+[PROVIDES] libKXL-1.1.7.so libKXL.a libKXL.so
+

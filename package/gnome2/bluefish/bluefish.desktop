@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Bluefish
+Comment=Web Development
+Exec=bluefish
+Terminal=false
+Type=Application
+Categories=Development;WebDevelopment
+X-ROCK-Name=bluefish
+Icon=D_datadir/pixmaps/bluefish-icon.png

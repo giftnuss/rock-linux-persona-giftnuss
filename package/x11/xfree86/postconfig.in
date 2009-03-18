@@ -1,0 +1,5 @@
+if [ "$ROCKCFG_DEFAULT_X11" != xfree86 ] ; then
+	pkgremove xfree86
+	pkgremove xfree86-cyrillic-fonts
+	pkgremove xfree86-doc
+fi

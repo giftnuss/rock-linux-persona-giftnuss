@@ -1,0 +1,53 @@
+Introduction
+------------
+
+This configuration offers a cross-build of (a subset of) the build-bootstrap
+package selection for the arm architecture as emulated by qemu-system-arm.
+It includes support for all the hardware emulated by qemu, a working udev,
+kernel and userland support for TCP/IP networking, and more.
+
+With qemu and the resulting build you can at least:
+- boot the kernel and first stage initrd,
+- execute a shell from the initrd,
+- load the second stage from a CD-ROM,
+- and install packages from the CD on a hard disk.
+
+The packages included should be sufficient for native builds on the targeted
+platform.
+
+Quick Start
+-----------
+
+Direct booting with framebuffer console:
+qemu-system-arm -kernel build/bbs-arm-qemu-TRUNK-arm-EL-arm926ejs-cross-generic-expert/boot/zImage \
+	-initrd build/bbs-arm-qemu-TRUNK-arm-EL-arm926ejs-cross-generic-expert/ROCK/target/initrd.img \
+	-append "root=/dev/ram0 rw" -M versatilepb \
+	-cdrom bbs-arm-qemu_cd1.iso -hda /srv/qemu.hda
+
+Direct booting with serial console:
+qemu-system-arm -kernel build/bbs-arm-qemu-TRUNK-arm-EL-arm926ejs-cross-generic-expert/boot/zImage \
+	-initrd build/bbs-arm-qemu-TRUNK-arm-EL-arm926ejs-cross-generic-expert/ROCK/target/initrd.img \
+	-append "root=/dev/ram0 console=ttyAMA0 rw" -nographic -M versatilepb \
+	-cdrom bbs-arm-qemu_cd1.iso -hda /srv/qemu.hda
+
+Hints And Known Bugs
+--------------------
+
+- The kernel and initrd image can also be found in the boot/ directory of the
+  CD-ROM image.
+
+- To use the CD-ROM image in qemu, create it after the build has finished:
+	./scripts/Create-ISO bbs-arm-qemu bbs-arm-qemu
+
+- To use a hard disk in qemu, create it with e.g.:
+	qemu-img create /srv/qemu.hda 2048M
+
+- When using a console on the serial port, be sure to enter 'ttyAMA0' as the
+  terminal device in boot stage 2, or you won't get to see the command line.
+
+- This build also works with '-M versatileab', for other machine types you only
+  have to rebuild the kernel.
+
+- For an unknown reason, find is broken in this build (but works in e.g. sparc
+  and x86_64 cross-builds). Use oldfind instead.
+

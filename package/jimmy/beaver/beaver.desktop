@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Beaver
+Comment=Integrated Debugging Environment
+Exec=beaver
+Terminal=false
+Type=Application
+Categories=Development;IDE
+X-ROCK-Name=beaver
+Icon=D_datadir/pixmaps/beaver.png

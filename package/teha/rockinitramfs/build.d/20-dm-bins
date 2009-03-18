@@ -1,0 +1,10 @@
+
+for x in sbin/mdadm sbin/lvm sbin/dmsetup
+do
+	if [ -e $rootdir/$x ] 
+	then
+		add_with_deps $rootdir/$x /$x
+	else
+		echo "# $rootdir/$x not found. skipping $x binary."
+	fi
+done

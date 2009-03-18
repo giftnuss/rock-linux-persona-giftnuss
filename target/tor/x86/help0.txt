@@ -1,0 +1,19 @@
+                     ____   ___   ____ _  __     _
+                    |  _ \ / _ \ / ___| |/ /__ _| |_ ___
+                    | |_) | | | | |   | ' // _` | __/ _ \
+                    |  _ <| |_| | |___| . \ (_| | ||  __/
+                    |_| \_\\___/ \____|_|\_\__,_|\__\___|
+            [============> http://www.rocklinux.org/ <============]
+            | L I V E  CD |
+            +-------------+              [F1=Overview] [F2=Options]
+
+Actions:
+--------
+
+     <ENTER>                    Start rockate at 1024x786-16
+     rockate-1280 <Enter>       Start rockate at 1280x1024-16
+     rockate-800 <Enter>        Start rockate at 800x600-16
+     rockate-640 <Enter>        Start rockate at 640x480-16
+     rockate-text <Enter>       Start rockate in text mode
+     rockate options <Enter>    Start with the given options
+

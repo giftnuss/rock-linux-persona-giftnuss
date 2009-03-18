@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Mutt
+Comment=console MUA
+Exec=mutt
+Terminal=true
+Type=Application
+Categories=Office;Email
+X-ROCK-Name=mutt

@@ -1,0 +1,4 @@
+case $xpkg in 
+    vnc-xfree86|vnc-xorg)
+        pkg=vnc ;;
+esac

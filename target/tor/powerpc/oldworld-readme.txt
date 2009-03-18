@@ -1,0 +1,1 @@
+For booting the ROCK Linux LiveCD on oldworld macs, currentlyonly BootX is support. Extract BootX-1.2.2.sit, and copy/boot/vmlinuxas kernel to load into the "Linux Kernels" Folder, and tell it to use/boot/initrd.gzas ramdisk to load (paths relative to the CD).You also need to add additional parameters to pass to the kernel:init=/linuxrc rwHave fun!

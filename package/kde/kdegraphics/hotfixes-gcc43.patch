@@ -1,0 +1,11 @@
+--- ./kviewshell/plugins/djvu/libdjvu/DjVuGlobal.h.orig	2008-06-13 08:56:55.000000000 +0200
++++ ./kviewshell/plugins/djvu/libdjvu/DjVuGlobal.h	2008-06-13 08:57:02.000000000 +0200
+@@ -70,7 +70,7 @@
+ #elif defined(AUTOCONF) && defined(HAVE_STDINCLUDES)
+ # include <new>
+ #else
+-# include <new.h>
++# include <new>
+ #endif
+ 
+ #ifdef WIN32

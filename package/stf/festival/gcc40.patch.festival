@@ -1,0 +1,11 @@
+diff -dur festival/src/modules/MultiSyn/EST_JoinCostCache.h src.festival.1134990956.2467.288628006/festival/src/modules/MultiSyn/EST_JoinCostCache.h
+--- festival/src/modules/MultiSyn/EST_JoinCostCache.h	2004-05-27 15:53:09.000000000 +0200
++++ src.festival.1134990956.2467.288628006/festival/src/modules/MultiSyn/EST_JoinCostCache.h	2005-12-19 12:40:56.000000000 +0100
+@@ -60,7 +60,6 @@
+ #include "ling_class/EST_Item.h"
+ 
+ class EST_JoinCost;
+-class ostream;
+ 
+ class EST_JoinCostCache {
+ public:

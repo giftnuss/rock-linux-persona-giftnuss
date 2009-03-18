@@ -1,0 +1,176 @@
+
+ROCKNET  [by Clifford Wolf]
+===========================
+
+The idea of ROCKNET is to make the network configuration more flexible and
+allow integration of simple firewalling rules, multiple interfaces, multiple
+IPs per interface and multiple profiles. It should be easy to setup very
+complex and very simple setups, should "feel good" when working directly
+with an ASCII editor on the config files and should be easy to integrate in
+a more or less colored configuration GUI (such as stone).
+
+
+Configuration File
+------------------
+
+The network configuration is stored in /etc/network/config. All filenames
+in this file are relative to /etc/network/ if they don't begin with a slash.
+
+An example /etc/network/config follows:
+
+	auto eth0 eth1
+	forward
+
+	interface eth0
+		ip 192.168.1.1/24
+		ip 192.168.2.1/24
+
+	interface eth1
+		ip 192.168.100.99/24
+		gw 192.168.100.1
+
+Or another /etc/network/config:
+
+	auto eth0
+
+	interface eth0
+		dhcp
+		dyndns				# update dyndns
+						# requires ezipudate
+						# and setup in stone
+		allow ip 10.10.0.0/24		# office
+		allow ip 192.168.0.0/24		# home
+		allow tcp 80			# webserver is open
+		deny all
+
+Or one using profiles:
+
+	auto eth0 eth1(office)
+
+	interface eth0(home)
+		ip 192.168.69.15/24
+
+	interface eth0(office)
+		allow ip 10.10.0.0/16 tcp ssh
+		deny all
+		dhcp
+
+	interface eth1(office)
+		essid 'Blubb'
+		keyc 'I@mCo0l'
+		deny all
+		dhcp
+
+So there are commands with optional parameter lists. The following commands
+are allowed in the config file:
+
+auto
+	Lists those interfaces which should be set up automatically at
+	boot up (list evaluated from left to right) and shut down on system
+	shutdown (from right to left). All interfaces not listed here must
+	be set up or shut down manually using 'ifup' and 'ifdown'.
+	Must be used before the first 'interface' directive.
+
+forward
+	If used, forwarding between interfaces will be activated at boot up
+	and the host may be used as gateway between two networks.
+	Must be used before the first 'interface' directive.
+
+interface
+	Everything after that statement and before the next interface statement
+	is the configuration for that specific interface. All directives within
+	an interface section are executed from the first to the last when
+	setting up the interface and the reversed order when shutting it down.
+
+dhcp
+	Configure the interface using the DHCP protocol.
+
+script
+	Execute the specified script with the given parameters. The parameter
+	"up" is inserted as first parameter when the interface is set up and
+	the parameter "down" is inserted when the interface is shut down.
+
+run-up, run-down
+	Run the given command when the interface is set up or shut down
+	respectively.
+
+ip, gw
+	Set the given ip(s) and gateway when the interface is set up, remove
+	all IPs from the interface when the interface is shut down.
+
+allow, deny
+	Add the given simple firewalling rules. Those statements are executed
+	before the other statements in the interface section when setting up
+	the interface and are executed after the other statements when
+	shutting down the interface. See section "Simple Firewall" below for
+	details.
+
+
+Profiles
+--------
+
+Interface names in the 'auto' and the 'interface' statement can be followed
+by a coma-separated list of profile names in parentheses.
+
+In case of the 'auto' statement, only those interfaces are used which do
+have the current profile specified or no profile at all.
+
+In case of the 'interface' statement, an interface section is used if it has
+no profile specified or the current profile is given in the profile list.
+
+An non-existing interface section will be handled as it would be an empty
+interface section. Empty interface sections are silently ignored by "ifup"
+and "ifdown".
+
+The current profile is stored in /etc/network/profile.
+
+
+Command-line Tools
+------------------
+
+There are two simple command line tools for working with ROCKNET: "ifup"
+and "ifdown". The first parameter is the name of the interface which should
+be set up, the second parameter (which is optional) is the profile name to be
+used while reading the configuration. If the 2nd parameter is missing, the
+content of /etc/network/profile is used.
+
+
+Simple Firewall
+---------------
+
+When there are any 'allow' or 'deny' statements in an interface section, the
+ifup script automatically adds a chain named 'simple-firewall-<ifname>' to
+the iptables 'filter' table and links that chain into the INPUT chain using
+the incoming interface as condition.
+
+All 'allow' and 'deny' statements add rules to that chain. 'Allow' links
+to the netfilter 'ACCEPT' target and 'deny' to the netfilter 'REJECT' (and
+not 'DROP') target.
+
+When shutting down the interface, the chain 'simple-firewall-<ifname>' is
+simply flushed and removed from the iptables configuration.
+
+
+Tricking with pseudo-interfaces
+-------------------------------
+
+It's possible to define non-existing interfaces such as 'iptables' in the
+configuration file. It would result to errors if e.g. the 'ip' statement
+would be used in those interface sections - but it is possible to use the
+'script' statement in those pseudo-interfaces and so e.g. link a complex
+firewall setup into the ROCKNET framework.
+
+
+Compatibility
+-------------
+
+The program names "ifup" and "ifdown" are used on many distributions for small
+helpers to set up or shut down interfaces.
+
+The file /etc/network/config has a very similar "feeling" as debians
+/etc/network/interfaces and so it should be pretty easy especially for debian
+users to get used to ROCK Linux based distributions network configuration.
+
+The whole thing is very different from RedHats /etc/sysconfig/network/ and is
+likely to also be different from whatever SuSE is using for the same purpose.
+

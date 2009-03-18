@@ -1,0 +1,101 @@
+some adaptions for building without dietlibc
+(parts of this patch thankfully copied from T2)
+
+diff -Naur fgetty-0.6~/Makefile fgetty-0.6/Makefile
+--- fgetty-0.6~/Makefile	2007-07-13 18:31:21.014218873 +0200
++++ fgetty-0.6/Makefile	2007-07-13 18:31:26.784158037 +0200
+@@ -9,7 +9,7 @@
+ STRIP=strip
+ #CROSS=arm-linux-
+ CROSS=
+-LDFLAGS=-s
++LDFLAGS=-s -lcrypt
+ 
+ %.o: %.c
+ #	gcc -march=i386 -mcpu=i386 -pipe -Os -fomit-frame-pointer -I../dietlibc/include -c $^ -DTEST
+@@ -18,11 +18,11 @@
+ 	$(CROSS)$(STRIP) -x -R .comment -R .note $@
+ 
+ %: %.o
+-	$(DIET) $(CROSS)$(CC) -nostdlib -o $@ $^ $(LDFLAGS)
++	$(DIET) $(CROSS)$(CC) -o $@ $^ $(LDFLAGS)
+ 
+ fgetty: fgetty.o fmt_ulong.o
+ 
+-login: login.o
++login: login.o ltostr.o
+ login2: login2.o
+ checkpassword: checkpassword.o
+ 
+diff -Naur fgetty-0.6~/fgetty.c fgetty-0.6/fgetty.c
+--- fgetty-0.6~/fgetty.c	2007-07-13 18:31:21.013218883 +0200
++++ fgetty-0.6/fgetty.c	2007-07-13 18:31:26.783158047 +0200
+@@ -10,6 +10,7 @@
+ #include <sys/ioctl.h>
+ #include <errno.h>
+ #include <termios.h>
++#include <time.h>
+ 
+ #include "fmt.h"
+ 
+diff -Naur fgetty-0.6~/login.c fgetty-0.6/login.c
+--- fgetty-0.6~/login.c	2007-07-13 18:31:21.013218883 +0200
++++ fgetty-0.6/login.c	2007-07-13 18:32:05.155753351 +0200
+@@ -36,6 +36,8 @@
+ #include <fcntl.h>
+ #include <signal.h>
+ 
++extern char **environ;
++
+ void die(const char *message) {
+   write(2,message,strlen(message));
+   write(2,"\n",1);
+@@ -116,7 +118,7 @@
+       int len;
+       len=strlen(username)+1;
+       strcpy(buf,username);
+-      strlcpy(buf+len,password,512-len);
++      strncpy(buf+len,password,512-len);
+       len+=strlen(password)+1;
+ /*	buf[len++]='Y'; */
+       len+=__ltostr(buf+len,512-len,time(0),10,0);
+diff -Naur fgetty-0.6~/ltostr.c fgetty-0.6/ltostr.c
+--- fgetty-0.6~/ltostr.c	1970-01-01 01:00:00.000000000 +0100
++++ fgetty-0.6/ltostr.c	2007-07-13 18:31:26.784158037 +0200
+@@ -0,0 +1,36 @@
++#include <string.h>
++#include <stdlib.h>
++
++#ifndef __dietlibc__
++
++int __ltostr(char *s, unsigned int size, unsigned long i, unsigned int base, int UpCase)
++{
++  char *tmp;
++  unsigned int j=0;
++
++  s[--size]=0;
++
++  tmp=s+size;
++
++  if ((base==0)||(base>36)) base=10;
++
++  j=0;
++  if (!i)
++  {
++    *(--tmp)='0';
++    j=1;
++  }
++
++  while((tmp>s)&&(i))
++  {
++    tmp--;
++    if ((*tmp=i%base+'0')>'9') *tmp+=(UpCase?'A':'a')-'9'-1;
++    i=i/base;
++    j++;
++  }
++  memmove(s,tmp,j+1);
++
++  return j;
++}
++
++#endif

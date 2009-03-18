@@ -1,0 +1,23 @@
+
+[TIMESTAMP] 1181117308 Wed Jun  6 10:08:28 2007 (5)
+[TIMESTAMP] 1181593714 Mon Jun 11 22:28:34 2007 (9)
+
+[CONFIG-ID] TRUNK-x86-reference
+[ROCKVER] TRUNK
+
+[LOGS] 5-libsdl_console.log 9-libsdl_console.log
+
+[BUILDTIME] 3092 (5)
+[BUILDTIME] 3314 (9)
+[SIZE] 0.04 MB, 9 files
+
+[DEP] 00-dirtree applewmproto bash2 binutils bzip2 coreutils cvm diffutils
+[DEP] findutils gawk gcc42 gcc42:dev glibc26 glibc26:dev glut grep libice
+[DEP] libice:dev libsdl libsdl:dev libsdl_image libsdl_image:dev libsm
+[DEP] libsm:dev libx11 libx11:dev libxau libxau:dev libxcb libxcb:dev
+[DEP] libxdmcp libxdmcp:dev libxext libxt libxt:dev linux26-headers:dev
+[DEP] ltrace make mesalib mktemp nas net-tools sed sysfiles tar util-linux
+[DEP] xmame
+
+[PROVIDES] libSDL_console.a libSDL_console.so
+

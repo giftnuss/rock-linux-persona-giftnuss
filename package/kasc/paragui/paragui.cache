@@ -1,0 +1,123 @@
+
+[TIMESTAMP] 1181085317 Wed Jun  6 01:15:17 2007 (5) ERROR
+[TIMESTAMP] 1181558509 Mon Jun 11 12:41:49 2007 (9) ERROR
+[TIMESTAMP] 1181824203 Thu Jun 14 14:30:03 2007 (5) ERROR
+[TIMESTAMP] 1181904743 Fri Jun 15 12:52:23 2007 (9) ERROR
+[TIMESTAMP] 1181950690 Sat Jun 16 01:38:10 2007 (5) ERROR
+[TIMESTAMP] 1181972208 Sat Jun 16 07:36:48 2007 (9) ERROR
+
+[CONFIG-ID] TRUNK-x86-reference
+[ROCKVER] TRUNK
+
+[LOGS] 5-paragui.err 9-paragui.err
+
+[BUILDTIME] 1676 (5) ERROR
+[BUILDTIME] 1507 (9) ERROR
+[BUILDTIME] 1659 (5) ERROR
+[BUILDTIME] 1614 (9) ERROR
+[BUILDTIME] 1605 (5) ERROR
+[BUILDTIME] 1616 (9) ERROR
+
+
+[5-ERROR] checking for ranlib... ranlib
+[5-ERROR] checking for strip... strip
+[5-ERROR] checking for objdir... .libs
+[5-ERROR] checking for gcc-42 option to produce PIC... -fPIC
+[5-ERROR] checking if gcc-42 PIC flag -fPIC works... yes
+[5-ERROR] checking if gcc-42 static flag -static works... yes
+[5-ERROR] checking if gcc-42 supports -c -o file.o... yes
+[5-ERROR] checking if gcc-42 supports -c -o file.lo... yes
+[5-ERROR] checking if gcc-42 supports -fno-rtti -fno-exceptions... yes
+[5-ERROR] checking whether the linker (ld) supports shared libraries... yes
+[5-ERROR] checking how to hardcode library paths into programs... immediate
+[5-ERROR] checking whether stripping libraries is possible... yes
+[5-ERROR] checking dynamic linker characteristics... GNU/Linux ld.so
+[5-ERROR] checking if libtool supports shared libraries... yes
+[5-ERROR] checking whether to build shared libraries... yes
+[5-ERROR] checking whether to build static libraries... yes
+[5-ERROR] checking whether -lc should be explicitly linked in... no
+[5-ERROR] creating libtool
+[5-ERROR] checking whether make sets ${MAKE}... (cached) yes
+[5-ERROR] checking for c++... g++-42
+[5-ERROR] checking whether the C++ compiler (g++-42  ) works... yes
+[5-ERROR] checking whether the C++ compiler (g++-42  ) is a cross-compiler... no
+[5-ERROR] checking whether we are using GNU C++... yes
+[5-ERROR] checking whether g++-42 accepts -g... yes
+[5-ERROR] checking how to run the C preprocessor... gcc-42 -E
+[5-ERROR] checking for a BSD compatible install... /ROCK/build/ref0603-TRUNK-x86-reference/ROCK/tools.chroot/wrapper/install -c
+[5-ERROR] checking for executable suffix... (cached) no
+[5-ERROR] checking for the STL library to use... -lstdc++
+[5-ERROR] checking for sdl-config... /usr/bin/sdl-config
+[5-ERROR] checking for SDL - version >= 1.2.0... yes
+[5-ERROR] checking for freetype-config... /usr/bin/freetype-config
+[5-ERROR] checking for expat.h... yes
+[5-ERROR] checking for XML_ParserCreate in -lexpat... yes
+[5-ERROR] checking how to run the C++ preprocessor... g++-42 -E
+[5-ERROR] checking for hash_map... no
+[5-ERROR] checking for ext/hash_map... yes
+[5-ERROR] checking for rtti... compile with default rtti (no flags)
+[5-ERROR] checking for exceptions... compile with default exceptions (no flags)
+[5-ERROR] checking for debugging... no debugging
+[5-ERROR] checking for IMG_Load in -lSDL_image... yes
+[5-ERROR] checking for SDL_image support... compile with SDL_image support
+[5-ERROR] checking for swig... /usr/bin/swig
+[5-ERROR] checking for python... /usr/bin/python
+[5-ERROR] checking for python2.4/Python.h... no
+[5-ERROR] checking for python2.3/Python.h... no
+[5-ERROR] checking for python2.2/Python.h... no
+[5-ERROR] checking for python2.1/Python.h... no
+[5-ERROR] checking for python2.0/Python.h... no
+[5-ERROR] configure: error: *** Python.h not found! ***
+[5-ERROR] --- BUILD ERROR ---
+
+[9-ERROR] checking for ranlib... ranlib
+[9-ERROR] checking for strip... strip
+[9-ERROR] checking for objdir... .libs
+[9-ERROR] checking for gcc-42 option to produce PIC... -fPIC
+[9-ERROR] checking if gcc-42 PIC flag -fPIC works... yes
+[9-ERROR] checking if gcc-42 static flag -static works... yes
+[9-ERROR] checking if gcc-42 supports -c -o file.o... yes
+[9-ERROR] checking if gcc-42 supports -c -o file.lo... yes
+[9-ERROR] checking if gcc-42 supports -fno-rtti -fno-exceptions... yes
+[9-ERROR] checking whether the linker (ld) supports shared libraries... yes
+[9-ERROR] checking how to hardcode library paths into programs... immediate
+[9-ERROR] checking whether stripping libraries is possible... yes
+[9-ERROR] checking dynamic linker characteristics... GNU/Linux ld.so
+[9-ERROR] checking if libtool supports shared libraries... yes
+[9-ERROR] checking whether to build shared libraries... yes
+[9-ERROR] checking whether to build static libraries... yes
+[9-ERROR] checking whether -lc should be explicitly linked in... no
+[9-ERROR] creating libtool
+[9-ERROR] checking whether make sets ${MAKE}... (cached) yes
+[9-ERROR] checking for c++... g++-42
+[9-ERROR] checking whether the C++ compiler (g++-42  ) works... yes
+[9-ERROR] checking whether the C++ compiler (g++-42  ) is a cross-compiler... no
+[9-ERROR] checking whether we are using GNU C++... yes
+[9-ERROR] checking whether g++-42 accepts -g... yes
+[9-ERROR] checking how to run the C preprocessor... gcc-42 -E
+[9-ERROR] checking for a BSD compatible install... /ROCK/build/ref0603-TRUNK-x86-reference/ROCK/tools.chroot/wrapper/install -c
+[9-ERROR] checking for executable suffix... (cached) no
+[9-ERROR] checking for the STL library to use... -lstdc++
+[9-ERROR] checking for sdl-config... /usr/bin/sdl-config
+[9-ERROR] checking for SDL - version >= 1.2.0... yes
+[9-ERROR] checking for freetype-config... /usr/bin/freetype-config
+[9-ERROR] checking for expat.h... yes
+[9-ERROR] checking for XML_ParserCreate in -lexpat... yes
+[9-ERROR] checking how to run the C++ preprocessor... g++-42 -E
+[9-ERROR] checking for hash_map... no
+[9-ERROR] checking for ext/hash_map... yes
+[9-ERROR] checking for rtti... compile with default rtti (no flags)
+[9-ERROR] checking for exceptions... compile with default exceptions (no flags)
+[9-ERROR] checking for debugging... no debugging
+[9-ERROR] checking for IMG_Load in -lSDL_image... yes
+[9-ERROR] checking for SDL_image support... compile with SDL_image support
+[9-ERROR] checking for swig... /usr/bin/swig
+[9-ERROR] checking for python... /usr/bin/python
+[9-ERROR] checking for python2.4/Python.h... no
+[9-ERROR] checking for python2.3/Python.h... no
+[9-ERROR] checking for python2.2/Python.h... no
+[9-ERROR] checking for python2.1/Python.h... no
+[9-ERROR] checking for python2.0/Python.h... no
+[9-ERROR] configure: error: *** Python.h not found! ***
+[9-ERROR] --- BUILD ERROR ---
+

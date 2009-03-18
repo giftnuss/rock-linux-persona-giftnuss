@@ -1,0 +1,12 @@
+# This file doesn't contain comments any more.
+# For detailed options description refer to etcnet-options(5) manpage,
+# section 'Ethernet options'.
+
+BOOTPROTO=dhcp-ipv4ll
+CONFIG_WIRELESS=yes
+
+USE_IFPLUGD=auto
+PERSISTENT_IFPLUGD=yes
+IFPLUGD_EXTRA_ARGS='--delay-up=0 --delay-down=10'
+LINKDETECT=auto
+AUTO_BROADCAST=yes

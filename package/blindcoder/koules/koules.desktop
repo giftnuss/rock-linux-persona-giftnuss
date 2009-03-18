@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Koules
+Comment=3D Shooting game
+Exec=xkoules
+Terminal=false
+Type=Application
+Categories=Game;ArcadeGame
+X-ROCK-Name=koules

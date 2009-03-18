@@ -1,0 +1,5 @@
+ROCKCFG_T_ROUTER_INITRD_SIZE
+  The size of the initial ramdisk, in MB.
+
+ROCKCFG_T_ROUTER_SERIAL_BAUD
+  The default baud rate for serial ports.

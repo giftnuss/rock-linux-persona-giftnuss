@@ -1,0 +1,13 @@
+diff -pruN isdn4k-utils/isdnlog/Makefile.in isdn4k-utils-orig/isdnlog/Makefile.in
+--- isdn4k-utils/isdnlog/Makefile.in	2006-09-30 11:50:17.000000000 +0200
++++ isdn4k-utils/isdnlog/Makefile.in	2002-07-19 21:03:55.000000000 +0200
+@@ -1842,9 +1842,6 @@ install-data:
+ 		  $(INSTALL_DATA) $$f $(DESTDIR)$(DATADIR); \
+ 		  echo Installing $(DESTDIR)$(DATADIR)/$$f; \
+ 		done
+-		@(grep isdnlog $(SERVICEFILE) >/dev/null) || \
+-		(echo "";echo "";echo "Add a line to the file $(SERVICEFILE)" ;echo "";echo ""; \
+-		echo "isdnlog $(SERV_PORT)/tcp        isdnlog" >> $(SERVICEFILE))
+ 
+ install-strip:
+ 		$(MAKE) INSTALL_BIN='$(INSTALL_BIN) -s' \

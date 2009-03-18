@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=LBreakout 2
+Comment=Breakout Clone
+Exec=lbreakout2
+Terminal=false
+Type=Application
+Categories=Game;ArcadeGame
+X-ROCK-Name=lbreakout2

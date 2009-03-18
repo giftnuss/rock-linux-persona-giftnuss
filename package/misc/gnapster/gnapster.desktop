@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=GNapster
+Comment=P2P app
+Exec=gnapster
+Terminal=false
+Type=Application
+Categories=Network;P2P
+X-ROCK-Name=gnapster
+Icon=D_datadir/pixmaps/gnapster.png

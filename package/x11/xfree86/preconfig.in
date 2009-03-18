@@ -1,0 +1,1 @@
+CFGTEMP_DEFAULT_X11="$CFGTEMP_DEFAULT_X11 xfree86 Use_XFree86_as_default_X11_server"

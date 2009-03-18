@@ -1,0 +1,183 @@
+#!/usr/bin/perl -w
+
+use strict;
+
+my $depdb = "scripts/dep_db.txt";
+my $pkgfile = "config/default/packages";
+my $rootdir = "";
+
+my $showinst = 0;
+my $showdups = 0;
+my $showopt = 0;
+
+my $listmode = 0;
+
+my @ignore_list;
+
+sub help()
+{
+	print "\n";
+	print "Usage $0 [ <options> ] <pkg> [ <pkg> [ .. ] ]\n";
+	print "\n";
+	print "Options:\n";
+	print "\n";
+	print "  -cfg <config>     Use package list from config\n";
+	print "  -root <dir>       Use dir as root directory\n";
+	print "  -depdb <file>     Use file as dependency database\n";
+	print "\n";
+	print "  -ignore <regex>   Ignore all packages matching the regex\n";
+	print "\n";
+	print "  -chroot           Use 'build/<config>../' as root\n";
+	print "\n";
+	print "  -showinst         Also show already installed deps\n";
+	print "  -showdups         Also show already printed deps\n";
+	print "  -showopt          Also show packages marked as optional\n";
+	print "\n";
+	print "  -listmod          Run in list mode\n";
+	print "\n";
+
+	exit 1;
+}
+
+while ( $#ARGV >= 0 and $ARGV[0] =~ /^-/ )
+{
+	my $opt = shift @ARGV;
+	if ( $opt eq "-cfg" ) {
+		$pkgfile = "config/".(shift @ARGV)."/packages";
+		next;
+	}
+	if ( $opt eq "-root" ) {
+		$rootdir = shift @ARGV;
+		next;
+	}
+	if ( $opt eq "-depdb" ) {
+		$depdb = shift @ARGV;
+		next;
+	}
+	if ( $opt eq "-ignore" ) {
+		push @ignore_list, shift @ARGV;
+		next;
+	}
+	if ( $opt eq "-chroot" ) {
+		my $cfgfile = $pkgfile;
+		$cfgfile =~ s/packages$/config/;
+		$rootdir = "build/".`source $cfgfile; echo \$ROCKCFG_ID;`;
+		chomp $rootdir;
+		next;
+	}
+	if ( $opt eq "-showinst" ) {
+		$showinst = 1;
+		next;
+	}
+	if ( $opt eq "-showdups" ) {
+		$showdups = 1;
+		next;
+	}
+	if ( $opt eq "-showopt" ) {
+		$showopt = 1;
+		next;
+	}
+	if ( $opt eq "-listmode" ) {
+		$listmode = 1;
+		next;
+	}
+	help;
+}
+
+help if $#ARGV < 0;
+
+my %pkgs;
+my %pkgs_reverse;
+
+open(F, "<$pkgfile") or die "Can't open $pkgfile: $!";
+while (<F>) {
+	next unless /^X/ or $showopt;
+	my @f = split /\s+/;
+	if ( $f[4] =~ /(.*)=(.*)/ ) {
+		$pkgs{$2} = $1;
+		push @{$pkgs_reverse{$1}}, $2;
+	} else {
+		$pkgs{$f[4]} = $f[4];
+		push @{$pkgs_reverse{$f[4]}}, $f[4];
+	}
+
+}
+close F;
+
+my %deps;
+
+open(F, "<$depdb") or die "Can't open $depdb: $!";
+while (<F>) {
+	chomp;
+	die "DepDB syntax error" unless /^(\S+): \d+ \d+ (.*)\s+\1$/;
+	next unless defined $pkgs_reverse{$1};
+	my @deplist = split /\s+/, $2;
+	foreach (@{$pkgs_reverse{$1}}) {
+		$deps{$_} = \@deplist;
+	}
+}
+close F;
+
+my %duptags;
+my @rawlist;
+
+sub showdeps($$);
+sub showdeps($$)
+{
+	my $depth = $_[0];
+	my $sp = "  " x $_[0];
+	my $p = $_[1];
+
+	foreach (@ignore_list) {
+		return if $p =~ /$_/;
+	}
+
+	my $is_dup = defined $duptags{$p};
+	$duptags{$p} = 1;
+
+	my $is_inst = -f "$rootdir/var/adm/packages/$p";
+	while (<$rootdir/var/adm/packages/$p:*>) {
+		$is_inst = 1 if -f "$_";
+	}
+
+	if ( $_[0] > 0 ) {
+		return if $is_dup and not $showdups;
+		return if $is_inst and not $showinst;
+	}
+
+	if ($listmode) {
+		push @{$rawlist[$depth]}, $p;
+	} else {
+		print "${sp}$p";
+		print " (already_installed)" if $is_inst;
+		print " (duplicate)" if $is_dup;
+		print "\n";
+	}
+
+	if ( $depth > 0 ) {
+		return if $is_dup;
+		return if $is_inst;
+	}
+
+	foreach (@{$deps{$p}}) {
+		showdeps($depth+1, $_)
+			if defined $_ and defined $deps{$_};
+	}
+}
+
+foreach my $p (@ARGV) {
+	showdeps(0, $p);
+}
+
+if ($listmode) {
+	my $isfirst = 1;
+	foreach my $l (reverse @rawlist) {
+		foreach (@{$l}) {
+			print " " unless $isfirst;
+			$isfirst = 0;
+			print $_;
+		}
+	}
+	print "\n";
+}
+

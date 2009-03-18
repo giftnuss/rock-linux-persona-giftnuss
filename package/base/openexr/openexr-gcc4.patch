@@ -1,0 +1,30 @@
+--- ./exrenvmap/main.cpp.orig	2008-06-10 19:44:59.000000000 +0200
++++ ./exrenvmap/main.cpp	2008-06-10 19:45:05.000000000 +0200
+@@ -45,6 +45,7 @@
+ #include <iostream>
+ #include <exception>
+ #include <stdlib.h>
++#include <string.h>
+ 
+ using namespace Imf;
+ using namespace std;
+--- ./exrmaketiled/Image.h.orig	2004-06-04 06:11:23.000000000 +0200
++++ ./exrmaketiled/Image.h	2008-06-09 22:09:52.000000000 +0200
+@@ -49,6 +49,7 @@
+ #include <string>
+ #include <map>
+ 
++class Image;
+ 
+ class ImageChannel
+ {
+--- ./exrmaketiled/main.cpp.orig	2008-06-10 19:44:16.000000000 +0200
++++ ./exrmaketiled/main.cpp	2008-06-10 19:44:25.000000000 +0200
+@@ -46,6 +46,7 @@
+ #include <exception>
+ #include <string>
+ #include <stdlib.h>
++#include <string.h>
+ 
+ using namespace Imf;
+ using namespace std;

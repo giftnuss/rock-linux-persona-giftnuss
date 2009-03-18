@@ -1,0 +1,123 @@
+
+[TIMESTAMP] 1181157977 Wed Jun  6 21:26:17 2007 (5) ERROR
+[TIMESTAMP] 1181608748 Tue Jun 12 02:39:08 2007 (9) ERROR
+[TIMESTAMP] 1181829058 Thu Jun 14 15:50:58 2007 (5) ERROR
+[TIMESTAMP] 1181912513 Fri Jun 15 15:01:53 2007 (9) ERROR
+[TIMESTAMP] 1181952714 Sat Jun 16 02:11:54 2007 (5) ERROR
+[TIMESTAMP] 1181974474 Sat Jun 16 08:14:34 2007 (9) ERROR
+
+[CONFIG-ID] TRUNK-x86-reference
+[ROCKVER] TRUNK
+
+[LOGS] 5-tecnoballz.err 9-tecnoballz.err
+
+[BUILDTIME] 1675 (5) ERROR
+[BUILDTIME] 1764 (9) ERROR
+[BUILDTIME] 1764 (5) ERROR
+[BUILDTIME] 1770 (9) ERROR
+[BUILDTIME] 1741 (5) ERROR
+[BUILDTIME] 1725 (9) ERROR
+
+
+[5-ERROR] /usr/share/aclocal/rep.m4:7: warning: underquoted definition of AM_PATH_REP
+[5-ERROR] /usr/share/aclocal/pilot-link.m4:1: warning: underquoted definition of AC_PILOT_LINK_HOOK
+[5-ERROR] /usr/share/aclocal/openhbci.m4:8: warning: underquoted definition of AM_PATH_OPENHBCI
+[5-ERROR] /usr/share/aclocal/nspr.m4:8: warning: underquoted definition of AM_PATH_NSPR
+[5-ERROR] /usr/share/aclocal/log4cpp.m4:7: warning: underquoted definition of AM_PATH_LOG4CPP
+[5-ERROR] /usr/share/aclocal/libxosd.m4:9: warning: underquoted definition of AM_PATH_LIBXOSD
+[5-ERROR] /usr/share/aclocal/libstroke.m4:29: warning: underquoted definition of smr_ARG_WITHLIB
+[5-ERROR] /usr/share/aclocal/libstroke.m4:77: warning: underquoted definition of smr_ARG_WITHINCLUDES
+[5-ERROR] /usr/share/aclocal/libstroke.m4:119: warning: underquoted definition of smr_CHECK_LIB
+[5-ERROR] /usr/share/aclocal/libmikmod.m4:11: warning: underquoted definition of AM_PATH_LIBMIKMOD
+[5-ERROR] /usr/share/aclocal/libmcrypt.m4:17: warning: underquoted definition of AM_PATH_LIBMCRYPT
+[5-ERROR] /usr/share/aclocal/libgstroke.m4:29: warning: underquoted definition of smr_ARG_WITHLIB
+[5-ERROR] /usr/share/aclocal/libgstroke.m4:77: warning: underquoted definition of smr_ARG_WITHINCLUDES
+[5-ERROR] /usr/share/aclocal/libgstroke.m4:119: warning: underquoted definition of smr_CHECK_LIB
+[5-ERROR] /usr/share/aclocal/libfame.m4:6: warning: underquoted definition of AM_PATH_LIBFAME
+[5-ERROR] /usr/share/aclocal/libchipcard.m4:4: warning: underquoted definition of AC_LIBCHIPCARD
+[5-ERROR] /usr/share/aclocal/g-wrap.m4:7: warning: underquoted definition of AC_GWRAP_CHECK_GUILE
+[5-ERROR] /usr/share/aclocal/g-wrap.m4:23: warning: underquoted definition of AM_PATH_GWRAP
+[5-ERROR] /usr/share/aclocal/autotrace.m4:7: warning: underquoted definition of AM_PATH_AUTOTRACE
+[5-ERROR] /usr/share/aclocal/audiofile.m4:12: warning: underquoted definition of AM_PATH_AUDIOFILE
+[5-ERROR] /usr/share/aclocal/aalib.m4:12: warning: underquoted definition of AM_PATH_AALIB
+[5-ERROR] /usr/share/aclocal/KXL.m4:6: warning: underquoted definition of AM_PATH_KXL
+[5-ERROR] Autodetection for option impossible:  --disable-debug passed thru.
+[5-ERROR] Removing unsupported '--with-mysql-lib=/opt/mysql41/lib/mysql' from configure option string.
+[5-ERROR] Removing unsupported '--with-mysql-include=/opt/mysql41/include/mysql' from configure option string.
+[5-ERROR] Removing unsupported '--with-mysql-lib=/opt/mysql50/lib/mysql' from configure option string.
+[5-ERROR] Removing unsupported '--with-mysql-include=/opt/mysql50/include/mysql' from configure option string.
+[5-ERROR] Removing unsupported '--with-libpam' from configure option string.
+[5-ERROR] Removing unsupported '--with-pam' from configure option string.
+[5-ERROR] Autodetection for option impossible:  --enable-libpam passed thru.
+[5-ERROR] Autodetection for option impossible:  --enable-pam passed thru.
+[5-ERROR] Running  bash ./configure --prefix=/usr --bindir=/usr/games --sbindir=/usr/sbin --libdir=/usr/lib --datadir=/usr/share --includedir=/usr/include --infodir=/usr/share/info --mandir=/usr/share/man --sysconfdir=/etc --localstatedir=/var --disable-debug --enable-libpam --enable-pam --build=i386-unknown-linux-gnu --host=i386-unknown-linux-gnu
+[5-ERROR] checking for C++ compiler default output file name... a.out
+[5-ERROR] checking whether the C++ compiler works... yes
+[5-ERROR] checking whether we are cross compiling... no
+[5-ERROR] checking for suffix of executables... 
+[5-ERROR] checking for suffix of object files... o
+[5-ERROR] checking whether we are using the GNU C++ compiler... yes
+[5-ERROR] checking whether g++-42 accepts -g... yes
+[5-ERROR] checking for i386-unknown-linux-gnu-gcc... gcc-42
+[5-ERROR] checking whether we are using the GNU C compiler... yes
+[5-ERROR] checking whether gcc-42 accepts -g... yes
+[5-ERROR] checking for gcc-42 option to accept ISO C89... none needed
+[5-ERROR] checking how to run the C preprocessor... gcc-42 -E
+[5-ERROR] checking for X... libraries /usr/X11R7/lib, headers /usr/X11R7/include
+[5-ERROR] checking for ov_raw_seek in -lvorbisfile... yes
+[5-ERROR] checking for ogg_stream_packetin in -logg... yes
+[5-ERROR] checking for SMPEG_play in -lsmpeg... no
+[5-ERROR] configure: error: Could not find the smpeg lib : -lsmpeg
+[5-ERROR] --- BUILD ERROR ---
+
+[9-ERROR] /usr/share/aclocal/rep.m4:7: warning: underquoted definition of AM_PATH_REP
+[9-ERROR] /usr/share/aclocal/pilot-link.m4:1: warning: underquoted definition of AC_PILOT_LINK_HOOK
+[9-ERROR] /usr/share/aclocal/openhbci.m4:8: warning: underquoted definition of AM_PATH_OPENHBCI
+[9-ERROR] /usr/share/aclocal/nspr.m4:8: warning: underquoted definition of AM_PATH_NSPR
+[9-ERROR] /usr/share/aclocal/log4cpp.m4:7: warning: underquoted definition of AM_PATH_LOG4CPP
+[9-ERROR] /usr/share/aclocal/libxosd.m4:9: warning: underquoted definition of AM_PATH_LIBXOSD
+[9-ERROR] /usr/share/aclocal/libstroke.m4:29: warning: underquoted definition of smr_ARG_WITHLIB
+[9-ERROR] /usr/share/aclocal/libstroke.m4:77: warning: underquoted definition of smr_ARG_WITHINCLUDES
+[9-ERROR] /usr/share/aclocal/libstroke.m4:119: warning: underquoted definition of smr_CHECK_LIB
+[9-ERROR] /usr/share/aclocal/libmikmod.m4:11: warning: underquoted definition of AM_PATH_LIBMIKMOD
+[9-ERROR] /usr/share/aclocal/libmcrypt.m4:17: warning: underquoted definition of AM_PATH_LIBMCRYPT
+[9-ERROR] /usr/share/aclocal/libgstroke.m4:29: warning: underquoted definition of smr_ARG_WITHLIB
+[9-ERROR] /usr/share/aclocal/libgstroke.m4:77: warning: underquoted definition of smr_ARG_WITHINCLUDES
+[9-ERROR] /usr/share/aclocal/libgstroke.m4:119: warning: underquoted definition of smr_CHECK_LIB
+[9-ERROR] /usr/share/aclocal/libfame.m4:6: warning: underquoted definition of AM_PATH_LIBFAME
+[9-ERROR] /usr/share/aclocal/libchipcard.m4:4: warning: underquoted definition of AC_LIBCHIPCARD
+[9-ERROR] /usr/share/aclocal/g-wrap.m4:7: warning: underquoted definition of AC_GWRAP_CHECK_GUILE
+[9-ERROR] /usr/share/aclocal/g-wrap.m4:23: warning: underquoted definition of AM_PATH_GWRAP
+[9-ERROR] /usr/share/aclocal/autotrace.m4:7: warning: underquoted definition of AM_PATH_AUTOTRACE
+[9-ERROR] /usr/share/aclocal/audiofile.m4:12: warning: underquoted definition of AM_PATH_AUDIOFILE
+[9-ERROR] /usr/share/aclocal/aalib.m4:12: warning: underquoted definition of AM_PATH_AALIB
+[9-ERROR] /usr/share/aclocal/KXL.m4:6: warning: underquoted definition of AM_PATH_KXL
+[9-ERROR] Autodetection for option impossible:  --disable-debug passed thru.
+[9-ERROR] Removing unsupported '--with-mysql-lib=/opt/mysql41/lib/mysql' from configure option string.
+[9-ERROR] Removing unsupported '--with-mysql-include=/opt/mysql41/include/mysql' from configure option string.
+[9-ERROR] Removing unsupported '--with-mysql-lib=/opt/mysql50/lib/mysql' from configure option string.
+[9-ERROR] Removing unsupported '--with-mysql-include=/opt/mysql50/include/mysql' from configure option string.
+[9-ERROR] Removing unsupported '--with-libpam' from configure option string.
+[9-ERROR] Removing unsupported '--with-pam' from configure option string.
+[9-ERROR] Autodetection for option impossible:  --enable-libpam passed thru.
+[9-ERROR] Autodetection for option impossible:  --enable-pam passed thru.
+[9-ERROR] Running  bash ./configure --prefix=/usr --bindir=/usr/games --sbindir=/usr/sbin --libdir=/usr/lib --datadir=/usr/share --includedir=/usr/include --infodir=/usr/share/info --mandir=/usr/share/man --sysconfdir=/etc --localstatedir=/var --disable-debug --enable-libpam --enable-pam --build=i386-unknown-linux-gnu --host=i386-unknown-linux-gnu
+[9-ERROR] checking for C++ compiler default output file name... a.out
+[9-ERROR] checking whether the C++ compiler works... yes
+[9-ERROR] checking whether we are cross compiling... no
+[9-ERROR] checking for suffix of executables... 
+[9-ERROR] checking for suffix of object files... o
+[9-ERROR] checking whether we are using the GNU C++ compiler... yes
+[9-ERROR] checking whether g++-42 accepts -g... yes
+[9-ERROR] checking for i386-unknown-linux-gnu-gcc... gcc-42
+[9-ERROR] checking whether we are using the GNU C compiler... yes
+[9-ERROR] checking whether gcc-42 accepts -g... yes
+[9-ERROR] checking for gcc-42 option to accept ISO C89... none needed
+[9-ERROR] checking how to run the C preprocessor... gcc-42 -E
+[9-ERROR] checking for X... libraries /usr/X11R7/lib, headers /usr/X11R7/include
+[9-ERROR] checking for ov_raw_seek in -lvorbisfile... yes
+[9-ERROR] checking for ogg_stream_packetin in -logg... yes
+[9-ERROR] checking for SMPEG_play in -lsmpeg... no
+[9-ERROR] configure: error: Could not find the smpeg lib : -lsmpeg
+[9-ERROR] --- BUILD ERROR ---
+

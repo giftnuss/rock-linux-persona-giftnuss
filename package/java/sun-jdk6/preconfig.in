@@ -1,0 +1,2 @@
+var_append CFGTEMP_JAVA_DEFAULT_JDK_JRE \
+	" " "sun-jdk6 Using_sun-jdk6_as_default_JDK/JRE"

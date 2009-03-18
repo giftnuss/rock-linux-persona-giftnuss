@@ -1,0 +1,11 @@
+--- ./src/widgets/sp-xmlview-attr-list.h.orig	2008-11-14 14:50:30.000000000 +0100
++++ ./src/widgets/sp-xmlview-attr-list.h	2008-11-14 14:52:30.000000000 +0100
+@@ -13,7 +13,7 @@
+  */
+ 
+ #include <stdio.h>
+-#include <gtk/gtkclist.h>
++#include <gtk/gtk.h>
+ #include "../xml/repr.h"
+ 
+ #include <glib.h>

@@ -1,0 +1,9 @@
+
+if [ "$ROCKCFG_POWERPC_ISA" ] ; then
+	# Append options so the gcc -V option always comes first.
+	var_append GCC_WRAPPER_APPEND " " "-mcpu=$ROCKCFG_POWERPC_ISA"
+fi
+
+if [ "$ROCKCFG_POWERPC_OPT" != "generic" ] ; then
+	var_append GCC_WRAPPER_APPEND " " "-mtune=$ROCKCFG_POWERPC_OPT"
+fi

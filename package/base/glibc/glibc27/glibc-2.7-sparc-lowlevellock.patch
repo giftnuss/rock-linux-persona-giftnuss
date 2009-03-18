@@ -1,0 +1,23 @@
+Fixes this error for sparc:
+sparc-unknown-linux-gcc 
+pthread_cond_signal.c -c -std=gnu99 -fgnu89-inline -O3 -Wall -Winline -Wwrite-strings -fmerge-all-constants -g -mcpu=v8 -mtune=ultrasparc -Wstrict-prototypes -mlong-double-128 -pg    -I../include -I/glibc-tmp-bad23f4945fa7fe0a0c1ab75f2a62b61/glibc-2.7-20080331/build-glibc-2.7/nptl -I/glibc-tmp-bad23f4945fa7fe0a0c1ab75f2a62b61/glibc-2.7-20080331/build-glibc-2.7 -I../sysdeps/sparc/sparc32/elf -I../sysdeps/unix/sysv/linux/sparc/sparc32/fpu -I../sysdeps/sparc/sparc32/fpu -I../nptl/sysdeps/unix/sysv/linux/sparc/sparc32 -I../sysdeps/unix/sysv/linux/sparc/sparc32 -I../sysdeps/ieee754/ldbl-64-128 -I../sysdeps/ieee754/ldbl-opt -I../nptl/sysdeps/unix/sysv/linux/sparc -I../sysdeps/unix/sysv/linux/sparc -I../nptl/sysdeps/unix/sysv/linux -I../nptl/sysdeps/pthread -I../sysdeps/pthread -I../sysdeps/unix/sysv/linux -I../sysdeps/gnu -I../sysdeps/unix/common -I../sysdeps/unix/mman -I../sysdeps/unix/inet -I../nptl/sysdeps/unix/sysv -I../sysdeps/unix/sysv -I../sysdeps/unix/sparc -I../nptl/sysdeps/unix -I../sysdeps/unix -I../sysdeps/posix -I../nptl/sysdeps/sparc/sparc32 -I../sysdeps/sparc/sparc32 -I../sysdeps/wordsize-32 -I../sysdeps/ieee754/ldbl-128 -I../sysdeps/ieee754/dbl-64 -I../sysdeps/ieee754/flt-32 -I../sysdeps/sparc/sparc32/soft-fp -I../sysdeps/sparc/fpu -I../nptl/sysdeps/sparc -I../sysdeps/sparc -I../sysdeps/ieee754 -I../sysdeps/generic/elf -I../sysdeps/generic -I../nptl  -I.. -I../libio -I. -nostdinc -isystem /usr/lib/gcc/sparc-unknown-linux/4.2.3/include -isystem /usr/src/linux-2.6.23.17/include -D_LIBC_REENTRANT -include ../include/libc-symbols.h  -DPROF  -DNOT_IN_libc=1 -DIS_IN_libpthread=1    -o /glibc-tmp-bad23f4945fa7fe0a0c1ab75f2a62b61/glibc-2.7-20080331/build-glibc-2.7/nptl/pthread_cond_signal.op -MD -MP -MF /glibc-tmp-bad23f4945fa7fe0a0c1ab75f2a62b61/glibc-2.7-20080331/build-glibc-2.7/nptl/pthread_cond_signal.op.dt -MT /glibc-tmp-bad23f4945fa7fe0a0c1ab75f2a62b61/glibc-2.7-20080331/build-glibc-2.7/nptl/pthread_cond_signal.op
+pthread_cond_signal.c:51:19: error: macro "lll_futex_wake_unlock" passed 5 
+arguments, but takes just 4
+pthread_cond_signal.c: In function '__pthread_cond_signal':
+pthread_cond_signal.c:49: error: 'lll_futex_wake_unlock' undeclared (first use 
+in this function)
+
+Copied from http://sourceware.org/bugzilla/show_bug.cgi?id=6020
+
+diff -Naur glibc-2.7-20080331-orig/nptl/sysdeps/unix/sysv/linux/sparc/lowlevellock.h glibc-2.7-20080331/nptl/sysdeps/unix/sysv/linux/sparc/lowlevellock.h
+--- glibc-2.7-20080331-orig/nptl/sysdeps/unix/sysv/linux/sparc/lowlevellock.h	2007-08-13 20:33:01.000000000 +0200
++++ glibc-2.7-20080331/nptl/sysdeps/unix/sysv/linux/sparc/lowlevellock.h	2008-04-02 13:34:19.000000000 +0200
+@@ -120,7 +120,7 @@
+ /* Returns non-zero if error happened, zero if success.  */
+ #ifdef __sparc32_atomic_do_lock
+ /* Avoid FUTEX_WAKE_OP if supporting pre-v9 CPUs.  */
+-# define lll_futex_wake_unlock(futexp, nr_wake, nr_wake2, futexp2) 1
++# define lll_futex_wake_unlock(futexp, nr_wake, nr_wake2, futexp2, private) 1
+ #else
+ # define lll_futex_wake_unlock(futexp, nr_wake, nr_wake2, futexp2, private) \
+   ({									      \

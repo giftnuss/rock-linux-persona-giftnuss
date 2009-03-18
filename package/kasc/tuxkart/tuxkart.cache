@@ -1,0 +1,123 @@
+
+[TIMESTAMP] 1181168246 Thu Jun  7 00:17:26 2007 (5) ERROR
+[TIMESTAMP] 1181614496 Tue Jun 12 04:14:56 2007 (9) ERROR
+[TIMESTAMP] 1181831323 Thu Jun 14 16:28:43 2007 (5) ERROR
+[TIMESTAMP] 1181915363 Fri Jun 15 15:49:23 2007 (9) ERROR
+[TIMESTAMP] 1181954858 Sat Jun 16 02:47:38 2007 (5) ERROR
+[TIMESTAMP] 1181976720 Sat Jun 16 08:52:00 2007 (9) ERROR
+
+[CONFIG-ID] TRUNK-x86-reference
+[ROCKVER] TRUNK
+
+[LOGS] 5-tuxkart.err 9-tuxkart.err
+
+[BUILDTIME] 1728 (5) ERROR
+[BUILDTIME] 1873 (9) ERROR
+[BUILDTIME] 1880 (5) ERROR
+[BUILDTIME] 1866 (9) ERROR
+[BUILDTIME] 1822 (5) ERROR
+[BUILDTIME] 1832 (9) ERROR
+
+
+[5-ERROR] start_tuxkart.cxx: In function 'void loadTrackList()':
+[5-ERROR] start_tuxkart.cxx:195: warning: deprecated conversion from string constant to 'char*'
+[5-ERROR] start_tuxkart.cxx: In function 'int main(int, char**)':
+[5-ERROR] start_tuxkart.cxx:262: warning: deprecated conversion from string constant to 'char*'
+[5-ERROR] start_tuxkart.cxx:269: warning: deprecated conversion from string constant to 'char*'
+[5-ERROR] start_tuxkart.cxx:272: warning: deprecated conversion from string constant to 'char*'
+[5-ERROR] start_tuxkart.cxx:293: error: 'FALSE' was not declared in this scope
+[5-ERROR] start_tuxkart.cxx:293: error: 'TRUE' was not declared in this scope
+[5-ERROR] start_tuxkart.cxx:293: error: 'pwInit' was not declared in this scope
+[5-ERROR] start_tuxkart.cxx:295: error: 'pwSetCallbacks' was not declared in this scope
+[5-ERROR] start_tuxkart.cxx:297: error: 'puInit' was not declared in this scope
+[5-ERROR] start_tuxkart.cxx:298: error: 'ssgInit' was not declared in this scope
+[5-ERROR] start_tuxkart.cxx:300: error: 'fnt' was not declared in this scope
+[5-ERROR] start_tuxkart.cxx:300: error: expected type-specifier before 'fntTexFont'
+[5-ERROR] start_tuxkart.cxx:300: error: expected `;' before 'fntTexFont'
+[5-ERROR] start_tuxkart.cxx:302: error: 'sorority' was not declared in this scope
+[5-ERROR] start_tuxkart.cxx:302: error: expected type-specifier before 'puFont'
+[5-ERROR] start_tuxkart.cxx:302: error: expected `;' before 'puFont'
+[5-ERROR] start_tuxkart.cxx:304: error: 'puSetDefaultFonts' was not declared in this scope
+[5-ERROR] start_tuxkart.cxx:305: error: 'PUSTYLE_SMALL_SHADED' was not declared in this scope
+[5-ERROR] start_tuxkart.cxx:305: error: 'puSetDefaultStyle' was not declared in this scope
+[5-ERROR] start_tuxkart.cxx:306: error: 'puSetDefaultColourScheme' was not declared in this scope
+[5-ERROR] start_tuxkart.cxx:308: error: 'playButton' was not declared in this scope
+[5-ERROR] start_tuxkart.cxx:308: error: expected type-specifier before 'puButton'
+[5-ERROR] start_tuxkart.cxx:308: error: expected `;' before 'puButton'
+[5-ERROR] start_tuxkart.cxx:310: error: 'play_cb' was not declared in this scope
+[5-ERROR] start_tuxkart.cxx:313: error: 'exitButton' was not declared in this scope
+[5-ERROR] start_tuxkart.cxx:313: error: expected type-specifier before 'puButton'
+[5-ERROR] start_tuxkart.cxx:313: error: expected `;' before 'puButton'
+[5-ERROR] start_tuxkart.cxx:315: error: 'exit_cb' was not declared in this scope
+[5-ERROR] start_tuxkart.cxx:317: error: 'numLapsSlider' was not declared in this scope
+[5-ERROR] start_tuxkart.cxx:317: error: expected type-specifier before 'puSlider'
+[5-ERROR] start_tuxkart.cxx:317: error: expected `;' before 'puSlider'
+[5-ERROR] start_tuxkart.cxx:318: error: 'PUPLACE_ABOVE' was not declared in this scope
+[5-ERROR] start_tuxkart.cxx:321: error: 'PUSLIDER_ALWAYS' was not declared in this scope
+[5-ERROR] start_tuxkart.cxx:323: error: 'numLapsSlider_cb' was not declared in this scope
+[5-ERROR] start_tuxkart.cxx:325: error: 'numLapsText' was not declared in this scope
+[5-ERROR] start_tuxkart.cxx:325: error: expected type-specifier before 'puButton'
+[5-ERROR] start_tuxkart.cxx:325: error: expected `;' before 'puButton'
+[5-ERROR] start_tuxkart.cxx:326: error: 'PUSTYLE_BOXED' was not declared in this scope
+[5-ERROR] start_tuxkart.cxx:328: error: 'trackButtons' was not declared in this scope
+[5-ERROR] start_tuxkart.cxx:328: error: expected type-specifier before 'puButtonBox'
+[5-ERROR] start_tuxkart.cxx:328: error: expected `;' before 'puButtonBox'
+[5-ERROR] start_tuxkart.cxx: At global scope:
+[5-ERROR] start_tuxkart.cxx:13: warning: 'numLaps' defined but not used
+[5-ERROR] start_tuxkart.cxx:15: warning: 'numLapsLegend' defined but not used
+[5-ERROR] make[1]: *** [start_tuxkart.o] Error 1
+[5-ERROR] make[1]: Leaving directory `/ROCK/loop/src.tuxkart.1181954839.12019.1627887995/tuxkart-0.4.0/src'
+[5-ERROR] make: *** [all-recursive] Error 1
+[5-ERROR] --- BUILD ERROR ---
+
+[9-ERROR] start_tuxkart.cxx: In function 'void loadTrackList()':
+[9-ERROR] start_tuxkart.cxx:195: warning: deprecated conversion from string constant to 'char*'
+[9-ERROR] start_tuxkart.cxx: In function 'int main(int, char**)':
+[9-ERROR] start_tuxkart.cxx:262: warning: deprecated conversion from string constant to 'char*'
+[9-ERROR] start_tuxkart.cxx:269: warning: deprecated conversion from string constant to 'char*'
+[9-ERROR] start_tuxkart.cxx:272: warning: deprecated conversion from string constant to 'char*'
+[9-ERROR] start_tuxkart.cxx:293: error: 'FALSE' was not declared in this scope
+[9-ERROR] start_tuxkart.cxx:293: error: 'TRUE' was not declared in this scope
+[9-ERROR] start_tuxkart.cxx:293: error: 'pwInit' was not declared in this scope
+[9-ERROR] start_tuxkart.cxx:295: error: 'pwSetCallbacks' was not declared in this scope
+[9-ERROR] start_tuxkart.cxx:297: error: 'puInit' was not declared in this scope
+[9-ERROR] start_tuxkart.cxx:298: error: 'ssgInit' was not declared in this scope
+[9-ERROR] start_tuxkart.cxx:300: error: 'fnt' was not declared in this scope
+[9-ERROR] start_tuxkart.cxx:300: error: expected type-specifier before 'fntTexFont'
+[9-ERROR] start_tuxkart.cxx:300: error: expected `;' before 'fntTexFont'
+[9-ERROR] start_tuxkart.cxx:302: error: 'sorority' was not declared in this scope
+[9-ERROR] start_tuxkart.cxx:302: error: expected type-specifier before 'puFont'
+[9-ERROR] start_tuxkart.cxx:302: error: expected `;' before 'puFont'
+[9-ERROR] start_tuxkart.cxx:304: error: 'puSetDefaultFonts' was not declared in this scope
+[9-ERROR] start_tuxkart.cxx:305: error: 'PUSTYLE_SMALL_SHADED' was not declared in this scope
+[9-ERROR] start_tuxkart.cxx:305: error: 'puSetDefaultStyle' was not declared in this scope
+[9-ERROR] start_tuxkart.cxx:306: error: 'puSetDefaultColourScheme' was not declared in this scope
+[9-ERROR] start_tuxkart.cxx:308: error: 'playButton' was not declared in this scope
+[9-ERROR] start_tuxkart.cxx:308: error: expected type-specifier before 'puButton'
+[9-ERROR] start_tuxkart.cxx:308: error: expected `;' before 'puButton'
+[9-ERROR] start_tuxkart.cxx:310: error: 'play_cb' was not declared in this scope
+[9-ERROR] start_tuxkart.cxx:313: error: 'exitButton' was not declared in this scope
+[9-ERROR] start_tuxkart.cxx:313: error: expected type-specifier before 'puButton'
+[9-ERROR] start_tuxkart.cxx:313: error: expected `;' before 'puButton'
+[9-ERROR] start_tuxkart.cxx:315: error: 'exit_cb' was not declared in this scope
+[9-ERROR] start_tuxkart.cxx:317: error: 'numLapsSlider' was not declared in this scope
+[9-ERROR] start_tuxkart.cxx:317: error: expected type-specifier before 'puSlider'
+[9-ERROR] start_tuxkart.cxx:317: error: expected `;' before 'puSlider'
+[9-ERROR] start_tuxkart.cxx:318: error: 'PUPLACE_ABOVE' was not declared in this scope
+[9-ERROR] start_tuxkart.cxx:321: error: 'PUSLIDER_ALWAYS' was not declared in this scope
+[9-ERROR] start_tuxkart.cxx:323: error: 'numLapsSlider_cb' was not declared in this scope
+[9-ERROR] start_tuxkart.cxx:325: error: 'numLapsText' was not declared in this scope
+[9-ERROR] start_tuxkart.cxx:325: error: expected type-specifier before 'puButton'
+[9-ERROR] start_tuxkart.cxx:325: error: expected `;' before 'puButton'
+[9-ERROR] start_tuxkart.cxx:326: error: 'PUSTYLE_BOXED' was not declared in this scope
+[9-ERROR] start_tuxkart.cxx:328: error: 'trackButtons' was not declared in this scope
+[9-ERROR] start_tuxkart.cxx:328: error: expected type-specifier before 'puButtonBox'
+[9-ERROR] start_tuxkart.cxx:328: error: expected `;' before 'puButtonBox'
+[9-ERROR] start_tuxkart.cxx: At global scope:
+[9-ERROR] start_tuxkart.cxx:13: warning: 'numLaps' defined but not used
+[9-ERROR] start_tuxkart.cxx:15: warning: 'numLapsLegend' defined but not used
+[9-ERROR] make[1]: *** [start_tuxkart.o] Error 1
+[9-ERROR] make[1]: Leaving directory `/ROCK/loop/src.tuxkart.1181976700.19130.3474453109/tuxkart-0.4.0/src'
+[9-ERROR] make: *** [all-recursive] Error 1
+[9-ERROR] --- BUILD ERROR ---
+

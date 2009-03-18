@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=X CD Roast
+Comment=CD Recording
+Exec=xcdroast
+Terminal=false
+Type=Application
+Categories=CDWriting
+# note that I'm walking outside of the freedesktop spec here but I think
+# that AudioVideo;DiscBurning or Utility just doesn't fit here
+X-ROCK-Name=xcdroast
+Icon=/usr/lib/xcdroast-0.98/icons/xcdricon.png

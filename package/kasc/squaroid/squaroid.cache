@@ -1,0 +1,123 @@
+
+[TIMESTAMP] 1181166926 Wed Jun  6 23:55:26 2007 (5) ERROR
+[TIMESTAMP] 1181613759 Tue Jun 12 04:02:39 2007 (9) ERROR
+[TIMESTAMP] 1181831134 Thu Jun 14 16:25:34 2007 (5) ERROR
+[TIMESTAMP] 1181915187 Fri Jun 15 15:46:27 2007 (9) ERROR
+[TIMESTAMP] 1181954692 Sat Jun 16 02:44:52 2007 (5) ERROR
+[TIMESTAMP] 1181976555 Sat Jun 16 08:49:15 2007 (9) ERROR
+
+[CONFIG-ID] TRUNK-x86-reference
+[ROCKVER] TRUNK
+
+[LOGS] 5-squaroid.err 9-squaroid.err
+
+[BUILDTIME] 1653 (5) ERROR
+[BUILDTIME] 1671 (9) ERROR
+[BUILDTIME] 1689 (5) ERROR
+[BUILDTIME] 1710 (9) ERROR
+[BUILDTIME] 1675 (5) ERROR
+[BUILDTIME] 1657 (9) ERROR
+
+
+[5-ERROR] wav_read.c: In function 'init_wav_read':
+[5-ERROR] wav_read.c:52: warning: incompatible implicit declaration of built-in function 'strlen'
+[5-ERROR] wav_read.c:53: warning: incompatible implicit declaration of built-in function 'strncpy'
+[5-ERROR] wav_read.c:55: warning: incompatible implicit declaration of built-in function 'strcat'
+[5-ERROR] wav_read.c:57: warning: incompatible implicit declaration of built-in function 'strncpy'
+[5-ERROR] gcc-42 -DHAVE_CONFIG_H -I. -I. -I..     -O2 -c wav_write.c
+[5-ERROR] In file included from wav_write.c:5:
+[5-ERROR] wav_lib.h:39:11: warning: no newline at end of file
+[5-ERROR] wav_write.c: In function 'init_head':
+[5-ERROR] wav_write.c:9: warning: incompatible implicit declaration of built-in function 'strcpy'
+[5-ERROR] wav_write.c:32:2: warning: no newline at end of file
+[5-ERROR] rm -f libqdwav.a
+[5-ERROR] ar cru libqdwav.a wav_read.o wav_write.o 
+[5-ERROR] ranlib libqdwav.a
+[5-ERROR] make[2]: Leaving directory `/ROCK/loop/src.squaroid.1181954674.31581.1627887995/squaroid-0.60.3/libqdwav'
+[5-ERROR] Making all in libsqirc
+[5-ERROR] make[2]: Entering directory `/ROCK/loop/src.squaroid.1181954674.31581.1627887995/squaroid-0.60.3/libsqirc'
+[5-ERROR] gcc-42 -DHAVE_CONFIG_H -I. -I. -I..     -O2 -g `glib-config --cflags` `gtk-config --cflags` -c sqirc.c
+[5-ERROR] rm -f libsqirc.a
+[5-ERROR] ar cru libsqirc.a sqirc.o 
+[5-ERROR] ranlib libsqirc.a
+[5-ERROR] make[2]: Leaving directory `/ROCK/loop/src.squaroid.1181954674.31581.1627887995/squaroid-0.60.3/libsqirc'
+[5-ERROR] Making all in plugins
+[5-ERROR] make[2]: Entering directory `/ROCK/loop/src.squaroid.1181954674.31581.1627887995/squaroid-0.60.3/plugins'
+[5-ERROR] Making all in lowball
+[5-ERROR] make[3]: Entering directory `/ROCK/loop/src.squaroid.1181954674.31581.1627887995/squaroid-0.60.3/plugins/lowball'
+[5-ERROR] gcc-42 -DHAVE_CONFIG_H -I. -I. -I../.. -Wall -g -O2 -I/opt/gnome/include/gtk-1.2 -I/opt/gnome/include/glib-1.2 -I/opt/gnome/lib/glib/include -I/usr/X11R7/include -I/opt/gnome/include -I/usr/X11R7/include  -I../../src    -Wall -g -O2 -I/opt/gnome/include/gtk-1.2 -I/opt/gnome/include/glib-1.2 -I/opt/gnome/lib/glib/include -I/usr/X11R7/include -I/opt/gnome/include -I/usr/X11R7/include  -c lowball.c
+[5-ERROR] /bin/sh ../../libtool --mode=link gcc-42  -Wall -g -O2 -I/opt/gnome/include/gtk-1.2 -I/opt/gnome/include/glib-1.2 -I/opt/gnome/lib/glib/include -I/usr/X11R7/include -I/opt/gnome/include -I/usr/X11R7/include  -L../../libsqirc -o liblowball.a  lowball.o  
+[5-ERROR] libtool: link: warning: `-l' and `-L' are ignored for archives
+[5-ERROR] ar cru liblowball.a lowball.o  
+[5-ERROR] ranlib liblowball.a
+[5-ERROR] make[3]: Leaving directory `/ROCK/loop/src.squaroid.1181954674.31581.1627887995/squaroid-0.60.3/plugins/lowball'
+[5-ERROR] Making all in xhigh
+[5-ERROR] make[3]: Entering directory `/ROCK/loop/src.squaroid.1181954674.31581.1627887995/squaroid-0.60.3/plugins/xhigh'
+[5-ERROR] gcc-42 -DHAVE_CONFIG_H -I. -I. -I../.. -Wall -g -O2 -I/opt/gnome/include/gtk-1.2 -I/opt/gnome/include/glib-1.2 -I/opt/gnome/lib/glib/include -I/usr/X11R7/include -I/opt/gnome/include -I/usr/X11R7/include  -I../../src    -Wall -g -O2 -I/opt/gnome/include/gtk-1.2 -I/opt/gnome/include/glib-1.2 -I/opt/gnome/lib/glib/include -I/usr/X11R7/include -I/opt/gnome/include -I/usr/X11R7/include  -c xhigh.c
+[5-ERROR] xhigh.c: In function 'xhigh_oninvite':
+[5-ERROR] xhigh.c:41: error: lvalue required as left operand of assignment
+[5-ERROR] xhigh.c: In function 'xhigh_ongamestart':
+[5-ERROR] xhigh.c:110: error: lvalue required as left operand of assignment
+[5-ERROR] xhigh.c: In function 'xhigh_net_xhigh':
+[5-ERROR] xhigh.c:152: error: lvalue required as left operand of assignment
+[5-ERROR] xhigh.c:154: error: lvalue required as left operand of assignment
+[5-ERROR] make[3]: *** [xhigh.o] Error 1
+[5-ERROR] make[3]: Leaving directory `/ROCK/loop/src.squaroid.1181954674.31581.1627887995/squaroid-0.60.3/plugins/xhigh'
+[5-ERROR] make[2]: *** [all-recursive] Error 1
+[5-ERROR] make[2]: Leaving directory `/ROCK/loop/src.squaroid.1181954674.31581.1627887995/squaroid-0.60.3/plugins'
+[5-ERROR] make[1]: *** [all-recursive] Error 1
+[5-ERROR] make[1]: Leaving directory `/ROCK/loop/src.squaroid.1181954674.31581.1627887995/squaroid-0.60.3'
+[5-ERROR] make: *** [all-recursive-am] Error 2
+[5-ERROR] --- BUILD ERROR ---
+
+[9-ERROR] wav_read.c: In function 'init_wav_read':
+[9-ERROR] wav_read.c:52: warning: incompatible implicit declaration of built-in function 'strlen'
+[9-ERROR] wav_read.c:53: warning: incompatible implicit declaration of built-in function 'strncpy'
+[9-ERROR] wav_read.c:55: warning: incompatible implicit declaration of built-in function 'strcat'
+[9-ERROR] wav_read.c:57: warning: incompatible implicit declaration of built-in function 'strncpy'
+[9-ERROR] gcc-42 -DHAVE_CONFIG_H -I. -I. -I..     -O2 -c wav_write.c
+[9-ERROR] In file included from wav_write.c:5:
+[9-ERROR] wav_lib.h:39:11: warning: no newline at end of file
+[9-ERROR] wav_write.c: In function 'init_head':
+[9-ERROR] wav_write.c:9: warning: incompatible implicit declaration of built-in function 'strcpy'
+[9-ERROR] wav_write.c:32:2: warning: no newline at end of file
+[9-ERROR] rm -f libqdwav.a
+[9-ERROR] ar cru libqdwav.a wav_read.o wav_write.o 
+[9-ERROR] ranlib libqdwav.a
+[9-ERROR] make[2]: Leaving directory `/ROCK/loop/src.squaroid.1181976536.6274.3474453109/squaroid-0.60.3/libqdwav'
+[9-ERROR] Making all in libsqirc
+[9-ERROR] make[2]: Entering directory `/ROCK/loop/src.squaroid.1181976536.6274.3474453109/squaroid-0.60.3/libsqirc'
+[9-ERROR] gcc-42 -DHAVE_CONFIG_H -I. -I. -I..     -O2 -g `glib-config --cflags` `gtk-config --cflags` -c sqirc.c
+[9-ERROR] rm -f libsqirc.a
+[9-ERROR] ar cru libsqirc.a sqirc.o 
+[9-ERROR] ranlib libsqirc.a
+[9-ERROR] make[2]: Leaving directory `/ROCK/loop/src.squaroid.1181976536.6274.3474453109/squaroid-0.60.3/libsqirc'
+[9-ERROR] Making all in plugins
+[9-ERROR] make[2]: Entering directory `/ROCK/loop/src.squaroid.1181976536.6274.3474453109/squaroid-0.60.3/plugins'
+[9-ERROR] Making all in lowball
+[9-ERROR] make[3]: Entering directory `/ROCK/loop/src.squaroid.1181976536.6274.3474453109/squaroid-0.60.3/plugins/lowball'
+[9-ERROR] gcc-42 -DHAVE_CONFIG_H -I. -I. -I../.. -Wall -g -O2 -I/opt/gnome/include/gtk-1.2 -I/opt/gnome/include/glib-1.2 -I/opt/gnome/lib/glib/include -I/usr/X11R7/include -I/opt/gnome/include -I/usr/X11R7/include  -I../../src    -Wall -g -O2 -I/opt/gnome/include/gtk-1.2 -I/opt/gnome/include/glib-1.2 -I/opt/gnome/lib/glib/include -I/usr/X11R7/include -I/opt/gnome/include -I/usr/X11R7/include  -c lowball.c
+[9-ERROR] /bin/sh ../../libtool --mode=link gcc-42  -Wall -g -O2 -I/opt/gnome/include/gtk-1.2 -I/opt/gnome/include/glib-1.2 -I/opt/gnome/lib/glib/include -I/usr/X11R7/include -I/opt/gnome/include -I/usr/X11R7/include  -L../../libsqirc -o liblowball.a  lowball.o  
+[9-ERROR] libtool: link: warning: `-l' and `-L' are ignored for archives
+[9-ERROR] ar cru liblowball.a lowball.o  
+[9-ERROR] ranlib liblowball.a
+[9-ERROR] make[3]: Leaving directory `/ROCK/loop/src.squaroid.1181976536.6274.3474453109/squaroid-0.60.3/plugins/lowball'
+[9-ERROR] Making all in xhigh
+[9-ERROR] make[3]: Entering directory `/ROCK/loop/src.squaroid.1181976536.6274.3474453109/squaroid-0.60.3/plugins/xhigh'
+[9-ERROR] gcc-42 -DHAVE_CONFIG_H -I. -I. -I../.. -Wall -g -O2 -I/opt/gnome/include/gtk-1.2 -I/opt/gnome/include/glib-1.2 -I/opt/gnome/lib/glib/include -I/usr/X11R7/include -I/opt/gnome/include -I/usr/X11R7/include  -I../../src    -Wall -g -O2 -I/opt/gnome/include/gtk-1.2 -I/opt/gnome/include/glib-1.2 -I/opt/gnome/lib/glib/include -I/usr/X11R7/include -I/opt/gnome/include -I/usr/X11R7/include  -c xhigh.c
+[9-ERROR] xhigh.c: In function 'xhigh_oninvite':
+[9-ERROR] xhigh.c:41: error: lvalue required as left operand of assignment
+[9-ERROR] xhigh.c: In function 'xhigh_ongamestart':
+[9-ERROR] xhigh.c:110: error: lvalue required as left operand of assignment
+[9-ERROR] xhigh.c: In function 'xhigh_net_xhigh':
+[9-ERROR] xhigh.c:152: error: lvalue required as left operand of assignment
+[9-ERROR] xhigh.c:154: error: lvalue required as left operand of assignment
+[9-ERROR] make[3]: *** [xhigh.o] Error 1
+[9-ERROR] make[3]: Leaving directory `/ROCK/loop/src.squaroid.1181976536.6274.3474453109/squaroid-0.60.3/plugins/xhigh'
+[9-ERROR] make[2]: *** [all-recursive] Error 1
+[9-ERROR] make[2]: Leaving directory `/ROCK/loop/src.squaroid.1181976536.6274.3474453109/squaroid-0.60.3/plugins'
+[9-ERROR] make[1]: *** [all-recursive] Error 1
+[9-ERROR] make[1]: Leaving directory `/ROCK/loop/src.squaroid.1181976536.6274.3474453109/squaroid-0.60.3'
+[9-ERROR] make: *** [all-recursive-am] Error 2
+[9-ERROR] --- BUILD ERROR ---
+

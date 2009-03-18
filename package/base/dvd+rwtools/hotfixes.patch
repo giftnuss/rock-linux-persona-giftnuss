@@ -1,0 +1,19 @@
+--- ./rpl8.cpp.orig	2007-11-05 22:42:44.000000000 +0000
++++ ./rpl8.cpp	2007-11-05 22:43:27.000000000 +0000
+@@ -311,11 +311,11 @@
+ 	    if (sense[12] == 0xF7)
+ 	    {	if (ascq != sense[13])
+ 		{   switch (ascq=sense[13])
+-		    {	case 0: meaning="preparing";		break;
+-			case 1: meaning="erasing contents";	break;
+-			case 2: meaning="writing contents";	break;
+-			case 3: meaning="verifying contents";	break;
+-			default:meaning="unknown meaning";	break;
++		    {	case 0: meaning=(char*)"preparing";		break;
++			case 1: meaning=(char*)"erasing contents";	break;
++			case 2: meaning=(char*)"writing contents";	break;
++			case 3: meaning=(char*)"verifying contents";	break;
++			default:meaning=(char*)"unknown meaning";	break;
+ 		    }
+ 		    fprintf (stderr,"\"%s\": %s\n",argv[1],meaning);
+ 		}

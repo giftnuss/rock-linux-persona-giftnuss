@@ -1,0 +1,18 @@
+--- ./plug-ins/common/Makefile.in~	2006-08-16 09:13:18.000000000 +0000
++++ ./plug-ins/common/Makefile.in	2006-10-21 23:16:40.000000000 +0000
+@@ -2154,6 +2154,7 @@
+ 	$(libgimp)		\
+ 	$(libgimpcolor)		\
+ 	$(libgimpbase)		\
++	$(GTK_LIBS)		\
+ 	$(GLIB_LIBS)		\
+ 	$(RT_LIBS)		\
+ 	$(INTLLIBS)
+@@ -2284,6 +2285,7 @@
+ 	$(libgimp)		\
+ 	$(libgimpcolor)		\
+ 	$(libgimpbase)		\
++	$(GTK_LIBS)		\
+ 	$(GLIB_LIBS)		\
+ 	$(RT_LIBS)		\
+ 	$(INTLLIBS)

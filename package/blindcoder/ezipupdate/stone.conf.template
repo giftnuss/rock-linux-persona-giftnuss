@@ -1,0 +1,19 @@
+#!/usr/bin/ez-ipupdate -c
+#
+# ezipupdate INTERFACE configuration used by stone
+# do not edit by hand! Use `stone' instead!
+#
+
+service-type=SERVICETYPE
+user=USER:PASS
+interface=INTERFACE
+host=HOSTNAME
+
+cache-file=/var/cache/ez-ipupdate.cache.INTERFACE
+mx=MXADDRESS
+retrys=RETRIES
+notify-email=EMAILADDRESS
+period=PERIOD
+wildcard
+daemon
+

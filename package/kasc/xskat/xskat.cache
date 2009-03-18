@@ -1,0 +1,19 @@
+
+[TIMESTAMP] 1181168634 Thu Jun  7 00:23:54 2007 (5)
+[TIMESTAMP] 1181614760 Tue Jun 12 04:19:20 2007 (9)
+
+[CONFIG-ID] TRUNK-x86-reference
+[ROCKVER] TRUNK
+
+[LOGS] 5-xskat.log 9-xskat.log
+
+[BUILDTIME] 2880 (5)
+[BUILDTIME] 3084 (9)
+[SIZE] 0.33 MB, 9 files
+
+[DEP] 00-dirtree alsa applewmproto applewmproto:dev bash2 binutils bzip2
+[DEP] coreutils cvm findutils gawk gcc42 gcc42:dev glibc26 glibc26:dev
+[DEP] grep libx11 libx11:dev libxau libxcb libxdmcp linux26-headers:dev
+[DEP] ltrace make mktemp sed sysfiles tar xmame xproto:dev
+
+

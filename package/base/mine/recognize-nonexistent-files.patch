@@ -1,0 +1,89 @@
+diff -du -dur mine-0.25/check.c mine-0.25-p/check.c
+--- mine-0.25/check.c	2006-07-15 03:04:31.000000000 +0200
++++ mine-0.25-p/check.c	2006-11-23 16:34:24.000000000 +0100
+@@ -78,6 +78,7 @@
+ 			    case MD5SUM_CHECK_DUPLICATE: printf("Duplicate "); break;
+ 			    case MD5SUM_CHECK_MODIFIED: printf("Modified "); break;
+ 			    case MD5SUM_CHECK_SHARED: printf("Shared "); break;
++			    case MD5SUM_CHECK_NOFILE: printf("Nonexistent "); break;
+ 			}
+ 			printf("file: %s\n", filename);
+ 			modified++;
+diff -du -dur mine-0.25/install.c mine-0.25-p/install.c
+--- mine-0.25/install.c	2006-07-16 00:13:33.000000000 +0200
++++ mine-0.25-p/install.c	2006-11-23 16:33:30.000000000 +0100
+@@ -246,7 +246,8 @@
+ 			if (TH_ISREG(t) && tar_skip_regfile(t) != 0)
+ 				goto error_errno;
+ 		}
+-		else if ( ! mode_force && (result = md5sum_check(root, filename)) ) {
++		else if ( ! mode_force && (result = md5sum_check(root, filename))
++					&& result != MD5SUM_CHECK_NOFILE ) {
+ 			if ( ! mode_test || ! mode_verbose )
+ 				printf("%s: ", pname);
+ 			printf("WARNING: Skip ");
+diff -du -dur mine-0.25/md5sum.c mine-0.25-p/md5sum.c
+--- mine-0.25/md5sum.c	2006-11-23 16:54:54.000000000 +0100
++++ mine-0.25-p/md5sum.c	2006-11-23 16:57:42.000000000 +0100
+@@ -38,7 +38,7 @@
+ 	struct stat statbuf;
+ 
+ 	snprintf(realfilename, 1024, "%s/%s", root, filename);
+-	if (lstat(realfilename, &statbuf) != 0 || S_ISDIR(statbuf.st_mode))
++	if (lstat(realfilename, &statbuf) != 0)
+ 		return "";
+ 	else if (!S_ISREG(statbuf.st_mode))
+ 		return "X";
+@@ -46,7 +46,7 @@
+ 		return md5_file(realfilename);
+ }
+ 
+-/* Returns if file is unmodified, modified, duplicate, or shared. */
++/* Returns if file is unmodified, modified, duplicate, shared or nonexistent. */
+ int md5sum_check(char * root, char * filename)
+ {
+ 	char *md5_f, *md5_d;
+@@ -57,7 +57,10 @@
+ /*	printf ("md5sum_check(): md5_f: %s, md5_d: %s\n",
+ 		(md5_f) ? md5_f : "NULL", (md5_d) ? md5_d : "NULL");
+ */	
++	
+ 	if (strcmp(md5_f, "") == 0)
++		return MD5SUM_CHECK_NOFILE;
++	else if (strcmp(md5_f, "X") == 0)
+ 		return MD5SUM_CHECK_OK;
+ 	else if (md5_d == NULL)
+ 		return MD5SUM_CHECK_DUPLICATE;
+diff -du -dur mine-0.25/md5sum.h mine-0.25-p/md5sum.h
+--- mine-0.25/md5sum.h	2006-07-15 03:04:31.000000000 +0200
++++ mine-0.25-p/md5sum.h	2006-11-23 16:09:12.000000000 +0100
+@@ -24,6 +24,7 @@
+ #define MD5SUM_CHECK_DUPLICATE 1
+ #define MD5SUM_CHECK_MODIFIED 2
+ #define MD5SUM_CHECK_SHARED 3
++#define MD5SUM_CHECK_NOFILE 4
+ 
+ char * md5sum_create(char * root, char * filename);
+ int md5sum_check(char * root, char * filename);
+diff -du -dur mine-0.25/remove.c mine-0.25-p/remove.c
+--- mine-0.25/remove.c	2006-07-16 00:14:17.000000000 +0200
++++ mine-0.25-p/remove.c	2006-11-23 17:21:32.000000000 +0100
+@@ -94,7 +94,6 @@
+ 			struct stat statbuf;
+ 			char value;
+ 			snprintf(realfn1, 1024, "%s/%s", root, filename);
+-			if ( lstat(realfn1, &statbuf) ) printf("WARNING: Could not stat file %s.\n", realfn1);
+ 
+ 			if ( S_ISDIR(statbuf.st_mode) ) value = 1;
+ 			else value = 0;
+@@ -140,8 +139,9 @@
+ 			    case MD5SUM_CHECK_DUPLICATE: printf("duplicate "); break;
+ 			    case MD5SUM_CHECK_MODIFIED: printf("modified "); break;
+ 			    case MD5SUM_CHECK_SHARED: printf("shared "); break;
++			    case MD5SUM_CHECK_NOFILE: printf("nonexistent "); break;
+ 			}
+-			printf("file %s:\n", filename);
++			printf("file %s\n", filename);
+ 		}
+ 		else
+ 		if ( mode_test ) {

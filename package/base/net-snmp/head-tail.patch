@@ -1,0 +1,78 @@
+--- ./acinclude.m4.orig	2007-05-16 17:45:55.000000000 +0200
++++ ./acinclude.m4	2007-05-16 17:46:02.000000000 +0200
+@@ -39,7 +39,7 @@
+ dnl
+ AC_DEFUN([AC_PROMPT_USER],
+ [
+-MSG_CHECK=`echo "$2" | tail -1`
++MSG_CHECK=`echo "$2" | tail -n1`
+ AC_CACHE_CHECK($MSG_CHECK, ac_cv_user_prompt_$1,
+ [echo "" >&AC_FD_MSG
+ AC_PROMPT_USER_NO_DEFINE($1,[$2],$3)
+--- ./configure.orig	2007-05-16 17:46:11.000000000 +0200
++++ ./configure	2007-05-16 17:46:27.000000000 +0200
+@@ -47130,7 +47130,7 @@
+ 
+ ME=`$WHOAMI`
+ if test -f /etc/resolv.conf; then
+-  LOC=`cat /etc/resolv.conf | grep '^domain' | tail -1 | awk '{print $NF}'`
++  LOC=`cat /etc/resolv.conf | grep '^domain' | tail -n1 | awk '{print $NF}'`
+ else
+   LOC="@no.where"
+ fi
+@@ -47156,7 +47156,7 @@
+    Providing the --with-default-snmp-version=\"x\" parameter to ./configure
+ will avoid this prompt.
+ 
+-Default version of SNMP to use" | tail -1`
++Default version of SNMP to use" | tail -n1`
+ echo "$as_me:$LINENO: checking $MSG_CHECK" >&5
+ echo $ECHO_N "checking $MSG_CHECK... $ECHO_C" >&6
+ if test "${ac_cv_user_prompt_NETSNMP_DEFAULT_SNMP_VERSION+set}" = set; then
+@@ -47237,7 +47237,7 @@
+   Providing the --with-sys-contact=\"contact\" parameter to ./configure
+ will avoid this prompt.
+ 
+-System Contact Information" | tail -1`
++System Contact Information" | tail -n1`
+ echo "$as_me:$LINENO: checking $MSG_CHECK" >&5
+ echo $ECHO_N "checking $MSG_CHECK... $ECHO_C" >&6
+ if test "${ac_cv_user_prompt_NETSNMP_SYS_CONTACT+set}" = set; then
+@@ -47301,7 +47301,7 @@
+   Providing the --with-sys-location=\"location\" parameter to ./configure
+ will avoid this prompt.
+ 
+-System Location" | tail -1`
++System Location" | tail -n1`
+ echo "$as_me:$LINENO: checking $MSG_CHECK" >&5
+ echo $ECHO_N "checking $MSG_CHECK... $ECHO_C" >&6
+ if test "${ac_cv_user_prompt_NETSNMP_SYS_LOC+set}" = set; then
+@@ -47371,7 +47371,7 @@
+   Providing the --with-logfile=\"path\" parameter to ./configure
+ will avoid this prompt.
+ 
+-Location to write logfile" | tail -1`
++Location to write logfile" | tail -n1`
+ echo "$as_me:$LINENO: checking $MSG_CHECK" >&5
+ echo $ECHO_N "checking $MSG_CHECK... $ECHO_C" >&6
+ if test "${ac_cv_user_prompt_NETSNMP_LOGFILE+set}" = set; then
+@@ -47448,7 +47448,7 @@
+   Providing the --with-persistent-directory=\"path\" parameter to
+ ./configure will avoid this prompt.
+ 
+-Location to write persistent information" | tail -1`
++Location to write persistent information" | tail -n1`
+ echo "$as_me:$LINENO: checking $MSG_CHECK" >&5
+ echo $ECHO_N "checking $MSG_CHECK... $ECHO_C" >&6
+ if test "${ac_cv_user_prompt_NETSNMP_PERSISTENT_DIRECTORY+set}" = set; then
+--- ./configure.in.orig	2007-05-16 17:46:33.000000000 +0200
++++ ./configure.in	2007-05-16 17:46:39.000000000 +0200
+@@ -4487,7 +4487,7 @@
+ 
+ ME=`$WHOAMI`
+ if test -f /etc/resolv.conf; then
+-  LOC=`cat /etc/resolv.conf | grep '^domain' | tail -1 | awk '{print $NF}'`
++  LOC=`cat /etc/resolv.conf | grep '^domain' | tail -n1 | awk '{print $NF}'`
+ else
+   LOC="@no.where"
+ fi

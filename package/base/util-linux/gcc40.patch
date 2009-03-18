@@ -1,0 +1,11 @@
+--- ./mount/umount.c~	2005-09-10 20:07:38.000000000 +0200
++++ ./mount/umount.c	2006-07-13 16:32:41.000000000 +0200
+@@ -40,7 +40,7 @@
+ #include <linux/unistd.h>
+ #ifdef __NR_umount2
+ 
+-static int umount2(const char *path, int flags);
++int umount2(const char *path, int flags);
+ 
+ _syscall2(int, umount2, const char *, path, int, flags);
+ 

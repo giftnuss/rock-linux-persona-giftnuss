@@ -1,0 +1,212 @@
+see https://bugzilla.mozilla.org/show_bug.cgi?id=323853
+
+--- ./xpcom/base/nsTraceRefcntImpl.cpp    2004-02-11 07:16:10.000000000 +0000
++++ ./xpcom/base/nsTraceRefcntImpl.cpp    2006-03-13 05:56:48.810241000 +0000
+@@ -50,19 +50,6 @@
+ 
+ #if defined(_WIN32)
+ #include <windows.h>
+-#elif defined(linux) && defined(__GLIBC__) && (defined(__i386) || defined(PPC))
+-#include <setjmp.h>
+-
+-//
+-// On glibc 2.1, the Dl_info api defined in <dlfcn.h> is only exposed
+-// if __USE_GNU is defined.  I suppose its some kind of standards
+-// adherence thing.
+-//
+-#if (__GLIBC_MINOR__ >= 1) && !defined(__USE_GNU)
+-#define __USE_GNU
+-#endif
+-
+-#include <dlfcn.h>
+ #endif
+ 
+ #ifdef HAVE_LIBDL
+@@ -484,7 +471,7 @@ 
+ 
+ #endif /* NS_BUILD_REFCNT_LOGGING */
+ 
+-nsresult
++NS_COM nsresult
+ nsTraceRefcntImpl::DumpStatistics(StatisticsType type, FILE* out)
+ {
+   nsresult rv = NS_OK;
+@@ -561,7 +548,7 @@ 
+   return rv;
+ }
+ 
+-void
++NS_COM void
+ nsTraceRefcntImpl::ResetStatistics()
+ {
+ #ifdef NS_BUILD_REFCNT_LOGGING
+@@ -850,7 +837,7 @@ 
+ 
+ #if defined(_WIN32) && defined(_M_IX86) // WIN32 x86 stack walking code
+ #include "nsStackFrameWin.h"
+-void
++NS_COM void
+ nsTraceRefcntImpl::WalkTheStack(FILE* aStream)
+ {
+   DumpStackToFile(aStream);
+@@ -858,9 +845,9 @@ 
+ 
+ // WIN32 x86 stack walking code
+ // i386 or PPC Linux stackwalking code or Solaris
+-#elif (defined(linux) && defined(__GLIBC__) && (defined(__i386) || defined(PPC))) || (defined(__sun) && (defined(__sparc) || defined(sparc) || defined(__i386) || defined(i386)))
++#elif (defined(linux) && defined(__GNUC__) && (defined(__i386) || defined(PPC))) || (defined(__sun) && (defined(__sparc) || defined(sparc) || defined(__i386) || defined(i386)))
+ #include "nsStackFrameUnix.h"
+-void
++NS_COM void
+ nsTraceRefcntImpl::WalkTheStack(FILE* aStream)
+ {
+   DumpStackToFile(aStream);
+@@ -960,7 +947,7 @@ 
+ 
+ #else // unsupported platform.
+ 
+-void
++NS_COM void
+ nsTraceRefcntImpl::WalkTheStack(FILE* aStream)
+ {
+        fprintf(aStream, "write me, dammit!\n");
+--- ./xpcom/base/nsStackFrameUnix.cpp     2004-03-08 07:47:44.000000000 +0000
++++ ./xpcom/base/nsStackFrameUnix.cpp     2006-03-13 05:56:48.866244500 +0000
+@@ -82,26 +82,16 @@ 
+ #endif // MOZ_DEMANGLE_SYMBOLS
+ }
+ 
+ 
+-#if defined(linux) && defined(__GLIBC__) && (defined(__i386) || defined(PPC)) // i386 or PPC Linux stackwalking code
++#if defined(linux) && defined(__GNUC__) && (defined(__i386) || defined(PPC)) // i386 or PPC Linux stackwalking code
+ 
+-#include <setjmp.h>
+-//
+ 
+ void DumpStackToFile(FILE* aStream)
+ {
+-  jmp_buf jb;
+-  setjmp(jb);
+-
+   // Stack walking code courtesy Kipp's "leaky".
+ 
+-  // Get the frame pointer out of the jmp_buf
+-  void **bp = (void**)
+-#if defined(__i386) 
+-    (jb[0].__jmpbuf[JB_BP]);
+-#elif defined(PPC)
+-    (jb[0].__jmpbuf[JB_GPR1]);
+-#endif
++  // Get the frame pointer
++  void **bp = (void**) __builtin_frame_address(0);
+ 
+   int skip = 2;
+   for ( ; (void**)*bp > bp; bp = (void**)*bp) {
+--- ./gc/boehm/os_dep.c	15 Jun 2001 19:29:38 -0000	1.12
++++ ./gc/boehm/os_dep.c	18 Mar 2006 17:55:07 -0000
+@@ -2420,42 +2420,38 @@ void GC_save_callers(struct callinfo inf
+     }
+     
+ 	info[0].ci_pc = (word) currentTree;
+ 	info[1].ci_pc = 0;
+ }
+ 
+ #endif
+ 
+ #endif /* POWERPC && MACOS */
+ 
+ #if defined(SAVE_CALL_CHAIN) && defined(LINUX)
+ 
+-#include <setjmp.h>
+-
+ #include "call_tree.h"
+ 
+ typedef struct stack_frame stack_frame;
+ 
+ #if defined(__i386) 
+ struct stack_frame {
+   stack_frame* next;
+   void* pc;
+ };
+ 
+ static stack_frame* getStackFrame()
+ {
+-  jmp_buf jb;
+   stack_frame* currentFrame;
+-  setjmp(jb);
+-  currentFrame = (stack_frame*)(jb[0].__jmpbuf[JB_BP]);
++  currentFrame = (stack_frame*)__builtin_frame_address(0);
+   currentFrame = currentFrame->next;
+   return currentFrame;
+ }
+ #endif /* __i386 */
+ 
+ static call_tree* find_tree(stack_frame* frame)
+ {
+     /* primordial root of the call tree. */
+     static call_tree root = { 0, 0, 0, 0, 0 };
+ 
+     long pc = (long)frame->pc;
+ 
+--- ./js/src/jsutil.c	14 Sep 2005 17:30:10 -0000	3.22
++++ ./js/src/jsutil.c	18 Mar 2006 17:55:22 -0000
+@@ -57,26 +57,25 @@
+ #if defined(WIN32)
+     DebugBreak();
+ #endif
+ #if defined(XP_OS2)
+     asm("int $3");
+ #endif
+     abort();
+ }
+ 
+ #if defined DEBUG_notme && defined XP_UNIX
+ 
+ #define __USE_GNU 1
+ #include <dlfcn.h>
+-#include <setjmp.h>
+ #include <string.h>
+ #include "jshash.h"
+ #include "jsprf.h"
+ 
+ JSCallsite js_calltree_root = {0, NULL, NULL, 0, NULL, NULL, NULL, NULL};
+ 
+ static JSCallsite *
+ CallTree(uint32 *bp)
+ {
+     uint32 *bpup, *bpdown, pc;
+     JSCallsite *parent, *site, **csp;
+     Dl_info info;
+@@ -161,30 +160,27 @@ CallTree(uint32 *bp)
+       upward:
+         parent = site;
+         bpdown = bp;
+         bp = bpup;
+     } while (bp);
+ 
+     return site;
+ }
+ 
+ JSCallsite *
+ JS_Backtrace(int skip)
+ {
+-    jmp_buf jb;
+     uint32 *bp, *bpdown;
+ 
+-    setjmp(jb);
+-
+     /* Stack walking code adapted from Kipp's "leaky". */
+-    bp = (uint32*) jb[0].__jmpbuf[JB_BP];
++    bp = (uint32*) __builtin_frame_address(0);
+     while (--skip >= 0) {
+         bpdown = (uint32*) *bp++;
+         if (bpdown < bp)
+             break;
+         bp = bpdown;
+     }
+ 
+     return CallTree(bp);
+ }
+ 
+ #endif /* DEBUG_notme && XP_UNIX */
+

@@ -1,0 +1,10 @@
+--- ./server/user_pam.c~	2004-10-06 15:37:14.000000000 +0200
++++ ./server/user_pam.c	2006-01-19 11:25:25.000000000 +0100
+@@ -4,6 +4,7 @@
+ #include <string.h>
+ #include <stdlib.h>
+ #include "global_vars.h"
++#include "sys/syslog.h"
+ 
+ static struct pam_conv pamconv;
+ // password of the user currently beeing authenticated.

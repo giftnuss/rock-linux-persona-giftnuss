@@ -1,0 +1,5 @@
+# We rely on bash so heavily that it makes no sense to disable default bash, imho.
+# Enable default bash and build non-default bash in stages 5 and 9.
+
+pkgfilter sed -e "/ bash=[^ ]* / { h ; s,^\(. \)[^ ]\{9\}\(.\) ,\1--X--5---\2 , } ; \
+	/ bash=$ROCKCFG_PKG_BASH_DEFAULT / { x ; s,^. ,X , }"

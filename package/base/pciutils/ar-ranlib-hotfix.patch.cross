@@ -1,0 +1,13 @@
+--- ./lib/Makefile.orig	2007-06-30 06:39:27.000000000 +0200
++++ ./lib/Makefile	2007-06-30 06:39:43.000000000 +0200
+@@ -53,8 +53,8 @@
+ 
+ $(PCILIB): $(OBJS)
+ 	rm -f $@
+-	ar rcs $@ $^
+-	ranlib $@
++	$(AR) rcs $@ $^
++	$(RANLIB) $@
+ 
+ access.o: access.c $(INCL)
+ i386-ports.o: i386-ports.c $(INCL) i386-io-hurd.h i386-io-linux.h i386-io-sunos.h

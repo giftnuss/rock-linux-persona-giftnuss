@@ -1,0 +1,10 @@
+--- iproute2/Makefile~	2007-03-13 22:50:56.000000000 +0100
++++ iproute2/Makefile	2007-07-17 20:03:59.000000000 +0200
+@@ -29,6 +29,7 @@
+ 
+ SUBDIRS=lib ip tc misc netem genl
+ 
++LIBUTIL=../lib/libutil.a
+ LIBNETLINK=../lib/libnetlink.a ../lib/libutil.a
+ 
+ all: Config

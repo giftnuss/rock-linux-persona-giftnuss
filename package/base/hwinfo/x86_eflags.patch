@@ -1,0 +1,14 @@
+--- ./src/int10/i10_v86.c.orig	2008-10-11 10:32:21.000000000 +0200
++++ ./src/int10/i10_v86.c	2008-10-11 10:32:28.000000000 +0200
+@@ -27,6 +27,11 @@
+ #include <string.h>
+ #ifdef __i386__
+ #include <sys/vm86.h>
++#define VIF_MASK X86_EFLAGS_VIF
++#define VIP_MASK X86_EFLAGS_VIP
++#define IF_MASK  X86_EFLAGS_IF
++#define TF_MASK  X86_EFLAGS_TF
++#define NT_MASK  X86_EFLAGS_NT
+ #else
+ #include "vm86_struct.h"
+ #endif

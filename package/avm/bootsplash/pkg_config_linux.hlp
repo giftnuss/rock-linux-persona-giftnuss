@@ -1,0 +1,2 @@
+ROCKCFG_PKG_LINUX_BOOTSPLASH
+  If enabled, patch the Linux kernel to support the bootsplash feature.

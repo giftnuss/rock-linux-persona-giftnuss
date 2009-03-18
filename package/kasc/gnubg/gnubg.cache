@@ -1,0 +1,123 @@
+
+[TIMESTAMP] 1181159899 Wed Jun  6 21:58:19 2007 (5) ERROR
+[TIMESTAMP] 1181610303 Tue Jun 12 03:05:03 2007 (9) ERROR
+[TIMESTAMP] 1181829325 Thu Jun 14 15:55:25 2007 (5) ERROR
+[TIMESTAMP] 1181912904 Fri Jun 15 15:08:24 2007 (9) ERROR
+[TIMESTAMP] 1181952975 Sat Jun 16 02:16:15 2007 (5) ERROR
+[TIMESTAMP] 1181974736 Sat Jun 16 08:18:56 2007 (9) ERROR
+
+[CONFIG-ID] TRUNK-x86-reference
+[ROCKVER] TRUNK
+
+[LOGS] 5-gnubg.err 9-gnubg.err
+
+[BUILDTIME] 4694 (5) ERROR
+[BUILDTIME] 4633 (9) ERROR
+[BUILDTIME] 4648 (5) ERROR
+[BUILDTIME] 4741 (9) ERROR
+[BUILDTIME] 4563 (5) ERROR
+[BUILDTIME] 4552 (9) ERROR
+
+
+[5-ERROR] make[2]: Entering directory `/ROCK/loop/src.gnubg.1181952929.11244.1627887995/gnubg-0.14.3/lib'
+[5-ERROR] source='buffer.c' object='buffer.o' libtool=no \
+[5-ERROR] 	depfile='.deps/buffer.Po' tmpdepfile='.deps/buffer.TPo' \
+[5-ERROR] 	depmode=gcc3 /bin/sh ../depcomp \
+[5-ERROR] 	gcc-42 -DHAVE_CONFIG_H -I. -I. -I..     -g -O2 -c `test -f 'buffer.c' || echo './'`buffer.c
+[5-ERROR] source='dynarray.c' object='dynarray.o' libtool=no \
+[5-ERROR] 	depfile='.deps/dynarray.Po' tmpdepfile='.deps/dynarray.TPo' \
+[5-ERROR] 	depmode=gcc3 /bin/sh ../depcomp \
+[5-ERROR] 	gcc-42 -DHAVE_CONFIG_H -I. -I. -I..     -g -O2 -c `test -f 'dynarray.c' || echo './'`dynarray.c
+[5-ERROR] source='event.c' object='event.o' libtool=no \
+[5-ERROR] 	depfile='.deps/event.Po' tmpdepfile='.deps/event.TPo' \
+[5-ERROR] 	depmode=gcc3 /bin/sh ../depcomp \
+[5-ERROR] 	gcc-42 -DHAVE_CONFIG_H -I. -I. -I..     -g -O2 -c `test -f 'event.c' || echo './'`event.c
+[5-ERROR] source='fifo.c' object='fifo.o' libtool=no \
+[5-ERROR] 	depfile='.deps/fifo.Po' tmpdepfile='.deps/fifo.TPo' \
+[5-ERROR] 	depmode=gcc3 /bin/sh ../depcomp \
+[5-ERROR] 	gcc-42 -DHAVE_CONFIG_H -I. -I. -I..     -g -O2 -c `test -f 'fifo.c' || echo './'`fifo.c
+[5-ERROR] source='hash.c' object='hash.o' libtool=no \
+[5-ERROR] 	depfile='.deps/hash.Po' tmpdepfile='.deps/hash.TPo' \
+[5-ERROR] 	depmode=gcc3 /bin/sh ../depcomp \
+[5-ERROR] 	gcc-42 -DHAVE_CONFIG_H -I. -I. -I..     -g -O2 -c `test -f 'hash.c' || echo './'`hash.c
+[5-ERROR] source='heap.c' object='heap.o' libtool=no \
+[5-ERROR] 	depfile='.deps/heap.Po' tmpdepfile='.deps/heap.TPo' \
+[5-ERROR] 	depmode=gcc3 /bin/sh ../depcomp \
+[5-ERROR] 	gcc-42 -DHAVE_CONFIG_H -I. -I. -I..     -g -O2 -c `test -f 'heap.c' || echo './'`heap.c
+[5-ERROR] source='list.c' object='list.o' libtool=no \
+[5-ERROR] 	depfile='.deps/list.Po' tmpdepfile='.deps/list.TPo' \
+[5-ERROR] 	depmode=gcc3 /bin/sh ../depcomp \
+[5-ERROR] 	gcc-42 -DHAVE_CONFIG_H -I. -I. -I..     -g -O2 -c `test -f 'list.c' || echo './'`list.c
+[5-ERROR] source='neuralnet.c' object='neuralnet.o' libtool=no \
+[5-ERROR] 	depfile='.deps/neuralnet.Po' tmpdepfile='.deps/neuralnet.TPo' \
+[5-ERROR] 	depmode=gcc3 /bin/sh ../depcomp \
+[5-ERROR] 	gcc-42 -DHAVE_CONFIG_H -I. -I. -I..     -g -O2 -c `test -f 'neuralnet.c' || echo './'`neuralnet.c
+[5-ERROR] neuralnet.c: In function 'NeuralNetCreateDirect':
+[5-ERROR] neuralnet.c:389: error: lvalue required as increment operand
+[5-ERROR] neuralnet.c:390: error: lvalue required as increment operand
+[5-ERROR] neuralnet.c:391: error: lvalue required as increment operand
+[5-ERROR] neuralnet.c:392: error: lvalue required as increment operand
+[5-ERROR] neuralnet.c:394: error: lvalue required as increment operand
+[5-ERROR] neuralnet.c:395: error: lvalue required as increment operand
+[5-ERROR] neuralnet.c:406: error: lvalue required as left operand of assignment
+[5-ERROR] neuralnet.c:408: error: lvalue required as left operand of assignment
+[5-ERROR] neuralnet.c:410: error: lvalue required as left operand of assignment
+[5-ERROR] neuralnet.c:412: error: lvalue required as left operand of assignment
+[5-ERROR] make[2]: *** [neuralnet.o] Error 1
+[5-ERROR] make[2]: Leaving directory `/ROCK/loop/src.gnubg.1181952929.11244.1627887995/gnubg-0.14.3/lib'
+[5-ERROR] make[1]: *** [all-recursive] Error 1
+[5-ERROR] make[1]: Leaving directory `/ROCK/loop/src.gnubg.1181952929.11244.1627887995/gnubg-0.14.3'
+[5-ERROR] make: *** [all] Error 2
+[5-ERROR] --- BUILD ERROR ---
+
+[9-ERROR] make[2]: Entering directory `/ROCK/loop/src.gnubg.1181974690.8795.4149625545/gnubg-0.14.3/lib'
+[9-ERROR] source='buffer.c' object='buffer.o' libtool=no \
+[9-ERROR] 	depfile='.deps/buffer.Po' tmpdepfile='.deps/buffer.TPo' \
+[9-ERROR] 	depmode=gcc3 /bin/sh ../depcomp \
+[9-ERROR] 	gcc-42 -DHAVE_CONFIG_H -I. -I. -I..     -g -O2 -c `test -f 'buffer.c' || echo './'`buffer.c
+[9-ERROR] source='dynarray.c' object='dynarray.o' libtool=no \
+[9-ERROR] 	depfile='.deps/dynarray.Po' tmpdepfile='.deps/dynarray.TPo' \
+[9-ERROR] 	depmode=gcc3 /bin/sh ../depcomp \
+[9-ERROR] 	gcc-42 -DHAVE_CONFIG_H -I. -I. -I..     -g -O2 -c `test -f 'dynarray.c' || echo './'`dynarray.c
+[9-ERROR] source='event.c' object='event.o' libtool=no \
+[9-ERROR] 	depfile='.deps/event.Po' tmpdepfile='.deps/event.TPo' \
+[9-ERROR] 	depmode=gcc3 /bin/sh ../depcomp \
+[9-ERROR] 	gcc-42 -DHAVE_CONFIG_H -I. -I. -I..     -g -O2 -c `test -f 'event.c' || echo './'`event.c
+[9-ERROR] source='fifo.c' object='fifo.o' libtool=no \
+[9-ERROR] 	depfile='.deps/fifo.Po' tmpdepfile='.deps/fifo.TPo' \
+[9-ERROR] 	depmode=gcc3 /bin/sh ../depcomp \
+[9-ERROR] 	gcc-42 -DHAVE_CONFIG_H -I. -I. -I..     -g -O2 -c `test -f 'fifo.c' || echo './'`fifo.c
+[9-ERROR] source='hash.c' object='hash.o' libtool=no \
+[9-ERROR] 	depfile='.deps/hash.Po' tmpdepfile='.deps/hash.TPo' \
+[9-ERROR] 	depmode=gcc3 /bin/sh ../depcomp \
+[9-ERROR] 	gcc-42 -DHAVE_CONFIG_H -I. -I. -I..     -g -O2 -c `test -f 'hash.c' || echo './'`hash.c
+[9-ERROR] source='heap.c' object='heap.o' libtool=no \
+[9-ERROR] 	depfile='.deps/heap.Po' tmpdepfile='.deps/heap.TPo' \
+[9-ERROR] 	depmode=gcc3 /bin/sh ../depcomp \
+[9-ERROR] 	gcc-42 -DHAVE_CONFIG_H -I. -I. -I..     -g -O2 -c `test -f 'heap.c' || echo './'`heap.c
+[9-ERROR] source='list.c' object='list.o' libtool=no \
+[9-ERROR] 	depfile='.deps/list.Po' tmpdepfile='.deps/list.TPo' \
+[9-ERROR] 	depmode=gcc3 /bin/sh ../depcomp \
+[9-ERROR] 	gcc-42 -DHAVE_CONFIG_H -I. -I. -I..     -g -O2 -c `test -f 'list.c' || echo './'`list.c
+[9-ERROR] source='neuralnet.c' object='neuralnet.o' libtool=no \
+[9-ERROR] 	depfile='.deps/neuralnet.Po' tmpdepfile='.deps/neuralnet.TPo' \
+[9-ERROR] 	depmode=gcc3 /bin/sh ../depcomp \
+[9-ERROR] 	gcc-42 -DHAVE_CONFIG_H -I. -I. -I..     -g -O2 -c `test -f 'neuralnet.c' || echo './'`neuralnet.c
+[9-ERROR] neuralnet.c: In function 'NeuralNetCreateDirect':
+[9-ERROR] neuralnet.c:389: error: lvalue required as increment operand
+[9-ERROR] neuralnet.c:390: error: lvalue required as increment operand
+[9-ERROR] neuralnet.c:391: error: lvalue required as increment operand
+[9-ERROR] neuralnet.c:392: error: lvalue required as increment operand
+[9-ERROR] neuralnet.c:394: error: lvalue required as increment operand
+[9-ERROR] neuralnet.c:395: error: lvalue required as increment operand
+[9-ERROR] neuralnet.c:406: error: lvalue required as left operand of assignment
+[9-ERROR] neuralnet.c:408: error: lvalue required as left operand of assignment
+[9-ERROR] neuralnet.c:410: error: lvalue required as left operand of assignment
+[9-ERROR] neuralnet.c:412: error: lvalue required as left operand of assignment
+[9-ERROR] make[2]: *** [neuralnet.o] Error 1
+[9-ERROR] make[2]: Leaving directory `/ROCK/loop/src.gnubg.1181974690.8795.4149625545/gnubg-0.14.3/lib'
+[9-ERROR] make[1]: *** [all-recursive] Error 1
+[9-ERROR] make[1]: Leaving directory `/ROCK/loop/src.gnubg.1181974690.8795.4149625545/gnubg-0.14.3'
+[9-ERROR] make: *** [all] Error 2
+[9-ERROR] --- BUILD ERROR ---
+

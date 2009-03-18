@@ -1,0 +1,29 @@
+
+# a basic package selection
+pkgfilter sed -f $base/target/$target/pkgsel.sed
+
+# ok. this is a uclibc target, so it is basically used
+ROCKCFGSET_PKG_UCLIBC_USEIT=1
+
+# in a uclibc target the linux source is a requirment, which is enabled 
+# by default (avoid package fork in linux.conf)
+ROCKCFGSET_PKG_LINUX_SRC24=0
+ROCKCFGSET_PKG_LINUX_SRC26=0
+
+# locale support is a TODO
+ROCKCFGSET_DISABLE_NLS=1
+
+# now, it is only tested with one gcc version
+ROCKCFGSET_PKG_GCC_GCC34=1
+ROCKCFGSET_PKG_GCC_GCC40=0
+ROCKCFGSET_DEFAULT_CC=gcc34
+ROCKCFGSET_DEFAULT_KCC=gcc34
+ROCKCFGSET_DEFAULT_CXX=gcc34
+ROCKCFGSET_DEFAULT_F95=gcc34
+
+# ok, I start with support and so I'm hanging on.
+ROCKCFGSET_PKG_GCC_STACKPRO=1
+
+
+
+# add some options here

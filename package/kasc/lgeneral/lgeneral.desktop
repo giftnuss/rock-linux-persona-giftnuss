@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=LGeneral
+Comment=Panzer General clone
+Exec=lgeneral
+Terminal=false
+Type=Application
+Categories=Game;StrategyGame
+X-ROCK-Name=lgeneral

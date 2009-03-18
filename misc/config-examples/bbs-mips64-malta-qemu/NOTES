@@ -1,0 +1,76 @@
+Introduction
+------------
+
+This configuration offers a cross-build of (a subset of) the build-bootstrap
+package selection for the mips64 architecture (Malta machines with a 20Kc CPU)
+as emulated by qemu-system-mips64.
+It includes support for all the hardware emulated by qemu, a working udev,
+kernel and userland support for TCP/IP networking, and more.
+
+With qemu and the resulting build you can at least:
+- boot the kernel and first stage initrd,
+- execute a shell from the initrd,
+- mount NFS file systems,
+- load the second stage from a CD-ROM or a HTTP server,
+- and install packages from the CD on a hard disc.
+
+The packages included should be sufficient for native builds on the targeted
+platform.
+
+Quick Start
+-----------
+
+- Direct boot with serial console:
+   qemu-system-mips64 -cdrom bbs-mips-malta-qemu_cd1.iso -hda /srv/qemu.hda \
+	-kernel build/bbs-mips64-malta-qemu-TRUNK-mips-64-EB-mips64-cross-generic-expert/boot/vmlinux \
+	-initrd build/bbs-mips64-malta-qemu-TRUNK-mips-64-EB-mips64-cross-generic-expert/ROCK/target-finish/initrd.img \
+	-append "console=ttyS0 root=/dev/ram0" -nographic -M malta
+
+Hints And Known Bugs
+--------------------
+
+- To use the CD image in qemu, create it after the build has finished:
+    ./scripts/Create-ISO bbs-mips64-malta-qemu bbs-mips64-malta-qemu
+
+- To use a hard disk in qemu, create it with e.g.:
+    qemu-img create /srv/qemu.hda 2048M
+
+- The kernel and initrd image can also be found in the boot/ directory of the
+  CD-ROM image.
+
+- When using a console on the serial port, be sure to enter 'ttyS0' as the
+  terminal device in boot stage 2, or you won't get to see the command line.
+  Enter 'tts/0' to also set the baud rate of the serial port.
+
+- To access HTTP or NFS servers in qemu, add the following options:
+    -net nic -net tap
+
+   You need root privileges for this, or have your system administrator set it
+   up for you. When qemu starts it will create a network interface (tap0) on the
+   host system and add an IP address/netmask (172.20.0.1/16) to it:
+
+   host:/# ip addr show dev tap0
+	19: tap0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UNKNOWN qlen 500
+	    link/ether 00:ff:e1:75:9a:a0 brd ff:ff:ff:ff:ff:ff
+	    inet 172.20.0.1/16 brd 172.20.255.255 scope global tap0
+	    inet6 fe80::2ff:e1ff:fe75:9aa0/64 scope link
+	       valid_lft forever preferred_lft forever
+
+   In the first boot stage of the emulated system, execute a shell, set up the
+   network link and add an IP address on the same network:
+
+   sh-3.2# ip link set up dev eth0
+	[   41.026595] eth0: link up
+   sh-3.2# ip addr add 172.20.0.20/16 dev eth0
+
+   You should now be able to reach the host system:
+
+   sh-3.2# ping -c3 172.20.0.1
+	PING 172.20.0.1 (172.20.0.1): 56 octets data
+	64 octets from 172.20.0.1: icmp_seq=0 ttl=64 time=16.7 ms
+	64 octets from 172.20.0.1: icmp_seq=1 ttl=64 time=1.6 ms
+	64 octets from 172.20.0.1: icmp_seq=2 ttl=64 time=1.1 ms
+	
+	--- 172.20.0.1 ping statistics ---
+	3 packets transmitted, 3 packets received, 0% packet loss
+	round-trip min/avg/max = 1.1/6.4/16.7 ms

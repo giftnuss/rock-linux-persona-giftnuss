@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=PPRacer
+Comment=A Tuxracer successor
+Exec=ppracer
+Terminal=false
+Type=Application
+Categories=Game;ActionGame
+X-ROCK-Name=ppracer

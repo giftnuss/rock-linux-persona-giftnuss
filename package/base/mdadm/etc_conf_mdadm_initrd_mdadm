@@ -1,0 +1,3 @@
+#!/bin/bash
+
+/sbin/mdadm -As --auto=yes --symlink=yes

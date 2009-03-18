@@ -1,0 +1,10 @@
+--- ./python/sip/sipgen/gencode.c.orig	2007-09-20 02:03:50.000000000 +0200
++++ ./python/sip/sipgen/gencode.c	2007-09-20 02:23:04.000000000 +0200
+@@ -2082,6 +2082,7 @@
+ 
+ 	prcode(fp,
+ "\n"
++"#include <qvariant.h>\n"  // HACK! HACK! HACK!
+ "#include \"sipAPI%s.h\"\n"
+ "#include \"sip%s%F.h\"\n"
+ 		,cmname

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=X-Chat
+Comment=IRC Client
+Exec=xchat
+Terminal=false
+Type=Application
+Categories=Network;IRCClient
+X-ROCK-Name=xchat
+Icon=D_datadir/share/pixmaps/xchat.png

@@ -1,0 +1,123 @@
+
+[TIMESTAMP] 1181168422 Thu Jun  7 00:20:22 2007 (5) ERROR
+[TIMESTAMP] 1181614591 Tue Jun 12 04:16:31 2007 (9) ERROR
+[TIMESTAMP] 1181831351 Thu Jun 14 16:29:11 2007 (5) ERROR
+[TIMESTAMP] 1181915383 Fri Jun 15 15:49:43 2007 (9) ERROR
+[TIMESTAMP] 1181954877 Sat Jun 16 02:47:57 2007 (5) ERROR
+[TIMESTAMP] 1181976738 Sat Jun 16 08:52:18 2007 (9) ERROR
+
+[CONFIG-ID] TRUNK-x86-reference
+[ROCKVER] TRUNK
+
+[LOGS] 5-xarchon.err 9-xarchon.err
+
+[BUILDTIME] 1730 (5) ERROR
+[BUILDTIME] 1786 (9) ERROR
+[BUILDTIME] 1789 (5) ERROR
+[BUILDTIME] 1787 (9) ERROR
+[BUILDTIME] 1739 (5) ERROR
+[BUILDTIME] 1743 (9) ERROR
+
+
+[5-ERROR] checking for remove... yes
+[5-ERROR] checking for shmat... yes
+[5-ERROR] checking for IceConnectionNumber in -lICE... yes
+[5-ERROR] checking for XOpenDisplay in X library -lX11... yes
+[5-ERROR] checking extra paths for Xpm... library no, include no
+[5-ERROR] checking for XpmReadFileToPixmap in X library -lXpm... yes
+[5-ERROR] checking for gtk-config... /opt/gnome/bin/gtk-config
+[5-ERROR] checking for GTK - version >= 1.2.0... yes
+[5-ERROR] checking for pthread.h... yes
+[5-ERROR] checking for pthread_create in -lpthread... yes
+[5-ERROR] checking for esd-config... /usr/bin/esd-config
+[5-ERROR] checking for ESD - version >= 0.2.7... yes
+[5-ERROR] checking for ANSI C header files... yes
+[5-ERROR] checking for limits.h... yes
+[5-ERROR] checking for sys/time.h... yes
+[5-ERROR] checking for unistd.h... yes
+[5-ERROR] checking for working const... yes
+[5-ERROR] checking whether time.h and sys/time.h may both be included... yes
+[5-ERROR] checking for 8-bit clean memcmp... yes
+[5-ERROR] checking return type of signal handlers... void
+[5-ERROR] checking for vprintf... yes
+[5-ERROR] checking for gettimeofday... yes
+[5-ERROR] checking for setitimer... yes
+[5-ERROR] checking for strdup... yes
+[5-ERROR] checking for nanosleep... yes
+[5-ERROR] checking wheather to include networking support... yes
+[5-ERROR] checking which sound driver to use... the esd driver
+[5-ERROR] checking for linux/joystick.h... yes
+[5-ERROR] updating cache ./config.cache
+[5-ERROR] creating ./config.status
+[5-ERROR] creating Makefile
+[5-ERROR] creating src/Makefile
+[5-ERROR] creating data/Makefile
+[5-ERROR] creating stamp.h
+[5-ERROR] creating config.h
+[5-ERROR] make  all-recursive
+[5-ERROR] make[1]: Entering directory `/ROCK/loop/src.xarchon.1181954858.19166.1627887995/xarchon-0.50'
+[5-ERROR] Making all in src
+[5-ERROR] make[2]: Entering directory `/ROCK/loop/src.xarchon.1181954858.19166.1627887995/xarchon-0.50/src'
+[5-ERROR] gcc-42 -DHAVE_CONFIG_H -I. -I. -I.. -I/usr/X11R7/include -I/opt/gnome/include/gtk-1.2 -I/opt/gnome/include/glib-1.2 -I/opt/gnome/lib/glib/include -I/usr/X11R7/include  -I../    -g -O2 -Wall -c actors.c
+[5-ERROR] gcc-42 -DHAVE_CONFIG_H -I. -I. -I.. -I/usr/X11R7/include -I/opt/gnome/include/gtk-1.2 -I/opt/gnome/include/glib-1.2 -I/opt/gnome/lib/glib/include -I/usr/X11R7/include  -I../    -g -O2 -Wall -c audio.c
+[5-ERROR] gcc-42 -DHAVE_CONFIG_H -I. -I. -I.. -I/usr/X11R7/include -I/opt/gnome/include/gtk-1.2 -I/opt/gnome/include/glib-1.2 -I/opt/gnome/lib/glib/include -I/usr/X11R7/include  -I../    -g -O2 -Wall -c board.c
+[5-ERROR] board.c:169: error: static declaration of 'board_frame_time' follows non-static declaration
+[5-ERROR] board.h:77: error: previous declaration of 'board_frame_time' was here
+[5-ERROR] make[2]: *** [board.o] Error 1
+[5-ERROR] make[2]: Leaving directory `/ROCK/loop/src.xarchon.1181954858.19166.1627887995/xarchon-0.50/src'
+[5-ERROR] make[1]: *** [all-recursive] Error 1
+[5-ERROR] make[1]: Leaving directory `/ROCK/loop/src.xarchon.1181954858.19166.1627887995/xarchon-0.50'
+[5-ERROR] make: *** [all-recursive-am] Error 2
+[5-ERROR] --- BUILD ERROR ---
+
+[9-ERROR] checking for remove... yes
+[9-ERROR] checking for shmat... yes
+[9-ERROR] checking for IceConnectionNumber in -lICE... yes
+[9-ERROR] checking for XOpenDisplay in X library -lX11... yes
+[9-ERROR] checking extra paths for Xpm... library no, include no
+[9-ERROR] checking for XpmReadFileToPixmap in X library -lXpm... yes
+[9-ERROR] checking for gtk-config... /opt/gnome/bin/gtk-config
+[9-ERROR] checking for GTK - version >= 1.2.0... yes
+[9-ERROR] checking for pthread.h... yes
+[9-ERROR] checking for pthread_create in -lpthread... yes
+[9-ERROR] checking for esd-config... /usr/bin/esd-config
+[9-ERROR] checking for ESD - version >= 0.2.7... yes
+[9-ERROR] checking for ANSI C header files... yes
+[9-ERROR] checking for limits.h... yes
+[9-ERROR] checking for sys/time.h... yes
+[9-ERROR] checking for unistd.h... yes
+[9-ERROR] checking for working const... yes
+[9-ERROR] checking whether time.h and sys/time.h may both be included... yes
+[9-ERROR] checking for 8-bit clean memcmp... yes
+[9-ERROR] checking return type of signal handlers... void
+[9-ERROR] checking for vprintf... yes
+[9-ERROR] checking for gettimeofday... yes
+[9-ERROR] checking for setitimer... yes
+[9-ERROR] checking for strdup... yes
+[9-ERROR] checking for nanosleep... yes
+[9-ERROR] checking wheather to include networking support... yes
+[9-ERROR] checking which sound driver to use... the esd driver
+[9-ERROR] checking for linux/joystick.h... yes
+[9-ERROR] updating cache ./config.cache
+[9-ERROR] creating ./config.status
+[9-ERROR] creating Makefile
+[9-ERROR] creating src/Makefile
+[9-ERROR] creating data/Makefile
+[9-ERROR] creating stamp.h
+[9-ERROR] creating config.h
+[9-ERROR] make  all-recursive
+[9-ERROR] make[1]: Entering directory `/ROCK/loop/src.xarchon.1181976720.26284.3474453109/xarchon-0.50'
+[9-ERROR] Making all in src
+[9-ERROR] make[2]: Entering directory `/ROCK/loop/src.xarchon.1181976720.26284.3474453109/xarchon-0.50/src'
+[9-ERROR] gcc-42 -DHAVE_CONFIG_H -I. -I. -I.. -I/usr/X11R7/include -I/opt/gnome/include/gtk-1.2 -I/opt/gnome/include/glib-1.2 -I/opt/gnome/lib/glib/include -I/usr/X11R7/include  -I../    -g -O2 -Wall -c actors.c
+[9-ERROR] gcc-42 -DHAVE_CONFIG_H -I. -I. -I.. -I/usr/X11R7/include -I/opt/gnome/include/gtk-1.2 -I/opt/gnome/include/glib-1.2 -I/opt/gnome/lib/glib/include -I/usr/X11R7/include  -I../    -g -O2 -Wall -c audio.c
+[9-ERROR] gcc-42 -DHAVE_CONFIG_H -I. -I. -I.. -I/usr/X11R7/include -I/opt/gnome/include/gtk-1.2 -I/opt/gnome/include/glib-1.2 -I/opt/gnome/lib/glib/include -I/usr/X11R7/include  -I../    -g -O2 -Wall -c board.c
+[9-ERROR] board.c:169: error: static declaration of 'board_frame_time' follows non-static declaration
+[9-ERROR] board.h:77: error: previous declaration of 'board_frame_time' was here
+[9-ERROR] make[2]: *** [board.o] Error 1
+[9-ERROR] make[2]: Leaving directory `/ROCK/loop/src.xarchon.1181976720.26284.3474453109/xarchon-0.50/src'
+[9-ERROR] make[1]: *** [all-recursive] Error 1
+[9-ERROR] make[1]: Leaving directory `/ROCK/loop/src.xarchon.1181976720.26284.3474453109/xarchon-0.50'
+[9-ERROR] make: *** [all-recursive-am] Error 2
+[9-ERROR] --- BUILD ERROR ---
+

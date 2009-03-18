@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+# ROCK Linux: /etc/rc.d/rc.local
+#
+# This script is executed at the end of the system startup sequence
+# This is the right place for adding your own startup commands
+#
+
+# set -x
+# echo "Yet another boot.." >> /var/log/boot.log
+
+exit 0

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Wireshark
+Comment=Traffic Analyser
+Exec=wireshark
+Terminal=false
+Type=Application
+Categories=System;Monitor
+X-ROCK-Name=wireshark

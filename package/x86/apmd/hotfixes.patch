@@ -1,0 +1,23 @@
+--- ./apmsleep.c.orig	2001-05-11 22:30:08.000000000 +0200
++++ ./apmsleep.c	2006-03-26 21:15:27.000000000 +0200
+@@ -42,14 +42,18 @@
+  *
+  */
+ 
++typedef unsigned char u8;
++typedef unsigned short u16;
++typedef unsigned int u32;
++
+ #include <stdio.h>
+ #include <linux/version.h>
+ 
+ #if LINUX_VERSION_CODE > KERNEL_VERSION(2,2,0)
+-#include <asm/spinlock.h>
++// #include <asm/spinlock.h>
+ #endif
+ 
+-#include <linux/mc146818rtc.h>
++#include <linux/rtc.h>
+ #include <sys/ioctl.h>
+ #include <sys/time.h>
+ #include <sys/types.h>

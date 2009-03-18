@@ -1,0 +1,20 @@
+--- libcdio-0.77/lib/driver/gnu_linux.c.orig	2007-11-05 11:48:20.000000000 +0100
++++ libcdio-0.77/lib/driver/gnu_linux.c	2007-11-05 11:49:35.000000000 +0100
+@@ -30,6 +30,7 @@
+ static const char _rcsid[] = "$Id: gnu_linux.c,v 1.20 2006/03/18 00:53:20 rocky Exp $";
+ 
+ #include <string.h>
++#include <limits.h>
+ 
+ #include <cdio/sector.h>
+ #include <cdio/util.h>
+--- ./include/cdio++/iso9660.hpp.orig	2008-06-10 19:16:08.000000000 +0200
++++ ./include/cdio++/iso9660.hpp	2008-06-10 19:16:17.000000000 +0200
+@@ -30,6 +30,7 @@
+ #include <cdio/iso9660.h>
+ #include <cdio++/cdio.hpp>
+ #include <string.h>
++#include <stdlib.h>
+ #include <vector>		// vector class library
+ using namespace std;
+ 

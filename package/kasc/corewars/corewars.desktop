@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=CoreWars
+Comment=Let programs fight one another
+Exec=corewars
+Terminal=false
+Type=Application
+Categories=Game;Simulation
+X-ROCK-Name=corewars

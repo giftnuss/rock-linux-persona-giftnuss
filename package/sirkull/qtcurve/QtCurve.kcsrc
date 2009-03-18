@@ -1,0 +1,25 @@
+# This color scheme is based on Bluecurve.kcsrc from the Fedora Core 2 
+# package "redhat-artwork". "redhat-artwork" is licensed under the GPL.
+
+[Color Scheme]
+Name=QtCurve
+activeBackground=70,79,134
+activeBlend=115,127,203
+activeForeground=255,255,255
+activeTitleBtnBg=207,207,207
+alternateBackground=240,240,240
+background=230,230,230
+buttonBackground=230,230,230
+buttonForeground=0,0,0
+contrast=1
+foreground=0,0,0
+inactiveBackground=197,197,197
+inactiveBlend=215,215,215
+inactiveForeground=127,127,127
+inactiveTitleBtnBg=238,238,238
+linkColor=0,0,192
+selectBackground=76,89,166
+selectForeground=255,255,255
+visitedLinkColor=128,0,128
+windowBackground=255,255,255
+windowForeground=0,0,0

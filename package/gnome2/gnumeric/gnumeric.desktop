@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=gnumeric
+Comment=Spreadsheet application
+Exec=gnumeric
+Terminal=false
+Type=Application
+Categories=Office;Spreadsheet
+X-ROCK-Name=gnumeric
+Icon=D_datadir/pixmaps/gnome-gnumeric.png

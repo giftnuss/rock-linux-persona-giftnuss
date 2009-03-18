@@ -1,0 +1,123 @@
+
+[TIMESTAMP] 1181162768 Wed Jun  6 22:46:08 2007 (5) ERROR
+[TIMESTAMP] 1181610796 Tue Jun 12 03:13:16 2007 (9) ERROR
+[TIMESTAMP] 1181829382 Thu Jun 14 15:56:22 2007 (5) ERROR
+[TIMESTAMP] 1181913204 Fri Jun 15 15:13:24 2007 (9) ERROR
+[TIMESTAMP] 1181953031 Sat Jun 16 02:17:11 2007 (5) ERROR
+[TIMESTAMP] 1181974879 Sat Jun 16 08:21:19 2007 (9) ERROR
+
+[CONFIG-ID] TRUNK-x86-reference
+[ROCKVER] TRUNK
+
+[LOGS] 5-hexxagon.err 9-hexxagon.err
+
+[BUILDTIME] 1809 (5) ERROR
+[BUILDTIME] 1946 (9) ERROR
+[BUILDTIME] 1959 (5) ERROR
+[BUILDTIME] 1928 (9) ERROR
+[BUILDTIME] 1900 (5) ERROR
+[BUILDTIME] 1909 (9) ERROR
+
+
+[5-ERROR] checking for stdlib.h... yes
+[5-ERROR] checking for string.h... yes
+[5-ERROR] checking for memory.h... yes
+[5-ERROR] checking for strings.h... yes
+[5-ERROR] checking for inttypes.h... yes
+[5-ERROR] checking for stdint.h... yes
+[5-ERROR] checking for unistd.h... yes
+[5-ERROR] checking netinet/in.h usability... yes
+[5-ERROR] checking netinet/in.h presence... yes
+[5-ERROR] checking for netinet/in.h... yes
+[5-ERROR] checking for stdlib.h... (cached) yes
+[5-ERROR] checking for string.h... (cached) yes
+[5-ERROR] checking for strings.h... (cached) yes
+[5-ERROR] checking sys/timeb.h usability... yes
+[5-ERROR] checking sys/timeb.h presence... yes
+[5-ERROR] checking for sys/timeb.h... yes
+[5-ERROR] checking for an ANSI C-conforming const... yes
+[5-ERROR] checking for stdlib.h... (cached) yes
+[5-ERROR] checking for GNU libc compatible malloc... yes
+[5-ERROR] checking for working memcmp... yes
+[5-ERROR] checking for ANSI C header files... (cached) yes
+[5-ERROR] checking for ftime... yes
+[5-ERROR] checking for memset... yes
+[5-ERROR] checking for strcasecmp... yes
+[5-ERROR] checking for strncasecmp... yes
+[5-ERROR] configure: creating ./config.status
+[5-ERROR] config.status: creating Makefile
+[5-ERROR] config.status: creating images/Makefile
+[5-ERROR] config.status: creating src/Makefile
+[5-ERROR] config.status: creating src/libhexx/Makefile
+[5-ERROR] config.status: creating src/gui/Makefile
+[5-ERROR] config.status: creating src/config.h
+[5-ERROR] config.status: executing default-1 commands
+[5-ERROR] Making all in src
+[5-ERROR] make[1]: Entering directory `/ROCK/loop/src.hexxagon.1181953012.5100.1627887995/hexxagon-1.0/src'
+[5-ERROR] make  all-recursive
+[5-ERROR] make[2]: Entering directory `/ROCK/loop/src.hexxagon.1181953012.5100.1627887995/hexxagon-1.0/src'
+[5-ERROR] Making all in libhexx
+[5-ERROR] make[3]: Entering directory `/ROCK/loop/src.hexxagon.1181953012.5100.1627887995/hexxagon-1.0/src/libhexx'
+[5-ERROR] g++-42 -DHAVE_CONFIG_H -I. -I. -I../../src     -O2 -c bitboard64.cpp
+[5-ERROR] bitboard64.cpp:99: error: 'std::istream& libhexx::operator>>(std::istream&, libhexx::BitBoard64&)' should have been declared inside 'libhexx'
+[5-ERROR] bitboard64.cpp:106: error: 'std::ostream& libhexx::operator<<(std::ostream&, const libhexx::BitBoard64&)' should have been declared inside 'libhexx'
+[5-ERROR] make[3]: *** [bitboard64.o] Error 1
+[5-ERROR] make[3]: Leaving directory `/ROCK/loop/src.hexxagon.1181953012.5100.1627887995/hexxagon-1.0/src/libhexx'
+[5-ERROR] make[2]: *** [all-recursive] Error 1
+[5-ERROR] make[2]: Leaving directory `/ROCK/loop/src.hexxagon.1181953012.5100.1627887995/hexxagon-1.0/src'
+[5-ERROR] make[1]: *** [all-recursive-am] Error 2
+[5-ERROR] make[1]: Leaving directory `/ROCK/loop/src.hexxagon.1181953012.5100.1627887995/hexxagon-1.0/src'
+[5-ERROR] make: *** [all-recursive] Error 1
+[5-ERROR] --- BUILD ERROR ---
+
+[9-ERROR] checking for stdlib.h... yes
+[9-ERROR] checking for string.h... yes
+[9-ERROR] checking for memory.h... yes
+[9-ERROR] checking for strings.h... yes
+[9-ERROR] checking for inttypes.h... yes
+[9-ERROR] checking for stdint.h... yes
+[9-ERROR] checking for unistd.h... yes
+[9-ERROR] checking netinet/in.h usability... yes
+[9-ERROR] checking netinet/in.h presence... yes
+[9-ERROR] checking for netinet/in.h... yes
+[9-ERROR] checking for stdlib.h... (cached) yes
+[9-ERROR] checking for string.h... (cached) yes
+[9-ERROR] checking for strings.h... (cached) yes
+[9-ERROR] checking sys/timeb.h usability... yes
+[9-ERROR] checking sys/timeb.h presence... yes
+[9-ERROR] checking for sys/timeb.h... yes
+[9-ERROR] checking for an ANSI C-conforming const... yes
+[9-ERROR] checking for stdlib.h... (cached) yes
+[9-ERROR] checking for GNU libc compatible malloc... yes
+[9-ERROR] checking for working memcmp... yes
+[9-ERROR] checking for ANSI C header files... (cached) yes
+[9-ERROR] checking for ftime... yes
+[9-ERROR] checking for memset... yes
+[9-ERROR] checking for strcasecmp... yes
+[9-ERROR] checking for strncasecmp... yes
+[9-ERROR] configure: creating ./config.status
+[9-ERROR] config.status: creating Makefile
+[9-ERROR] config.status: creating images/Makefile
+[9-ERROR] config.status: creating src/Makefile
+[9-ERROR] config.status: creating src/libhexx/Makefile
+[9-ERROR] config.status: creating src/gui/Makefile
+[9-ERROR] config.status: creating src/config.h
+[9-ERROR] config.status: executing default-1 commands
+[9-ERROR] Making all in src
+[9-ERROR] make[1]: Entering directory `/ROCK/loop/src.hexxagon.1181974859.12183.4149625545/hexxagon-1.0/src'
+[9-ERROR] make  all-recursive
+[9-ERROR] make[2]: Entering directory `/ROCK/loop/src.hexxagon.1181974859.12183.4149625545/hexxagon-1.0/src'
+[9-ERROR] Making all in libhexx
+[9-ERROR] make[3]: Entering directory `/ROCK/loop/src.hexxagon.1181974859.12183.4149625545/hexxagon-1.0/src/libhexx'
+[9-ERROR] g++-42 -DHAVE_CONFIG_H -I. -I. -I../../src     -O2 -c bitboard64.cpp
+[9-ERROR] bitboard64.cpp:99: error: 'std::istream& libhexx::operator>>(std::istream&, libhexx::BitBoard64&)' should have been declared inside 'libhexx'
+[9-ERROR] bitboard64.cpp:106: error: 'std::ostream& libhexx::operator<<(std::ostream&, const libhexx::BitBoard64&)' should have been declared inside 'libhexx'
+[9-ERROR] make[3]: *** [bitboard64.o] Error 1
+[9-ERROR] make[3]: Leaving directory `/ROCK/loop/src.hexxagon.1181974859.12183.4149625545/hexxagon-1.0/src/libhexx'
+[9-ERROR] make[2]: *** [all-recursive] Error 1
+[9-ERROR] make[2]: Leaving directory `/ROCK/loop/src.hexxagon.1181974859.12183.4149625545/hexxagon-1.0/src'
+[9-ERROR] make[1]: *** [all-recursive-am] Error 2
+[9-ERROR] make[1]: Leaving directory `/ROCK/loop/src.hexxagon.1181974859.12183.4149625545/hexxagon-1.0/src'
+[9-ERROR] make: *** [all-recursive] Error 1
+[9-ERROR] --- BUILD ERROR ---
+

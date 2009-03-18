@@ -1,0 +1,95 @@
+#!/bin/bash
+
+dir=`mktemp`
+rm -rf ${dir}
+mkdir -p ${dir}
+
+tmpfile=`mktemp`
+rm -rf ${tmpfile}
+
+style="freedesktop"
+[ "$1" == "--rock" -o -e /usr/share/icewm/rockstyle ] && style="rock"
+
+process_desktop(){
+	file=${1}
+	
+	. ${file}
+	[ -z "${Exec}" ] && return
+
+	if [ "${style}" == "freedesktop" ] ; then
+		Categories=${Categories//;//}
+		Categories=${Categories%/}
+	elif [ "${style}" == "rock" ] ; then
+		Categories="`grep '\[C\]' /var/adm/descs/${X_ROCK_Name} | head -n 1 | cut -f2 -d' '`"
+	fi
+	mkdir -p "${dir}/${Categories}"
+	if [ "${Terminal}" == "true" -o "${Terminal}" == "1" ] ; then
+		Exec="xterm -e '${Exec}'"
+	fi
+	echo "prog \"${Name}\" \"${Icon:-${Name}}\" ${Exec}" > "${dir}/${Categories}/${Name}"
+	unset Exec Name Icon Terminal Categories X_ROCK_Name
+}
+
+for x in /usr/share/applications/*desktop ; do
+	[ ! -e ${x} ] && continue
+	entry=0
+
+	while read line ; do
+		[ -z "${line}" -o "${line:0:1}" == "#" ] && continue
+
+		if [ "${line:0:1}" == "[" ] ; then
+			entry=$(( ${entry} + 1 ))
+			if [ ${entry} -gt 1 ] ; then		# this is to support multiple entries in one file
+				[ -f ${tmpfile} ] && process_desktop ${tmpfile}
+				rm -f ${tmpfile}
+			fi
+		else
+			[ "${line:0:5}" == "Exec=" ] && echo "${line}" | sed -e 's,=\(.*\)$,="\1",g' >>${tmpfile}
+			[ "${line:0:5}" == "Name=" ] && echo "${line}" | sed -e 's,=\(.*\)$,="\1",g' >>${tmpfile}
+			[ "${line:0:5}" == "Icon=" ] && echo "${line}" | sed -e 's,=\(.*\)$,="\1",g' >>${tmpfile}
+			[ "${line:0:9}" == "Terminal=" ] && echo "${line}" | sed -e 's,=\(.*\)$,="\1",g' >>${tmpfile}
+			[ "${line:0:11}" == "Categories=" ] && echo "${line}" | sed -e 's,=\(.*\)$,="\1",g' >>${tmpfile}
+			[ "${line:0:12}" == "X-ROCK-Name=" ] && echo "${line}" | sed -e 's,=\(.*\)$,="\1",g' -e 's,^.*=,X_ROCK_Name=,g' >>${tmpfile}
+		fi
+	done < ${x}
+	[ -f ${tmpfile} ] && process_desktop ${tmpfile}
+	rm -f ${tmpfile}
+done
+
+scan_file() {
+	for n in 1 `seq 1 1 ${2} 2>/dev/null` ; do
+		echo -en "\t"
+	done
+	cat "${1}"
+}
+
+scan_dir() {
+	for n in `seq 1 1 ${2} 2>/dev/null` ; do
+		echo -en "\t"
+	done
+	echo "menu \"${1##*/}\" folder {"
+
+	for x in "${1}"/* ; do
+		if [ -d "${x}" ] ; then
+			scan_dir "${x}" $(( ${2} + 1 ))
+		elif [ -f "${x}" ] ; then
+			scan_file "${x}" ${2}
+		fi
+	done
+	for n in `seq 1 1 ${2} 2>/dev/null` ; do
+		echo -en "\t"
+	done
+	echo "}"
+}
+
+rm -f /usr/share/icewm/ROCK
+
+for x in ${dir}/* ; do
+	if [ -d "${x}" ] ; then
+		scan_dir "${x}" 0
+	elif [ -f "${x}" ] ; then
+		scan_file "${x}" 0
+	fi
+done >/usr/share/icewm/ROCK
+
+rm -rf ${tmpfile} ${dir}

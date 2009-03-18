@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Galan
+Comment=synthesizer
+Exec=galan
+Terminal=false
+Type=Application
+Categories=Audio;Music
+X-ROCK-Name=galan

@@ -1,0 +1,5 @@
+
+safe_groupadd tor 79
+safe_useradd tor 79 79 "tor" /var/lib/tor /bin/sh "*"
+# sorry, tor sucks >_<
+

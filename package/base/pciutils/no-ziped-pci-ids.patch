@@ -1,0 +1,11 @@
+--- ./lib/configure.orig	2007-05-17 20:50:22.000000000 +0200
++++ ./lib/configure	2007-05-17 20:50:36.000000000 +0200
+@@ -112,7 +112,7 @@
+ 	echo "$zlib (set manually)"
+ else
+ 	if [ -f /usr/include/zlib.h ] ; then
+-		zlib=yes
++		zlib=no # force unziped pci.ids file
+ 	else
+ 		zlib=no
+ 	fi

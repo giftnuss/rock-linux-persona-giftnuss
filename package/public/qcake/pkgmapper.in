@@ -1,0 +1,3 @@
+case $pkg in
+	qcake*) pkg=qcake ;;
+esac

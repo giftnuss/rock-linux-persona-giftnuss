@@ -1,0 +1,3 @@
+/etc/conf/mdadm/initrd_mdadm /etc/conf/mdadm
+/etc/mdadm.conf	/etc/mdadm.conf
+/sbin/mdadm	/sbin/mdadm

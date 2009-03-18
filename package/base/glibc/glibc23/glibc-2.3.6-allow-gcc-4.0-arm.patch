@@ -1,0 +1,20 @@
+Fixes
+In file included from dynamic-link.h:63,
+                 from dl-reloc.c:269:
+../sysdeps/arm/dl-machine.h: In function '_dl_relocate_object':
+../sysdeps/arm/dl-machine.h:362: error: invalid storage class for function 'fix_bad_pc24'
+
+Simplified version of http://kegel.com/crosstool/crosstool-0.35/patches/glibc-2.3.5/glibc-2.3.4-allow-gcc-4.0-arm.patch
+
+--- glibc-2.3.6/sysdeps/arm/dl-machine.h~	2005-10-17 06:52:36.000000000 +0200
++++ glibc-2.3.6/sysdeps/arm/dl-machine.h	2006-07-11 11:55:32.000000000 +0200
+@@ -357,7 +357,8 @@
+ #ifdef RESOLVE
+ 
+ /* Deal with an out-of-range PC24 reloc.  */
+-static Elf32_Addr
++auto inline Elf32_Addr
++__attribute__ ((always_inline))
+ fix_bad_pc24 (Elf32_Addr *const reloc_addr, Elf32_Addr value)
+ {
+   static void *fix_page;

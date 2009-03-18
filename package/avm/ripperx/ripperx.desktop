@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=ripperX
+Comment=Yet another CD ripping application
+Exec=ripperX
+Terminal=false
+Type=Application
+Categories=Utility
+X-ROCK-Name=ripperx

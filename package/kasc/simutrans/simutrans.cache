@@ -1,0 +1,17 @@
+
+[TIMESTAMP] 1181165947 Wed Jun  6 23:39:07 2007 (5)
+[TIMESTAMP] 1181613029 Tue Jun 12 03:50:29 2007 (9)
+
+[CONFIG-ID] TRUNK-x86-reference
+[ROCKVER] TRUNK
+
+[LOGS] 5-simutrans.log 9-simutrans.log
+
+[BUILDTIME] 2274 (5)
+[BUILDTIME] 2539 (9)
+[SIZE] 1.73 MB, 736 files
+
+[DEP] 00-dirtree alsa bash2 bzip2 coreutils cvm findutils gawk gcc42 grep
+[DEP] ltrace mktemp sed sysfiles tar unzip xmame
+
+

@@ -1,0 +1,14 @@
+diff -dur wpa_supplicant-0.4.9/Makefile wpa_supplicant-0.4.9-p/Makefile
+--- wpa_supplicant-0.4.9/Makefile	2006-05-07 06:05:36.000000000 +0200
++++ wpa_supplicant-0.4.9-p/Makefile	2006-08-12 04:46:34.000000000 +0200
+@@ -32,8 +32,8 @@
+ 	echo CONFIG_WIRELESS_EXTENSION=y >> .config
+ 
+ install: all
+-	mkdir -p $(DESTDIR)/usr/local/sbin/
+-	for i in $(ALL); do cp $$i $(DESTDIR)/usr/local/sbin/$$i; done
++	mkdir -p $(DESTDIR)/usr/sbin/
++	for i in $(ALL); do cp $$i $(DESTDIR)/usr/sbin/$$i; done
+ 
+ OBJS = config.o \
+ 	eloop.o common.o md5.o \

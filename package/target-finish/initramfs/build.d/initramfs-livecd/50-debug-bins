@@ -1,0 +1,18 @@
+
+
+BINLIST="
+bin/ps bin/df bin/mkdir bin/more usr/bin/less sbin/fdisk usr/sbin/disktype
+bin/cpio bin/gzip usr/bin/wc usr/bin/od sbin/mkfs.xfs bin/rmdir usr/bin/lsmod sbin/depmod
+usr/sbin/lspci sbin/ip bin/dmesg
+usr/bin/mkfifo
+
+usr/sbin/groupadd
+"
+
+for x in $BINLIST
+do
+	add_with_deps $rootdir/$x /$x
+done
+
+echo "dir /usr/share 0755 0 0"
+echo "file /usr/share/pci.ids $rootdir/usr/share/pci.ids 0644 0 0"

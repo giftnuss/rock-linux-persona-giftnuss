@@ -1,0 +1,17 @@
+--- yaboot-1.3.13/Makefile~	2006-03-16 19:38:24.000000000 +0100
++++ yaboot-1.3.13/Makefile	2006-03-16 19:40:45.000000000 +0100
+@@ -172,10 +172,10 @@
+ release: docs bindist clean
+ 
+ strip: all
+-	strip second/yaboot
+-	strip --remove-section=.comment second/yaboot
+-	strip util/addnote
+-	strip --remove-section=.comment --remove-section=.note util/addnote
++	${CROSS}strip second/yaboot
++	${CROSS}strip --remove-section=.comment second/yaboot
++	${CROSS}strip util/addnote
++	${CROSS}strip --remove-section=.comment --remove-section=.note util/addnote
+ 
+ install: all strip
+ 	install -d -o root -g root -m 0755 ${ROOT}/etc/

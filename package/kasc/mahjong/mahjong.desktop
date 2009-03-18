@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Mahjong
+Comment=A chinese board game
+Exec=xmj
+Terminal=false
+Type=Application
+Categories=Game;LogicGame
+X-ROCK-Name=mahjong

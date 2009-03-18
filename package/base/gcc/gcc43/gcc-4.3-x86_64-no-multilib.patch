@@ -1,0 +1,20 @@
+Search for spec file in multlib dirs.
+See http://gcc.gnu.org/bugzilla/show_bug.cgi?id=26165 and
+http://gcc.gnu.org/viewcvs?view=rev&revision=139031 .
+
+This fixes e.g. this gettext error for 64-bit x86_64 (configured with --disable-multilib):
+
+x86_64-unknown-linux-gnu-gcc -fopenmp -g -O2 -o .libs/msgmerge msgmerge-msgmerge.o msgmerge-msgl-fsearch.o msgmerge-plural-count.o -fopenmp  ./.libs/libgettextsrc.so /usr/src/rock-trunk/src.gettext.1223441176.26143.1546936599/gettext-0.16.1/gettext-tools/gnulib-lib/.libs/libgettextlib.so -lc -lm -Wl,--rpath -Wl,/usr/lib64
+x86_64-unknown-linux-gnu-gcc: libgomp.spec: No such file or directory
+
+--- gcc-4.3.1/gcc/gcc.c	2008-03-02 23:55:19.000000000 +0100
++++ gcc-4.3.1/gcc/gcc.c.new	2008-10-08 15:22:32.000000000 +0200
+@@ -7949,7 +7949,7 @@
+   if (argc != 1)
+     abort ();
+ 
+-  file = find_a_file (&startfile_prefixes, argv[0], R_OK, 0);
++  file = find_a_file (&startfile_prefixes, argv[0], R_OK, true);
+   read_specs (file ? file : argv[0], FALSE);
+ 
+   return NULL;

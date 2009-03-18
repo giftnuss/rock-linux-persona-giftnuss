@@ -1,0 +1,14 @@
+# add OSS compatibility modules for sound devices
+# ACTION=="add",	SUBSYSTEM=="sound"	RUN+="load-oss-compat.sh"
+ACTION=="add",	SUBSYSTEM=="sound",	KERNEL=="pcmC[0-9]*"	\
+	RUN+="/bin/sh -c 'test -e /sys/class/sound/dsp || /sbin/modprobe snd-pcm-oss'"
+ACTION=="add",	SUBSYSTEM=="sound",	KERNEL=="seq"	\
+	RUN+="/bin/sh -c 'test -e /sys/class/sound/sequencer || /sbin/modprobe snd-seq-oss'"
+
+#KERNEL=="controlC[0-9]*",	NAME="snd/%k"
+#KERNEL=="hwC[D0-9]*",		NAME="snd/%k"
+#KERNEL=="pcmC[D0-9cp]*",	NAME="snd/%k"
+#KERNEL=="midiC[D0-9]*",		NAME="snd/%k"
+#KERNEL=="timer",		NAME="snd/%k"
+#KERNEL=="seq",			NAME="snd/%k"
+

@@ -1,0 +1,26 @@
+--- ./xinitrc.cpp.orig	2006-08-04 00:15:01.000000000 +0200
++++ ./xinitrc.cpp	2006-08-04 00:15:55.000000000 +0200
+@@ -24,7 +24,7 @@
+     XMODMAP $usermodmap
+ fi
+ 
+-XCOMM start some nice programs
++XCOMM start the windowmanager
+ 
+ #if defined(__SCO__) || defined(__UNIXWARE__)
+ if [ -r /etc/default/xdesktops ]; then
+@@ -68,8 +68,9 @@
+ 
+ XCOMM This is the fallback case if nothing else is executed above
+ #endif /* !defined(__SCO__)  && !defined(__UNIXWARE__) */
+-TWM &
+-XCLOCK -geometry 50x50-1+1 &
+-XTERM -geometry 80x50+494+51 &
+-XTERM -geometry 80x20+494-0 &
+-exec XTERM -geometry 80x66+0+0 -name login
++WINDOWMANAGER="${WINDOWMANAGER:-startkde}"
++[ "$WINDOWMANAGER" =  "gnome" ] && WINDOWMANAGER="gnome-session"
++[ "$WINDOWMANAGER" =  "kde"   ] && WINDOWMANAGER="startkde"
++[ "$WINDOWMANAGER" != "twm" -a -n "$(type -p ${WINDOWMANAGER%% *})" ] && exec $WINDOWMANAGER
++xsetroot -solid darkcyan ; exec twm ; exec xterm
++

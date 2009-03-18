@@ -1,0 +1,93 @@
+--- db-4.1.25/dist/Makefile.in~	2002-08-30 20:11:56.000000000 +0200
++++ db-4.1.25/dist/Makefile.in	2004-07-13 20:40:26.969525088 +0200
+@@ -59,13 +59,11 @@
+ LIBS=		@LIBS@
+ LIBSO_LIBS=	@LIBSO_LIBS@
+ 
+-libdb=		libdb.a
++libdb=		libdb-$(SOVERSION).a
+ libso_base=	libdb
+ libso=		$(libso_base)-$(SOVERSION).@SOSUFFIX@
+ libso_static=	$(libso_base)-$(SOVERSION).a
+ libso_target=	$(libso_base)-$(SOVERSION).la
+-libso_default=	$(libso_base).@SOSUFFIX@
+-libso_major=	$(libso_base)-$(SOMAJOR).@SOSUFFIX@
+ 
+ ##################################################
+ # C++ API.
+@@ -78,13 +76,11 @@
+ XSOLINK=	@MAKEFILE_XSOLINK@
+ LIBXSO_LIBS=	@LIBXSO_LIBS@
+ 
+-libcxx=		libdb_cxx.a
++libcxx=		libdb_cxx-$(SOVERSION).a
+ libxso_base=	libdb_cxx
+ libxso=		$(libxso_base)-$(SOVERSION).@SOSUFFIX@
+ libxso_static=	$(libxso_base)-$(SOVERSION).a
+ libxso_target=	$(libxso_base)-$(SOVERSION).la
+-libxso_default=	$(libxso_base).@SOSUFFIX@
+-libxso_major=	$(libxso_base)-$(SOMAJOR).@SOSUFFIX@
+ 
+ ##################################################
+ # Java API.
+@@ -114,8 +110,6 @@
+ libjso=		$(libjso_base)-$(SOVERSION).@JMODSUFFIX@
+ libjso_static=	$(libjso_base)-$(SOVERSION).a
+ libjso_target=	$(libjso_base)-$(SOVERSION).la
+-libjso_default=	$(libjso_base).@JMODSUFFIX@
+-libjso_major=	$(libjso_base)-$(SOMAJOR).@JMODSUFFIX@
+ libjso_g=	$(libjso_base)-$(SOVERSION)_g.@JMODSUFFIX@
+ 
+ ##################################################
+@@ -129,8 +123,6 @@
+ libtso=		$(libtso_base)-$(SOVERSION).@MODSUFFIX@
+ libtso_static=	$(libtso_base)-$(SOVERSION).a
+ libtso_target=	$(libtso_base)-$(SOVERSION).la
+-libtso_default=	$(libtso_base).@MODSUFFIX@
+-libtso_major=	$(libtso_base)-$(SOMAJOR).@MODSUFFIX@
+ 
+ ##################################################
+ # db_dump185 UTILITY
+@@ -373,25 +365,17 @@
+ LIB_INSTALL_FILE_LIST=\
+ 	$(libdb) \
+ 	$(libso) \
+-	$(libso_default) \
+-	$(libso_major) \
+ 	$(libso_static) \
+ 	$(libso_target) \
+ 	$(libcxx) \
+ 	$(libxso) \
+-	$(libxso_default) \
+-	$(libxso_major) \
+ 	$(libxso_static) \
+ 	$(libxso_target) \
+ 	$(libtso) \
+-	$(libtso_default) \
+-	$(libtso_major) \
+ 	$(libtso_static) \
+ 	$(libtso_target) \
+ 	$(libjso) \
+-	$(libjso_default) \
+ 	$(libjso_g) \
+-	$(libjso_major) \
+ 	$(libjso_static) \
+ 	$(libjso_target) \
+ 	$(libj_exjarfile) \
+@@ -565,16 +549,6 @@
+ 	@cd $(libdir) && $(rm) -f $(LIB_INSTALL_FILE_LIST)
+ 	@$(INSTALLER) @INSTALL_LIBS@ $(libdir)
+ 	@(cd $(libdir) && \
+-	    test -f $(libso) && $(ln) -s $(libso) $(libso_default); \
+-	    test -f $(libso) && $(ln) -s $(libso) $(libso_major); \
+-	    test -f $(libso_static) && $(ln) -s $(libso_static) $(libdb); \
+-	    test -f $(libxso) && $(ln) -s $(libxso) $(libxso_default); \
+-	    test -f $(libxso) && $(ln) -s $(libxso) $(libxso_major); \
+-	    test -f $(libxso_static) && $(ln) -s $(libxso_static) $(libcxx); \
+-	    test -f $(libtso) && $(ln) -s $(libtso) $(libtso_default); \
+-	    test -f $(libtso) && $(ln) -s $(libtso) $(libtso_major); \
+-	    test -f $(libjso) && $(ln) -s $(libjso) $(libjso_default); \
+-	    test -f $(libjso) && $(ln) -s $(libjso) $(libjso_major); \
+ 	    test -f $(libjso) && $(ln) -s $(libjso) $(libjso_g)) || true
+ 	@(test -f $(libj_jarfile) && \
+ 	    $(cp) $(libj_jarfile) $(libdir) && \

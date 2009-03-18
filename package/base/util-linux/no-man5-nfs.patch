@@ -1,0 +1,11 @@
+--- ./mount/Makefile.orig	2007-05-25 19:58:22.000000000 +0000
++++ ./mount/Makefile	2007-05-25 19:58:33.000000000 +0000
+@@ -12,7 +12,7 @@
+ 
+ SUID_PROGS = mount umount
+ NOSUID_PROGS = swapon losetup
+-MAN5 = fstab.5 nfs.5
++MAN5 = fstab.5
+ MAN8 = mount.8 swapoff.8 swapon.8 umount.8 losetup.8
+ 
+ ifeq "$(HAVE_PIVOT_ROOT)" "yes"

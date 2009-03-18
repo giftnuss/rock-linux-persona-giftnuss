@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=driftnet
+Comment=see the images running through your ethernet
+Exec=driftnet
+Terminal=false
+Type=Application
+Categories=System;Monitor
+X-ROCK-Name=driftnet

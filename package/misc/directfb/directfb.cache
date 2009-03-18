@@ -1,0 +1,42 @@
+
+[TIMESTAMP] 1180956698 Mon Jun  4 13:31:38 2007 (5)
+[TIMESTAMP] 1181348969 Sat Jun  9 02:29:29 2007 (9)
+
+[CONFIG-ID] TRUNK-x86-reference
+[ROCKVER] TRUNK
+
+[LOGS] 5-directfb.log 9-directfb.log
+
+[BUILDTIME] 18079 (5)
+[BUILDTIME] 19576 (9)
+[SIZE] 1.10 MB, 71 files
+
+[DEP] 00-dirtree applewmproto autoconf bash2 binutils bzip2 coreutils cvm
+[DEP] diffutils findutils freetype freetype:dev gawk gcc42 gcc42:dev
+[DEP] glibc26 glibc26:dev grep libice:dev libjpeg libjpeg:dev
+[DEP] libpng libpng:dev libsdl libsdl:dev libsm:dev libvncserver
+[DEP] libvncserver:dev libx11:dev libxau:dev libxcb:dev libxdmcp:dev
+[DEP] libxt:dev linux26-headers:dev ltrace make man mktemp net-tools
+[DEP] perl5 sed sysfiles sysfsutils sysfsutils:dev tar texinfo twoftpd
+[DEP] ucspi-unix util-linux xmame zlib zlib:dev
+
+[PROVIDES] dfbdump dfbg dfbinfo dfbinput dfblayer dfbpenmount dfbscreen
+[PROVIDES] dfbsummon directfb-config directfb-csource libdirect.so
+[PROVIDES] libdirectfb.so libdirectfb_ati128.so libdirectfb_cle266.so
+[PROVIDES] libdirectfb_cyber5k.so libdirectfb_fbdev.so libdirectfb_i810.so
+[PROVIDES] libdirectfb_joystick.so libdirectfb_keyboard.so
+[PROVIDES] libdirectfb_linux_input.so libdirectfb_lirc.so
+[PROVIDES] libdirectfb_mutouch.so libdirectfb_penmount.so
+[PROVIDES] libdirectfb_ps2mouse.so libdirectfb_sdl.so
+[PROVIDES] libdirectfb_sdlinput.so libdirectfb_serialmouse.so
+[PROVIDES] libdirectfb_sonypi.so libdirectfb_vnc.so libdirectfb_vncinput.so
+[PROVIDES] libdirectfb_wm97xx_ts.so libdirectfbwm_default.so libfusion.so
+[PROVIDES] libidirectfbfont_default.so libidirectfbfont_dgiff.so
+[PROVIDES] libidirectfbfont_ft2.so libidirectfbimageprovider_dfiff.so
+[PROVIDES] libidirectfbimageprovider_gif.so
+[PROVIDES] libidirectfbimageprovider_jpeg.so
+[PROVIDES] libidirectfbimageprovider_mpeg2.so
+[PROVIDES] libidirectfbimageprovider_png.so
+[PROVIDES] libidirectfbvideoprovider_gif.so
+[PROVIDES] libidirectfbvideoprovider_v4l.so mkdfiff mkdgiff
+

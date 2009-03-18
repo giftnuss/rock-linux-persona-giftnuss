@@ -1,0 +1,56 @@
+#!/bin/sh
+#
+# ROCK Linux: /etc/rc.d/rc
+#
+# This script does the switching between runlevels.
+#
+
+{
+echo "** Running rc script **"
+echo "rc: Previous runlevel: $PREVLEVEL, new runlevel: $RUNLEVEL."
+
+curdir=/etc/rc.d/rc$RUNLEVEL.d
+prevdir=/etc/rc.d/rc$PREVLEVEL.d
+
+#
+# run the KILL scripts of the previous runlevel (if needed)
+#
+if ! [ $PREVLEVEL = S -o $PREVLEVEL = N ]
+then
+	echo "rc: Leave runlevel $PREVLEVEL ..."
+	for i in $prevdir/K*; do
+		test -x "$i" || continue
+		x="`echo "$i" | sed "s,$prevdir/K..,$curdir/S??,"`"
+		[ "`echo $x`" = "$x" ] || continue
+		/sbin/rc --nobtee $i stop
+	done
+fi
+
+echo "rc: Enter runlevel $RUNLEVEL ..."
+
+#
+# run the START scripts of the current (new) runlevel
+#
+if [ $RUNLEVEL != 0 -a $RUNLEVEL != 6 -a $RUNLEVEL != S ]
+then
+	for i in $curdir/S*; do
+		test -x "$i" || continue
+		x="`echo "$i" | sed "s,$curdir/S..,$prevdir/K??,"`"
+		[ "`echo $x`" = "$x" ] || continue
+		/sbin/rc --nobtee $i start
+	done
+fi
+
+if [ $PREVLEVEL = N ]; then
+	echo "rc: Running /etc/rc.d/rc.local script ..."
+	bash /etc/rc.d/rc.local
+fi
+
+echo "rc: The system is now in runlevel $RUNLEVEL."
+
+# write EOT mark for btee
+echo -ne '\004'
+
+} 2>&1 | /sbin/btee a /var/log/init.msg
+
+exit 0

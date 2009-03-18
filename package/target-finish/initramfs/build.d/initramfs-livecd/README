@@ -1,0 +1,13 @@
+
+all NN-XXXXX scripts in this directory will be sourced
+by ../build-list.sh
+
+output must be gen_init_cpio compatible list of cpio-elements
+
+example:
+# A simple initramfs
+dir /dev 0755 0 0
+nod /dev/console 0600 0 0 c 5 1
+dir /root 0700 0 0
+dir /sbin 0755 0 0
+file /sbin/kinit /usr/src/klibc/kinit/kinit 0755 0 0

@@ -1,0 +1,6 @@
+
+if [ -z "${pkg##freedict-*}" ]; then
+        ignore_xpkg=0
+        pkg=freedict
+fi
+

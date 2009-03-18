@@ -1,0 +1,5 @@
+
+if [ -z "${pkg##typo3-*}" ]; then
+	pkg=typo3
+fi
+

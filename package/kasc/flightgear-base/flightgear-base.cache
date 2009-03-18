@@ -1,0 +1,17 @@
+
+[TIMESTAMP] 1181168903 Thu Jun  7 00:28:23 2007 (5)
+[TIMESTAMP] 1181614967 Tue Jun 12 04:22:47 2007 (9)
+
+[CONFIG-ID] TRUNK-x86-reference
+[ROCKVER] TRUNK
+
+[LOGS] 5-flightgear-base.log 9-flightgear-base.log
+
+[BUILDTIME] 8128 (5)
+[BUILDTIME] 8718 (9)
+[SIZE] 2.42 MB, 4110 files
+
+[DEP] 00-dirtree bash2 bzip2 coreutils cvm findutils gawk gcc42 grep
+[DEP] ltrace mktemp sed sysfiles tar xmame
+
+

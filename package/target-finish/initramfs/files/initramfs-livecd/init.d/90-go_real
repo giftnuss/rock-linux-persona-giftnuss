@@ -1,0 +1,23 @@
+#!/bin/sh
+
+# read root parameter from cmdline
+root=$(sed 's/.*\<root=\([^ ]*\).*/\1/' /proc/cmdline)
+# set $(< /proc/cmdline ) ; for arg ; do [[ ${arg} == root=* ]] && root=${arg#root=}
+
+if [ ! -e "$root" ]
+then
+	echo "your root <$root> does not exist."
+else
+	mount $root /real-root
+fi
+
+# thanks udevd. you did a great job.
+# now go away and let the real system do its work.
+killall udevd
+
+# if [ -e /real-root/dev ] 
+# then
+# 	mount --move /dev /real-root/dev
+# 	mount --move /sys /real-root/sys
+# 	mount --move /proc /real-root/proc
+# fi

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=noteedit
+Comment=Musical Score Editor
+Exec=noteedit
+Terminal=false
+Type=Application
+Categories=Audio;Music
+X-ROCK-Name=noteedit
+Icon=D_prefix/share/apps/noteedit/icons/hicolor/16x16/apps/noteedit.png

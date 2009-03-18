@@ -1,0 +1,15 @@
+X 1st-stage
+X 2nd-stage
+X packagedb
+X isofs
+X bootloader
+X rock-src
+X nfs-utils
+X openldap
+X bdb44
+X tcp_wrappers
+X portmap
+X hdparm
+O modutils
+O strace
+O lzo

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=GFingerPoken
+Comment=a logic game
+Exec=gfpoken
+Terminal=false
+Type=Application
+Categories=Game;LogicGame
+X-ROCK-Name=gfingerpoken

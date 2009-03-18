@@ -1,0 +1,13 @@
+--- ./install.sh.orig	2008-05-16 01:03:57.000000000 +0200
++++ ./install.sh	2008-05-16 01:04:09.000000000 +0200
+@@ -9,8 +9,8 @@
+ # values in both a2x and asciiidoc.py scripts.
+ 
+ CONFDIR=/etc/asciidoc
+-BINDIR=/usr/local/bin
+-MANDIR=/usr/local/man
++BINDIR=/usr/bin
++MANDIR=/usr/man
+ VIM_CONFDIR=/etc/vim
+ 
+ if [ `basename $0` = uninstall.sh ]; then

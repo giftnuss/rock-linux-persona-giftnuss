@@ -1,0 +1,46 @@
+--- ./srclib/apr/configure.in.orig	2007-05-27 10:33:31.000000000 +0000
++++ ./srclib/apr/configure.in	2007-05-27 10:33:34.000000000 +0000
+@@ -444,9 +444,9 @@
+ {
+     int fd, ret = 0;
+     struct stat64 st;
+-    off64_t off = 4242;
++    __off64_t off = 4242;
+ 
+-    if (sizeof(off64_t) != 8 || sizeof(off_t) != 4)
++    if (sizeof(__off64_t) != 8 || sizeof(off_t) != 4)
+        exit(1);
+     if ((fd = open("conftest.lfs", O_LARGEFILE|O_CREAT|O_WRONLY)) < 0)
+        exit(2);
+@@ -1265,7 +1265,7 @@
+ if test "${ac_cv_sizeof_off_t}${apr_cv_use_lfs64}" = "4yes"; then
+     # LFS is go!
+     off_t_fmt='#define APR_OFF_T_FMT APR_INT64_T_FMT'
+-    off_t_value='off64_t'
++    off_t_value='__off64_t'
+     off_t_strfn='apr_strtoi64'
+ elif test "${ac_cv_sizeof_off_t}x${ac_cv_sizeof_long}" = "4x4"; then
+     # Special case: off_t may change size with _FILE_OFFSET_BITS
+--- ./srclib/apr/configure.orig	2007-05-27 10:32:24.000000000 +0000
++++ ./srclib/apr/configure	2007-05-27 10:32:52.000000000 +0000
+@@ -24880,9 +24880,9 @@
+ {
+     int fd, ret = 0;
+     struct stat64 st;
+-    off64_t off = 4242;
++    __off64_t off = 4242;
+ 
+-    if (sizeof(off64_t) != 8 || sizeof(off_t) != 4)
++    if (sizeof(__off64_t) != 8 || sizeof(off_t) != 4)
+        exit(1);
+     if ((fd = open("conftest.lfs", O_LARGEFILE|O_CREAT|O_WRONLY)) < 0)
+        exit(2);
+@@ -36217,7 +36217,7 @@
+ if test "${ac_cv_sizeof_off_t}${apr_cv_use_lfs64}" = "4yes"; then
+     # LFS is go!
+     off_t_fmt='#define APR_OFF_T_FMT APR_INT64_T_FMT'
+-    off_t_value='off64_t'
++    off_t_value='__off64_t'
+     off_t_strfn='apr_strtoi64'
+ elif test "${ac_cv_sizeof_off_t}x${ac_cv_sizeof_long}" = "4x4"; then
+     # Special case: off_t may change size with _FILE_OFFSET_BITS

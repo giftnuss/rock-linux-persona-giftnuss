@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Scribus
+Comment=DTP program
+Exec=scribus
+Terminal=false
+Type=Application
+Categories=Office;Presentation
+X-ROCK-Name=scribus
+Icon=D_datadir/scribus/icons/AppIcon.png

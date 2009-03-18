@@ -1,0 +1,40 @@
+#!/bin/bash
+#
+# Desc: Network configuration using etc/net
+# Runlevel: 15 rcX rc3 rc4 rc5
+#
+
+SCRIPTDIR=/etc/net/scripts
+
+main_begin
+	block_begin(start, `Starting etcnet networking.')
+		$SCRIPTDIR/network.init $*
+	block_end
+	block_begin(startwith, `Starting etcnet networking with $2.')
+		$SCRIPTDIR/network.init $*
+	block_end
+	block_begin(stop, `Stopping etcnet networking.')
+		$SCRIPTDIR/network.init $*
+	block_end
+	block_begin(stopwith, `Stopping etcnet networking with $2.')
+		$SCRIPTDIR/network.init $*
+	block_end
+	block_begin(restart, `Restarting etcnet networking.')
+		$SCRIPTDIR/network.init $*
+	block_end
+	block_begin(reload, `Reloading etcnet networking.')
+		$SCRIPTDIR/network.init $*
+	block_end
+	block_begin(restartwith, `Restarting etcnet networking with $2.')
+		$SCRIPTDIR/network.init $*
+	block_end
+	block_begin(switchto, `Switching etcnet networking to $2.')
+		$SCRIPTDIR/network.init $*
+	block_end
+	block_begin(switchfrom, `Switching etcnet networking from $2.')
+		$SCRIPTDIR/network.init $*
+	block_end
+	block_begin("c""heck", `Checking etcnet networking.')
+		$SCRIPTDIR/network.init $*
+	block_end
+main_end

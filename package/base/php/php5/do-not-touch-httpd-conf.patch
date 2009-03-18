@@ -1,0 +1,29 @@
+--- ./configure.vanilla	2007-02-09 16:45:22.000000000 +0100
++++ ./configure	2007-02-09 16:46:27.000000000 +0100
+@@ -4582,7 +4582,7 @@
+   $APXS -q -S CFLAGS="$APXS_CFLAGS" CFLAGS >/dev/null 2>&1
+ 
+   if test "$?" != "0"; then
+-    APACHE_INSTALL="$APXS -i -a -n php5 $SAPI_SHARED" # Old apxs does not have -S option
++    APACHE_INSTALL="$APXS -i -n php5 $SAPI_SHARED" # Old apxs does not have -S option
+   else 
+     APXS_LIBEXECDIR='$(INSTALL_ROOT)'`$APXS -q LIBEXECDIR`
+     if test -z `$APXS -q SYSCONFDIR`; then
+@@ -6529,7 +6529,7 @@
+                 \$(mkinstalldirs) '$APXS_SYSCONFDIR' && \
+                  $APXS -S LIBEXECDIR='$APXS_LIBEXECDIR' \
+                        -S SYSCONFDIR='$APXS_SYSCONFDIR' \
+-                       -i -a -n php5"
++                       -i -n php5"
+   fi
+ 
+   case $host_alias in
+@@ -7528,7 +7528,7 @@
+   $APXS -q -S CFLAGS="$APXS_CFLAGS" CFLAGS >/dev/null 2>&1
+ 
+   if test "$?" != "0"; then
+-    APACHE_HOOKS_INSTALL="$APXS -i -a -n php5 $SAPI_SHARED" # Old apxs does not have -S option
++    APACHE_HOOKS_INSTALL="$APXS -i -n php5 $SAPI_SHARED" # Old apxs does not have -S option
+   else 
+     APXS_LIBEXECDIR='$(INSTALL_ROOT)'`$APXS -q LIBEXECDIR`
+     if test -z `$APXS -q SYSCONFDIR`; then

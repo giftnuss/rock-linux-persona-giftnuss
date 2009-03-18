@@ -1,0 +1,7 @@
+#!/bin/sh
+
+GNOME24_DIR="D_prefix"
+echo "Updating scrollkeeper database"
+# Make sure scrollkeeper-config is in the PATH so the program below 
+# does not segfault
+PATH="$PATH:/$GNOME24_DIR/bin" /$GNOME24_DIR/bin/scrollkeeper-update -q

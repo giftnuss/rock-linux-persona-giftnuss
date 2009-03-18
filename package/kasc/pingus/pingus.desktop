@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Pingus
+Comment=a free Lemmings[tm] clone
+Exec=pingus
+Terminal=false
+Type=Application
+Categories=Game;LogicGame
+X-ROCK-Name=pingus
+Icon=D_datadir/pingus/images/core/editor/actions.png

@@ -1,0 +1,3 @@
+
+CFGTEMP_TARGETLIST="$CFGTEMP_TARGETLIST  `
+`useeit the_uClibc_beta_target"

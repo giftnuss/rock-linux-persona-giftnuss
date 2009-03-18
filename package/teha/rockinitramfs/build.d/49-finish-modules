@@ -1,0 +1,23 @@
+# we want our own cwd and environment. so we open a subshell
+(
+	[ -d $mod_origin/kernel/ ] || exit
+	MODTMP="$TMPDIR/modules-$k_ver"
+	depmod -b $MODTMP $k_ver
+
+	cd $MODTMP
+
+	echo "dir /lib/modules 0755 0 0"
+	echo "dir /lib/modules/$k_ver 0755 0 0"
+
+	find lib/modules/$k_ver/{kernel,misc} -type d \
+	| while read dir ; do
+		echo "dir $dir 0755 0 0"
+		find "$dir" -name \*.ko | while read ko ; do
+			echo "file $ko `pwd`/$ko 0644 0 0"
+		done
+	done
+	find lib/modules/$k_ver -maxdepth 1 -name modules.\* | while read x
+	do
+		echo "file $x `pwd`/$x 0644 0 0"
+	done
+)

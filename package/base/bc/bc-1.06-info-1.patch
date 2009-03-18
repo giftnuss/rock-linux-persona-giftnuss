@@ -1,0 +1,85 @@
+Submitted By: BLFS Book <blfs-book@linuxfromscratch.org>
+Date: 2003-10-03
+Initial Package Version: 1.06
+Origin: NA
+Description: Fix bc documentation.
+diff -Naur bc-1.06.orig/doc/bc.texi bc-1.06/doc/bc.texi
+--- bc-1.06.orig/doc/bc.texi	2000-09-27 19:22:24.000000000 -0500
++++ bc-1.06/doc/bc.texi	2002-07-09 14:36:27.000000000 -0500
+@@ -13,18 +13,15 @@
+ @c \overfullrule=0pt
+ @c end tex
+ 
+-@titlepage
+-@title @command{bc}
+-@subtitle an arbitrary precision calculator language
+-@subtitle version 1.06
+-
+-@author Philip A. Nelson
+-@page
++@ifinfo
++@direntry
++* bc: (bc).                    An arbitrary precision calculator language.
++@end direntry
+ 
+ This manual documents @command{bc}, an arbitrary precision calculator language.
+ 
+ This manual is part of GNU @command{bc}.@*
+-@sp4
++
+ Copyright (C) 1991, 1992, 1993, 1994, 1997 Free Software Foundation, Inc.
+ 59 Temple Place, Suite 330, Boston, MA 02111-1307, USA.
+ 
+@@ -32,12 +29,12 @@
+ this manual provided the copyright notice and this permission notice
+ are preserved on all copies.
+ 
+-@iftex
++@ignore
+ Permission is granted to process this file through TeX and print the
+ results, provided the printed document carries copying permission
+ notice identical to this one except for the removal of this paragraph
+ (this paragraph not being relevant to the printed manual).
+-@end iftex
++@end ignore
+ 
+ Permission is granted to copy and distribute modified versions of this
+ manual under the conditions for verbatim copying, provided that the entire
+@@ -48,6 +45,16 @@
+ into another language, under the above conditions for modified versions,
+ except that this permission notice may be stated in a translation approved
+ by the Foundation.
++@end ifinfo
++
++@titlepage
++@title @command{bc}
++@subtitle an arbitrary precision calculator language
++@subtitle version 1.06
++
++@author Philip A. Nelson
++@page
++
+ 
+ You may contact the author by:
+ e-mail: @email{phil@@cs.wwu.edu}@*
+diff -Naur bc-1.06.orig/doc/dc.texi bc-1.06/doc/dc.texi
+--- bc-1.06.orig/doc/dc.texi	2000-08-31 10:57:43.000000000 -0500
++++ bc-1.06/doc/dc.texi	2002-07-09 14:36:27.000000000 -0500
+@@ -41,8 +41,8 @@
+ results, provided the printed document carries copying permission
+ notice identical to this one except for the removal of this paragraph
+ (this paragraph not being relevant to the printed manual).
+-
+ @end ignore
++
+ Permission is granted to copy and distribute modified versions of this
+ manual under the conditions for verbatim copying, provided that the entire
+ resulting derived work is distributed under the terms of a permission
+@@ -85,7 +85,6 @@
+ by the Foundation.
+ 
+ @end titlepage
+-@page
+ 
+ @node Top, Introduction, (dir), (dir)
+ 

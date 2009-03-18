@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Mozilla
+Comment=The powerful Mozilla groupware
+Exec=mozilla
+Terminal=false
+Type=Application
+Categories=Network;WebBrowser
+X-ROCK-Name=mozilla
+Icon=D_prefix/lib/mozilla-D_ver/chrome/icons/default/default.xpm

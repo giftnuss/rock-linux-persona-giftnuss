@@ -1,0 +1,3 @@
+#!/bin/bash
+[ "$ROCKCFG_PKG_BDB_DEFAULT" != "none" ] && \
+	 pkgenable $ROCKCFG_PKG_BDB_DEFAULT

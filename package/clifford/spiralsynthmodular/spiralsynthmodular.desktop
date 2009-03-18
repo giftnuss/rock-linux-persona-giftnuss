@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Spiral Synth Modular
+Comment=Audio Sampler
+Exec=SpiralSynthModular
+Terminal=false
+Type=Application
+Categories=Audio;Music
+X-ROCK-Name=spiralsynthmodular

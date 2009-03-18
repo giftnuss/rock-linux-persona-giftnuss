@@ -1,0 +1,265 @@
+#!/bin/bash
+
+read a b version c < /proc/version
+while read device mountpoint status ; do
+	[ "${status}" == "plain" ] && continue
+	if [ ${rootfsmounted} -eq 0 -a "${mountpoint}" != "/" ] ; then # we need to have the rootfs mounted for all other filesystems to be mountable
+		echo "Mounting rootfs (${rootfs}) on /root"
+		initrd_mount ${rootfs} /root
+		rootfsmounted=1
+	fi
+	if [ "${status}" == "encrypt" ] ; then # {{{
+		echo "Encrypting ${device} on ${mountpoint}"
+		echo 
+		echo "WARNING! Although this is usually safe you should make sure that your backups"
+		echo "are recent and working. Just in case something happens (power loss, ...)."
+		echo "If this process is interrupted your filesystem WILL BE INACCESSIBLE!"
+		echo 
+		pass1="MEEP"
+		pass2="MOOP"
+		while [ "${pass1}" != "${pass2}" ] ; do
+			echo -n "Please enter the passphrase for encryption: "
+			read -s pass1 < /dev/console
+			echo
+			if [ -z "${pass1:20}" ] ; then
+				echo "Your passphrase is short and may thus be insecure."
+				echo -n "Enter it again to use it anyway: "
+				read -s passa < /dev/console
+				echo
+				if [ "${passa}" != "${pass1}" ] ; then
+					passa="ABCD"
+					pass1="MEEP"
+					pass2="MOOP"
+					continue
+				fi
+				passa="ABCD"
+			fi
+			echo -n "Please confirm the passphrase: "
+			read -s pass2 < /dev/console
+			echo
+			[ "${pass1}" != "${pass2}" ] && echo "The passphrases do not match!"
+		done
+		
+		pass1="`echo ${pass1} | md5sum`"
+		pass1=${pass1%% *}
+		encryptedname=${device//\//_}_encrypted
+		encryptedname=${encryptedname#_}
+		echo -n "Setting up encryption now ... "
+		echo 0 `/sbin/blockdev --getsize ${device}` crypt aes-plain ${pass1} 0 ${device} 0 | /sbin/dmsetup create ${encryptedname}
+		echo "done"
+		echo "I will now do a sanity check of the harddisk. This means"
+		echo "that the encryption process will be simulated by writing"
+		echo "to /dev/null instead of the encrypted partition."
+		echo "This ensures that the whole disk is readable and the"
+		echo "copy process won't fail because of a bad harddisk."
+		echo
+		echo -n "Press enter to continue ... "
+		read </dev/console
+		if /bin/dd if=/dev/zero of=/dev/null conv=stat count=1 2>/dev/null ; then
+			echo "Starting dd, this will take some time. Go have some coffee :-)"
+			dd if=${device} of=/dev/null bs=1k conv=stat # conv=stat is my personal patch -- BRS
+			error=${?}
+		else
+			echo "Starting dd, this will take some time. No output will happen"
+			echo "while this is running. Go have some coffee :-)"
+			dd if=${device} of=/dev/null bs=1k
+			error=${?}
+		fi
+		if [ ${error} != 0 ] ; then
+			echo "An error occured!"
+			echo "Cowardly refusing to encrypt ${device}!"
+			/sbin/dmsetup remove ${encryptedname}
+			echo "Starting a shell"
+			echo
+			exec /bin/bash
+			continue
+		fi
+		echo "Now the critical part of the encryption process starts."
+		echo "I'm now copying the data bytewise from the unencrypted device to the"
+		echo "encrypted loopdevice. Make absolutely sure that this process won't be"
+		echo "interrupted!"
+		echo
+		echo -n "Press enter to start encrypting ... "
+		read < /dev/console
+		if /bin/dd if=/dev/zero of=/dev/null conv=stat count=1 2>/dev/null ; then
+			echo "Starting dd, this will take some time. Go have some coffee :-)"
+			dd if=${device} of=/dev/mapper/${encryptedname} bs=1k conv=stat # conv=stat is my personal patch -- BRS
+		else
+			echo "Starting dd, this will take some time. No output will happen"
+			echo "while this is running. Go have some coffee :-)"
+			dd if=${device} of=/dev/mapper/${encryptedname} bs=1k
+		fi
+		echo "Encrypting the data is done."
+		echo -n "Mounting encrypted ${device} on ${mountpoint} now ... "
+		if ! initrd_mount /dev/mapper/${encryptedname} /root/${mountpoint} ; then
+			echo "FAILED"
+			echo "Couldn't mount /dev/mapper/${encryptedname} on ${mountpoint}"
+			echo "Starting a shell"
+			echo
+			exec /bin/bash
+		fi
+		[ "${mountpoint}" == "/" ] && rootfsmounted=1
+		echo "done"
+		sed -e "s,^${device}\(.*\)encrypt,${device}\\1encrypted," -i /root/etc/conf/dm/mounts
+		recreateinitrd=1
+		echo "Press enter to continue"
+		read < /dev/console
+		continue
+	fi # }}}
+	if [ "${status}" == "decrypt" ] ; then # {{{
+		echo "Decrypting ${device} on ${mountpoint}"
+		echo 
+		echo "WARNING! Although this is usually safe you should make sure that your backups"
+		echo "are recent and working. Just in case something happens (power loss, ...)."
+		echo "If this process is interrupted your filesystem WILL BE INACCESSIBLE!"
+		echo 
+		pass1="MEEP"
+		pass2="MOOP"
+		while [ "${pass1}" != "${pass2}" ] ; do
+			echo -n "Please enter the passphrase for decryption: "
+			read -s pass1 < /dev/console
+			echo
+			echo -n "Please confirm the passphrase: "
+			read -s pass2 < /dev/console
+			echo
+			[ "${pass1}" != "${pass2}" ] && echo "The passphrases do not match!"
+		done
+		pass1="`echo ${pass1} | md5sum`"
+		pass1=${pass1%% *}
+		encryptedname=${device//\//_}_encrypted
+		encryptedname=${encryptedname#_}
+
+		echo -n "Setting up decryption now ... "
+		echo 0 `/sbin/blockdev --getsize ${device}` crypt aes-plain ${pass1} 0 ${device} 0 | /sbin/dmsetup create ${encryptedname}
+		echo "done"
+		echo "I will now do a sanity check of the harddisk. This means"
+		echo "that the encryption process will be simulated by writing"
+		echo "to /dev/null instead of the encrypted partition."
+		echo "This ensures that the whole disk is readable and the"
+		echo "copy process won't fail because of a bad harddisk."
+		echo
+		echo -n "Press enter to continue ... "
+		read </dev/console
+		if /bin/dd if=/dev/zero of=/dev/null conv=stat count=1 2>/dev/null ; then
+			echo "Starting dd, this will take some time. Go have some coffee :-)"
+			dd if=${device} of=/dev/null bs=1k conv=stat # conv=stat is my personal patch -- BRS
+			error=${?}
+		else
+			echo "Starting dd, this will take some time. No output will happen"
+			echo "while this is running. Go have some coffee :-)"
+			dd if=${device} of=/dev/null bs=1k
+			error=${?}
+		fi
+		if [ ${error} != 0 ] ; then
+			echo "An error occured!"
+			echo "Cowardly refusing to decrypt ${device}!"
+			echo "Starting a shell."
+			echo
+			exec /bin/bash
+			continue
+		fi
+		echo "Now the critical part of the decryption process starts."
+		echo "I'm now copying the data bytewise from the encrypted device to the"
+		echo "unencrypted loopdevice. Make absolutely sure that this process won't be"
+		echo "interrupted!"
+		echo
+		echo -n "Press enter to start decrypting ... "
+		read < /dev/console
+		if /bin/dd if=/dev/zero of=/dev/null conv=stat count=1 2>/dev/null ; then
+			echo "Starting dd, this will take some time. Go have some coffee :-)"
+			dd if=/dev/mapper/${encryptedname} of=${device} bs=1k conv=stat # conv=stat is my personal patch
+		else
+			echo "Starting dd, this will take some time. No output will happen"
+			echo "while this is running. Go have some coffee :-)"
+			dd if=/dev/mapper/${encryptedname} of=${device} bs=1k
+		fi
+		echo "Decrypting the data is done."
+		echo -n "Shutting down encryption ... "
+		/sbin/dmsetup remove ${encryptedname}
+		echo -n "done"
+		echo -n "Mounting ${device} on ${mountpoint} now ... "
+		if ! initrd_mount ${device} /root/${mountpoint} ; then
+			echo "FAILED"
+			echo "Couldn't mount ${device} on ${mountpoint}"
+			echo "Starting a shell"
+			echo
+			exec /bin/bash
+		fi
+		[ "${mountpoint}" == "/" ] && rootfsmounted=1
+		echo "done"
+		sed -e "s,^${device}\(.*\)decrypt,${device}\\1plain," -i /root/etc/conf/dm/mounts
+		recreateinitrd=1
+		echo "Press enter to continue"
+		read < /dev/console
+		continue
+	fi # }}}
+	if [ "${status}" == "swap" ] ; then # {{{
+		echo "Creating encrypted swap on ${device}"
+		echo "setting up encryption"
+		echo -n "gathering entropy ... "
+		ent=""
+		while read -n 1 -t 1 e < /dev/random ; do
+			[ -n "${ent:128}" ] && break
+			[ "${e}" == "\n" ] && continue
+			ent="${ent}${e}"
+			echo -n "."
+		done
+		[ -z "${ent:128}" ] && echo -n " switching to urandom ... "
+		while read -n 1 e < /dev/urandom ; do
+			[ -n "${ent:128}" ] && break
+			[ "${e}" == "\n" ] && continue
+			ent="${ent}${e}"
+			echo -n "."
+		done
+		ent="`echo ${ent} | md5sum`"
+		ent=${ent%% *}
+		echo " done"
+		echo -n "setting up encryption ... "
+		encryptedname=${device//\//_}_encrypted
+		encryptedname=${encryptedname#_}
+		echo 0 `/sbin/blockdev --getsize ${device}` crypt aes-plain ${ent} 0 ${device} 0 | /sbin/dmsetup create ${encryptedname}
+		echo "done"
+		echo -n "creating swapspace ... "
+		if /sbin/mkswap /dev/mapper/${encryptedname} >/dev/null 2>&1 ; then
+			echo "success"
+			echo -n "activating swapspace ... "
+			if /sbin/swapon /dev/mapper/${encryptedname} ; then
+				echo "success"
+			else
+				echo "failed"
+				echo "booting without swap!"
+			fi
+		else
+			echo "failed"
+			echo "booting without swap!"
+		fi
+	fi # }}}
+	if [ "${status}" == "encrypted" ] ; then # {{{
+		run=1
+		while [ ${run} -eq 1 ] ; do
+			echo "Please enter the passphrase for ${device} on ${mountpoint}"
+			echo -n "Passphrase: "
+			read -s passphrase < /dev/console
+			echo
+			passphrase="`echo ${passphrase} | md5sum`"
+			passphrase=${passphrase%% *}
+			encryptedname=${device//\//_}_encrypted
+			encryptedname=${encryptedname#_}
+			echo 0 `/sbin/blockdev --getsize ${device}` crypt aes-plain ${passphrase} 0 ${device} 0 | /sbin/dmsetup create ${encryptedname}
+			if initrd_mount /dev/mapper/${encryptedname} /root/${mountpoint} < /dev/console ; then
+				run=0
+				echo "Success"
+			else
+				/sbin/dmsetup remove ${encryptedname}
+				echo "Couldn't mount ${device} on ${mountpoint}"
+				echo -n "Continue without it [y/n] ? "
+				read -n 1 yn < /dev/console
+				echo
+				[ "${yn}" == "y" ] && run=0
+			fi
+		done
+
+		[ "${mountpoint}" == "/" ] && rootfsmounted=1
+		continue
+	fi # }}}
+done < /etc/dm/mounts

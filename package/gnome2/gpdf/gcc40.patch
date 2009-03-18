@@ -1,0 +1,30 @@
+diff -dur gpdf-2.10.0/xpdf/TextOutputDev.h src.gpdf.1135211790.4519.289955105/gpdf-2.10.0/xpdf/TextOutputDev.h
+--- gpdf-2.10.0/xpdf/TextOutputDev.h	2004-05-17 21:37:57.000000000 +0200
++++ src.gpdf.1135211790.4519.289955105/gpdf-2.10.0/xpdf/TextOutputDev.h	2005-12-23 22:06:02.000000000 +0100
+@@ -166,6 +166,8 @@
+ // TextLine
+ //------------------------------------------------------------------------
+ 
++class TextBlock;
++
+ class TextLine {
+ public:
+ 
+@@ -223,6 +225,8 @@
+ // TextBlock
+ //------------------------------------------------------------------------
+ 
++class TextPage;
++
+ class TextBlock {
+ public:
+ 
+@@ -342,6 +346,8 @@
+ // TextPage
+ //------------------------------------------------------------------------
+ 
++class TextLineFrag;
++
+ class TextPage {
+ public:
+ 

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Ambassador of Pain
+Comment=Arcade Game
+Exec=aop
+Terminal=true
+Type=Application
+Categories=Game;ArcadeGame
+X-ROCK-Name=aop

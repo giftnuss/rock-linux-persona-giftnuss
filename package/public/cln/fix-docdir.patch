@@ -1,0 +1,13 @@
+--- cln-1.1.6/doc/Makefile.in~	2000-12-05 16:38:27.000000000 +0100
++++ cln-1.1.6/doc/Makefile.in	2006-01-19 15:59:51.000000000 +0100
+@@ -12,8 +12,8 @@
+ datadir = @datadir@
+ infodir = @infodir@
+ mandir = @mandir@
+-htmldir = $(datadir)/html
+-dvidir = $(datadir)/dvi
++htmldir = $(datadir)/doc/cln/html
++dvidir = $(datadir)/doc/cln/dvi
+ DESTDIR =
+ 
+ # Programs used by "make":

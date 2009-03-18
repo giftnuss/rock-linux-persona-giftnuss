@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=MPlayer
+Comment=Movie Player
+Exec=gmplayer
+Terminal=false
+Type=Application
+Categories=Video;Player
+X-ROCK-Name=mplayer

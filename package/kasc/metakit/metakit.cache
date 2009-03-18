@@ -1,0 +1,19 @@
+
+[TIMESTAMP] 1181117421 Wed Jun  6 10:10:21 2007 (5)
+[TIMESTAMP] 1181593861 Mon Jun 11 22:31:01 2007 (9)
+
+[CONFIG-ID] TRUNK-x86-reference
+[ROCKVER] TRUNK
+
+[LOGS] 5-metakit.log 9-metakit.log
+
+[BUILDTIME] 3722 (5)
+[BUILDTIME] 3885 (9)
+[SIZE] 0.25 MB, 7 files
+
+[DEP] 00-dirtree bash2 binutils bzip2 coreutils cvm diffutils findutils
+[DEP] gawk gcc42 gcc42:dev glibc26 glibc26:dev grep linux26-headers:dev
+[DEP] ltrace make mktemp net-tools sed sysfiles tar util-linux xmame
+
+[PROVIDES] libmk4.so
+

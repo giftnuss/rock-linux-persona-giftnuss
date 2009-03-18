@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Kobo Deluxe
+Comment=Kobo Deluxe
+Exec=koxo-deluxe
+Terminal=false
+Type=Application
+Categories=Game;ArcadeGame
+X-ROCK-Name=kobo_deluxe

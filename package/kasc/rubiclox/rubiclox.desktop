@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Rubick's Clock
+Comment=Ultra Power Rubick's Clock Max II
+Exec=rubiclox
+Terminal=false
+Type=Application
+Categories=Game;LogicGame
+X-ROCK-Name=rubiclox

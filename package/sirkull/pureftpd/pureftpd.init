@@ -1,0 +1,18 @@
+#!/bin/bash
+#
+# Desc: Pure FTPd
+# Runlevel: 61 rcX
+#
+
+main_begin
+
+    block_begin(start, `Starting PureFTPd.')
+        check(`D_prefix/sbin/pure-config.pl /etc/pure-ftpd/pure-ftpd.conf')
+    block_end
+
+    block_begin(stop, `Stopping PureFTPd.')
+        check(`killall D_prefix/sbin/pure-ftpd')
+    block_end
+
+main_end
+

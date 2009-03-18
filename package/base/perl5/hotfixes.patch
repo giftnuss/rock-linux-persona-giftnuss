@@ -1,0 +1,10 @@
+--- ./makedepend.SH.orig	2007-05-17 00:58:57.000000000 +0200
++++ ./makedepend.SH	2007-05-17 00:59:14.000000000 +0200
+@@ -167,6 +167,7 @@
+             -e '/^#.*<builtin>/d' \
+             -e '/^#.*<built-in>/d' \
+             -e '/^#.*<command line>/d' \
++            -e '/^#.*<command-line>/d' \
+ 	    -e '/^#.*"-"/d' \
+ 	    -e '/: file path prefix .* never used$/d' \
+ 	    -e 's#\.[0-9][0-9]*\.c#'"$file.c#" \

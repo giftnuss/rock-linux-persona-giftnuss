@@ -1,0 +1,110 @@
+--- ./makefile.unix.orig	2006-07-19 22:33:21.000000000 +0200
++++ ./makefile.unix	2006-07-19 22:36:27.000000000 +0200
+@@ -97,7 +97,7 @@
+ # just as well.  However, stay away from the `cc' Ultrix compiler if 
+ # possible.
+ 
+-CC	= @gcc
++# CC	= @gcc
+ # CC    = @cc
+ # CC	= @icc
+ # CC	= @c89
+@@ -108,7 +108,7 @@
+ 
+ # Compiler for host compilations in cross-compiling environments (used 
+ # in src/unix/unix.mak for m68k).
+-HOST_CC = $(CC)
++# HOST_CC = $(CC)
+ # HOST_CC = @gcc
+ 
+ 
+@@ -118,7 +118,7 @@
+ 
+ # If you want to use whatever CFLAGS are currently set in your 
+ # environment, then comment this out.
+-CFLAGS =
++# CFLAGS =
+ 
+ 
+ ###########################################################################
+@@ -127,7 +127,7 @@
+ ###########################################################################
+ 
+ # GCC on x86
+-CFLAGS = -O2
++# CFLAGS = -O2
+ 
+ # GCC on x86 with some optimizations
+ # CFLAGS = -O2 -mtune=i686 -fomit-frame-pointer -fstrength-reduce -ffast-math
+@@ -483,7 +483,7 @@
+ 
+ # Does your platform have ranlib?  Leave this untouched unless you are
+ # using IRIX, Unixware 7, or the Intel C++ Compiler.
+-RANLIB = @ranlib
++# RANLIB = @ranlib
+ # RANLIB = @true
+ 
+ 
+@@ -560,7 +560,7 @@
+ # Select destination directory for your compiled program, manual page,
+ # and binary distribution.
+ ifndef PREFIX
+-PREFIX = /usr/local
++PREFIX = /usr
+ endif
+ BINDIR = $(PREFIX)/bin
+ MANDIR = $(PREFIX)/man/man6
+@@ -576,7 +576,9 @@
+ ###########################################################################
+ 
+ # i386, GNU asm
++ifndef MY_CPU
+ MY_CPU = i386
++endif
+ 
+ # i386, no asm -- needed for the Intel C++ compiler, which does not fully
+ # understand GCC's inline assembly syntax, though you may still enable 
+@@ -670,7 +672,7 @@
+ 
+ # Enable the standard joystick driver, which should work in Linux, OpenBSD, 
+ # NetBSD, and FreeBSD.
+-# JOY_STANDARD = 1
++JOY_STANDARD = 1
+ 
+ # Linux FM-TOWNS game pad joystick emulation support.  Thanks to Osamu 
+ # Kurati.
+@@ -683,7 +685,7 @@
+ # JOY_PS2 = 1
+ 
+ # SDL joystick support.
+-# JOY_SDL = 1
++JOY_SDL = 1
+ 
+ # This will enable the use of the Happ Controls UGCI(tm) USB devices'
+ # Coin/Start inputs using the libugci library available from
+@@ -712,10 +714,10 @@
+ # Choose any additonal sound drivers you want to include, besides the 
+ # native sound driver for your system.
+ # SOUND_ESOUND = 1
+-# SOUND_ALSA = 1
++SOUND_ALSA = 1
+ # SOUND_ARTS_TEIRA = 1
+ # SOUND_ARTS_SMOTEK = 1
+-# SOUND_SDL = 1
++SOUND_SDL = 1
+ # SOUND_WAVEOUT = 1
+ 
+ 
+@@ -727,10 +729,10 @@
+ # use SDL.
+ 
+ # X11 (including Glide & OpenGL if enabled below)
+-DISPLAY_METHOD = x11
++# DISPLAY_METHOD = x11
+ 
+ # SDL library 
+-# DISPLAY_METHOD = SDL
++DISPLAY_METHOD = SDL
+ 
+ # SVGALib, only supported under Linux
+ # DISPLAY_METHOD = svgalib

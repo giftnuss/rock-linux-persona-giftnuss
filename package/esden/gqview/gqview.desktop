@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=GQView
+Comment=Image Viewer
+Exec=gqview
+Terminal=false
+Type=Application
+Categories=Graphics;Viewer
+X-ROCK-Name=gqview
+Icon=D_datadir/pixmaps/gqview.png

@@ -1,0 +1,22 @@
+
+[TIMESTAMP] 1181126595 Wed Jun  6 12:43:15 2007 (5)
+[TIMESTAMP] 1181603658 Tue Jun 12 01:14:18 2007 (9)
+
+[CONFIG-ID] TRUNK-x86-reference
+[ROCKVER] TRUNK
+
+[LOGS] 5-openal.log 9-openal.log
+
+[BUILDTIME] 11191 (5)
+[BUILDTIME] 11225 (9)
+[SIZE] 0.25 MB, 14 files
+
+[DEP] 00-dirtree alsa:dev arts arts:dev audiofile:dev bash2 binutils
+[DEP] bzip2 coreutils cvm diffutils esound esound:dev findutils gawk
+[DEP] gcc42 gcc42:dev glibc26 glibc26:dev grep libelf libogg:dev libsdl
+[DEP] libsdl:dev libvorbis:dev linux26-headers:dev ltrace make mktemp
+[DEP] net-tools pkgconfig sed sysfiles tar util-linux xmame
+
+[PROVIDES] freealut-config libalut.a libalut.so libopenal.a libopenal.so
+[PROVIDES] openal-config
+

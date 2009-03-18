@@ -1,0 +1,21 @@
+
+[TIMESTAMP] 1181151792 Wed Jun  6 19:43:12 2007 (5)
+[TIMESTAMP] 1181604864 Tue Jun 12 01:34:24 2007 (9)
+
+[CONFIG-ID] TRUNK-x86-reference
+[ROCKVER] TRUNK
+
+[LOGS] 5-corewars.log 9-corewars.log
+
+[BUILDTIME] 3928 (5)
+[BUILDTIME] 4170 (9)
+[SIZE] 0.33 MB, 107 files
+
+[DEP] 00-dirtree alsa applewmproto applewmproto:dev bash2 binutils bzip2
+[DEP] coreutils cvm diffutils findutils flex flex:dev gawk gcc42 gcc42:dev
+[DEP] glib12 glib12:dev glibc26 glibc26:dev gnome14-dirtree grep gtk+12
+[DEP] gtk+12:dev libx11 libx11:dev libxau libxcb libxdmcp libxext libxi
+[DEP] linux26-headers:dev ltrace m4 make mktemp net-tools sed sysfiles
+[DEP] tar util-linux xmame xproto:dev
+
+

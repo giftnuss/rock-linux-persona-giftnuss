@@ -1,0 +1,123 @@
+
+[TIMESTAMP] 1181120593 Wed Jun  6 11:03:13 2007 (5) ERROR
+[TIMESTAMP] 1181597200 Mon Jun 11 23:26:40 2007 (9) ERROR
+[TIMESTAMP] 1181827143 Thu Jun 14 15:19:03 2007 (5) ERROR
+[TIMESTAMP] 1181909545 Fri Jun 15 14:12:25 2007 (9) ERROR
+[TIMESTAMP] 1181951644 Sat Jun 16 01:54:04 2007 (5) ERROR
+[TIMESTAMP] 1181973183 Sat Jun 16 07:53:03 2007 (9) ERROR
+
+[CONFIG-ID] TRUNK-x86-reference
+[ROCKVER] TRUNK
+
+[LOGS] 5-plib.err 9-plib.err
+
+[BUILDTIME] 12608 (5) ERROR
+[BUILDTIME] 12347 (9) ERROR
+[BUILDTIME] 12360 (5) ERROR
+[BUILDTIME] 12307 (9) ERROR
+[BUILDTIME] 12196 (5) ERROR
+[BUILDTIME] 12162 (9) ERROR
+
+
+[5-ERROR] if g++-42 -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"plib\" -DVERSION=\"1.8.4\" -DHAVE_LIBPTHREAD=1 -DHAVE_LIBGL=1 -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1  -I. -I. -I../../src/sg -I../../src/util  -I/usr/X11/include  -g -O2 -Wall -MT fnt.o -MD -MP -MF ".deps/fnt.Tpo" -c -o fnt.o fnt.cxx; \
+[5-ERROR] 	then mv -f ".deps/fnt.Tpo" ".deps/fnt.Po"; else rm -f ".deps/fnt.Tpo"; exit 1; fi
+[5-ERROR] if g++-42 -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"plib\" -DVERSION=\"1.8.4\" -DHAVE_LIBPTHREAD=1 -DHAVE_LIBGL=1 -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1  -I. -I. -I../../src/sg -I../../src/util  -I/usr/X11/include  -g -O2 -Wall -MT fntTXF.o -MD -MP -MF ".deps/fntTXF.Tpo" -c -o fntTXF.o fntTXF.cxx; \
+[5-ERROR] 	then mv -f ".deps/fntTXF.Tpo" ".deps/fntTXF.Po"; else rm -f ".deps/fntTXF.Tpo"; exit 1; fi
+[5-ERROR] if g++-42 -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"plib\" -DVERSION=\"1.8.4\" -DHAVE_LIBPTHREAD=1 -DHAVE_LIBGL=1 -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1  -I. -I. -I../../src/sg -I../../src/util  -I/usr/X11/include  -g -O2 -Wall -MT fntBitmap.o -MD -MP -MF ".deps/fntBitmap.Tpo" -c -o fntBitmap.o fntBitmap.cxx; \
+[5-ERROR] 	then mv -f ".deps/fntBitmap.Tpo" ".deps/fntBitmap.Po"; else rm -f ".deps/fntBitmap.Tpo"; exit 1; fi
+[5-ERROR] fntBitmap.cxx:315: warning: deprecated conversion from string constant to 'char*'
+[5-ERROR] fntBitmap.cxx:426: warning: deprecated conversion from string constant to 'char*'
+[5-ERROR] fntBitmap.cxx:537: warning: deprecated conversion from string constant to 'char*'
+[5-ERROR] fntBitmap.cxx:648: warning: deprecated conversion from string constant to 'char*'
+[5-ERROR] fntBitmap.cxx:759: warning: deprecated conversion from string constant to 'char*'
+[5-ERROR] fntBitmap.cxx:870: warning: deprecated conversion from string constant to 'char*'
+[5-ERROR] fntBitmap.cxx:981: warning: deprecated conversion from string constant to 'char*'
+[5-ERROR] rm -f libplibfnt.a
+[5-ERROR] ar cru libplibfnt.a fnt.o fntTXF.o fntBitmap.o 
+[5-ERROR] ranlib libplibfnt.a
+[5-ERROR] make[2]: Leaving directory `/ROCK/loop/src.plib.1181951524.13838.4161569442/plib-1.8.4/src/fnt'
+[5-ERROR] Making all in ssgAux
+[5-ERROR] make[2]: Entering directory `/ROCK/loop/src.plib.1181951524.13838.4161569442/plib-1.8.4/src/ssgAux'
+[5-ERROR] if g++-42 -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"plib\" -DVERSION=\"1.8.4\" -DHAVE_LIBPTHREAD=1 -DHAVE_LIBGL=1 -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1  -I. -I. -I../../src/sg -I../../src/ssg -I../../src/util  -I/usr/X11/include  -g -O2 -Wall -MT ssgAux.o -MD -MP -MF ".deps/ssgAux.Tpo" -c -o ssgAux.o ssgAux.cxx; \
+[5-ERROR] 	then mv -f ".deps/ssgAux.Tpo" ".deps/ssgAux.Po"; else rm -f ".deps/ssgAux.Tpo"; exit 1; fi
+[5-ERROR] if g++-42 -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"plib\" -DVERSION=\"1.8.4\" -DHAVE_LIBPTHREAD=1 -DHAVE_LIBGL=1 -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1  -I. -I. -I../../src/sg -I../../src/ssg -I../../src/util  -I/usr/X11/include  -g -O2 -Wall -MT ssgaShapes.o -MD -MP -MF ".deps/ssgaShapes.Tpo" -c -o ssgaShapes.o ssgaShapes.cxx; \
+[5-ERROR] 	then mv -f ".deps/ssgaShapes.Tpo" ".deps/ssgaShapes.Po"; else rm -f ".deps/ssgaShapes.Tpo"; exit 1; fi
+[5-ERROR] if g++-42 -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"plib\" -DVERSION=\"1.8.4\" -DHAVE_LIBPTHREAD=1 -DHAVE_LIBGL=1 -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1  -I. -I. -I../../src/sg -I../../src/ssg -I../../src/util  -I/usr/X11/include  -g -O2 -Wall -MT ssgaPatch.o -MD -MP -MF ".deps/ssgaPatch.Tpo" -c -o ssgaPatch.o ssgaPatch.cxx; \
+[5-ERROR] 	then mv -f ".deps/ssgaPatch.Tpo" ".deps/ssgaPatch.Po"; else rm -f ".deps/ssgaPatch.Tpo"; exit 1; fi
+[5-ERROR] if g++-42 -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"plib\" -DVERSION=\"1.8.4\" -DHAVE_LIBPTHREAD=1 -DHAVE_LIBGL=1 -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1  -I. -I. -I../../src/sg -I../../src/ssg -I../../src/util  -I/usr/X11/include  -g -O2 -Wall -MT ssgaParticleSystem.o -MD -MP -MF ".deps/ssgaParticleSystem.Tpo" -c -o ssgaParticleSystem.o ssgaParticleSystem.cxx; \
+[5-ERROR] 	then mv -f ".deps/ssgaParticleSystem.Tpo" ".deps/ssgaParticleSystem.Po"; else rm -f ".deps/ssgaParticleSystem.Tpo"; exit 1; fi
+[5-ERROR] if g++-42 -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"plib\" -DVERSION=\"1.8.4\" -DHAVE_LIBPTHREAD=1 -DHAVE_LIBGL=1 -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1  -I. -I. -I../../src/sg -I../../src/ssg -I../../src/util  -I/usr/X11/include  -g -O2 -Wall -MT ssgaWaveSystem.o -MD -MP -MF ".deps/ssgaWaveSystem.Tpo" -c -o ssgaWaveSystem.o ssgaWaveSystem.cxx; \
+[5-ERROR] 	then mv -f ".deps/ssgaWaveSystem.Tpo" ".deps/ssgaWaveSystem.Po"; else rm -f ".deps/ssgaWaveSystem.Tpo"; exit 1; fi
+[5-ERROR] if g++-42 -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"plib\" -DVERSION=\"1.8.4\" -DHAVE_LIBPTHREAD=1 -DHAVE_LIBGL=1 -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1  -I. -I. -I../../src/sg -I../../src/ssg -I../../src/util  -I/usr/X11/include  -g -O2 -Wall -MT ssgaLensFlare.o -MD -MP -MF ".deps/ssgaLensFlare.Tpo" -c -o ssgaLensFlare.o ssgaLensFlare.cxx; \
+[5-ERROR] 	then mv -f ".deps/ssgaLensFlare.Tpo" ".deps/ssgaLensFlare.Po"; else rm -f ".deps/ssgaLensFlare.Tpo"; exit 1; fi
+[5-ERROR] if g++-42 -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"plib\" -DVERSION=\"1.8.4\" -DHAVE_LIBPTHREAD=1 -DHAVE_LIBGL=1 -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1  -I. -I. -I../../src/sg -I../../src/ssg -I../../src/util  -I/usr/X11/include  -g -O2 -Wall -MT ssgaLensFlareTexture.o -MD -MP -MF ".deps/ssgaLensFlareTexture.Tpo" -c -o ssgaLensFlareTexture.o ssgaLensFlareTexture.cxx; \
+[5-ERROR] 	then mv -f ".deps/ssgaLensFlareTexture.Tpo" ".deps/ssgaLensFlareTexture.Po"; else rm -f ".deps/ssgaLensFlareTexture.Tpo"; exit 1; fi
+[5-ERROR] if g++-42 -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"plib\" -DVERSION=\"1.8.4\" -DHAVE_LIBPTHREAD=1 -DHAVE_LIBGL=1 -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1  -I. -I. -I../../src/sg -I../../src/ssg -I../../src/util  -I/usr/X11/include  -g -O2 -Wall -MT ssgaFire.o -MD -MP -MF ".deps/ssgaFire.Tpo" -c -o ssgaFire.o ssgaFire.cxx; \
+[5-ERROR] 	then mv -f ".deps/ssgaFire.Tpo" ".deps/ssgaFire.Po"; else rm -f ".deps/ssgaFire.Tpo"; exit 1; fi
+[5-ERROR] if g++-42 -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"plib\" -DVERSION=\"1.8.4\" -DHAVE_LIBPTHREAD=1 -DHAVE_LIBGL=1 -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1  -I. -I. -I../../src/sg -I../../src/ssg -I../../src/util  -I/usr/X11/include  -g -O2 -Wall -MT ssgaScreenDump.o -MD -MP -MF ".deps/ssgaScreenDump.Tpo" -c -o ssgaScreenDump.o ssgaScreenDump.cxx; \
+[5-ERROR] 	then mv -f ".deps/ssgaScreenDump.Tpo" ".deps/ssgaScreenDump.Po"; else rm -f ".deps/ssgaScreenDump.Tpo"; exit 1; fi
+[5-ERROR] if g++-42 -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"plib\" -DVERSION=\"1.8.4\" -DHAVE_LIBPTHREAD=1 -DHAVE_LIBGL=1 -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1  -I. -I. -I../../src/sg -I../../src/ssg -I../../src/util  -I/usr/X11/include  -g -O2 -Wall -MT ssgaSphere.o -MD -MP -MF ".deps/ssgaSphere.Tpo" -c -o ssgaSphere.o ssgaSphere.cxx; \
+[5-ERROR] 	then mv -f ".deps/ssgaSphere.Tpo" ".deps/ssgaSphere.Po"; else rm -f ".deps/ssgaSphere.Tpo"; exit 1; fi
+[5-ERROR] if g++-42 -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"plib\" -DVERSION=\"1.8.4\" -DHAVE_LIBPTHREAD=1 -DHAVE_LIBGL=1 -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1  -I. -I. -I../../src/sg -I../../src/ssg -I../../src/util  -I/usr/X11/include  -g -O2 -Wall -MT ssgaCelestialBody.o -MD -MP -MF ".deps/ssgaCelestialBody.Tpo" -c -o ssgaCelestialBody.o ssgaCelestialBody.cxx; \
+[5-ERROR] 	then mv -f ".deps/ssgaCelestialBody.Tpo" ".deps/ssgaCelestialBody.Po"; else rm -f ".deps/ssgaCelestialBody.Tpo"; exit 1; fi
+[5-ERROR] In file included from ssgaCelestialBody.cxx:35:
+[5-ERROR] ssgaSky.h:107: error: extra qualification 'ssgaCelestialBodyList::' on member 'ssgaCelestialBodyList'
+[5-ERROR] ssgaSky.h:195: error: extra qualification 'ssgaCloudLayerList::' on member 'ssgaCloudLayerList'
+[5-ERROR] make[2]: *** [ssgaCelestialBody.o] Error 1
+[5-ERROR] make[2]: Leaving directory `/ROCK/loop/src.plib.1181951524.13838.4161569442/plib-1.8.4/src/ssgAux'
+[5-ERROR] make[1]: *** [all-recursive] Error 1
+[5-ERROR] make[1]: Leaving directory `/ROCK/loop/src.plib.1181951524.13838.4161569442/plib-1.8.4/src'
+[5-ERROR] make: *** [all-recursive] Error 1
+[5-ERROR] --- BUILD ERROR ---
+
+[9-ERROR] if g++-42 -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"plib\" -DVERSION=\"1.8.4\" -DHAVE_LIBPTHREAD=1 -DHAVE_LIBGL=1 -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1  -I. -I. -I../../src/sg -I../../src/util  -I/usr/X11/include  -g -O2 -Wall -MT fnt.o -MD -MP -MF ".deps/fnt.Tpo" -c -o fnt.o fnt.cxx; \
+[9-ERROR] 	then mv -f ".deps/fnt.Tpo" ".deps/fnt.Po"; else rm -f ".deps/fnt.Tpo"; exit 1; fi
+[9-ERROR] if g++-42 -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"plib\" -DVERSION=\"1.8.4\" -DHAVE_LIBPTHREAD=1 -DHAVE_LIBGL=1 -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1  -I. -I. -I../../src/sg -I../../src/util  -I/usr/X11/include  -g -O2 -Wall -MT fntTXF.o -MD -MP -MF ".deps/fntTXF.Tpo" -c -o fntTXF.o fntTXF.cxx; \
+[9-ERROR] 	then mv -f ".deps/fntTXF.Tpo" ".deps/fntTXF.Po"; else rm -f ".deps/fntTXF.Tpo"; exit 1; fi
+[9-ERROR] if g++-42 -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"plib\" -DVERSION=\"1.8.4\" -DHAVE_LIBPTHREAD=1 -DHAVE_LIBGL=1 -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1  -I. -I. -I../../src/sg -I../../src/util  -I/usr/X11/include  -g -O2 -Wall -MT fntBitmap.o -MD -MP -MF ".deps/fntBitmap.Tpo" -c -o fntBitmap.o fntBitmap.cxx; \
+[9-ERROR] 	then mv -f ".deps/fntBitmap.Tpo" ".deps/fntBitmap.Po"; else rm -f ".deps/fntBitmap.Tpo"; exit 1; fi
+[9-ERROR] fntBitmap.cxx:315: warning: deprecated conversion from string constant to 'char*'
+[9-ERROR] fntBitmap.cxx:426: warning: deprecated conversion from string constant to 'char*'
+[9-ERROR] fntBitmap.cxx:537: warning: deprecated conversion from string constant to 'char*'
+[9-ERROR] fntBitmap.cxx:648: warning: deprecated conversion from string constant to 'char*'
+[9-ERROR] fntBitmap.cxx:759: warning: deprecated conversion from string constant to 'char*'
+[9-ERROR] fntBitmap.cxx:870: warning: deprecated conversion from string constant to 'char*'
+[9-ERROR] fntBitmap.cxx:981: warning: deprecated conversion from string constant to 'char*'
+[9-ERROR] rm -f libplibfnt.a
+[9-ERROR] ar cru libplibfnt.a fnt.o fntTXF.o fntBitmap.o 
+[9-ERROR] ranlib libplibfnt.a
+[9-ERROR] make[2]: Leaving directory `/ROCK/loop/src.plib.1181973063.17151.2938899655/plib-1.8.4/src/fnt'
+[9-ERROR] Making all in ssgAux
+[9-ERROR] make[2]: Entering directory `/ROCK/loop/src.plib.1181973063.17151.2938899655/plib-1.8.4/src/ssgAux'
+[9-ERROR] if g++-42 -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"plib\" -DVERSION=\"1.8.4\" -DHAVE_LIBPTHREAD=1 -DHAVE_LIBGL=1 -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1  -I. -I. -I../../src/sg -I../../src/ssg -I../../src/util  -I/usr/X11/include  -g -O2 -Wall -MT ssgAux.o -MD -MP -MF ".deps/ssgAux.Tpo" -c -o ssgAux.o ssgAux.cxx; \
+[9-ERROR] 	then mv -f ".deps/ssgAux.Tpo" ".deps/ssgAux.Po"; else rm -f ".deps/ssgAux.Tpo"; exit 1; fi
+[9-ERROR] if g++-42 -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"plib\" -DVERSION=\"1.8.4\" -DHAVE_LIBPTHREAD=1 -DHAVE_LIBGL=1 -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1  -I. -I. -I../../src/sg -I../../src/ssg -I../../src/util  -I/usr/X11/include  -g -O2 -Wall -MT ssgaShapes.o -MD -MP -MF ".deps/ssgaShapes.Tpo" -c -o ssgaShapes.o ssgaShapes.cxx; \
+[9-ERROR] 	then mv -f ".deps/ssgaShapes.Tpo" ".deps/ssgaShapes.Po"; else rm -f ".deps/ssgaShapes.Tpo"; exit 1; fi
+[9-ERROR] if g++-42 -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"plib\" -DVERSION=\"1.8.4\" -DHAVE_LIBPTHREAD=1 -DHAVE_LIBGL=1 -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1  -I. -I. -I../../src/sg -I../../src/ssg -I../../src/util  -I/usr/X11/include  -g -O2 -Wall -MT ssgaPatch.o -MD -MP -MF ".deps/ssgaPatch.Tpo" -c -o ssgaPatch.o ssgaPatch.cxx; \
+[9-ERROR] 	then mv -f ".deps/ssgaPatch.Tpo" ".deps/ssgaPatch.Po"; else rm -f ".deps/ssgaPatch.Tpo"; exit 1; fi
+[9-ERROR] if g++-42 -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"plib\" -DVERSION=\"1.8.4\" -DHAVE_LIBPTHREAD=1 -DHAVE_LIBGL=1 -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1  -I. -I. -I../../src/sg -I../../src/ssg -I../../src/util  -I/usr/X11/include  -g -O2 -Wall -MT ssgaParticleSystem.o -MD -MP -MF ".deps/ssgaParticleSystem.Tpo" -c -o ssgaParticleSystem.o ssgaParticleSystem.cxx; \
+[9-ERROR] 	then mv -f ".deps/ssgaParticleSystem.Tpo" ".deps/ssgaParticleSystem.Po"; else rm -f ".deps/ssgaParticleSystem.Tpo"; exit 1; fi
+[9-ERROR] if g++-42 -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"plib\" -DVERSION=\"1.8.4\" -DHAVE_LIBPTHREAD=1 -DHAVE_LIBGL=1 -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1  -I. -I. -I../../src/sg -I../../src/ssg -I../../src/util  -I/usr/X11/include  -g -O2 -Wall -MT ssgaWaveSystem.o -MD -MP -MF ".deps/ssgaWaveSystem.Tpo" -c -o ssgaWaveSystem.o ssgaWaveSystem.cxx; \
+[9-ERROR] 	then mv -f ".deps/ssgaWaveSystem.Tpo" ".deps/ssgaWaveSystem.Po"; else rm -f ".deps/ssgaWaveSystem.Tpo"; exit 1; fi
+[9-ERROR] if g++-42 -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"plib\" -DVERSION=\"1.8.4\" -DHAVE_LIBPTHREAD=1 -DHAVE_LIBGL=1 -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1  -I. -I. -I../../src/sg -I../../src/ssg -I../../src/util  -I/usr/X11/include  -g -O2 -Wall -MT ssgaLensFlare.o -MD -MP -MF ".deps/ssgaLensFlare.Tpo" -c -o ssgaLensFlare.o ssgaLensFlare.cxx; \
+[9-ERROR] 	then mv -f ".deps/ssgaLensFlare.Tpo" ".deps/ssgaLensFlare.Po"; else rm -f ".deps/ssgaLensFlare.Tpo"; exit 1; fi
+[9-ERROR] if g++-42 -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"plib\" -DVERSION=\"1.8.4\" -DHAVE_LIBPTHREAD=1 -DHAVE_LIBGL=1 -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1  -I. -I. -I../../src/sg -I../../src/ssg -I../../src/util  -I/usr/X11/include  -g -O2 -Wall -MT ssgaLensFlareTexture.o -MD -MP -MF ".deps/ssgaLensFlareTexture.Tpo" -c -o ssgaLensFlareTexture.o ssgaLensFlareTexture.cxx; \
+[9-ERROR] 	then mv -f ".deps/ssgaLensFlareTexture.Tpo" ".deps/ssgaLensFlareTexture.Po"; else rm -f ".deps/ssgaLensFlareTexture.Tpo"; exit 1; fi
+[9-ERROR] if g++-42 -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"plib\" -DVERSION=\"1.8.4\" -DHAVE_LIBPTHREAD=1 -DHAVE_LIBGL=1 -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1  -I. -I. -I../../src/sg -I../../src/ssg -I../../src/util  -I/usr/X11/include  -g -O2 -Wall -MT ssgaFire.o -MD -MP -MF ".deps/ssgaFire.Tpo" -c -o ssgaFire.o ssgaFire.cxx; \
+[9-ERROR] 	then mv -f ".deps/ssgaFire.Tpo" ".deps/ssgaFire.Po"; else rm -f ".deps/ssgaFire.Tpo"; exit 1; fi
+[9-ERROR] if g++-42 -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"plib\" -DVERSION=\"1.8.4\" -DHAVE_LIBPTHREAD=1 -DHAVE_LIBGL=1 -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1  -I. -I. -I../../src/sg -I../../src/ssg -I../../src/util  -I/usr/X11/include  -g -O2 -Wall -MT ssgaScreenDump.o -MD -MP -MF ".deps/ssgaScreenDump.Tpo" -c -o ssgaScreenDump.o ssgaScreenDump.cxx; \
+[9-ERROR] 	then mv -f ".deps/ssgaScreenDump.Tpo" ".deps/ssgaScreenDump.Po"; else rm -f ".deps/ssgaScreenDump.Tpo"; exit 1; fi
+[9-ERROR] if g++-42 -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"plib\" -DVERSION=\"1.8.4\" -DHAVE_LIBPTHREAD=1 -DHAVE_LIBGL=1 -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1  -I. -I. -I../../src/sg -I../../src/ssg -I../../src/util  -I/usr/X11/include  -g -O2 -Wall -MT ssgaSphere.o -MD -MP -MF ".deps/ssgaSphere.Tpo" -c -o ssgaSphere.o ssgaSphere.cxx; \
+[9-ERROR] 	then mv -f ".deps/ssgaSphere.Tpo" ".deps/ssgaSphere.Po"; else rm -f ".deps/ssgaSphere.Tpo"; exit 1; fi
+[9-ERROR] if g++-42 -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"plib\" -DVERSION=\"1.8.4\" -DHAVE_LIBPTHREAD=1 -DHAVE_LIBGL=1 -DHAVE_LIBDL=1 -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1  -I. -I. -I../../src/sg -I../../src/ssg -I../../src/util  -I/usr/X11/include  -g -O2 -Wall -MT ssgaCelestialBody.o -MD -MP -MF ".deps/ssgaCelestialBody.Tpo" -c -o ssgaCelestialBody.o ssgaCelestialBody.cxx; \
+[9-ERROR] 	then mv -f ".deps/ssgaCelestialBody.Tpo" ".deps/ssgaCelestialBody.Po"; else rm -f ".deps/ssgaCelestialBody.Tpo"; exit 1; fi
+[9-ERROR] In file included from ssgaCelestialBody.cxx:35:
+[9-ERROR] ssgaSky.h:107: error: extra qualification 'ssgaCelestialBodyList::' on member 'ssgaCelestialBodyList'
+[9-ERROR] ssgaSky.h:195: error: extra qualification 'ssgaCloudLayerList::' on member 'ssgaCloudLayerList'
+[9-ERROR] make[2]: *** [ssgaCelestialBody.o] Error 1
+[9-ERROR] make[2]: Leaving directory `/ROCK/loop/src.plib.1181973063.17151.2938899655/plib-1.8.4/src/ssgAux'
+[9-ERROR] make[1]: *** [all-recursive] Error 1
+[9-ERROR] make[1]: Leaving directory `/ROCK/loop/src.plib.1181973063.17151.2938899655/plib-1.8.4/src'
+[9-ERROR] make: *** [all-recursive] Error 1
+[9-ERROR] --- BUILD ERROR ---
+

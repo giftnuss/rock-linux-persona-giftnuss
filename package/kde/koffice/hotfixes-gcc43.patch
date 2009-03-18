@@ -1,0 +1,43 @@
+--- ./krita/core/kis_perspective_math.cpp.orig	2008-06-13 09:30:26.000000000 +0200
++++ ./krita/core/kis_perspective_math.cpp	2008-06-13 11:22:38.000000000 +0200
+@@ -24,13 +24,15 @@
+ 
+ #if 1
+ 
+-#include <iostream.h>
++#include <iostream>
+ #include <stdlib.h>
+ #include <math.h>
+ //#define NDEBUG // uncomment to remove checking of assert()
+ #include <assert.h>
+ #define DEFAULT_ALLOC 2
+ 
++using namespace std;
++
+ namespace math { // TODO: use eigen
+ 
+ template <class ElType> class matrix;
+--- ./kspread/plugins/scripting/kspreadcore/krs_cell.cpp.orig	2008-06-14 01:52:57.000000000 +0200
++++ ./kspread/plugins/scripting/kspreadcore/krs_cell.cpp	2008-06-14 01:58:12.000000000 +0200
+@@ -174,7 +174,9 @@
+ 	return m_cell->text();
+ }
+ 
+-bool Cell::setText(const QString& text, bool asString) {
++bool Cell::setText(const QString& text) {
++
++	bool asString = false;
+ 
+ 	//FIXME: there is some problem with asString parameter, when it's set
+ 	//to true KSpread says: ASSERT: "f" in Dependencies.cpp (621)
+--- ./kspread/plugins/scripting/kspreadcore/krs_cell.h.orig	2008-06-14 01:58:23.000000000 +0200
++++ ./kspread/plugins/scripting/kspreadcore/krs_cell.h	2008-06-14 01:58:34.000000000 +0200
+@@ -135,7 +135,7 @@
+ 		* will be handled as string else we try to parse the
+ 		* string to the expected value.
+ 		*/
+-		bool setText(const QString& text, bool asString = false);
++		bool setText(const QString& text);
+ 
+ 		/**
+ 		* Return the textcolor as RGB-value in the format "#RRGGBB".

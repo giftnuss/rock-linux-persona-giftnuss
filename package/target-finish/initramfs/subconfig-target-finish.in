@@ -1,0 +1,4 @@
+menu_begin MENU_INITRAMFS "initramfs Options"
+	choice ROCKCFG_PKG_INITRAMFS_CONFIG \
+		initramfs-livecd initramfs-livecd "An initramfs for aufs-based live CDs"
+menu_end

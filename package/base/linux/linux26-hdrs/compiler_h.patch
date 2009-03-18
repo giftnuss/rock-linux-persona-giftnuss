@@ -1,0 +1,4 @@
+--- ./include/linux/compiler.h.orig	2007-05-21 21:54:33.000000000 +0200
++++ ./include/linux/compiler.h	2007-05-21 12:19:01.000000000 +0200
+@@ -0,0 +1 @@
++/* just a dummy placeholder */

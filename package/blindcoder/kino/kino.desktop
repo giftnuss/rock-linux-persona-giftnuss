@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Kino
+Comment=DV Editor
+Exec=kino
+Terminal=false
+Type=Application
+Categories=Video;AudioVideoEditing
+X-ROCK-Name=kino
+Icon=D_datadir/kino/kino.png

@@ -1,0 +1,11 @@
+--- ./RenderExtension.h.vanilla	2005-12-22 16:33:15.000000000 +0100
++++ ./RenderExtension.h	2005-12-22 16:33:45.000000000 +0100
+@@ -142,6 +142,8 @@
+   } raw_data;
+ };
+ 
++class RenderMinorExtensionStore;
++
+ class RenderExtensionStore : public MessageStore
+ {
+   public:

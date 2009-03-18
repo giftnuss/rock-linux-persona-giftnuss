@@ -1,0 +1,10 @@
+<mythnotify version="1">
+  <container name="notify_rock_text">
+    <textarea name="notify_rockheader">
+      <value>ROCK build on %host%:</value>
+    </textarea>
+    <textarea name="notify_rockmsg">
+      <value>%msg%</value>
+    </textarea>
+  </container>
+</mythnotify>

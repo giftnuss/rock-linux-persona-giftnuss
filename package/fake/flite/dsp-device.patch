@@ -1,0 +1,11 @@
+--- ./src/audio/au_oss.c.orig	2006-07-19 20:08:32.000000000 +0200
++++ ./src/audio/au_oss.c	2006-07-19 20:08:42.000000000 +0200
+@@ -61,7 +61,7 @@
+ #include <sys/stat.h>
+ #include <fcntl.h>
+ 
+-static const char * const oss_audio_device = "/dev/dsp";
++static const char * const oss_audio_device = "/dev/sound/dsp";
+ 
+ cst_audiodev *audio_open_oss(int sps, int channels, cst_audiofmt fmt)
+ {

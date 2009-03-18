@@ -1,0 +1,30 @@
+--- ./kaffeine/mimetypes/application/Makefile.in.orig	2006-08-03 23:45:14.000000000 +0200
++++ ./kaffeine/mimetypes/application/Makefile.in	2006-08-03 23:45:33.000000000 +0200
+@@ -337,7 +337,7 @@
+ xdg_appsdir = @xdg_appsdir@
+ xdg_directorydir = @xdg_directorydir@
+ xdg_menudir = @xdg_menudir@
+-mime_DATA = x-kaffeine.desktop x-mplayer2.desktop
++mime_DATA = x-kaffeine.desktop
+ mimedir = $(kde_mimedir)/application
+ EXTRA_DIST = $(mime_DATA)
+ #>- all: all-am
+@@ -544,7 +544,7 @@
+ .NOEXPORT:
+ 
+ #>+ 2
+-KDE_DIST=x-kaffeine.desktop x-mplayer2.desktop Makefile.in Makefile.am 
++KDE_DIST=x-kaffeine.desktop Makefile.in Makefile.am 
+ 
+ #>+ 2
+ docs-am:
+--- ./kaffeine/mimetypes/application/Makefile.am.orig	2006-08-03 23:45:08.000000000 +0200
++++ ./kaffeine/mimetypes/application/Makefile.am	2006-08-03 23:45:22.000000000 +0200
+@@ -1,6 +1,6 @@
+ 
+ 
+-mime_DATA = x-kaffeine.desktop x-mplayer2.desktop
++mime_DATA = x-kaffeine.desktop
+ mimedir = $(kde_mimedir)/application
+ 
+ EXTRA_DIST = $(mime_DATA)

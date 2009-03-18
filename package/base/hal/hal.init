@@ -1,0 +1,15 @@
+# Desc: Hardware Abstraction Layer Daemon
+# Runlevel: 61 rcX rc2 rc3 rc4 rc5
+
+main_begin
+
+    block_begin(start, `Setting up Hardware Abstraction Layer.')
+	check(`export PATH=D_prefix/libexec:$PATH')
+	check(`D_prefix/sbin/hald --daemon=yes --use-syslog')
+    block_end
+
+    block_begin(stop, `Shutting down Hardware Abstraction Layer.')
+	check(`D_prefix/bin/killall D_prefix/sbin/hald')
+    block_end
+
+main_end

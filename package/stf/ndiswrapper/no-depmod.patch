@@ -1,0 +1,10 @@
+--- ./driver/Makefile~	2006-08-11 20:00:54.000000000 +0200
++++ ./driver/Makefile	2006-08-11 20:01:56.000000000 +0200
+@@ -275,7 +275,6 @@
+ 	install -m 0644 $(MODULE) $(INST_DIR)
+ 	-@/bin/rm -rf $(SRC_DIR)/.tmp_versions
+ ifndef DIST_DESTDIR
+-	-/sbin/depmod -a $(KVERS) -b $(DESTDIR)
+ endif
+ 
+ dist:

@@ -1,0 +1,19 @@
+
+[TIMESTAMP] 1181168390 Thu Jun  7 00:19:50 2007 (5)
+[TIMESTAMP] 1181614572 Tue Jun 12 04:16:12 2007 (9)
+
+[CONFIG-ID] TRUNK-x86-reference
+[ROCKVER] TRUNK
+
+[LOGS] 5-wakkabox.log 9-wakkabox.log
+
+[BUILDTIME] 2081 (5)
+[BUILDTIME] 2428 (9)
+[SIZE] 0.14 MB, 15 files
+
+[DEP] 00-dirtree alsa applewmproto bash2 binutils bzip2 coreutils cvm
+[DEP] diffutils findutils gawk gcc42 gcc42:dev glibc26 glibc26:dev grep
+[DEP] libice libsdl libsdl:dev libsm libx11 libxau libxcb libxdmcp libxt
+[DEP] ltrace make mktemp nas net-tools sed sysfiles tar util-linux xmame
+
+

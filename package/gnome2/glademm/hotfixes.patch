@@ -1,0 +1,164 @@
+--- ./src/Tag.cc.orig	2008-10-31 14:12:47.000000000 +0000
++++ ./src/Tag.cc	2008-10-31 14:18:16.000000000 +0000
+@@ -23,6 +23,8 @@
+ #include <locale.h>
+ #include <iostream>
+ 
++#include <stdlib.h>
++#include <string.h>
+ const Tag *Tag::find(const std::string &tp) const
+ {  const_iterator i=find(begin(),tp);
+    if (i==end()) return 0;
+--- ./src/TagStream.cc.orig	2008-10-31 14:12:47.000000000 +0000
++++ ./src/TagStream.cc	2008-10-31 14:39:38.000000000 +0000
+@@ -20,10 +20,14 @@
+ #include "TagStream.hh"
+ #include <cstring>
+ #include <unistd.h>
+-#include <algo.h>
+ 
+ //#define REMEMBER_EMPTY_SPACE
+ 
++#include <string.h>
++#include <iostream>
++#include <algorithm>
++#include <vector>
++
+ std::string iso2utf8(const std::string &s)
+ {  std::string ret="";
+ 
+@@ -73,10 +77,10 @@
+ {  std::string ret;
+    std::string::const_iterator i(cont.begin());
+    while (i!=cont.end())
+-   {  std::string::const_iterator verbatim(::find(i,cont.end(),'&'));
++   {  std::string::const_iterator verbatim(std::find(i,cont.end(),'&'));
+       ret+=std::string(i,verbatim);
+       if (verbatim!=cont.end())
+-      {  std::string::const_iterator endtag(::find(verbatim,cont.end(),';'));
++      {  std::string::const_iterator endtag(std::find(verbatim,cont.end(),';'));
+          if (endtag!=cont.end()) ++endtag;
+          std::string tag(verbatim,endtag);
+          if (tag[1]=='#' && tag[2]=='x')
+--- ./src/TagStream.hh.orig	2008-10-31 14:19:50.000000000 +0000
++++ ./src/TagStream.hh	2008-10-31 14:19:50.000000000 +0000
+@@ -17,6 +17,7 @@
+  *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+  */
+ 
++#include <string.h>
+ #ifndef TAGSTREAM_HH
+ #define TAGSTREAM_HH
+ #ifdef HAVE_CONFIG_H
+--- ./src/glade--.cc.orig	2008-10-31 14:12:47.000000000 +0000
++++ ./src/glade--.cc	2008-10-31 14:12:47.000000000 +0000
+@@ -18,6 +18,7 @@
+  *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+  */
+ 
++#include <string.h>
+ #ifdef HAVE_CONFIG_H
+ #include <config.h>
+ #endif
+--- ./src/writers/bonobo_dock.cc.orig	2008-10-31 14:12:47.000000000 +0000
++++ ./src/writers/bonobo_dock.cc	2008-10-31 14:12:47.000000000 +0000
+@@ -20,6 +20,7 @@
+ 
+ #include "container.hh"
+ 
++#include <string.h>
+ class Bonobo_Dock : public Gtk_Container
+ {public:
+ 	typedef Gtk_Container Parent;
+--- ./src/writers/bonobo_dockitem.cc.orig	2008-10-31 14:12:47.000000000 +0000
++++ ./src/writers/bonobo_dockitem.cc	2008-10-31 14:12:47.000000000 +0000
+@@ -20,6 +20,7 @@
+ 
+ #include "bin.hh"
+ 
++#include <string.h>
+ class Bonobo_DockItem : public Gtk_Bin
+ {public:
+ 	typedef Gtk_Bin Parent;
+--- ./src/writers/clist.cc.orig	2008-10-31 14:12:47.000000000 +0000
++++ ./src/writers/clist.cc	2008-10-31 14:13:59.000000000 +0000
+@@ -21,6 +21,8 @@
+ #include "clist.hh"
+ #include "../strsep.h"
+ 
++#include <stdlib.h>
++#include <string.h>
+ static Gtk_CList Gtk_CList(false);
+ 
+ const std::string Gtk_CList::TypeName(const Widget &w) const
+--- ./src/writers/combo.cc.orig	2008-10-31 14:13:59.000000000 +0000
++++ ./src/writers/combo.cc	2008-10-31 14:13:59.000000000 +0000
+@@ -21,6 +21,7 @@
+ #include "combo.hh"
+ #include "../strsep.h"
+ 
++#include <string.h>
+ static Gtk_Combo Gtk_Combo(false);
+ 
+ const std::string Gtk_Combo::TypeName(const Widget &w) const
+--- ./src/writers/combobox.cc.orig	2008-10-31 14:13:59.000000000 +0000
++++ ./src/writers/combobox.cc	2008-10-31 14:13:59.000000000 +0000
+@@ -20,6 +20,7 @@
+ 
+ #include "bin.hh"
+ 
++#include <string.h>
+ class Gtk_ComboBox : public Gtk_Bin
+ {public:
+ 	typedef Gtk_Bin Parent;
+--- ./src/writers/ctree.cc.orig	2008-10-31 14:12:47.000000000 +0000
++++ ./src/writers/ctree.cc	2008-10-31 14:13:59.000000000 +0000
+@@ -21,6 +21,8 @@
+ 
+ #include "container.hh"
+ 
++#include <stdlib.h>
++#include <string.h>
+ class Gtk_CTree : public Gtk_Container
+ {public:
+ 	typedef Gtk_Container Parent;
+--- ./src/writers/gnome_about.cc.orig	2008-10-31 14:13:59.000000000 +0000
++++ ./src/writers/gnome_about.cc	2008-10-31 14:13:59.000000000 +0000
+@@ -21,6 +21,7 @@
+ #include "gnome_dialog.hh"
+ #include "../strsep.h"
+ 
++#include <string.h>
+ class Gnome_About : public Gnome_Dialog
+ {public:
+ 	typedef Gnome_Dialog Parent;
+--- ./src/writers/optionmenu.cc.orig	2008-10-31 14:13:59.000000000 +0000
++++ ./src/writers/optionmenu.cc	2008-10-31 14:13:59.000000000 +0000
+@@ -21,6 +21,7 @@
+ #include "button.hh"
+ #include "../strsep.h"
+ 
++#include <string.h>
+ class Gtk_OptionMenu : public Gtk_Button
+ {	static const char * const MenuTags;
+ 	static Tag menu;
+--- ./src/writers/text.cc.orig	2008-10-31 14:12:47.000000000 +0000
++++ ./src/writers/text.cc	2008-10-31 14:12:47.000000000 +0000
+@@ -20,6 +20,7 @@
+ 
+ #include "editable.hh"
+ 
++#include <string.h>
+ class Gtk_Text : public Gtk_Editable
+ {public:
+ 	typedef Gtk_Editable Parent;
+--- ./src/writers/xpmname.cc.orig	2008-10-31 14:17:07.000000000 +0000
++++ ./src/writers/xpmname.cc	2008-10-31 14:17:07.000000000 +0000
+@@ -19,6 +19,7 @@
+ #define MAX_LINE 2048
+   /* The maximum size XPM input line we can handle. */
+   
++#include <string.h>
+ static std::string
+ readXpm3Header(FILE * const stream)
+ {   char line[MAX_LINE],w[MAX_LINE];

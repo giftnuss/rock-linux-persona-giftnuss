@@ -1,0 +1,12 @@
+diff -dur nxcomp/RenderExtension.h src.nx-X11.1134795118.22630.3729240653/nxcomp/RenderExtension.h
+--- nxcomp/RenderExtension.h	2005-02-19 19:23:32.000000000 +0100
++++ src.nx-X11.1134795118.22630.3729240653/nxcomp/RenderExtension.h	2005-12-17 06:42:10.000000000 +0100
+@@ -142,6 +142,8 @@
+   } raw_data;
+ };
+ 
++class RenderMinorExtensionStore;
++
+ class RenderExtensionStore : public MessageStore
+ {
+   public:

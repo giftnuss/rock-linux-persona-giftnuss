@@ -1,0 +1,3 @@
+case "$pkg" in
+	ksimus-boolean|ksimus-datarecorder|ksimus-floatingpoint) pkg=ksimus ;;
+esac

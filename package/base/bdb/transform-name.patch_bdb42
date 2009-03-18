@@ -1,0 +1,15 @@
+--- ./dist/Makefile.in.orig	2004-09-07 05:07:00.193054384 +0200
++++ ./dist/Makefile.in	2004-09-07 05:08:29.964407064 +0200
+@@ -812,11 +812,7 @@
+ 	    ($(mkdir) -p $(DESTDIR)$(bindir) && \
+ 	    $(chmod) $(dmode) $(DESTDIR)$(bindir))
+ 	@for i in $(UTIL_PROGS); do \
+-		$(rm) -f $(DESTDIR)$(bindir)/$$i $(DESTDIR)$(bindir)/$$i.exe; \
+-		test -f $$i.exe && i=$$i.exe || true; \
+-		$(INSTALLER) $$i $(DESTDIR)$(bindir)/$$i; \
+-		test -f $(strip) && $(strip) $(DESTDIR)$(bindir)/$$i || true; \
+-		$(chmod) $(emode) $(DESTDIR)$(bindir)/$$i; \
++		cp $$i $(DESTDIR)$(bindir)/`basename $$i | sed $(transform)`; \
+ 	done
+ 
+ uninstall_utilities:

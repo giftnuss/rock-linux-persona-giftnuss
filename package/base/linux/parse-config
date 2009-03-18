@@ -1,0 +1,1 @@
+var_append flistdel "|" "lib/modules/[^/]+/modules.[a-z0-9]+"

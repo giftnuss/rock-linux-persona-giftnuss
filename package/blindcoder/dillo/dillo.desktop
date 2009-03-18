@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Dillo
+Comment=The Dillo Webbrowser
+Comment[de]=Der Webbrowser Dillo
+Exec=dillo
+Terminal=false
+Categories=Network/WebBrowser
+Type=Application

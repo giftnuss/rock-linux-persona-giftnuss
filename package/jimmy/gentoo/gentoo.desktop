@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Gentoo
+Comment=Filesystem browser
+Exec=gentoo
+Terminal=false
+Type=Application
+Categories=FileManager
+X-ROCK-Name=gentoo
+Icon=D_datadir/gentoo/icons/gentoo.png

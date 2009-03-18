@@ -1,0 +1,47 @@
+cleanup makefile - use CC and STRIP macros
+
+diff -Naur fgetty-0.6-orig/Makefile fgetty-0.6/Makefile
+--- fgetty-0.6-orig/Makefile	2002-01-24 02:35:22.000000000 +0100
++++ fgetty-0.6/Makefile	2007-07-13 18:26:33.202255084 +0200
+@@ -5,18 +5,20 @@
+ all: fgetty login login2 checkpassword
+ 
+ DIET=diet
++CC=gcc
++STRIP=strip
+ #CROSS=arm-linux-
+ CROSS=
+ LDFLAGS=-s
+ 
+ %.o: %.c
+ #	gcc -march=i386 -mcpu=i386 -pipe -Os -fomit-frame-pointer -I../dietlibc/include -c $^ -DTEST
+-	$(DIET) $(CROSS)gcc -pipe -Os -fomit-frame-pointer -I../dietlibc/include -c $^ -DTEST
++	$(DIET) $(CROSS)$(CC) -pipe -Os -fomit-frame-pointer -I../dietlibc/include -c $^ -DTEST
+ #	gcc -march=i386 -mcpu=i386 -pipe -g -I../dietlibc/include -DTEST -c $^
+-	strip -x -R .comment -R .note $@
++	$(CROSS)$(STRIP) -x -R .comment -R .note $@
+ 
+ %: %.o
+-	$(DIET) $(CROSS)gcc -nostdlib -o $@ $^ $(LDFLAGS)
++	$(DIET) $(CROSS)$(CC) -nostdlib -o $@ $^ $(LDFLAGS)
+ 
+ fgetty: fgetty.o fmt_ulong.o
+ 
+@@ -25,7 +27,7 @@
+ checkpassword: checkpassword.o
+ 
+ debug: fgetty.c fmt_ulong.o
+-	gcc -g -o debug fgetty.c fmt_ulong.o -DDEBUG
++	$(CROSS)$(CC) -g -o debug fgetty.c fmt_ulong.o -DDEBUG
+ 
+ install:
+ 	install -d $(DESTDIR)/bin $(DESTDIR)/sbin
+@@ -46,7 +48,7 @@
+ %.sig: %
+ 	gpg --detach-sign $<
+ 
+-VERSION=fgetty-$(shell head -1 CHANGES|sed 's/://')
++VERSION=fgetty-$(shell head -n 1 CHANGES|sed 's/://')
+ CURNAME=$(notdir $(shell pwd))
+ 
+ tar: clean rename

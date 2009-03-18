@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=WV Dial
+Comment=Helper application for dial-in networks
+Exec=wvdial
+Terminal=false
+Type=Application
+Categories=Utility
+X-ROCK-Name=wvdial

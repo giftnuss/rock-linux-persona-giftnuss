@@ -1,0 +1,123 @@
+
+[TIMESTAMP] 1181163675 Wed Jun  6 23:01:15 2007 (5) ERROR
+[TIMESTAMP] 1181611175 Tue Jun 12 03:19:35 2007 (9) ERROR
+[TIMESTAMP] 1181829482 Thu Jun 14 15:58:02 2007 (5) ERROR
+[TIMESTAMP] 1181913375 Fri Jun 15 15:16:15 2007 (9) ERROR
+[TIMESTAMP] 1181953129 Sat Jun 16 02:18:49 2007 (5) ERROR
+[TIMESTAMP] 1181974977 Sat Jun 16 08:22:57 2007 (9) ERROR
+
+[CONFIG-ID] TRUNK-x86-reference
+[ROCKVER] TRUNK
+
+[LOGS] 5-pingus.err 9-pingus.err
+
+[BUILDTIME] 3054 (5) ERROR
+[BUILDTIME] 2952 (9) ERROR
+[BUILDTIME] 2976 (5) ERROR
+[BUILDTIME] 2988 (9) ERROR
+[BUILDTIME] 2883 (5) ERROR
+[BUILDTIME] 2897 (9) ERROR
+
+
+[5-ERROR] checking malloc.h usability... yes
+[5-ERROR] checking malloc.h presence... yes
+[5-ERROR] checking for malloc.h... yes
+[5-ERROR] checking stddef.h usability... yes
+[5-ERROR] checking stddef.h presence... yes
+[5-ERROR] checking for stddef.h... yes
+[5-ERROR] checking for stdlib.h... (cached) yes
+[5-ERROR] checking for string.h... (cached) yes
+[5-ERROR] checking for unistd.h... (cached) yes
+[5-ERROR] checking sys/param.h usability... yes
+[5-ERROR] checking sys/param.h presence... yes
+[5-ERROR] checking for sys/param.h... yes
+[5-ERROR] checking for feof_unlocked... yes
+[5-ERROR] checking for fgets_unlocked... yes
+[5-ERROR] checking for getc_unlocked... yes
+[5-ERROR] checking for getcwd... yes
+[5-ERROR] checking for getegid... yes
+[5-ERROR] checking for geteuid... yes
+[5-ERROR] checking for getgid... yes
+[5-ERROR] checking for getuid... yes
+[5-ERROR] checking for mempcpy... yes
+[5-ERROR] checking for munmap... yes
+[5-ERROR] checking for putenv... no
+[5-ERROR] checking for setenv... no
+[5-ERROR] checking for setlocale... yes
+[5-ERROR] checking for stpcpy... yes
+[5-ERROR] checking for strcasecmp... yes
+[5-ERROR] checking for strdup... yes
+[5-ERROR] checking for strtoul... no
+[5-ERROR] checking for tsearch... yes
+[5-ERROR] checking for __argz_count... yes
+[5-ERROR] checking for __argz_stringify... yes
+[5-ERROR] checking for __argz_next... yes
+[5-ERROR] checking for iconv... (cached) yes
+[5-ERROR] checking for iconv declaration... (cached) 
+[5-ERROR]          extern size_t iconv (iconv_t cd, char * *inbuf, size_t *inbytesleft, char * *outbuf, size_t *outbytesleft);
+[5-ERROR] checking for nl_langinfo and CODESET... yes
+[5-ERROR] checking for LC_MESSAGES... yes
+[5-ERROR] checking for bison... bison
+[5-ERROR] checking version of bison... 2.3, ok
+[5-ERROR] checking whether NLS is requested... yes
+[5-ERROR] checking whether included gettext is requested... no
+[5-ERROR] checking for GNU gettext in libc... yes
+[5-ERROR] checking for i386-unknown-linux-gnu-ranlib... (cached) ranlib
+[5-ERROR] checking ClanLib/core.h usability... no
+[5-ERROR] checking ClanLib/core.h presence... no
+[5-ERROR] checking for ClanLib/core.h... no
+[5-ERROR] Please get ClanLib from http://www.clanlib.org
+[5-ERROR] make: *** No targets specified and no makefile found.  Stop.
+[5-ERROR] --- BUILD ERROR ---
+
+[9-ERROR] checking malloc.h usability... yes
+[9-ERROR] checking malloc.h presence... yes
+[9-ERROR] checking for malloc.h... yes
+[9-ERROR] checking stddef.h usability... yes
+[9-ERROR] checking stddef.h presence... yes
+[9-ERROR] checking for stddef.h... yes
+[9-ERROR] checking for stdlib.h... (cached) yes
+[9-ERROR] checking for string.h... (cached) yes
+[9-ERROR] checking for unistd.h... (cached) yes
+[9-ERROR] checking sys/param.h usability... yes
+[9-ERROR] checking sys/param.h presence... yes
+[9-ERROR] checking for sys/param.h... yes
+[9-ERROR] checking for feof_unlocked... yes
+[9-ERROR] checking for fgets_unlocked... yes
+[9-ERROR] checking for getc_unlocked... yes
+[9-ERROR] checking for getcwd... yes
+[9-ERROR] checking for getegid... yes
+[9-ERROR] checking for geteuid... yes
+[9-ERROR] checking for getgid... yes
+[9-ERROR] checking for getuid... yes
+[9-ERROR] checking for mempcpy... yes
+[9-ERROR] checking for munmap... yes
+[9-ERROR] checking for putenv... no
+[9-ERROR] checking for setenv... no
+[9-ERROR] checking for setlocale... yes
+[9-ERROR] checking for stpcpy... yes
+[9-ERROR] checking for strcasecmp... yes
+[9-ERROR] checking for strdup... yes
+[9-ERROR] checking for strtoul... no
+[9-ERROR] checking for tsearch... yes
+[9-ERROR] checking for __argz_count... yes
+[9-ERROR] checking for __argz_stringify... yes
+[9-ERROR] checking for __argz_next... yes
+[9-ERROR] checking for iconv... (cached) yes
+[9-ERROR] checking for iconv declaration... (cached) 
+[9-ERROR]          extern size_t iconv (iconv_t cd, char * *inbuf, size_t *inbytesleft, char * *outbuf, size_t *outbytesleft);
+[9-ERROR] checking for nl_langinfo and CODESET... yes
+[9-ERROR] checking for LC_MESSAGES... yes
+[9-ERROR] checking for bison... bison
+[9-ERROR] checking version of bison... 2.3, ok
+[9-ERROR] checking whether NLS is requested... yes
+[9-ERROR] checking whether included gettext is requested... no
+[9-ERROR] checking for GNU gettext in libc... yes
+[9-ERROR] checking for i386-unknown-linux-gnu-ranlib... (cached) ranlib
+[9-ERROR] checking ClanLib/core.h usability... no
+[9-ERROR] checking ClanLib/core.h presence... no
+[9-ERROR] checking for ClanLib/core.h... no
+[9-ERROR] Please get ClanLib from http://www.clanlib.org
+[9-ERROR] make: *** No targets specified and no makefile found.  Stop.
+[9-ERROR] --- BUILD ERROR ---
+

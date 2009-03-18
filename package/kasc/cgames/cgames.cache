@@ -1,0 +1,123 @@
+
+[TIMESTAMP] 1181085080 Wed Jun  6 01:11:20 2007 (5) ERROR
+[TIMESTAMP] 1181557391 Mon Jun 11 12:23:11 2007 (9) ERROR
+[TIMESTAMP] 1181824138 Thu Jun 14 14:28:58 2007 (5) ERROR
+[TIMESTAMP] 1181904530 Fri Jun 15 12:48:50 2007 (9) ERROR
+[TIMESTAMP] 1181950673 Sat Jun 16 01:37:53 2007 (5) ERROR
+[TIMESTAMP] 1181972191 Sat Jun 16 07:36:31 2007 (9) ERROR
+
+[CONFIG-ID] TRUNK-x86-reference
+[ROCKVER] TRUNK
+
+[LOGS] 5-cgames.err 9-cgames.err
+
+[BUILDTIME] 1448 (5) ERROR
+[BUILDTIME] 1462 (9) ERROR
+[BUILDTIME] 1398 (5) ERROR
+[BUILDTIME] 1334 (9) ERROR
+[BUILDTIME] 1374 (5) ERROR
+[BUILDTIME] 1368 (9) ERROR
+
+
+[5-ERROR] play.c:74: warning: incompatible implicit declaration of built-in function 'memcpy'
+[5-ERROR] gcc-42 -Wall -O2 '-DDATADIR="/usr/share/csokoban"'   -c -o dirio.o dirio.c
+[5-ERROR] gcc-42 -Wall -O2 '-DDATADIR="/usr/share/csokoban"'   -c -o userio.o userio.c
+[5-ERROR] userio.c: In function 'ioinitialize':
+[5-ERROR] userio.c:847: warning: pointer targets in passing argument 1 of 'createfontchars' differ in signedness
+[5-ERROR] gcc-42 -Wall -s  csokoban.o movelist.o fileread.o answers.o play.o dirio.o userio.o   -o csokoban
+[5-ERROR] make[1]: Leaving directory `/ROCK/loop/src.cgames.1181950660.20167.4161569442/cgames-2.2/csokoban'
+[5-ERROR] make -C cmines
+[5-ERROR] make[1]: Entering directory `/ROCK/loop/src.cgames.1181950660.20167.4161569442/cgames-2.2/cmines'
+[5-ERROR] gcc-42 -Wall -O2   -c -o cmines.o cmines.c
+[5-ERROR] gcc-42 -Wall -O2   -c -o userio.o userio.c
+[5-ERROR] userio.c:41:17: error: gpm.h: No such file or directory
+[5-ERROR] userio.c:50: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'gpmconnection'
+[5-ERROR] userio.c:63: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'lastgpm'
+[5-ERROR] userio.c: In function 'out':
+[5-ERROR] userio.c:274: error: 'lastgpm' undeclared (first use in this function)
+[5-ERROR] userio.c:274: error: (Each undeclared identifier is reported only once
+[5-ERROR] userio.c:274: error: for each function it appears in.)
+[5-ERROR] userio.c:274: warning: implicit declaration of function 'GPM_DRAWPOINTER'
+[5-ERROR] userio.c: In function 'getkey':
+[5-ERROR] userio.c:457: error: 'gpm_fd' undeclared (first use in this function)
+[5-ERROR] userio.c:461: warning: implicit declaration of function 'Gpm_Getchar'
+[5-ERROR] userio.c:458: error: invalid lvalue in asm output 0
+[5-ERROR] userio.c: In function 'input':
+[5-ERROR] userio.c:486: error: 'lastgpm' undeclared (first use in this function)
+[5-ERROR] userio.c: At top level:
+[5-ERROR] userio.c:519: error: expected ')' before '*' token
+[5-ERROR] userio.c: In function 'startup':
+[5-ERROR] userio.c:557: error: 'gpm_zerobased' undeclared (first use in this function)
+[5-ERROR] userio.c:557: error: 'gpm_handler' undeclared (first use in this function)
+[5-ERROR] userio.c:557: error: 'mousehandler' undeclared (first use in this function)
+[5-ERROR] userio.c:557: warning: left-hand operand of comma expression has no effect
+[5-ERROR] userio.c:557: error: 'gpmconnection' undeclared (first use in this function)
+[5-ERROR] userio.c:557: error: 'GPM_DOWN' undeclared (first use in this function)
+[5-ERROR] userio.c:557: error: 'GPM_UP' undeclared (first use in this function)
+[5-ERROR] userio.c:557: warning: left-hand operand of comma expression has no effect
+[5-ERROR] userio.c:557: error: 'GPM_MOVE' undeclared (first use in this function)
+[5-ERROR] userio.c:557: error: 'GPM_HARD' undeclared (first use in this function)
+[5-ERROR] userio.c:557: warning: left-hand operand of comma expression has no effect
+[5-ERROR] userio.c:557: warning: left-hand operand of comma expression has no effect
+[5-ERROR] userio.c:557: warning: left-hand operand of comma expression has no effect
+[5-ERROR] userio.c:557: warning: implicit declaration of function 'Gpm_Open'
+[5-ERROR] userio.c:557: warning: left-hand operand of comma expression has no effect
+[5-ERROR] userio.c:558: error: 'lastgpm' undeclared (first use in this function)
+[5-ERROR] userio.c: In function 'shutdown':
+[5-ERROR] userio.c:569: warning: implicit declaration of function 'Gpm_Close'
+[5-ERROR] make[1]: *** [userio.o] Error 1
+[5-ERROR] make[1]: Leaving directory `/ROCK/loop/src.cgames.1181950660.20167.4161569442/cgames-2.2/cmines'
+[5-ERROR] make: *** [cmines-build] Error 2
+[5-ERROR] --- BUILD ERROR ---
+
+[9-ERROR] play.c:74: warning: incompatible implicit declaration of built-in function 'memcpy'
+[9-ERROR] gcc-42 -Wall -O2 '-DDATADIR="/usr/share/csokoban"'   -c -o dirio.o dirio.c
+[9-ERROR] gcc-42 -Wall -O2 '-DDATADIR="/usr/share/csokoban"'   -c -o userio.o userio.c
+[9-ERROR] userio.c: In function 'ioinitialize':
+[9-ERROR] userio.c:847: warning: pointer targets in passing argument 1 of 'createfontchars' differ in signedness
+[9-ERROR] gcc-42 -Wall -s  csokoban.o movelist.o fileread.o answers.o play.o dirio.o userio.o   -o csokoban
+[9-ERROR] make[1]: Leaving directory `/ROCK/loop/src.cgames.1181972178.23432.2938899655/cgames-2.2/csokoban'
+[9-ERROR] make -C cmines
+[9-ERROR] make[1]: Entering directory `/ROCK/loop/src.cgames.1181972178.23432.2938899655/cgames-2.2/cmines'
+[9-ERROR] gcc-42 -Wall -O2   -c -o cmines.o cmines.c
+[9-ERROR] gcc-42 -Wall -O2   -c -o userio.o userio.c
+[9-ERROR] userio.c:41:17: error: gpm.h: No such file or directory
+[9-ERROR] userio.c:50: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'gpmconnection'
+[9-ERROR] userio.c:63: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'lastgpm'
+[9-ERROR] userio.c: In function 'out':
+[9-ERROR] userio.c:274: error: 'lastgpm' undeclared (first use in this function)
+[9-ERROR] userio.c:274: error: (Each undeclared identifier is reported only once
+[9-ERROR] userio.c:274: error: for each function it appears in.)
+[9-ERROR] userio.c:274: warning: implicit declaration of function 'GPM_DRAWPOINTER'
+[9-ERROR] userio.c: In function 'getkey':
+[9-ERROR] userio.c:457: error: 'gpm_fd' undeclared (first use in this function)
+[9-ERROR] userio.c:461: warning: implicit declaration of function 'Gpm_Getchar'
+[9-ERROR] userio.c:458: error: invalid lvalue in asm output 0
+[9-ERROR] userio.c: In function 'input':
+[9-ERROR] userio.c:486: error: 'lastgpm' undeclared (first use in this function)
+[9-ERROR] userio.c: At top level:
+[9-ERROR] userio.c:519: error: expected ')' before '*' token
+[9-ERROR] userio.c: In function 'startup':
+[9-ERROR] userio.c:557: error: 'gpm_zerobased' undeclared (first use in this function)
+[9-ERROR] userio.c:557: error: 'gpm_handler' undeclared (first use in this function)
+[9-ERROR] userio.c:557: error: 'mousehandler' undeclared (first use in this function)
+[9-ERROR] userio.c:557: warning: left-hand operand of comma expression has no effect
+[9-ERROR] userio.c:557: error: 'gpmconnection' undeclared (first use in this function)
+[9-ERROR] userio.c:557: error: 'GPM_DOWN' undeclared (first use in this function)
+[9-ERROR] userio.c:557: error: 'GPM_UP' undeclared (first use in this function)
+[9-ERROR] userio.c:557: warning: left-hand operand of comma expression has no effect
+[9-ERROR] userio.c:557: error: 'GPM_MOVE' undeclared (first use in this function)
+[9-ERROR] userio.c:557: error: 'GPM_HARD' undeclared (first use in this function)
+[9-ERROR] userio.c:557: warning: left-hand operand of comma expression has no effect
+[9-ERROR] userio.c:557: warning: left-hand operand of comma expression has no effect
+[9-ERROR] userio.c:557: warning: left-hand operand of comma expression has no effect
+[9-ERROR] userio.c:557: warning: implicit declaration of function 'Gpm_Open'
+[9-ERROR] userio.c:557: warning: left-hand operand of comma expression has no effect
+[9-ERROR] userio.c:558: error: 'lastgpm' undeclared (first use in this function)
+[9-ERROR] userio.c: In function 'shutdown':
+[9-ERROR] userio.c:569: warning: implicit declaration of function 'Gpm_Close'
+[9-ERROR] make[1]: *** [userio.o] Error 1
+[9-ERROR] make[1]: Leaving directory `/ROCK/loop/src.cgames.1181972178.23432.2938899655/cgames-2.2/cmines'
+[9-ERROR] make: *** [cmines-build] Error 2
+[9-ERROR] --- BUILD ERROR ---
+

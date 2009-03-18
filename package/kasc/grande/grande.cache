@@ -1,0 +1,21 @@
+
+[TIMESTAMP] 1181162721 Wed Jun  6 22:45:21 2007 (5)
+[TIMESTAMP] 1181610764 Tue Jun 12 03:12:44 2007 (9)
+
+[CONFIG-ID] TRUNK-x86-reference
+[ROCKVER] TRUNK
+
+[LOGS] 5-grande.log 9-grande.log
+
+[BUILDTIME] 2675 (5)
+[BUILDTIME] 2884 (9)
+[SIZE] 0.54 MB, 74 files
+
+[DEP] 00-dirtree alsa applewmproto applewmproto:dev autoconf automake19
+[DEP] bash2 binutils bzip2 coreutils cvm diffutils findutils gawk gcc42
+[DEP] gcc42:dev glibc26 glibc26:dev grep imake libice libkxl libkxl:dev
+[DEP] libx11 libx11:dev libxau libxcb libxdmcp libxt linux26-headers:dev
+[DEP] ltrace make mktemp net-tools perl5 sed sysfiles tar texinfo xmame
+[DEP] xorg-cf-files xproto:dev
+
+

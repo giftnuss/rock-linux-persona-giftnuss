@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Frozen Bubble
+Comment=Puzzle Game
+Exec=frozen-bubble
+Terminal=false
+Type=Application
+Categories=Game;BlocksGame
+X-ROCK-Name=frozen-bubble
+Icon=D_datadir/frozen-bubble/gfx/balls/bubble-4.gif

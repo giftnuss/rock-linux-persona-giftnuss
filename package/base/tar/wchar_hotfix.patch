@@ -1,0 +1,56 @@
+
+wchar.h must be included directly (and not via _G_config.h, which happens eg.
+when including stdio.h before wchar.h). strange - can't reproduce it in the
+chroot filesystem.  ~~ Clifford
+
+diff -ru tar-1.19/lib/mbchar.c tar-1.19-x/lib/mbchar.c
+--- tar-1.19/lib/mbchar.c	2007-09-28 13:11:36.000000000 +0000
++++ tar-1.19-x/lib/mbchar.c	2007-11-04 13:01:32.000000000 +0000
+@@ -14,6 +14,8 @@
+    along with this program; if not, write to the Free Software Foundation,
+    Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+ 
++// HACK! HACK!
++#include <wchar.h>
+ 
+ #include <config.h>
+ 
+diff -ru tar-1.19/lib/mbscasecmp.c tar-1.19-x/lib/mbscasecmp.c
+--- tar-1.19/lib/mbscasecmp.c	2007-09-28 13:11:36.000000000 +0000
++++ tar-1.19-x/lib/mbscasecmp.c	2007-11-04 13:02:16.000000000 +0000
+@@ -17,6 +17,9 @@
+    along with this program; if not, write to the Free Software Foundation,
+    Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.  */
+ 
++// HACK! HACK!
++#include <wchar.h>
++
+ #include <config.h>
+ 
+ /* Specification.  */
+diff -ru tar-1.19/lib/regex.c tar-1.19-x/lib/regex.c
+--- tar-1.19/lib/regex.c	2007-09-28 13:11:36.000000000 +0000
++++ tar-1.19-x/lib/regex.c	2007-11-04 13:03:16.000000000 +0000
+@@ -17,6 +17,9 @@
+    with this program; if not, write to the Free Software Foundation,
+    Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA. */
+ 
++// HACK! HACK!
++#include <wchar.h>
++
+ #include <config.h>
+ 
+ /* Make sure noone compiles this code with a C++ compiler.  */
+diff -ru tar-1.19/lib/vasnprintf.c tar-1.19-x/lib/vasnprintf.c
+--- tar-1.19/lib/vasnprintf.c	2007-09-28 13:11:37.000000000 +0000
++++ tar-1.19-x/lib/vasnprintf.c	2007-11-04 13:03:49.000000000 +0000
+@@ -44,6 +44,9 @@
+      DCHAR_IS_UINT16_T  Set to 1 if DCHAR_T is uint16_t.
+      DCHAR_IS_UINT32_T  Set to 1 if DCHAR_T is uint32_t.  */
+ 
++// HACK! HACK!
++#include <wchar.h>
++
+ /* Tell glibc's <stdio.h> to provide a prototype for snprintf().
+    This must come before <config.h> because <config.h> may include
+    <features.h>, and once <features.h> has been included, it's too late.  */

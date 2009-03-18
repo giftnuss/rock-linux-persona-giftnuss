@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Balazar
+Comment=A 3D action/role playing game
+Exec=balazar
+Terminal=false
+Type=Application
+Categories=Game;ActionGame
+X-ROCK-Name=balazar

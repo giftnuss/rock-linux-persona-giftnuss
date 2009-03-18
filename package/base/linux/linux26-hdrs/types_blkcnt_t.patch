@@ -1,0 +1,20 @@
+--- ./include/linux/types.h	2007-05-20 23:27:49.000000000 +0200
++++ ./include/linux/types.h	2007-05-20 23:30:30.000000000 +0200
+@@ -121,6 +121,8 @@
+  * any application/library that wants linux/types.h.
+  */
+ 
++#if 0 /* CONFLICT WITH GLIBC HEADERS */
++
+ /*
+  * The type of the inode's block count.
+  */
+@@ -130,6 +132,8 @@
+ typedef unsigned long blkcnt_t;
+ #endif
+ 
++#endif /* CONFLICT WITH GLIBC HEADERS */
++
+ /*
+  * The type of an index into the pagecache.  Use a #define so asm/types.h
+  * can override it.

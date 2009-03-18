@@ -1,0 +1,3 @@
+/etc/conf/luks/initrd_luks /etc/conf/luks
+/etc/conf/luks/mounts	/etc/luks/mounts
+/usr/sbin/cryptsetup	/sbin/cryptsetup

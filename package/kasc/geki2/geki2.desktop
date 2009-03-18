@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Geki 2
+Comment=action shooter
+Exec=geki2
+Terminal=false
+Type=Application
+Categories=Game;ArcadeGame
+X-ROCK-Name=geki2
+Icon=D_datadir/geki2/bmp/flash.bmp

@@ -1,0 +1,20 @@
+--- automake-1.7.9.orig/aclocal.in	2003-10-21 15:03:16.000000000 +0200
++++ automake-1.7.9/aclocal.in	2005-10-18 18:00:01.000000000 +0200
+@@ -208,12 +208,11 @@
+ 	    # Ignore '#' lines.
+ 	    next if /^#/;
+ 	    # strip off newlines and end-of-line comments
+-	    s/\s*\#.*$//;
+-	    chomp ($contents=$_);
+-	    if (-d $contents )
+-	    {
+-		push (@dirlist, $contents);
+-	    }
++	    s/\s*\#.*$//; chomp;
++	    foreach my $dir (glob)
++	      {
++		push (@dirlist, $dir) if -d $dir;
++	      }
+ 	}
+ 	close (DEFAULT_DIRLIST);
+     }

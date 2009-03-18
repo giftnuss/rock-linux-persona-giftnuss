@@ -1,0 +1,23 @@
+
+[TIMESTAMP] 1181152447 Wed Jun  6 19:54:07 2007 (5)
+[TIMESTAMP] 1181605242 Tue Jun 12 01:40:42 2007 (9)
+
+[CONFIG-ID] TRUNK-x86-reference
+[ROCKVER] TRUNK
+
+[LOGS] 5-libsdl_sound.log 9-libsdl_sound.log
+
+[BUILDTIME] 6553 (5)
+[BUILDTIME] 6349 (9)
+[SIZE] 0.17 MB, 10 files
+
+[DEP] 00-dirtree applewmproto bash2 binutils bzip2 coreutils cvm diffutils
+[DEP] findutils flac flac:dev gawk gcc42 gcc42:dev glibc26 glibc26:dev
+[DEP] grep libice libice:dev libmikmod libmikmod:dev libogg libogg:dev
+[DEP] libsdl libsdl:dev libsm libsm:dev libvorbis libvorbis:dev libx11
+[DEP] libx11:dev libxau libxau:dev libxcb libxcb:dev libxdmcp libxdmcp:dev
+[DEP] libxt libxt:dev linux26-headers:dev ltrace make mktemp modplug-xmms
+[DEP] nas net-tools sed speex sysfiles tar util-linux xmame
+
+[PROVIDES] libSDL_sound.a libSDL_sound.so playsound
+

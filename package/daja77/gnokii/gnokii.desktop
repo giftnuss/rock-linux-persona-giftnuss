@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Gnokii
+Comment=Admintools for Nokia mobile phones
+Exec=gnokii
+Terminal=false
+Type=Application
+Categories=Network;Telephony
+X-ROCK-Name=gnokii

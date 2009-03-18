@@ -1,0 +1,11 @@
+--- ./libvisual/Makefile.in.orig	2007-05-23 23:09:36.000000000 +0200
++++ ./libvisual/Makefile.in	2007-05-23 23:09:59.000000000 +0200
+@@ -231,6 +231,8 @@
+ 
+ all: all-am
+ 
++lv_video_mmx.lo: CFLAGS+=-mmmx
++
+ .SUFFIXES:
+ .SUFFIXES: .c .lo .o .obj
+ $(srcdir)/Makefile.in:  $(srcdir)/Makefile.am  $(am__configure_deps)

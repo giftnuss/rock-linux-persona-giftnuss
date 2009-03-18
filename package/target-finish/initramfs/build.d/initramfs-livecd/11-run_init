@@ -1,0 +1,8 @@
+
+mkdir -p $TMPDIR/run_init
+gcc -c $filesdir/run_init/run-init.c -o $TMPDIR/run_init/run-init.o
+gcc -c $filesdir/run_init/runinitlib.c -o $TMPDIR/run_init/runinitlib.o
+gcc $TMPDIR/run_init/*.o -o $TMPDIR/run_init/run_init
+
+echo dir /real-root 0755 0 0
+echo file /sbin/run_init $TMPDIR/run_init/run_init 0755 0 0

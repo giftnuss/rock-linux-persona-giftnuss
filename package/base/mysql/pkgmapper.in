@@ -1,0 +1,3 @@
+case $pkg in
+	mysql41|mysql50) pkg=mysql ;;
+esac

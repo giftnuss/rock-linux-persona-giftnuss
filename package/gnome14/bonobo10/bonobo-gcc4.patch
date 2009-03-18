@@ -1,0 +1,11 @@
+--- ./tests/test-any.c.vanilla	2005-12-28 19:57:49.000000000 +0100
++++ ./tests/test-any.c	2005-12-28 19:57:57.000000000 +0100
+@@ -15,7 +15,7 @@
+ 	TC_octet
+ };
+ 
+-static const struct CORBA_TypeCode_struct
++const struct CORBA_TypeCode_struct
+ TC_CORBA_sequence_CORBA_octet_struct = {
+       {{(ORBit_RootObject_Interface *) & ORBit_TypeCode_epv, TRUE, -1},
+        ORBIT_PSEUDO_TYPECODE},

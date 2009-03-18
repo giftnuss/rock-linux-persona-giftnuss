@@ -1,0 +1,116 @@
+#!/bin/bash
+
+initrd_mount() { # {{{
+	dev=${1}
+	mntpoint=${2}
+
+	if [ ! -e ${dev} ] ; then
+		echo " ** ${dev} could not be found!"
+		echo " ** dumping you into an emergency shell"
+		exec /bin/bash
+		return 1;
+	fi
+
+	/sbin/fsck -C -a ${dev}
+	fsckrc=${?}
+	if [ ${fsckrc} -eq 8 ] ; then
+		return 1
+	fi
+	if   [ $(( ${fsckrc} & ~3 )) != 0 ] ; then
+		echo " **"
+		echo " ** Filesystem ${dev} || error=${?} failed (returncode=${fsckrc})."
+		echo " ** Please repair the broken disk(s) manually."
+		echo " **"
+		exec /bin/bash
+	elif [ $(( ${fsckrc} &  2 )) != 0 ] ; then
+		echo " **"
+		echo " ** fsck has requested the system to be rebooted."
+		echo " ** Running a shell."
+		echo " **"
+		echo
+		exec /bin/bash
+	fi
+
+	mount -n ${dev} ${mntpoint}
+	return ${?}
+} # }}}
+
+emit_udev_events() { # {{{
+	/sbin/udevadm trigger
+	/sbin/udevadm settle
+} # }}}
+
+PATH="/sbin:/usr/sbin:/bin/:/usr/bin"
+
+rootfs=""
+rootfsmounted=0
+recreateinitrd=0
+
+mount -n -t proc proc /proc  || echo "Can't mount procfs!"
+mount -n -t sysfs sysfs /sys || echo "Can't mount sysfs!"
+mount -n -t ramfs ramfs /dev || echo "Can't mount ramfs!"
+
+cp -r /lib/udev/devices/* /dev
+
+echo "" > /proc/sys/kernel/hotplug
+/sbin/udevd --daemon 
+
+if [ -n "${real_root}" ] ; then
+	rootfs=${real_root}
+else
+	if [ -f /etc/fstab ] ; then
+		while read dev mntpoint fstype options fsck1 fsck2 ; do
+			[ "${mntpoint}" == "/" ] && rootfs=${dev}
+			[ -n "${rootfs}" ] && break
+		done < /etc/fstab
+	else
+		echo " ** /etc/fstab is missing and no real_root= option was given!"
+		echo " ** dumping you into an emergency shell"
+		exec /bin/bash
+		return 1;
+	fi
+fi
+
+echo "loading kernel modules"
+if [ -f /etc/conf/kernel ]; then
+	. /etc/conf/kernel
+fi
+
+# create nodes for devices already in kernel
+emit_udev_events
+
+for x in /etc/conf/* ; do
+	[ "${x}" == "/etc/conf/kernel" ] && continue
+	echo "Running ${x} ..."
+	. ${x}
+done
+
+if [ ${rootfsmounted} -eq 0 ] ; then
+	echo "Mounting rootfs (${rootfs}) on /root"
+	initrd_mount ${rootfs} /root
+	rootfsmounted=1
+fi
+
+[ -z "$real_init" ] && real_init="/sbin/init"
+
+echo "starting $real_init in /root"
+echo "parameters passed to $real_init: ${@}"
+cd /root
+mkdir -p /root/initrd
+mount -n --move /proc /root/proc
+mount -n --move /sys /root/sys
+mount -n --move /dev /root/dev
+/sbin/pivot_root . initrd
+
+# re-start real-system udevd, so group/permission settings get honored
+killall udevd
+/sbin/udevd --daemon
+# re-emit events so permissions get corrected and rules which need 
+# additional programs can be applied (like persistent storage, et alas)
+emit_udev_events
+
+if [ "${recreateinitrd}" != "0" ] ; then
+	echo "Recreating initrd"
+	chroot . /sbin/mkinitrd < /dev/console > /dev/console 2>&1
+fi
+exec chroot . $real_init "${@}" < /dev/console > /dev/console 2>&1

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Wormux
+Comment=A Worms Clone
+Exec=wormux
+Terminal=false
+Type=Application
+Categories=Game;ActionGame
+X-ROCK-Name=wormux

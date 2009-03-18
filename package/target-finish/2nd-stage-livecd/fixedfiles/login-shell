@@ -1,0 +1,5 @@
+#!/bin/bash
+echo "root and rocker's password is 'rock'"
+cd /home/root
+[ ! -f .profile ] && echo "cd /home/root" > .profile
+exec /bin/su - root -c "/bin/bash --login"

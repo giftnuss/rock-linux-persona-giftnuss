@@ -1,0 +1,28 @@
+	fixes errors like:
+
+	siod_est.cc:55: error: 'obj' is not a template type
+
+diff -dur speech_tools/include/EST_Chunk.h src.festival.1134794422.18915.715897024/speech_tools/include/EST_Chunk.h
+--- speech_tools/include/EST_Chunk.h	2004-04-30 18:56:49.000000000 +0200
++++ speech_tools/include/EST_Chunk.h	2005-12-18 20:21:19.000000000 +0100
+@@ -103,6 +103,8 @@
+  /*                                                                      */
+  /************************************************************************/
+ 
++class EST_ChunkPtr;
++
+ class EST_Chunk  {
+   public:
+     typedef  unsigned short use_counter;
+diff -dur speech_tools/include/siod_defs.h src.festival.1134794422.18915.715897024/speech_tools/include/siod_defs.h
+--- speech_tools/include/siod_defs.h	2004-05-29 20:34:40.000000000 +0200
++++ speech_tools/include/siod_defs.h	2005-12-18 21:15:36.000000000 +0100
+@@ -87,7 +87,7 @@
+ #define USERVAL(x) ((*x).storage_as.user.p)
+ #define UNTYPEDVAL(x) ((*x).storage_as.user.p)
+ 
+-#define NIL ((struct obj *) 0)
++#define NIL ((LISP) 0)
+ #define EQ(x,y) ((x) == (y))
+ #define NEQ(x,y) ((x) != (y))
+ #define NULLP(x) EQ(x,NIL)

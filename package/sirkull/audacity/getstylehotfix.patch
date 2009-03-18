@@ -1,0 +1,21 @@
+--- audacity-src-1.3.4-beta/lib-src/FileDialog/gtk/FileDialogPrivate.cpp	2007-11-13 23:01:48.000000000 +0100
++++ audacity-src-1.3.4-beta/lib-src/FileDialog/gtk/FileDialogPrivate.cpp	2008-03-14 23:29:08.000000000 +0100
+@@ -68,7 +68,7 @@
+ extern "C" {
+ static void gtk_filedialog_ok_callback(GtkWidget *widget, FileDialog *dialog)
+ {
+-    int style = dialog->GetStyle();
++    int style = 0; // dialog->GetStyle();
+     gchar* filename = gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(widget));
+ 
+     // gtk version numbers must be identical with the one in ctor (that calls set_do_overwrite_confirmation)
+@@ -453,7 +453,8 @@
+ #if defined(__WXGTK24__) && (!defined(__WXGPE__))
+     if (!gtk_check_version(2,4,0))
+     {
+-        if (GetStyle() & wxSAVE)
++        // if (GetStyle() & wxSAVE)
++        if (0 & wxSAVE)
+             gtk_file_chooser_set_current_name(GTK_FILE_CHOOSER(m_widget), wxConvFileName->cWX2MB(name));
+         else
+             SetPath(wxFileName(GetDirectory(), name).GetFullPath());

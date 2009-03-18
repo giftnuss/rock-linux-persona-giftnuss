@@ -1,0 +1,8 @@
+
+# file /init $rootdir/bin/bash 755 0 0
+
+echo file /linuxrc.sh $filesdir/linuxrc.sh 0755 0 0
+
+cat <<EOF
+slink /init /linuxrc.sh 755 0 0
+EOF

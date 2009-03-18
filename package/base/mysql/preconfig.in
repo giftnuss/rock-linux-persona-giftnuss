@@ -1,0 +1,3 @@
+pkgfork mysql mysql41 unflag CORE
+pkgfork mysql mysql50
+pkgremove mysql

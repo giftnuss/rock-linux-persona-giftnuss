@@ -1,0 +1,119 @@
+#!/bin/bash
+
+comment ' '
+menu_begin MENU_DEFAULTS 'Package Defaults'
+	comment 'Default Linux headers'
+	block_begin 3
+		choice ROCKCFG_PKG_LINUX_DEFAULT_HEADERS linux26-headers \
+						$CFGTEMP_LINUX_HEADERS
+	block_end
+
+	if [ "$ROCKCFG_PKG_LINUX_DEFAULT_HEADERS" == linux24-headers ] ; then
+		pkgenable linux24-headers
+		pkgremove linux26-headers
+		pkgremove linux-libc-headers
+	elif [ "$ROCKCFG_PKG_LINUX_DEFAULT_HEADERS" == linux26-headers ] ; then
+		pkgremove linux24-headers
+		pkgenable linux26-headers
+		pkgremove linux-libc-headers
+	elif [ "$ROCKCFG_PKG_LINUX_DEFAULT_HEADERS" == linux-libc-headers ] ; then
+		pkgremove linux24-headers
+		pkgremove linux26-headers
+		pkgenable linux-libc-headers
+	fi
+
+	comment ' '
+	comment "Default compilers"
+	block_begin 3
+		choice ROCKCFG_DEFAULT_CC gcc43 $CFGTEMP_DEFAULT_CC
+		choice ROCKCFG_DEFAULT_KCC gcc43 $CFGTEMP_DEFAULT_KCC
+		choice ROCKCFG_DEFAULT_CXX gcc43 $CFGTEMP_DEFAULT_CXX \
+		    'none'  'No_default_C++_compiler'
+		choice ROCKCFG_DEFAULT_F77 gcc43 $CFGTEMP_DEFAULT_F77 \
+		    'none'  'No_default_Fortran_77_compiler'
+		choice ROCKCFG_DEFAULT_F95 gcc43 $CFGTEMP_DEFAULT_F95 \
+		    'none'  'No_default_Fortran_95_compiler'
+	
+		pkgenable $ROCKCFG_DEFAULT_CC
+		pkgenable $ROCKCFG_DEFAULT_KCC
+		pkgenable $ROCKCFG_DEFAULT_CXX
+		pkgenable $ROCKCFG_DEFAULT_F77
+		pkgenable $ROCKCFG_DEFAULT_F95
+	block_end
+
+	# Build non-default CCs in stages 5 and 9
+	# and dedicated C++ and Fortran77 compilers in stages 4 and 9.
+	# Also remove CORE flag from non-default compilers.
+	k=""; for x in $CFGTEMP_DEFAULT_CC $CFGTEMP_DEFAULT_CXX $CFGTEMP_DEFAULT_F77 ; do
+		if [ "$ROCKCFG_DEFAULT_CC" != "$x" ] ; then
+			if [[ "$ROCKCFG_DEFAULT_CXX" != "$x" && \
+			       "$ROCKCFG_DEFAULT_F77" != "$x" ]]; then
+				k="$k /[ =]$x / s/^\(.\) [0-9-]*/\1 -----5---9/;"
+				if [[ "$ROCKCFG_DEFAULT_KCC" != "$x" && \
+				       "$ROCKCFG_DEFAULT_F95" != "$x" ]] ; then
+					k="$k /[ =]$x / s/\(.*\) CORE \(.*\)/\1 \2/;"
+				fi
+			else
+				k="$k /[ =]$x /   s/^\(.\) [0-9-]*/\1 ----4----9/;"
+			fi
+		fi
+	done
+	pkgfilter sed -e "$k"
+
+	comment ' '
+	comment "Default X server"
+	block_begin 3
+		choice ROCKCFG_DEFAULT_X11 xorg $CFGTEMP_DEFAULT_X11
+	block_end
+
+# 	comment ' '
+# 	comment "Default shell"
+# 	block_begin 3
+# 		choice ROCKCFG_DEFAULT_SH bash3 $CFGTEMP_DEFAULT_SH
+# 	block_end
+# 
+# 	comment ' '
+# 	comment "Default C library"
+# 	block_begin 3
+# 		choice ROCKCFG_DEFAULT_LIBC glibc26 $CFGTEMP_DEFAULT_LIBC
+# 	block_end
+	
+	# the options below read the packages file
+	pkgout
+
+	comment ' '
+	comment "Default Printer Package"
+	block_begin 3
+		default='none'; list=' '
+		while read pkg ver ; do
+			default=${default:-$pkg}
+			[ $pkg = cups ] && default=$pkg
+			list="$list $pkg Use_${pkg}_($ver)_as_standard_print_system"
+		done < <(grep " PRINTER " $swpdir/packages | cut -f5,6 -d' ')
+		list="$list none Do_not_configure_a_default_print_system"
+	
+		choice ROCKCFG_DEFAULT_PRINTER $default $list
+	
+		if [ "$ROCKCFG_DEFAULT_PRINTER" != none ] ; then
+			pkgenable $ROCKCFG_DEFAULT_PRINTER
+		fi
+	block_end
+
+	comment ' '
+	comment "Default MTA"
+	block_begin 3
+		default='none'; list=' '
+		while read pkg ver ; do
+			default=${default:-$pkg}
+			[ $pkg = postfix ] && default=$pkg
+			list="$list $pkg Use_${pkg}_($ver)_as_standard_MTA"
+		done < <(grep " MTA " $swpdir/packages | cut -f5,6 -d' ')
+		list="$list none Do_not_configure_a_default_MTA"
+	
+		choice ROCKCFG_DEFAULT_MTA $default $list
+	
+		if [ "$ROCKCFG_DEFAULT_MTA" != none ] ; then
+			pkgenable $ROCKCFG_DEFAULT_MTA
+		fi
+	block_end
+menu_end

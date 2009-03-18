@@ -1,0 +1,12 @@
+# we want our own cwd and environment. so we open a subshell
+(
+	[ -d $mod_origin/kernel/ ] || exit
+	MODTMP="$TMPDIR/modules-$k_ver"
+	mkdir -p $MODTMP/lib/modules/$k_ver
+	cp -r $mod_origin/kernel/ $MODTMP/lib/modules/$k_ver/
+	for x in sound drivers/telephony drivers/media drivers/isdn \
+		drivers/input/joystick drivers/input/mouse
+	do
+		rm -rf $MODTMP/lib/modules/$k_ver/kernel/$x
+	done
+)

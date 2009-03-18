@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=CBrowser
+Comment=sourcecode indexing tool
+Exec=cbrowser
+Terminal=false
+Type=Application
+Categories=Development
+X-ROCK-Name=cbrowser

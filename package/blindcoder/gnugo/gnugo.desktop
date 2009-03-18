@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=GnuGo
+Comment=Plays the game of Go
+Exec=gnugo
+Terminal=true
+Type=Application
+Categories=Game;BoardGame
+X-ROCK-Name=gnugo

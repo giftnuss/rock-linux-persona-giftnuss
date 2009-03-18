@@ -1,0 +1,88 @@
+--- ./Makefile.in.orig	1995-08-17 02:54:29.000000000 +0200
++++ ./Makefile.in	2008-02-16 12:18:18.000000000 +0100
+@@ -15,6 +15,13 @@
+ # along with this program; if not, write to the Free Software
+ # Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+ 
++LIBNAME=termcap
++VERSION=2.0.8
++SONAME_VERSION=2
++
++SHARED_LIB=lib$(LIBNAME).so.$(VERSION)
++SONAME_SHARED_LIB=lib$(LIBNAME).so.$(SONAME_VERSION)
++
+ #### Start of system configuration section. ####
+ 
+ srcdir = @srcdir@
+@@ -31,12 +38,12 @@
+ 
+ DEFS = @DEFS@ -DTERMCAP_FILE=\"$(termcapfile)\"
+ 
+-CFLAGS = -g
++CFLAGS = -g -fPIC
+ 
+ prefix = @prefix@
+ exec_prefix = @exec_prefix@
+ 
+-# Directory in which to install libtermcap.a.
++# Directory in which to install libtermcap.
+ libdir = $(exec_prefix)/lib
+ 
+ # Directory in which to install termcap.h.
+@@ -46,7 +53,8 @@
+ # so compilers besides gcc can find it by default.
+ # If it is empty or not defined, termcap.h will only be installed in
+ # includedir. 
+-oldincludedir = /usr/include
++# NOT NEEDED IN ROCK LINUX
++# oldincludedir = /usr/include
+ 
+ # Directory in which to install the documentation info files.
+ infodir = $(prefix)/info
+@@ -66,22 +74,18 @@
+ termcap.src termcap.texi termcap.info* \
+ texinfo.tex Makefile.in configure configure.in mkinstalldirs install-sh
+ 
+-all:	libtermcap.a info
++all:	$(SHARED_LIB) info
+ 
+ .c.o:
+ 	$(CC) -c $(CPPFLAGS) $(DEFS) -I. -I$(srcdir) $(CFLAGS) $<
+ 
+ install: all installdirs @installdata@
+-	$(INSTALL_DATA) libtermcap.a $(libdir)/libtermcap.a
+-	-$(RANLIB) $(libdir)/libtermcap.a
+-	cd $(srcdir); $(INSTALL_DATA) termcap.h $(includedir)/termcap.h
+-	-cd $(srcdir); test -z "$(oldincludedir)" || \
+-	  $(INSTALL_DATA) termcap.h $(oldincludedir)/termcap.h
++	$(INSTALL) $(SHARED_LIB) $(libdir)/$(SHARED_LIB)
+ 	cd $(srcdir); for f in termcap.info*; \
+ 	do $(INSTALL_DATA) $$f $(infodir)/$$f; done
+ 
+ uninstall: @uninstalldata@
+-	rm -f $(libdir)/libtermcap.a $(includedir)/termcap.h
++	rm -f $(libdir)/$(SHARED_LIB) $(includedir)/termcap.h
+ 	test -z "$(oldincludedir)" || rm -f $(oldincludedir)/termcap.h
+ 	rm -f $(infodir)/termcap.info*
+ 
+@@ -104,9 +108,8 @@
+ configure: configure.in
+ 	cd $(srcdir) && autoconf
+ 
+-libtermcap.a: $(OBJS)
+-	$(AR) rc $@ $(OBJS)
+-	-$(RANLIB) $@
++$(SHARED_LIB): $(OBJS)
++	$(CC) -lc -shared -o $@ -Wl,-soname,$(SONAME_SHARED_LIB) $(OBJS)
+ 
+ info: termcap.info
+ 
+@@ -117,7 +120,7 @@
+ 	etags $(SRCS)
+ 
+ clean:
+-	rm -f *.a *.o core
++	rm -f *.so *.o core
+ 
+ mostlyclean: clean
+ 

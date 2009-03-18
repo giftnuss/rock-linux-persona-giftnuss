@@ -1,0 +1,10 @@
+--- ./kscreensaver/kdesavers/firesaver.cpp.orig	2008-06-12 15:34:30.000000000 +0200
++++ ./kscreensaver/kdesavers/firesaver.cpp	2008-06-12 15:34:36.000000000 +0200
+@@ -19,6 +19,7 @@
+ //     Email:  asy@libero.it
+ 
+ #include <math.h>
++#include <stdlib.h>
+ #include <sys/time.h>
+ #include <kconfig.h>
+ #include <kdebug.h>

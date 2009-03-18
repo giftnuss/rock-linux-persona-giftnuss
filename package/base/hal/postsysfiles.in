@@ -1,0 +1,4 @@
+
+safe_groupadd haldaemon 51
+safe_useradd haldaemon 51 51 "HAL-Daemon" / /bin/false "*"
+

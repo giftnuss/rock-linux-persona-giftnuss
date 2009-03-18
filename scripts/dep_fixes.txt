@@ -1,0 +1,44 @@
+
+# This file contains a list of known false positives in the dependency
+# auto-detection. It is used by scripts/Check-Deps-2 to resolve the cyclic
+# dependencies and by scripts/Build-Pkg to dump additional debug info
+# for this dependencies.
+
+# format:
+# pkg-name del list-of-false-dependencies
+
+seahorse del glabels gdesklets
+mozilla	 del control-center nautilus-cd-burner
+libxml2  del libxslt
+docbookx del gnome-doc-utils
+python   del kdebindings
+
+vim			del sim-im
+kile			del amarok digikam
+leif			del digikam
+libkipi-plugins		del amarok
+kimdaba			del amarok
+faac			del mpeg4ip
+faad2			del mpeg4ip
+nx-X11			del nxproxy
+ffmpeg			del mplayer mpeg4ip
+x264			del subversion
+libgphoto		del graphviz
+linux			del fuse file openct
+libbonobo		del gnome-keyring-manager
+kdelibs			del djvulibre
+kdeutils		del superkaramba
+shared-mime-info	del bluefish rox-filer cdrdao
+docbookx		del iso-codes
+
+# note so sure about these
+scrollkeeper		del gnome-netstatus
+scrollkeeper		del gnome-doc-utils gnome-keyring-manager
+gnome-doc-utils		del gnome-keyring-manager gnome-netstatus
+gnome-panel		del gnome-netstatus
+gnome-netstatus		del gtkam
+
+# this seam to be a real, but optional, ring dependencies
+gpac	del ffmpeg mplayer mpeg4ip
+esound	del arts
+

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=fwbuilder
+Comment=GUI to create firewall rules
+Exec=fwbuilder
+Terminal=false
+Type=Application
+Categories=Utility
+X-ROCK-Name=fwbuilder

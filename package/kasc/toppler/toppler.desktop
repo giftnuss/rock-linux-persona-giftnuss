@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Tower Toppler
+Comment=Tower-Toppler
+Exec=toppler
+Terminal=false
+Type=Application
+Categories=Game;ArcadeGame
+X-ROCK-Name=toppler
+Icon=D_datadir/toppler/toppler.xpm

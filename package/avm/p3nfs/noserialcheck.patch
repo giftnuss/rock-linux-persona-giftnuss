@@ -1,0 +1,28 @@
+diff -ruN p3nfs-5.19/configure p3nfs-5.19-new/configure
+--- p3nfs-5.19/configure	2006-02-13 14:56:32.000000000 +0100
++++ p3nfs-5.19-new/configure	2006-02-13 15:13:56.000000000 +0100
+@@ -3364,24 +3364,6 @@
+ done
+ test -z "$MTAB" && { echo "mtab not found... " 1>&2; CFLAGS="${CFLAGS} -DDONT_UPDATE_MTAB";}
+ 
+-
+-
+-echo "$as_me:$LINENO: checking for default serial line" >&5
+-echo $ECHO_N "checking for default serial line... $ECHO_C" >&6
+-for i in /dev/tty0p0 /dev/tty00 /dev/ttyS0 /dev/ttys0 /dev/term/a /dev/ttyfa /dev/ttya /dev/tty0 /dev/ttyf1 /dev/cuaa1 ; do
+-  if test -c $i ; then
+-    DDEV=$i
+-    echo "$as_me:$LINENO: result: $i" >&5
+-echo "${ECHO_T}$i" >&6
+-    break
+-  fi
+-done
+-test -z "$DDEV" && { { echo "$as_me:$LINENO: error: serial device not found... Try harder." >&5
+-echo "$as_me: error: serial device not found... Try harder." >&2;}
+-   { (exit 1); exit 1; }; }
+-
+-
+-
+ echo "$as_me:$LINENO: checking EPOCR5 SDK" >&5
+ echo $ECHO_N "checking EPOCR5 SDK... $ECHO_C" >&6
+ if test -d /local/symbian_sdk_5.0 ; then HAVE_EPOCR5=epocR5; fi

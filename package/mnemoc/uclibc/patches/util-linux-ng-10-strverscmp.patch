@@ -1,0 +1,44 @@
+Adds missing declarations for strverscmp and versionsort (for lomount)
+
+--- util-linux-ng-2.14.1/include/strverscmp.h	1970-01-01 01:00:00.000000000 +0100
++++ src.util-linux-ng.1224332572.19340.1448101915/util-linux-ng-2.14.1/include/strverscmp.h	2008-10-18 14:55:26.000000000 +0200
+@@ -0,0 +1,39 @@
++/* Compare strings while treating digits characters numerically.
++   Copyright (C) 1997, 2002 Free Software Foundation, Inc.
++   This file is part of the GNU C Library.
++   Contributed by Jean-Franï¿½ois Bignolles <bignolle@ecoledoc.ibp.fr>, 1997.
++
++   The GNU C Library is free software; you can redistribute it and/or
++   modify it under the terms of the GNU Lesser General Public
++   License as published by the Free Software Foundation; either
++   version 2.1 of the License, or (at your option) any later version.
++
++   The GNU C Library is distributed in the hope that it will be useful,
++   but WITHOUT ANY WARRANTY; without even the implied warranty of
++   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++   Lesser General Public License for more details.
++
++   You should have received a copy of the GNU Lesser General Public
++   License along with the GNU C Library; if not, write to the Free
++   Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA
++   02111-1307 USA.  */
++
++#ifndef __STRVERSCMP_H
++#define __STRVERSCMP_H 1
++
++#include <string.h>
++#include <ctype.h>
++#include <dirent.h>
++
++/* Compare S1 and S2 as strings holding indices/version numbers,
++   returning less than, equal to or greater than zero if S1 is less than,
++   equal to or greater than S2 (for more info, see the texinfo doc).
++*/
++
++extern int
++strverscmp (s1, s2);
++
++extern int
++versionsort (const void *a, const void *b);
++
++#endif

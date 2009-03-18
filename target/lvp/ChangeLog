@@ -1,0 +1,177 @@
+
+Mon May 15 10:36:53 CEST 2006 Benjamin Schieder <blindcoder@scavenger.homeip.net>
+
+ * usual package updates (freeglut 2.4.0, udev 090, xorg 6.9.0, ROCK Linux 7368)
+ * use upx2 for in-memory decompression (now bash and mount are also compressed)
+ * improved hardware detection through the now almost-sane-again interface udev provides
+ * feedback option
+ * check-for-updates option
+ * V0.5.3: released, dubbed "Naginata"
+
+Thu Mar  9 07:06:31 CET 2006 Benjamin Schieder <blindcoder@scavenger.homeip.net>
+
+ * isolinux: initrd size is 16 MB, not 8 MB
+ * V0.5.2.1: released, dubbed "CLT Bug"
+
+Thu Feb  2 19:59:36 CET 2006 Benjamin Schieder <blindcoder@scavenger.homeip.net>
+
+ * usual round of updates: ROCK 6947
+ * udev now expects its stuff in /lib: fixed
+ * findutils 4.2.26 shares namespace with glibc 2.3.6: fixed
+ * add a VERSION file to binary releases
+ * mount devpts
+ * remove livesystem dependency on cat
+ * no more error messages when not using encryption
+ * make author happy menu entry ;)
+ * fix pseudo-xml output
+ * check if we can actually use encryption
+ * passphrase must be *at least* 20 chars, not *more than*
+ * fix scripts for coreutils-5.93 and beyond
+ * code cleanup: no more useless negations
+ * code cleanup: get filesize with stat instead of ls+sed+cut
+ * V0.5.2: released, dubbed "Go-Kyu"
+
+Tue Nov 15 20:17:48 CET 2005 Benjamin Schieder <blindcoder@scavenger.homeip.net>
+
+ * removed unnecessary programs from the live system
+ * added Copyright headers to source files
+ * removed support for linux 2.4.x kernels
+ * fixed hardware detection and /dev population (DIE, UDEV, DIE!)
+ * added GPL notes to binary distribution
+ * changed startup message to be more accurate
+ * made question about multi language buttons for .ogm and .mkv optional
+ * V0.5.1: released, dubbed "100% XCP free!"
+
+Sat Oct  8 17:13:24 CEST 2005 Benjamin Schieder <blindcoder@scavenger.homeip.net>
+
+ * usual ROCK update
+ * now uses devicemapper instead of loop-aes
+ * V0.5.0: released, dubbed "backwards incompatible"
+
+Fri Feb 25 19:50:36 CET 2005 Benjamin Schieder <blindcoder@scavenger.homeip.net>
+
+ * usual ROCK update
+ * update lvp program to 0.3.3 (scrolling of the menu)
+ * now uses linux kernel 2.6.10
+ * batch mode for release (automatically answer default to everything)
+ * textures in lvp program
+
+Tue Sep 28 09:54:01 CEST 2004 Benjamin Schieder <blindcoder@scavenger.homeip.net>
+
+ * updated to use new ROCK Linux trunk (trunk 43xx)
+ * now use a linear RAID for encrypted LVPs. This was done in response to a lot of
+   wasted disk space due to the 2GB file size limit of iso9660.
+ * package updates all over the place (gcc, glibc, mplayer, you name it)
+ * V0.4.2: released, dubbed "Moving to Berlin"
+
+Mon May 24 12:56:20 CEST 2004 Benjamin Schieder <bs1544@bingo-ev.de>
+
+ * preconfig.in: rename target to LVP
+ * build.sh: substitute I for --compress-program=bzip2
+ * overall: update to ROCK trunk (new build-directory layout, MPlayer 1.0pre4)
+ * overall: use initrd instead of reading / directly from CD
+ * initrd: search for LVP in all available CD/DVD-drives
+ * initrd: eject discs before shutting down
+
+Mon Mar  8 11:28:08 CET 2004 Benjamin 'blindCoder' Schieder <blindcoder@scavenger.homeip.net>
+
+ * overall: adapted lvp to be used as a pure ROCK Linux target
+ * buildsystem: adapted to create a releaseable, precompiled target
+ * buildsystem: implemented an easy-to-use user interface for releases
+ * updated to ROCK Linux 2.0.0-final
+
+Wed Jan 28 16:24:31 CET 2004 Benjamin Schieder <bs1544@bingo-ev.de>
+
+ * overall: further shrunk the livesystem to 25 MB by using upx
+ * lvpxml/encryption: make filesystem as large as possible (using whole disk)
+	to work around dozens of problems.
+ * lvpxml.sh: several new options
+ * mplayer: fix fonts to be displayed
+
+Mon Jan 26 19:07:30 CET 2004 Benjamin Schieder <bs1544@bingo-ev.de>
+
+ * overall: several small patches to make everything behavke (mostly X)
+
+Sat Jan 24 10:58:58 CET 2004 Benjamin Schieder <bs1544@bingo-ev.de>
+
+ * lvpxml/plain: try to hardlink files rather than copying
+ * lvpxml/encryption: make last pseudo-fs only as big as necessary
+
+Fri Jan 23 18:00:33 CET 2004 Benjamin Schieder <bs1544@bingo-ev.de>
+
+ * overall: shrunk livesystem to 38MB by using static linking and only copied necessary
+ 	files.
+ * parse-config: contains configuration for some packages to compile statically
+ * pkg_mplayer.conf: contains special configuration for mplayer
+ * glut: switched glut for freeglut for static linking
+
+Wed Jan  7 13:35:14 CET 2004 Benjamin Schieder <bs1544@bingo-ev.de>
+
+ * create_lvpxml: changed button-arrangement
+ * help0.txt: added version number
+ * plain: fixed some syntax-errors
+ * V0.2.3: released, dubbed "skipped lunch"
+
+Wed Jan  7 11:47:01 CET 2004 Benjamin Schieder <bs1544@bingo-ev.de>
+
+ * encryption.sh: fixed cipher detection
+
+Mon Jan  5 17:26:31 CET 2004 Benjamin Schieder <bs1544@bingo-ev.de>
+
+ * hwscan: commented line 324 (asort) to make it behave
+
+Mon Jan  5 12:57:28 CET 2004 Benjamin Schieder <bs1544@bingo-ev.de>
+
+ * X: use X -configure instead of home-made config
+
+Thu Dec 11 09:04:56 CET 2003 Benjamin Schieder <bs1544@bingo-ev.de>
+
+ * sysfiles: really fix the error messages
+
+Sun Dec  7 12:25:42 CET 2003 Benjamin Schieder <bs1544@bingo-ev.de>
+
+ * sysfiles: fixed bash error messages (F: command not found)
+
+Tue Dec  2 10:22:07 CET 2003 Benjamin Schieder <bs1544@bingo-ev.de>
+
+ * V0.2.2: released
+
+Sat Nov 29 12:19:50 CET 2003 Benjamin Schieder <bs1544@bingo-ev.de>
+
+ * various scripts: moved system scripts into /etc/lvp
+ * startup: added keymap= kernel argument to load a different keymap
+ * kernel: added quiet patch and parameter
+ * kernel: now using a specific configuration instead of ROCK default
+ * live: Use only necessary packages for the live-system, gzexe all executables
+
+Fri Nov 28 09:11:58 CET 2003 Benjamin Schieder <bs1544@bingo-ev.de>
+
+ * lvpxml.sh: rewritten from scratch, fixing several bugs and added -file
+ 	-files and -cfg parameters
+
+Thu Nov 27 18:57:21 CET 2003 Benjamin Schieder <bs1544@bingo-ev.de>
+ * linuxrc: added a little X autoconfiguration for nv, mga, vmware, tdfx, vesa
+
+Sun Nov 23 10:18:55 CET 2003 Benjamin Schieder <bs1544@bingo-ev.de>
+
+ * encryption: encryption compatible to <2GB data
+ * V0.2.1: released
+
+Sat Nov 22 18:58:29 CET 2003 Benjamin Schieder <bs1544@bingo-ev.de>
+
+ * encryption: enabled encryption for more than 2GB-2Byte data
+
+Sun Nov 16 13:30:00 MEST 2003 Benjamin Schieder <blindcoder@scavenger.homeip.net>
+
+ * V0.2: released
+ * packages: added package blindcoder/ciphers, added 99-crypto.patch to linux24,
+ 	updated util-linux to 2.12pre and added crypto.patch to util-linux
+	This is concatenated in the lvp.diff file
+ * build_lvp.sh: fixed several typos, one of them critical
+ * lvpxml.sh: added CryptoAPI support
+ * startlv2: added CryptoAPI support
+ * xinitrc: added CryptoAPI support
+
+Wed Oct 22 13:54:17 MEST 2003 Benjamin Schieder <blindcoder@scavenger.homeip.net>
+
+ * V0.1: released

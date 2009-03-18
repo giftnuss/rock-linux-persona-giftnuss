@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=aMule
+Comment=Multi-Platform eMule Clone
+Exec=amule
+Terminal=false
+Type=Application
+Categories=Network;P2P
+X-ROCK-Name=amule

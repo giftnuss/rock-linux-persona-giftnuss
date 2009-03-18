@@ -1,0 +1,20 @@
+
+[TIMESTAMP] 1181120669 Wed Jun  6 11:04:29 2007 (5)
+[TIMESTAMP] 1181597311 Mon Jun 11 23:28:31 2007 (9)
+
+[CONFIG-ID] TRUNK-x86-reference
+[ROCKVER] TRUNK
+
+[LOGS] 5-barrage.log 9-barrage.log
+
+[BUILDTIME] 2516 (5)
+[BUILDTIME] 2754 (9)
+[SIZE] 1.74 MB, 36 files
+
+[DEP] 00-dirtree alsa applewmproto autoconf automake19 bash2 binutils
+[DEP] bzip2 coreutils cvm diffutils findutils gawk gcc42 gcc42:dev
+[DEP] glibc26 glibc26:dev grep libice libsdl libsdl:dev libsdl_mixer
+[DEP] libsdl_mixer:dev libsm libx11 libxau libxcb libxdmcp libxt ltrace
+[DEP] make mktemp nas net-tools perl5 sed sysfiles tar texinfo xmame
+
+

@@ -1,0 +1,11 @@
+--- ./configure.orig	2008-10-30 06:50:57.000000000 +0000
++++ ./configure	2008-10-30 06:51:25.000000000 +0000
+@@ -28483,7 +28483,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-ljasper -ljpeg $LIBS"
++LIBS="-ljasper -ljpeg -lm $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF

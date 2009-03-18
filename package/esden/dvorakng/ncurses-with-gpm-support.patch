@@ -1,0 +1,11 @@
+--- ./Makefile~	2003-04-25 23:52:48.000000000 +0200
++++ ./Makefile	2006-01-18 14:59:10.000000000 +0100
+@@ -15,7 +15,7 @@
+ CFLAGS   = $(PROF) -fmessage-length=0 -Wall $(LIMIT_LENGTH)
+ CXXFLAGS = $(CFLAGS)
+ LDFLAGS  = $(PROF)
+-LIBS     = -lncurses
++LIBS     = -lncurses -ldl
+ 
+ OBJECTS  = dvorakng.o lessons.o
+ HEADERS  = lessons.h

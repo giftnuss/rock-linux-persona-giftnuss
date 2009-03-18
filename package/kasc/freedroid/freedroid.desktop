@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Freedroid
+Comment=clone of the classic Paradroid
+Exec=freedroid
+Terminal=false
+Type=Application
+Categories=Game;ActionGame
+X-ROCK-Name=freedroid
+Icon=D_datadir/freedroid/graphics/paraicon.bmp

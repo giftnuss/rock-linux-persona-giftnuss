@@ -1,0 +1,11 @@
+--- etcnet-0.8.5/contrib/Makefile~	2006-09-16 20:05:07.000000000 +0200
++++ etcnet-0.8.5/contrib/Makefile	2006-09-29 14:31:36.000000000 +0200
+@@ -45,6 +45,6 @@
+ 
+ # 3. Create /sbin links.
+ 	@install -d $(sbindir)
+-	@ln -s ../etc/net/scripts/ifup $(sbindir)/ifup
+-	@ln -s ../etc/net/scripts/ifdown $(sbindir)/ifdown
++	@ln -sf ../etc/net/scripts/ifup $(sbindir)/ifup
++	@ln -sf ../etc/net/scripts/ifdown $(sbindir)/ifdown
+ 	@echo Done!

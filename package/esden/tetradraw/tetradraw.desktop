@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Tetradraw
+Comment=Ansi ascii art editor
+Exec=tetradraw
+Terminal=true
+Type=Application
+Categories=Graphics
+X-ROCK-Name=tetradraw

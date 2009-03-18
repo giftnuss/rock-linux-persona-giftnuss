@@ -1,0 +1,3 @@
+case "$pkg" in
+eigen|eigen2) pkg=eigen ;;
+esac

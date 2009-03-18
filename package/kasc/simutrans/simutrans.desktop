@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Simutrans
+Comment=an Economy and Transport Simulation Game
+Exec=simutrans
+Terminal=false
+Type=Application
+Categories=Game;Simulation
+X-ROCK-Name=simutrans

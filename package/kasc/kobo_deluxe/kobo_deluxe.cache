@@ -1,0 +1,123 @@
+
+[TIMESTAMP] 1181162824 Wed Jun  6 22:47:04 2007 (5) ERROR
+[TIMESTAMP] 1181610837 Tue Jun 12 03:13:57 2007 (9) ERROR
+[TIMESTAMP] 1181829422 Thu Jun 14 15:57:02 2007 (5) ERROR
+[TIMESTAMP] 1181913271 Fri Jun 15 15:14:31 2007 (9) ERROR
+[TIMESTAMP] 1181953069 Sat Jun 16 02:17:49 2007 (5) ERROR
+[TIMESTAMP] 1181974917 Sat Jun 16 08:21:57 2007 (9) ERROR
+
+[CONFIG-ID] TRUNK-x86-reference
+[ROCKVER] TRUNK
+
+[LOGS] 5-kobo_deluxe.err 9-kobo_deluxe.err
+
+[BUILDTIME] 3850 (5) ERROR
+[BUILDTIME] 3872 (9) ERROR
+[BUILDTIME] 3893 (5) ERROR
+[BUILDTIME] 3972 (9) ERROR
+[BUILDTIME] 3806 (5) ERROR
+[BUILDTIME] 3824 (9) ERROR
+
+
+[5-ERROR] source='e_register.c' object='e_register.o' libtool=no \
+[5-ERROR] 	depfile='.deps/e_register.Po' tmpdepfile='.deps/e_register.TPo' \
+[5-ERROR] 	depmode=gcc3 /bin/sh ../depcomp \
+[5-ERROR] 	gcc-42 -DHAVE_CONFIG_H -I. -I. -I..     -g -O2  -I/usr/X11R7/include -I/usr/include/SDL -D_GNU_SOURCE=1 -D_REENTRANT -c `test -f e_register.c || echo './'`e_register.c
+[5-ERROR] source='e_builtin.c' object='e_builtin.o' libtool=no \
+[5-ERROR] 	depfile='.deps/e_builtin.Po' tmpdepfile='.deps/e_builtin.TPo' \
+[5-ERROR] 	depmode=gcc3 /bin/sh ../depcomp \
+[5-ERROR] 	gcc-42 -DHAVE_CONFIG_H -I. -I. -I..     -g -O2  -I/usr/X11R7/include -I/usr/include/SDL -D_GNU_SOURCE=1 -D_REENTRANT -c `test -f e_builtin.c || echo './'`e_builtin.c
+[5-ERROR] source='e_getargs.c' object='e_getargs.o' libtool=no \
+[5-ERROR] 	depfile='.deps/e_getargs.Po' tmpdepfile='.deps/e_getargs.TPo' \
+[5-ERROR] 	depmode=gcc3 /bin/sh ../depcomp \
+[5-ERROR] 	gcc-42 -DHAVE_CONFIG_H -I. -I. -I..     -g -O2  -I/usr/X11R7/include -I/usr/include/SDL -D_GNU_SOURCE=1 -D_REENTRANT -c `test -f e_getargs.c || echo './'`e_getargs.c
+[5-ERROR] rm -f libeel.a
+[5-ERROR] ar cru libeel.a eel.o e_script.o e_symtab.o e_path.o e_util.o e_lexer.o e_register.o e_builtin.o e_getargs.o 
+[5-ERROR] ranlib libeel.a
+[5-ERROR] make[2]: Leaving directory `/ROCK/loop/src.kobo_deluxe.1181953032.12778.1627887995/KoboDeluxe-0.4pre8/eel'
+[5-ERROR] make[2]: Entering directory `/ROCK/loop/src.kobo_deluxe.1181953032.12778.1627887995/KoboDeluxe-0.4pre8'
+[5-ERROR] source='enemies.cpp' object='enemies.o' libtool=no \
+[5-ERROR] 	depfile='.deps/enemies.Po' tmpdepfile='.deps/enemies.TPo' \
+[5-ERROR] 	depmode=gcc3 /bin/sh ./depcomp \
+[5-ERROR] 	g++-42 -DHAVE_CONFIG_H -I. -I. -I. -DKOBO_DATA_DIR=\""/usr/share/games/kobo-deluxe"\" -DKOBO_SCORE_DIR=\""/usr/games/kobo-deluxe/scores"\" -DKOBO_CONFIG_DIR=\""HOME>>"\" -DKOBO_CONFIG_FILE=\"".kobodlrc"\" -DSYSCONF_DIR=\""/etc"\" -Isound -Igraphics -Ieel -Idata     -g -O2 -I/usr/include/SDL -D_GNU_SOURCE=1 -D_REENTRANT -c -o enemies.o `test -f enemies.cpp || echo './'`enemies.cpp
+[5-ERROR] source='enemy.cpp' object='enemy.o' libtool=no \
+[5-ERROR] 	depfile='.deps/enemy.Po' tmpdepfile='.deps/enemy.TPo' \
+[5-ERROR] 	depmode=gcc3 /bin/sh ./depcomp \
+[5-ERROR] 	g++-42 -DHAVE_CONFIG_H -I. -I. -I. -DKOBO_DATA_DIR=\""/usr/share/games/kobo-deluxe"\" -DKOBO_SCORE_DIR=\""/usr/games/kobo-deluxe/scores"\" -DKOBO_CONFIG_DIR=\""HOME>>"\" -DKOBO_CONFIG_FILE=\"".kobodlrc"\" -DSYSCONF_DIR=\""/etc"\" -Isound -Igraphics -Ieel -Idata     -g -O2 -I/usr/include/SDL -D_GNU_SOURCE=1 -D_REENTRANT -c -o enemy.o `test -f enemy.cpp || echo './'`enemy.cpp
+[5-ERROR] source='pfile.cpp' object='pfile.o' libtool=no \
+[5-ERROR] 	depfile='.deps/pfile.Po' tmpdepfile='.deps/pfile.TPo' \
+[5-ERROR] 	depmode=gcc3 /bin/sh ./depcomp \
+[5-ERROR] 	g++-42 -DHAVE_CONFIG_H -I. -I. -I. -DKOBO_DATA_DIR=\""/usr/share/games/kobo-deluxe"\" -DKOBO_SCORE_DIR=\""/usr/games/kobo-deluxe/scores"\" -DKOBO_CONFIG_DIR=\""HOME>>"\" -DKOBO_CONFIG_FILE=\"".kobodlrc"\" -DSYSCONF_DIR=\""/etc"\" -Isound -Igraphics -Ieel -Idata     -g -O2 -I/usr/include/SDL -D_GNU_SOURCE=1 -D_REENTRANT -c -o pfile.o `test -f pfile.cpp || echo './'`pfile.cpp
+[5-ERROR] source='gamectl.cpp' object='gamectl.o' libtool=no \
+[5-ERROR] 	depfile='.deps/gamectl.Po' tmpdepfile='.deps/gamectl.TPo' \
+[5-ERROR] 	depmode=gcc3 /bin/sh ./depcomp \
+[5-ERROR] 	g++-42 -DHAVE_CONFIG_H -I. -I. -I. -DKOBO_DATA_DIR=\""/usr/share/games/kobo-deluxe"\" -DKOBO_SCORE_DIR=\""/usr/games/kobo-deluxe/scores"\" -DKOBO_CONFIG_DIR=\""HOME>>"\" -DKOBO_CONFIG_FILE=\"".kobodlrc"\" -DSYSCONF_DIR=\""/etc"\" -Isound -Igraphics -Ieel -Idata     -g -O2 -I/usr/include/SDL -D_GNU_SOURCE=1 -D_REENTRANT -c -o gamectl.o `test -f gamectl.cpp || echo './'`gamectl.cpp
+[5-ERROR] source='manage.cpp' object='manage.o' libtool=no \
+[5-ERROR] 	depfile='.deps/manage.Po' tmpdepfile='.deps/manage.TPo' \
+[5-ERROR] 	depmode=gcc3 /bin/sh ./depcomp \
+[5-ERROR] 	g++-42 -DHAVE_CONFIG_H -I. -I. -I. -DKOBO_DATA_DIR=\""/usr/share/games/kobo-deluxe"\" -DKOBO_SCORE_DIR=\""/usr/games/kobo-deluxe/scores"\" -DKOBO_CONFIG_DIR=\""HOME>>"\" -DKOBO_CONFIG_FILE=\"".kobodlrc"\" -DSYSCONF_DIR=\""/etc"\" -Isound -Igraphics -Ieel -Idata     -g -O2 -I/usr/include/SDL -D_GNU_SOURCE=1 -D_REENTRANT -c -o manage.o `test -f manage.cpp || echo './'`manage.cpp
+[5-ERROR] In file included from manage.cpp:38:
+[5-ERROR] scenes.h:58: warning: non-local variable 'const _scene scene []' uses anonymous type
+[5-ERROR] scenes.h:56: warning: 'typedef const struct<anonymous> _scene' does not refer to the unqualified type, so it is not used for linkage
+[5-ERROR] In file included from states.h:26,
+[5-ERROR]                  from manage.cpp:44:
+[5-ERROR] gamestate.h:32: error: ISO C++ forbids declaration of 'gamestatemanager_t' with no type
+[5-ERROR] gamestate.h:32: error: expected ';' before '*' token
+[5-ERROR] make[2]: *** [manage.o] Error 1
+[5-ERROR] make[2]: Leaving directory `/ROCK/loop/src.kobo_deluxe.1181953032.12778.1627887995/KoboDeluxe-0.4pre8'
+[5-ERROR] make[1]: *** [all-recursive] Error 1
+[5-ERROR] make[1]: Leaving directory `/ROCK/loop/src.kobo_deluxe.1181953032.12778.1627887995/KoboDeluxe-0.4pre8'
+[5-ERROR] make: *** [all] Error 2
+[5-ERROR] --- BUILD ERROR ---
+
+[9-ERROR] source='e_register.c' object='e_register.o' libtool=no \
+[9-ERROR] 	depfile='.deps/e_register.Po' tmpdepfile='.deps/e_register.TPo' \
+[9-ERROR] 	depmode=gcc3 /bin/sh ../depcomp \
+[9-ERROR] 	gcc-42 -DHAVE_CONFIG_H -I. -I. -I..     -g -O2  -I/usr/X11R7/include -I/usr/include/SDL -D_GNU_SOURCE=1 -D_REENTRANT -c `test -f e_register.c || echo './'`e_register.c
+[9-ERROR] source='e_builtin.c' object='e_builtin.o' libtool=no \
+[9-ERROR] 	depfile='.deps/e_builtin.Po' tmpdepfile='.deps/e_builtin.TPo' \
+[9-ERROR] 	depmode=gcc3 /bin/sh ../depcomp \
+[9-ERROR] 	gcc-42 -DHAVE_CONFIG_H -I. -I. -I..     -g -O2  -I/usr/X11R7/include -I/usr/include/SDL -D_GNU_SOURCE=1 -D_REENTRANT -c `test -f e_builtin.c || echo './'`e_builtin.c
+[9-ERROR] source='e_getargs.c' object='e_getargs.o' libtool=no \
+[9-ERROR] 	depfile='.deps/e_getargs.Po' tmpdepfile='.deps/e_getargs.TPo' \
+[9-ERROR] 	depmode=gcc3 /bin/sh ../depcomp \
+[9-ERROR] 	gcc-42 -DHAVE_CONFIG_H -I. -I. -I..     -g -O2  -I/usr/X11R7/include -I/usr/include/SDL -D_GNU_SOURCE=1 -D_REENTRANT -c `test -f e_getargs.c || echo './'`e_getargs.c
+[9-ERROR] rm -f libeel.a
+[9-ERROR] ar cru libeel.a eel.o e_script.o e_symtab.o e_path.o e_util.o e_lexer.o e_register.o e_builtin.o e_getargs.o 
+[9-ERROR] ranlib libeel.a
+[9-ERROR] make[2]: Leaving directory `/ROCK/loop/src.kobo_deluxe.1181974879.19862.4149625545/KoboDeluxe-0.4pre8/eel'
+[9-ERROR] make[2]: Entering directory `/ROCK/loop/src.kobo_deluxe.1181974879.19862.4149625545/KoboDeluxe-0.4pre8'
+[9-ERROR] source='enemies.cpp' object='enemies.o' libtool=no \
+[9-ERROR] 	depfile='.deps/enemies.Po' tmpdepfile='.deps/enemies.TPo' \
+[9-ERROR] 	depmode=gcc3 /bin/sh ./depcomp \
+[9-ERROR] 	g++-42 -DHAVE_CONFIG_H -I. -I. -I. -DKOBO_DATA_DIR=\""/usr/share/games/kobo-deluxe"\" -DKOBO_SCORE_DIR=\""/usr/games/kobo-deluxe/scores"\" -DKOBO_CONFIG_DIR=\""HOME>>"\" -DKOBO_CONFIG_FILE=\"".kobodlrc"\" -DSYSCONF_DIR=\""/etc"\" -Isound -Igraphics -Ieel -Idata     -g -O2 -I/usr/include/SDL -D_GNU_SOURCE=1 -D_REENTRANT -c -o enemies.o `test -f enemies.cpp || echo './'`enemies.cpp
+[9-ERROR] source='enemy.cpp' object='enemy.o' libtool=no \
+[9-ERROR] 	depfile='.deps/enemy.Po' tmpdepfile='.deps/enemy.TPo' \
+[9-ERROR] 	depmode=gcc3 /bin/sh ./depcomp \
+[9-ERROR] 	g++-42 -DHAVE_CONFIG_H -I. -I. -I. -DKOBO_DATA_DIR=\""/usr/share/games/kobo-deluxe"\" -DKOBO_SCORE_DIR=\""/usr/games/kobo-deluxe/scores"\" -DKOBO_CONFIG_DIR=\""HOME>>"\" -DKOBO_CONFIG_FILE=\"".kobodlrc"\" -DSYSCONF_DIR=\""/etc"\" -Isound -Igraphics -Ieel -Idata     -g -O2 -I/usr/include/SDL -D_GNU_SOURCE=1 -D_REENTRANT -c -o enemy.o `test -f enemy.cpp || echo './'`enemy.cpp
+[9-ERROR] source='pfile.cpp' object='pfile.o' libtool=no \
+[9-ERROR] 	depfile='.deps/pfile.Po' tmpdepfile='.deps/pfile.TPo' \
+[9-ERROR] 	depmode=gcc3 /bin/sh ./depcomp \
+[9-ERROR] 	g++-42 -DHAVE_CONFIG_H -I. -I. -I. -DKOBO_DATA_DIR=\""/usr/share/games/kobo-deluxe"\" -DKOBO_SCORE_DIR=\""/usr/games/kobo-deluxe/scores"\" -DKOBO_CONFIG_DIR=\""HOME>>"\" -DKOBO_CONFIG_FILE=\"".kobodlrc"\" -DSYSCONF_DIR=\""/etc"\" -Isound -Igraphics -Ieel -Idata     -g -O2 -I/usr/include/SDL -D_GNU_SOURCE=1 -D_REENTRANT -c -o pfile.o `test -f pfile.cpp || echo './'`pfile.cpp
+[9-ERROR] source='gamectl.cpp' object='gamectl.o' libtool=no \
+[9-ERROR] 	depfile='.deps/gamectl.Po' tmpdepfile='.deps/gamectl.TPo' \
+[9-ERROR] 	depmode=gcc3 /bin/sh ./depcomp \
+[9-ERROR] 	g++-42 -DHAVE_CONFIG_H -I. -I. -I. -DKOBO_DATA_DIR=\""/usr/share/games/kobo-deluxe"\" -DKOBO_SCORE_DIR=\""/usr/games/kobo-deluxe/scores"\" -DKOBO_CONFIG_DIR=\""HOME>>"\" -DKOBO_CONFIG_FILE=\"".kobodlrc"\" -DSYSCONF_DIR=\""/etc"\" -Isound -Igraphics -Ieel -Idata     -g -O2 -I/usr/include/SDL -D_GNU_SOURCE=1 -D_REENTRANT -c -o gamectl.o `test -f gamectl.cpp || echo './'`gamectl.cpp
+[9-ERROR] source='manage.cpp' object='manage.o' libtool=no \
+[9-ERROR] 	depfile='.deps/manage.Po' tmpdepfile='.deps/manage.TPo' \
+[9-ERROR] 	depmode=gcc3 /bin/sh ./depcomp \
+[9-ERROR] 	g++-42 -DHAVE_CONFIG_H -I. -I. -I. -DKOBO_DATA_DIR=\""/usr/share/games/kobo-deluxe"\" -DKOBO_SCORE_DIR=\""/usr/games/kobo-deluxe/scores"\" -DKOBO_CONFIG_DIR=\""HOME>>"\" -DKOBO_CONFIG_FILE=\"".kobodlrc"\" -DSYSCONF_DIR=\""/etc"\" -Isound -Igraphics -Ieel -Idata     -g -O2 -I/usr/include/SDL -D_GNU_SOURCE=1 -D_REENTRANT -c -o manage.o `test -f manage.cpp || echo './'`manage.cpp
+[9-ERROR] In file included from manage.cpp:38:
+[9-ERROR] scenes.h:58: warning: non-local variable 'const _scene scene []' uses anonymous type
+[9-ERROR] scenes.h:56: warning: 'typedef const struct<anonymous> _scene' does not refer to the unqualified type, so it is not used for linkage
+[9-ERROR] In file included from states.h:26,
+[9-ERROR]                  from manage.cpp:44:
+[9-ERROR] gamestate.h:32: error: ISO C++ forbids declaration of 'gamestatemanager_t' with no type
+[9-ERROR] gamestate.h:32: error: expected ';' before '*' token
+[9-ERROR] make[2]: *** [manage.o] Error 1
+[9-ERROR] make[2]: Leaving directory `/ROCK/loop/src.kobo_deluxe.1181974879.19862.4149625545/KoboDeluxe-0.4pre8'
+[9-ERROR] make[1]: *** [all-recursive] Error 1
+[9-ERROR] make[1]: Leaving directory `/ROCK/loop/src.kobo_deluxe.1181974879.19862.4149625545/KoboDeluxe-0.4pre8'
+[9-ERROR] make: *** [all] Error 2
+[9-ERROR] --- BUILD ERROR ---
+

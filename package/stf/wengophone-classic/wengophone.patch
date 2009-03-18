@@ -1,0 +1,31 @@
+--- wengophone-classic-1.0-r6665/gui/config/GeneralConfigWidget.cpp~	2006-04-18 11:07:51.000000000 +0200
++++ wengophone-classic-1.0-r6665/gui/config/GeneralConfigWidget.cpp	2006-06-20 18:14:13.000000000 +0200
+@@ -28,7 +28,7 @@
+ #include <qcheckbox.h>
+ #include <qbuttongroup.h> 
+ #include <qdir.h>
+-#include <qapplication.h>
++#include <qapplication.h>
+ 
+ GeneralConfigWidget::GeneralConfigWidget(QWidget * parent) : QObject(parent) {
+ 	_generalConfigWidget = MyWidgetFactory::create("GeneralConfigWidgetForm.ui", this, parent);
+@@ -42,14 +42,16 @@
+ 	if ((_startup->isStartup()) || (advancedConfig.getAutoStart())) {
+ 		startupCheckBox->toggle();
+ 	}
+-	
+-	_startup->setStartup(advancedConfig.getAutoStart());
+-	
++	
++	_startup->setStartup(advancedConfig.getAutoStart());
++	
+ 	connect(startupCheckBox, SIGNAL(toggled(bool)),
+ 		this, SLOT(setStartup(bool)));
+ #else
+ 	QButtonGroup * bg = (QButtonGroup*)_generalConfigWidget->child("StartButtonGroup", "QButtonGroup");
+ 	bg->hide();
++
++	AdvancedConfig & advancedConfig = AdvancedConfig::getInstance();
+ #endif
+ 	
+ 	_useHttpCheckBox = (QCheckBox *) _generalConfigWidget->child("useHttpCheckBox", "QCheckBox");

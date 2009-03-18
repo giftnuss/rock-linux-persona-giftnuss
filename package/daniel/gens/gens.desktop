@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Gens
+Comment=A GENESIS/MEGADRIVE emulator
+Exec=gens
+Terminal=false
+Type=Application
+Categories=Emulator
+X-ROCK-Name=gens
+Icon=D_datadir/gens/Gens2.ico

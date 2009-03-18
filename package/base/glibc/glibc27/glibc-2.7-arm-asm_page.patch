@@ -1,0 +1,13 @@
+See e.g. http://www.mail-archive.com/debian-glibc%40lists.debian.org/msg38393.html
+or http://sourceware.org/ml/crossgcc/2008-05/msg00014.html
+
+--- ./ports/sysdeps/unix/sysv/linux/arm/ioperm.c.orig	2008-10-04 19:47:32.000000000 +0200
++++ ./ports/sysdeps/unix/sysv/linux/arm/ioperm.c	2008-10-04 19:47:42.000000000 +0200
+@@ -45,7 +45,6 @@
+ #include <sys/mman.h>
+ 
+ #include <linux/version.h>
+-#include <asm/page.h>
+ #include <sys/sysctl.h>
+ 
+ #define PATH_ARM_SYSTYPE	"/etc/arm_systype"

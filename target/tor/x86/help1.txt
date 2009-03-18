@@ -1,0 +1,15 @@
+		     ____   ___   ____ _  __     _
+		    |  _ \ / _ \ / ___| |/ /__ _| |_ ___
+		    | |_) | | | | |   | ' // _` | __/ _ \
+		    |  _ <| |_| | |___| . \ (_| | ||  __/
+		    |_| \_\\___/ \____|_|\_\__,_|\__\___|
+	    [============> http://www.rocklinux.org/ <============]
+            | L I V E  CD |
+            +-------------+              [F1=Overview] [F2=Options]
+
+Options:
+--------
+
+linuxrc_debug      enable debug output from linuxrc and kernel
+stage2init=<file>  the program to exec after linuxrc finished
+

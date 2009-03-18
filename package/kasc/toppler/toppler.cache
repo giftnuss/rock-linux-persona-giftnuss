@@ -1,0 +1,20 @@
+
+[TIMESTAMP] 1181167756 Thu Jun  7 00:09:16 2007 (5)
+[TIMESTAMP] 1181614148 Tue Jun 12 04:09:08 2007 (9)
+
+[CONFIG-ID] TRUNK-x86-reference
+[ROCKVER] TRUNK
+
+[LOGS] 5-toppler.log 9-toppler.log
+
+[BUILDTIME] 3732 (5)
+[BUILDTIME] 4021 (9)
+[SIZE] 1.04 MB, 21 files
+
+[DEP] 00-dirtree alsa applewmproto bash2 binutils bzip2 coreutils cvm
+[DEP] diffutils findutils gawk gcc42 gcc42:dev gettext glibc26 glibc26:dev
+[DEP] grep libice libsdl libsdl:dev libsdl_mixer libsdl_mixer:dev libsm
+[DEP] libx11 libxau libxcb libxdmcp libxt linux26-headers:dev ltrace make
+[DEP] mktemp nas net-tools sed sysfiles tar util-linux xmame zlib zlib:dev
+
+

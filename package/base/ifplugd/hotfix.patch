@@ -1,0 +1,15 @@
+--- ifplugd-0.28/src/interface.c	2005-01-05 01:25:31.000000000 +0100
++++ build/crystal-TRUNK-x86-crystal/ROCK/src.ifplugd.1140188669.31053.2052336942/ifplugd-0.28/src/interface.c	2006-02-17 16:24:55.000000000 +0100
+@@ -22,8 +22,11 @@
+ #include <config.h>
+ #endif
+ 
+-#include <linux/sockios.h>
++#if 0
+ #include <linux/if_ether.h>
++#endif
++#define ETH_ALEN 6
++#include <linux/sockios.h>
+ #include <sys/types.h>
+ #include <sys/socket.h>
+ #include <sys/ioctl.h>

@@ -1,0 +1,40 @@
+--- gpm-1.20.1/src/prog/gpm-root.y.orig	2007-11-05 11:58:55.000000000 +0100
++++ gpm-1.20.1/src/prog/gpm-root.y	2007-11-05 11:59:09.000000000 +0100
+@@ -44,7 +44,7 @@
+ #include <sys/stat.h>       /* fstat() */
+ #include <sys/utsname.h>    /* uname() */
+ #include <termios.h>        /* winsize */
+-#include <linux/limits.h>   /* OPEN_MAX */
++#include <linux/limits.h>   /* NR_OPEN */
+ #include <linux/vt.h>       /* VT_ACTIVATE */
+ #include <linux/keyboard.h> /* K_SHIFT */
+ #include <utmp.h>         
+@@ -525,7 +525,7 @@
+ 	            open("/dev/null",O_RDONLY); /* stdin  */
+ 	            open(consolename,O_WRONLY); /* stdout */
+ 	            dup(1);                     /* stderr */  
+-	            for (i=3;i<OPEN_MAX; i++) close(i);
++	            for (i=3;i<NR_OPEN; i++) close(i);
+ 	            execl("/bin/sh","sh","-c",self->arg,(char *)NULL);
+ 	            exit(1); /* shouldn't happen */
+ 	         default: return 0;
+--- gpm-1.20.1/src/special.c.orig	2002-12-24 23:57:16.000000000 +0100
++++ gpm-1.20.1/src/special.c	2007-11-05 11:57:14.000000000 +0100
+@@ -25,7 +25,7 @@
+ 
+ /* This file is compiled conditionally, see the Makefile */
+ 
+-#include <linux/limits.h> /* for OPEN_MAX */
++#include <linux/limits.h> /* for NR_OPEN */
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
+@@ -155,7 +155,7 @@
+       open(GPM_NULL_DEV,O_RDONLY); /* stdin  */
+       open(option.consolename,O_WRONLY); /* stdout */
+       dup(1);                     /* stderr */
+-      for (i=3;i<OPEN_MAX; i++) close(i);
++      for (i=3;i<NR_OPEN; i++) close(i);
+       execl("/bin/sh","sh","-c",command,(char *)NULL);
+       exit(1); /* shouldn't happen */
+       

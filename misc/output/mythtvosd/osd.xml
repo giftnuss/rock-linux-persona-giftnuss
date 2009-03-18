@@ -1,0 +1,28 @@
+
+  <font name="white">
+    <color>255</color>
+    <size>16</size>
+    <outline>no</outline>
+  </font>
+
+  <font name="mediumwhite">
+    <color>255</color>
+    <size>24</size>
+    <outline>yes</outline>
+  </font>
+
+  <container name="notify_rock_text" priority="10">
+    <box name="background">
+      <area>20,15,600,100</area>
+    </box>
+    <textarea name="notify_rockheader">
+      <area>25,20,600,40</area>
+      <font>mediumwhite</font>
+    </textarea>
+    <textarea name="notify_rockmsg">
+      <area>25,65,600,100</area>
+      <font>white</font>
+      <multiline>yes</multiline>
+    </textarea>
+  </container>
+

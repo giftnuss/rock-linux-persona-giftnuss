@@ -1,0 +1,82 @@
+--- ./include/tunepimp/metadata.h.orig	2008-06-11 09:02:44.000000000 +0200
++++ ./include/tunepimp/metadata.h	2008-06-11 09:02:50.000000000 +0200
+@@ -28,6 +28,7 @@
+ #define __METADATA_H__
+ 
+ #include <string>
++#include <string.h>
+ #include <cstdio>
+ using namespace std;
+ 
+--- ./lib/fileio.cpp.orig	2008-06-11 10:16:53.000000000 +0200
++++ ./lib/fileio.cpp	2008-06-11 10:17:02.000000000 +0200
+@@ -28,6 +28,8 @@
+ #include <assert.h>
+ #include <errno.h>
+ #include <string>
++#include <string.h>
++#include <stdlib.h>
+ #ifndef WIN32
+ #include <unistd.h>
+ #endif
+--- ./lib/metadata.cpp.orig	2008-06-11 10:02:13.000000000 +0200
++++ ./lib/metadata.cpp	2008-06-11 10:02:18.000000000 +0200
+@@ -26,6 +26,7 @@
+ ----------------------------------------------------------------------------*/
+ #include <math.h>
+ #include <stdio.h>
++#include <stdlib.h>
+ #include "metadata.h"
+ #include "../config.h"
+ 
+--- ./lib/utf8/utf8util.cpp.orig	2008-06-11 09:01:28.000000000 +0200
++++ ./lib/utf8/utf8util.cpp	2008-06-11 09:01:43.000000000 +0200
+@@ -26,6 +26,8 @@
+ ----------------------------------------------------------------------------*/
+ 
+ #include <stdio.h>
++#include <stdlib.h>
++#include <string.h>
+ #include "utf8util.h"
+ #include "utf8.h"
+ #ifdef WIN32
+--- ./plugins/mp3/id3_2_3_meta.cpp.orig	2008-06-11 10:28:12.000000000 +0200
++++ ./plugins/mp3/id3_2_3_meta.cpp	2008-06-11 10:28:18.000000000 +0200
+@@ -26,6 +26,7 @@
+ ----------------------------------------------------------------------------*/
+ 
+ #include <stdio.h>
++#include <stdlib.h>
+ #include <assert.h>
+ #include <ctype.h>
+ #include <musicbrainz/mb_c.h>
+--- ./plugins/mp3/id3_meta.cpp.orig	2008-06-11 10:25:31.000000000 +0200
++++ ./plugins/mp3/id3_meta.cpp	2008-06-11 10:25:37.000000000 +0200
+@@ -26,6 +26,7 @@
+ ----------------------------------------------------------------------------*/
+ 
+ #include <stdio.h>
++#include <stdlib.h>
+ #include <time.h>
+ #include <ctype.h>
+ #include <musicbrainz/mb_c.h>
+--- libtunepimp-0.4.2/plugins/wma/wma.cpp	2006-01-22 13:13:15.000000000 +0100
++++ src.tunepimp.1224363650.27988.1997736646/lt/plugins/wma/wma.cpp	2008-10-19 00:16:17.000000000 +0200
+@@ -27,6 +27,7 @@
+ 
+ #include <string.h>
+ #include <stdio.h>
++#include <stdlib.h>
+ #include <wmafile.h>
+ #include "metadata.h"
+ #include "plugin.h"
+--- libtunepimp-0.4.2/plugins/wma/wmafile.cpp	2006-01-21 21:30:24.000000000 +0100
++++ src.tunepimp.1224363650.27988.1997736646/lt/plugins/wma/wmafile.cpp	2008-10-19 00:18:05.000000000 +0200
+@@ -23,6 +23,7 @@
+ #include <wmafile.h>
+ #include <wmatag.h>
+ #include <wmaproperties.h>
++#include <string.h>
+ 
+ using namespace TagLib;
+ 

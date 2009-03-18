@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Linux MultiMedia Studio
+Comment=easy music-production for everyone
+Exec=lmms
+Terminal=false
+Type=Application
+Categories=Audio;Music
+X-ROCK-Name=lmms

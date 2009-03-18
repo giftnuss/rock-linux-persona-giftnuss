@@ -1,0 +1,72 @@
+#!/bin/bash
+
+while read device status ; do
+	[ "${status}" == "plain" ] && continue
+	if [ "${status}" == "encrypt" ] ; then # {{{
+		break
+
+		echo "Make sure that your filesystem on ${device} is at least 2 MegaByte smaller"
+		echo "than the partition it resides on! Otherwise this procedure will kill your"
+		echo "data FOREVER!"
+		echo
+		echo "You can achieve this with the 'resize' commands:"
+		echo "- resize2fs for ext2 filesystems"
+		echo "- resize_reiserfs for reiserfs filesystems"
+		echo
+		echo "Enter YES (all capitals) now to start the encryption process or anything"
+		echo "else to cancel."
+		read -p confirm
+
+# XXX TODO finish this.
+
+		blocksize="$( blockdev --getsize ${device} )"
+		echo " 0 $(( ${blocksize} - 1032 )) linear ${device} 1032 " | dmsetup create ${device//\//_}
+		for x in $( seq $(( ${blocksize} / 1032 - 2 )) -1 0 ) ; do
+			echo -en "\r$(( ( ${blocksize} / 1032 - 2 ) - ${x} )) / $(( ${blocksize} / 1032 - 2 ))"
+			dd if=${device} of=/dev/mapper/${device//\//_} bs=$(( 1032 * 512 )) count=1 skip=${x} seek=${x} 2>/dev/null
+		done
+		echo
+		echo
+		echo "I'm now going to start the LUKS encryption. You will need to enter a passphrase"
+		echo "three times:"
+		echo "First for setting up LUKS"
+		echo "Second for confirmation of the passphrase"
+		echo "Third to actually start up the encrypted device"
+
+		cryptsetup luksFormat ${device}
+
+		cryptsetup luksOpen ${device} ${device//\//_}_encrypted
+
+		dd if=/dev/mapper/${device//\//_} of=/dev/mapper/${device//\//_}_encrypted bs=1M
+
+		dmsetup remove ${device//\//_}
+		echo "Your encrypted filesystem is now ready in"
+		echo "/dev/mapper/${device//\//_}_encrypted and can be used according to the"
+		echo "LUKS documentation."
+		echo
+	fi # }}}
+	if [ "${status}" == "decrypt" ] ; then # {{{
+		: "Dito."
+	fi # }}}
+	if [ "${status}" == "swap" ] ; then # {{{
+		: "Will I even do this?"
+	fi # }}}
+	if [ "${status}" == "encrypted" ] ; then # {{{
+		run=1
+		encryptedname="${device#/}"
+		encryptedname="${device//\//_}"
+		while [ ${run} -eq 1 ] ; do
+			if cryptsetup luksOpen ${device} ${encryptedname} ; then
+				run=0
+				echo "Success"
+			else
+				echo "Couldn't open encryption on ${device}."
+				echo -n "Continue without it [y/n] ? "
+				read -n 1 yn < /dev/console
+				echo
+				[ "${yn}" == "y" ] && run=0
+			fi
+		done
+		continue
+	fi # }}}
+done < /etc/dm/mounts

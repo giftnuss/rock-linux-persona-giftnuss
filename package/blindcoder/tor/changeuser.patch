@@ -1,0 +1,12 @@
+--- tor-0.1.0.17/src/config/torrc.sample.in	2006-02-27 18:57:14.000000000 +0100
++++ tor-0.1.0.17/src/config/torrc.sample.in	2006-02-27 18:57:31.000000000 +0100
+@@ -69,6 +69,9 @@ AllowUnverifiedNodes middle,rendezvous
+ ## currently experimental.
+ #ControlPort 9051
+ 
++## The user tor will run as
++User tor
++
+ ############### This section is just for location-hidden services ###
+ 
+ ## Look in .../hidden_service/hostname for the address to tell people.

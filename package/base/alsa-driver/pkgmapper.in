@@ -1,0 +1,3 @@
+case $xpkg in
+	alsa-driver-24|alsa-driver-26) pkg=alsa-driver ;;
+esac

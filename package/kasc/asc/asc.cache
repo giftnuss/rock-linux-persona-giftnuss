@@ -1,0 +1,123 @@
+
+[TIMESTAMP] 1181117170 Wed Jun  6 10:06:10 2007 (5) ERROR
+[TIMESTAMP] 1181593572 Mon Jun 11 22:26:12 2007 (9) ERROR
+[TIMESTAMP] 1181826905 Thu Jun 14 15:15:05 2007 (5) ERROR
+[TIMESTAMP] 1181908978 Fri Jun 15 14:02:58 2007 (9) ERROR
+[TIMESTAMP] 1181951523 Sat Jun 16 01:52:03 2007 (5) ERROR
+[TIMESTAMP] 1181973062 Sat Jun 16 07:51:02 2007 (9) ERROR
+
+[CONFIG-ID] TRUNK-x86-reference
+[ROCKVER] TRUNK
+
+[LOGS] 5-asc.err 9-asc.err
+
+[BUILDTIME] 2829 (5) ERROR
+[BUILDTIME] 2790 (9) ERROR
+[BUILDTIME] 2836 (5) ERROR
+[BUILDTIME] 2861 (9) ERROR
+[BUILDTIME] 2741 (5) ERROR
+[BUILDTIME] 2754 (9) ERROR
+
+
+[5-ERROR] checking whether stripping libraries is possible... yes
+[5-ERROR] appending configuration tag "F77" to libtool
+[5-ERROR] checking if libtool supports shared libraries... yes
+[5-ERROR] checking whether to build shared libraries... no
+[5-ERROR] checking whether to build static libraries... yes
+[5-ERROR] checking for f77 option to produce PIC... -fPIC
+[5-ERROR] checking if f77 PIC flag -fPIC works... no
+[5-ERROR] checking if f77 supports -c -o file.o... no
+[5-ERROR] checking whether the f77 linker (ld) supports shared libraries... yes
+[5-ERROR] checking dynamic linker characteristics... ./configure: line 1: f77: command not found
+[5-ERROR] GNU/Linux ld.so
+[5-ERROR] checking how to hardcode library paths into programs... immediate
+[5-ERROR] checking whether stripping libraries is possible... yes
+[5-ERROR] checking for i386-unknown-linux-gnu-gcc... (cached) gcc-42
+[5-ERROR] checking whether we are using the GNU C compiler... (cached) yes
+[5-ERROR] checking whether gcc-42 accepts -g... (cached) yes
+[5-ERROR] checking for gcc-42 option to accept ANSI C... (cached) none needed
+[5-ERROR] checking dependency style of gcc-42... (cached) gcc3
+[5-ERROR] checking for i386-unknown-linux-gnu-g++... (cached) g++-42
+[5-ERROR] checking whether we are using the GNU C++ compiler... (cached) yes
+[5-ERROR] checking whether g++-42 accepts -g... (cached) yes
+[5-ERROR] checking dependency style of g++-42... (cached) gcc3
+[5-ERROR] checking bitset usability... yes
+[5-ERROR] checking bitset presence... yes
+[5-ERROR] checking for bitset... yes
+[5-ERROR] checking for sdl-config... /usr/bin/sdl-config
+[5-ERROR] checking for SDL - version >= 1.2.2... yes
+[5-ERROR] checking for IMG_LoadJPG_RW in -lSDL_image... yes
+[5-ERROR] checking for jpeg_CreateDecompress in -ljpeg... yes
+[5-ERROR] checking for Mix_PlayChannelTimed in -lSDL_mixer... yes
+[5-ERROR] checking for i386-unknown-linux-gnu-pkg-config... no
+[5-ERROR] checking for pkg-config... /usr/bin/pkg-config
+[5-ERROR] checking pkg-config is at least version 0.9.0... yes
+[5-ERROR] checking for SIGC_CFLAGS... -I/usr/lib/sigc++-1.2/include -I/usr/include/sigc++-1.2  
+[5-ERROR] checking for SIGC_LIBS... -lsigc-1.2  
+[5-ERROR] checking for paragui-config... no
+[5-ERROR] checking for PARAGUI - version >= 1.0.1... no
+[5-ERROR] *** The paragui-config script installed by PARAGUI could not be found
+[5-ERROR] *** If PARAGUI was installed in PREFIX, make sure PREFIX/bin is in
+[5-ERROR] *** your path, or set the PARAGUI_CONFIG environment variable to the
+[5-ERROR] *** full path to paragui-config.
+[5-ERROR] configure: error:
+[5-ERROR]    *** PARAGUI version 1.0.1 not found! ASC requires the Paragui library.
+[5-ERROR]    If you have a distribution supplied Paragui.RPM installed, perhaps the
+[5-ERROR]    Paragui-devel.RPM is missing. If your distribution does not include the
+[5-ERROR]    Paragui library, you can get it from http://www.paragui.org/
+[5-ERROR]    Alternatively, you can add "--disable-paragui" to "configure" to build
+[5-ERROR]    ASC without Paragui. Some not-so-important dialogs will be missing, but
+[5-ERROR]    you will be able to play ASC 
+[5-ERROR] --- BUILD ERROR ---
+
+[9-ERROR] checking whether stripping libraries is possible... yes
+[9-ERROR] appending configuration tag "F77" to libtool
+[9-ERROR] checking if libtool supports shared libraries... yes
+[9-ERROR] checking whether to build shared libraries... no
+[9-ERROR] checking whether to build static libraries... yes
+[9-ERROR] checking for f77 option to produce PIC... -fPIC
+[9-ERROR] checking if f77 PIC flag -fPIC works... no
+[9-ERROR] checking if f77 supports -c -o file.o... no
+[9-ERROR] checking whether the f77 linker (ld) supports shared libraries... yes
+[9-ERROR] checking dynamic linker characteristics... ./configure: line 1: f77: command not found
+[9-ERROR] GNU/Linux ld.so
+[9-ERROR] checking how to hardcode library paths into programs... immediate
+[9-ERROR] checking whether stripping libraries is possible... yes
+[9-ERROR] checking for i386-unknown-linux-gnu-gcc... (cached) gcc-42
+[9-ERROR] checking whether we are using the GNU C compiler... (cached) yes
+[9-ERROR] checking whether gcc-42 accepts -g... (cached) yes
+[9-ERROR] checking for gcc-42 option to accept ANSI C... (cached) none needed
+[9-ERROR] checking dependency style of gcc-42... (cached) gcc3
+[9-ERROR] checking for i386-unknown-linux-gnu-g++... (cached) g++-42
+[9-ERROR] checking whether we are using the GNU C++ compiler... (cached) yes
+[9-ERROR] checking whether g++-42 accepts -g... (cached) yes
+[9-ERROR] checking dependency style of g++-42... (cached) gcc3
+[9-ERROR] checking bitset usability... yes
+[9-ERROR] checking bitset presence... yes
+[9-ERROR] checking for bitset... yes
+[9-ERROR] checking for sdl-config... /usr/bin/sdl-config
+[9-ERROR] checking for SDL - version >= 1.2.2... yes
+[9-ERROR] checking for IMG_LoadJPG_RW in -lSDL_image... yes
+[9-ERROR] checking for jpeg_CreateDecompress in -ljpeg... yes
+[9-ERROR] checking for Mix_PlayChannelTimed in -lSDL_mixer... yes
+[9-ERROR] checking for i386-unknown-linux-gnu-pkg-config... no
+[9-ERROR] checking for pkg-config... /usr/bin/pkg-config
+[9-ERROR] checking pkg-config is at least version 0.9.0... yes
+[9-ERROR] checking for SIGC_CFLAGS... -I/usr/lib/sigc++-1.2/include -I/usr/include/sigc++-1.2  
+[9-ERROR] checking for SIGC_LIBS... -lsigc-1.2  
+[9-ERROR] checking for paragui-config... no
+[9-ERROR] checking for PARAGUI - version >= 1.0.1... no
+[9-ERROR] *** The paragui-config script installed by PARAGUI could not be found
+[9-ERROR] *** If PARAGUI was installed in PREFIX, make sure PREFIX/bin is in
+[9-ERROR] *** your path, or set the PARAGUI_CONFIG environment variable to the
+[9-ERROR] *** full path to paragui-config.
+[9-ERROR] configure: error:
+[9-ERROR]    *** PARAGUI version 1.0.1 not found! ASC requires the Paragui library.
+[9-ERROR]    If you have a distribution supplied Paragui.RPM installed, perhaps the
+[9-ERROR]    Paragui-devel.RPM is missing. If your distribution does not include the
+[9-ERROR]    Paragui library, you can get it from http://www.paragui.org/
+[9-ERROR]    Alternatively, you can add "--disable-paragui" to "configure" to build
+[9-ERROR]    ASC without Paragui. Some not-so-important dialogs will be missing, but
+[9-ERROR]    you will be able to play ASC 
+[9-ERROR] --- BUILD ERROR ---
+

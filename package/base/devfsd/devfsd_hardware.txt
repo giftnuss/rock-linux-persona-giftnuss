@@ -1,0 +1,11 @@
+
+# cd-rom
+
+# user/group and persmission for the cd and the corespondig generic device
+REGISTER ^((ide|scsi)/.*)/(cd|generic)$ EXECUTE /usr/lib/devfsd/cdrom_register.sh $mntpnt \1 \3
+
+# handle the historic /dev/cdrom device always pointing to the first CD-ROM
+REGISTER    ^(cdroms/cdrom0)$ 	EXECUTE		ln -s /dev/\1 /dev/cdrom
+REGISTER    ^(cdroms/cdrom0)$	EXECUTE		ln -s /dev/\1 /dev/dvd
+UNREGISTER  ^cdroms/cdrom0$	EXECUTE		rm -f /dev/cdrom /dev/dvd
+

@@ -1,0 +1,4 @@
+
+safe_groupadd privoxy 78
+safe_useradd privoxy 78 78 "Privoxy" /var/empty /bin/false "*"
+

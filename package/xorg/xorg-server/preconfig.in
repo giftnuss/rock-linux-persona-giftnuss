@@ -1,0 +1,1 @@
+CFGTEMP_DEFAULT_X11="$CFGTEMP_DEFAULT_X11 xorg Use_X.Org_as_default_X11_server"

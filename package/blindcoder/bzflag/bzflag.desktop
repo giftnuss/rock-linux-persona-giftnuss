@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=BZFlag
+Comment=3D Shooting game
+Exec=bzflag
+Terminal=false
+Type=Application
+Categories=Game;ActionGame
+X-ROCK-Name=bzflag
+Icon=D_datadir/bzflag-32x32.xpm

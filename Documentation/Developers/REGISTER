@@ -1,0 +1,149 @@
+
+Reserved User and Group IDs:
+----------------------------
+
+  - system users:       - system groups:
+      root   0              root     0
+      toor   0              bin      1
+      bin    1              daemon   2
+      daemon 2              shadow   3
+      log    9              games    4
+                            tty      5
+                            disk     6
+                            kmem     7
+                            mail     8
+                            log      9
+			    wheel    10
+			    cdrom    29
+
+  - ftp users:		- ftp groups:
+      ftp    13             ftp     13
+
+  - uucp users:		- uucp groups:
+      uucp   14             uucp    14
+
+  - news users:		- news groups:
+      news   15             news    15
+
+                        - hardware access groups:
+                            video   16
+                            sound   17
+
+  - sendmail users:     - sendmail groups:
+      smmsp  18		    smmsp   18
+
+  - sshd users:         - sshd groups:
+      sshd   19		    sshd    19
+
+  - qmail users:        - qmail groups:
+      alias  20             nofiles 20
+      qmaild 21             qmail   21
+      qmaill 22
+      qmailp 23
+      qmailq 24
+      qmailr 25
+      qmails 26
+
+  - quagga users:	- quagga groups:
+      quagga 27		    quagga 27
+
+  - bitlbee users:	- bitlbee groups:
+      bitlbee 28	    bitlbee 28
+
+  - exim users:		- exim groups:
+      exim   30		   exim     30
+
+                        - more hardware access groups:
+                           floppy   31
+                           lp       32
+                           nvram    33
+                           scanner  34
+                           tape     35
+                           uucp     36
+
+  - nullmailer users:   - nullmailer groups:
+      nullmailer 38        nullmailer 38
+
+  - mysql users:	- mysql groups:
+      mysql 39		    mysql 39
+
+  - oracle users:       - oracle groups:
+      oracle 40             oracle 40
+      dba    41             dba    41
+
+  - postgresql users:   - postgresql groups:
+      postgres 42           postgres 42
+
+  - postfix users:      - postfix groups:
+      postdrop 43           postfix 44
+      postfix  44
+
+  - policykit users:    - policykit groups:
+      polkituser 45         polkituser 45
+
+  - hal/dbus/plugdev users / groups:
+      messagebus 50	    messagebus 50
+      haldaemon  51  	    haldaemon  51
+      			    plugdev    52
+
+  - cron group:
+      crontab 53
+
+  - clamav user:        - clamav group:
+      clamav 54             clamav 54
+
+  - dansguardian user:  - dansguardian group:
+      dansguardian 56       dansguardian 56
+
+  - gdm user:           - gdm group:
+      gdm 66                gdm 66
+
+  - gopher user:        - gopher group:
+      gopher 70             gopher 70
+
+  - sfs user:           - sfs group:
+      sfs 71                sfs 71
+
+  - privoxy user:	- privoxy group:
+      privoxy 78	    privoxy 78
+
+  - tor user:		- tor group:
+      tor 79		    tor 79
+
+  - httpd user:		- httpd group:
+      http 80		    http 80
+
+  - avahi user:         - netdev group:
+      avahi 81              netdev 81
+
+  Free IDs:  37,46-50,55,57-65,67-69,72-77, from 82 onwards
+
+
+Filedescriptor Numbers
+----------------------
+
+198	Internal FD for tts output plugin
+199	Output plugins unchroot mechanism
+200	Package build $builddir/build.pid
+201	Target build $build_logs/build_target_$$.log
+202	FD for writing outputs to console, not build log
+
+
+Licence Names (for package description):
+----------------------------------------
+
+  Unknown		The Licence of this package isn't known
+
+  GPL			The GNU General Public Licence
+  LGPL			The GNU Library General Public Licence
+  FDL			The GNU Free Documentation License
+  MPL			The Mozilla Public Licence
+  MIT			The MIT License
+  BSD			The BSD	Licence
+  DLJ			The Operating System Distributor's License for Java
+
+  OpenSource		Any other Open Source licence
+  Free-to-use		Any other non Open Source (but free to use) licence
+  Commercial		Any other non Open Source (commercial) licence
+  IBM-Public-License	IBM Open Source License
+

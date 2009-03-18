@@ -1,0 +1,18 @@
+#!/bin/bash
+
+if pkginstalled shared-mime-info ; then 
+	var_append extraconfopt ' ' '--disable-update-mimedb'
+	add_wrapper update-mime-database <<- EOT
+		#!/bin/sh
+		# Don't call real update-mime-database as it creates shared
+		# files. Supply a version number in case a program checks it.
+		if [ "\$1" = "-v" ] ; then
+			cat <<- DELIM
+			update-mime-database (shared-mime-info) $( grep "\[V\]" \
+			$base/package/*/shared-mime-info/shared-mime-info.desc | \
+			cut -f2 -d" " )
+			update-mime-database wrapper
+			DELIM
+		fi
+	EOT
+fi

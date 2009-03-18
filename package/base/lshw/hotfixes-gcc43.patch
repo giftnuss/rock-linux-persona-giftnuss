@@ -1,0 +1,195 @@
+--- ./src/core/cdrom.cc.orig	2008-06-10 19:59:22.000000000 +0200
++++ ./src/core/cdrom.cc	2008-06-10 19:59:53.000000000 +0200
+@@ -15,6 +15,7 @@
+ #include <sys/ioctl.h>
+ #include <fcntl.h>
+ #include <unistd.h>
++#include <limits.h>
+ #include <linux/cdrom.h>
+ 
+ static char *id = "@(#) $Id: cdrom.cc 1187 2005-10-13 21:33:55Z ezix $";
+--- ./src/core/cpuid.cc.orig	2008-06-10 19:58:36.000000000 +0200
++++ ./src/core/cpuid.cc	2008-06-10 19:58:43.000000000 +0200
+@@ -1,5 +1,6 @@
+ #include "cpuid.h"
+ #include <stdio.h>
++#include <string.h>
+ #include <unistd.h>
+ #include <fcntl.h>
+ #include <sys/stat.h>
+--- ./src/core/cpuinfo.cc.orig	2008-06-10 19:57:29.000000000 +0200
++++ ./src/core/cpuinfo.cc	2008-06-10 19:57:35.000000000 +0200
+@@ -5,6 +5,7 @@
+ #include <fcntl.h>
+ #include <unistd.h>
+ #include <stdio.h>
++#include <stdlib.h>
+ #include <vector>
+ 
+ static char *id =
+--- ./src/core/device-tree.cc.orig	2008-06-10 19:56:48.000000000 +0200
++++ ./src/core/device-tree.cc	2008-06-10 19:56:58.000000000 +0200
+@@ -15,6 +15,8 @@
+ #include <sys/stat.h>
+ #include <fcntl.h>
+ #include <stdio.h>
++#include <string.h>
++#include <stdlib.h>
+ #include <unistd.h>
+ #include <dirent.h>
+ 
+--- ./src/core/fb.cc.orig	2008-06-10 20:01:34.000000000 +0200
++++ ./src/core/fb.cc	2008-06-10 20:01:41.000000000 +0200
+@@ -11,6 +11,7 @@
+ #include <fcntl.h>
+ #include <unistd.h>
+ #include <stdio.h>
++#include <string.h>
+ #include <errno.h>
+ 
+ static char *id = "@(#) $Id: fb.cc 1187 2005-10-13 21:33:55Z ezix $";
+--- ./src/core/hw.cc.orig	2008-06-10 19:55:35.000000000 +0200
++++ ./src/core/hw.cc	2008-06-10 19:55:40.000000000 +0200
+@@ -7,6 +7,7 @@
+ #include <sstream>
+ #include <unistd.h>
+ #include <stdio.h>
++#include <string.h>
+ #include <ctype.h>
+ 
+ using namespace hw;
+--- ./src/core/ide.cc.orig	2008-06-10 19:58:55.000000000 +0200
++++ ./src/core/ide.cc	2008-06-10 19:59:05.000000000 +0200
+@@ -23,6 +23,8 @@
+ #include <fcntl.h>
+ #include <unistd.h>
+ #include <stdio.h>
++#include <string.h>
++#include <stdlib.h>
+ #include <dirent.h>
+ #include <ctype.h>
+ #include <vector>
+--- ./src/core/osutils.cc.orig	2008-06-10 19:57:51.000000000 +0200
++++ ./src/core/osutils.cc	2008-06-10 19:57:56.000000000 +0200
+@@ -9,6 +9,7 @@
+ #include <regex.h>
+ #include <ctype.h>
+ #include <stdio.h>
++#include <string.h>
+ #include <errno.h>
+ #ifndef MINOR
+ #include <linux/kdev_t.h>
+--- ./src/core/parisc.cc.orig	2008-06-10 20:02:48.000000000 +0200
++++ ./src/core/parisc.cc	2008-06-10 20:02:55.000000000 +0200
+@@ -16,6 +16,7 @@
+ #include <sys/stat.h>
+ #include <fcntl.h>
+ #include <stdio.h>
++#include <stdlib.h>
+ #include <unistd.h>
+ #include <dirent.h>
+ 
+--- ./src/core/partitions.cc.orig	2008-06-10 20:03:07.000000000 +0200
++++ ./src/core/partitions.cc	2008-06-10 20:03:15.000000000 +0200
+@@ -10,6 +10,7 @@
+ #include "partitions.h"
+ #include "osutils.h"
+ #include <stdio.h>
++#include <string.h>
+ #include <sys/types.h>
+ #include <sys/stat.h>
+ #include <fcntl.h>
+--- ./src/core/pci.cc.orig	2008-06-10 19:58:11.000000000 +0200
++++ ./src/core/pci.cc	2008-06-10 19:58:18.000000000 +0200
+@@ -5,6 +5,8 @@
+ #include <fcntl.h>
+ #include <unistd.h>
+ #include <stdio.h>
++#include <string.h>
++#include <stdlib.h>
+ 
+ static char *id = "@(#) $Id: pci.cc 1187 2005-10-13 21:33:55Z ezix $";
+ 
+--- ./src/core/pcmcia.cc.orig	2008-06-10 20:00:06.000000000 +0200
++++ ./src/core/pcmcia.cc	2008-06-10 20:00:11.000000000 +0200
+@@ -6,6 +6,7 @@
+ #include <fcntl.h>
+ #include <unistd.h>
+ #include <stdio.h>
++#include <string.h>
+ #include <errno.h>
+ 
+ static char *id = "@(#) $Id: pcmcia.cc 1187 2005-10-13 21:33:55Z ezix $";
+--- ./src/core/pnp.cc.orig	2008-06-10 20:01:16.000000000 +0200
++++ ./src/core/pnp.cc	2008-06-10 20:01:22.000000000 +0200
+@@ -9,6 +9,7 @@
+ #include "pnp.h"
+ 
+ #include <string.h>
++#include <stdlib.h>
+ 
+ static const char *pnp_vendors[] = {
+   "ABP", "Advansys",
+--- ./src/core/print.cc.orig	2008-06-10 19:56:09.000000000 +0200
++++ ./src/core/print.cc	2008-06-10 19:56:15.000000000 +0200
+@@ -14,6 +14,7 @@
+ #include <iostream>
+ #include <iomanip>
+ #include <unistd.h>
++#include <string.h>
+ #include <stdio.h>
+ 
+ static char *id = "@(#) $Id: print.cc 1187 2005-10-13 21:33:55Z ezix $";
+--- ./src/core/scsi.cc.orig	2008-06-10 20:00:27.000000000 +0200
++++ ./src/core/scsi.cc	2008-06-10 20:00:35.000000000 +0200
+@@ -11,6 +11,8 @@
+ #include <unistd.h>
+ #include <dirent.h>
+ #include <stdio.h>
++#include <string.h>
++#include <stdlib.h>
+ #include <scsi/sg.h>
+ #include <scsi/scsi.h>
+ #ifndef MKDEV
+--- ./src/core/spd.cc.orig	2008-06-10 20:00:52.000000000 +0200
++++ ./src/core/spd.cc	2008-06-10 20:00:58.000000000 +0200
+@@ -5,6 +5,7 @@
+ #include <fcntl.h>
+ #include <unistd.h>
+ #include <string>
++#include <string.h>
+ #include <dirent.h>
+ #include <stdio.h>
+ 
+--- ./src/core/sysfs.cc.orig	2008-06-10 20:02:26.000000000 +0200
++++ ./src/core/sysfs.cc	2008-06-10 20:02:33.000000000 +0200
+@@ -8,6 +8,7 @@
+ #include "osutils.h"
+ #include <limits.h>
+ #include <unistd.h>
++#include <string.h>
+ #include <stdlib.h>
+ #include <stdio.h>
+ #include <dirent.h>
+--- ./src/core/usb.cc.orig	2008-06-10 20:01:55.000000000 +0200
++++ ./src/core/usb.cc	2008-06-10 20:02:12.000000000 +0200
+@@ -17,6 +17,8 @@
+ #include <sys/ioctl.h>
+ #include <errno.h>
+ #include <fcntl.h>
++#include <string.h>
++#include <stdlib.h>
+ #include <unistd.h>
+ #include <dirent.h>
+ 
+--- ./src/lshw.cc.orig	2008-06-10 20:03:36.000000000 +0200
++++ ./src/lshw.cc	2008-06-10 20:03:45.000000000 +0200
+@@ -7,6 +7,8 @@
+ #include "config.h"
+ 
+ #include <unistd.h>
++#include <string.h>
++#include <stdlib.h>
+ #include <stdio.h>
+ #include <iostream>
+ 

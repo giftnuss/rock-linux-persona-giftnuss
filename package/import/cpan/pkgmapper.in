@@ -1,0 +1,6 @@
+
+if [ -z "${pkg##cpan-*}" ]; then
+        ignore_xpkg=0
+        pkg=cpan
+fi
+

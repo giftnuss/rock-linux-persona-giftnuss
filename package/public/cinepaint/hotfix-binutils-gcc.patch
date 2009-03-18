@@ -1,0 +1,17 @@
+
+Hotfix needed for new binutils (bug is in gcc)
+(see http://gcc.gnu.org/bugzilla/show_bug.cgi?id=16625)
+
+--- ./plug-ins/bracketing_to_hdr/CurveTnt.hpp.orig	2006-03-10 13:29:49.000000000 +0100
++++ ./plug-ins/bracketing_to_hdr/CurveTnt.hpp	2006-03-10 13:31:35.000000000 +0100
+@@ -704,7 +704,10 @@
+       
+       case 'i':
+         invert(); redraw(); return 1;
++      } // switch text()[0]
+         
++      switch (Fl::event_text()[0])
++      {
+       case '1': case '2': case '3': case '4': case '5':
+       case '6': case '7': case '8': case '9': 
+         printf("%s, atoi()=%d\n", Fl::event_text(), atoi(Fl::event_text()));
