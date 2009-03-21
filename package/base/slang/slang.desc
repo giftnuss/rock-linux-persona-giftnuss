@@ -31,6 +31,8 @@
 [T] of the interpreter in this way include the jed editor and the 
 [T] slrn newsreader.
 
+[U] http://www.jedsoft.org/slang/
+
 [A] John E. Davis <davis@space.mit.edu>
 [M] Clifford Wolf <clifford@clifford.at>
 
@@ -39,8 +41,8 @@
 
 [L] OpenSource
 [S] Stable
-[V] 2.0.7
+[V] 2.1.4
 [P] X --?--5---9 109.300
 
-[D] 3001454666 slang-2.0.7.tar.bz2 ftp://space.mit.edu/pub/davis/slang/v2.0/
+[D] 2613270918 slang-2.1.4.tar.bz2 ftp://space.mit.edu/pub/davis/slang/v2.1/
 
