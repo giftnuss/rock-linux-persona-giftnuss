@@ -1,5 +1,0 @@
-
-bool 'Build GNU Pascal compiler' \
-    ROCKCFG_PKG_GCC34_PASCAL 1
-
-
