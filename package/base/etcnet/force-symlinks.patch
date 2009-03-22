@@ -1,11 +1,15 @@
---- etcnet-0.8.5/contrib/Makefile~	2006-09-16 20:05:07.000000000 +0200
-+++ etcnet-0.8.5/contrib/Makefile	2006-09-29 14:31:36.000000000 +0200
-@@ -45,6 +45,6 @@
+--- contrib/Makefile.orig	2009-03-22 15:28:00.000000000 +0000
++++ contrib/Makefile	2009-03-22 15:28:21.000000000 +0000
+@@ -60,8 +60,8 @@
  
  # 3. Create /sbin links.
  	@install -d $(sbindir)
 -	@ln -s ../etc/net/scripts/ifup $(sbindir)/ifup
 -	@ln -s ../etc/net/scripts/ifdown $(sbindir)/ifdown
+-	@ln -s ../etc/net/scripts/contrib/efw $(sbindir)/efw
+-	@ln -s ../etc/net/scripts/contrib/eqos $(sbindir)/eqos
 +	@ln -sf ../etc/net/scripts/ifup $(sbindir)/ifup
 +	@ln -sf ../etc/net/scripts/ifdown $(sbindir)/ifdown
++	@ln -sf ../etc/net/scripts/contrib/efw $(sbindir)/efw
++	@ln -sf ../etc/net/scripts/contrib/eqos $(sbindir)/eqos
  	@echo Done!
