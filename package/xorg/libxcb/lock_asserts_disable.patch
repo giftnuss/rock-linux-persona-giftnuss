@@ -1,0 +1,28 @@
+
+There is a lot of discussion online about this asserts.
+
+Fact is that they prohibit a large number of Java and Qt4 apps from starting
+up and that 99% of this apps are working fine when this asserts are disabled..
+
+ - Clifford
+
+--- ./src/xcb_xlib.c.orig	2009-01-20 20:56:25.000000000 +0100
++++ ./src/xcb_xlib.c	2009-01-20 20:57:10.000000000 +0100
+@@ -38,7 +38,7 @@
+ void xcb_xlib_lock(xcb_connection_t *c)
+ {
+     _xcb_lock_io(c);
+-    assert(!c->xlib.lock);
++    // assert(!c->xlib.lock);
+     c->xlib.lock = 1;
+     c->xlib.thread = pthread_self();
+     _xcb_unlock_io(c);
+@@ -47,7 +47,7 @@
+ void xcb_xlib_unlock(xcb_connection_t *c)
+ {
+     _xcb_lock_io(c);
+-    assert(c->xlib.lock);
++    // assert(c->xlib.lock);
+     assert(pthread_equal(c->xlib.thread, pthread_self()));
+     c->xlib.lock = 0;
+     pthread_cond_broadcast(&c->xlib.cond);

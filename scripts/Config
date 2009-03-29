@@ -149,7 +149,6 @@ include ()
 {
 	local x
 	for x in $@ ; do
-	        echo $x >>/tmp/cfg-debug
 		[ -f "$x" ] && . "./$x"
 	done
 }

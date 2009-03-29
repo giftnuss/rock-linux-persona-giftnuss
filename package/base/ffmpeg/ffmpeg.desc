@@ -26,7 +26,7 @@
 [T] FFmpeg is a complete solution to record, convert and stream audio and
 [T] video. It includes libavcodec, the leading audio/video codec library.
 
-[U] http://ffmpeg.sourceforge.net/
+[U] http://ffmpeg.mplayerhq.hu/
 
 [A] Many - see the CREDITS file
 [M] The ROCK Linux Project
@@ -36,8 +36,8 @@
 
 [L] LGPL
 [S] Beta
-[V] 2008-09-12
+[V] 0.5
 [P] X --?--5---9 195.200
 
-[D] X ffmpeg-2008-09-12.tar.bz2 svn://svn:svn.mplayerhq.hu/ffmpeg/trunk::15261
+[D] 80243572 ffmpeg-0.5.tar.bz2 http://ffmpeg.mplayerhq.hu/releases/
 

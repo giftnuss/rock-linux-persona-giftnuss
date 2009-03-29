@@ -23,11 +23,11 @@
 
 [I] Atheros Wireless LAN Drivers
 
-[T] madwifi.org is a team of volunteer developers working on Linux kernel
-[T] drivers for Wireless LAN devices with Atheros chipsets. We currently
+[T] The MadWifi project is is a team of volunteer developers working on Linux
+[T] kernel drivers for Wireless LAN devices with Atheros chipsets. We currently
 [T] provide two drivers, MadWifi and ath5k. 
 
-[U] http://madwifi.org/
+[U] http://madwifi-project.org/
 
 [A] Sam Leffler {Original Author}
 [M] Clifford Wolf <clifford@clifford.at>

@@ -49,7 +49,7 @@ unset x y z
 if [ $stagelevel -ge 1 ] ; then
 	if [[ "$xpkg" = *-32bit ]] ; then
 		export CC="${CC} ${BUILD32}" CXX="${CXX} ${BUILD32}"
-	elif [ "$ROCKCFG_MULTILIB" = 1 ] ; then
+	elif [ "$BUILD64" ] ; then
 		export CC="${CC} ${BUILD64}" CXX="${CXX} ${BUILD64}"
 	fi
 fi

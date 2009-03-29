@@ -134,7 +134,6 @@ export LC_ALL=C; umask 022
 # export BUILDCXX="c++" BUILD_CXX="c++" HOSTCXX="c++" HOST_CXX="c++"
 export BUILDCC="gcc"   BUILD_CC="gcc"   HOSTCC="gcc"   HOST_CC="gcc"
 export BUILDCXX="g++" BUILD_CXX="g++" HOSTCXX="g++" HOST_CXX="g++"
-export BUILD32="-m32" BUILD64="-m64"
 
 if [ "$ROCKCFG_LINGUAS" == "all" ] ; then
 	unset LINGUAS
