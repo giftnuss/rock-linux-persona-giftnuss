@@ -1,0 +1,11 @@
+--- ./version.sh.orig	2009-03-06 18:03:48.000000000 +0100
++++ ./version.sh	2009-03-06 18:03:57.000000000 +0100
+@@ -3,7 +3,7 @@
+ VERSION="0.9.9"
+ OUT="version.h"
+ 
+-if head=`git rev-parse --verify HEAD 2>/dev/null`; then
++if false && head=`git rev-parse --verify HEAD 2>/dev/null`; then
+ 	git update-index --refresh --unmerged > /dev/null
+ 	descr=$(git describe)
+ 
