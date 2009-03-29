@@ -8,6 +8,8 @@ URL="ftp://ftp.gwdg.de/pub/x11/x.org/pub/$xver/src"
 
 module_list=""
 
+rm -f xorg-update-errors.log
+
 while read N
 do
 	echo "N: $N"
@@ -37,6 +39,7 @@ do
 
 		if [ ! -f "$pname/$pname.desc" ]; then
 			echo "Not found: $pname/$pname.desc ($N)"
+			echo "Not found: $pname/$pname.desc ($N)" >> xorg-update-errors.log
 		else
 			if ! egrep -q "^\[V\] $pver( |\$)" "$pname/$pname.desc"; then
 				sed -i -e"s,\[V\].*,[V] $pver," "$pname/$pname.desc"
@@ -57,6 +60,7 @@ do
 
 	if grep -qv " $pkg " <( echo "$module_list "; ); then
 		echo "Not found on FTP server: $pkg"
+		echo "Not found on FTP server: $pkg" >> xorg-update-errors.log
 	fi
 done
 

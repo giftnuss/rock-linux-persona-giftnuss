@@ -1,0 +1,29 @@
+--- ./modules/codec/x264.c.orig	2009-03-21 12:14:10.000000000 +0100
++++ ./modules/codec/x264.c	2009-03-21 12:15:48.000000000 +0100
+@@ -957,9 +957,12 @@
+         p_sys->param.i_scenecut_threshold = val.i_int;
+ #endif
+ 
+-#if X264_BUILD >= 55 /* r607 */
++#if X264_BUILD >= 55 /* r607 */ && X264_BUILD < 67 /* r1117 */
+     var_Get( p_enc, SOUT_CFG_PREFIX "pre-scenecut", &val );
+     p_sys->param.b_pre_scenecut = val.b_bool;
++#endif
++
++#if X264_BUILD >= 55 /* r607 */
+     var_Get( p_enc, SOUT_CFG_PREFIX "non-deterministic", &val );
+     p_sys->param.b_deterministic = val.b_bool;
+ #endif
+@@ -1122,10 +1125,12 @@
+     if( val.i_int >= 0 && val.i_int <= 32 )
+         p_sys->param.analyse.i_luma_deadzone[1] = val.i_int;
+ 
++#if X264_BUILD <= 65
+     var_Get( p_enc, SOUT_CFG_PREFIX "direct-8x8", &val );
+     if( val.i_int >= -1 && val.i_int <= 1 )
+         p_sys->param.analyse.i_direct_8x8_inference = val.i_int;
+ #endif
++#endif
+ 
+     var_Get( p_enc, SOUT_CFG_PREFIX "asm", &val );
+     if( !val.b_bool ) p_sys->param.cpu = 0;

@@ -16,5 +16,7 @@ case "$ROCKCFG_MIPS_ABI" in
 	arch_machine=mips64 
 	arch_target="${arch_machine}${arch_endianess}-unknown-linux-gnu"
 	arch_target32="mips${arch_endianess}-unknown-linux-gnu"
+	BUILD32="-mabi=32"
+	BUILD64="-mabi=$ROCKCFG_MIPS_ABI"
 	;;
 esac

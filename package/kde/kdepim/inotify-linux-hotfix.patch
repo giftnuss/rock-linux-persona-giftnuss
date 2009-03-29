@@ -1,0 +1,13 @@
+--- ./kmail/editorwatcher.cpp.orig	2009-03-21 14:17:17.000000000 +0100
++++ ./kmail/editorwatcher.cpp	2009-03-21 14:17:44.000000000 +0100
+@@ -16,6 +16,10 @@
+     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+ */
+ 
++// this fixes compilation with linux 2.6.28.8 kernel headers
++#define _ASM_GENERIC_FCNTL_H
++#define F_LINUX_SPECIFIC_BASE 1024
++
+ #include "editorwatcher.h"
+ 
+ #include <config.h>

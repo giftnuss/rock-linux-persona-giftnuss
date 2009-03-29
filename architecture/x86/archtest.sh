@@ -15,6 +15,8 @@ else
   arch_sizeof_char_p=8
   arch_machine="x86_64"
   arch_target32="i686-pc-linux-gnu"
+  BUILD32="-m32"
+  BUILD64="-m64"
 fi
 
 arch_target="${arch_machine}-unknown-linux-gnu"

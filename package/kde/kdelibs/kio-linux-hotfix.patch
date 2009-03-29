@@ -1,0 +1,12 @@
+--- kdelibs-3.5.10/kio/kio/kdirwatch.cpp	2009-03-20 10:19:03.000000000 +0100
++++ kdelibs-3.5.10/kio/kio/kdirwatch.cpp	2009-03-20 10:20:33.000000000 +0100
+@@ -31,6 +31,9 @@
+ // deep copies for list of dirs. (sven)
+ // Mar 28. 1998 - Created.  (sven)
+ 
++// this fixes compilation with linux 2.6.28.8 kernel headers
++#define _ASM_GENERIC_FCNTL_H
++#define F_LINUX_SPECIFIC_BASE 1024
+ 
+ #include <config.h>
+ #include <errno.h>

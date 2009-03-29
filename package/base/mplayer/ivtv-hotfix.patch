@@ -1,0 +1,43 @@
+
+See http://www.mail-archive.com/ivtv-users@ivtvdriver.org/msg07585.html
+
+--- ./libvo/vo_ivtv.c.orig	2009-03-25 09:16:35.000000000 +0100
++++ ./libvo/vo_ivtv.c	2009-03-25 09:17:08.000000000 +0100
+@@ -36,8 +36,8 @@
+ #include <inttypes.h>
+ #include <linux/types.h>
+ #include <linux/videodev2.h>
+-#include <linux/ivtv.h>
+ #include <linux/ioctl.h>
++#include <linux/dvb/video.h>
+ 
+ #include "mp_msg.h"
+ #include "subopt-helper.h"
+@@ -76,25 +76,14 @@
+ static uint32_t
+ ivtv_reset (int blank_screen)
+ {
+-  struct ivtv_cfg_stop_decode sd;
+-  struct ivtv_cfg_start_decode sd1;
+-  int flags = 0;
+-
+-  if (blank_screen)
+-    flags |= IVTV_STOP_FL_HIDE_FRAME;
+-  sd.flags = flags;
+- 
+-  if (ioctl (ivtv_fd, IVTV_IOC_STOP_DECODE, &sd) < 0)
++  if (ioctl (ivtv_fd, VIDEO_STOP, 0) < 0)
+   {
+     mp_msg (MSGT_VO, MSGL_ERR,
+             "IVTV_IOC_STOP_DECODE: %s\n", strerror (errno));
+     return 1;
+   }
+   
+-  sd1.gop_offset = 0;
+-  sd1.muted_audio_frames = 0;
+-  
+-  if (ioctl (ivtv_fd, IVTV_IOC_START_DECODE, &sd1) < 0)
++  if (ioctl (ivtv_fd, VIDEO_PLAY, 0) < 0)
+   {
+     mp_msg (MSGT_VO, MSGL_ERR,
+             "IVTV_IOC_START_DECODE: %s\n", strerror (errno));
