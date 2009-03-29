@@ -6,7 +6,7 @@
 [COPY] the ROCK-COPYRIGHT-NOTE-END tag. Otherwise it might get removed by
 [COPY] the ./scripts/Create-CopyPatch script. Do not edit this copyright text!
 [COPY] 
-[COPY] ROCK Linux: rock-src/package/e17/eclair/eclair.desc
+[COPY] ROCK Linux: rock-src/package/gnome2/gst-plugins/gst-plugins.desc
 [COPY] ROCK Linux is Copyright (C) 1998 - 2006 Clifford Wolf
 [COPY] 
 [COPY] This program is free software; you can redistribute it and/or modify
@@ -21,22 +21,25 @@
 [COPY] 
 [COPY] --- ROCK-COPYRIGHT-NOTE-END ---
 
-[I] EFL powered media player
+[I] GStreamer Base Plug-ins
 
-[T] Eclair is a media player based on Emotion,
-[T] hence using xine as a backend.
+[T] GStreamer Base Plug-ins is a well-groomed and well-maintained collection
+[T] of GStreamer plug-ins and elements, spanning the range of possible types
+[T] of elements one would want to write for GStreamer. It also contains helper
+[T] libraries and base classes useful for writing elements. A wide range of
+[T] video and audio decoders, encoders, and filters are included.
 
-[U] http://www.enlightenment.org
+[U] http://gstreamer.freedesktop.org/modules/gst-plugins-base.html
 
-[A] MoOm <simon.treny@free.fr>
-[M] Mathieu Doidy <mdoidy@roulaize.net>
+[A] many { see AUTHORS file }
+[M] The ROCK Linux Project
 
-[C] extra/tool
+[C] extra/multimedia extra/desktop/gnome
 
-[L] GPL
-[S] Alpha
-[V] 2005-09-11
-[P] X -----5---9 274.700
+[L] LGPL
+[S] Beta
+[V] 0.10.22
+[P] X --?--5---9 157.350
 
-[D] X eclair-2005-09-11.tar.bz2 cvs://pserver:anonymous@enlightenment.cvs.sourceforge.net:/cvsroot/enlightenment::e17/apps/eclair/!2005-09-11
+[D] 1592049133 gst-plugins-base-0.10.22.tar.bz2 http://gstreamer.freedesktop.org/src/gst-plugins-base/
 

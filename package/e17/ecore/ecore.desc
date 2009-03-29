@@ -32,15 +32,16 @@
 [U] http://www.enlightenment.org
 
 [A] Rasterman <raster@rasterman.com>
-[M] Mathieu Doidy <mdoidy@roulaize.net>
+[A] see also AUTHORS file
+[M] Sebastian Knapp <rock@ccls-online.de>
 
 [C] extra/desktop/enlightenment
 [C] extra/development
 
 [L] BSD
 [S] Beta
-[V] 2005-09-11
+[V] r39615
 [P] X --?--5---9 167.800
 
-[D] X ecore-2005-09-11.tar.bz2 cvs://pserver:anonymous@enlightenment.cvs.sourceforge.net:/cvsroot/enlightenment::e17/libs/ecore/!2005-09-11/
+[D] X ecore-r39615.tar.bz2 svn://http:svn.enlightenment.org/svn/e/trunk/ecore::39615
 

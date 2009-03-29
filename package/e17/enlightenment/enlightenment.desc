@@ -38,8 +38,8 @@
 
 [L] BSD
 [S] Beta
-[V] 2005-09-11
+[V] r39615
 [P] X --?--5---9 169.300
 
-[D] X enlightenment-2005-09-11.tar.bz2 cvs://pserver:anonymous@enlightenment.cvs.sourceforge.net:/cvsroot/enlightenment::e17/apps/e/!2005-09-11/
+[D] X enlightenment-r39615.tar.bz2 svn://http:enlightenment.org/svn/e/trunk/e::39615
 

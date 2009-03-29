@@ -33,8 +33,8 @@
 
 [L] BSD
 [S] Stable
-[V] 2005-09-11
+[V] r39615
 [P] X --?--5---9 166.200
 
-[D] X imlib2-2005-09-11.tar.bz2 cvs://pserver:anonymous@enlightenment.cvs.sourceforge.net:/cvsroot/enlightenment::e17/libs/imlib2/!2005-09-11/
+[D] X imlib2-r39615.tar.bz2 svn://http:svn.enlightenment.org/svn/e/trunk/imlib2::39615
 

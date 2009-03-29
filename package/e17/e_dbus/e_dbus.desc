@@ -6,8 +6,8 @@
 [COPY] the ROCK-COPYRIGHT-NOTE-END tag. Otherwise it might get removed by
 [COPY] the ./scripts/Create-CopyPatch script. Do not edit this copyright text!
 [COPY] 
-[COPY] ROCK Linux: rock-src/package/e17/ewl/ewl.desc
-[COPY] ROCK Linux is Copyright (C) 1998 - 2006 Clifford Wolf
+[COPY] ROCK Linux: rock-src/package/e17/e_dbus/e_dbus.desc
+[COPY] ROCK Linux is Copyright (C) 1998 - 2009 Clifford Wolf
 [COPY] 
 [COPY] This program is free software; you can redistribute it and/or modify
 [COPY] it under the terms of the GNU General Public License as published by
@@ -21,25 +21,21 @@
 [COPY] 
 [COPY] --- ROCK-COPYRIGHT-NOTE-END ---
 
-[I] The Enlightenment Widget Library
+[I] wrapper around the dbus api
 
-[T] The Enlightenment Widget Library, a simple-to-use general purpose widget
-[T] library based on the Evas canvas.
+[T] This is the start of some basic convenience wrappers around 
+[T] dbus to ease integrating dbus with EFL based applications.
 
-[U] http://www.enlightenment.org
-
-[A] Nathan Ingersoll <rbdpngn@users.sourceforge.net>
-[M] Mathieu Doidy <mdoidy@roulaize.net>
+[A] Brian Mattern <rephorm@rephorm.com>
+[M] Sebastian Knapp <rock@ccls-online.de>
 
 [C] extra/desktop/enlightenment
 [C] extra/development
 
 [L] BSD
-[S] Alpha
-[V] 0.5.3
-[P] X --?--5---9 227.300
+[S] Beta
+[V] 0.01
+[P] X -----5---9 800.000
 
-[D] X ewl-0.5.3.tar.bz2 svn://http:svn.enlightenment.org/svn/e/tags/ewl/ewl-0.5.3/
-
-
+[D] X e_dbus-r39615.tar.bz2 svn://http:svn.enlightenment.org/svn/e/trunk/e_dbus/::39615
 
