@@ -52,10 +52,8 @@ if pkgcheck php X ; then
 		  comment "Package pine is disabled. Bulding PHP without imap support."
 		fi
 
-		bool "Build PHP with mcrypt support" ROCKCFG_PKG_PHP_mcrypt 0
-		bool "Build PHP with mhash support" ROCKCFG_PKG_PHP_mhash 0
 		bool "Build PHP with SOAP support" ROCKCFG_PKG_PHP_soap 0
-
+                bool "Enable php fastcgi" ROCKCFG_PKG_PHP_fastcgi 0
 	menu_end
 fi
 

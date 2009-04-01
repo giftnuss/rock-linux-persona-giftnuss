@@ -47,7 +47,7 @@
 
 [L] LGPL
 [S] Stable
-[V] 2.5.7
+[V] 2.5.8
 [P] X --?--5---9 194.000
 
-[D] 1450526060 libmcrypt-2.5.7.tar.gz ftp://mcrypt.hellug.gr/pub/crypto/mcrypt/libmcrypt/
+[D] 887426561 libmcrypt-2.5.8.tar.bz2 http://download.sourceforge.net/mcrypt/
