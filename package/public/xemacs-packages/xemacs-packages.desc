@@ -33,8 +33,11 @@
 
 [L] Free-to-use
 [S] Stable
-[V] 2004-02-02
+[V] 2009-02-17
 [P] X --?--5---9 163.700
 
-[D] 719833229 xemacs-sumo-2004-02-02.tar.bz2 ftp://ftp.xemacs.org/xemacs/packages/
+[D] 1144309261 xemacs-sumo-2009-02-17.tar.bz2 http://ftp.xemacs.org/xemacs/packages/
+[D] 0 xemacs-mule-sumo-2009-02-17.tar.bz2 http://ftp.xemacs.org/xemacs/packages/
+[SRC] xemacs
+
 
