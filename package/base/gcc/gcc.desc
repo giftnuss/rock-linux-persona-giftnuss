@@ -62,13 +62,13 @@
 [V] 3.3.6
 [D] 3201207174 gcc-3.3.6.tar.bz2 ftp://gcc.gnu.org/pub/gcc/releases/gcc-3.3.6/
 [D] 3472291992 protector-3.3-7.tar.gz http://www.research.ibm.com/trl/projects/security/ssp/gcc3_3/
+[D] 0 gpc-20060325.tar.bz2 http://www.gnu-pascal.de/alpha/
 #endif
 
 #if xpkg == gcc34.*
 [V] 3.4.6
 [D] 1910086109 gcc-3.4.6.tar.bz2 ftp://gcc.gnu.org/pub/gcc/releases/gcc-3.4.6/
 [D] 365541092 protector-3.4.4-1.tar.gz http://www.research.ibm.com/trl/projects/security/ssp/gcc3_4_4/
-[D] 0 gpc-20060325.tar.bz2 http://www.gnu-pascal.de/alpha/
 #endif
 
 #if xpkg == gcc40.*

@@ -1,0 +1,5 @@
+
+bool 'Build GNU Pascal compiler' \
+    ROCKCFG_PKG_GCC33_PASCAL 0
+
+
