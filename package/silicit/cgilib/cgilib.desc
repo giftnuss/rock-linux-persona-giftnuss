@@ -7,7 +7,7 @@
 [COPY] the ./scripts/Create-CopyPatch script. Do not edit this copyright text!
 [COPY] 
 [COPY] ROCK Linux: rock-src/package/silicit/cgilib/cgilib.desc
-[COPY] ROCK Linux is Copyright (C) 1998 - 2006 Clifford Wolf
+[COPY] ROCK Linux is Copyright (C) 1998 - 2009 Clifford Wolf
 [COPY] 
 [COPY] This program is free software; you can redistribute it and/or modify
 [COPY] it under the terms of the GNU General Public License as published by
@@ -21,7 +21,7 @@
 [COPY] 
 [COPY] --- ROCK-COPYRIGHT-NOTE-END ---
 
-[I] simple CGI C library, including cookies
+[I] CGI C library, including cookies and file uploads
 
 [T] Small library for writing CGI applications. There are functions to read 
 [T] data from GET and POST requests. Support for various headers and 
@@ -39,10 +39,8 @@
 
 [L] GPL
 [S] Stable
-[V] 0.5
+[V] 0.7
 [P] X -----5---9 155.600
 
-[D] 2593391679 cgilib-0.5.tar.gz http://www.infodrom.org/projects/cgilib/download/
-[D] 2276230646 cgiupl-0.1.tar.gz http://www.infodrom.org/projects/cgilib/download/
+[D] 3530245178 cgilib-0.7.tar.gz http://www.infodrom.org/projects/cgilib/download/
 
-[SRC] cgilib-0.5 cgiupl-0.1
