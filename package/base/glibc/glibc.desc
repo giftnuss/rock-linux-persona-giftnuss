@@ -76,5 +76,12 @@
 [D] 2295153412 glibc-libidn-2.7.tar.gz http://ftp.gnu.org/gnu/glibc/
 #endif
 
+#if xpkg == glibc29.*
+[V] 2.9
+[D] 3110082802 glibc-2.9.tar.bz2 http://ftp.gnu.org/gnu/glibc/
+[D] 558189549 glibc-ports-2.7.tar.bz2 http://ftp.gnu.org/gnu/glibc/
+[D] 1001729082 glibc-libidn-2.9.tar.bz2 http://ftp.gnu.org/gnu/glibc/
+#endif
+
 [CD] <COPY> cp $cachedir/glibc2[23567].cache $confdir/$pkg.cache
 
