@@ -6,8 +6,8 @@
 [COPY] the ROCK-COPYRIGHT-NOTE-END tag. Otherwise it might get removed by
 [COPY] the ./scripts/Create-CopyPatch script. Do not edit this copyright text!
 [COPY] 
-[COPY] ROCK Linux: rock-src/package/e17/ewl/ewl.desc
-[COPY] ROCK Linux is Copyright (C) 1998 - 2006 Clifford Wolf
+[COPY] ROCK Linux: rock-src/package/e17/efreet/efreet.desc
+[COPY] ROCK Linux is Copyright (C) 1998 - 2009 Clifford Wolf
 [COPY] 
 [COPY] This program is free software; you can redistribute it and/or modify
 [COPY] it under the terms of the GNU General Public License as published by
@@ -21,22 +21,32 @@
 [COPY] 
 [COPY] --- ROCK-COPYRIGHT-NOTE-END ---
 
-[I] The Enlightenment Widget Library
+[I] implementation of the freedesktop icon and menu specs
 
-[T] The Enlightenment Widget Library, a simple-to-use general purpose widget
-[T] library based on the Evas canvas.
+[T] An implementation of several specifications from freedesktop.org
+[T] intended for use in Enlightenment DR17 (e17) and other applications using
+[T] the Enlightenment Foundation Libraries (EFL). Currently, the following
+[T] specifications are included:
+[T]	         o Base Directory
+[T]		 o Desktop Entry
+[T]		 o Icon Theme
+[T]		 o Menu
 
-[U] http://www.enlightenment.org
+[U] http://trac.enlightenment.org/e/browser/trunk/efreet
 
-[A] Nathan Ingersoll <rbdpngn@users.sourceforge.net>
-[M] Mathieu Doidy <mdoidy@roulaize.net>
+[A] dan 'dj2' sinclair
+[A] Brian 'rephorm' Mattern
+[A] Sebastian 'englebass' Dransfeld
+[A] Nathan 'RbdPngn' Ingersoll
+[A] Nicholas 'Mekius' Hughart
+[M] Sebastian Knapp <rock@ccls-online.de>
 
-[C] extra/desktop/enlightenment
-[C] extra/development
+[C] extra/desktop
 
 [L] BSD
-[S] Alpha
-[V] r40284 
-[P] X --?--5---9 227.300
+[S] Beta
+[V] r40284
+[P] X -----5---9 168.000
 
-[D] X ewl-r40284.tar.bz2 svn://http:svn.enlightenment.org/svn/e/trunk/ewl::40284
+[D] X efreet-r40284.tar.bz2 svn://http:svn.enlightenment.org/svn/e/trunk/efreet::40284
+

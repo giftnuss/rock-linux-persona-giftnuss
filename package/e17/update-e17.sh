@@ -1,11 +1,22 @@
 #!/bin/sh
 
-echo "Updating packages in the e17 repository to version date $(date --date '-1 day' '+%Y-%m-%d')"
+# TODO:
+#    * list revisions only - no change mode
+#    * change only lines with [V] and [D]
 
-for pkg in $(cd package/e17; echo *); do
-    if [ -x "package/e17/$pkg" ]; then
-	./scripts/Create-PkgUpdPatch $pkg~$(date --date '-1 day' '+%Y-%m-%d') | patch -p0 -bz.orig
-    fi
+OLD=$1
+NEW=$2
+
+if [ -z "$NEW" ] ; then
+  echo "run as: $0 oldrevision newrevision"
+  exit 1
+fi
+
+echo "Updating packages in the e17 repository from revision $OLD to $NEW"
+
+for pkg in $(grep -l "\[V\] r$OLD" package/e17/*/*.desc); do
+  echo "Updating $pkg"
+  sed -i -e"s/$OLD/$NEW/g" $pkg
 done
 
 echo "Updated done."
