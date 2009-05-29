@@ -41,8 +41,8 @@
 
 [L] BSD
 [S] Stable
-[V] 2.6.2
+[V] 2.6.4
 [P] X -----5---9 157.100
 
-[D] 2020441014 cmake-2.6.2.tar.gz http://www.cmake.org/files/v2.6/
+[D] 0 cmake-2.6.4.tar.gz http://www.cmake.org/files/v2.6/
 

@@ -6,8 +6,8 @@
 [COPY] the ROCK-COPYRIGHT-NOTE-END tag. Otherwise it might get removed by
 [COPY] the ./scripts/Create-CopyPatch script. Do not edit this copyright text!
 [COPY] 
-[COPY] ROCK Linux: rock-src/package/base/rsync/rsync.desc
-[COPY] ROCK Linux is Copyright (C) 1998 - 2006 Clifford Wolf
+[COPY] ROCK Linux: rock-src/package/visconti/webtoolkit/webtoolkit.desc
+[COPY] ROCK Linux is Copyright (C) 1998 - 2009 Clifford Wolf
 [COPY] 
 [COPY] This program is free software; you can redistribute it and/or modify
 [COPY] it under the terms of the GNU General Public License as published by
@@ -21,29 +21,23 @@
 [COPY] 
 [COPY] --- ROCK-COPYRIGHT-NOTE-END ---
 
-[I] rsync is a replacement for rcp that has many more features.
+[I] widget oriented c++ web framework
 
-[T] rsync uses the "rsync algorithm" which provides a very fast method for
-[T] bringing remote files into sync. It does this by sending just the
-[T] differences in the files across the link, without requiring that both
-[T] sets of files are present at one of the ends of the link beforehand.
-[T] At first glance this may seem impossible because the calculation of
-[T] diffs between two files normally requires local access to both
-[T] files.
+[T] Wt (pronounced 'witty') is a C++ library and application server for
+[T] developing and deploying web applications. It is not a 'framework', which
+[T] enforces a way of programming, but a library.
 
-[U] http://rsync.samba.org/rsync/
+[U] http://www.webtoolkit.eu/
 
-[A] Andrew Tridgel <tridge@samba.org>
-[A] Paul Mackerras <paulus@cs.anu.edu.au>
-[M] Clifford Wolf <clifford@clifford.at>
+[A] Koen Deforche <koen@emweb.be>
+[M] The ROCK Linux Project
 
-[C] extra/network
-[F] CORE
+[C] extra/development
 
 [L] GPL
 [S] Stable
-[V] 3.0.5
-[P] X --?--5---9 146.800
+[V] 2.99.1
+[P] X -----5---9 800.000
 
-[D] 216732550 rsync-3.0.5.tar.gz http://rsync.samba.org/ftp/rsync/
+[D] 0 wt-2.99.1.tar.gz http://dl.sourceforge.net/witty/
 
