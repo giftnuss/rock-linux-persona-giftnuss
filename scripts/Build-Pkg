@@ -605,7 +605,7 @@ mainfunction="build_this_package"
 runconf=1 ; runxmkmf=1 ; runmkpl=1 ; runpysetup=1 ; runcmake=1 ; autopatch=1
 autoextract=1 ; chownsrcdir=1 ; nocvsinsrcdir=1; patchopt="-bfp1 -z .orig"
 createprefix=1 ; createdocs="" ; rmemptydir="" ; autoso2a=0 ; forcefpic=""
-cmakesrcdir=.
+cmakesrcdir=..
 
 check_shared=1
 check_usrlocal=1
