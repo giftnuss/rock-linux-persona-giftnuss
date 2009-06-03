@@ -1,5 +1,5 @@
 
-if pkgcheck gcc34 X ; then true
+if pkgcheck gcc34 X || pkgcheck gcc33 X ; then true
 else
    pkgdisable gnupascal
 fi
