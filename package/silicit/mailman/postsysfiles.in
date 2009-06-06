@@ -1,0 +1,3 @@
+
+safe_groupadd mailman 72
+safe_useradd mailman 72 72 "mailing list manager" /var/empty /bin/false "*"
