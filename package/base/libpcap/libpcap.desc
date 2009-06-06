@@ -36,10 +36,10 @@
 
 [L] OpenSource
 [S] Stable
-[V] 0.9.8
+[V] 1.0.0
 [P] X --?--5---9 145.700
 
-[D] 1070873060 libpcap-0.9.8.tar.gz http://www.tcpdump.org/release/
+[D] 3778626396 libpcap-1.0.0.tar.gz http://www.tcpdump.org/release/
 
 [O] var_append confopt ' ' '--enable-ipv6'
 

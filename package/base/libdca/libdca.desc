@@ -42,3 +42,7 @@
 
 # don't place this on ROCK mirrors because of patent issues, see homepage for details
 [D] 1566056633 libdts-0.0.2.tar.gz http://debian.unnet.nl/pub/videolan/libdts/0.0.2/ NODIST
+
+[CV-URL] http://debian.unnet.nl/pub/videolan/libdts/
+[CV-INCL] .*
+

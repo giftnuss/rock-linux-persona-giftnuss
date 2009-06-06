@@ -17,6 +17,7 @@ nvram:x:33:
 scanner:x:34:
 tape:x:35:
 uucp:x:36:
+dialout:x:37:
 users:x:100:
 nogroup:x:65534:
 nobody:x:65534:
