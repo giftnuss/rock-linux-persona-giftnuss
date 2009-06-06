@@ -35,8 +35,8 @@ targetdir ..... directory containing the target config (target/...)
 
 builddir ...... directory in which the package is build (src.$id)
 base .......... ROCK Linux sources base directory (/usr/src/rock-src)
-xroot ......... real root ($base/build/...)
-root .......... root directory (equals $xroot, empty in chroot mode)
+root .......... root directory (without trailing /)
+xroot ......... deprecated, equals root
 
 build_logs .... Big build log file ...... (Build-Target only)
 build_pkgs .... Package files go here .... (Build-Target only)

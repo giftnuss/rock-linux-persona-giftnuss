@@ -104,6 +104,9 @@ Reserved User and Group IDs:
   - sfs user:           - sfs group:
       sfs 71                sfs 71
 
+  - mailman user:       - mailman group:
+      mailman 72            mailman 72
+
   - privoxy user:	- privoxy group:
       privoxy 78	    privoxy 78
 

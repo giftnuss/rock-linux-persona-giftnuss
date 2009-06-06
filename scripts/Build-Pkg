@@ -43,7 +43,7 @@ verbose=0
 xtrace=0
 debug=0
 chroot=0
-root=""
+root="auto"
 id=''
 desktopfiles=''
 desktopauto=1
@@ -78,8 +78,9 @@ help_msg() {
 	echo "	-xtrace		print additional xtrace (debug-)output to the"
 	echo "			build log file"
 	echo "	-chroot		create and use a chroot environment"
-	echo "	-root { <rootdir> | auto }	the root build directory to use;"
-	echo "					defaults to automatic setting"
+	echo "	-root { <rootdir> | auto }	the root build directory to use; defaults to"
+	echo "					automatic setting (\"/\" for stages 3 to 9"
+	echo "					without -chroot, \"build/\$ROCKCFG_ID\" else)"
 	echo "	-update		backup/restore modified package files"
 	echo "	-cfg <config>	the build configuration to use"
 	echo "	-nopostinst	do not create postinstall files"
@@ -143,22 +144,29 @@ export ROCK_CHECK_SYSTEM_OK=1
 . ./scripts/functions
 . ./scripts/parse-config
 
-if [ -z "$root" -a $stagelevel -le 2 ] || \
-   [ -z "$root" -a $chroot -eq 1 ] || \
-   [ "$root" = auto ]; then
-	root="build/$ROCKCFG_ID"
+if [ -z "$root" ] ; then
+	echo "Empty argument to --root option not supported. Exiting..." ; exit 1
 fi
+if [ $stagelevel -ge 3 -a $chroot -eq 0 ] ; then
+	# packages usually support only builds to / in stages 3-9, so
+	# unless we do a chroot, root has to be empty
+	if [ "$root" != auto -a "$root" != / ] ; then
+		echo "Cannot build to root directory other than / in stages 3-9, use -chroot. Exiting..." ; exit 1
+	fi
+	root=""
+else
+	if [ "$root" = auto ] ; then
+		root="$base/build/$ROCKCFG_ID"
+	else
+		# make path absolute
+		[ "${root#/}" = "$root" ] && root="$base/$root"
+		# no trailing /
+		root=${root%/}
+	fi
+fi
+xroot="$root"
 
 [ "$pkgdir" -a "${pkgdir#/}" = "$pkgdir" ] && pkgdir="$base/$pkgdir"
-[ "$root" -a "${root#/}" = "$root" ] && root="$base/$root"
-root=${root%/} ; xroot="$root" ; [ $stagelevel -ge 3 ] && root=""
-
-if [ -z "$id" ] ; then
-	id=`get_unique`
-	options="$options -id $id"
-fi
-
-./scripts/Build-Tools -$stagelevel -cfg $config || exit 1
 
 # more than one package are passed
 if [ $# -gt 1 ] ; then 
@@ -171,29 +179,21 @@ if [ $# -gt 1 ] ; then
     exit 0
 fi
 
+if [ -z "$id" ] ; then
+	id=`get_unique`
+	options="$options -id $id"
+fi
+
 # parameter 1 has $pkg=$xpkg
 pkg="${1%=*}"; xpkg="${1#*=}"
 
 builddir="$base/src.$xpkg.$id"
 
-# get real pkg name for mapped packages
-. build/$ROCKCFG_ID/ROCK/$toolsdir/lib/pkgmapper
-
-if [ $stagelevel -le 1 ] ; then
-	prefix="$tools"
-fi
-prefix=${prefix%/} ; prefix=${prefix#/}
-
-# set desktop file name
-desktopfiles="$( echo ${base}/package/*/${pkg} )/*.desktop"
-
-export ROCK_PKG=$pkg
-export ROCK_XPKG=$xpkg
-
 # Set permissions and ownership of $buildir; $base/build might have different ones.
 mkdir -p "$builddir"; chmod 700 "$builddir" ; chown 0:0 "$builddir"
 
-if [ "$xroot" ] ; then
+# Set up the $root/ROCK directory even if not chrooting, it is needed for e.g. dummydir.
+if [ "$root" -a "$this_is_the_2nd_run" = 0 ] ; then
 	pushd "$xroot/" >/dev/null || exit 1
 	
 	realconf=$(cd $base/config; pwd -P)
@@ -203,6 +203,8 @@ if [ "$xroot" ] ; then
 	if [ ! -e ROCK/loop/scripts ]; then
 		mkdir -p ROCK/{loop,config,download}
 		mount --bind $realbase $PWD/ROCK/loop
+		# bind mount config and download too so they can be symlinks to
+		# directories outside of $base.
 		mount --bind $realconf $PWD/ROCK/config
 		mount --bind $realdown $PWD/ROCK/download
 	fi
@@ -225,7 +227,6 @@ if [ "$xroot" ] ; then
 fi
 
 if [ "$chroot" = 1 ] ; then
-
 	cd "$xroot" || exit 1
 
 	x_mknod() {
@@ -318,7 +319,7 @@ if [ "$chroot" = 1 ] ; then
 	cat > "$builddir/chroot.sh" <<- EOT
 		#!/bin/bash
 		export ROCK_THIS_IS_CHROOT=1; cd /ROCK
-		./scripts/Build-Pkg $options -chr-sub -root "/" "$1"
+		$0 $options -chr-sub -root "/" "$1"
 	EOT
 
 	cat > "$builddir/debug.sh" <<- EOT
@@ -360,82 +361,54 @@ if [ "$chroot" = 1 ] ; then
 	exit $returncode
 fi
 
-if [ "$ROCKCFG_FLIST" = "flwrapper" -a -z "$FLWRAPPER" ] ; then
-	export FLWRAPPER_WLOG="$builddir/fl_wrapper.wlog"
-	export FLWRAPPER_RLOG="$builddir/fl_wrapper.rlog"
-	export FLWRAPPER_BASEPID=$$
-	[ "$LD_PRELOAD" ] && LD_PRELOAD="${LD_PRELOAD}:"
-	export FLWRAPPER="$base/build/$ROCKCFG_ID/ROCK/$toolsdir/lib/fl_wrapper.so"
-	export LD_PRELOAD="${LD_PRELOAD}$FLWRAPPER"
-fi
-export INSTALL_WRAPPER_LOGFILE="$builddir/install_wrapper.log"
-export CMD_WRAPPER_LOGFILE="$builddir/cmd_wrapper.log"
-
-if [ $norebuild = 1 -a -f $root/var/adm/logs/$stagelevel-$xpkg.log ] ; then
-	echo_pkg_deny $stagelevel $pkg "already built"
-	exit 0
-fi
-
-if [ "$ROCKCFG_RETRY_BROKEN" = 0 -a $norebuild = 1 -a \
-     -f $root/var/adm/logs/$stagelevel-$xpkg.err ] ; then
-	echo_pkg_deny $stagelevel $pkg "already failed"
-	exit 1
-fi
-
-confdir=""
-archdir="$builddir/archdir"
-if [ -z "$pkgdir" ] ; then
-  for x in package/*/$pkg/$pkg.desc ; do
-    if [ -f "$x" ] ; then
-	if [ "$confdir" ] ; then
-	    echo_pkg_deny $stagelevel $pkg "in multiple trees"
-	    echo "Package in multiple trees: $pkg !" \
-		> $root/var/adm/logs/$stagelevel-$xpkg.err
-	    exit 1
-	fi
-	x=${x#package/}; x=${x%%/*}
-	confdir="$base/package/$x/$pkg"
-	repository=$x
-    fi
-  done
-else
-  if [ -f "$pkgdir/$pkg.desc" ] ; then
-	confdir="$pkgdir"
-	repository=extern
-  fi
-fi
-
-if [ -z "$confdir" ] ; then
-	echo_pkg_deny $stagelevel $pkg "does not exist" ; exit 1
-fi
-
-mkdir -p $root/var/adm/{logs,flists,cksums,md5sums,packages,dependencies}
-mkdir -p $root/var/adm/{dep-debug,parse-config,cache,descs,rock-debug}
-mkdir -p $root/var/adm/{provides,requires,conflicts}
-[ "$root" ] && chmod 700 $root
-
-rm -f $root/var/adm/logs/$stagelevel-$xpkg.{out,log,err}
+# needs to be called in both runs
+./scripts/Build-Tools -$stagelevel -cfg $config || exit 1
 
 if [ $this_is_the_2nd_run = 0 ] ; then
-	options="-this_is_the_2nd_run $options $pkg=$xpkg"
-	if [ "$ROCKCFG_CREATE_CACHE" = 1 -a $stagelevel -ge 3 ] ; then
+	options="-this_is_the_2nd_run $options $1"
 
+	echo "#!/bin/bash" > "$builddir/2nd-run.sh"
+
+	if [ "$ROCKCFG_CREATE_CACHE" = 1 -a $stagelevel -ge 3 ] ; then
 		mkdir -p $root/var/adm/cache
 		touch $root/var/adm/cache/$xpkg
 		rm -f $root/var/adm/cache/$xpkg.tm
 
-		/usr/bin/time -o "$root/var/adm/cache/$xpkg.tm" \
-		    -f 'buildtime=$(qcalc %U + %S)' \
-		    env -i HOME=$HOME TERM=$TERM PS1='\u:\w\$ ' PATH="$PATH" \
-		    TZ="$TZ" ROCK_BUILD_TARGET=$ROCK_BUILD_TARGET \
-		    build_root="$build_root" build_rock="$build_rock" \
-		    build_logs="$build_logs" build_pkgs="$build_pkgs" \
-		    ROCK_THIS_IS_CHROOT="$ROCK_THIS_IS_CHROOT" \
-		    FLWRAPPER_WLOG="$FLWRAPPER_WLOG" FLWRAPPER_RLOG="$FLWRAPPER_RLOG" \
-		    FLWRAPPER_BASEPID="$FLWRAPPER_BASEPID" FLWRAPPER="$FLWRAPPER" \
-		    LD_PRELOAD="${LD_PRELOAD}" \
-		    $0 $options
-		returncode=$?
+		cat >> "$builddir/2nd-run.sh" <<- EOT
+			/usr/bin/time -o "$root/var/adm/cache/$xpkg.tm" \\
+			    -f 'buildtime=\$(qcalc %U + %S)' \\
+		EOT
+	fi
+	cat >> "$builddir/2nd-run.sh" <<- EOT
+		env -i HOME=$HOME TERM=$TERM PS1='\u:\w\$ ' \\
+		    PATH="$PATH" \\
+		    ROCK_THIS_IS_CHROOT="$ROCK_THIS_IS_CHROOT" ROCK_BUILD_TARGET="$ROCK_BUILD_TARGET" \\
+		    build_root="$build_root" build_rock="$build_rock" \\
+		    build_logs="$build_logs" build_pkgs="$build_pkgs" \\
+	EOT
+	if [ "$ROCKCFG_FLIST" = flwrapper ] ; then
+		# Use fl_wrapper.so for the second run so files read or changed
+		# by the top-level shell are logged as well. Logging starts when
+		# the log files are created later on.
+		export FLWRAPPER_RLOG="$builddir/fl_wrapper.rlog"
+		export FLWRAPPER_WLOG="$builddir/fl_wrapper.wlog"
+		export FLWRAPPER_BASEPID=$$
+		export FLWRAPPER="$base/build/$ROCKCFG_ID/ROCK/$toolsdir/lib/fl_wrapper.so"
+		export LD_PRELOAD="${LD_PRELOAD}${LD_PRELOAD+:}$FLWRAPPER"
+
+		cat >> "$builddir/2nd-run.sh" <<- EOT
+			    FLWRAPPER_BASEPID="$FLWRAPPER_BASEPID" \\
+			    FLWRAPPER_RLOG="$FLWRAPPER_RLOG" \\
+			    FLWRAPPER_WLOG="$FLWRAPPER_WLOG" \\
+			    FLWRAPPER="$FLWRAPPER" \\
+			    LD_PRELOAD="${LD_PRELOAD}" \\
+		EOT
+	fi
+	echo "$0 $options" >> "$builddir/2nd-run.sh"
+
+	. "$builddir/2nd-run.sh" ; returncode=$?
+
+	if [ "$ROCKCFG_CREATE_CACHE" = 1 -a $stagelevel -ge 3 ] ; then
 		[ ! -e "$root/var/adm/cache/$xpkg.tm" ] && exit $returncode
 
 		qcalc() { gawk "BEGIN { printf(\"%d\n\", ($*)*100); }"; }
@@ -503,30 +476,87 @@ if [ $this_is_the_2nd_run = 0 ] ; then
 			done
 		} > $root/var/adm/cache/$xpkg.new
 		mv $root/var/adm/cache/$xpkg.new $root/var/adm/cache/$xpkg
-
-		exit $returncode
-	else
-		exec env -i HOME=$HOME TERM=$TERM PS1='\u:\w\$ ' PATH="$PATH" \
-		    TZ="$TZ" ROCK_BUILD_TARGET=$ROCK_BUILD_TARGET \
-		    build_root="$build_root" build_rock="$build_rock" \
-		    build_logs="$build_logs" build_pkgs="$build_pkgs" \
-		    ROCK_THIS_IS_CHROOT="$ROCK_THIS_IS_CHROOT" \
-		    FLWRAPPER_WLOG="$FLWRAPPER_WLOG" FLWRAPPER_RLOG="$FLWRAPPER_RLOG" \
-		    FLWRAPPER_BASEPID="$FLWRAPPER_BASEPID" FLWRAPPER="$FLWRAPPER" \
-		    LD_PRELOAD="${LD_PRELOAD}" \
-		    $0 $options
 	fi
-fi
 
+	exit $returncode
+fi
 
 #
 # ----  Setting Build Variables
 #
 
+# get real pkg name for mapped packages
+. build/$ROCKCFG_ID/ROCK/$toolsdir/lib/pkgmapper
+
+if [ $stagelevel -le 1 ] ; then
+	prefix="$tools"
+fi
+prefix=${prefix%/} ; prefix=${prefix#/}
+
+# set desktop file name
+desktopfiles="$( echo ${base}/package/*/${pkg} )/*.desktop"
+
+export ROCK_PKG=$pkg
+export ROCK_XPKG=$xpkg
+
+export INSTALL_WRAPPER_LOGFILE="$builddir/install_wrapper.log"
+export CMD_WRAPPER_LOGFILE="$builddir/cmd_wrapper.log"
+
+if [ $norebuild = 1 -a -f $root/var/adm/logs/$stagelevel-$xpkg.log ] ; then
+	echo_pkg_deny $stagelevel $pkg "already built"
+	exit 0
+fi
+
+if [ "$ROCKCFG_RETRY_BROKEN" = 0 -a $norebuild = 1 -a \
+     -f $root/var/adm/logs/$stagelevel-$xpkg.err ] ; then
+	echo_pkg_deny $stagelevel $pkg "already failed"
+	exit 1
+fi
+
+confdir=""
+archdir="$builddir/archdir"
+if [ -z "$pkgdir" ] ; then
+  for x in package/*/$pkg/$pkg.desc ; do
+    if [ -f "$x" ] ; then
+	if [ "$confdir" ] ; then
+	    echo_pkg_deny $stagelevel $pkg "in multiple trees"
+	    echo "Package in multiple trees: $pkg !" \
+		> $root/var/adm/logs/$stagelevel-$xpkg.err
+	    exit 1
+	fi
+	x=${x#package/}; x=${x%%/*}
+	confdir="$base/package/$x/$pkg"
+	repository=$x
+    fi
+  done
+else
+  if [ -f "$pkgdir/$pkg.desc" ] ; then
+	confdir="$pkgdir"
+	repository=extern
+  fi
+fi
+
+if [ -z "$confdir" ] ; then
+	echo_pkg_deny $stagelevel $pkg "does not exist" ; exit 1
+fi
+
+mkdir -p $root/var/adm/{logs,flists,cksums,md5sums,packages,dependencies}
+mkdir -p $root/var/adm/{dep-debug,parse-config,cache,descs,rock-debug}
+mkdir -p $root/var/adm/{provides,requires,conflicts}
+[ "$root" ] && chmod 700 $root
+
+rm -f $root/var/adm/logs/$stagelevel-$xpkg.{out,log,err}
+
+#
+#
+#
+
 if [ -z "$root" ] ; then
 	dummydir="$builddir/rootdummy"
 else
-	dummydir="${root}/ROCK/${builddir#$base/}/rootdummy"
+	# dummydir must be a subdirectory of $root so that the DESTDIR make
+	# option works without change.
+	dummydir="${root}/ROCK/src.$xpkg.$id/rootdummy"
 fi
 
 mkdir -p "$dummydir"
@@ -747,13 +777,6 @@ if [ "$ROCKCFG_SRC_TMPFS" = 1 ]; then
 	mount -t tmpfs -o $ROCKCFG_SRC_TMPFS_OPT tmpfs "$builddir"
 fi
 
-if [ "$xroot" != "$root" ] ; then
-	for x in $flistroot ; do
-		[ -d $xroot/$x ] || mkdir -p $xroot/$x
-		[ -d $root/$x  ] || ln -sf $xroot/$x $root/
-	done
-fi
-
 if [ $update = 1 ] ; then
 	echo_status "Creating backup of old package data (running in update mode)."
 	(
@@ -774,7 +797,7 @@ if [ $update = 1 ] ; then
 fi
 
 if [ "$ROCKCFG_FLIST" = "flwrapper" ] ; then
-	rm -f "$builddir/"fl_wrapper.{r,w}log
+	# Enable flwrapper logging by creating log files.
 	touch "$builddir/"fl_wrapper.{r,w}log
 elif [ "$ROCKCFG_FLIST" = "find" ] ; then
 	touch "$builddir/temp.time_stamp"

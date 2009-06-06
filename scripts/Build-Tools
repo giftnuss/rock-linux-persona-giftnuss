@@ -58,6 +58,8 @@ x="$( bash scripts/xfind.sh config/$config/. package/. scripts/. \
 	-newer build/$ROCKCFG_ID/ROCK/$toolsdir/.lastupdate \
 	-printf 'Found new/updated file: %p\n' 2> /dev/null )"
 
+if [ $stagelevel = 9 ] ; then x="" ; fi
+
 if [ "$x" ] ; then
 	echo_header Found $( echo "$x" | wc -l ) new/updated \
 	            files in source tree:
