@@ -38,13 +38,19 @@ if pkgcheck php X ; then
                 pkgremove php
 	
         	bool 'Force usage of shared modules' ROCKCFG_PKG_PHP_FORCESHARED 0
-		for xpkg in postgresql openssl mysql libgd ; do
+		for xpkg in postgresql openssl libgd ; do
 		  if pkgcheck $xpkg X ; then
 		  	bool "Build PHP with $xpkg support" ROCKCFG_PKG_PHP_$xpkg 1
 		  else
 		  	comment "Package $xpkg is disabled. Bulding PHP without $xpkg support."
 		  fi
 		done
+		
+		if pkgcheck mysql50 X || pkgcheck mysql41 X ; then
+		    bool "Build PHP with mysql support" ROCKCFG_PKG_PHP_mysql 1
+		else
+		    comment "Package mysql is disabled. Bulding PHP without mysql support."
+		fi
 
 		if pkgcheck pine X ; then
 		  bool "Build PHP with imap support" ROCKCFG_PKG_PHP_imap 1
