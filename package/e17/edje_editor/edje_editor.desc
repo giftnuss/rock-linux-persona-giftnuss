@@ -21,25 +21,21 @@
 [COPY] 
 [COPY] --- ROCK-COPYRIGHT-NOTE-END ---
 
-[I] TODO: Short Information
+[I] visual editor for edj/edc files
 
-[T] TODO: Long Expanation
-[T] TODO: Long Expanation
-[T] TODO: Long Expanation
-[T] TODO: Long Expanation
-[T] TODO: Long Expanation
+[T] Builds shiny desktop animations the easy way.
 
-[U] TODO: URL
+[U] http://trac.enlightenment.org/e/wiki/EdjeEditor
 
-[A] TODO: Author
+[A] Dave 'DaveMDS' Andreoli <dave@gurumeditation.it>
 [M] Sebastian Knapp <rock@ccls-online.de>
 
-[C] TODO: Category
+[C] extra/desktop/enlightenment
 
-[L] TODO: License
-[S] TODO: Status
-[V] TODO: Version
+[L] GPL
+[S] Beta
+[V] r40284
 [P] X -----5---9 800.000
 
-[D] 0 edje_editor::39615 svn://http:svn.enlightenment.org/svn/e/trunk/
+[D] X edje_editor-r40284.tar.bz2 svn://http:svn.enlightenment.org/svn/e/trunk/edje_editor::40284
 

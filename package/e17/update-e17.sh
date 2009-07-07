@@ -7,6 +7,13 @@
 OLD=$1
 NEW=$2
 
+if [ ".$OLD" == ".list" ] ; then
+  for i in package/e17/*/*.desc ; do
+    echo  $(grep "\[V\] r" $i) $(basename $i .desc)
+  done
+  exit
+fi
+
 if [ -z "$NEW" ] ; then
   echo "run as: $0 oldrevision newrevision"
   exit 1
