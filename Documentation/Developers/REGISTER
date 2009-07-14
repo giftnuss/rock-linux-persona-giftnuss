@@ -60,6 +60,7 @@ Reserved User and Group IDs:
                            scanner  34
                            tape     35
                            uucp     36
+                           dialout  37
 
   - nullmailer users:   - nullmailer groups:
       nullmailer 38        nullmailer 38

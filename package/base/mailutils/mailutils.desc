@@ -6,8 +6,8 @@
 [COPY] the ROCK-COPYRIGHT-NOTE-END tag. Otherwise it might get removed by
 [COPY] the ./scripts/Create-CopyPatch script. Do not edit this copyright text!
 [COPY] 
-[COPY] ROCK Linux: rock-src/package/gnome2/cairo/cairo.desc
-[COPY] ROCK Linux is Copyright (C) 1998 - 2005 Clifford Wolf
+[COPY] ROCK Linux: rock-src/package/base/coreutils/coreutils.desc
+[COPY] ROCK Linux is Copyright (C) 1998 - 2006 Clifford Wolf
 [COPY] 
 [COPY] This program is free software; you can redistribute it and/or modify
 [COPY] it under the terms of the GNU General Public License as published by
@@ -21,22 +21,28 @@
 [COPY] 
 [COPY] --- ROCK-COPYRIGHT-NOTE-END ---
 
-[I] Cairo - a drawing library
+[I] GNU mail utilities
 
-[T] Cairo - a drawing library
+[T] GNU Mailutils is a collection of mail-related utilities. At the core of
+[T] Mailutils is libmailutils, a library which provides access to various
+[T] forms of mailbox files (including remote mailboxes via popular protocols).
+[T] It also provides support for parsing of RFC-822 style messages and MIME
+[T] support.
+[T]
+[T] Besides other programs this package conatins pop3 and imap4 servers and
+[T] and the mail/mailx command line tool.
 
-[U] http://cairographics.org/
+[A] The GNU Project / FSF
+[M] Clifford Wolf <clifford@clifford.at>
 
-[A] Michael Smith
-[M] Daniel Jahre <daja@rocklinux.org>
-
-[C] extra/development
+[C] base/tool
+[F] DIETLIBC
 [F] CORE
 
 [L] GPL
 [S] Stable
-[V] 1.8.8
-[P] X --?--5---9 156.900
+[V] 2.0
+[P] X ---3-5---9 180.300
 
-[D] 882171412 cairo-1.8.8.tar.gz http://cairographics.org/releases/
+[D] 2626465117 mailutils-2.0.tar.bz2 ftp://ftp.gnu.org/pub/gnu/mailutils/
 

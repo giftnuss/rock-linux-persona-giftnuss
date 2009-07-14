@@ -743,10 +743,8 @@ build_this_package() {
 			#
 			hook_eval preconf
 			#
-			if [ $runcmake = 1 -a -f CMakeLists.txt -a -n "$( type -p cmake )" ]
+			if [ $runcmake = 1 -a -f $cmakesrcdir/CMakeLists.txt -a -n "$( type -p cmake )" ]
 			then
-			        mkdir -v cmake-build-dir
-				cd cmake-build-dir
 				cmake $cmakesrcdir $cmakedefs
 			elif [ $runconf = 1 ]; then 
 			  if [ -n "$( type -p $configscript )" -o $autogen = 1 ]
