@@ -1,4 +1,3 @@
-pkgfork qcake qcake-cat
 pkgfork qcake qcake-soundcat
 pkgfork qcake qcake-3dcat
 pkgfork qcake qcake-splcat

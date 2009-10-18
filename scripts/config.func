@@ -186,18 +186,24 @@ else
 		return $ret
 	}
 	pkgfork() {
-		local pkg=$1 xpkg=$2 extraver ; shift 2
+		local pkg=$1 xpkg=$2 status priority stages version extraver; shift 2
 
 		bprof pkgfork start
 
-		# >50% of the Config time is spent in this line!
-		parse_desc package/*/$pkg/$pkg.desc P V
+		local parser="$( type -p descparser )" tag tagdata
 
-		extraver=$( echo $desc_V 0 | cut -f2 -d" " )
+		[ -z "${parser}" ] && parser="$base/src/descparser"
+		if [ ! -x "${parser}" ] ; then
+			mkdir -p $base/src
+			cc -o $base/src/descparser $base/misc/tools-source/descparser.c
+		fi
+		[ ! -x "${parser}" ] && abort "Couldn't find \`descparser'! Please run ./scripts/Build-Tools!"
 
-		cfghlp pkgfork $pkg $xpkg status ${desc_P%% *} priority ${desc_P##* } \
-			stages $( echo $desc_P | cut -f2 -d" ") \
-			version ${desc_V%% *} extraversion $extraver $@
+		read status priority stages version extraver < <( pkg=$pkg xpkg=$xpkg $parser -x < package/*/$pkg/$pkg.desc )
+
+		cfghlp pkgfork $pkg $xpkg status "$status" priority "$priority" \
+			stages "$stages" version "$version" extraversion "$extraver" "$@"
+
 		bprof pkgfork stop
 	}
 fi

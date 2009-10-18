@@ -46,6 +46,8 @@ struct builtin {
 #include <sys/types.h>
 #include <regex.h>
 
+#define HASH_LEN 4096
+
 struct package;
 struct package {
 	int status;
@@ -60,9 +62,41 @@ struct package {
 		(for easily searching for flags). */
 	char *flags;
 	struct package *next;
+	struct package *next_in_alias_hash;
 };
 
 struct package *package_list = 0;
+struct package *package_alias_hash[HASH_LEN];
+
+static unsigned int hash_string(const char *key)
+{
+        unsigned int c, hash = 0;
+        const unsigned char *ukey = (const unsigned char *)key;
+        /* hashing algorithms are fun. this one is from the sdbm package. */
+        while (ukey && (c = *ukey++)) hash = c + (hash << 6) + (hash << 16) - hash;
+        return hash % HASH_LEN;
+}
+
+static void hash_remove(struct package *p)
+{
+	unsigned int h = hash_string(p->alias);
+	struct package **pp = &package_alias_hash[h];
+	while (*pp) {
+		if (*pp == p) {
+			*pp = p->next_in_alias_hash;
+			break;
+		}
+		pp = &(*pp)->next_in_alias_hash;
+	}
+	p->next_in_alias_hash = NULL;
+}
+
+static void hash_insert(struct package *p)
+{
+	unsigned int h = hash_string(p->alias);
+	p->next_in_alias_hash = package_alias_hash[h];
+	package_alias_hash[h] = p;
+}
 
 int read_pkg_list(const char *file) {
 	FILE *f = fopen(file, "r");
@@ -72,6 +106,7 @@ int read_pkg_list(const char *file) {
 	int i;
 
 	while (pkg) {
+		hash_remove(pkg);
 		free(pkg->prio);
 		free(pkg->repository);
 		free(pkg->name);
@@ -125,6 +160,8 @@ int read_pkg_list(const char *file) {
 		tok = strtok(0, "\n");
 		tok[strlen(tok)-1] = 0;
 		pkg_tmp->flags = strdup(tok);
+
+		hash_insert(pkg_tmp);
 
 		if ( !package_list )
 			pkg=package_list=pkg_tmp;
@@ -254,6 +291,7 @@ int pkgswitch(int mode, char **args)
 
 		if (match) {
 			if ( !mode ) {
+				hash_remove(pkg);
 				*(last_pkg ? &(last_pkg->next) : &package_list) = pkg->next;
 				free(pkg->prio);
 				free(pkg->repository);
@@ -279,7 +317,7 @@ int pkgfork(char *pkgname, char *xpkg, char** opt)
 	struct package *fork, *pkg;
 	int i, k;
 
-	for (pkg = package_list; pkg; pkg = pkg->next)
+	for (pkg = package_alias_hash[hash_string(pkgname)]; pkg; pkg = pkg->next_in_alias_hash)
 		if (!strcmp(pkg->alias, pkgname))
 			break;
 	if (!pkg) return 1;
@@ -356,6 +394,8 @@ int pkgfork(char *pkgname, char *xpkg, char** opt)
 			}
 		}
 	}
+
+	hash_insert(fork);
 
 	return 0;
 }

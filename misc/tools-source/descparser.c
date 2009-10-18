@@ -70,9 +70,15 @@ int condstack[128];
 int condcount = -1;
 int falselevel = 0;
 
-void parse_file(FILE *f);
+char *x_status = NULL;
+char *x_priority = NULL;
+char *x_stages = NULL;
+char *x_version = NULL;
+char *x_extraver = NULL;
 
-void parse_file(FILE *f)
+void parse_file(FILE *f, int xmode);
+
+void parse_file(FILE *f, int xmode)
 {
 	while ( fgets(line, 4096, f) ) {
 		if (line[0] == '#') {
@@ -99,20 +105,48 @@ void parse_file(FILE *f)
 				if (strchr(line, '\n')) *strchr(line, '\n') = 0;
 				i = fopen(line+9, "r");
 				if (i) {
-					parse_file(i);
+					parse_file(i, xmode);
 					fclose(i);
 				} else
 					fprintf(stderr, "Can't #include '%s'.\n", line+9);
 			}
-		} else
-			if ( !falselevel )
+		} else if  ( !falselevel ) {
+			if ( xmode ) {
+				if (!strncmp(line, "[V]", 3) || !strncmp(line, "[VER]", 5) || !strncmp(line, "[VERSION]", 9)) {
+					free(x_version);
+					free(x_extraver);
+					strtok(line, " \t\n");
+					x_version = strdup(strtok(NULL, " \t\n") ?: "");
+					x_extraver = strdup(strtok(NULL, " \t\n") ?: "");
+				}
+				if (!strncmp(line, "[P]", 3) || !strncmp(line, "[PRI]", 5) || !strncmp(line, "[PRIORITY]", 10)) {
+					free(x_status);
+					free(x_priority);
+					free(x_stages);
+					strtok(line, " \t\n");
+					x_status = strdup(strtok(NULL, " \t\n") ?: "");
+					x_stages = strdup(strtok(NULL, " \t\n") ?: "");
+					x_priority = strdup(strtok(NULL, " \t\n") ?: "");
+				}
+			} else
 				fputs(line, stdout);
+		}
 	}
 }
 
-int main()
+int main(int argc, char **argv)
 {
-	parse_file(stdin);
+	if (argc == 2 && !strcmp(argv[1], "-x")) {
+		parse_file(stdin, 1);
+		printf("%s %s %s %s %s\n", x_status, x_priority, x_stages, x_version,
+				(x_extraver && *x_extraver) ? x_extraver : "0");
+		free(x_status);
+		free(x_priority);
+		free(x_stages);
+		free(x_version);
+		free(x_extraver);
+	} else
+		parse_file(stdin, 0);
 	return 0;
 }
 
