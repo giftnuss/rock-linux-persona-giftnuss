@@ -24,6 +24,5 @@
 CONFIG_EXAMPLE			2000-01-01	2.6.0 # example.o
 
 # do not remove the following entries unless you are really sure about it..
-CONFIG_BLK_DEV_UB		2005-05-07	2.6.9 # breaks usb-storage
+# ..nothing broken atm..
 
-CONFIG_INPUT_EVBUG		2006-07-10	2.6.16 # pollutes dmesg
