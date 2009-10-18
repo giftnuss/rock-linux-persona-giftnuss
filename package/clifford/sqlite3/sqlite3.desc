@@ -48,3 +48,4 @@
 
 [D] 913027671 sqlite-3.6.4.tar.gz http://www.sqlite.org/download.html
 
+[X-NOTE] I forgot why this is necessary in stage 3, but I keep it so. (sk)
