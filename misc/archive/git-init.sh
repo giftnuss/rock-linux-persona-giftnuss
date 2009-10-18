@@ -11,7 +11,7 @@ src
 EOT
 mv .gitignore.new .gitignore
 
-git-init
-git-add Documentation architecture misc package scripts target .gitignore
-git-commit -m 'Init'
+git init
+git add Documentation architecture misc package scripts target .gitignore
+git commit -m 'Init'
 

@@ -30,7 +30,7 @@ srcroot="rsync://www.rocklinux.org/rock-2.1"
 
 help_msg() {
 	echo
-	echo "Usage: $0 [ -srcroot <URL> ]"
+	echo "Usage: $0 [ -srcroot <URL> | -apply <smid> ]"
 	echo
 	echo " Update the entire ROCK Linux tree to the current development snapshot using"
 	echo " 'rsync'. It does not update your tar balls, that is you still have to run"
@@ -40,12 +40,23 @@ help_msg() {
 	echo
 	echo " The default for -srcroot is '$srcroot'."
 	echo
+	echo " The -apply mode can be used to apply patches from ROCK Linux SubMaster."
+	echo " (https://www.rocklinux.net/submaster/)"
+	echo
 	exit 1
 }
 
 while [ "$1" ] ; do
 	case "$1" in
 		-srcroot) srcroot="$2" ; shift ;;
+		-apply)
+			shift
+			for smid; do
+				wget --no-check-certificate -O "$smid.patch" "https://www.rocklinux.net/submaster/?dump=$smid" && \
+					patch -p0 --dry-run -f < "$smid.patch" && patch -p0 -s -f < "$smid.patch"
+			done
+			exit 0
+			;;
 		*)  help_msg ;;
 	esac
 	shift
