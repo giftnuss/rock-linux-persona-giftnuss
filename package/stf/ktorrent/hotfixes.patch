@@ -1,0 +1,48 @@
+diff --git a/apps/ktcachecheck/cachecheck.cpp b/apps/ktcachecheck/cachecheck.cpp
+index b8f7b3e..a4b864b 100644
+--- a/apps/ktcachecheck/cachecheck.cpp
++++ b/apps/ktcachecheck/cachecheck.cpp
+@@ -17,6 +17,7 @@
+  *   Free Software Foundation, Inc.,                                       *
+  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.             *
+  ***************************************************************************/
++#include <stdlib.h>
+ #include <iostream>
+ #include <util/log.h>
+ #include <util/error.h>
+diff --git a/libktorrent/torrent/advancedchokealgorithm.cpp b/libktorrent/torrent/advancedchokealgorithm.cpp
+index 291eef2..7ca0578 100644
+--- a/libktorrent/torrent/advancedchokealgorithm.cpp
++++ b/libktorrent/torrent/advancedchokealgorithm.cpp
+@@ -17,6 +17,7 @@
+  *   Free Software Foundation, Inc.,                                       *
+  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.             *
+  ***************************************************************************/
++#include <stdlib.h>
+ #include <util/functions.h>
+ #include <interfaces/torrentinterface.h>
+ #include "chunkmanager.h"
+diff --git a/libktorrent/util/bitset.cpp b/libktorrent/util/bitset.cpp
+index c41a209..31d3215 100644
+--- a/libktorrent/util/bitset.cpp
++++ b/libktorrent/util/bitset.cpp
+@@ -18,6 +18,7 @@
+  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.             *
+  ***************************************************************************/
+ #include <algorithm>
++#include <string.h>
+ #include "bitset.h"
+ 
+ namespace bt
+diff --git a/libktorrent/util/log.cpp b/libktorrent/util/log.cpp
+index 14bbaeb..9c75408 100644
+--- a/libktorrent/util/log.cpp
++++ b/libktorrent/util/log.cpp
+@@ -29,6 +29,7 @@
+ #include <interfaces/logmonitorinterface.h>
+ #include <qmutex.h> 
+ #include <util/fileops.h>
++#include <stdlib.h>
+ #include "log.h"
+ #include "error.h"
+ 
