@@ -37,11 +37,11 @@
 
 [L] OpenSource
 [S] Stable
-[V] 1.4.6
+[V] 1.6.3
 [P] X --?--5---9 227.600
 
-[D] 68570600 subversion-1.4.6.tar.bz2 http://subversion.tigris.org/tarballs/
-[D] 1893988677 subversion-deps-1.4.6.tar.bz2 http://subversion.tigris.org/tarballs/
+[D] 674749666 subversion-1.6.3.tar.bz2 http://subversion.tigris.org/tarballs/
+[D] 3159540583 subversion-deps-1.6.3.tar.bz2 http://subversion.tigris.org/tarballs/
 
 [CV-URL] http://subversion.tigris.org/servlets/ProjectDocumentList?folderID=260
 
