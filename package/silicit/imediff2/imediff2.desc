@@ -53,3 +53,4 @@
 
 [D] 0 imediff2_1.1.2.tar.gz https://alioth.debian.org/frs/download.php/2110/
 
+[O] custmain='cp -v imediff2 /usr/bin'
