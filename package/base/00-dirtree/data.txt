@@ -131,6 +131,7 @@ l var/state/pkgtool ../adm
 chmod 0700 root
 chmod ugo=rwxt tmp
 chmod ugo=rwxt var/mail
+chmod ugo=rwxt var/lock
 chmod ugo=rwxt var/tmp
 
 mknod dev/null    c 1 3
