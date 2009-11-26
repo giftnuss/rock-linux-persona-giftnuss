@@ -1,0 +1,35 @@
+
+http://sourceware.org/ml/libc-alpha/2008-11/msg00030.html
+
+Hello!
+
+On Mon, Nov 24, 2008 at 03:52:18PM +0100, Thomas Schwinge wrote:
+> If sysdeps/i386/i686/memcmp.S isn't used (as in a i586 compilation),
+> __i686.get_pc_thunk.bx will be undefined, resulting in a compilation
+> error in the new TLS descriptors code (Alexandre Oliva).
+
+> 2008-11-24  Thomas Schwinge  <tschwinge@gnu.org>
+> 
+> 	* sysdeps/i386/d-tlsdesc.S (__i686.get_pc_thunk.bx): New definition,
+> 	if not already defined.
+
+Arkadiusz MiÅkiewicz pointed me to a different, better patch, which he
+had posted to <libc-help@sourceware.org>, and which I'm repeating here:
+
+2008-11-24  Arkadiusz MiÅkiewicz  <arekm@maven.pl>
+
+	* sysdeps/i386/dl-tlsdesc.S (_dl_tlsdesc_dynamic): Use LOAD_PIC_REG
+	instead of doing things manually.
+
+--- glibc-2.9/sysdeps/i386/dl-tlsdesc.S.orig	2009-06-28 12:51:28.000000000 +0200
++++ glibc-2.9/sysdeps/i386/dl-tlsdesc.S	2009-06-28 12:51:39.000000000 +0200
+@@ -128,8 +128,7 @@
+ .Lslow:
+ 	cfi_adjust_cfa_offset (28)
+ 	movl	%ebx, 16(%esp)
+-	call	__i686.get_pc_thunk.bx
+-	addl	$_GLOBAL_OFFSET_TABLE_, %ebx
++	LOAD_PIC_REG(bx)
+ 	call	___tls_get_addr@PLT
+ 	movl	16(%esp), %ebx
+ 	jmp	.Lret

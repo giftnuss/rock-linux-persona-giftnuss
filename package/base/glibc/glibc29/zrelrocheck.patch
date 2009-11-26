@@ -1,0 +1,14 @@
+Glibc checks if the linker supports the -z relro option by reading the output
+of '$CC -v --help', but at least with native builds in stage 3, only
+'$CC -v --target-help' would give the needed output.
+
+--- ./configure	2007-05-18 04:07:18.000000000 +0200
++++ ./configure	2007-05-31 00:09:59.000000000 +0200
+@@ -6134,6 +6134,7 @@
+ 
+   case "$base_machine" in
+     i[34567]86 | x86_64 | powerpc* | s390* | sparc* | alpha*)
++      libc_cv_z_relro=yes
+       { echo "$as_me:$LINENO: checking for -z relro option" >&5
+ echo $ECHO_N "checking for -z relro option... $ECHO_C" >&6; }
+ if test "${libc_cv_z_relro+set}" = set; then

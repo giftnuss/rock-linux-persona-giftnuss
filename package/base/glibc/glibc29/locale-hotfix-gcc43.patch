@@ -1,0 +1,22 @@
+--- ./locale/programs/charmap-kw.h.orig	2008-06-05 12:44:16.000000000 +0200
++++ ./locale/programs/charmap-kw.h	2008-06-05 12:44:33.000000000 +0200
+@@ -128,7 +128,7 @@
+ #ifdef __GNUC__
+ __inline
+ #endif
+-const struct keyword_t *
++static const struct keyword_t *
+ charmap_hash (register const char *str, register unsigned int len)
+ {
+   static const struct keyword_t wordlist[] =
+--- ./locale/programs/locfile-kw.h.orig	2008-06-05 12:44:46.000000000 +0200
++++ ./locale/programs/locfile-kw.h	2008-06-05 12:44:52.000000000 +0200
+@@ -128,7 +128,7 @@
+ #ifdef __GNUC__
+ __inline
+ #endif
+-const struct keyword_t *
++static const struct keyword_t *
+ locfile_hash (register const char *str, register unsigned int len)
+ {
+   static const struct keyword_t wordlist[] =
