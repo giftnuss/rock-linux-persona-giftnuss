@@ -1,0 +1,11 @@
+--- ./scheduler/auth.c.orig	2009-07-01 10:07:46.000000000 +0200
++++ ./scheduler/auth.c	2009-07-01 10:07:58.000000000 +0200
+@@ -54,6 +54,8 @@
+  * Include necessary headers...
+  */
+ 
++#define _GNU_SOURCE
++
+ #include "cupsd.h"
+ #include <grp.h>
+ #ifdef HAVE_SHADOW_H
