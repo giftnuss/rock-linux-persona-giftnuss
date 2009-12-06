@@ -745,7 +745,9 @@ build_this_package() {
 			#
 			if [ $runcmake = 1 -a -f $cmakesrcdir/CMakeLists.txt -a -n "$( type -p cmake )" ]
 			then
-				cmake $cmakesrcdir $cmakedefs
+			        mkdir rock-cmake-build
+			        cd rock-cmake-build
+				cmake $cmakedefs ../$cmakesrcdir
 			elif [ $runconf = 1 ]; then 
 			  if [ -n "$( type -p $configscript )" -o $autogen = 1 ]
 			  then
