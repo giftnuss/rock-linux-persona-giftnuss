@@ -1,0 +1,11 @@
+--- ./doc/Makefile.in.orig	2009-11-16 15:00:57.000000000 +0100
++++ ./doc/Makefile.in	2009-11-16 15:01:06.000000000 +0100
+@@ -355,7 +355,7 @@
+ myman_pages = gpg2.1 gpgsm.1 gpg-agent.1 scdaemon.1 gpgv2.1 \
+                 watchgnupg.1 gpgconf.1 addgnupghome.8 gpg-preset-passphrase.1 \
+ 		gpg-connect-agent.1 gpgparsemail.1 symcryptrun.1 \
+-		gpgsm-gencert.sh.1 applygnupgdefaults.8 gpg-zip.1
++		gpgsm-gencert.sh.1 applygnupgdefaults.8
+ 
+ man_MANS = $(myman_pages)
+ noinst_MANS = gnupg.7
