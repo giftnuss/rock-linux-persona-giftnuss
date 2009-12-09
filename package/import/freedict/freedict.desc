@@ -37,7 +37,7 @@
 
 [P] X --?--5---9 264.900
 
-[D] 3061048105 freedict-database-20050726.xml !http://www.freedict.org/freedict-database.xml 
+[D] 3862483642 freedict-database-20090721.xml !http://www.freedict.org/freedict-database.xml 
 
 #include package/import/freedict/hosted_freedict.desc
 

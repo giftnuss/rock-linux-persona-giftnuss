@@ -37,9 +37,9 @@ then
 		ROCKCFGSET_PKG_GLIBC22_USEIT=1
 	fi
 
-	choice ROCKCFG_PKG_GLIBC_BRANCH glibc27 \
-	        glibc210 'Use glibc-2.10.x' \
-                glibc27 'Use glibc-2.7 (recommended)' \
+	choice ROCKCFG_PKG_GLIBC_BRANCH glibc29 \
+                glibc27 'Use glibc-2.9 (recommended)' \
+                glibc27 'Use glibc-2.7' \
                 glibc26 'Use glibc-2.6' \
                 glibc25 'Use glibc-2.5' \
                 glibc23 'Use glibc-2.3.x' \

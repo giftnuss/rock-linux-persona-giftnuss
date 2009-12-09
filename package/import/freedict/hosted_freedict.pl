@@ -65,9 +65,13 @@ my $p= new XML::Parser( Handlers => { Start => start_handler() } );
   scr => 'Serbo-Croat',
   tur => 'Turkish' );
 
+my $desc = 'package/import/freedict/freedict.desc';
+open FH, "<$desc" or die "no desc file";
+my ($dbrow) = grep { /^\[D\]/ } <FH>; close FH;
 
-my $database='download/mirror/f/freedict-database-20050726.xml';
-die 'Please download freedict dictionary list with "./scripts/Download freedict" and try again.'
+my $database = 'download/mirror/f/' . (split /\s/, $dbrow)[2];
+
+die 'Please download freedict dictionary list ('.$dbrow.') with "./scripts/Download freedict"'
   unless -f $database;
 
 $p->parsefile($database); # No need, to say die.
