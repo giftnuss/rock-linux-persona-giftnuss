@@ -23,7 +23,7 @@
 
 [I] Data types library (List, hash, etc)
 
-[T] This library provides basic data tzpes for enlightenment.
+[T] This library provides basic data types for enlightenment.
 
 [U] http://www.enlightenment.org
 
@@ -35,7 +35,7 @@
 [L] LGPL
 [S] Stable
 [V] r40284
-[P] X -----5---9 800.000
+[P] X -----5---9 150.000
 
-[D] X eina/40284 svn://http:svn.enlightenment.org/svn/e/trunk/eina::40284
+[D] X eina-r40284.tar.bz2 svn://http:svn.enlightenment.org/svn/e/trunk/eina::40284
 

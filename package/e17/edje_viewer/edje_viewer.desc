@@ -21,25 +21,22 @@
 [COPY] 
 [COPY] --- ROCK-COPYRIGHT-NOTE-END ---
 
-[I] TODO: Short Information
+[I] simple edje file viewer
 
-[T] TODO: Long Expanation
-[T] TODO: Long Expanation
-[T] TODO: Long Expanation
-[T] TODO: Long Expanation
-[T] TODO: Long Expanation
+[T] A simple viewer for edj files. Should provide more ease of use
+[T] than the edje viewer that comes with edje itself.
 
-[U] TODO: URL
+[U] http://www.enlightenment.org/
 
-[A] TODO: Author
+[A] urandom <vkojouharov@gmail.com>
 [M] Sebastian Knapp <rock@ccls-online.de>
 
-[C] TODO: Category
+[C] extra/desktop
 
-[L] TODO: License
-[S] TODO: Status
-[V] TODO: Version
+[L] OpenSource
+[S] Beta
+[V] r40284
 [P] X -----5---9 800.000
 
-[D] 0 edje_viewer::39615 svn://http:svn.enlightenment.org/svn/e/trunk/
+[D] 0 edje_viewer-r40384.tar.bz2 svn://http:svn.enlightenment.org/svn/e/trunk/edje_viewer::40284
 

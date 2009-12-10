@@ -6,8 +6,8 @@
 [COPY] the ROCK-COPYRIGHT-NOTE-END tag. Otherwise it might get removed by
 [COPY] the ./scripts/Create-CopyPatch script. Do not edit this copyright text!
 [COPY] 
-[COPY] ROCK Linux: rock-src/package/e17/evidence/evidence.desc
-[COPY] ROCK Linux is Copyright (C) 1998 - 2006 Clifford Wolf
+[COPY] ROCK Linux: rock-src/package/e17/editje/editje.desc
+[COPY] ROCK Linux is Copyright (C) 1998 - 2009 Clifford Wolf
 [COPY] 
 [COPY] This program is free software; you can redistribute it and/or modify
 [COPY] it under the terms of the GNU General Public License as published by
@@ -21,22 +21,23 @@
 [COPY] 
 [COPY] --- ROCK-COPYRIGHT-NOTE-END ---
 
-[I] Enlightened file-manager
+[I] GUI oriented graphical edje editor
 
-[T] Enlightenment 17 based filemanager supporting attributes.
+[T] Editje, a nice tool to graphically edit edje files.
+[T] Samsung Electronics just allowed ProFUSION to release Editje as
+[T] LGPL-3. They are silently helping improve EFL and Editje is the first
+[T] public product of their help.
 
-[U] http://evidence.sourceforge.net/d
+[U] http://www.enlightenment.org
 
-[A] Azundris <evidence@azundris.com>
+[A] ProFUSION embedded systems, lease see AUTHORS file
 [M] Sebastian Knapp <rock@ccls-online.de>
 
-[C] extra/desktop/enlightenment
-#[C] extra/filesystem
+[C] extra/development
 
-[L] BSD
-[S] Beta
-[V] 2006-06-01
-[P] X --?--5---9 220.000
+[L] LGPL
+[S] Alpha
+[V] r40284
+[P] X -----5---9 800.000
 
-[D] X evidence-2006-06-01.tar.bz2 cvs://pserver:anonymous@evidence.cvs.sourceforge.net:/cvsroot/evidence::evidence/!2006-06-01/
-
+[D] 0 editje-r40284.tar.bz2 svn://http:svn.enlightenment.org/svn/e/trunk/editje::40284/

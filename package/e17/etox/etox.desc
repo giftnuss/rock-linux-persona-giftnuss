@@ -33,15 +33,15 @@
 [U] http://www.enlightenment.org
 
 [A] Nathan Ingersoll <rbdpngn@users.sourceforge.net>
-[M] Mathieu Doidy <mdoidy@roulaize.net>
+[M] Sebastian Knapp <rock@ccls-online.de>
 
 [C] extra/desktop/enlightenment
 [C] extra/multimedia
 
 [L] BSD
 [S] Alpha
-[V] 2005-09-11
+[V] r40284
 [P] O --?--5---9 196.800
 
-[D] X etox-2005-09-11.tar.bz2 cvs://pserver:anonymous@enlightenment.cvs.sourceforge.net:/cvsroot/enlightenment::e17/libs/etox/!2005-09-11/
+[D] X etox-r40284.tar.bz2 svn://http:svn.enlightenment.org/svn/e/trunk/BROKEN/etox::40284
 
