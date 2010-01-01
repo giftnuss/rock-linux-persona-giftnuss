@@ -35,8 +35,9 @@
 [C] extra/development
 
 [L] GPL
-[S] Beta
-[V] 0.9.5
+[S] Stable
+[V] 1.4.1
 [P] X -----5---9 279.900
 
-[D] 2680207181 mercurial-0.9.5.tar.gz http://www.selenic.com/mercurial/release/
+[D] 3351204951 mercurial-1.4.1.tar.gz http://www.selenic.com/mercurial/release/
+
