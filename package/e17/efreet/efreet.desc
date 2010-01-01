@@ -27,10 +27,10 @@
 [T] intended for use in Enlightenment DR17 (e17) and other applications using
 [T] the Enlightenment Foundation Libraries (EFL). Currently, the following
 [T] specifications are included:
-[T]	         o Base Directory
-[T]		 o Desktop Entry
-[T]		 o Icon Theme
-[T]		 o Menu
+[T]         - Base Directory
+[T]         - Desktop Entry
+[T]         - Icon Theme
+[T]         - Menu
 
 [U] http://trac.enlightenment.org/e/browser/trunk/efreet
 
@@ -41,12 +41,13 @@
 [A] Nicholas 'Mekius' Hughart
 [M] Sebastian Knapp <rock@ccls-online.de>
 
-[C] extra/desktop
+[C] extra/desktop/enlightenment
 
 [L] BSD
 [S] Beta
 [V] r44831
-[P] X -----5---9 168.000
+[P] X -----5---9 168.500
 
 [D] X efreet-r44831.tar.bz2 svn://http:svn.enlightenment.org/svn/e/trunk/efreet::44831
 
+[O] source $base/package/*/imlib2/e17.conf

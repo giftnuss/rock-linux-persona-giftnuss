@@ -35,7 +35,9 @@
 [L] BSD
 [S] Beta
 [V] r44831
-[P] X -----5---9 800.000
+[P] X -----5---9 168.450
 
 [D] X e_dbus-r44831.tar.bz2 svn://http:svn.enlightenment.org/svn/e/trunk/e_dbus/::44831
 
+[O] NO_E17_CHECK="1"
+[O] source $base/package/e17/imlib2/e17.conf

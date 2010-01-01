@@ -6,8 +6,8 @@
 [COPY] the ROCK-COPYRIGHT-NOTE-END tag. Otherwise it might get removed by
 [COPY] the ./scripts/Create-CopyPatch script. Do not edit this copyright text!
 [COPY] 
-[COPY] ROCK Linux: rock-src/package/e17/eet/eet.desc
-[COPY] ROCK Linux is Copyright (C) 1998 - 2006 Clifford Wolf
+[COPY] ROCK Linux: rock-src/package/e17/elementary/elementary.desc
+[COPY] ROCK Linux is Copyright (C) 1998 - 2010 Clifford Wolf
 [COPY] 
 [COPY] This program is free software; you can redistribute it and/or modify
 [COPY] it under the terms of the GNU General Public License as published by
@@ -21,28 +21,30 @@
 [COPY] 
 [COPY] --- ROCK-COPYRIGHT-NOTE-END ---
 
-[I] Container library, part of the EFL
+[I] easy to use basic widget for mobile touch-screen devices
 
-
-[T] EET is a tiny library designed to write an arbitary set of chunks of data 
-[T] to a file and optionally compress each chunk (very much like a zip file) 
-[T] and allow fast random-access reading of the file later on. It does not do 
-[T] zip as a zip itself has more complexity than is needed, and it was much 
-[T] simpler to impliment this once here.
+[T] Elementary is a widget set. It is a new-style of widget set much more
+[T] canvas object based than anything else. Why not ETK? Why not EWL? Well 
+[T] they both tend to veer away from the core of Evas, Ecore and Edje a 
+[T] lot to build their own worlds. Also I wanted something focused on 
+[T] embedded devices - specifically small touchscreens. Unlike GTK+ and
+[T] Qt, 75% of the "widget set" is already embodied in a common 
+[T] core - Ecore, Edje, Evas etc. So this fine-grained library splitting
+[T] means all of this is shared, just a new widget "personality" is on top.
 
 [U] http://www.enlightenment.org
 
-[A] Rasterman <raster@rasterman.com>
-[M] Mathieu Doidy <mdoidy@roulaize.net>
+[A] many, please see AUTHORS file
+[M] Sebastian Knapp <rock@ccls-online.de>
 
+[C] extra/development
 [C] extra/desktop/enlightenment
-[C] extra/database
 
-[L] BSD
+[L] LGPL
 [S] Beta
-[V] r44831 
-[P] X --?--5---9 166.400
+[V] r44831
+[P] X -----5---9 169.000
 
-[D] X eet-r44831.tar.bz2 svn://http:svn.enlightenment.org/svn/e/trunk/eet::44831
+[D] X elementary-r44831.tar.bz2 svn://http:svn.enlightenment.org/svn/e/trunk/TMP/st/elementary::44831
 
 [O] source $base/package/*/imlib2/e17.conf
