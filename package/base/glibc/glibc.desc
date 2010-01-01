@@ -92,8 +92,8 @@
 
 #if xpkg == glibc211.*
 [V] 2.11
-[0] 0 glibc-2.11.tar.bz2 http://ftp.gnu.org/gnu/glibc/
-[0] 0 glibc-ports-2.11.tar.bz2 http://ftp.gnu.org/gnu/glibc/
+[D] 0 glibc-2.11.tar.bz2 http://ftp.gnu.org/gnu/glibc/
+[D] 0 glibc-ports-2.11.tar.bz2 http://ftp.gnu.org/gnu/glibc/
 [D] 0 glibc-libidn-2.9.tar.bz2 http://ftp.gnu.org/gnu/glibc/
 #endif
 
