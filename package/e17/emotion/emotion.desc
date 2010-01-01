@@ -31,15 +31,15 @@
 [U] http://www.enlightenment.org
 
 [A] Rasterman <raster@rasterman.com>
-[M] Mathieu Doidy <mdoidy@roulaize.net>
+[M] Sebastian Knapp <rock@ccls-online.de>
 
 [C] extra/desktop/enlightenment
 [C] extra/development
 
 [L] BSD
 [S] Beta
-[V] 2005-09-11
+[V] r44831
 [P] X --?--5---9 204.500
 
-[D] X emotion-2005-09-11.tar.bz2 cvs://pserver:anonymous@enlightenment.cvs.sourceforge.net:/cvsroot/enlightenment::e17/libs/emotion/!2005-09-11/
+[D] X emotion-r44831.tar.bz2 svn://http:svn.enlightenment.org/svn/e/trunk/emotion::44831
 

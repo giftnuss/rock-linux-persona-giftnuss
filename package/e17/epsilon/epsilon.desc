@@ -36,8 +36,8 @@
 
 [L] BSD
 [S] Beta
-[V] 2005-09-11
+[V] r44831
 [P] X --?--5---9 168.200
 
-[D] X epsilon-2005-09-11.tar.bz2 cvs://pserver:anonymous@enlightenment.cvs.sourceforge.net:/cvsroot/enlightenment::e17/libs/epsilon/!2005-09-11/
+[D] X epsilon-r44831.tar.bz2 svn://http:svn.enlightenment.org/svn/e/trunk/OLD/epsilon::44831
 

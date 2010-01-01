@@ -33,14 +33,13 @@
 [SIZE] 1.10 MB, 70 files
 
 [DEP] 00-dirtree applewmproto applewmproto:dev autoconf automake19
-[DEP] bash2 binutils bzip2 bzip2:dev coreutils cvm diffutils findutils
-[DEP] freetype freetype:dev gawk gcc42 gcc42:dev glibc26 glibc26:dev
-[DEP] grep imake libice libjpeg libjpeg:dev libpng libpng:dev libsm
-[DEP] libtiff libtiff:dev libtool libungif libungif:dev libx11 libx11:dev
-[DEP] libxau libxau:dev libxcb libxcb:dev libxdmcp libxdmcp:dev libxext
-[DEP] libxext:dev libxt linux26-headers:dev ltrace m4 mad mad:dev make
-[DEP] mktemp net-tools perl5 sed sysfiles tar util-linux xextproto:dev
-[DEP] xmame xorg-cf-files xproto:dev zlib zlib:dev
+[DEP] bash2 binutils bzip2 bzip2:dev coreutils diffutils findutils
+[DEP] freetype freetype:dev gawk gcc43 gcc43:dev glibc29 glibc29:dev grep
+[DEP] imake libice libjpeg libjpeg:dev libpng libpng:dev libtool libx11
+[DEP] libx11:dev libxau libxau:dev libxcb libxcb:dev libxdmcp libxdmcp:dev
+[DEP] libxext libxext:dev libxt linux26-headers:dev m4 mad mad:dev make
+[DEP] mktemp net-tools perl5 pkgconfig sed sysfiles tar util-linux-ng
+[DEP] xextproto:dev xorg-cf-files xproto:dev zlib zlib:dev
 
 [PROVIDES] argb.a argb.so bmp.a bmp.so bumpmap.a bumpmap.so bz2.a bz2.so
 [PROVIDES] colormod.a colormod.so gif.a gif.so id3.a id3.so imlib2-config

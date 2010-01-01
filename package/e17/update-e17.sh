@@ -26,4 +26,4 @@ for pkg in $(grep -l "\[V\] r$OLD" package/e17/*/*.desc); do
   sed -i -e"s/$OLD/$NEW/g" $pkg
 done
 
-echo "Updated done."
+echo "Update done."

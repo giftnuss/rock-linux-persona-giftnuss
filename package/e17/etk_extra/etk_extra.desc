@@ -21,25 +21,24 @@
 [COPY] 
 [COPY] --- ROCK-COPYRIGHT-NOTE-END ---
 
-[I] TODO: Short Information
+[I] Etk Extra
 
-[T] TODO: Long Expanation
-[T] TODO: Long Expanation
-[T] TODO: Long Expanation
-[T] TODO: Long Expanation
-[T] TODO: Long Expanation
+[T] Etk extra is a collection of extra widgets, models, or anything that
+[T] doesnt fit directly in the Etk source tree. Every component is in the
+[T] form of a shared object that can be linked against by your application.
 
-[U] TODO: URL
+[U] http://www.enlightenment.org
 
-[A] TODO: Author
+[A] Hisham 'CodeWarrior' Mardam Bey <hisham.mardambey@gmail.com>
+[A] Simon 'MoOm' Treny <simon.treny@free.fr>
 [M] Sebastian Knapp <rock@ccls-online.de>
 
-[C] TODO: Category
+[C] extra/development
 
-[L] TODO: License
-[S] TODO: Status
-[V] TODO: Version
+[L] BSD
+[S] Alpha
+[V] r44831
 [P] X -----5---9 800.000
 
-[D] 0 etk_extra::39615 svn://http:svn.enlightenment.org/svn/e/trunk/
+[D] X etk_extra-r39615.tar.bz2 svn://http:svn.enlightenment.org/svn/e/trunk/OLD/etk_extra::44831
 
