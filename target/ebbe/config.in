@@ -22,6 +22,7 @@
 
 pkgfilter sed -e '
    / e17 / { p; d; };
+   / lua / { p; d; };    # edje makes use of it now
    / taglib / { p; d; }; # a dep of eclair
    / jed / { p; d; };    # a nice to have for me
    
