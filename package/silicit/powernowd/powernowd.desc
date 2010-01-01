@@ -35,11 +35,11 @@
 
 [C] extra/server
 [L] GPL
-[S] Beta
+[S] Stable
 
-[V] 0.97
+[V] 1.00
 
 [P] X --?--5---9 277.500
-[D] 1684011574 powernowd-0.97.tar.gz http://www.deater.net/john/
+[D] 1553570019 powernowd-1.00.tar.gz http://www.deater.net/john/
 
 [O] postmake="install_init powernowd $confdir/powernowd.init"
