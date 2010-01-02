@@ -28,6 +28,8 @@
 [T] shadow password format, and additional tools to maintain password
 [T] and group files (that work with both shadow and non-shadow passwords).
 
+[U] http://pkg-shadow.alioth.debian.org/
+
 [A] Julianne F. Haugh <jfh@austin.ibm.com>
 [A] Marek Michalkiewicz <marekm@linux.org.pl>
 [M] Clifford Wolf <clifford@clifford.at>
@@ -38,8 +40,8 @@
 
 [L] BSD
 [S] Stable
-[V] 4.0.14
+[V] 4.1.4.2
 [P] X --X-4----9 213.000
 
-[D] 1814445054 shadow-4.0.14.tar.bz2 ftp://ftp.pld.org.pl/software/shadow/
+[D] 3371430688 shadow-4.1.4.2.tar.bz2 ftp://pkg-shadow.alioth.debian.org/pub/pkg-shadow/
 

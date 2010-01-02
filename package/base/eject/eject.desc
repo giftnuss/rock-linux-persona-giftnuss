@@ -27,8 +27,6 @@
 [T] control the auto-eject feature of some drives and can be used to switch 
 [T] CDs on an IDE/ATAPI CD changer.
 
-[U] http://ca.geocities.com/jefftranter@rogers.com/eject.html
-
 [A] Jeff Tranter <tranter@pobox.com>
 [M] The ROCK Linux Project
 
@@ -37,8 +35,8 @@
 
 [L] GPL
 [S] Stable
-[V] 2.1.4
+[V] 2.1.5.20081104.6
 [P] X --?--5---9 214.800
 
-[D] 3252745238 eject-2.1.4.tar.gz http://ca.geocities.com/jefftranter@rogers.com/
+[D] X eject-2.1.5+deb1+cvs20081104-6.tar.bz2 git clone -n git://git.debian.org/git/collab-maint/eject.git ; checkout 2.1.5+deb1+cvs20081104-6
 
