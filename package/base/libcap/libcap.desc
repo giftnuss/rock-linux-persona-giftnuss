@@ -41,8 +41,8 @@
 
 [L] GPL
 [S] Stable
-[V] 2.16
+[V] 2.18
 [P] X --?--5---9 106.000
 
-[D] 1100849358 libcap-2.16.tar.bz2 http://www.kernel.org/pub/linux/libs/security/linux-privs/libcap2/
+[D] 2552519153 libcap-2.18.tar.bz2 http://www.kernel.org/pub/linux/libs/security/linux-privs/libcap2/
 

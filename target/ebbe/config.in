@@ -26,18 +26,14 @@ pkgfilter sed -e '
    / taglib / { p; d; }; # a dep of eclair
    / jed / { p; d; };    # a nice to have for me
    
-   # inkscape deps      -- experimental
-   / libsigc++ / { p; d; };
-   / cairomm / { p; d; };
-   / gdkmm / { p; d; };
-   / glibmm / { p; d; };
-   / gtkmm / { p; d; };
-   #                    -- 
    / CORE / ! s/^X/O/;
+   / compiz / s/^X/O/;
    / kde / s/^X/O/;
-   / kaffeine / s/^X/O/;
    '
-   
+
+pkgdisable kaffeine
+pkgdisable dhcp
+
 ROCKCFGSET_DO_REBUILD_STAGE=0
 
 ROCKCFGSET_PKG_PERL5_THREADS=1
