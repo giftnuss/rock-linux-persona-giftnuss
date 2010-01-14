@@ -1,0 +1,81 @@
+--- ./makes/Make.lib.orig	2009-09-27 10:29:59.000000000 +0200
++++ ./makes/Make.lib	2009-09-27 10:30:31.000000000 +0200
+@@ -50,31 +50,31 @@
+ 	$(MAKE) libatlas.so libclapack.so libcblas.so
+ 
+ libatlas.so : libatlas.a
+-	ld $(LDFLAGS) -shared -soname $(LIBINSTdir)/libatlas.so -o libatlas.so \
++	ld $(LDFLAGS) -shared -soname libatlas.so -o libatlas.so \
+            -rpath-link $(LIBINSTdir) \
+            --whole-archive libatlas.a --no-whole-archive -lc $(LIBS)
+ liblapack.so : liblapack.a
+-	ld $(LDFLAGS) -shared -soname $(LIBINSTdir)/liblapack.so \
++	ld $(LDFLAGS) -shared -soname liblapack.so \
+             -o liblapack.so  -rpath-link $(LIBINSTdir) --whole-archive \
+            liblapack.a --no-whole-archive $(F77SYSLIB)
+ libclapack.so : libclapack.a
+-	ld $(LDFLAGS) -shared -soname $(LIBINSTdir)/libclapack.so \
++	ld $(LDFLAGS) -shared -soname libclapack.so \
+            -o libclapack.so -rpath-link $(LIBINSTdir) \
+            --whole-archive libclapack.a --no-whole-archive -lc $(LIBS)
+ libptf77blas.so : libptf77blas.a
+-	ld $(LDFLAGS) -shared -soname $(LIBINSTdir)/libptf77blas.so \
++	ld $(LDFLAGS) -shared -soname libptf77blas.so \
+            -o libptf77blas.so -rpath-link $(LIBINSTdir) \
+            --whole-archive libptf77blas.a --no-whole-archive $(F77SYSLIB)
+ libf77blas.so : libf77blas.a
+-	ld $(LDFLAGS) -shared -soname $(LIBINSTdir)/libf77blas.so \
++	ld $(LDFLAGS) -shared -soname libf77blas.so \
+            -o libf77blas.so -rpath-link $(LIBINSTdir) \
+            --whole-archive libf77blas.a --no-whole-archive $(F77SYSLIB)
+ libptcblas.so : libptcblas.a
+-	ld $(LDFLAGS) -shared -soname $(LIBINSTdir)/libptcblas.so \
++	ld $(LDFLAGS) -shared -soname libptcblas.so \
+            -o libptcblas.so -rpath-link $(LIBINSTdir) \
+           --whole-archive libptcblas.a --no-whole-archive -lc $(LIBS)
+ libcblas.so : libcblas.a
+-	ld $(LDFLAGS) -shared -soname $(LIBINSTdir)/libcblas.so \
++	ld $(LDFLAGS) -shared -soname libcblas.so \
+            -o libcblas.so -rpath-link $(LIBINSTdir) \
+           --whole-archive libcblas.a --no-whole-archive -lc $(LIBS)
+ 
+@@ -118,32 +118,32 @@
+ ptcdlls: libatlas.dll libptcblas.dll libclapack.dll
+ 
+ libatlas.dll : libatlas.a
+-	ld $(LDFLAGS) -shared -soname $(LIBINSTdir)/libatlas.dll \
++	ld $(LDFLAGS) -shared -soname libatlas.dll \
+            -o libatlas.dll -rpath-link $(LIBINSTdir) \
+            --whole-archive libatlas.a --no-whole-archive -lc $(LIBS)
+ libcblas.dll : libcblas.a libatlas.dll
+-	ld $(LDFLAGS) -shared -soname $(LIBINSTdir)/libcblas.dll \
++	ld $(LDFLAGS) -shared -soname libcblas.dll \
+            -o libcblas.dll -rpath-link $(LIBINSTdir) \
+           --whole-archive libcblas.a --no-whole-archive libatlas.dll -lc $(LIBS)
+ libf77blas.dll : libf77blas.a libatlas.dll
+-	ld $(LDFLAGS) -shared -soname $(LIBINSTdir)/libf77blas.dll \
++	ld $(LDFLAGS) -shared -soname libf77blas.dll \
+            -o libf77blas.dll -rpath-link $(LIBINSTdir) --whole-archive \
+            libf77blas.a --no-whole-archive libatlas.dll $(F77SYSLIB) -lc $(LIBS)
+ libptcblas.dll : libptcblas.a libatlas.dll
+-	ld $(LDFLAGS) -shared -soname $(LIBINSTdir)/libptcblas.dll \
++	ld $(LDFLAGS) -shared -soname libptcblas.dll \
+            -o libptcblas.dll -rpath-link $(LIBINSTdir) --whole-archive \
+            libptcblas.a --no-whole-archive libatlas.dll -lc $(LIBS)
+ libptf77blas.dll : libptf77blas.a libatlas.dll
+-	ld $(LDFLAGS) -shared -soname $(LIBINSTdir)/libptf77blas.dll \
++	ld $(LDFLAGS) -shared -soname libptf77blas.dll \
+            -o libptf77blas.dll -rpath-link $(LIBINSTdir) --whole-archive \
+            libptf77blas.a --no-whole-archive libatlas.a $(F77SYSLIB) -lc $(LIBS)
+ liblapack.dll : liblapack.a libatlas.dll libf77blas.dll libcblas.dll
+-	ld $(LDFLAGS) -shared -soname $(LIBINSTdir)/liblapack.dll \
++	ld $(LDFLAGS) -shared -soname liblapack.dll \
+             -o liblapack.dll  -rpath-link $(LIBINSTdir) --whole-archive \
+            liblapack.a --no-whole-archive libf77blas.dll libcblas.dll \
+            libatlas.dll $(F77SYSLIB) -lc $(LIBS)
+ libclapack.dll : libclapack.a libatlas.dll libcblas.dll
+-	ld $(LDFLAGS) -shared -soname $(LIBINSTdir)/libclapack.dll \
++	ld $(LDFLAGS) -shared -soname libclapack.dll \
+            -o libclapack.dll -rpath-link $(LIBINSTdir) --whole-archive \
+            libclapack.a --no-whole-archive libcblas.dll libatlas.dll -lc $(LIBS)
+ 
