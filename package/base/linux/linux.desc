@@ -50,8 +50,8 @@
 #endif
 
 #if xpkg == linux26.*
-[V] 2.6.30.1
-[D] 2376680309 linux-2.6.30.1.tar.bz2 http://www.kernel.org/pub/linux/kernel/v2.6/
+[V] 2.6.32.2
+[D] 1751040911 linux-2.6.32.2.tar.bz2 http://www.kernel.org/pub/linux/kernel/v2.6/
 #endif
 
 [CD] <COPY> for x in $cachedir/linux2[46].cache; do cp $x $confdir/$pkg.cache; done
