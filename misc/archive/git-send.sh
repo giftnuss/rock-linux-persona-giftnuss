@@ -23,7 +23,7 @@ fi
 i=0
 for p; do
 	fn=`printf "git-send-tmp%03d.txt" $i`
-	awk 'pass { print; next; } /^From:/ { gsub(/^From: /, ""); gsub(/ *<.*/, ""); name=$0; next; } /^Subject:/ { gsub(/^.*PATCH\] */, ""); message="\t" $0; next; } /^---/ { print "\n" name ":\n" message "\n"; next; } /^diff/ { print; pass=1; next; } /./ { message = message "\n\t" $0; }' < "$p" > $fn
+	awk 'pass { print; next; } /^From:/ { gsub(/^From: /, ""); gsub(/ *<.*/, ""); name=$0; next; } /^Subject:/ { gsub(/^.*PATCH[0-9/ ]*\] */, ""); message="\t" $0; next; } /^---/ { print "\n" name ":\n" message "\n"; next; } /^diff/ { print; pass=1; next; } /./ { message = message "\n\t" $0; }' < "$p" > $fn
 	if [ "$username" != "-" ]; then
 		curl -k -F u="$username" -F p="$password" -F a=new -F q=1 -F f=\@$fn "$URL/smadm.cgi"
 	fi
