@@ -43,3 +43,4 @@
 
 [D] X estickies-r44831.tar.bz2 svn://http:svn.enlightenment.org/svn/e/trunk/estickies::44831
 
+[O] source $base/package/*/imlib2/e17.conf

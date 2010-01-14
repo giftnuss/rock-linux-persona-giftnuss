@@ -31,12 +31,12 @@
 [A] urandom <vkojouharov@gmail.com>
 [M] Sebastian Knapp <rock@ccls-online.de>
 
-[C] extra/desktop
+[C] extra/desktop/enlightenment
 
 [L] OpenSource
 [S] Beta
 [V] r44831
 [P] X -----5---9 800.000
 
-[D] 0 edje_viewer-r40384.tar.bz2 svn://http:svn.enlightenment.org/svn/e/trunk/edje_viewer::44831
+[D] X edje_viewer-r40384.tar.bz2 svn://http:svn.enlightenment.org/svn/e/trunk/edje_viewer::44831
 

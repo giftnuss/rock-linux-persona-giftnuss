@@ -39,3 +39,4 @@
 
 [D] X etk-r40284.tar.bz2 svn://http:svn.enlightenment.org/svn/e/trunk/OLD/etk::40284
 
+[O] source $base/package/*/imlib2/e17.conf
