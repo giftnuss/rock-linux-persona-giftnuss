@@ -161,10 +161,12 @@ block_begin 3
 			sed 's,[^0-9],,g'`"
 		text 'Maximum size of job queue' ROCKCFG_PARALLEL_MAX 10
 		text 'Command for adding jobs' ROCKCFG_PARALLEL_ADDJOB ''
+		ROCKCFG_MAKEJ=1
 	    block_end
 	else
 		bool 'Abort when a package-build fails' \
 						ROCKCFG_ABORT_ON_ERROR 0
+		text 'Parallel make processes' ROCKCFG_MAKEJ 1
 	fi
 	bool 'Retry building broken packages' ROCKCFG_RETRY_BROKEN 0
 	bool 'Disable packages which are marked as broken' \

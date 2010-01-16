@@ -640,6 +640,21 @@ apply_patchfiles() {
         done
 }
 
+# Run make command
+run_make_with_options() {
+	local makecmd
+	if [ "$makeopt" ]
+	then
+        	if [ $makej -gt 1 ]; then
+			makecmd="$MAKE -j$makej $makeopt"
+		else
+			makecmd="$MAKE $makeopt"
+        	fi
+	fi
+	eval echo "Running: ${makecmd//\"/\\\"}"
+	eval "$makecmd"
+}
+
 # Main program for building a package
 #
 build_this_package() {
@@ -781,10 +796,7 @@ build_this_package() {
 				# Build it
 				#		
 				hook_eval premake
-				if [ "$makeopt"     ]
-				then
-					eval echo "Running: $MAKE ${makeopt//\"/\\\"}"
-					eval "$MAKE $makeopt"; fi
+			        run_make_with_options
 				hook_eval inmake
 				if [ "$makeinstopt" ]
 				then

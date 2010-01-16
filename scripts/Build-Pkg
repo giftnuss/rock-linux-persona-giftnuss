@@ -593,6 +593,7 @@ if [ "$ROCKCFG_SPLIT_DOC" != 0 ]; then
 	splitdesc_doc() { desc_I="$desc_I (documentation)"; }
 fi
 
+makej=$ROCKCFG_MAKEJ
 makeopt='CC="$CC" CXX="$CXX"'
 if [ $stagelevel -le 2 ] ; then
 	var_append makeopt ' ' 'CC_FOR_BUILD="$BUILDCC"'

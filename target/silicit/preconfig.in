@@ -20,6 +20,5 @@
 # 
 # --- ROCK-COPYRIGHT-NOTE-END ---
 
-# http://epia.std-err.de/   good source of info
-CFGTEMP_TARGETLIST="$CFGTEMP_TARGETLIST epiam ROCK_Linux_for_VIA_EPIA_M"
+CFGTEMP_TARGETLIST="$CFGTEMP_TARGETLIST silicit Server_Target"
 

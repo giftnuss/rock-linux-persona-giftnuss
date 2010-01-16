@@ -5,8 +5,8 @@
 # the ROCK-COPYRIGHT-NOTE-END tag. Otherwise it might get removed by
 # the ./scripts/Create-CopyPatch script. Do not edit this copyright text!
 # 
-# ROCK Linux: rock-src/target/silicit/preconfig.in
-# ROCK Linux is Copyright (C) 1998 - 2006 Clifford Wolf
+# ROCK Linux: rock-src/target/ebbe/config.in
+# ROCK Linux is Copyright (C) 1998 - 2007 Clifford Wolf
 # 
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -20,5 +20,21 @@
 # 
 # --- ROCK-COPYRIGHT-NOTE-END ---
 
-CFGTEMP_TARGETLIST="$CFGTEMP_TARGETLIST silicit "
+pkgfilter sed -e '
+   / e17 / { p; d; };
+   / lua / { p; d; };
+   / taglib / { p; d; };
+   / jed / { p; d; };
+   / exim / { p; d; }
+   / base / ! s/^X/O/;
+   '
 
+ROCKCFGSET_DO_REBUILD_STAGE=0
+ROCKCFGSET_SPLIT_DOC=0
+ROCKCFGSET_SPLIT_DEV=0
+	
+ROCKCFGSET_PKG_PERL5_THREADS=1
+
+ROCKCFGSET_DEFAULT_MTA=exim
+pkgenable exim
+pkgdisable postfix
