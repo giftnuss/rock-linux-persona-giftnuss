@@ -1,0 +1,183 @@
+--- ash-linux-0.2/mkinit.c.orig	2010-01-19 03:29:23.000000000 +0100
++++ ash-linux-0.2/mkinit.c	2010-01-19 03:34:34.000000000 +0100
+@@ -58,9 +58,11 @@
+ 
+ 
+ #include <sys/cdefs.h>
++#include <stdlib.h>
+ #include <stdio.h>
+ #include <fcntl.h>
+-
++#include <string.h>
++#include <unistd.h>
+ 
+ /*
+  * OUTFILE is the name of the output file.  Output is initially written
+@@ -517,9 +519,9 @@
+ void *
+ ckmalloc(nbytes) {
+ 	register char *p;
+-	char *malloc();
++	/* char *malloc(); */
+ 
+-	if ((p = malloc(nbytes)) == NULL)
++	if ((p = (char *)malloc(nbytes)) == NULL)
+ 		error("Out of space");
+ 	return p;
+ }
+--- ash-linux-0.2/redir.c.orig	2010-01-19 03:46:51.000000000 +0100
++++ ash-linux-0.2/redir.c	2010-01-19 04:04:04.000000000 +0100
+@@ -51,10 +51,12 @@
+ #include "output.h"
+ #include "memalloc.h"
+ #include "error.h"
++#include <stdlib.h>
++#include <string.h>
+ #include <signal.h>
+ #include <fcntl.h>
+ #include <errno.h>
+-
++#include <unistd.h>
+ 
+ #define EMPTY -2		/* marks an unused slot in redirtab */
+ #define PIPESIZE 4095		/* amount of buffering in a pipe */
+--- ash-linux-0.2/mknodes.c.orig	2010-01-19 03:36:08.000000000 +0100
++++ ash-linux-0.2/mknodes.c	2010-01-19 03:44:05.000000000 +0100
+@@ -50,8 +50,9 @@
+  * the files nodes.h and nodes.c.
+  */
+ 
++#include <stdlib.h>
+ #include <stdio.h>
+-
++#include <string.h>
+ 
+ #define MAXTYPES 50		/* max number of node types */
+ #define MAXFIELDS 20		/* max fields in a structure */
+@@ -89,7 +90,7 @@
+ struct str *curstr;		/* current structure */
+ 
+ 
+-FILE *infp = stdin;
++FILE *infp;
+ char line[1024];
+ int linno;
+ char *linep;
+@@ -427,9 +428,9 @@
+ 	char *s;
+ 	{
+ 	register char *p;
+-	char *malloc();
++	/* char *malloc(); */
+ 
+-	if ((p = malloc(strlen(s) + 1)) == NULL)
++	if ((p = (char *)malloc(strlen(s) + 1)) == NULL)
+ 		error("Out of space");
+ 	strcpy(p, s);
+ 	return p;
+--- ash-linux-0.2/memalloc.c.orig	2010-01-19 03:49:30.000000000 +0100
++++ ash-linux-0.2/memalloc.c	2010-01-19 03:50:02.000000000 +0100
+@@ -45,6 +45,7 @@
+ #include "error.h"
+ #include "machdep.h"
+ #include "mystring.h"
++#include <stdlib.h>
+ 
+ /*
+  * Like malloc, but returns an error when out of space. 
+--- ash-linux-0.2/trap.c.orig	2010-01-19 03:58:26.000000000 +0100
++++ ash-linux-0.2/trap.c	2010-01-19 03:59:22.000000000 +0100
+@@ -52,7 +52,7 @@
+ #include "trap.h"
+ #include "mystring.h"
+ #include <signal.h>
+-
++#include <unistd.h>
+ 
+ /*
+  * Sigmode records the current value of the signal handlers for the various
+--- ash-linux-0.2/output.c.orig	2010-01-19 03:55:49.000000000 +0100
++++ ash-linux-0.2/output.c	2010-01-19 03:57:12.000000000 +0100
+@@ -61,6 +61,7 @@
+ #else
+ #include <varargs.h>
+ #endif
++#include <string.h>
+ #include <errno.h>
+ 
+ 
+--- ash-linux-0.2/main.c.orig	2010-01-19 04:26:42.000000000 +0100
++++ ash-linux-0.2/main.c	2010-01-19 04:27:13.000000000 +0100
+@@ -47,6 +47,7 @@
+ 
+ #include <signal.h>
+ #include <fcntl.h>
++#include <unistd.h>
+ #include "shell.h"
+ #include "main.h"
+ #include "mail.h"
+--- ash-linux-0.2/mail.c.orig	2010-01-19 04:29:51.000000000 +0100
++++ ash-linux-0.2/mail.c	2010-01-19 04:30:16.000000000 +0100
+@@ -51,7 +51,7 @@
+ #include "error.h"
+ #include <sys/types.h>
+ #include <sys/stat.h>
+-
++#include <stdlib.h>
+ 
+ #define MAXMBOXES 10
+ 
+--- ash-linux-0.2/input.c.orig	2010-01-19 04:31:36.000000000 +0100
++++ ash-linux-0.2/input.c	2010-01-19 04:32:22.000000000 +0100
+@@ -52,6 +52,7 @@
+ #include "output.h"
+ #include "memalloc.h"
+ #include "error.h"
++#include <string.h>
+ 
+ #define EOF_NLEFT -99		/* value of parsenleft when EOF pushed back */
+ 
+--- ash-linux-0.2/mksyntax.c.orig	2010-01-19 04:38:10.000000000 +0100
++++ ash-linux-0.2/mksyntax.c	2010-01-19 04:38:42.000000000 +0100
+@@ -51,6 +51,7 @@
+ 
+ #include <stdlib.h>
+ #include <stdio.h>
++#include <string.h>
+ #include "parser.h"
+ 
+ 
+--- ash-linux-0.2/error.c.orig	2010-01-19 04:42:18.000000000 +0100
++++ ash-linux-0.2/error.c	2010-01-19 04:48:15.000000000 +0100
+@@ -55,7 +55,8 @@
+ #include <varargs.h>	
+ #endif
+ #include <errno.h>
+-
++#include <stdlib.h>
++#include <unistd.h>
+ 
+ /*
+  * Code to handle exceptions in C.
+--- ash-linux-0.2/cd.c.orig	2010-01-19 04:46:33.000000000 +0100
++++ ash-linux-0.2/cd.c	2010-01-19 04:46:57.000000000 +0100
+@@ -55,7 +55,7 @@
+ #include <sys/types.h>
+ #include <sys/stat.h>
+ #include <errno.h>
+-
++#include <unistd.h>
+ 
+ #ifdef __STDC__
+ STATIC int docd(char *, int);
+--- ash-linux-0.2/Makefile.orig	2010-01-19 05:07:28.000000000 +0100
++++ ash-linux-0.2/Makefile	2010-01-19 05:08:22.000000000 +0100
+@@ -32,7 +32,7 @@
+ token.def: mktokens
+ 	sh ./mktokens
+ 
+-builtins.h builtins.c: mkbuiltins builtins
++builtins.h builtins.c: mkbuiltins
+ 	sh ./mkbuiltins
+ 
+ init.c: mkinit $(SRCS)
