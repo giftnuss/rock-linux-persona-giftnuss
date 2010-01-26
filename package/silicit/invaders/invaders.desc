@@ -6,8 +6,8 @@
 [COPY] the ROCK-COPYRIGHT-NOTE-END tag. Otherwise it might get removed by
 [COPY] the ./scripts/Create-CopyPatch script. Do not edit this copyright text!
 [COPY] 
-[COPY] ROCK Linux: rock-src/package/daja77/pth/pth.desc
-[COPY] ROCK Linux is Copyright (C) 1998 - 2006 Clifford Wolf
+[COPY] ROCK Linux: rock-src/package/silicit/invaders/invaders.desc
+[COPY] ROCK Linux is Copyright (C) 1998 - 2010 Clifford Wolf
 [COPY] 
 [COPY] This program is free software; you can redistribute it and/or modify
 [COPY] it under the terms of the GNU General Public License as published by
@@ -21,26 +21,22 @@
 [COPY] 
 [COPY] --- ROCK-COPYRIGHT-NOTE-END ---
 
-[I] GNU Pth - The GNU Portable Threads
+[I] invaders game
 
-[T] Pth is a very portable POSIX/ANSI-C based library for Unix platforms which 
-[T] provides non-preemptive priority-based scheduling for multiple threads of 
-[T] execution (aka ``multithreading'') inside event-driven applications. 
-[T] Additionally Pth provides an optional emulation API for POSIX.1c threads 
-[T] ("Pthreads") which can be used for backward compatibility to existing 
-[T] multithreaded applications.
+[T] This version of invaders does not need an operating system. Add it
+[T] to your start menu and save the planet from aiiens.
 
-[A] Ralf S. Engelschall <rse@gnu.org>
-[M] Daniel Jahre <daja@rocklinux.org>
+[U] http://www.erikyyy.de/invaders/
 
-[C] base/library
-[F] CORE
+[A] Erik Thiele
+[M] Sebastian Knapp <rock@ccls-online.de>
+
+[C] extra/game
 
 [L] GPL
 [S] Stable
-[V] 2.0.6
-[P] X --?--5---9 146.300
+[V] 1.0.0
+[P] X -----5---9 800.000
 
-[D] 1004479307 pth-2.0.6.tar.gz ftp://ftp.gnu.org/gnu/pth/
+[D] 2978156569 invaders-1.0.0.tar.gz http://www.erikyyy.de/invaders/
 
-[O] makej=1

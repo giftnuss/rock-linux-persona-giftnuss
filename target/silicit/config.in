@@ -21,11 +21,10 @@
 # --- ROCK-COPYRIGHT-NOTE-END ---
 
 pkgfilter sed -e '
-   / e17 / { p; d; };
    / lua / { p; d; };
-   / taglib / { p; d; };
    / jed / { p; d; };
-   / exim / { p; d; }
+   / exim / { p; d; };
+   / glib / { p; d; }; # fribidi dependency
    / base / ! s/^X/O/;
    '
 
@@ -38,3 +37,19 @@ ROCKCFGSET_PKG_PERL5_THREADS=1
 ROCKCFGSET_DEFAULT_MTA=exim
 pkgenable exim
 pkgdisable postfix
+
+pkgdisable mysql41
+pkgdisable gcc2
+pkgdisable gcc32
+pkgdisable gcc33
+pkgdisable gcc34
+pkgdisable gcc40
+pkgdisable gcc41
+pkgdisable gcc42
+
+# this does not compile with gcc43, because missing  iostream.h 
+pkgdisable bdb33
+
+# if enabled this would need imake
+# network audio server
+pkgdisable nas
