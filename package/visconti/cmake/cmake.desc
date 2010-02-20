@@ -41,8 +41,8 @@
 
 [L] BSD
 [S] Stable
-[V] 2.6.4
+[V] 2.8.0
 [P] X -----5---9 157.100
 
-[D] 1423704238 cmake-2.6.4.tar.gz http://www.cmake.org/files/v2.6/
+[D] 0 cmake-2.8.0.tar.gz http://www.cmake.org/files/v2.6/
 
