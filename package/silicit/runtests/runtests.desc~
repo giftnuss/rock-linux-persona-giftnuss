@@ -6,8 +6,8 @@
 [COPY] the ROCK-COPYRIGHT-NOTE-END tag. Otherwise it might get removed by
 [COPY] the ./scripts/Create-CopyPatch script. Do not edit this copyright text!
 [COPY] 
-[COPY] ROCK Linux: rock-src/package/visconti/cmake/cmake.desc
-[COPY] ROCK Linux is Copyright (C) 1998 - 2009 Clifford Wolf
+[COPY] ROCK Linux: rock-src/package/silicit/runtests/runtests.desc
+[COPY] ROCK Linux is Copyright (C) 1998 - 2010 Clifford Wolf
 [COPY] 
 [COPY] This program is free software; you can redistribute it and/or modify
 [COPY] it under the terms of the GNU General Public License as published by
@@ -21,28 +21,25 @@
 [COPY] 
 [COPY] --- ROCK-COPYRIGHT-NOTE-END ---
 
-[I] A cross-platform, open-source make system
+[I] TODO: Short Information
 
-[T] CMake is a cross-platform, open-source make system. CMake is used to
-[T] control the software compilation process using simple platform-
-[T] independent and compiler-independent configuration files. CMake generates
-[T] native makefiles and workspaces that can be used in the compiler
-[T] environment of your choice. CMake is quite sophisticated: it is possible
-[T] to support complex environments requiring system configuration,
-[T] preprocessor generation, code generation, and template instantiation.
+[T] TODO: Long Expanation
+[T] TODO: Long Expanation
+[T] TODO: Long Expanation
+[T] TODO: Long Expanation
+[T] TODO: Long Expanation
 
-[U] http://www.cmake.org/
+[U] TODO: URL
 
-[A] Kitware, Inc., Insight Consortium
-[M] The ROCK Linux Project
+[A] TODO: Author
+[M] Sebastian Knapp <rock@ccls-online.de>
 
-[C] extra/development
-[F] CORE
+[C] TODO: Category
 
-[L] BSD
-[S] Stable
-[V] 2.8.0
-[P] X -----5---9 157.100
+[L] TODO: License
+[S] TODO: Status
+[V] TODO: Version
+[P] X -----5---9 800.000
 
-[D] 0 cmake-2.8.0.tar.gz http://www.cmake.org/files/v2.6/
+[D] 0 DHCP w.isc.org/products/
 
