@@ -40,8 +40,8 @@
 
 [L] GPL
 [S] Stable
-[V] 0.70.1
+[V] 0.70.1 1
 [P] X --?--5---9 165.100
 
-[D] 2231485793 blackbox-0.70.1.tar.gz http://dl.sourceforge.net/sourceforge/blackboxwm/
+[D] X blackbox-2010-01-10.tar.bz2 cvs://pserver:anonymous@blackboxwm.cvs.sourceforge.net:/cvsroot/blackboxwm::blackbox/!2010-01-10/
 
