@@ -1,0 +1,29 @@
+--- ./rocket.sh.orig	2010-01-13 21:33:05.000000000 +0100
++++ ./rocket.sh	2010-01-13 21:32:43.000000000 +0100
+@@ -43,6 +43,8 @@
+ 	info <pkg> .......... print package details
+ 	flist <pkg> ......... print package file list
+ 
++	backup-flist ........ print a list of files suggested for backup
++
+ EOT
+ 	exit 1
+ }
+@@ -546,6 +548,17 @@
+ 	md5sum packages_stripped.db > packages_stripped.db.md5
+ 	;;
+ 
++    backup-flist)
++	dirs="/bin /boot /etc /lib /sbin /usr /var"
++	for dir in root opt home usr/local usr/src; do echo $dir; done
++	prune="$( echo "-path "{/usr/local,/usr/src,/var/adm,/var/tmp}" -prune -o"; )"
++	gawk '
++		BEGIN { FS="  /?"; }
++		ARGIND == 1 { db[$2] = $1; }
++		ARGIND == 2 { if (db[$2] != "X" && db[$2] != $1) print $2; }
++	' <( cat /var/adm/md5sums/* ) <( xargs -r0a <( find $dirs $prune -type f -print0; ) md5sum; )
++	;;
++
+     *)
+ 	help
+ 	;;
