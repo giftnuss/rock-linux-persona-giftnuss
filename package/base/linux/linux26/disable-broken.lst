@@ -23,6 +23,11 @@
 # temporary fixes, do check if they have been solved after some time
 CONFIG_EXAMPLE			2000-01-01	2.6.0 # example.o
 
+# disable evbug module: it is loaded automatically at bootup and then
+# logs all input events to the kernel log. not really wanted on most
+# production machines.
+CONFIG_INPUT_EVBUG		2010-01-27	2.6.32.2
+
 # do not remove the following entries unless you are really sure about it..
 # ..nothing broken atm..
 
