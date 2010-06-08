@@ -51,6 +51,6 @@
 [A] many ( see http://eigen.tuxfamily.org/ }
 
 [S] Beta
-[V] 2.0-beta1
-[D] 2918473289 eigen-2.0-beta1.tar.bz2 http://download.tuxfamily.org/eigen/
+[V] 2.0.11
+[D] 31807602 eigen-2.0.11.tar.bz2 !http://bitbucket.org/eigen/eigen/get/2.0.11.tar.bz2
 #endif
