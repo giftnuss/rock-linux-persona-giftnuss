@@ -39,8 +39,9 @@
 
 [L] GPL
 [S] Stable
-[V] 5.14.0
+[V] 5.20.1
 [P] X --?--5---9 273.200
 
-[D] 3757724833 maxima-5.14.0.tar.gz http://dl.sourceforge.net/sourceforge/maxima/
+[D] 2088560549 maxima-5.20.1.tar.gz http://downloads.sourceforge.net/project/maxima/Maxima-source/5.20.1-source/
+
 
