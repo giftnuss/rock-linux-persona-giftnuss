@@ -815,6 +815,8 @@ download_file_now() {
 			  typeexpr="Zip archive data" ;;
 		      *.tar)
 			  typeexpr="tar archive" ;;
+                      *.xz)
+                          typeexpr="xz compressed data" ;;
 		      *.txt)
 			  typeexpr="ASCII English text" ;;
 		      *)
