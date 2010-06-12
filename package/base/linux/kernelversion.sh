@@ -13,7 +13,8 @@
 
 getkernelversion() {
 	if [ -f $root/usr/src/linux/Makefile ]; then
-		make -s -C $root/usr/src/linux -f <( echo -e 'include Makefile\nprintversion:\n\t@echo $(KERNELRELEASE)' ) printversion
+		# make -s -C $root/usr/src/linux -f <( echo -e 'include Makefile\nprintversion:\n\t@echo $(KERNELRELEASE)' ) printversion
+		make -s -C $root/usr/src/linux kernelversion
 	else
 		uname -r
 	fi
