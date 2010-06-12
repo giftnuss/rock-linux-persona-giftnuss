@@ -36,8 +36,8 @@
 
 [L] OpenSource
 [S] Stable
-[V] 1.0.0
-[P] X -----5---9 116.700
+[V] 1.0.1
+[P] X --X--5---9 116.700
 
-[D] 3079325802 libWindowsWM-1.0.0.tar.bz2 ftp://ftp.gwdg.de/pub/x11/x.org/pub/X11R7.3/src/lib/
+[D] 3681895305 libWindowsWM-1.0.1.tar.bz2 ftp://ftp.gwdg.de/pub/x11/x.org/pub/X11R7.5/src/lib/
 

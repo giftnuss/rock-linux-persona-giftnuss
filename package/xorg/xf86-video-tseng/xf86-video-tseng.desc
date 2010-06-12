@@ -36,8 +36,8 @@
 
 [L] OpenSource
 [S] Stable
-[V] 1.1.1
-[P] X -----5---9 136.000
+[V] 1.2.3
+[P] X --?--5---9 136.000
 
-[D] 4198103213 xf86-video-tseng-1.1.1.tar.bz2 ftp://ftp.gwdg.de/pub/x11/x.org/pub/X11R7.3/src/driver/
+[D] 3344649823 xf86-video-tseng-1.2.3.tar.bz2 ftp://ftp.gwdg.de/pub/x11/x.org/pub/X11R7.5/src/driver/
 

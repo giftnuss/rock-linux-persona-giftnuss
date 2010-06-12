@@ -36,8 +36,8 @@
 
 [L] OpenSource
 [S] Stable
-[V] 1.1.0
-[P] X -----5---9 133.500
+[V] 1.3.2
+[P] X --?--5---9 133.500
 
-[D] 1711381444 xf86-video-i740-1.1.0.tar.bz2 ftp://ftp.gwdg.de/pub/x11/x.org/pub/X11R7.3/src/driver/
+[D] 1248176010 xf86-video-i740-1.3.2.tar.bz2 ftp://ftp.gwdg.de/pub/x11/x.org/pub/X11R7.5/src/driver/
 

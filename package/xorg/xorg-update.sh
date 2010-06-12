@@ -38,6 +38,15 @@ do
 		fi
 
 		if [ ! -f "$pname/$pname.desc" ]; then
+			(
+				cd ../../
+				bash ./misc/archive/newpackage.sh package/xorg/"$pname" "$P"
+				echo "New package: $pname ($N, $P)"
+				echo "New package: $pname ($N, $P)" >> xorg-update-errors.log
+			)
+		fi
+
+		if [ ! -f "$pname/$pname.desc" ]; then
 			echo "Not found: $pname/$pname.desc ($N)"
 			echo "Not found: $pname/$pname.desc ($N)" >> xorg-update-errors.log
 		else

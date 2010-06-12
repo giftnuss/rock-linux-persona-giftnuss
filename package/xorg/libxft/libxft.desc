@@ -36,8 +36,8 @@
 
 [L] OpenSource
 [S] Stable
-[V] 2.1.12
-[P] X -----5---9 118.600
+[V] 2.1.14
+[P] X --?--5---9 118.600
 
-[D] 3523349914 libXft-2.1.12.tar.bz2 ftp://ftp.gwdg.de/pub/x11/x.org/pub/X11R7.3/src/lib/
+[D] 64934397 libXft-2.1.14.tar.bz2 ftp://ftp.gwdg.de/pub/x11/x.org/pub/X11R7.5/src/lib/
 

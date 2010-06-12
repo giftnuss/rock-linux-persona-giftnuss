@@ -36,8 +36,8 @@
 
 [L] OpenSource
 [S] Stable
-[V] 6.6.3
-[P] X -----5---9 132.700
+[V] 6.12.4
+[P] X --?--5---9 132.700
 
-[D] 2544630534 xf86-video-ati-6.6.3.tar.bz2 ftp://ftp.gwdg.de/pub/x11/x.org/pub/X11R7.3/src/driver/
+[D] 3335096651 xf86-video-ati-6.12.4.tar.bz2 ftp://ftp.gwdg.de/pub/x11/x.org/pub/X11R7.5/src/driver/
 

@@ -36,8 +36,8 @@
 
 [L] OpenSource
 [S] Stable
-[V] 0.3.1
-[P] X -----5---9 133.200
+[V] 0.4.1
+[P] X --?--5---9 133.200
 
-[D] 588536622 xf86-video-fbdev-0.3.1.tar.bz2 ftp://ftp.gwdg.de/pub/x11/x.org/pub/X11R7.3/src/driver/
+[D] 3899121738 xf86-video-fbdev-0.4.1.tar.bz2 ftp://ftp.gwdg.de/pub/x11/x.org/pub/X11R7.5/src/driver/
 

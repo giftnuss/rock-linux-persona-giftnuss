@@ -36,8 +36,8 @@
 
 [L] OpenSource
 [S] Stable
-[V] 12.4.3
-[P] X -----5---9 141.200
+[V] 12.6.5
+[P] X --?--5---9 141.200
 
-[D] 267374485 xf86-input-vmmouse-12.4.3.tar.bz2 http://xorg.freedesktop.org/archive/individual/driver/
+[D] 2220014104 xf86-input-vmmouse-12.6.5.tar.bz2 ftp://ftp.gwdg.de/pub/x11/x.org/pub/X11R7.5/src/driver/
 

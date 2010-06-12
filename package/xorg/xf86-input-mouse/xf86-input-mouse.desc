@@ -36,8 +36,8 @@
 
 [L] OpenSource
 [S] Stable
-[V] 1.2.2
-[P] X -----5---9 131.600
+[V] 1.5.0
+[P] X --?--5---9 131.600
 
-[D] 1930067809 xf86-input-mouse-1.2.2.tar.bz2 ftp://ftp.gwdg.de/pub/x11/x.org/pub/X11R7.3/src/driver/
+[D] 1300498073 xf86-input-mouse-1.5.0.tar.bz2 ftp://ftp.gwdg.de/pub/x11/x.org/pub/X11R7.5/src/driver/
 

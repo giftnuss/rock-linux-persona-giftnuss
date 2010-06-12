@@ -36,8 +36,8 @@
 
 [L] OpenSource
 [S] Stable
-[V] 1.1.1
-[P] X -----5---9 133.300
+[V] 1.2.4
+[P] X --?--5---9 133.300
 
-[D] 2667534866 xf86-video-glint-1.1.1.tar.bz2 ftp://ftp.gwdg.de/pub/x11/x.org/pub/X11R7.3/src/driver/
+[D] 1742075120 xf86-video-glint-1.2.4.tar.bz2 ftp://ftp.gwdg.de/pub/x11/x.org/pub/X11R7.5/src/driver/
 

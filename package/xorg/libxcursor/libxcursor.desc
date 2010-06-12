@@ -36,8 +36,8 @@
 
 [L] OpenSource
 [S] Stable
-[V] 1.1.9
-[P] X -----5---9 118.100
+[V] 1.1.10
+[P] X --X--5---9 118.100
 
-[D] 2998486299 libXcursor-1.1.9.tar.bz2 ftp://ftp.gwdg.de/pub/x11/x.org/pub/X11R7.3/src/lib/
+[D] 3229663980 libXcursor-1.1.10.tar.bz2 ftp://ftp.gwdg.de/pub/x11/x.org/pub/X11R7.5/src/lib/
 

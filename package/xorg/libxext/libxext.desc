@@ -36,8 +36,8 @@
 
 [L] OpenSource
 [S] Stable
-[V] 1.0.2
-[P] X -----5---9 116.300
+[V] 1.1.1
+[P] X --X--5---9 116.300
 
-[D] 3502057370 libXext-1.0.2.tar.bz2 ftp://ftp.gwdg.de/pub/x11/x.org/pub/X11R7.3/src/lib/
+[D] 2317961081 libXext-1.1.1.tar.bz2 ftp://ftp.gwdg.de/pub/x11/x.org/pub/X11R7.5/src/lib/
 

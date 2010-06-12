@@ -36,8 +36,8 @@
 
 [L] OpenSource
 [S] Stable
-[V] 0.4.0
-[P] X -----5---9 118.000
+[V] 0.4.1
+[P] X --X--5---9 118.000
 
-[D] 3106341996 libXcomposite-0.4.0.tar.bz2 ftp://ftp.gwdg.de/pub/x11/x.org/pub/X11R7.3/src/lib/
+[D] 3911602046 libXcomposite-0.4.1.tar.bz2 ftp://ftp.gwdg.de/pub/x11/x.org/pub/X11R7.5/src/lib/
 

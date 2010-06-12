@@ -36,8 +36,8 @@
 
 [L] OpenSource
 [S] Stable
-[V] 2.2.2
-[P] X -----5---9 114.100
+[V] 2.3.0
+[P] X --X--5---9 114.100
 
-[D] 2637254445 videoproto-2.2.2.tar.bz2 ftp://ftp.gwdg.de/pub/x11/x.org/pub/X11R7.3/src/proto/
+[D] 2810355812 videoproto-2.3.0.tar.bz2 ftp://ftp.gwdg.de/pub/x11/x.org/pub/X11R7.5/src/proto/
 

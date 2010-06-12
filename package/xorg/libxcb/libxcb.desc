@@ -21,11 +21,11 @@
 [COPY] 
 [COPY] --- ROCK-COPYRIGHT-NOTE-END ---
 
-[I] X.Org X11 libXp component
+[I] X.Org X11 libxcb component
 
-[T] The libXp component for the X.Org Foundation X11 Release 7 and above.
+[T] The libxcb component for the X.Org Foundation X11 Release 7 and above.
 
-[U] http://www.x.org
+[U] http://www.xcb.freedesktop.org
 
 [A] The X.Org Foundation {The X.Org Sourcecode}
 [A] The Open Group X Project Team {Original Sourcecode}
@@ -36,8 +36,8 @@
 
 [L] OpenSource
 [S] Stable
-[V] 1.0
-[P] X -----5---9 116.100
+[V] 1.5 
+[P] X --X--5---9 116.100
 
-[D] 466470052 libxcb-1.0.tar.bz2 ftp://ftp.gwdg.de/pub/x11/x.org/pub/X11R7.2/src/extras/
+[D] 417489456 libxcb-1.5.tar.bz2 http://xcb.freedesktop.org/dist/
 

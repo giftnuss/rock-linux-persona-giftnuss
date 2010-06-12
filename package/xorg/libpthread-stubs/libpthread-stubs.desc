@@ -21,11 +21,11 @@
 [COPY] 
 [COPY] --- ROCK-COPYRIGHT-NOTE-END ---
 
-[I] X.Org X11 libXp component
+[I] X.Org X11 libpthread-stubs component
 
-[T] The libXp component for the X.Org Foundation X11 Release 7 and above.
+[T] The libpthread-stubs component for the X.Org Foundation X11 Release 7 and above.
 
-[U] http://www.x.org
+[U] http://www.xcb.freedesktop.org
 
 [A] The X.Org Foundation {The X.Org Sourcecode}
 [A] The Open Group X Project Team {Original Sourcecode}
@@ -36,8 +36,8 @@
 
 [L] OpenSource
 [S] Stable
-[V] 0.1
-[P] X -----5---9 115.800
+[V] 0.3
+[P] X --X--5---9 115.800
 
-[D] 3080657266 libpthread-stubs-0.1.tar.bz2 ftp://ftp.gwdg.de/pub/x11/x.org/pub/X11R7.2/src/extras/
+[D] 406125312 libpthread-stubs-0.3.tar.bz2 http://xcb.freedesktop.org/dist/
 

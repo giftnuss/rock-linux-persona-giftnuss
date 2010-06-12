@@ -36,8 +36,8 @@
 
 [L] OpenSource
 [S] Stable
-[V] 2.2.2
-[P] X -----5---9 115.000
+[V] 2.3
+[P] X --X--5---9 115.000
 
-[D] 4183910988 xf86vidmodeproto-2.2.2.tar.bz2 ftp://ftp.gwdg.de/pub/x11/x.org/pub/X11R7.3/src/proto/
+[D] 2251669854 xf86vidmodeproto-2.3.tar.bz2 ftp://ftp.gwdg.de/pub/x11/x.org/pub/X11R7.5/src/proto/
 

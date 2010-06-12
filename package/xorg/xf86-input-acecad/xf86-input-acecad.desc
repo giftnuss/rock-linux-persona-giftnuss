@@ -36,8 +36,8 @@
 
 [L] OpenSource
 [S] Stable
-[V] 1.2.1
-[P] X -----5---9 129.800
+[V] 1.4.0
+[P] X --?--5---9 129.800
 
-[D] 706228216 xf86-input-acecad-1.2.1.tar.bz2 http://xorg.freedesktop.org/archive/individual/driver/
+[D] 754819040 xf86-input-acecad-1.4.0.tar.bz2 ftp://ftp.gwdg.de/pub/x11/x.org/pub/X11R7.5/src/driver/
 

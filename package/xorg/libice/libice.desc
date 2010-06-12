@@ -36,8 +36,8 @@
 
 [L] OpenSource
 [S] Stable
-[V] 1.0.4
-[P] X -----5---9 116.900
+[V] 1.0.6
+[P] X --X--5---9 116.900
 
-[D] 1776074981 libICE-1.0.4.tar.bz2 ftp://ftp.gwdg.de/pub/x11/x.org/pub/X11R7.3/src/lib/
+[D] 794129457 libICE-1.0.6.tar.bz2 ftp://ftp.gwdg.de/pub/x11/x.org/pub/X11R7.5/src/lib/
 

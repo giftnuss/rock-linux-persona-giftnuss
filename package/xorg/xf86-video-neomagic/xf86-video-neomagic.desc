@@ -36,8 +36,8 @@
 
 [L] OpenSource
 [S] Stable
-[V] 1.1.1
-[P] X -----5---9 133.900
+[V] 1.2.4
+[P] X --?--5---9 133.900
 
-[D] 3196951901 xf86-video-neomagic-1.1.1.tar.bz2 ftp://ftp.gwdg.de/pub/x11/x.org/pub/X11R7.3/src/driver/
+[D] 188666871 xf86-video-neomagic-1.2.4.tar.bz2 ftp://ftp.gwdg.de/pub/x11/x.org/pub/X11R7.5/src/driver/
 

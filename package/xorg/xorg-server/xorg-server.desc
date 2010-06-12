@@ -36,10 +36,10 @@
 
 [L] OpenSource
 [S] Stable
-[V] 1.4
+[V] 1.7.1
 [O] mesa_ver=7.0.2
-[P] X -----5---9 129.700
+[P] X --?--5---9 129.700
 
-[D] 2932267688 xorg-server-1.4.tar.bz2 ftp://ftp.gwdg.de/pub/x11/x.org/pub/X11R7.3/src/xserver/
-[D] 1731567489 MesaLib-7.0.2.tar.bz2 http://dl.sourceforge.net/mesa3d/
+[D] 2840208408 xorg-server-1.7.1.tar.bz2 ftp://ftp.gwdg.de/pub/x11/x.org/pub/X11R7.5/src/xserver/
+[D] 2840208408 xorg-server-1.7.1.tar.bz2 ftp://ftp.gwdg.de/pub/x11/x.org/pub/X11R7.5/src/xserver/
 

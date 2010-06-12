@@ -36,8 +36,8 @@
 
 [L] OpenSource
 [S] Stable
-[V] 2.1.3
-[P] X -----5---9 134.600
+[V] 2.3.1
+[P] X --?--5---9 134.600
 
-[D] 4046777301 xf86-video-savage-2.1.3.tar.bz2 ftp://ftp.gwdg.de/pub/x11/x.org/pub/X11R7.3/src/driver/
+[D] 280454054 xf86-video-savage-2.3.1.tar.bz2 ftp://ftp.gwdg.de/pub/x11/x.org/pub/X11R7.5/src/driver/
 

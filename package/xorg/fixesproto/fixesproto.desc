@@ -36,8 +36,8 @@
 
 [L] OpenSource
 [S] Stable
-[V] 4.0
-[P] X -----5---9 112.800
+[V] 4.1.1
+[P] X --X--5---9 112.800
 
-[D] 3749886739 fixesproto-4.0.tar.bz2 ftp://ftp.gwdg.de/pub/x11/x.org/pub/X11R7.3/src/proto/
+[D] 768473879 fixesproto-4.1.1.tar.bz2 ftp://ftp.gwdg.de/pub/x11/x.org/pub/X11R7.5/src/proto/
 

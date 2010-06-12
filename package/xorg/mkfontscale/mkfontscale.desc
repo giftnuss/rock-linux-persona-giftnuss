@@ -36,8 +36,8 @@
 
 [L] OpenSource
 [S] Stable
-[V] 1.0.3
-[P] X -----5---9 121.900
+[V] 1.0.7
+[P] X --X--5---9 121.900
 
-[D] 2817699227 mkfontscale-1.0.3.tar.bz2 ftp://ftp.gwdg.de/pub/x11/x.org/pub/X11R7.3/src/app/
+[D] 3358774734 mkfontscale-1.0.7.tar.bz2 ftp://ftp.gwdg.de/pub/x11/x.org/pub/X11R7.5/src/app/
 

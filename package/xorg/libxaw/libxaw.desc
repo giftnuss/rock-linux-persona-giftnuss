@@ -36,8 +36,8 @@
 
 [L] OpenSource
 [S] Stable
-[V] 1.0.4
-[P] X -----5---9 117.600
+[V] 1.0.7
+[P] X --X--5---9 117.600
 
-[D] 3727196221 libXaw-1.0.4.tar.bz2 ftp://ftp.gwdg.de/pub/x11/x.org/pub/X11R7.3/src/lib/
+[D] 3064335610 libXaw-1.0.7.tar.bz2 ftp://ftp.gwdg.de/pub/x11/x.org/pub/X11R7.5/src/lib/
 

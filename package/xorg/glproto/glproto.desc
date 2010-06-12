@@ -36,8 +36,8 @@
 
 [L] OpenSource
 [S] Stable
-[V] 1.4.8
-[P] X -----5---9 113.100
+[V] 1.4.10
+[P] X --X--5---9 113.100
 
-[D] 3309262919 glproto-1.4.8.tar.bz2 ftp://ftp.gwdg.de/pub/x11/x.org/pub/X11R7.3/src/proto/
+[D] 2959700666 glproto-1.4.10.tar.bz2 ftp://ftp.gwdg.de/pub/x11/x.org/pub/X11R7.5/src/proto/
 

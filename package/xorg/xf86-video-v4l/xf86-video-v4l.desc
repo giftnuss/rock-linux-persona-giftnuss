@@ -36,8 +36,8 @@
 
 [L] OpenSource
 [S] Stable
-[V] 0.1.1
-[P] X -----5---9 136.100
+[V] 0.2.0
+[P] X --?--5---9 136.100
 
-[D] 1160745480 xf86-video-v4l-0.1.1.tar.bz2 ftp://ftp.gwdg.de/pub/x11/x.org/pub/X11R7.3/src/driver/
+[D] 3101683929 xf86-video-v4l-0.2.0.tar.bz2 ftp://ftp.gwdg.de/pub/x11/x.org/pub/X11R7.5/src/driver/
 

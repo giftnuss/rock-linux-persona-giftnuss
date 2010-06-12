@@ -36,8 +36,8 @@
 
 [L] OpenSource
 [S] Stable
-[V] 2.0.3
-[P] X -----5---9 114.600
+[V] 2.1
+[P] X --X--5---9 114.600
 
-[D] 1550707330 xf86dgaproto-2.0.3.tar.bz2 ftp://ftp.gwdg.de/pub/x11/x.org/pub/X11R7.3/src/proto/
+[D] 3098413004 xf86dgaproto-2.1.tar.bz2 ftp://ftp.gwdg.de/pub/x11/x.org/pub/X11R7.5/src/proto/
 

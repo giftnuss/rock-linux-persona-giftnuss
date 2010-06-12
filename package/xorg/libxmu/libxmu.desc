@@ -36,8 +36,8 @@
 
 [L] OpenSource
 [S] Stable
-[V] 1.0.3
-[P] X -----5---9 117.400
+[V] 1.0.5
+[P] X --X--5---9 117.400
 
-[D] 3113948124 libXmu-1.0.3.tar.bz2 ftp://ftp.gwdg.de/pub/x11/x.org/pub/X11R7.3/src/lib/
+[D] 2647708702 libXmu-1.0.5.tar.bz2 ftp://ftp.gwdg.de/pub/x11/x.org/pub/X11R7.5/src/lib/
 
