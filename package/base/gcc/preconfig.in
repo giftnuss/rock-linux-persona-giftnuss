@@ -1,5 +1,5 @@
 #!/bin/bash
-for x in gcc2 gcc32 gcc33 gcc34 gcc40 gcc41 gcc42 gcc43; do
+for x in gcc2 gcc32 gcc33 gcc34 gcc40 gcc41 gcc42 gcc43 gcc44; do
 	pkgfork gcc $x
 	# GCC 2.x and 3.2.x cannot be used as the default C/C++ compilers because they
 	# don't support the --with-sysroot configure option.

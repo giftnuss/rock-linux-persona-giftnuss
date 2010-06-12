@@ -42,15 +42,15 @@ gcc_build_wrapper() {
 	done
 }
 
-gcc_build_wrapper CC ${arch_target}-cc ${arch_target}-gcc{-2,-32,-33,-34,-40,-41,-42,-43,}
-gcc_build_wrapper CXX ${arch_target}-{g++,c++}{-2,-32,-33,-34,-40,-41,-42,-43,}
-gcc_build_wrapper KCC ${arch_target}-kcc{-2,-32,-33,-34,-40,-41,-42,-43,}
+gcc_build_wrapper CC ${arch_target}-cc ${arch_target}-gcc{-2,-32,-33,-34,-40,-41,-42,-43,-44,}
+gcc_build_wrapper CXX ${arch_target}-{g++,c++}{-2,-32,-33,-34,-40,-41,-42,-43,-44,}
+gcc_build_wrapper KCC ${arch_target}-kcc{-2,-32,-33,-34,-40,-41,-42,-43,-44,}
 
 if [ $stagelevel -ge 3 ]; then
-	gcc_build_wrapper CC  cc gcc{-2,-32,-33,-34,-40,-41,-42,-43,}
-	gcc_build_wrapper CXX {c,g}++{-2,-32,-33,-34,-40,-41,-42,-43,}
-	gcc_build_wrapper F77 {g,f}77{-2,-32,-33,-34,-40,-41,-42,-43,}
-	gcc_build_wrapper KCC kcc{-2,-32,-33,-34,-40,-41,-42,-43,}
+	gcc_build_wrapper CC  cc gcc{-2,-32,-33,-34,-40,-41,-42,-43,-44,}
+	gcc_build_wrapper CXX {c,g}++{-2,-32,-33,-34,-40,-41,-42,-43,-44,}
+	gcc_build_wrapper F77 {g,f}77{-2,-32,-33,-34,-40,-41,-42,-43,-44,}
+	gcc_build_wrapper KCC kcc{-2,-32,-33,-34,-40,-41,-42,-43,-44,}
 fi
 
 if [ $stagelevel -le 2 ]; then

@@ -87,8 +87,13 @@
 #endif
 
 #if xpkg == gcc43.*
-[V] 4.3.3
-[D] 1541702385 gcc-4.3.3.tar.bz2 ftp://gcc.gnu.org/pub/gcc/releases/gcc-4.3.3/
+[V] 4.3.4
+[D] 538592505 gcc-4.3.4.tar.bz2 ftp://gcc.gnu.org/pub/gcc/releases/gcc-4.3.4/
+#endif
+
+#if xpkg == gcc44.*
+[V] 4.4.3
+[D] 1151666306 gcc-4.4.3.tar.bz2 ftp://gcc.gnu.org/pub/gcc/releases/gcc-4.4.3/
 #endif
 
 [CD] <COPY> for x in $cachedir/*.cache; do cp $x $confdir/$pkg.cache; done

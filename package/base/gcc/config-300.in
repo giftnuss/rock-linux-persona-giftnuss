@@ -27,7 +27,7 @@ if pkgcheck "gcc=.*" X ; then
 				ROCKCFG_PKG_GCC_STACKPRO 0
 	include "package/*/*/subconfig-gcc.in"
 	
-	for gcc_version in 2 32 33 34 40 41 42 43; do
+	for gcc_version in 2 32 33 34 40 41 42 43 44; do
 	    if eval pkgcheck gcc=gcc${gcc_version} X; then
 		comment ' '
 		comment "--- gcc${gcc_version} options"
