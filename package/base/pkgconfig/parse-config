@@ -28,3 +28,14 @@ splitreg 42 dev '/pkgconfig/'
 # Never assume a dependency just because of reading a .pc file
 var_append flistrfilter "|" '.*/pkgconfig/.*\.pc'
 
+if [ $stagelevel -lt 3 ]; then
+	#export PKG_CONFIG_DEBUG_SPEW=yes
+
+	export PKG_CONFIG_PATH=""
+	for x in $root{/usr,/opt}{,/*}/{share,$multilib}/pkgconfig ; do
+		[ -d $x ] && var_append PKG_CONFIG_PATH ':' "$x"
+	done
+  
+	export PKG_CONFIG_LIBDIR=$PKG_CONFIG_PATH # needed, otherwise system is used
+fi
+
