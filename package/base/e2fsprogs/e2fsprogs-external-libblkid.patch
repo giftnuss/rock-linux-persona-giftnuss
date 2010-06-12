@@ -1,0 +1,27 @@
+--- e2fsprogs-1.41.12/configure.orig	2010-06-12 14:28:02.000000000 +0000
++++ e2fsprogs-1.41.12/configure	2010-06-12 14:36:31.000000000 +0000
+@@ -5238,11 +5238,11 @@
+ #ifdef __cplusplus
+ extern "C"
+ #endif
+-char blkid_get_cache ();
++/* char blkid_get_cache (); */
+ int
+ main ()
+ {
+-return blkid_get_cache ();
++/* return blkid_get_cache (); */
+   ;
+   return 0;
+ }
+--- e2fsprogs-1.41.12/misc/Makefile.in.orig	2010-06-12 16:12:02.000000000 +0000
++++ e2fsprogs-1.41.12/misc/Makefile.in	2010-06-12 16:13:05.000000000 +0000
+@@ -135,7 +135,7 @@
+ e2initrd_helper: e2initrd_helper.o $(DEPLIBS) $(DEPLIBBLKID) $(LIBEXT2FS)
+ 	$(E) "	LD $@"
+ 	$(Q) $(CC) $(ALL_LDFLAGS) -o e2initrd_helper e2initrd_helper.o $(LIBS) \
+-		$(LIBBLKID) $(LIBEXT2FS) $(LIBINTL)
++		$(LIBBLKID) $(LIBEXT2FS) $(LIBINTL) -luuid
+ 
+ tune2fs: $(TUNE2FS_OBJS) $(DEPLIBS) $(DEPLIBS_E2P) $(DEPLIBBLKID) \
+ 		$(DEPLIBUUID) $(LIBEXT2FS) 
