@@ -36,10 +36,10 @@
 
 [L] OpenSource
 [S] Stable
-[V] 2.6.2
-[P] X --?--5---9 116.097
+[V] 2.6.5 
+[P] X 0-?--5---9 116.097
 
-[D] 365861345 Python-2.6.2.tar.bz2 http://www.python.org/ftp/python/2.6.2/
+[D] 2168419869 Python-2.6.5.tar.bz2 http://www.python.org/ftp/python/2.6.5/
 
 [CV-URL] http://www.python.org/download/
 
