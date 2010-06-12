@@ -38,8 +38,8 @@
 
 [L] GPL
 [S] Beta
-[V] 0.22
-[P] X 0-X--5---9 109.701
+[V] 0.25
+[P] X 0-?--5---9 109.701
 
-[D] 3283102837 pkg-config-0.22.tar.gz http://pkgconfig.freedesktop.org/releases/
+[D] 0 pkg-config-0.25.tar.gz http://pkgconfig.freedesktop.org/releases/
 
