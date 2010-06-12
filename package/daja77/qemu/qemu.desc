@@ -40,7 +40,8 @@
 
 [L] GPL
 [S] Stable
-[V] 0.10.5
+[V] 0.12.3
 [P] X --?--5---9 243.800
 
-[D] 675270237 qemu-0.10.5.tar.gz http://download.savannah.gnu.org/releases/qemu/ 
+[D] 1505073409 qemu-0.12.3.tar.gz http://download.savannah.gnu.org/releases/qemu/
+
