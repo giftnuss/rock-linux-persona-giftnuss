@@ -166,8 +166,8 @@ block_begin 3
 	else
 		bool 'Abort when a package-build fails' \
 						ROCKCFG_ABORT_ON_ERROR 0
-		text 'Parallel make processes' ROCKCFG_MAKEJ 1
 	fi
+	text 'Parallel make processes' ROCKCFG_MAKEJ 1
 	bool 'Retry building broken packages' ROCKCFG_RETRY_BROKEN 0
 	bool 'Disable packages which are marked as broken' \
 						ROCKCFG_DISABLE_BROKEN 0
