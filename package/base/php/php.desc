@@ -44,9 +44,9 @@
 #endif
 
 #if xpkg == php5
-[V] 5.2.10
+[V] 5.2.13
 [O] pear_version=2006-05-17
-[D] 676566260 php-5.2.10.tar.bz2 http://static.php.net/www.php.net/distributions/
+[D] 0 php-5.2.13.tar.bz2 http://static.php.net/www.php.net/distributions/
 [D] 3500472770 install-pear-nozlib-2006-05-17.phar !http://pear.php.net/install-pear-nozlib.phar
 #endif
 

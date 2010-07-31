@@ -46,7 +46,7 @@ if pkgcheck php X ; then
 		  fi
 		done
 		
-		if pkgcheck mysql50 X || pkgcheck mysql41 X ; then
+		if pkgcheck mysql=mysql50 X || pkgcheck mysql=mysql41 X ; then
 		    bool "Build PHP with mysql support" ROCKCFG_PKG_PHP_mysql 1
 		else
 		    comment "Package mysql is disabled. Bulding PHP without mysql support."
