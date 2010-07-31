@@ -29,15 +29,15 @@
 main_begin
 
    block_begin(start, `Starting MySQL Server.')
-       check(`(D_prefix/bin/mysqld_safe >/dev/null 2>&1 )')
+       check(`(D_prefix/bin/mysqld_safe >/dev/null 2>&1 &)')
    block_end
 
    block_begin(stop, `Stopping MySQL Server.')
-       check(`killall D_prefix/bin/mysqld_safe')
+       check(`kill $(pidof mysqld)')
    block_end
 
    block_begin(restart, `Restarting MySQL Server.')
-       check(`killall -1 D_prefix/bin/mysqld_safe')
+       check(`kill -1 $(pidof mysqld)')
    block_end
 
 main_end
