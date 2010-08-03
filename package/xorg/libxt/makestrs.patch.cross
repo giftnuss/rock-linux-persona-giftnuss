@@ -1,0 +1,20 @@
+--- ./util/Makefile.in.orig	2009-10-09 06:51:17.000000000 +0200
++++ ./util/Makefile.in	2010-03-22 03:36:11.000000000 +0100
+@@ -57,7 +57,7 @@
+ am__v_lt_ = $(am__v_lt_$(AM_DEFAULT_VERBOSITY))
+ am__v_lt_0 = --silent
+ makestrs_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
+-	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(makestrs_CFLAGS) \
++	$(LIBTOOLFLAGS) --mode=link $(CC_FOR_BUILD) $(makestrs_CFLAGS) \
+ 	$(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
+ DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)
+ depcomp = $(SHELL) $(top_srcdir)/depcomp
+@@ -393,7 +393,7 @@
+ @am__fastdepCC_FALSE@	$(LTCOMPILE) -c -o $@ $<
+ 
+ makestrs-makestrs.o: makestrs.c
+-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(makestrs_CFLAGS) $(CFLAGS) -MT makestrs-makestrs.o -MD -MP -MF $(DEPDIR)/makestrs-makestrs.Tpo -c -o makestrs-makestrs.o `test -f 'makestrs.c' || echo '$(srcdir)/'`makestrs.c
++@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC_FOR_BUILD) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(makestrs_CFLAGS) $(CFLAGS) -MT makestrs-makestrs.o -MD -MP -MF $(DEPDIR)/makestrs-makestrs.Tpo -c -o makestrs-makestrs.o `test -f 'makestrs.c' || echo '$(srcdir)/'`makestrs.c
+ @am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/makestrs-makestrs.Tpo $(DEPDIR)/makestrs-makestrs.Po
+ @am__fastdepCC_FALSE@	$(AM_V_CC) @AM_BACKSLASH@
+ @AMDEP_TRUE@@am__fastdepCC_FALSE@	source='makestrs.c' object='makestrs-makestrs.o' libtool=no @AMDEPBACKSLASH@
