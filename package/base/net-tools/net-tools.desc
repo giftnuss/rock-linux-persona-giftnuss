@@ -41,8 +41,10 @@
 
 [L] GPL
 [S] Stable
-[V] 1.60
+[V] 1.60 4
 [P] X --X--5---9 101.600
 
-[D] 1395528642 net-tools-1.60.tar.bz2 http://www.tazenda.demon.co.uk/phil/net-tools/
-[D] 3869631410 net-tools-1.60-ether-wake-1.patch http://linuxfromscratch.mirror.ac.uk/sites/www.linuxfromscratch.org/patches/downloads/net-tools/
+# [D] 1395528642 net-tools-1.60.tar.bz2 http://www.tazenda.demon.co.uk/phil/net-tools/
+# [D] 3869631410 net-tools-1.60-ether-wake-1.patch http://linuxfromscratch.mirror.ac.uk/sites/www.linuxfromscratch.org/patches/downloads/net-tools/
+# [D] X net-tools-2010-05-01.tar.bz2 cvs://pserver:anonymous@cvs.net-tools.berlios.de:/cvsroot/net-tools::net-tools/!20100501/
+[D] X net-tools-2010-08-02.tar.bz2 git clone -n git://github.com/giftnuss/net-tools.git ; checkout origin/rock
