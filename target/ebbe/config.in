@@ -31,6 +31,9 @@ pkgfilter sed -e '
    / kde / s/^X/O/;
    '
 
+pkgenable cpio
+pkgenable rockinitramfs
+
 pkgdisable kaffeine
 pkgdisable dhcp
 

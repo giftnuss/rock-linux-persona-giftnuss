@@ -28,6 +28,9 @@ pkgfilter sed -e '
    / base / ! s/^X/O/;
    '
 
+pkgenable cpio
+pkgenable rockinitramfs
+
 ROCKCFGSET_DO_REBUILD_STAGE=0
 ROCKCFGSET_SPLIT_DOC=0
 ROCKCFGSET_SPLIT_DEV=0
