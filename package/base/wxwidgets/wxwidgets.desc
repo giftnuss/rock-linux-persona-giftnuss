@@ -41,8 +41,7 @@
 
 [L] LGPL
 [S] Stable
-[V] 2.8.10
+[V] 2.9.1
 [P] X --?--5---9 174.400
 
-[D] 1941184321 wxWidgets-2.8.10.tar.gz http://downloads.sourceforge.net/project/wxwindows/wxAll/2.8.10/
-
+[D] 0 wxWidgets-2.9.1.tar.bz2 http://downloads.sourceforge.net/project/wxwindows/2.9.1/
