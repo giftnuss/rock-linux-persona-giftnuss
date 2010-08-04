@@ -216,13 +216,13 @@
 #endif
 
 #if xpkg == cpan-svn-mirror
-[V] 0.68
-[D] 3558167142 SVN-Mirror-0.68.tar.gz http://www.cpan.org/modules/by-authors/id/C/CL/CLKAO/
+[V] 0.75 
+[D] 3583094974 SVN-Mirror-0.75.tar.gz http://www.cpan.org/modules/by-authors/id/C/CL/CLKAO/
 #endif
 
 #if xpkg == cpan-svn-simple
-[V] 0.27
-[D] 3956936456 SVN-Simple-0.27.tar.gz http://www.cpan.org/modules/by-authors/id/C/CL/CLKAO/
+[V] 0.28
+[D] 3954440439 SVN-Simple-0.28.tar.gz http://www.cpan.org/modules/by-authors/id/C/CL/CLKAO/
 #endif
 
 #if xpkg == cpan-term-progressbar
@@ -256,8 +256,8 @@
 #endif
 
 #if xpkg == cpan-uri
-[V] 1.35
-[D] 1686333565 URI-1.35.tar.gz http://www.cpan.org/modules/by-authors/id/G/GA/GAAS/
+[V] 1.54 
+[D] 2431185559 URI-1.54.tar.gz http://www.cpan.org/modules/by-authors/id/G/GA/GAAS/
 #endif
 
 #if xpkg == cpan-www-mechanize

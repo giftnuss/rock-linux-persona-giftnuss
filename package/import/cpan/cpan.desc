@@ -38,7 +38,9 @@
 
 # http://www.cpan.org/modules/02packages.details.txt.gz
 [O] cpan_packages_ver=20060324
+#if xpkg == cpan
 [D] 2719854068 cpan_packages_20060324.txt.gz http://www.rocklinux.net/people/clifford/mirror/
+#endif
 
 [CD] <COPY> rm $confdir/*.cache
 [CD] <COPY> cp $cachedir/*.cache $confdir/
