@@ -37,9 +37,7 @@
 [L] OpenSource
 [S] Stable
 [V] 1.7.1
-[O] mesa_ver=7.0.2
 [P] X --?--5---9 129.700
 
-[D] 2840208408 xorg-server-1.7.1.tar.bz2 ftp://ftp.gwdg.de/pub/x11/x.org/pub/X11R7.5/src/xserver/
 [D] 2840208408 xorg-server-1.7.1.tar.bz2 ftp://ftp.gwdg.de/pub/x11/x.org/pub/X11R7.5/src/xserver/
 
