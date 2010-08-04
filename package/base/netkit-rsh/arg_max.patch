@@ -1,0 +1,28 @@
+diff -ruN netkit-rsh-0.17/rexecd/rexecd.c netkit-rsh-0.17-fixed/rexecd/rexecd.c
+--- netkit-rsh-0.17/rexecd/rexecd.c	2000-07-23 04:16:22.000000000 +0000
++++ netkit-rsh-0.17-fixed/rexecd/rexecd.c	2010-08-04 11:19:26.000000000 +0000
+@@ -99,6 +99,10 @@
+ struct from_host from_host;
+ #endif
+ 
++#ifndef ARG_MAX
++    #define ARG_MAX sysconf(_SC_ARG_MAX)
++#endif
++
+ int allow_severity = LOG_INFO;
+ int deny_severity = LOG_WARNING;
+ 
+diff -ruN netkit-rsh-0.17/rshd/rshd.c netkit-rsh-0.17-fixed/rshd/rshd.c
+--- netkit-rsh-0.17/rshd/rshd.c	2000-07-23 04:16:24.000000000 +0000
++++ netkit-rsh-0.17-fixed/rshd/rshd.c	2010-08-04 11:20:06.000000000 +0000
+@@ -90,6 +90,10 @@
+ static pam_handle_t *pamh;
+ #endif /* USE_PAM */
+ 
++#ifndef ARG_MAX
++    #define ARG_MAX sysconf(_SC_ARG_MAX)
++#endif
++
+ #define	OPTIONS	"ahlLn"
+ 
+ static int keepalive = 1;
