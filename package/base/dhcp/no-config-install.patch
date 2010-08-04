@@ -1,6 +1,17 @@
---- ./client/Makefile.in.orig	2008-12-05 21:14:48.000000000 +0100
-+++ ./client/Makefile.in	2009-04-13 16:27:58.000000000 +0200
-@@ -154,7 +154,7 @@
+--- ./server/Makefile.in.orig	2007-11-19 18:32:51.000000000 +0100
++++ ./server/Makefile.in	2007-11-19 18:32:57.000000000 +0100
+@@ -158,7 +158,7 @@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+ AM_CPPFLAGS = -I.. -DLOCALSTATEDIR='"@localstatedir@"'
+-dist_sysconf_DATA = dhcpd.conf
++dist_sysconf_DATA =
+ dhcpd_SOURCES = dhcpd.c dhcp.c bootp.c confpars.c db.c class.c failover.c \
+ 		omapi.c mdb.c stables.c salloc.c ddns.c dhcpleasequery.c \
+ 		dhcpv6.c mdb6.c
+--- ./client/Makefile.in~	2010-06-25 01:35:23.000000000 +0000
++++ ./client/Makefile.in	2010-06-25 01:39:48.000000000 +0000
+@@ -160,7 +160,7 @@
  sharedstatedir = @sharedstatedir@
  sysconfdir = @sysconfdir@
  target_alias = @target_alias@
@@ -9,14 +20,3 @@
  dhclient_SOURCES = clparse.c dhclient.c dhc6.c \
  		   scripts/bsdos scripts/freebsd scripts/linux scripts/macos \
  		   scripts/netbsd scripts/nextstep scripts/openbsd \
---- ./server/Makefile.in.orig	2008-12-05 21:14:57.000000000 +0100
-+++ ./server/Makefile.in	2009-04-13 16:22:49.000000000 +0200
-@@ -159,7 +159,7 @@
- sysconfdir = @sysconfdir@
- target_alias = @target_alias@
- AM_CPPFLAGS = -I.. -DLOCALSTATEDIR='"@localstatedir@"'
--dist_sysconf_DATA = dhcpd.conf
-+dist_sysconf_DATA = 
- dhcpd_SOURCES = dhcpd.c dhcp.c bootp.c confpars.c db.c class.c failover.c \
- 		omapi.c mdb.c stables.c salloc.c ddns.c dhcpleasequery.c \
- 		dhcpv6.c mdb6.c
