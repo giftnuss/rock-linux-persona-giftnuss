@@ -40,18 +40,46 @@ fi
 
 # Now the optimisations that result from the options above
 if [ "$ROCKCFG_SPARC_BITS" = 64 ] ; then
+  choice ROCKCFG_SPARC_ARCH v9   \
+	v9		"Build for generic v9 architecture"	\
+	ultrasparc	"Build for UltraSPARC architecture"	\
+	ultrasparc3	"Build for UltraSPARC III architecture"	\
+	niagara		"Build for UltraSPARC T1 architecture"	\
+	niagara2	"Build for UltraSPARC T2 architecture"
   choice ROCKCFG_SPARC_OPT generic   \
 	generic		"No special optimisation"		\
-	v9		"Optimised for UltraSPARC"
+	ultrasparc	"Optimised for UltraSPARC CPU"	\
+	ultrasparc3	"Optimised for UltraSPARC III CPU"	\
+	niagara		"Optimised for UltraSPARC T1 CPU"	\
+	niagara2	"Optimised for UltraSPARC T2 CPU"
 else
+  choice ROCKCFG_SPARC_ARCH v7   \
+	v7		"Build for generic v7 architecture"	\
+	v8		"Build for generic v8 architecture"	\
+	sparclite	"Build for SPARClite architecture"	\
+	sparclet	"Build for SPARClet architecture"	\
+	v9		"Build for generic v9 architecture"	\
+	ultrasparc	"Build for UltraSPARC architecture"	\
+	ultrasparc3	"Build for UltraSPARC III architecture"	\
+	niagara		"Build for UltraSPARC T1 architecture"	\
+	niagara2	"Build for UltraSPARC T2 architecture"
   choice ROCKCFG_SPARC_OPT generic   \
 	generic		"No special optimisation"		\
-	v7		"Optimised for Cypress"		\
-	v8		"Optimised for Super/Hyper SPARC"		\
-	v9		"Optimised for UltraSPARC"
+	cypress		"Optimised for Cypress"			\
+	supersparc	"Optimised for Super/HyperSPARC"	\
+	f930		"Optimised for Fujitsu MB86930"		\
+	f934		"Optimised for Fujitsu MB86934"		\
+	sparclite86x	"Optimised for Sparclite86x"		\
+	tsc701		"Optimised for TEMIC SPARClet"		\
+	ultrasparc	"Optimised for UltraSPARC CPU"		\
+	ultrasparc3	"Optimised for UltraSPARC III CPU"	\
+	niagara		"Optimised for UltraSPARC T1 CPU"	\
+	niagara2	"Optimised for UltraSPARC T2 CPU"
 fi
 
+ROCKCFG_ID="$ROCKCFG_ID-$ROCKCFG_SPARC_BITS-$ROCKCFG_SPARC_ARCH"
+
 if [ "$ROCKCFG_SPARC_OPT" != generic ] ; then
-	ROCKCFG_ID="$ROCKCFG_ID-$ROCKCFG_SPARC_OPT-$ROCKCFG_SPARC_BITS"
+	ROCKCFG_ID="$ROCKCFG_ID-$ROCKCFG_SPARC_OPT"
 fi
 
