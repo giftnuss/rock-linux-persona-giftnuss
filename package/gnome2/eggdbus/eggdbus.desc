@@ -6,8 +6,8 @@
 [COPY] the ROCK-COPYRIGHT-NOTE-END tag. Otherwise it might get removed by
 [COPY] the ./scripts/Create-CopyPatch script. Do not edit this copyright text!
 [COPY] 
-[COPY] ROCK Linux: rock-src/package/public/docbook-xsl/docbook-xsl.desc
-[COPY] ROCK Linux is Copyright (C) 1998 - 2006 Clifford Wolf
+[COPY] ROCK Linux: rock-src/package/gnome2/eggdbus/eggdbus.desc
+[COPY] ROCK Linux is Copyright (C) 1998 - 2010 Clifford Wolf
 [COPY] 
 [COPY] This program is free software; you can redistribute it and/or modify
 [COPY] it under the terms of the GNU General Public License as published by
@@ -21,26 +21,22 @@
 [COPY] 
 [COPY] --- ROCK-COPYRIGHT-NOTE-END ---
 
-[I] XML scheme for documentation
+[I] DBus bindings for gobject 
 
-[T] DocBook  is an XML vocabulary that lets you create documents in a
-[T] presentation-neutral form that captures the logical structure of your
-[T] content. Using free tools along with the DocBook XSL stylesheets, you
-[T] can publish your content as HTML pages and PDF files, and in many
-[T] other formats.
+[T] EggDBus is currently an unstable API for using DBus from gobject. 
 
-[U] http://docbook.sourceforge.net/
+[U] http://cgit.freedesktop.org/~david/eggdbus 
 
-[A] The DocBook Project
+[A] David Zeuthen
 [M] The ROCK Linux Project
 
-[C] extra/development
+[C] extra/base extra/development 
 [F] CORE
 
-[L] OpenSource
-[S] Stable
-[V] 1.75.2
-[P] X --?--5---9 129.240
+[L] GPL 
+[S] Beta 
+[V] 0.6 
+[P] X --?--5---9 129.300
 
-[D] 3816300840 docbook-xsl-1.75.2.tar.bz2 http://switch.dl.sourceforge.net/sourceforge/docbook/
+[D] 2601438688 eggdbus-0.6.tar.bz2 http://cgit.freedesktop.org/~david/eggdbus/snapshot/
 

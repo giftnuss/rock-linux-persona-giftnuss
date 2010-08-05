@@ -21,15 +21,12 @@
 [COPY] 
 [COPY] --- ROCK-COPYRIGHT-NOTE-END ---
 
-[I] TODO: Short Information
+[I] a tool for generating Qt moc files using CMake as a buildsystem
 
-[T] TODO: Long Expanation
-[T] TODO: Long Expanation
-[T] TODO: Long Expanation
-[T] TODO: Long Expanation
-[T] TODO: Long Expanation
+[T] automoc4 is a tool to add rules for generating Qt moc files automatically
+[T] to projects that use CMake as the buildsystem.
 
-[U] TODO: URL
+[U] http://techbase.kde.org/Development/Tools/Automoc4
 
 [A] TODO: Author
 [M] The ROCK Linux Project
