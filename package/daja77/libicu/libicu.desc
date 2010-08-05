@@ -36,7 +36,7 @@
 
 [L] OpenSource
 [S] Stable
-[V] 3.6
+[V] 4.4.1
 [P] X --?--5---9 162.700
 
-[D] 4276325896 icu4c-3_6-src.tgz ftp://ftp.software.ibm.com/software/globalization/icu/3.6/
+[D] 3148315641 icu4c-4_4_1-src.tgz http://download.icu-project.org/files/icu4c/4.4.1/
