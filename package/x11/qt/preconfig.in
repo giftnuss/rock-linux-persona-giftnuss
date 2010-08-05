@@ -1,3 +1,4 @@
 pkgfork qt qt3
-pkgfork qt qt4 unflag CORE
+# pkgfork qt qt4 unflag CORE
+pkgfork qt qt4
 pkgremove qt
