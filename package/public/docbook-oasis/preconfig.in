@@ -1,0 +1,4 @@
+for x in docbook-oasis-{4.2,4.3} ; do
+	pkgfork docbook-oasis $x
+done
+

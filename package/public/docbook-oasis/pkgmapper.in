@@ -1,0 +1,6 @@
+case "$pkg" in
+	docbook-oasis|docbook-oasis-?.?)
+		pkg=docbook-oasis
+		;;
+esac
+
