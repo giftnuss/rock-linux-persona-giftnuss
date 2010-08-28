@@ -1,0 +1,19 @@
+***************
+*** 35,42 ****
+  
+  [L] LGPL
+  [S] Stable
+- [V] 2.16.0
+  [P] X --?--5---9 199.950
+  
+- [D] 673128624 gnome-sharp-2.16.0.tar.bz2 http://ftp.gnome.org/pub/GNOME/desktop/2.20/2.20.1/sources/
+  
+--- 35,42 ----
+  
+  [L] LGPL
+  [S] Stable
++ [V] 2.24.1
+  [P] X --?--5---9 199.950
+  
++ [D] 1372398242 gnome-sharp-2.24.1.tar.bz2 http://ftp.gnome.org/pub/GNOME/desktop/2.28/2.28.2/sources/
+  

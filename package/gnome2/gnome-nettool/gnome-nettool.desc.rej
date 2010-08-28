@@ -1,0 +1,19 @@
+***************
+*** 35,42 ****
+  
+  [L] GPL
+  [S] Beta
+- [V] 2.22.1
+  [P] X --?--5---9 212.500
+  
+- [D] 1225787611 gnome-nettool-2.22.1.tar.bz2 http://ftp.gnome.org/pub/GNOME/desktop/2.24/2.24.1/sources/
+  
+--- 35,42 ----
+  
+  [L] GPL
+  [S] Beta
++ [V] 2.28.0
+  [P] X --?--5---9 212.500
+  
++ [D] 2695147140 gnome-nettool-2.28.0.tar.bz2 http://ftp.gnome.org/pub/GNOME/desktop/2.28/2.28.2/sources/
+  

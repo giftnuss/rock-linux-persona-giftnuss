@@ -41,9 +41,9 @@
 
 [L] GPL
 [S] Stable
-[V] 0.96.1
+[V] 0.97.1
 [P] X --?--5---9 208.000
 
 [O] docbook_version=1.73.2
-[D] 3694829489 dia-0.96.1.tar.bz2 http://ftp.gnome.org/pub/GNOME/sources/dia/0.96/
+[D] 2181170673 dia-0.97.1.tar.bz2 http://ftp.gnome.org/pub/GNOME/sources/dia/0.97/
 [D] 759299743 docbook-1.73.2.xsl !http://docbook.sourceforge.net/release/xsl/1.73.2/manpages/docbook.xsl
