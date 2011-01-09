@@ -1,0 +1,60 @@
+--- ./config/config.in.orig	2011-01-08 23:42:43.000000000 +0000
++++ ./config/config.in	2011-01-08 23:45:40.000000000 +0000
+@@ -15,7 +15,7 @@
+ ## You may need to set this explicitly if automounter or NFS
+ ## side effects cause problems
+ 
+-EST_HOME := $(shell (cd $(EST); pwd))
++EST_HOME := /usr
+ 
+ ###########################################################################
+ ## System type. 
+@@ -61,7 +61,7 @@
+ # VERBOSE=1
+ #DEBUG=1
+ # PROFILE=gprof
+-#SHARED=2
++SHARED=2
+ 
+ ## Directory specific selections which override the above
+ 
+--- ./config/systems/default.mak.orig	2011-01-08 23:48:12.000000000 +0000
++++ ./config/systems/default.mak	2011-01-08 23:50:10.000000000 +0000
+@@ -40,7 +40,7 @@
+ ###########################################################################
+ ## Installation directories
+ 
+-INSTALL_PREFIX=/usr/local
++INSTALL_PREFIX=/usr
+ 
+ BINDIR=$(INSTALL_PREFIX)/bin
+ LIBDIR=$(INSTALL_PREFIX)/lib
+@@ -63,8 +63,8 @@
+ ###########################################################################
+ ## Where to find Enlightenment Speech Demon
+ 
+-ESD_INCLUDE = /usr/local/include
+-ESD_LIB = /usr/local/lib
++ESD_INCLUDE = /usr/include
++ESD_LIB = /usr/lib
+ 
+ ###########################################################################
+ ## Where to find X11
+@@ -75,14 +75,14 @@
+ ###########################################################################
+ ## TCL support
+ 
+-TCL_INCLUDE = /usr/local/include
+-TCL_LIB     = /usr/local/lib
++TCL_INCLUDE = /usr/include
++TCL_LIB     = /usr/lib
+ TCL_LIBRARY = -ltcl7.6
+ 
+ ###########################################################################
+ ## Efence library for malloc debugging
+ 
+-EFENCE_LIB = /usr/local/lib
++EFENCE_LIB = /usr/lib
+ 
+ ###########################################################################
+ ## Commands.
