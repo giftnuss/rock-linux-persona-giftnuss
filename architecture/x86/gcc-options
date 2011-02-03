@@ -66,6 +66,9 @@ else
 		var_append GCC3_WRAPPER_APPEND " " "-march=k8"
 		var_append GCC4_WRAPPER_APPEND " " "-march=k8"
 		;;
+            amdk10)
+                var_append GCC4_WRAPPER_APPEND " " "-march=amdfam10"
+                ;;
 	esac
 fi
 

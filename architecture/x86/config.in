@@ -52,7 +52,8 @@ else
   choice ROCKCFG_X86_OPT generic   \
 	generic         "No special optimisation"               \
 	athlon          "Optimised for AMD Athlon64"		\
-	intel           "Optimised for Intel EMT64 (Nocona)"
+	intel           "Optimised for Intel EMT64 (Nocona)"    \
+        amdk10          "Optimised for AMD K10 (gcc >= 43)"
 fi
 
 if [ $ROCKCFG_X86_OPT != generic ] ; then
