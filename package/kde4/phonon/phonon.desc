@@ -23,19 +23,27 @@
 
 [I] a multimedia library
 
-[T] The Phonon multimedia library.
+[T] Phonon provides a Qt-style interface for audio and video.  It is aimed
+[T] at the average desktop application, whether that is a game that needs
+[T] sound effects or a full-blown multimedia playback application like
+[T] Amarok or Bangarang.
 
 [U] http://phonon.kde.org
 
-[A] TODO: Author
+[A] Matthias Kretz <kretz@kde.org>
+[A] Ricardo Villalba <rvm@escomposlinux.org>
+[A] Ian Monroe <ian@monroe.nu>
+[A] Colin Guthrie <phonon@colin.guthr.ie>
+[A] Martin Sandsmark <martin.sandsmark@kde.org>
+[A] Nokia Corporation and/or its subsidiary(-ies)
+
 [M] The ROCK Linux Project
 
 [C] extra/multimedia extra/desktop/kde4
 
 [L] GPL
 [S] Stable
-[V] 4.2.0
+[V] 4.4.0
 [P] X -----5---9 157.900
 
-[D] X phonon-4.2.0.tar.bz2 svn co svn://anonsvn.kde.org/home/kde/tags/phonon/4.2.0
-
+[D] X phonon-4.4.0.tar.bz2 git clone -n git://anongit.kde.org/phonon; checkout 4.4.0

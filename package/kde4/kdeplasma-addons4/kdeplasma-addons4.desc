@@ -6,8 +6,8 @@
 [COPY] the ROCK-COPYRIGHT-NOTE-END tag. Otherwise it might get removed by
 [COPY] the ./scripts/Create-CopyPatch script. Do not edit this copyright text!
 [COPY] 
-[COPY] ROCK Linux: rock-src/package/kde/kdeutils/kdeutils.desc
-[COPY] ROCK Linux is Copyright (C) 1998 - 2006 Clifford Wolf
+[COPY] ROCK Linux: rock-src/package/kde4/kdeplasma-addons4/kdeplasma-addons4.desc
+[COPY] ROCK Linux is Copyright (C) 1998 - 2011 Clifford Wolf
 [COPY] 
 [COPY] This program is free software; you can redistribute it and/or modify
 [COPY] it under the terms of the GNU General Public License as published by
@@ -21,27 +21,21 @@
 [COPY] 
 [COPY] --- ROCK-COPYRIGHT-NOTE-END ---
 
-[I] Some KDE utilities
+[I] various additions for the plasma surface 
 
-[T] Some useful KDE utils like: kcalc, kcharselect, kdepasswd, kedit, kfind
-[T] khexedit, klpq, knotes, ktimer and some more.
-[T]
-[T] KDE is a network transparent contemporary desktop environment for UNIX
-[T] workstations. KDE seeks to fill the need for an easy to use desktop for
-[T] Unix workstations, similar to the desktop environments found under the
-[T] MacOS or Window95/NT.
+[T] This is a kde 4 Extension.
 
-[U] http://www.kde.org
+[U] http://quickgit.kde.org/?p=kdeplasma-addons.git
 
-[A] The KDE-Team (see http://www.kde.org/people.html)
+[A] TODO: Author
 [M] The ROCK Linux Project
 
-[C] extra/tool extra/desktop/kde
+[C] extra/desktop/kde4
 
 [L] GPL
-[S] Stable
+[S] Beta
 [V] 4.6.0
-[P] X --?--5---9 200.600
+[P] X -----5---9 800.000
 
-[D] 0 kdeutils-4.6.0.tar.bz2 http://download.kde.org/stable/4.6.0/src/ 
+[D] 0 kdeplasma-addons-4.6.0.tar.bz2 http://download.kde.org/stable/4.6.0/src/
 
