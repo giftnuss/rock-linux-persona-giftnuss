@@ -43,7 +43,7 @@
 
 [L] GPL
 [S] Stable
-[V] 4.4.0
+[V] 4.4.4
 [P] X -----5---9 157.900
 
-[D] X phonon-4.4.0.tar.bz2 git clone -n git://anongit.kde.org/phonon; checkout 4.4.0
+[D] X phonon-4.4.4.tar.bz2 git clone -n git://anongit.kde.org/phonon; checkout 4.4.4

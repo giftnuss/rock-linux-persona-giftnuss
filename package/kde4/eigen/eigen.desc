@@ -50,7 +50,15 @@
 [U] http://eigen.tuxfamily.org
 [A] many ( see http://eigen.tuxfamily.org/ }
 
+[S] Stable
+[V] 2.0.15
+[D] 792905504 eigen-2.0.15.tar.bz2 !http://bitbucket.org/eigen/eigen/get/2.0.15.tar.bz2
+#endif
+#if xpkg == eigen3
+[U] http://eigen.tuxfamily.org
+[A] many ( see http://eigen.tuxfamily.org/ }
+
 [S] Beta
-[V] 2.0.11
-[D] 31807602 eigen-2.0.11.tar.bz2 !http://bitbucket.org/eigen/eigen/get/2.0.11.tar.bz2
+[V] 3.0-beta2
+[D] 0 eigen-3.0-beta2.tar.bz2 !http://bitbucket.org/eigen/eigen/get/3.0-beta2.tar.bz2
 #endif

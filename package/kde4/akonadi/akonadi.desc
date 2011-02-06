@@ -30,7 +30,7 @@
 [T] library (called client library) which encapsulates the communication
 [T] between the client and the server.
 
-[U] http://pim.kde.org/akonadi
+[U] http://www.akonadi-project.org/
 
 [A] { see AUTHORS file }
 [M] The ROCK Linux Project
@@ -39,8 +39,8 @@
 
 [L] GPL
 [S] Stable
-[V] 1.0.0
+[V] 1.5.0
 [P] X -----5---9 157.800
 
-[D] X akonadi-1.0.0.tar.bz2 svn co svn://anonsvn.kde.org/home/kde/tags/akonadi/1.0.0
+[D] 951644248 akonadi-1.5.0.tar.bz2 http://download.akonadi-project.org/
 
