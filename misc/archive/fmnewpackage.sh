@@ -3,6 +3,8 @@
 # Written by Benjamin Schieder <blindcoder@scavenger.homeip.net>
 # Modified by Juergen Sawinski <jsaw@gmx.net> to create
 # a package based on freshmeat info
+# Modified by Sebastian Knapp <rock@ccls-online.de> to use a
+# webservice, which builds the desc file skeleton.
 #
 # Use:
 # newpackage.sh [-main] <rep>/<pkg> <freshmeat package name>
@@ -36,123 +38,9 @@
 # --- ROCK-COPYRIGHT-NOTE-END ---
 #
 
-extract_xml_name() {
-    local tmp="`tr -d "\012" < $2 | grep $3 | sed "s,.*<$3>\([^<]*\)<.*,\1," | sed 's,,\n[T] ,g' | sed 's,^\[T\] $,,'`"
-    eval "$1=\"\$tmp\""
-}
-
-get_download() {
-    local location
-    download_file=""
-    download_url=""
-    for arg; do
-	if curl -s -I -f "$arg" -o "header.log"; then
-	    location="`grep Location: header.log | sed -e 's,Location:[ ]\([.0-9A-Za-z:/% -]*\).*,\1,' -e 's,prdownloads.sourceforge.net,dl.sourceforge.net,'`"
-	    download_file="`basename $location`"
-	    download_url="`dirname $location`/"
-	    rm -f header.log
-	    return
-	fi
-    done
-    rm -f header.log
-}
-
-read_fm_config() {
-    local fmname=$1
-    curl_options="" #--disable-epsv -#
-    if curl -s -f $resume $curl_options "http://freshmeat.net/projects-xml/$fmname/$fmname.xml" -o "$fmname.xml"; then
-	extract_xml_name project $fmname.xml projectname_full
-	extract_xml_name title   $fmname.xml desc_short
-	extract_xml_name desc    $fmname.xml desc_full
-	extract_xml_name urlh    $fmname.xml url_homepage
-	extract_xml_name license $fmname.xml license
-	extract_xml_name version $fmname.xml latest_release_version
-
-	extract_xml_name url_tbz $fmname.xml url_bz2
-	extract_xml_name url_tgz $fmname.xml url_tgz
-	extract_xml_name url_zip $fmname.xml url_zip
-	extract_xml_name url_cvs $fmname.xml url_cvs
-
-	url="$(curl -I $urlh 2>/dev/null | grep "^Location:" | sed -e 's,^Location: \(.*\)$,\1,' | tr -d '\015' )"
-	get_download $url_tbz $url_tgz $url_zip #@FIXME $url_cvs 
-
-# grep trove categories for status IDs
-	for trove_id in `grep '<trove_id>' $fmname.xml | sed 's,.*<trove_id>\(.*\)</trove_id>,\1,g'` ; do
-		case $trove_id in
-			9) status="Alpha"
-				;;
-    			10) status="Beta"
-				;;
-			11,12) status="Stable"
-				;;
-			# there is no default
-		esac
-	done
-
-# download package fm-page and grep for the author
-	html="http://freshmeat.net/projects/$fmname/"
-	curl -I -s "$html" -o "header.log"
-	html_new="`grep Location: header.log | sed 's,Location:[ ]\([.0-9A-Za-z:/%?_= -]*\).*,\1,'`"
-	[ ! -z "$html_new" ] && html="$html_new"
-	unset html_new
-	rm -f header.log
-	curl -s "$html" -o "$fmname.html"
-	found=0
-	while read line ; do
-		if [ ${found} -eq 1 ] ; then
-			dev_name="`echo ${line} | sed 's,^ *,,g' | cut -f1,2 -d' '`"
-		fi
-		if [ "${line//Author:/}" != "${line}" ] ; then
-			found=1
-		else
-			found=0
-		fi
-	done < ${fmname}.html
-	dev_mail="`grep 'contact developer' "$fmname.html" | sed 's,^.*mailto:\(.*\)".*$,\1,'`"
-	echo '__at__ @' >subst
-	echo '__dot__ .' >>subst
-	echo '|at| @' >>subst
-	echo '|dot| .' >>subst
-	echo '[at] @' >>subst
-	echo '[dot] .' >>subst
-	echo '(at) @' >>subst
-	echo '(dot) .' >>subst
-
-	while read from to ; do
-		dev_mail=${dev_mail// ${from} /${to}}
-	done < subst
-	rm -f subst $fmname.html
-
-	if [ -z "$dev_mail" -o -z "$dev_name" ] ; then
-		dev_name="TODO: "
-		dev_mail="Author"
-	fi
-
-	#cleanup license
-	case "$license" in
-	*GPL*Library*)
-	    license=LGPL
-	    ;;
-	*GPL*Documentation*)
-	    license=FDL
-	    ;;
-	*GPL*)
-	    license=GPL
-	    ;;
-	*Mozilla*Public*)
-	    license=MPL
-	    ;;
-	*MIT*)
-	    license=MIT
-	    ;;
-	*BSD*)
-	    license=BSD
-	    ;;
-	esac
-	rm -f $fmname.xml
-    else
-	return 1
-    fi
+fetch_pkg_desc () {
+    local code="$1" url="http://rock-linux.followtherat.de/index.pl?code="
+    pkgdesc=$(curl -s "${url}${code}")
 }
 
 if [ "$1" == "-main" ] ; then
@@ -160,10 +48,10 @@ if [ "$1" == "-main" ] ; then
 	shift
 fi
 
-if [ $# -lt 2 -o $# -gt 2 ] ; then
+if [ $# -lt 1 -o $# -gt 2 ] ; then
 	cat <<-EEE
 Usage:
-$0 <option> package/repository/packagename freshmeat-package-name
+$0 <option> package/repository/packagename [freshmeat-package-name]
 
 Where <option> may be:
 	-main		Create a package.conf file with main-function
@@ -175,6 +63,8 @@ fi
 
 dir=${1#package/} ; shift
 package=${dir##*/}
+fmpackage=${1:-$package}
+
 if [ "$package" = "$dir" ]; then
 	echo "failed"
 	echo -e "\t$dir must be <rep>/<pkg>!\n"
@@ -207,7 +97,7 @@ fi
 cd package/$dir
 rc="ROCK-COPYRIGHT"
 
-if ! read_fm_config $1; then
+if ! fetch_pkg_desc $fmpackage; then
     echo "Error or wrong freshmeat package name"
     exit 1
 fi
@@ -237,23 +127,7 @@ cat >>$package.desc <<EEE
 [COPY] 
 [COPY] --- ${rc}-NOTE-END ---
 
-[I] ${title:-TODO: Title}
-
-[T] ${desc:-TODO: Description}
-
-[U] ${url:-TODO: URL}
-
-[A] $dev_name <$dev_mail>
-[M] ${maintainer:-TODO: Maintainer}
-
-[C] TODO: Category
-
-[L] ${license:-TODO: License}
-[S] ${status:-TODO: Status}
-[V] ${version:-TODO: Version}
-[P] X -----5---9 800.000
-
-[D] 0 $download_file $download_url
+${pkgdesc}
 EEE
 
 echo "ok"
