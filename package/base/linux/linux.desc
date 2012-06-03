@@ -34,8 +34,8 @@
 [F] DIETLIBC KERNEL
 [F] CORE
 
-[E] group kernel-image  linux24        linux26
-[E] group kernel-source linux24-source linux26-source
+[E] group kernel-image  linux24        linux26        linux3
+[E] group kernel-source linux24-source linux26-source linux3-source
 
 [E] del net-tools
 
@@ -52,6 +52,11 @@
 #if xpkg == linux26.*
 [V] 2.6.32.2
 [D] 1751040911 linux-2.6.32.2.tar.bz2 http://www.kernel.org/pub/linux/kernel/v2.6/
+#endif
+
+#if xpkg == linux3.*
+[V] 3.2.18
+[D] 0 linux-3.2.18.tar.bz2 http://www.kernel.org/pub/linux/kernel/v3.0/
 #endif
 
 [CD] <COPY> for x in $cachedir/linux2[46].cache; do cp $x $confdir/$pkg.cache; done
