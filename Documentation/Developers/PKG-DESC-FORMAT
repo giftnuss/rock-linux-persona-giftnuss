@@ -99,6 +99,10 @@ file.
   where 'Stable' also can be 'Gamma' (very close to stable), 'Beta' or
   'Alpha' (far away from stable).
 
+[RD] [RELEASEDATE] YYYY-MM-DD
+
+  The date on which the current version and revision was released.
+
 [V] [VER] [VERSION] (*)
 
   Package version and revision (example: '[V] 2.3 19991204').
