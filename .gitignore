@@ -2,5 +2,6 @@ build/
 config/
 download/
 scripts/SetupBuild
+src/
 *~
 
