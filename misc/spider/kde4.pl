@@ -13,11 +13,11 @@ use ROCK::Linux;
 
 use IO::Dir;
 use IO::File;
-use Mojo::UserAgent;
+use Mojo::Client;
 
 my $version = $ARGV[0] || 'list';
 
-my $hive = './package/kde4';
+my $hive = $ROCK::Linux::DIR . '/package/kde4';
 
 if($version eq 'list') {
     my $d = IO::Dir->new($hive) or die($!);
@@ -31,7 +31,7 @@ if($version eq 'list') {
 
 my $url = 'http://www.kde.org/info/' . $version . '.php';
 
-my $client = Mojo::UserAgent->new;
+my $client = Mojo::Client->new;
 
 my $res = $client->get($url)->res;
 

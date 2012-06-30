@@ -7,6 +7,7 @@ use utf8;
 use 5.010;
 use Cwd;
 use IO qw/Dir File Pipe/;
+use File::Basename ();
 
 use base 'Exporter';
 
@@ -21,7 +22,11 @@ our @EXPORT = qw/
 our ($DIR,$SCRIPTS);
 
 BEGIN {
-   $DIR ||= $ENV{'ROCK_BASE'} || Cwd::getcwd; # adjust
+   $DIR ||= $ENV{'ROCK_BASE'} || do {
+     my $dn = \&File::Basename::dirname;
+     my $file = __FILE__;
+     $file = $dn->($file) for 1..5; $file
+   };
    $SCRIPTS = "$DIR/scripts";
 
    IO::Dir->new($SCRIPTS) or die("Error reading scripts dir: $!");
