@@ -44,8 +44,10 @@ if($res->is_status_class(200)) {
         my $dwnl = $e->attrs->{'href'};
         $dwnl =~ /(.*\/)(.*)$/;
         my ($path,$file) = ($1,$2);
-        
-        my $pkg = "${name}4";
+
+        my $pkg = (-d "$hive/$name") ? $name :
+                  (-d "$hive/${name}4") ? "${name}4" : '';
+        die("Unknown package $name found.") unless $pkg;
         apply_pkg_update($pkg,$version);
         pkg_change_download($pkg,$file,$path);
     }
