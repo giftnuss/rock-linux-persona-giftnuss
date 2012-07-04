@@ -1,0 +1,3 @@
+[submodule "misc/humbug"]
+	path = misc/humbug
+	url = git://github.com/giftnuss/Humbug
