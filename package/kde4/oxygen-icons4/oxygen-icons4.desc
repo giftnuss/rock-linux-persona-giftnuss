@@ -959,7 +959,7 @@ kdewebdev4 4.4.1
 kdeaccessibility4 4.4.1
 akonadi 1.0.0
 bash-2.05b# sh misc/archive/newpackage.sh package/kde4/kdeplasma-addons4
-http://download.kde.org/stable/4.6.0/src/kdeplasma-addons-4.6.0.tar.bz2
+http://download.kde.org/stable/4.8.4/src/kdeplasma-addons-4.8.4.tar.bz2
 Creating package/kde4/kdeplasma-addons4 ... ok
 Creating kdeplasma-addons4.desc ... ok
 Creating kdeplasma-addons4.conf ... ok
@@ -1010,8 +1010,8 @@ F10 key ==> File   Edit   Search   Buffers   Windows   Sys
 
 [L] LGPL
 [S] Stable
-[V] 4.6.0
+[V] 4.8.4
 [P] X -----5---9 800.000
 
-[D] 0 oxygen-icons-4.6.0.tar.bz2 http://download.kde.org/stable/4.6.0/src/
+[D] 0 oxygen-icons-4.8.4.tar.xz http://download.kde.org/stable/4.8.4/src/ 
 
