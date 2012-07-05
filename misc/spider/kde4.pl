@@ -7,9 +7,10 @@ use utf8;
 use 5.010;
 
 use FindBin;
-use lib $FindBin::Bin . '/lib';
+use lib $FindBin::Bin . '/../humbug/p5-rock-linux/lib';
 
 use ROCK::Linux;
+use ROCK::Linux qw( newpackage_sh );
 
 use IO::Dir;
 use IO::File;
@@ -42,14 +43,20 @@ if($res->is_status_class(200)) {
         $text =~ /^(.*)-(.*)$/ or next;
         my ($name,$version) = ($1,$2);
         my $dwnl = $e->attrs->{'href'};
+        my $download = $dwnl;
         $dwnl =~ /(.*\/)(.*)$/;
         my ($path,$file) = ($1,$2);
 
         my $pkg = (-d "$hive/$name") ? $name :
                   (-d "$hive/${name}4") ? "${name}4" : '';
-        die("Unknown package $name found.") unless $pkg;
-        apply_pkg_update($pkg,$version);
-        pkg_change_download($pkg,$file,$path);
+        # die("Unknown package $name found.") unless $pkg;
+        if($pkg) {
+            apply_pkg_update($pkg,$version);
+            pkg_change_download($pkg,$file,$path);
+	}
+        else {
+            newpackage_sh("package/kde4/$name",$download);
+        }
     }
 }
 #->dom->at('title')->text;
