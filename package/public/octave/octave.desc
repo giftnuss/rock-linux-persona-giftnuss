@@ -27,11 +27,7 @@
 [T] computations. It provides a convenient command line interface for solving
 [T] linear and nonlinear problems numerically, and for performing other
 [T] numerical experiments using a language that is mostly compatible with
-[T] Matlab. It may also be used as a batch-oriented language. This is the
-[T] development release. There is an older stable release, but most develop-
-[T] ment in octave is in expanding functionality and compatibility. This
-[T] code should be highly usable by the time it is allowed into the develop-
-[T] ment release from CVS.
+[T] Matlab. It may also be used as a batch-oriented language.
 
 [U] http://www.che.wisc.edu/octave/
 
@@ -43,8 +39,8 @@
 
 [L] GPL
 [S] Stable
-[V] 3.2.4
+[V] 3.6.3
 [P] X --?--5---9 256.400
 
-[D] 4219215392 octave-3.2.4.tar.bz2 ftp://ftp.octave.org/pub/octave/
+[D] 646785371 octave-3.6.3.tar.bz2 ftp://ftp.gnu.org/gnu/octave/ 
 
