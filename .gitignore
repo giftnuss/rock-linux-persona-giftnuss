@@ -3,5 +3,6 @@ config/
 download/
 scripts/SetupBuild
 src/
+tests/assert.sh
 *~
 
