@@ -26,17 +26,18 @@
 [T] This system daemon for the Linux kernel aims to do away with the need for
 [T] large, fixed swap partitions or swap files.
 
-[U] http://pqxx.org/development/swapspace/
+[U] https://github.com/Tookmund/Swapspace
 
 [A] Jeroen T. Vermeulen for the Software Industry Promotion Agency ( SIPA)
+[A] Jacob Adams
 [M] Sebastian Knapp <rock@ccls-online.de>
 
 [C] extra/system
 
 [L] GPL
 [S] Stable
-[V] 1.10
+[V] 1.14
 [P] X -----5---9 800.000
 
-[D] 2440750017 swapspace-1.10.tar.gz ftp://pqxx.org/software/swapspace/
+[D] 1811257737 swapspace-1.14.tar.gz https://github.com/Tookmund/Swapspace/releases/download/v1.14/
 
