@@ -61,6 +61,7 @@ build_set_sourceballs () {
 ### DIR: $builddir
 ### IN: archdir -- directory containing the package tar files (download/..)
 ### IN: xsrctar -- current source tarball
+### IN: taropt -- option for tar
 ### FILE: untar.txt
 ### FILE: xsrcdir.txt
 build_autoextract_source () {
@@ -78,6 +79,47 @@ build_autoextract_source () {
         eval $cutcmd | sort -u > xsrcdir.txt
 }
 
+### DIR: $builddir
+### IN: srcdir
+### IN: xsrctar
+### OUT: xsrcdir
+build_set_xsrcdir () {
+    if [ $srcdir = auto ]; then
+        xsrcdir=${xsrctar%.tar.bz2}
+        xsrcdir=${xsrcdir%.tbz2}
+        xsrcdir=${xsrcdir%.zip}
+        if [ ! -d $xsrcdir ] ; then
+            for x in $pkg-$ver ${pkg}_$ver $pkg \
+                     $xpkg-$ver ${xpkg}_$ver $xpkg \
+                     $( cat xsrcdir.txt )
+            do
+                [ -d "$x" ] && xsrcdir="$x"
+            done
+        fi
+    else
+        xsrcdir="$srcdir"
+    fi
+}
+
+### DIR $builddir
+### IN: chownsrcdir
+### IN: nocvsinsrcdir
+build_cleanup_xsrcdir () {
+    if [ "$chownsrcdir" = 1 ]; then
+        echo "Fixing ownership and permissions ..."
+        chown -R 0:0 $xsrcdir
+    fi
+    #
+    if [ "$nocvsinsrcdir" = 1 ]; then
+        echo "Removing CVS and .svn directories ..."
+        egrep '(^|/)(CVS|\.svn)(/|$)' untar.txt |
+        while read x; do
+            echo "Removing $x ..."
+            rm -rf "$x"
+        done
+    fi
+}
+
 # Main program for building a package
 #
 build_this_package() {
@@ -91,37 +133,8 @@ build_this_package() {
         if [ $autoextract = 1 ]; then
             cd $builddir
             build_autoextract_source
-
-            #
-            if [ $srcdir = auto ]; then
-                xsrcdir=${xsrctar%.tar.bz2}
-                xsrcdir=${xsrcdir%.tbz2}
-                xsrcdir=${xsrcdir%.zip}
-                if [ ! -d $xsrcdir ] ; then
-                    for x in $pkg-$ver ${pkg}_$ver $pkg \
-                             $xpkg-$ver ${xpkg}_$ver $xpkg \
-                             $( cat xsrcdir.txt )
-                    do
-                        [ -d "$x" ] && xsrcdir="$x"
-                    done
-                fi
-            else
-                xsrcdir="$srcdir"
-            fi
-            #
-            if [ "$chownsrcdir" = 1 ]; then
-                echo "Fixing ownership and permissions ..."
-                chown -R 0:0 $builddir/$xsrcdir
-            fi
-            #
-            if [ "$nocvsinsrcdir" = 1 ]; then
-                echo "Removing CVS and .svn directories ..."
-                egrep '(^|/)(CVS|\.svn)(/|$)' untar.txt |
-                while read x; do
-                    echo "Removing $x ..."
-                    rm -rf "$x"
-                done
-            fi
+            build_set_xsrcdir
+            build_cleanup_xsrcdir
             #
             echo "Changeing into $builddir/$xsrcdir ..."
             cd $builddir/$xsrcdir
