@@ -1,8 +1,8 @@
 # File Format:
-#	- Lines starting with '#' and empty lines are ignored
-#	- One line per category, no leading whitespaces
-#	- Categories followed by '-> other_cat' is an alias
-#	- Categories may be postfixed with a one line description
+#   - Lines starting with '#' and empty lines are ignored
+#   - One line per category, no leading whitespaces
+#   - Categories followed by '-> other_cat' is an alias
+#   - Categories may be postfixed with a one line description
 #
 
 # Base package. Only stuff which most people would usually expect to be
@@ -54,6 +54,7 @@ extra/screensaver
 extra/security
 extra/server
 extra/shell
+extra/system
 extra/text
 extra/theme
 extra/tool
