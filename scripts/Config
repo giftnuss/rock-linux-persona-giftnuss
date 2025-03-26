@@ -31,7 +31,7 @@ if [ -z "${lines:=$LINES}" -o -z "${columns:=$COLUMNS}" ] ; then
 	[ -z "$columns" -o "$columns" -le 0 ] 2> /dev/null && columns=80
 fi
 
-eval "$(egrep '^rockver=' scripts/parse-config)"
+eval "$(grep -E '^rockver=' scripts/parse-config)"
 
 config=default
 do_config_cycle=0
